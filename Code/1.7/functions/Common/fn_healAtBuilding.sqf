@@ -7,4 +7,3 @@ _id = _this select 2;
 
 _unit setDamage 0.0;
 _unit playActionNow "Medic";
-

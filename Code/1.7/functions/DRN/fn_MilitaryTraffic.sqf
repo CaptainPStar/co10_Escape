@@ -24,11 +24,6 @@ while {isNil "drn_var_commonLibInitialized"} do {
     sleep 10;
 };
 
-while {isnil "bis_fnc_init"} do {
-    ["BIS Function Module is needed to run MilitaryTraffic.sqf"] call drn_fnc_CL_ShowDebugTextAllClients;
-    sleep 10;
-};
-
 while {!(["TrafficMarker_SouthWest"] call drn_fnc_CL_MarkerExists)} do {
     player sideChat "Script MilitaryTraffic.sqf requires marker TrafficMarker_SouthWest placed on map.";
     sleep 10;

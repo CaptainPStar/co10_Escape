@@ -1,12 +1,13 @@
 private ["_generatorTrailer", "_unit", "_id"];
-private ["_marker", "_extractionPointNo", "_count", "_text"];
+private ["_marker", "_extractionPointNo", "_count", "_text","_engineer"];
 
 _generatorTrailer = _this select 0;
 _unit = _this select 1;
 _id = _this select 2;
-
+_generatorTrailer setvariable ["A3E_Terminal_Hacked",true,true];
 _count = 30;
-if (typeOf _unit == "B_engineer_F") then {
+_engineer = [(configFile >> "CfgVehicles" >> typeof _unit),"engineer",0] call BIS_fnc_returnConfigEntry;
+if (_engineer == 1) then {
 	_count = 10;
 };
 
@@ -25,6 +26,7 @@ while {(_count > 0) && (_unit distance _generatorTrailer < 3)} do
 
 if (_count > 0 && _unit distance _generatorTrailer > 3) exitWith {
     cutText ["You must get closer!", "Plain", 1];
+	_generatorTrailer setvariable ["A3E_Terminal_Hacked",false,true];
 };
 
 cutText ["", "Plain", 1];
@@ -37,22 +39,32 @@ cutText ["", "Plain", 1];
 _mode = Param_ExtractionSelection;
 
 
-_max_range = 3000;
-_min_range = 3000;
-
 if (_count == 0) then {
 
 	_flag = false;
 	//If selection fails ten times, a random point is selected-
-	for[{_i = 0},{_i<15},{_i = _i +1}] do {
-		_extractionPointNo = (floor random 8) + 1;
-		drn_var_Escape_ExtractionMarkerPos = getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
-		
-		if((_mode == 0)) exitwith {};
-		if((_generatorTrailer distance drn_var_Escape_ExtractionMarkerPos)<_max_range AND (_mode == 1)) exitwith {};
-		if((_generatorTrailer distance drn_var_Escape_ExtractionMarkerPos)>_min_range AND (_mode == 2)) exitwith {};
-	};
 	
+	if(_mode == 0) then {
+		_extractionPointNo = floor(random 8) + 1;
+		drn_var_Escape_ExtractionMarkerPos =  getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
+	} else {
+		_selectedPos = getMarkerPos ("drn_Escape_ExtractionPos1");
+		_extractionPointNo = 1;
+		for[{_i = 1},{_i<=8},{_i = _i +1}] do {
+			_extractionPointNo = _i;
+			_pos = getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
+			
+			if((getpos _generatorTrailer distance _pos)<(getpos _generatorTrailer distance _selectedPos) AND (_mode == 1)) then {
+				_selectedPos = _pos;
+				_extractionPointNo = _forEachIndex;
+			};
+			if((getpos _generatorTrailer distance _pos)>(getpos _generatorTrailer distance _selectedPos) AND (_mode == 2)) then {
+				_selectedPos = _pos;
+				_extractionPointNo = _forEachIndex;
+			};
+		};
+		drn_var_Escape_ExtractionMarkerPos = getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
+	};
     publicVariable "drn_var_Escape_ExtractionMarkerPos";
     _generatorTrailer setvariable ["A3E_Terminal_Hacked",true,true];
     if (!isNil "drn_var_Escape_ExtractionMarker") then {
@@ -68,5 +80,3 @@ if (_count == 0) then {
     
     _generatorTrailer removeAction _id;
 };
-
-

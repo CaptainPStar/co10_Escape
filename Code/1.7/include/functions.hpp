@@ -4,8 +4,6 @@ class CfgFunctions
 	{
 		class Common
 		{
-			class addHijackAction {};
-			class addHealAtMedicalBuildingAction {};
 			class RandomMarkerPos {};
 			class GetSideColor {};
 			class RandomSpawnPos {};
@@ -19,6 +17,9 @@ class CfgFunctions
 			class paramDaytime{};
 			class systemChat {};
 			class groupChat {};
+			class addUserActions {};
+			class Hijack {};
+			class HealAtBuilding {};
 		};
 		class AI
 		{
@@ -34,6 +35,7 @@ class CfgFunctions
 			class SetTaskState {};
 			class GetTaskState {};
 			class AquaticPatrol {};
+			class AddStaticGunner {};
 		};
 		class Debug
 		{
@@ -55,12 +57,15 @@ class CfgFunctions
             class createComCenters {};
             class createAmmoDepots {};
 			class handleJIP {};
+			class createLocationMarker {};
 		};
 		class Templates
 		{
             class BuildPrison {};
             class BuildComCenter {};
             class AmmoDepot {};
+			class CrashSite {};
+			class MortarSite {};
 		};
 	};
 	class drn

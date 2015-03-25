@@ -1,8 +1,8 @@
-private ["_i", "_startPos", "_isOk", "_result", "_roadSegments", "_dummyObject"];
+private ["_i", "_startPos", "_isOk", "_result", "_roadSegments", "_dummyObject","_mapsize"];
 _isOk = false;
 while {!_isOk} do {
-
-    _startPos = [(getpos SouthWest select 0) + random (getpos NorthEast select 0),(getpos SouthWest select 1) + random (getpos NorthEast select 1),0];
+	_mapsize = (getpos NorthEast) vectorDiff (getpos SouthWest);
+	_startPos = (getpos SouthWest) vectoradd [random (_mapsize select 0),random (_mapsize select 1),0];
 
     _result = _startPos isFlatEmpty [5, 0, 0.25, 1, 0, false, objNull];
     _roadSegments = _startPos nearRoads 30;

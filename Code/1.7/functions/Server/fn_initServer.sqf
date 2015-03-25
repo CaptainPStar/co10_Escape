@@ -478,7 +478,56 @@ if(_debugAllUnits) then {
         [_playerGroup, east, drn_arr_Escape_InfantryTypes, drn_arr_Escape_RoadBlock_MannedVehicleTypes, _roadBlockCount, _enemySpawnDistance, _enemySpawnDistance + 500, 750, 300, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, _debugRoadBlocks] spawn drn_fnc_RoadBlocks;
         sleep 0.25;
     };
+	//Spawn crashsites
+	if(isNil("A3E_CrashSiteCountMax")) then {
+		A3E_CrashSiteCountMax = 2;
+	};
+	_crashSiteCount = random A3E_CrashSiteCountMax;
+	for [{_x=0},{_x<_crashSiteCount},{_x=_x+1}] do {
+	  _pos = [] call A3E_fnc_findFlatArea;
+	  [_pos] call A3E_fnc_crashSite;
+	};
+
+	
+	  switch (_enemyFrequency) do
+        {
+            case 1: // 1-2 players
+            {
+                _minEnemiesPerGroup = 2;
+                _maxEnemiesPerGroup = 4;
+            };
+            case 2: // 3-5 players
+            {
+                _minEnemiesPerGroup = 3;
+                _maxEnemiesPerGroup = 6;
+            };
+            default // 6-8 players
+            {
+                _minEnemiesPerGroup = 4;
+                _maxEnemiesPerGroup = 8;
+            };
+        };
+	
+	
+	
+	//Spawn mortar sites
+	if(isNil("A3E_MortarSiteCountMax")) then {
+		A3E_MortarSiteCountMax = 6;
+	};
+	if(isNil("A3E_MortarSiteCountMin")) then {
+		A3E_MortarSiteCountMin = 4;
+	};
+	A3E_MortarSiteCountMin = A3E_MortarSiteCountMin * Param_Artillery;
+	A3E_MortarSiteCountMax = A3E_MortarSiteCountMax * Param_Artillery;
+	_mortarSiteCount = A3E_MortarSiteCountMin + random (A3E_MortarSiteCountMax-A3E_MortarSiteCountMin);
+	for [{_x=0},{_x<_mortarSiteCount},{_x=_x+1}] do {
+	  _pos = [] call A3E_fnc_findFlatArea;
+	  [_pos] call A3E_fnc_MortarSite;
+	  [_playerGroup, "A3E_MortarSitePatrolMarker", east, "INS", 2, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
+	};	
+	};	
 };
+
 
 // Create search chopper
 if (_useSearchChopper) then {

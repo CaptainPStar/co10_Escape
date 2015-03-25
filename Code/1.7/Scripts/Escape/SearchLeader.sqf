@@ -263,7 +263,16 @@ while {1 == 1} do {
 					(_list select 0) setvariable["A3E_LastUpdated",diag_tickTime,true];
 					(_list select 0) setvariable["A3E_Accuracy",_unitThatDetectedPositionAccuracy,true];
 					_firstsight = (_list select 0) getvariable ["A3E_FirstSight",diag_tickTime];
-					if((diag_tickTime-_firstsight)>=a3e_var_artilleryTimeThreshold && (diag_tickTime > (a3e_var_artillery_cooldown+_lastArtilleryStrike))) then {
+					
+					if(isNil("Param_Artillery")) then {
+						diag_log "Warning: Param_Artillery was nil!";
+						Param_Artillery = 1;
+					};
+					private["_artilleryTimeThreshold","_artilleryCooldown"];
+					_artilleryTimeThreshold = a3e_var_artilleryTimeThreshold/Param_Artillery;
+					_artilleryCooldown = a3e_var_artillery_cooldown/Param_Artillery;
+					
+					if((diag_tickTime-_firstsight)>=_artilleryTimeThreshold && (diag_tickTime > (_artilleryCooldown+_lastArtilleryStrike))) then {
 						if(random 100 < a3e_var_artillery_chance) then {
 							if (a3e_debug_artillery) then {
 								player sidechat "HQ is trying to call an artillery strike";
@@ -275,7 +284,7 @@ while {1 == 1} do {
 							};
 						} else {
 							//Create a smaller cooldown for the next try
-							_lastArtilleryStrike = diag_tickTime - a3e_var_artillery_cooldown + a3e_var_artillery_chance_cooldown;
+							_lastArtilleryStrike = diag_tickTime - _artilleryCooldown + a3e_var_artillery_chance_cooldown;
 						};
 					};
 				};

@@ -1,5 +1,5 @@
 private ["_centerPos", "_rotateDir", "_staticWeaponClasses", "_parkedVehicleClasses", "_index"];
-private ["_pos", "_dir", "_posX", "_posY", "_sectionDir", "_guns", "_gun", "_vehicle", "_powerGenerator"];
+private ["_pos", "_dir", "_posX", "_posY", "_sectionDir", "_guns", "_gun", "_vehicle", "_powerGenerator","_static"];
 private ["_fnc_CreateObject"];
 private ["_obj"];
 
@@ -218,13 +218,14 @@ _dir = 90;
 _pos = [0, -9];
 _dir = 90;
 _obj = ["Land_PowerGenerator_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
-[[_obj, "Hijack", "Scripts\Escape\Hijack.sqf"], "a3e_fnc_addHijackAction", nil, false] spawn BIS_fnc_MP;
+//[[_obj, "Hijack", "Scripts\Escape\Hijack.sqf"], "a3e_fnc_addHijackAction", nil, false] spawn BIS_fnc_MP;
+_obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
 
 _pos = [13, 1];
 _dir = 90;
 _obj = ["Land_Medevac_House_V1_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
-[[_obj, "Heal at medical building", "Scripts\Escape\HealAtMedicalBuilding.sqf"], "a3e_fnc_addHealAtMedicalBuildingAction", nil, false] spawn BIS_fnc_MP;
+//[[_obj, "Heal at medical building", "Scripts\Escape\HealAtMedicalBuilding.sqf"], "a3e_fnc_addHealAtMedicalBuildingAction", nil, false] spawn BIS_fnc_MP;
 
 _pos = [10, -5];
 _dir = 180;
@@ -260,7 +261,8 @@ if (count _staticWeaponClasses > 0) then {
     _dir = 0;
     
     _gun = _staticWeaponClasses select floor random count _staticWeaponClasses;
-    [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+    _static = [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+	[_static,east] spawn A3E_fnc_AddStaticGunner; 
     
     _pos = [17, -9.5];
     _dir = 135;
@@ -268,7 +270,8 @@ if (count _staticWeaponClasses > 0) then {
     //_guns = ["DSHkM_Mini_TriPod", "AGS_Ins", "DSHKM_Ins"];
     _guns = ["O_HMG_01_high_F"];
     _gun = _guns select floor random count _guns;
-    [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+    _static = [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+	[_static,east] spawn A3E_fnc_AddStaticGunner; 
 };
 
 if (count _parkedVehicleClasses > 0) then {

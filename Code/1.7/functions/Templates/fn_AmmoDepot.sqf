@@ -1,3 +1,5 @@
+	if(!isserver) exitwith {};
+	
 	private ["_middlePos", "_staticWeaponClasses", "_parkedVehicleClasses"];
     private ["_object", "_pos", "_marker", "_instanceNo", "_randomNo", "_gun", "_angle", "_car"];
     
@@ -176,6 +178,7 @@
         _object = createVehicle [_gun, _pos, [], 0, "NONE"];
         _object setPos _pos;
         _object setDir _angle;
+		[_object,east] spawn A3E_fnc_AddStaticGunner; 
     };
     
     // Cars
@@ -206,6 +209,7 @@
         _object = createVehicle [_car, _pos, [], 0, "NONE"];
         _object setPos _pos;
         _object setDir _angle;
+		[_object,resistance] spawn A3E_fnc_AddStaticGunner; 
     };
     
     // Weapons
@@ -231,15 +235,15 @@
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons set [count _weapons, [_weaponClassName, _weaponCount]];
+            _weapons pushBack [_weaponClassName, _weaponCount];
             
             for "_j" from 0 to (count _magazines) - 1 do {
-                _weaponMagazines set [count _weaponMagazines, [_magazines select _j, _weaponCount * _magazinesPerWeapon]];
+                _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
             };
         };
     };
     
-    if (count _weapons > 0) then {
+    if (count _weapons > 0 || count _weaponMagazines > 0) then {
         //_box = "Box_East_Wps_F" createVehicle [(_middlePos select 0) - 3, (_middlePos select 1) + 0, 0];
         _box = createVehicle ["Box_East_Wps_F", [(_middlePos select 0) - 3, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
         clearWeaponCargoGlobal _box;
@@ -274,15 +278,15 @@
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons set [count _weapons, [_weaponClassName, _weaponCount]];
+            _weapons pushBack [_weaponClassName, _weaponCount];
             
             for "_j" from 0 to (count _magazines) - 1 do {
-                _weaponMagazines set [count _weaponMagazines, [_magazines select _j, _weaponCount * _magazinesPerWeapon]];
+                _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
             };
         };
     };
     
-    if (count _weapons > 0) then {
+    if (count _weapons > 0 || count _weaponMagazines > 0) then {
         //_box = "Box_East_WpsLaunch_F" createVehicle [(_middlePos select 0) + 3, (_middlePos select 1) + 0, 0];
         _box = createVehicle ["Box_East_WpsLaunch_F", [(_middlePos select 0) + 3, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
         clearWeaponCargoGlobal _box;
@@ -321,15 +325,15 @@
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons set [count _weapons, [_weaponClassName, _weaponCount]];
+            _weapons pushBack [_weaponClassName, _weaponCount];
             
             for "_j" from 0 to (count _magazines) - 1 do {
-                _weaponMagazines set [count _weaponMagazines, [_magazines select _j, _weaponCount * _magazinesPerWeapon]];
+                _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
             };
         };
     };
     
-    if (count _weapons > 0) then {
+    if (count _weapons > 0 || count _weaponMagazines > 0) then {
         //_box = "Box_East_WpsSpecial_F" createVehicle [(_middlePos select 0) + 0, (_middlePos select 1) - 3, 0];
         _box = createVehicle ["Box_East_WpsSpecial_F", [(_middlePos select 0) + 0, (_middlePos select 1) - 3, 0], [], 0, "CAN_COLLIDE"];
         clearWeaponCargoGlobal _box;
@@ -364,14 +368,33 @@
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons set [count _weapons, [_weaponClassName, _weaponCount]];
+            _weapons pushBack [_weaponClassName, _weaponCount];
             
             for "_j" from 0 to (count _magazines) - 1 do {
-                _weaponMagazines set [count _weaponMagazines, [_magazines select _j, _weaponCount * _magazinesPerWeapon]];
+                _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
             };
         };
     };
-    if (count _weapons > 0) then {
+	
+	 _items = [];
+	 for "_i" from 0 to (count drn_arr_AmmoDepotVehicleItems - 1) do {
+        private ["_item", "_itemClassName", "_probabilityOfPrecence", "_minCount", "_maxCount"];
+        
+        _item = drn_arr_AmmoDepotVehicleItems select _i;
+        
+        _itemClassName = _item select 0;
+        _probabilityOfPrecence = _item select 1;
+        _minCount = _item select 2;
+        _maxCount = _item select 3;
+        
+        if (random 100 <= _probabilityOfPrecence) then {
+            _itemCount = floor (_minCount + random (_maxCount - _minCount));
+            _items pushback [_itemClassName, _itemCount];
+        };
+    };
+	
+	
+    if (count _weapons > 0 || count _weaponMagazines > 0 || count _items > 0) then {
         //_box = "Box_NATO_AmmoVeh_F" createVehicle [(_middlePos select 0) + 0, (_middlePos select 1) + 0, 0];
         _box = createVehicle ["Box_NATO_AmmoVeh_F", [(_middlePos select 0) + 0, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
         clearWeaponCargoGlobal _box;
@@ -388,6 +411,9 @@
 		{
             _box addBackpackCargoGlobal [_x,4];
         } foreach a3e_arr_AmmoDepotVehicleBackpacks;
+		{
+            _box addItemCargoGlobal _x;
+        } foreach _items;
     };
     
     // Items
@@ -406,7 +432,7 @@
         
         if (random 100 <= _probabilityOfPrecence) then {
             _itemCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons set [count _weapons, [_itemClassName, _itemCount]];
+            _weapons pushBack [_itemClassName, _itemCount];
         };
     };
     
@@ -449,7 +475,7 @@
         };
     };
     
-    if (count _weapons > 0) then {
+    if (count _weapons > 0 || count _weaponMagazines > 0) then {
         //_box = "Box_East_WpsLaunch_F" createVehicle [(_middlePos select 0) - 3, (_middlePos select 1) - 3, 0];
         _box = createVehicle ["Box_East_WpsLaunch_F", [(_middlePos select 0) - 3, (_middlePos select 1) - 3, 0], [], 0, "CAN_COLLIDE"];
         clearWeaponCargoGlobal _box;
@@ -467,9 +493,12 @@
 
     // Set markers
     
-    _marker = createMarker ["drn_AmmoDepotMapMarker" + str _instanceNo, _middlePos];
-    _marker setMarkerType "o_installation";
-    
+    //_marker = createMarker ["drn_AmmoDepotMapMarker" + str _instanceNo, _middlePos];
+    //_marker setMarkerType "o_installation";
+      //_marker setMarkerType "o_installation";
+	  
+    ["drn_AmmoDepotMapMarker" + str _instanceNo,_middlePos,"o_installation"] call A3E_fnc_createLocationMarker;
+	
     _marker = createMarkerLocal ["drn_AmmoDepotPatrolMarker" + str _instanceNo, _middlePos];
     _marker setMarkerShapeLocal "ELLIPSE";
     _marker setMarkerAlpha 0;

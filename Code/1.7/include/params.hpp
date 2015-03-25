@@ -80,7 +80,7 @@ class Params
 	};
 	class Param_Waffelbox
 	{
-		title="Additional Weapons (AddOns required)";
+		title="Additional Weaponbox at depot";
 		values[]={0,1};
 		texts[]={"Off", "On"};
 		default = 1;
@@ -105,5 +105,19 @@ class Params
 		values[]={0,1};
 		texts[]={"Off","On"};
 		default = 0;
+	};
+	class Param_RevealMarkers
+	{
+		title="Direct reveal of markers";
+		values[]={0,1};
+		texts[]={"Off","On"};
+		default = 0;
+	};
+	class Param_Artillery
+	{
+		title="Artillery";
+		values[]={0.5,1,2};
+		texts[]={"Reduced","Default","Death in fire"};
+		default = 1;
 	};
 };

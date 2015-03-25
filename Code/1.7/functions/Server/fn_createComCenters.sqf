@@ -10,73 +10,54 @@ _chosenComCenIndexes = [];
 
 _distanceBetween = A3E_MinComCenterDistance;
 
- if(isNil("drn_arr_communicationCenterMarkers")) then {
-            drn_arr_communicationCenterMarkers = [];
-    };
-_commCentreMarkers = drn_arr_communicationCenterMarkers;
+if(isNil("drn_arr_communicationCenterMarkers")) then {
+    drn_arr_communicationCenterMarkers = [];
+	diag_log "Warning: Comcenter Templatearray was empty!";
+};
+_commCentreMarkers = [] + drn_arr_communicationCenterMarkers;
 
     if(isNil("A3E_ComCenterCount")) then {
-            A3E_ComCenterCount = 5;
+            A3E_ComCenterCount = 4;
     };
-
-while {count _chosenComCenIndexes < A3E_ComCenterCount && count _commCentreMarkers > 0} do {
-
-    _index = floor(random(count(_commCentreMarkers)));
-            _currentPos = (_commCentreMarkers select _index) select 0;
-
-
-    if (!(_index in _chosenComCenIndexes)) then {
-        _currentPos = (_commCentreMarkers select _index) select 0;
-
-        _tooClose = false;
-        {		
-            //Sometimes this try to access out of boundary!
-            _pos = (_commCentreMarkers select _x) select 0;
-            if (_pos distance _currentPos < _distanceBetween) then {
-                _tooClose = true;
-            };
-            if (_currentPos distance drn_startPos < _distanceBetween) then {
-                _tooClose = true;
-            };
-        } foreach _chosenComCenIndexes;
-
-        if (!_tooClose) then {
-            _chosenComCenIndexes set [count _chosenComCenIndexes, _index];
-        } else {
-            _commCentreMarkers = _commCentreMarkers - [_commCentreMarkers select _index];
-        };
-    };
+//Shuffle comcenters
+_suffledComCenterMarkers = [];
+_totalMarkerCount = (count _commCentreMarkers);
+while{count _commCentreMarkers>0} do {
+	_suffledComCenterMarkers pushBack (_commCentreMarkers deleteAt floor(random(count(_commCentreMarkers))));
 };
+_createdCount = 0;
+	
  _comCenPositions = [];
  _instanceNo = 0;
-{
-    private ["_index"];
-    private ["_pos", "_dir"];
+for [{_i=0},{_i<_totalMarkerCount},{_i=_i+1}] do {
+	private["_ok","_pos","_dir"];
+	_ok = true;
+	_pos = (_suffledComCenterMarkers select _i) select 0;
+	_dir = (_suffledComCenterMarkers select _i) select 1;
+	{
+		if (_pos distance _x < A3E_MinComCenterDistance) then {
+			_ok = false;
+		};
+	} foreach _comCenPositions;
+	if (_pos distance drn_startPos < A3E_MinComCenterDistance) then {
+			_ok = false;
+	};
+	if(_ok) then {
+		[_pos, _dir,drn_arr_ComCenStaticWeapons,drn_arr_ComCenParkedVehicles] call a3e_fnc_BuildComCenter;
+		["drn_CommunicationCenterMapMarker" + str _instanceNo,_pos,"flag_CSAT"] call A3E_fnc_createLocationMarker;
 
-    _index = _x;
-    _comCenItem = drn_arr_communicationCenterMarkers select _index;
+		_marker = createMarkerLocal ["drn_CommunicationCenterPatrolMarker" + str _instanceNo, _pos];
+		_marker setMarkerShapeLocal "ELLIPSE";
+		_marker setMarkerAlpha 0;
+		_marker setMarkerSizeLocal [75, 75];
 
-    _pos = _comCenItem select 0;
-    _dir = _comCenItem select 1;
-    _comCenPositions set [count _comCenPositions, _pos];
-
-    //scriptHandle = 
-    [_pos, _dir,drn_arr_ComCenStaticWeapons,drn_arr_ComCenParkedVehicles] call a3e_fnc_BuildComCenter;
-    //waitUntil {scriptDone _scriptHandle};
-
-    _marker = createMarker ["drn_CommunicationCenterMapMarker" + str _instanceNo, _pos];
-    _marker setMarkerShape "ICON";
-    _marker setMarkerType "flag_CSAT";
-
-
-    _marker = createMarkerLocal ["drn_CommunicationCenterPatrolMarker" + str _instanceNo, _pos];
-    _marker setMarkerShapeLocal "ELLIPSE";
-    _marker setMarkerAlpha 0;
-    _marker setMarkerSizeLocal [75, 75];
-
-    _instanceNo = _instanceNo + 1;
-} foreach _chosenComCenIndexes;
-
+		_instanceNo = _instanceNo + 1;
+		_createdCount = _createdCount + 1;
+		_comCenPositions pushBack _pos;
+	};
+	if (_createdCount>=A3E_ComCenterCount) exitWith {
+	//Nothing
+	};
+};
 drn_var_Escape_communicationCenterPositions = _comCenPositions;
 publicVariable "drn_var_Escape_communicationCenterPositions";
-    

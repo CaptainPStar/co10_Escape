@@ -5,12 +5,10 @@ _position = [_this,0,[0,0,0],[[]]] call bis_fnc_param;
 _success = false;
 {
 	if(_position inRangeOfArtillery [[_x], (getArtilleryAmmo [_x]) select 0]) then {
-		if(a3e_debug_artillery) then {
-			player sidechat format["Arti %1 is in range (Distance %2)",_x,_x distance _position];
-		};
 		[_x,_position] spawn {
-			private["_mortar","_center","_radius"];
-			for "_i" from 0 to a3e_var_artillery_rounds do {  //--- 5 = how many rounds you want fired
+			private["_mortar","_center","_radius","_artilleryRounds"];
+			_artilleryRounds= a3e_var_artillery_rounds*Param_Artillery;
+			for "_i" from 0 to _artilleryRounds do {  //--- 5 = how many rounds you want fired
 				_mortar = _this select 0;                //--- name of the mortar
 				_center = _this select 1;  //--- central point around which the mortar rounds will hit
 				_radius = a3e_var_artillery_dispersion;                       //--- random radius from the center
@@ -44,17 +42,13 @@ _success = false;
 				};
 			} foreach AllGroups;	
 		};
-		if(true) exitwith {
-			if(a3e_debug_artillery) then {
-				player sidechat "Artillery strike complete";
-			};
-			_success = true;
-		};
+		_success = true;
 	} else {
 		if(a3e_debug_artillery) then {
 			player sidechat format["Arti %1 is out of range (Distance %2)",_x,_x distance _position];
 		};
 	};
+	if(_success) exitwith {};
 } foreach a3e_var_artillery_units;
 
 _success;
