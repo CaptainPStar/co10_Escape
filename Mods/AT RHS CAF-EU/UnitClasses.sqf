@@ -436,3 +436,35 @@ a3e_arr_AquaticPatrols = ["O_Boat_Armed_01_hmg_F"];
 //////////////////////////////////////////////////////////////////
 a3e_additional_weapon_box_1 = "AT_Waffelbox_INS";
 a3e_additional_weapon_box_2 = "RHpistammobox";
+
+
+//////////////////////////////////////////////////////////////////
+// fn_CrashSite
+// Random crashsite of west heli with west weapons
+//////////////////////////////////////////////////////////////////
+// The following arrays define weapons and ammo contained at crash sites
+// Index 0: Weapon classname.
+// Index 1: Weapon's probability of presence (in percent, 0-100).
+// Index 2: If weapon exists, crate contains at minimum this number of weapons of current class.
+// Index 3: If weapon exists, crate contains at maximum this number of weapons of current class.
+// Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
+// Index 5: Number of magazines per weapon that exists.
+a3e_arr_CrashSiteWrecks = ["C130J_wreck_EP1","Land_UWreck_MV22_F"];
+a3e_arr_CrashSiteCrew = ["rhsusf_airforce_pilot","rhsusf_airforce_jetpilot"];
+// Weapons and ammo in crash site box
+a3e_arr_CrashSiteWeapons = [];
+a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["SMA_AUG_A3_F", 50, 2, 5, ["SMA_30Rnd_556x45_M855A1","SMA_30Rnd_556x45_M855A1_Tracer"], 6]];
+a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["SMA_SKS_F", 10, 1, 2, ["SMA_30Rnd_762x39_SKS","SMA_30Rnd_762x39_SKS_Red"], 6]];
+a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["hlc_lmg_M60E4", 100, 3, 5, ["hlc_100Rnd_762x51_M_M60E4"], 6]];
+a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["STI_M32", 50, 2, 4, ["STI_6Rnd_HE_Grenade_shell"], 6]];
+a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["SMA_HK417_16in_afg", 75, 2, 4, ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green", "rhs_VOG25"], 4]];
+a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["Trixie_M107_Green", 10, 1, 2, ["Trixie_10x127_Mag", "Trixie_10x127_HE_Mag", "Trixie_10x127_HEIAP_Mag"], 6]];
+a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["hlc_rifle_vendimus", 10, 1, 2, ["29rnd_300BLK_STANAG","29rnd_300BLK_STANAG_T"], 8]];
+a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["hlc_rifle_g3ka4", 10, 1, 2, ["hlc_20rnd_762x51_T_G3", "hlc_20rnd_762x51_b_G3"], 6]];
+// Attachments and other items in crash site box
+a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["RKSL_optic_PMII_312_sunshade", 10, 1, 3]];
+a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["FHQ_optic_HWS_G33", 10, 1, 3]];
+a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["iansky_deltapoint", 10, 1, 3]];
+a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["iansky_t1", 10, 1, 3]];
+a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["hlc_muzzle_snds_g3", 10, 1, 3]];
+a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["SMA_ELCAN_SPECTER", 10, 1, 3]];
