@@ -1,0 +1,756 @@
+{
+	"Code" : "./Code/1.7",
+	"BuildDir" : "./Build",
+	"Missionname" : "co10_Escape",
+	"cpbo" : "S:\\ArmA3Work\\Tools\\cpbo\\cpbo.exe",
+	"replace" :
+		{
+			"VERSION" : "1.7",
+			"MISSION" : "Escape",
+			"MISSION_FULL": "co10 Escape"
+		},
+	"ParsedFiles" : ["mission.sqm","defines.hpp"],
+	"Mods" : [
+		{
+			"name" : "Vanilla",
+			"path" : "./Mods/Vanilla/",
+			"replace" :
+				{
+					"MOD" : "Vanilla",
+					"PLAYERUNIT_1" : "B_Soldier_TL_F",
+					"PLAYERUNIT_2" : "B_soldier_AR_F",
+					"PLAYERUNIT_3" : "B_soldier_UAV_F",
+					"PLAYERUNIT_4" : "B_engineer_F",
+					"PLAYERUNIT_5" : "B_Soldier_GL_F",
+					"PLAYERUNIT_6" : "B_soldier_AR_F",
+					"PLAYERUNIT_7" : "B_soldier_LAT_F",
+					"PLAYERUNIT_8" : "B_Soldier_A_F",
+					"PLAYERUNIT_9" : "B_soldier_M_F",
+					"PLAYERUNIT_10" : "B_medic_F",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "O_MBT_02_arty_F"
+				}
+		},
+		{
+			"name" : "AT RHS CAF-EU",
+			"path" : "./Mods/AT RHS CAF-EU/",
+			"replace" :
+				{
+					"MOD" : "AT",
+					"PLAYERUNIT_1" : "AT_Soldier_TL_B",
+					"PLAYERUNIT_2" : "AT_Soldier_AR_B",
+					"PLAYERUNIT_3" : "FEM_NATO_F",
+					"PLAYERUNIT_4" : "AT_Soldier_Repair_B",
+					"PLAYERUNIT_5" : "AT_Soldier_GL_B",
+					"PLAYERUNIT_6" : "AT_Soldier_AR_B",
+					"PLAYERUNIT_7" : "AT_Soldier_LAT_B",
+					"PLAYERUNIT_8" : "AT_Soldier_Explosives_B",
+					"PLAYERUNIT_9" : "AT_Soldier_Marksman_B",
+					"PLAYERUNIT_10" : "AT_Soldier_Medic_B",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "AT RHS CAF-ME",
+			"path" : "./Mods/AT RHS CAF-ME/",
+			"replace" :
+				{
+					"MOD" : "AT",
+					"PLAYERUNIT_1" : "rhsusf_army_ucp_teamleader",
+					"PLAYERUNIT_2" : "rhsusf_army_ucp_autorifleman",
+					"PLAYERUNIT_3" : "rhsusf_army_ucp_marksman",
+					"PLAYERUNIT_4" : "rhsusf_army_ucp_engineer",
+					"PLAYERUNIT_5" : "rhsusf_army_ucp_grenadier",
+					"PLAYERUNIT_6" : "rhsusf_army_ucp_machinegunner",
+					"PLAYERUNIT_7" : "rhsusf_army_ucp_javelin",
+					"PLAYERUNIT_8" : "rhsusf_army_ucp_riflemanl",
+					"PLAYERUNIT_9" : "rhsusf_army_ucp_machinegunnera",
+					"PLAYERUNIT_10" : "rhsusf_army_ucp_medic",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "AT RHS CAF-PI",
+			"path" : "./Mods/AT RHS CAF-PI/",
+			"replace" :
+				{
+					"MOD" : "AT",
+					"PLAYERUNIT_1" : "AT_Soldier_TL_B",
+					"PLAYERUNIT_2" : "AT_Soldier_AR_B",
+					"PLAYERUNIT_3" : "FEM_NATO_F",
+					"PLAYERUNIT_4" : "AT_Soldier_Repair_B",
+					"PLAYERUNIT_5" : "AT_Soldier_GL_B",
+					"PLAYERUNIT_6" : "AT_Soldier_AR_B",
+					"PLAYERUNIT_7" : "AT_Soldier_LAT_B",
+					"PLAYERUNIT_8" : "AT_Soldier_Explosives_B",
+					"PLAYERUNIT_9" : "AT_Soldier_Marksman_B",
+					"PLAYERUNIT_10" : "AT_Soldier_Medic_B",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "RHS w",
+			"path" : "./Mods/RHS w/",
+			"replace" :
+				{
+					"MOD" : "RHS",
+					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
+					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_autorifleman",
+					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_marksman",
+					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
+					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
+					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
+					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_javelin",
+					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
+					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_machinegunner_ass",
+					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "RHS d",
+			"path" : "./Mods/RHS d/",
+			"replace" :
+				{
+					"MOD" : "RHS",
+					"PLAYERUNIT_1" : "rhsusf_army_ucp_teamleader",
+					"PLAYERUNIT_2" : "rhsusf_army_ucp_autorifleman",
+					"PLAYERUNIT_3" : "rhsusf_army_ucp_marksman",
+					"PLAYERUNIT_4" : "rhsusf_army_ucp_engineer",
+					"PLAYERUNIT_5" : "rhsusf_army_ucp_grenadier",
+					"PLAYERUNIT_6" : "rhsusf_army_ucp_machinegunner",
+					"PLAYERUNIT_7" : "rhsusf_army_ucp_javelin",
+					"PLAYERUNIT_8" : "rhsusf_army_ucp_riflemanl",
+					"PLAYERUNIT_9" : "rhsusf_army_ucp_machinegunnera",
+					"PLAYERUNIT_10" : "rhsusf_army_ucp_medic",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "RHS mf",
+			"path" : "./Mods/RHS mf/",
+			"replace" :
+				{
+					"MOD" : "RHS",
+					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
+					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_autorifleman",
+					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_marksman",
+					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
+					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
+					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
+					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_javelin",
+					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
+					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_machinegunner_ass",
+					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "RHS w CAF eu",
+			"path" : "./Mods/RHS w CAF eu/",
+			"replace" :
+				{
+					"MOD" : "RHS CAF",
+					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
+					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_autorifleman",
+					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_marksman",
+					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
+					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
+					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
+					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_javelin",
+					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
+					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_machinegunner_ass",
+					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "RHS d CAF me",
+			"path" : "./Mods/RHS d CAF me/",
+			"replace" :
+				{
+					"MOD" : "RHS CAF",
+					"PLAYERUNIT_1" : "rhsusf_army_ucp_teamleader",
+					"PLAYERUNIT_2" : "rhsusf_army_ucp_autorifleman",
+					"PLAYERUNIT_3" : "rhsusf_army_ucp_marksman",
+					"PLAYERUNIT_4" : "rhsusf_army_ucp_engineer",
+					"PLAYERUNIT_5" : "rhsusf_army_ucp_grenadier",
+					"PLAYERUNIT_6" : "rhsusf_army_ucp_machinegunner",
+					"PLAYERUNIT_7" : "rhsusf_army_ucp_javelin",
+					"PLAYERUNIT_8" : "rhsusf_army_ucp_riflemanl",
+					"PLAYERUNIT_9" : "rhsusf_army_ucp_machinegunnera",
+					"PLAYERUNIT_10" : "rhsusf_army_ucp_medic",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "RHS mf CAF pi",
+			"path" : "./Mods/RHS mf CAF pi/",
+			"replace" :
+				{
+					"MOD" : "RHS CAF",
+					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
+					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_autorifleman",
+					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_marksman",
+					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
+					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
+					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
+					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_javelin",
+					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
+					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_machinegunner_ass",
+					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "RHS w LOP ua",
+			"path" : "./Mods/RHS w LOP ua/",
+			"replace" :
+				{
+					"MOD" : "RHS LOP",
+					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
+					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_autorifleman",
+					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_marksman",
+					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
+					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
+					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
+					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_javelin",
+					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
+					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_machinegunner_ass",
+					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "RHS w LOP sla",
+			"path" : "./Mods/RHS w LOP sla/",
+			"replace" :
+				{
+					"MOD" : "RHS LOP",
+					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
+					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_autorifleman",
+					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_marksman",
+					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
+					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
+					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
+					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_javelin",
+					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
+					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_machinegunner_ass",
+					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "RHS d LOP am",
+			"path" : "./Mods/RHS d LOP am/",
+			"replace" :
+				{
+					"MOD" : "RHS LOP",
+					"PLAYERUNIT_1" : "rhsusf_army_ucp_teamleader",
+					"PLAYERUNIT_2" : "rhsusf_army_ucp_autorifleman",
+					"PLAYERUNIT_3" : "rhsusf_army_ucp_marksman",
+					"PLAYERUNIT_4" : "rhsusf_army_ucp_engineer",
+					"PLAYERUNIT_5" : "rhsusf_army_ucp_grenadier",
+					"PLAYERUNIT_6" : "rhsusf_army_ucp_machinegunner",
+					"PLAYERUNIT_7" : "rhsusf_army_ucp_javelin",
+					"PLAYERUNIT_8" : "rhsusf_army_ucp_riflemanl",
+					"PLAYERUNIT_9" : "rhsusf_army_ucp_machinegunnera",
+					"PLAYERUNIT_10" : "rhsusf_army_ucp_medic",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		},
+		{
+			"name" : "RHS mf LOP afr",
+			"path" : "./Mods/RHS mf LOP afr/",
+			"replace" :
+				{
+					"MOD" : "RHS LOP",
+					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
+					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_autorifleman",
+					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_marksman",
+					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
+					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
+					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
+					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_javelin",
+					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
+					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_machinegunner_ass",
+					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic",
+					"MORTARUNIT" : "O_Mortar_01_F",
+					"ARTILLERYUNIT" : "rhs_2s3_tv"
+				}
+		}
+	],
+	"Islands": [
+		{
+			"name" : "Altis",
+			"class" : "Altis",
+			"path" : "./Islands/Altis/",
+			"replace" :
+				{
+				"ISLAND" : "Altis",
+				"ISLANDNAME" : "Altis"
+				}
+		},
+		{
+			"name" : "Bornholm",
+			"class" : "Bornholm",
+			"path" : "./Islands/Bornholm/",
+			"replace" :
+				{
+				"ISLAND" : "Bornholm",
+				"ISLANDNAME" : "Bornholm"
+				}
+		},
+		{
+			"name" : "Chernarus",
+			"class" : "Chernarus",
+			"path" : "./Islands/Chernarus/",
+			"replace" :
+				{
+				"ISLAND" : "Chernarus",
+				"ISLANDNAME" : "Chernarus"
+				}
+		},
+		{
+			"name" : "Chernarus_Summer",
+			"class" : "Chernarus_Summer",
+			"path" : "./Islands/Chernarus_Summer/",
+			"replace" :
+				{
+				"ISLAND" : "Chernarus_Summer",
+				"ISLANDNAME" : "Chernarus_Summer"
+				}
+		},
+		{
+			"name" : "ChernarusPlus",
+			"class" : "ChernarusPlus",
+			"path" : "./Islands/ChernarusPlus/",
+			"replace" :
+				{
+				"ISLAND" : "ChernarusPlus",
+				"ISLANDNAME" : "ChernarusPlus"
+				}
+		},
+		{
+			"name" : "Podagorsk",
+			"class" : "FDF_Isle1_a",
+			"path" : "./Islands/FDF_Isle1_a/",
+			"replace" :
+				{
+				"ISLAND" : "Podagorsk",
+				"ISLANDNAME" : "Podagorsk"
+				}
+		},
+		{
+			"name" : "Isla Duala",
+			"class" : "IslaDuala3",
+			"path" : "./Islands/IslaDuala3/",
+			"replace" :
+				{
+				"ISLAND" : "Isla Duala",
+				"ISLANDNAME" : "Isla Duala"
+				}
+		},
+		{
+			"name" : "Sahrani",
+			"class" : "Sara",
+			"path" : "./Islands/Sara/",
+			"replace" :
+				{
+				"ISLAND" : "Sahrani",
+				"ISLANDNAME" : "Sahrani"
+				}
+		},
+		{
+			"name" : "United Sahrani",
+			"class" : "Sara_dbe1",
+			"path" : "./Islands/Sara_dbe1/",
+			"replace" :
+				{
+				"ISLAND" : "United Sahrani",
+				"ISLANDNAME" : "UNited Sahrani"
+				}
+		},
+		{
+			"name" : "SMD Sahrani",
+			"class" : "smd_sahrani_a3",
+			"path" : "./Islands/smd_sahrani_a3/",
+			"replace" :
+				{
+				"ISLAND" : "SMD Sahrani",
+				"ISLANDNAME" : "SMD Sahrani"
+				}
+		},
+		{
+			"name" : "Celle",
+			"class" : "mbg_celle2",
+			"path" : "./Islands/mbg_celle2/",
+			"replace" :
+				{
+				"ISLAND" : "Celle",
+				"ISLANDNAME" : "Celle"
+				}
+		},
+		{
+			"name" : "Takistan",
+			"class" : "Takistan",
+			"path" : "./Islands/Takistan/",
+			"replace" :
+				{
+				"ISLAND" : "Takistan",
+				"ISLANDNAME" : "Takistan"
+				}
+		}
+	],
+	"Missions" : [
+		{
+			"island" : "Altis",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "Bornholm",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "Chernarus",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "Podagorsk",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "Isla Duala",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "Sahrani",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "United Sahrani",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "SMD Sahrani",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "Celle",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "Takistan",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "Altis",
+			"mod" : "AT RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Bornholm",
+			"mod" : "AT RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Chernarus",
+			"mod" : "AT RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"mod" : "AT RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "ChernarusPlus",
+			"mod" : "AT RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Podagorsk",
+			"mod" : "AT RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Isla Duala",
+			"mod" : "AT RHS CAF-PI",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Sahrani",
+			"mod" : "AT RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "United Sahrani",
+			"mod" : "AT RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "SMD Sahrani",
+			"mod" : "AT RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Celle",
+			"mod" : "AT RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Takistan",
+			"mod" : "AT RHS CAF-ME",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Altis",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS"
+		},
+		{
+			"island" : "Bornholm",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS"
+		},
+		{
+			"island" : "Chernarus",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS"
+		},
+		{
+			"island" : "Podagorsk",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS"
+		},
+		{
+			"island" : "Isla Duala",
+			"mod" : "RHS mf",
+			"replace" : {},
+			"name" : "co10_Escape_RHS"
+		},
+		{
+			"island" : "Sahrani",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS"
+		},
+		{
+			"island" : "United Sahrani",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS"
+		},
+		{
+			"island" : "SMD Sahrani",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS"
+		},
+		{
+			"island" : "Celle",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS"
+		},
+		{
+			"island" : "Takistan",
+			"mod" : "RHS d",
+			"replace" : {},
+			"name" : "co10_Escape_RHS"
+		},
+		{
+			"island" : "Altis",
+			"mod" : "RHS w CAF eu",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_CAF"
+		},
+		{
+			"island" : "Bornholm",
+			"mod" : "RHS w CAF eu",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_CAF"
+		},
+		{
+			"island" : "Chernarus",
+			"mod" : "RHS w CAF eu",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_CAF"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"mod" : "RHS w CAF eu",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_CAF"
+		},
+		{
+			"island" : "Podagorsk",
+			"mod" : "RHS w CAF eu",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_CAF"
+		},
+		{
+			"island" : "Isla Duala",
+			"mod" : "RHS mf CAF pi",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_CAF"
+		},
+		{
+			"island" : "Sahrani",
+			"mod" : "RHS w CAF eu",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_CAF"
+		},
+		{
+			"island" : "United Sahrani",
+			"mod" : "RHS w CAF eu",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_CAF"
+		},
+		{
+			"island" : "SMD Sahrani",
+			"mod" : "RHS w CAF eu",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_CAF"
+		},
+		{
+			"island" : "Celle",
+			"mod" : "RHS w CAF eu",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_CAF"
+		},
+		{
+			"island" : "Takistan",
+			"mod" : "RHS d CAF me",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_CAF"
+		},
+		{
+			"island" : "Altis",
+			"mod" : "RHS w LOP ua",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_LOP"
+		},
+		{
+			"island" : "Bornholm",
+			"mod" : "RHS w LOP ua",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_LOP"
+		},
+		{
+			"island" : "Chernarus",
+			"mod" : "RHS w LOP ua",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_LOP"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"mod" : "RHS w LOP ua",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_LOP"
+		},
+		{
+			"island" : "Podagorsk",
+			"mod" : "RHS w LOP ua",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_LOP"
+		},
+		{
+			"island" : "Isla Duala",
+			"mod" : "RHS mf LOP afr",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_LOP"
+		},
+		{
+			"island" : "Sahrani",
+			"mod" : "RHS w LOP sla",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_LOP"
+		},
+		{
+			"island" : "United Sahrani",
+			"mod" : "RHS w LOP sla",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_LOP"
+		},
+		{
+			"island" : "SMD Sahrani",
+			"mod" : "RHS w LOP sla",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_LOP"
+		},
+		{
+			"island" : "Celle",
+			"mod" : "RHS w LOP ua",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_LOP"
+		},
+		{
+			"island" : "Takistan",
+			"mod" : "RHS d LOP am",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_LOP"
+		}
+	]
+	
+}

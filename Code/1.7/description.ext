@@ -1,0 +1,39 @@
+#include "include\defines.hpp"
+
+// Mission Header
+class Header
+{
+  gameType = Coop;
+  minPlayers = 1;
+  maxPlayers = 10;
+};
+
+
+onLoadMission = MISSIONNAME;
+OnLoadMissionTime = FALSE;
+dev = "NeoArmageddon and Scruffy";
+briefingName = MISSIONNAME;
+author = "NeoArmageddon and Scruffy";
+overviewPicture = "a3\Missions_F_Gamma\data\img\MP_COOP_m03_overview_CA.paa";
+overviewText = MISSIONNAMEFULL;
+onLoadName = MISSIONNAME;
+loadScreen = "escape_banner.paa"; 
+
+///////////////////////////////////////////////////////////////////////////////////////////
+Respawn = "INSTANT";
+RespawnDelay = 60;
+disabledAI = 1;
+enableDebugConsole = 2;
+
+corpseLimit = 30;
+corpseRemovalMinTime = 600;
+corpseRemovalMaxTime = 1800; //seconds
+
+wreckLimit = 10;
+wreckRemovalMinTime = 600; //seconds
+wreckRemovalMaxTime = 1800; //seconds
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+#include "include\params.hpp"
+#include "include\functions.hpp"
