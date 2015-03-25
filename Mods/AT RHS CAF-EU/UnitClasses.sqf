@@ -388,9 +388,6 @@ a3e_arr_searchChopper_crew = ["rhs_pilot_transport_heli"];
 // only INS is used
 //is this even used?
 //////////////////////////////////////////////////////////////////
-a3e_arr_AmbientInfantry_Inf_USMC = ["USMC_Soldier_AA", "USMC_Soldier_HAT", "USMC_Soldier_AT", "USMC_Soldier_AR", "USMC_Soldier_Medic", "USMC_SoldierM_Marksman", "USMC_SoldierS_Engineer", "USMC_Soldier_TL", "USMC_Soldier_GL", "USMC_Soldier_MG", "USMC_Soldier_Officer", "USMC_Soldier", "USMC_Soldier2", "USMC_Soldier_LAT", "USMC_SoldierS_Sniper", "USMC_SoldierS_SniperH"];
-a3e_arr_AmbientInfantry_Inf_CDF = ["CDF_Soldier_Strela", "CDF_Soldier_RPG", "CDF_Soldier_AR", "CDF_Soldier_GL", "CDF_Soldier_MG", "CDF_Soldier_Marksman", "CDF_Soldier_Medic", "CDF_Soldier_Militia", "CDF_Soldier_Officer", "CDF_Soldier", "CDF_Soldier_Sniper"];
-a3e_arr_AmbientInfantry_Inf_RU = ["RU_Soldier_AA", "RU_Soldier_HAT", "RU_Soldier_AR", "RU_Soldier_GL", "RU_Soldier_MG", "RU_Soldier_Marksman", "RU_Soldier_Medic", "RU_Soldier", "RU_Soldier_LAT", "RU_Soldier_AT", "RU_Soldier2", "RU_Soldier_Sniper", "RU_Soldier_SniperH"];
 a3e_arr_AmbientInfantry_Inf_INS = drn_arr_Escape_InfantryTypes;
 a3e_arr_AmbientInfantry_Inf_GUE = drn_arr_Escape_InfantryTypes_Ind;
 
@@ -399,9 +396,6 @@ a3e_arr_AmbientInfantry_Inf_GUE = drn_arr_Escape_InfantryTypes_Ind;
 // Units spawned to guard ammo camps and com centers
 // Only INS used
 //////////////////////////////////////////////////////////////////
-a3e_arr_InitGuardedLocations_Inf_USMC = ["O_Soldier_F", "O_Soldier_AR_F", "O_Soldier_GL_F", "O_Soldier_lite_F", "O_soldier_exp_F", "O_soldier_M_F"];
-a3e_arr_InitGuardedLocations_Inf_CDF = ["CDF_Soldier_Strela", "CDF_Soldier_RPG", "CDF_Soldier_AR", "CDF_Soldier_GL", "CDF_Soldier_MG", "CDF_Soldier_Marksman", "CDF_Soldier_Medic", "CDF_Soldier_Militia", "CDF_Soldier_Officer", "CDF_Soldier", "CDF_Soldier_Sniper"];
-a3e_arr_InitGuardedLocations_Inf_RU = ["RU_Soldier_AA", "RU_Soldier_HAT", "RU_Soldier_AR", "RU_Soldier_GL", "RU_Soldier_MG", "RU_Soldier_Marksman", "RU_Soldier_Medic", "RU_Soldier", "RU_Soldier_LAT", "RU_Soldier_AT", "RU_Soldier2", "RU_Soldier_Sniper", "RU_Soldier_SniperH"];
 a3e_arr_InitGuardedLocations_Inf_INS = drn_arr_Escape_InfantryTypes;
 a3e_arr_InitGuardedLocations_Inf_GUE = drn_arr_Escape_InfantryTypes_Ind;
 
@@ -411,15 +405,9 @@ a3e_arr_InitGuardedLocations_Inf_GUE = drn_arr_Escape_InfantryTypes_Ind;
 // Only INS used
 // vehicle arrays not used, uses drn_arr_Escape_RoadBlock_MannedVehicleTypes and drn_arr_Escape_RoadBlock_MannedVehicleTypes_Ind instead
 //////////////////////////////////////////////////////////////////
-a3e_arr_roadblocks_Inf_USMC = ["USMC_Soldier_HAT", "USMC_Soldier_AT", "USMC_Soldier_AR", "USMC_Soldier_Medic", "USMC_SoldierM_Marksman", "USMC_SoldierS_Engineer", "USMC_Soldier_TL", "USMC_Soldier_GL", "USMC_Soldier_MG", "USMC_Soldier_Officer", "USMC_Soldier", "USMC_Soldier2", "USMC_Soldier_LAT"];
-a3e_arr_roadblocks_Inf_CDF = ["CDF_Soldier_RPG", "CDF_Soldier_AR", "CDF_Soldier_GL", "CDF_Soldier_MG", "CDF_Soldier_Marksman", "CDF_Soldier_Medic", "CDF_Soldier_Militia", "CDF_Soldier_Officer", "CDF_Soldier"];
-a3e_arr_roadblocks_Inf_RU = ["RU_Soldier_HAT", "RU_Soldier_AR", "RU_Soldier_GL", "RU_Soldier_MG", "RU_Soldier_Marksman", "RU_Soldier_Medic", "RU_Soldier", "RU_Soldier_LAT", "RU_Soldier_AT", "RU_Soldier2"];
 a3e_arr_roadblocks_Inf_INS = drn_arr_Escape_InfantryTypes;
 a3e_arr_roadblocks_Inf_GUE = drn_arr_Escape_InfantryTypes_Ind;
 
-a3e_arr_roadblocks_Veh_USMC = ["HMMWV", "HMMWV_M2", "HMMWV_Armored", "HMMWV_MK19", "HMMWV_TOW", "HMMWV_Avenger", "MTVR", "AAV", "LAV25", "LAV25_HQ", "M1A1", "M1A2_TUSK_MG", "M119", "M2StaticMG", "M252", "M2HD_mini_TriPod", "MK19_TriPod", "TOW_TriPod"];
-a3e_arr_roadblocks_Veh_CDF = ["UAZ_CDF", "UAZ_AGS30_CDF", "UAZ_MG_CDF", "BMP2_CDF", "BMP2_HQ_CDF", "BRDM2_CDF", "BRDM2_ATGM_CDF", "T72_CDF", "ZSU_CDF", "AGS_CDF", "DSHKM_CDF", "DSHkM_Mini_TriPod_CDF", "SPG9_CDF"];
-a3e_arr_roadblocks_Veh_RU = ["UAZ_RU", "UAZ_AGS30_RU", "2S6M_Tunguska", "BMP3", "BTR90", "BTR90_HQ", "T72_RU", "T90", "GAZ_Vodnik", "GAZ_Vodnik_HMG", "AGS_RU", "KORD_high", "KORD", "Metis"];
 a3e_arr_roadblocks_Veh_INS = drn_arr_Escape_RoadBlock_MannedVehicleTypes;
 a3e_arr_roadblocks_Veh_GUE = drn_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
 
