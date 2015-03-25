@@ -449,7 +449,7 @@ a3e_additional_weapon_box_2 = "RHpistammobox";
 // Index 3: If weapon exists, crate contains at maximum this number of weapons of current class.
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
-a3e_arr_CrashSiteWrecks = ["C130J_wreck_EP1","Land_UWreck_MV22_F"];
+a3e_arr_CrashSiteWrecks = ["C130J_wreck_EP1","Land_UWreck_MV22_F","Land_Wreck_Plane_Transport_01_F","Land_Wreck_Heli_Attack_01_F"];
 a3e_arr_CrashSiteCrew = ["rhsusf_airforce_pilot","rhsusf_airforce_jetpilot"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
