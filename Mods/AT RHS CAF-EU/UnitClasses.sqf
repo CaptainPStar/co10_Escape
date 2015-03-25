@@ -462,6 +462,7 @@ a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["Trixie_M107_Gree
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["hlc_rifle_vendimus", 10, 1, 2, ["29rnd_300BLK_STANAG","29rnd_300BLK_STANAG_T"], 8]];
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["hlc_rifle_g3ka4", 10, 1, 2, ["hlc_20rnd_762x51_T_G3", "hlc_20rnd_762x51_b_G3"], 6]];
 // Attachments and other items in crash site box
+a3e_arr_CrashSiteItems = [];
 a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["RKSL_optic_PMII_312_sunshade", 10, 1, 3]];
 a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["FHQ_optic_HWS_G33", 10, 1, 3]];
 a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["iansky_deltapoint", 10, 1, 3]];
