@@ -112,6 +112,7 @@ a3e_arr_I_pilots = ["rhs_pilot","rhs_pilot_transport_heli"];
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 
+a3n_arr_CSAT_Launchers = [];
 a3n_arr_CSAT_Launchers set [0, ["rhs_weap_rpg7", ["rhs_rpg7_PG7VL_mag", "rhs_rpg7_PG7VR_mag", "rhs_rpg7_OG7V_mag", "rhs_rpg7_TBG7V_mag"]]];
 a3n_arr_CSAT_Launchers set [1, ["rhs_weap_rpg26", ["rhs_rpg26_mag"]]];
 a3n_arr_CSAT_Launchers set [2, ["rhs_weap_rshg2", ["rhs_rshg2_mag"]]];
