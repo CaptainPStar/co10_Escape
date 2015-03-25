@@ -124,11 +124,11 @@ drn_arr_AmmoDepotBasicWeapons = [];
 drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["rhs_weap_pya", 50, 2, 5, ["rhs_mag_9x19_17"], 6]];
 drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["SMG_02_F", 10, 1, 2, ["30Rnd_9x21_Mag"], 6]];
 drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["rhs_weap_ak74m", 100, 3, 5, ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green"], 6]];
-drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["rhs_weap_ak74m_2mag", 50, 2, 4, ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green"], 6]];
-drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["rhs_weap_ak74m_gp25", 75, 2, 4, ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green", "rhs_VOG25"], 6]];
+drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["rhs_weap_ak74m_2mag", 50, 2, 4, ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green"], 4]];
+drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["rhs_weap_ak74m_gp25", 75, 2, 4, ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green", "rhs_VOG25"], 4]];
 drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["hlc_rifle_FAL5061", 10, 1, 2, ["hlc_20Rnd_762x51_B_fal", "hlc_20Rnd_762x51_t_fal", "hlc_50rnd_762x51_M_FAL", "hlc_20Rnd_762x51_S_fal"], 6]];
-drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["hlc_rifle_g3a3", 10, 1, 2, ["hlc_20rnd_762x51_T_G3", "hlc_20rnd_762x51_b_G3", "hlc_20rnd_762x51_b_G3", "hlc_50rnd_762x51_M_G3"], 6]];
-drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["hlc_rifle_g3sg1", 10, 1, 2, ["hlc_20rnd_762x51_T_G3", "hlc_20rnd_762x51_b_G3", "hlc_20rnd_762x51_b_G3", "hlc_50rnd_762x51_M_G3"], 6]];
+drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["hlc_rifle_g3a3", 10, 1, 2, ["hlc_20rnd_762x51_T_G3", "hlc_20rnd_762x51_b_G3"], 6]];
+drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["hlc_rifle_g3sg1", 10, 1, 2, ["hlc_20rnd_762x51_T_G3", "hlc_20rnd_762x51_b_G3"], 6]];
 // non-CSAT weapons
 drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["RH_tt33", 50, 2, 5, ["RH_8Rnd_762_tt33"], 6]];
 drn_arr_AmmoDepotBasicWeapons set [count drn_arr_AmmoDepotBasicWeapons, ["RH_tec9", 10, 1, 2, ["RH_32Rnd_9x19_tec"], 6]];
