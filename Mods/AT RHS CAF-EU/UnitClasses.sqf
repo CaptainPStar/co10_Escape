@@ -51,9 +51,9 @@ switch (_enemyFrequency) do {
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
 a3e_arr_Escape_InfantryTypes =      ["rhs_msv_officer_armored","rhs_msv_officer","rhs_msv_sergeant","rhs_msv_junior_sergeant","rhs_msv_engineer", "rhs_msv_medic","rhs_msv_rifleman","rhs_msv_efreitor","rhs_msv_grenadier","rhs_msv_machinegunner","rhs_msv_machinegunner_assistant","rhs_msv_at","rhs_msv_strelok_rpg_assist","rhs_msv_marksman","rhs_msv_aa","rhs_msv_LAT","rhs_msv_engineer", "rhs_msv_medic"];
 a3e_arr_Escape_InfantryTypes_Ind =  ["at_CAF_AG_EEUR_R_AKS74_PSO1","at_CAF_AG_EEUR_R_Medic","at_CAF_AG_EEUR_R_Engineer","CAF_AG_EEUR_R_AK47","CAF_AG_EEUR_R_AK74","CAF_AG_EEUR_R_RPK74","CAF_AG_EEUR_R_PKM","CAF_AG_EEUR_R_RPG","CAF_AG_EEUR_R_GL","at_CAF_AG_EEUR_R_AKS74","at_CAF_AG_EEUR_R_AK74_dirty","at_CAF_AG_EEUR_R_AKS74U","at_CAF_AG_EEUR_R_AKM","at_CAF_AG_EEUR_R_saiga","at_CAF_AG_EEUR_R_FAL","at_CAF_AG_EEUR_R_G3","at_CAF_AG_EEUR_R_G3SG1","at_CAF_AG_EEUR_R_CZ550"];
-a3n_arr_recon_InfantryTypes = ["rhs_msv_recon_sergeant","rhs_msv_recon_engineer","rhs_msv_recon_marksman","rhs_msv_recon_machinegunner","rhs_msv_recon_medic","rhs_msv_recon_at","rhs_msv_recon_rifleman"];
+a3e_arr_recon_InfantryTypes = ["rhs_msv_recon_sergeant","rhs_msv_recon_engineer","rhs_msv_recon_marksman","rhs_msv_recon_machinegunner","rhs_msv_recon_medic","rhs_msv_recon_at","rhs_msv_recon_rifleman"];
 
-a3n_arr_recon_I_InfantryTypes = ["rhs_msv_recon_sergeant","rhs_msv_recon_engineer","rhs_msv_recon_marksman","rhs_msv_recon_machinegunner","rhs_msv_recon_medic","rhs_msv_recon_at","rhs_msv_recon_rifleman"];
+a3e_arr_recon_I_InfantryTypes = ["rhs_msv_recon_sergeant","rhs_msv_recon_engineer","rhs_msv_recon_marksman","rhs_msv_recon_machinegunner","rhs_msv_recon_medic","rhs_msv_recon_at","rhs_msv_recon_rifleman"];
 
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
@@ -61,7 +61,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = ["rhs_btr60_msv", "RHS_NSV_TriPod_
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = ["CAF_AG_eeur_r_Offroad", "CAF_AG_eeur_r_Offroad_armed_01", "CAF_AG_eeur_r_Offroad_armed_01", "I_HMG_01_hight_f", "I_static_AT_F"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
-a3e_arr_Escape_ReinforcementTruck_vehicleClasses = ["rhs_gaz66o_msv","rhs_ural_MSV_01", "rhs_ural_open_MSV_01","rhs_gaz66_msv"];
+a3e_arr_Escape_ReinforcementTruck_vehicleClasses = ["rhs_gaz66o_msv","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_gaz66_msv"];
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = ["CAF_AG_eeur_r_van_01"];
 // Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
 a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [14, 14, 13];
@@ -84,7 +84,7 @@ a3e_arr_ComCenDefence_heavyArmorClasses = ["rhs_t72bc_tv", "rhs_t80","rhs_t80a",
 // Random array. Possible static weapon types for communication centers.
 a3e_arr_ComCenStaticWeapons = ["O_HMG_01_high_F"];
 // A communication center have two parked and empty vehicles of the following possible types.
-a3e_arr_ComCenParkedVehicles = ["rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_ap2_msv","rhs_gaz66_repair_msv","rhs_ural_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_open_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv", "CAF_AG_eeur_r_Offroad", "CAF_AG_eeur_r_Offroad_armed_01", "CAF_AG_eeur_r_Offroad_armed_01", "CAF_AG_eeur_r_van_01"];
+a3e_arr_ComCenParkedVehicles = ["I_G_Offroad_01_repair_F","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_ap2_msv","rhs_gaz66_repair_msv","rhs_ural_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_open_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv", "CAF_AG_eeur_r_Offroad", "CAF_AG_eeur_r_Offroad_armed_01", "CAF_AG_eeur_r_Offroad_armed_01", "CAF_AG_eeur_r_van_01"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F"];
@@ -94,7 +94,7 @@ a3e_arr_Escape_EnemyCivilianCarTypes = ["C_Hatchback_01_F", "C_Hatchback_01_spor
 // Random array. An ammo depot contains one static weapon of the followin types:
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = ["RHS_NSV_TriPod_VDV", "O_GMG_01_high_F", "RHS_NSV_TriPod_VDV", "O_static_AT_F", "O_static_AA_F"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
-a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = ["rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_ap2_msv","rhs_gaz66_repair_msv","rhs_ural_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_open_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv", "CAF_AG_eeur_r_Offroad", "CAF_AG_eeur_r_Offroad_armed_01", "CAF_AG_eeur_r_Offroad_armed_01", "CAF_AG_eeur_r_van_01"];
+a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = ["I_G_Offroad_01_repair_F","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_ap2_msv","rhs_gaz66_repair_msv","rhs_ural_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_open_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv", "CAF_AG_eeur_r_Offroad", "CAF_AG_eeur_r_Offroad_armed_01", "CAF_AG_eeur_r_Offroad_armed_01", "CAF_AG_eeur_r_van_01"];
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = ["RHS_Mi24V_msv","RHS_Mi24V_FAB_vdv","RHS_Mi24P_CAS_vdv","RHS_Mi24V_UPK23_vvsc","RHS_Ka52_vvs","RHS_Ka52_vvsc"];
@@ -111,12 +111,6 @@ a3e_arr_I_pilots = ["rhs_pilot","rhs_pilot_transport_heli"];
 // Index 3: If weapon exists, crate contains at maximum this number of weapons of current class.
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
-
-a3n_arr_CSAT_Launchers = [];
-a3n_arr_CSAT_Launchers set [0, ["rhs_weap_rpg7", ["rhs_rpg7_PG7VL_mag", "rhs_rpg7_PG7VR_mag", "rhs_rpg7_OG7V_mag", "rhs_rpg7_TBG7V_mag"]]];
-a3n_arr_CSAT_Launchers set [1, ["rhs_weap_rpg26", ["rhs_rpg26_mag"]]];
-a3n_arr_CSAT_Launchers set [2, ["rhs_weap_rshg2", ["rhs_rshg2_mag"]]];
-a3n_arr_CSAT_Launchers set [3, ["rhs_weap_igla", ["rhs_mag_9k38_rocket"]]];
 
 // Weapons and ammo in the basic weapons box
 a3e_arr_AmmoDepotBasicWeapons = [];
@@ -203,7 +197,7 @@ a3e_arr_AmmoDepotVehicleBackpacks = ["O_UAV_01_backpack_F"];
 
 a3e_arr_AmmoDepotItems = [];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["Laserdesignator", 10, 1, 2]];
-if(!a3e_var_noNV) then {
+if(Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["NVGoggles", 10, 1, 3]];
 };
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["Rangefinder", 10, 1, 2]];
@@ -244,7 +238,7 @@ a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["iansky_deltapoint", 
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["iansky_t1", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["iansky_rx01", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["iansky_rds", 10, 1, 3]];
-if(!a3e_var_noNV) then {
+if(Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1pn93_1", 10, 1, 3]];
 	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["hlc_optic_PVS4FAL", 10, 1, 3]];
 	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["optic_Nightstalker", 10, 1, 3]];
@@ -285,73 +279,73 @@ a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, [objNull, "Smo
 
 
 // Here is a list of scopes:
-a3n_arr_Scopes = ["optic_Aco","optic_ACO_grn","optic_Arco","optic_Hamr","optic_MRCO","optic_Holosight","rhs_acc_pkas","rhs_acc_pso1m2","rhs_acc_1p29","iansky_deltapoint","iansky_t1","iansky_rx01","iansky_rds","rhs_acc_ekp1","rhs_acc_ekp1b","rhs_acc_ekp1c","rhs_acc_ekp1d"];
-a3n_arr_Scopes_SMG = ["optic_Aco_smg","optic_Holosight_smg","iansky_deltapoint"];
-a3n_arr_NightScopes = ["optic_NVS","rhs_acc_1pn93_1","hlc_optic_PVS4FAL"];
-a3n_arr_TWSScopes = ["optic_Nightstalker","optic_tws","optic_tws_mg"];
+a3e_arr_Scopes = ["optic_Aco","optic_ACO_grn","optic_Arco","optic_Hamr","optic_MRCO","optic_Holosight","rhs_acc_pkas","rhs_acc_pso1m2","rhs_acc_1p29","iansky_deltapoint","iansky_t1","iansky_rx01","iansky_rds","rhs_acc_ekp1","rhs_acc_ekp1b","rhs_acc_ekp1c","rhs_acc_ekp1d"];
+a3e_arr_Scopes_SMG = ["optic_Aco_smg","optic_Holosight_smg","iansky_deltapoint"];
+a3e_arr_NightScopes = ["optic_NVS","rhs_acc_1pn93_1","hlc_optic_PVS4FAL"];
+a3e_arr_TWSScopes = ["optic_Nightstalker","optic_tws","optic_tws_mg"];
 
 
 //format ["name", [ammunition], [suppressors], [optics]]
 //[optics] doesn't contain everything that be attatched to the weapon, just the one's I thought sort of made sense given who might carry them.
 //weapon arrays
-a3n_arr_CSAT_Primary_Weapons = [];
-a3n_arr_CSAT_Primary_Weapons set [0, ["rhs_weap_ak74m", ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green"], ["rhs_acc_1p29", "rhs_acc_ekp1"]]];
-a3n_arr_CSAT_Primary_Weapons set [1, ["rhs_weap_ak74m_2mag", ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green"], ["rhs_acc_1p29", "rhs_acc_ekp1"]]];
-a3n_arr_CSAT_Primary_Weapons set [2, ["rhs_weap_ak74m_gp25", ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green"], ["rhs_acc_1p29", "rhs_acc_ekp1"]]];
-a3n_arr_CSAT_Primary_Weapons set [3, ["rhs_weap_pkp", ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_green"], [], ["rhs_acc_pkas"]]];
-a3n_arr_CSAT_Primary_Weapons set [4, ["SMG_01_F", ["30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01_tracer_green"], ["muzzle_snds_acp"], ["optic_Aco_smg"]]];
-a3n_arr_CSAT_Primary_Weapons set [5, ["rhs_weap_svdp", ["rhs_10Rnd_762x54mmR_7N1"], ["rhs_acc_pso1m2"]]];
-a3n_arr_CSAT_Primary_Weapons set [6, ["srifle_GM6_F", ["5Rnd_127x108_Mag"], [], ["optic_Hamr", "optic_Arco", "optic_MRCO", "optic_SOS"]]];
-a3n_arr_CSAT_Secondary_Weapons = [];
-a3n_arr_CSAT_Secondary_Weapons set [0, ["rhs_weap_pya", ["rhs_mag_9x19_17"], ["rhs_acc_tgpa"], []]];
-a3n_arr_CSAT_Launchers = [];
-a3n_arr_CSAT_Launchers set [0, ["rhs_weap_rpg7", ["rhs_rpg7_PG7VL_mag", "rhs_rpg7_PG7VR_mag", "rhs_rpg7_OG7V_mag", "rhs_rpg7_TBG7V_mag"]]];
-a3n_arr_CSAT_Launchers set [1, ["rhs_weap_rpg26", ["rhs_rpg26_mag"]]];
-a3n_arr_CSAT_Launchers set [2, ["rhs_weap_rshg2", ["rhs_rshg2_mag"]]];
-a3n_arr_CSAT_Launchers set [3, ["rhs_weap_igla", ["rhs_mag_9k38_rocket"]]];
+a3e_arr_CSAT_Primary_Weapons = [];
+a3e_arr_CSAT_Primary_Weapons set [0, ["rhs_weap_ak74m", ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green"], ["rhs_acc_1p29", "rhs_acc_ekp1"]]];
+a3e_arr_CSAT_Primary_Weapons set [1, ["rhs_weap_ak74m_2mag", ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green"], ["rhs_acc_1p29", "rhs_acc_ekp1"]]];
+a3e_arr_CSAT_Primary_Weapons set [2, ["rhs_weap_ak74m_gp25", ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green"], ["rhs_acc_1p29", "rhs_acc_ekp1"]]];
+a3e_arr_CSAT_Primary_Weapons set [3, ["rhs_weap_pkp", ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_green"], [], ["rhs_acc_pkas"]]];
+a3e_arr_CSAT_Primary_Weapons set [4, ["SMG_01_F", ["30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01_tracer_green"], ["muzzle_snds_acp"], ["optic_Aco_smg"]]];
+a3e_arr_CSAT_Primary_Weapons set [5, ["rhs_weap_svdp", ["rhs_10Rnd_762x54mmR_7N1"], ["rhs_acc_pso1m2"]]];
+a3e_arr_CSAT_Primary_Weapons set [6, ["srifle_GM6_F", ["5Rnd_127x108_Mag"], [], ["optic_Hamr", "optic_Arco", "optic_MRCO", "optic_SOS"]]];
+a3e_arr_CSAT_Secondary_Weapons = [];
+a3e_arr_CSAT_Secondary_Weapons set [0, ["rhs_weap_pya", ["rhs_mag_9x19_17"], ["rhs_acc_tgpa"], []]];
+a3e_arr_CSAT_Launchers = [];
+a3e_arr_CSAT_Launchers set [0, ["rhs_weap_rpg7", ["rhs_rpg7_PG7VL_mag", "rhs_rpg7_PG7VR_mag", "rhs_rpg7_OG7V_mag", "rhs_rpg7_TBG7V_mag"]]];
+a3e_arr_CSAT_Launchers set [1, ["rhs_weap_rpg26", ["rhs_rpg26_mag"]]];
+a3e_arr_CSAT_Launchers set [2, ["rhs_weap_rshg2", ["rhs_rshg2_mag"]]];
+a3e_arr_CSAT_Launchers set [3, ["rhs_weap_igla", ["rhs_mag_9k38_rocket"]]];
 
-a3n_arr_AAF_Primary_Weapons = [];
-a3n_arr_AAF_Primary_Weapons set [0, ["arifle_Mk20_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
-a3n_arr_AAF_Primary_Weapons set [1, ["arifle_Mk20C_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
-a3n_arr_AAF_Primary_Weapons set [2, ["arifle_Mk20_GL_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
-a3n_arr_AAF_Primary_Weapons set [3, ["arifle_SDAR_F", ["20Rnd_556x45_UW_mag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
-a3n_arr_AAF_Primary_Weapons set [4, ["LMG_Mk200_F", ["200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box_Tracer"], ["muzzle_snds_H_MG"], ["optic_Arco"]]];
-a3n_arr_AAF_Primary_Weapons set [5, ["srifle_EBR_F", ["20Rnd_762x51_Mag"], ["muzzle_snds_B"], ["optic_Hamr", "optic_Arco", "optic_MRCO", "optic_SOS"]]];
-a3n_arr_AAF_Secondary_Weapons = [];
-a3n_arr_AAF_Secondary_Weapons set [0, ["hgun_ACPC2_F", ["9Rnd_45ACP_Mag"], ["muzzle_snds_acp"], []]];
-a3n_arr_AAF_Secondary_Weapons set [1, ["hgun_PDW2000_F", ["30Rnd_9x21_Mag", "16Rnd_9x21_Mag"], ["muzzle_snds_L"], []]];
-a3n_arr_AAF_Launchers = [];
-a3n_arr_AAF_Launchers set [0, ["launch_I_Titan_F", ["Titan_AA"]]];
-a3n_arr_AAF_Launchers set [1, ["launch_I_Titan_short_F", ["Titan_AT", "Titan_AP"]]];
-a3n_arr_AAF_Launchers set [2, ["launch_NLAW_F", ["NLAW_F"]]];
-a3n_arr_NATO_Primary_Weapons = [];
-a3n_arr_NATO_Primary_Weapons set [0, ["arifle_MX_F", ["30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer"], ["muzzle_snds_H"], ["optic_Holosight"]]];
-a3n_arr_NATO_Primary_Weapons set [1, ["arifle_MX_GL_F", ["30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer"], ["muzzle_snds_H"], ["optic_Holosight"]]];
-a3n_arr_NATO_Primary_Weapons set [2, ["arifle_MX_SW_F", ["100Rnd_65x39_caseless_mag_Tracer", "100Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer"], ["muzzle_snds_H"], ["optic_Arco"]]];
-a3n_arr_NATO_Primary_Weapons set [3, ["arifle_MXC_F", ["30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer"], ["muzzle_snds_H"], ["optic_Holosight"]]];
-a3n_arr_NATO_Primary_Weapons set [4, ["SMG_01_F", ["30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01_tracer_green"], ["muzzle_snds_acp"],["optic_Holosight_smg"]]];
-a3n_arr_NATO_Primary_Weapons set [5, ["arifle_MXM_F", ["30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer"], ["muzzle_snds_H"], ["optic_Holosight", "optic_Arco", "optic_MRCO", "optic_SOS"]]];
-a3n_arr_NATO_Primary_Weapons set [6, ["srifle_LRR_F", ["7Rnd_408_Mag"], [], ["optic_Arco", "optic_MRCO", "optic_SOS"]]];
-a3n_arr_NATO_Secondary_Weapons = [];
-a3n_arr_NATO_Secondary_Weapons set [0, ["hgun_P07_F", ["16Rnd_9x21_Mag", "30Rnd_9x21_Mag"], ["muzzle_snds_L"], []]];
-a3n_arr_NATO_Launchers = [];
-a3n_arr_NATO_Launchers set [0, ["launch_B_Titan_F", ["Titan_AA"]]];
-a3n_arr_NATO_Launchers set [1, ["launch_B_Titan_short_F", ["Titan_AT", "Titan_AP"]]];
-a3n_arr_NATO_Launchers set [2, ["launch_NLAW_F", ["NLAW_F"]]];
-a3n_arr_FIA_Primary_Weapons = [];
-a3n_arr_FIA_Primary_Weapons set [0, ["arifle_TRG20_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
-a3n_arr_FIA_Primary_Weapons set [1, ["arifle_Mk20_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn"], "optic_Holosight"]];
-a3n_arr_FIA_Primary_Weapons set [2, ["arifle_TRG21_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
-a3n_arr_FIA_Primary_Weapons set [3, ["arifle_SDAR_F", ["20Rnd_556x45_UW_mag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
-a3n_arr_FIA_Primary_Weapons set [4, ["arifle_TRG21_GL_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
-a3n_arr_FIA_Primary_Weapons set [5, ["arifle_Mk20_GL_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
-a3n_arr_FIA_Primary_Weapons set [6, ["LMG_Mk200_F", ["200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box_Tracer"], ["muzzle_snds_H_MG", "optic_Hamr", "optic_Arco"]]];
-a3n_arr_FIA_Secondary_Weapons = [];
-a3n_arr_FIA_Secondary_Weapons set [0, ["hgun_ACPC2_F", ["9Rnd_45ACP_Mag"], ["muzzle_snds_acp"], []]];
-a3n_arr_FIA_Launchers = [];
-a3n_arr_FIA_Launchers set [0, ["launch_B_Titan_F", ["Titan_AA"]]];
-a3n_arr_FIA_Launchers set [1, ["launch_B_Titan_short_F", ["Titan_AT", "Titan_AP"]]];
-a3n_arr_FIA_Launchers set [2, ["launch_NLAW_F", ["NLAW_F"]]];
+a3e_arr_AAF_Primary_Weapons = [];
+a3e_arr_AAF_Primary_Weapons set [0, ["arifle_Mk20_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
+a3e_arr_AAF_Primary_Weapons set [1, ["arifle_Mk20C_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
+a3e_arr_AAF_Primary_Weapons set [2, ["arifle_Mk20_GL_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
+a3e_arr_AAF_Primary_Weapons set [3, ["arifle_SDAR_F", ["20Rnd_556x45_UW_mag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
+a3e_arr_AAF_Primary_Weapons set [4, ["LMG_Mk200_F", ["200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box_Tracer"], ["muzzle_snds_H_MG"], ["optic_Arco"]]];
+a3e_arr_AAF_Primary_Weapons set [5, ["srifle_EBR_F", ["20Rnd_762x51_Mag"], ["muzzle_snds_B"], ["optic_Hamr", "optic_Arco", "optic_MRCO", "optic_SOS"]]];
+a3e_arr_AAF_Secondary_Weapons = [];
+a3e_arr_AAF_Secondary_Weapons set [0, ["hgun_ACPC2_F", ["9Rnd_45ACP_Mag"], ["muzzle_snds_acp"], []]];
+a3e_arr_AAF_Secondary_Weapons set [1, ["hgun_PDW2000_F", ["30Rnd_9x21_Mag", "16Rnd_9x21_Mag"], ["muzzle_snds_L"], []]];
+a3e_arr_AAF_Launchers = [];
+a3e_arr_AAF_Launchers set [0, ["launch_I_Titan_F", ["Titan_AA"]]];
+a3e_arr_AAF_Launchers set [1, ["launch_I_Titan_short_F", ["Titan_AT", "Titan_AP"]]];
+a3e_arr_AAF_Launchers set [2, ["launch_NLAW_F", ["NLAW_F"]]];
+a3e_arr_NATO_Primary_Weapons = [];
+a3e_arr_NATO_Primary_Weapons set [0, ["arifle_MX_F", ["30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer"], ["muzzle_snds_H"], ["optic_Holosight"]]];
+a3e_arr_NATO_Primary_Weapons set [1, ["arifle_MX_GL_F", ["30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer"], ["muzzle_snds_H"], ["optic_Holosight"]]];
+a3e_arr_NATO_Primary_Weapons set [2, ["arifle_MX_SW_F", ["100Rnd_65x39_caseless_mag_Tracer", "100Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer"], ["muzzle_snds_H"], ["optic_Arco"]]];
+a3e_arr_NATO_Primary_Weapons set [3, ["arifle_MXC_F", ["30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer"], ["muzzle_snds_H"], ["optic_Holosight"]]];
+a3e_arr_NATO_Primary_Weapons set [4, ["SMG_01_F", ["30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01_tracer_green"], ["muzzle_snds_acp"],["optic_Holosight_smg"]]];
+a3e_arr_NATO_Primary_Weapons set [5, ["arifle_MXM_F", ["30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer"], ["muzzle_snds_H"], ["optic_Holosight", "optic_Arco", "optic_MRCO", "optic_SOS"]]];
+a3e_arr_NATO_Primary_Weapons set [6, ["srifle_LRR_F", ["7Rnd_408_Mag"], [], ["optic_Arco", "optic_MRCO", "optic_SOS"]]];
+a3e_arr_NATO_Secondary_Weapons = [];
+a3e_arr_NATO_Secondary_Weapons set [0, ["hgun_P07_F", ["16Rnd_9x21_Mag", "30Rnd_9x21_Mag"], ["muzzle_snds_L"], []]];
+a3e_arr_NATO_Launchers = [];
+a3e_arr_NATO_Launchers set [0, ["launch_B_Titan_F", ["Titan_AA"]]];
+a3e_arr_NATO_Launchers set [1, ["launch_B_Titan_short_F", ["Titan_AT", "Titan_AP"]]];
+a3e_arr_NATO_Launchers set [2, ["launch_NLAW_F", ["NLAW_F"]]];
+a3e_arr_FIA_Primary_Weapons = [];
+a3e_arr_FIA_Primary_Weapons set [0, ["arifle_TRG20_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
+a3e_arr_FIA_Primary_Weapons set [1, ["arifle_Mk20_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn"], "optic_Holosight"]];
+a3e_arr_FIA_Primary_Weapons set [2, ["arifle_TRG21_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
+a3e_arr_FIA_Primary_Weapons set [3, ["arifle_SDAR_F", ["20Rnd_556x45_UW_mag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
+a3e_arr_FIA_Primary_Weapons set [4, ["arifle_TRG21_GL_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
+a3e_arr_FIA_Primary_Weapons set [5, ["arifle_Mk20_GL_F", ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], ["muzzle_snds_M"], ["optic_ACO_grn", "optic_Holosight"]]];
+a3e_arr_FIA_Primary_Weapons set [6, ["LMG_Mk200_F", ["200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box_Tracer"], ["muzzle_snds_H_MG", "optic_Hamr", "optic_Arco"]]];
+a3e_arr_FIA_Secondary_Weapons = [];
+a3e_arr_FIA_Secondary_Weapons set [0, ["hgun_ACPC2_F", ["9Rnd_45ACP_Mag"], ["muzzle_snds_acp"], []]];
+a3e_arr_FIA_Launchers = [];
+a3e_arr_FIA_Launchers set [0, ["launch_B_Titan_F", ["Titan_AA"]]];
+a3e_arr_FIA_Launchers set [1, ["launch_B_Titan_short_F", ["Titan_AT", "Titan_AP"]]];
+a3e_arr_FIA_Launchers set [2, ["launch_NLAW_F", ["NLAW_F"]]];
 
 
 //////////////////////////////////////////////////////////////////
