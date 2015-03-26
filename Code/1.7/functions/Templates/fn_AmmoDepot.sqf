@@ -221,10 +221,10 @@
     _weapons = [];
     _weaponMagazines = [];
     
-    for "_i" from 0 to (count drn_arr_AmmoDepotBasicWeapons - 1) do {
+    for "_i" from 0 to (count a3e_arr_AmmoDepotBasicWeapons - 1) do {
         private ["_handGunItem", "_weaponClassName", "_probabilityOfPrecence", "_minCount", "_maxCount", "_magazines", "_magazinesPerWeapon"];
         
-        _handGunItem = drn_arr_AmmoDepotBasicWeapons select _i;
+        _handGunItem = a3e_arr_AmmoDepotBasicWeapons select _i;
         
         _weaponClassName = _handGunItem select 0;
         _probabilityOfPrecence = _handGunItem select 1;
@@ -264,10 +264,10 @@
     _weapons = [];
     _weaponMagazines = [];
     
-    for "_i" from 0 to (count drn_arr_AmmoDepotSpecialWeapons - 1) do {
+    for "_i" from 0 to (count a3e_arr_AmmoDepotSpecialWeapons - 1) do {
         private ["_handGunItem", "_weaponClassName", "_probabilityOfPrecence", "_minCount", "_maxCount", "_magazines", "_magazinesPerWeapon"];
         
-        _handGunItem = drn_arr_AmmoDepotSpecialWeapons select _i;
+        _handGunItem = a3e_arr_AmmoDepotSpecialWeapons select _i;
         
         _weaponClassName = _handGunItem select 0;
         _probabilityOfPrecence = _handGunItem select 1;
@@ -311,10 +311,10 @@
     _weapons = [];
     _weaponMagazines = [];
     
-    for "_i" from 0 to (count drn_arr_AmmoDepotOrdnance - 1) do {
+    for "_i" from 0 to (count a3e_arr_AmmoDepotOrdnance - 1) do {
         private ["_handGunItem", "_weaponClassName", "_probabilityOfPrecence", "_minCount", "_maxCount", "_magazines", "_magazinesPerWeapon"];
         
-        _handGunItem = drn_arr_AmmoDepotOrdnance select _i;
+        _handGunItem = a3e_arr_AmmoDepotOrdnance select _i;
         
         _weaponClassName = _handGunItem select 0;
         _probabilityOfPrecence = _handGunItem select 1;
@@ -354,10 +354,10 @@
     _weapons = [];
     _weaponMagazines = [];
     
-    for "_i" from 0 to (count drn_arr_AmmoDepotVehicle - 1) do {
+    for "_i" from 0 to (count a3e_arr_AmmoDepotVehicle - 1) do {
         private ["_handGunItem", "_weaponClassName", "_probabilityOfPrecence", "_minCount", "_maxCount", "_magazines", "_magazinesPerWeapon"];
         
-        _handGunItem = drn_arr_AmmoDepotVehicle select _i;
+        _handGunItem = a3e_arr_AmmoDepotVehicle select _i;
         
         _weaponClassName = _handGunItem select 0;
         _probabilityOfPrecence = _handGunItem select 1;
@@ -377,10 +377,10 @@
     };
 	
 	 _items = [];
-	 for "_i" from 0 to (count drn_arr_AmmoDepotVehicleItems - 1) do {
+	 for "_i" from 0 to (count a3e_arr_AmmoDepotVehicleItems - 1) do {
         private ["_item", "_itemClassName", "_probabilityOfPrecence", "_minCount", "_maxCount"];
         
-        _item = drn_arr_AmmoDepotVehicleItems select _i;
+        _item = a3e_arr_AmmoDepotVehicleItems select _i;
         
         _itemClassName = _item select 0;
         _probabilityOfPrecence = _item select 1;
@@ -420,10 +420,10 @@
 
     _weapons = [];
     
-    for "_i" from 0 to (count drn_arr_AmmoDepotItems - 1) do {
+    for "_i" from 0 to (count a3e_arr_AmmoDepotItems - 1) do {
         private ["_item", "_itemClassName", "_probabilityOfPrecence", "_minCount", "_maxCount"];
         
-        _item = drn_arr_AmmoDepotItems select _i;
+        _item = a3e_arr_AmmoDepotItems select _i;
         
         _itemClassName = _item select 0;
         _probabilityOfPrecence = _item select 1;
@@ -453,10 +453,10 @@
     _weapons = [];
     _weaponMagazines = [];
     
-    for "_i" from 0 to (count drn_arr_AmmoDepotLaunchers - 1) do {
+    for "_i" from 0 to (count a3e_arr_AmmoDepotLaunchers - 1) do {
         private ["_handGunItem", "_weaponClassName", "_probabilityOfPrecence", "_minCount", "_maxCount", "_magazines", "_magazinesPerWeapon"];
         
-        _handGunItem = drn_arr_AmmoDepotLaunchers select _i;
+        _handGunItem = a3e_arr_AmmoDepotLaunchers select _i;
         
         _weaponClassName = _handGunItem select 0;
         _probabilityOfPrecence = _handGunItem select 1;

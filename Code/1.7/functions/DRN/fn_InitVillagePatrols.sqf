@@ -53,7 +53,7 @@ while {_locationExists} do {
     _maxGroupsCount = ceil(((_locationSize select 0) * (_locationSize select 1)) * 4 / _areaPerGroup);
 
     _soldierCount = (_minSoldierCount + floor (random (_maxSoldierCount - _minSoldierCount + 1))) * _maxGroupsCount;
-    _possibleInfantryTypes = drn_arr_Escape_InfantryTypes + drn_arr_Escape_InfantryTypes_Ind + drn_arr_Escape_InfantryTypes_Ind + drn_arr_Escape_InfantryTypes_Ind + drn_arr_Escape_InfantryTypes_Ind;
+    _possibleInfantryTypes = a3e_arr_Escape_InfantryTypes + a3e_arr_Escape_InfantryTypes_Ind + a3e_arr_Escape_InfantryTypes_Ind + a3e_arr_Escape_InfantryTypes_Ind + a3e_arr_Escape_InfantryTypes_Ind;
     
     _soldiers = [];
     for [{_i = 0}, {_i < _soldierCount}, {_i = _i + 1}] do {

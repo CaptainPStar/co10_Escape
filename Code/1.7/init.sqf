@@ -89,7 +89,7 @@ if(isMultiplayer) then {
 
 
 // Initialization
-drn_arr_JipSpawnPos = [];
+a3e_arr_JipSpawnPos = [];
 //call compile preprocessFileLineNumbers "Scripts\DRN\CommonLib\CommonLib.sqf";
 //call drn_fnc_CL_InitParams;
 

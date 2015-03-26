@@ -10,10 +10,10 @@ if (count _this > 2) then {_maxSkill = _this select 2;} else {_maxSkill = 0.6;};
 if (count _this > 3) then {_enemyFrequency = _this select 3;} else {_enemyFrequency = 3;};
 if (count _this > 4) then {_debug = _this select 4;} else {_debug = false;};
 
-_index = floor random count drn_arr_Escape_ReinforcementTruck_vehicleClasses;
-_vehicleClass = drn_arr_Escape_ReinforcementTruck_vehicleClasses select _index;
+_index = floor random count a3e_arr_Escape_ReinforcementTruck_vehicleClasses;
+_vehicleClass = a3e_arr_Escape_ReinforcementTruck_vehicleClasses select _index;
 
-_vehicleMaxCargo = drn_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo select _index;
+_vehicleMaxCargo = a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo select _index;
 
 _result = [_spawnPos, 0, _vehicleClass, east] call BIS_fnc_spawnVehicle;
 _vehicle = _result select 0;
@@ -53,7 +53,7 @@ if (_soldiersCount > _vehicleMaxCargo) then {
 };
 
 for "_i" from 1 to _soldiersCount do {
-    _infantryType = drn_arr_Escape_InfantryTypes select floor random count drn_arr_Escape_InfantryTypes;
+    _infantryType = a3e_arr_Escape_InfantryTypes select floor random count a3e_arr_Escape_InfantryTypes;
     _insurgentSoldier = _cargoGroup createUnit [_infantryType, [0,0,30], [], 0, "FORM"];
     //_insurgentSoldier setSkill (_minSkill + random (_maxSkill - _minSkill));
 	//[_insurgentSoldier, drn_var_Escape_enemyMinSkill] call EGG_EVO_skill;

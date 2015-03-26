@@ -81,7 +81,7 @@ _fnc_FindRoadBlockSegment = {
     _minDistanceBetweenRoadBlocks = _this select 4;
 	_result = _this select 5;
     
-    _spawnDistanceDiff = _maxSpawnDistance - _minSpawnDistance;
+    _spawnDistanceDiff = _maxSpawnDistance - _minSpawnDistance;//Half?
     _roadSegment = _result;
     _refUnit = vehicle ((units _referenceGroup) select floor random count units _referenceGroup);
     
@@ -187,10 +187,10 @@ _fnc_CreateRoadBlock = {
 
 
     if(_side == EAST) then {
-        _possibleVehicles = drn_arr_Escape_RoadBlock_MannedVehicleTypes;
+        _possibleVehicles = a3e_arr_Escape_RoadBlock_MannedVehicleTypes;
     };
     if (_side == RESISTANCE) then {
-        _possibleVehicles = drn_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
+        _possibleVehicles = a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
     };
     _result = [_pos, _dir, _possibleVehicles select floor random count _possibleVehicles, _side] call BIS_fnc_spawnVehicle;
     _vehicle = _result select 0;
@@ -228,10 +228,10 @@ _fnc_CreateRoadBlock = {
     _group = createGroup _side;
 
     if(_side == EAST) then {
-        _guardTypes = drn_arr_Escape_InfantryTypes;
+        _guardTypes = a3e_arr_Escape_InfantryTypes;
     };
     if (_side == RESISTANCE) then {
-        _guardTypes = drn_arr_Escape_InfantryTypes_Ind;
+        _guardTypes = a3e_arr_Escape_InfantryTypes_Ind;
     };
     
     //(_guardTypes select floor random count _guardTypes) createUnit [_pos, _group, "", 0.5, "LIEUTNANT"];

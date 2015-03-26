@@ -562,7 +562,7 @@ drn_fnc_Escape_AddRemoveComCenArmor = {
     
     _comCenArmorIndex = _this select 0;
     
-    _comCenArmorItem = drn_arr_Escape_ComCenArmors select _comCenArmorIndex;
+    _comCenArmorItem = a3e_arr_Escape_ComCenArmors select _comCenArmorIndex;
     
     _pos = _comCenArmorItem select 0;
     _armorClasses = _comCenArmorItem select 1;
@@ -628,7 +628,7 @@ drn_fnc_Escape_InitializeComCenArmor = {
     _enemySpawnDistance = _this select 2;
     _enemyFrequency = _this select 3;
     
-    drn_arr_Escape_ComCenArmors = [];
+    a3e_arr_Escape_ComCenArmors = [];
     _index = 0;
 
     {
@@ -638,15 +638,15 @@ drn_fnc_Escape_InitializeComCenArmor = {
         {
             case 1:
             {
-                drn_arr_Escape_ComCenArmors set [count drn_arr_Escape_ComCenArmors, [_pos, [drn_arr_ComCenDefence_lightArmorClasses select floor random count drn_arr_ComCenDefence_lightArmorClasses], []]];
+                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [a3e_arr_ComCenDefence_lightArmorClasses select floor random count a3e_arr_ComCenDefence_lightArmorClasses], []]];
             };
             case 2:
             {
-                drn_arr_Escape_ComCenArmors set [count drn_arr_Escape_ComCenArmors, [_pos, [drn_arr_ComCenDefence_heavyArmorClasses select floor random count drn_arr_ComCenDefence_heavyArmorClasses], []]];
+                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [a3e_arr_ComCenDefence_heavyArmorClasses select floor random count a3e_arr_ComCenDefence_heavyArmorClasses], []]];
             };
             default
             {
-                drn_arr_Escape_ComCenArmors set [count drn_arr_Escape_ComCenArmors, [_pos, [drn_arr_ComCenDefence_lightArmorClasses select floor random count drn_arr_ComCenDefence_lightArmorClasses, drn_arr_ComCenDefence_heavyArmorClasses select floor random count drn_arr_ComCenDefence_heavyArmorClasses], []]];
+                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [a3e_arr_ComCenDefence_lightArmorClasses select floor random count a3e_arr_ComCenDefence_lightArmorClasses, a3e_arr_ComCenDefence_heavyArmorClasses select floor random count a3e_arr_ComCenDefence_heavyArmorClasses], []]];
             };
         };
         
@@ -835,8 +835,8 @@ if (isServer) then {
         
         _pos = [((getPos vehicle _anotherPlayer) select 0) + 3, ((getPos vehicle _anotherPlayer) select 1) + 3, 0];
         
-        drn_arr_JipSpawnPos = [_unitName, _pos];
-        publicVariable "drn_arr_JipSpawnPos";
+        a3e_arr_JipSpawnPos = [_unitName, _pos];
+        publicVariable "a3e_arr_JipSpawnPos";
         
         diag_log ("Server respond to JIP, pos == " + str getPos _anotherPlayer);
     };

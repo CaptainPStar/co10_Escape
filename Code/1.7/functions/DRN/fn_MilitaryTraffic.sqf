@@ -297,13 +297,13 @@ while {true} do {
             };
             if(_side == civilian) then {
                 _faction = civilian;
-                _possibleVehicles = drn_arr_Escape_EnemyCivilianCarTypes;
+                _possibleVehicles = a3e_arr_Escape_EnemyCivilianCarTypes;
             };
             if(_faction == EAST) then {
-                _possibleVehicles = drn_arr_Escape_MilitaryTraffic_EnemyVehicleClasses;
+                _possibleVehicles = a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses;
             };
             if (_faction == RESISTANCE) then {
-                _possibleVehicles = drn_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_Ind;
+                _possibleVehicles = a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_Ind;
             };
 
             _vehicleType = _possibleVehicles select floor (random count _possibleVehicles);

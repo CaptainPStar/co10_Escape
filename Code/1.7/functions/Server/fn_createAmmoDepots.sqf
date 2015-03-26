@@ -92,5 +92,5 @@ while {count _positions < A3E_AmmoDepotCount} do {
 
 
 {
-    [_x,drn_arr_Escape_AmmoDepot_StaticWeaponClasses,drn_arr_Escape_AmmoDepot_ParkedVehicleClasses] call A3E_fnc_AmmoDepot;
+    [_x,a3e_arr_Escape_AmmoDepot_StaticWeaponClasses,a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses] call A3E_fnc_AmmoDepot;
 } foreach _positions;

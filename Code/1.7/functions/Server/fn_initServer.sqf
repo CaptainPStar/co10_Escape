@@ -267,7 +267,7 @@ if(_debugAllUnits) then {
             } foreach units _this;
         };
         
-        //_scriptHandle = [(units _playerGroup) select 0, east, drn_arr_Escape_InfantryTypes, _minEnemiesPerGroup, _maxEnemiesPerGroup, _villagePatrolSpawnArea, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance + 250, _fnc_OnSpawnGroup, _debugVillagePatrols] spawn drn_fnc_InitVillagePatrols;
+        //_scriptHandle = [(units _playerGroup) select 0, east, a3e_arr_Escape_InfantryTypes, _minEnemiesPerGroup, _maxEnemiesPerGroup, _villagePatrolSpawnArea, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance + 250, _fnc_OnSpawnGroup, _debugVillagePatrols] spawn drn_fnc_InitVillagePatrols;
         _scriptHandle = [_playerGroup, "drn_villageMarker", east, "INS", 5, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _villagePatrolSpawnArea, _debugVillagePatrols] spawn drn_fnc_InitVillagePatrols;
         waitUntil {scriptDone _scriptHandle};
     };
@@ -298,7 +298,7 @@ if(_debugAllUnits) then {
             } foreach units _this;
         };
         
-        _scriptHandle = [(units _playerGroup) select 0, east, drn_arr_Escape_InfantryTypes, _minEnemiesPerGroup, _maxEnemiesPerGroup, 500000, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance + 250, _fnc_OnSpawnGroup, _debugVillagePatrols] spawn drn_fnc_InitAquaticPatrols;
+        _scriptHandle = [(units _playerGroup) select 0, east, a3e_arr_Escape_InfantryTypes, _minEnemiesPerGroup, _maxEnemiesPerGroup, 500000, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance + 250, _fnc_OnSpawnGroup, _debugVillagePatrols] spawn drn_fnc_InitAquaticPatrols;
         waitUntil {scriptDone _scriptHandle};
     };
     
@@ -361,7 +361,7 @@ if(_debugAllUnits) then {
         _radius = (_enemySpawnDistance + 500) / 1000;
         _infantryGroupsCount = round (_groupsPerSqkm * _radius * _radius * 3.141592);
         
-        [_playerGroup, east, drn_arr_Escape_InfantryTypes, _infantryGroupsCount, _enemySpawnDistance + 200, _enemySpawnDistance + 500, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, 750, _fnc_OnSpawnAmbientInfantryUnit, _fnc_OnSpawnAmbientInfantryGroup, _debugAmbientInfantry] spawn drn_fnc_AmbientInfantry;
+        [_playerGroup, east, a3e_arr_Escape_InfantryTypes, _infantryGroupsCount, _enemySpawnDistance + 200, _enemySpawnDistance + 500, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, 750, _fnc_OnSpawnAmbientInfantryUnit, _fnc_OnSpawnAmbientInfantryGroup, _debugAmbientInfantry] spawn drn_fnc_AmbientInfantry;
         sleep 0.25;
     };
     
@@ -414,15 +414,15 @@ if(_debugAllUnits) then {
             if (random 100 < 20) then {
                 private ["_index", "_weaponItem"];
                 
-                _index = floor random count drn_arr_CivilianCarWeapons;
-                _weaponItem = drn_arr_CivilianCarWeapons select _index;
+                _index = floor random count a3e_arr_CivilianCarWeapons;
+                _weaponItem = a3e_arr_CivilianCarWeapons select _index;
                 
                 _vehicle addWeaponCargoGlobal [_weaponItem select 0, 1];
                 _vehicle addMagazineCargoGlobal [_weaponItem select 1, _weaponItem select 2];
             };
         };
         
-        [_playerGroup, civilian, drn_arr_Escape_MilitaryTraffic_CivilianVehicleClasses, _vehiclesCount, _enemySpawnDistance, _radius, 0.5, 0.5, _fnc_onSpawnCivilian, _debugMilitaryTraffic] spawn drn_fnc_MilitaryTraffic;
+        [_playerGroup, civilian, a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses, _vehiclesCount, _enemySpawnDistance, _radius, 0.5, 0.5, _fnc_onSpawnCivilian, _debugMilitaryTraffic] spawn drn_fnc_MilitaryTraffic;
         sleep 0.25;
         
         // Enemy military traffic
@@ -445,7 +445,7 @@ if(_debugAllUnits) then {
         
         _radius = _enemySpawnDistance + 500;
         _vehiclesCount = round (_vehiclesPerSqkm * (_radius / 1000) * (_radius / 1000) * 3.141592);
-        [_playerGroup, east, drn_arr_Escape_MilitaryTraffic_EnemyVehicleClasses, _vehiclesCount, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, _debugMilitaryTraffic] spawn drn_fnc_MilitaryTraffic;
+        [_playerGroup, east, a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses, _vehiclesCount, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, _debugMilitaryTraffic] spawn drn_fnc_MilitaryTraffic;
         sleep 0.25;
     };
     
@@ -475,7 +475,7 @@ if(_debugAllUnits) then {
             _roadBlockCount = 1;
         };
         
-        [_playerGroup, east, drn_arr_Escape_InfantryTypes, drn_arr_Escape_RoadBlock_MannedVehicleTypes, _roadBlockCount, _enemySpawnDistance, _enemySpawnDistance + 500, 750, 300, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, _debugRoadBlocks] spawn drn_fnc_RoadBlocks;
+        [_playerGroup, east, a3e_arr_Escape_InfantryTypes, a3e_arr_Escape_RoadBlock_MannedVehicleTypes, _roadBlockCount, _enemySpawnDistance, _enemySpawnDistance + 500, 750, 300, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, _debugRoadBlocks] spawn drn_fnc_RoadBlocks;
         sleep 0.25;
     };
 	//Spawn crashsites
@@ -591,8 +591,8 @@ if (_useSearchChopper) then {
             _createNewGroup = false;
         };
         
-        //(drn_arr_Escape_StartPositionGuardTypes select floor (random count drn_arr_Escape_StartPositionGuardTypes)) createUnit [_pos, _guardGroup, "", (0.5), "CAPTAIN"];
-        _guardGroup createUnit [(drn_arr_Escape_StartPositionGuardTypes select floor (random count drn_arr_Escape_StartPositionGuardTypes)), _pos, [], 0, "FORM"];
+        //(a3e_arr_Escape_StartPositionGuardTypes select floor (random count a3e_arr_Escape_StartPositionGuardTypes)) createUnit [_pos, _guardGroup, "", (0.5), "CAPTAIN"];
+        _guardGroup createUnit [(a3e_arr_Escape_StartPositionGuardTypes select floor (random count a3e_arr_Escape_StartPositionGuardTypes)), _pos, [], 0, "FORM"];
         
         if (count units _guardGroup >= 2) then {
             _createNewGroup = true;

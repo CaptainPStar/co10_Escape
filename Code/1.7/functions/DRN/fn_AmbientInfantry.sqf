@@ -113,10 +113,10 @@ while {true} do {
         
         _faction = _factionsArray select (floor (random (count _factionsArray)));
         if(_faction == EAST) then {
-            _possibleInfantryTypes = drn_arr_Escape_InfantryTypes;
+            _possibleInfantryTypes = a3e_arr_Escape_InfantryTypes;
         };
         if (_faction == RESISTANCE) then {
-            _possibleInfantryTypes = drn_arr_Escape_InfantryTypes_Ind;
+            _possibleInfantryTypes = a3e_arr_Escape_InfantryTypes_Ind;
         };
 
         // Create group

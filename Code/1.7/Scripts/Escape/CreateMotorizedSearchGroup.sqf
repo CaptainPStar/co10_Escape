@@ -11,10 +11,10 @@ if (count _this > 4) then {_maxSkill = _this select 4;} else {_maxSkill = 0.6;};
 if (count _this > 5) then {_debug = _this select 5;} else {_debug = false;};
 
 // Vehicle classes have following cargo capacity [7, 5, 7, 10]
-_index = floor random count drn_arr_Escape_MotorizedSearchGroup_vehicleClasses;
-_vehicleClass = drn_arr_Escape_MotorizedSearchGroup_vehicleClasses select _index;
+_index = floor random count a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses;
+_vehicleClass = a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses select _index;
 
-_vehicleMaxCargo = drn_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo select _index;
+_vehicleMaxCargo = a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo select _index;
 
 _result = [_spawnPos, 0, _vehicleClass, east] call BIS_fnc_spawnVehicle;
 _vehicle = _result select 0;
@@ -40,7 +40,7 @@ if (_enemyFrequency == 2) then {
     _soldiersCount = 4 + floor random (_vehicleMaxCargo - 3);
 };
 
-_infantryTypes = drn_arr_Escape_InfantryTypes;
+_infantryTypes = a3e_arr_Escape_InfantryTypes;
 for "_i" from 1 to _soldiersCount do {
     _infantryType = _infantryTypes select floor random count _infantryTypes;
     _insurgentSoldier = _group createUnit [_infantryType, [0,0,30], [], 0, "FORM"];

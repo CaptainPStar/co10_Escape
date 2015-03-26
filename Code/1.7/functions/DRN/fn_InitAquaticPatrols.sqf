@@ -35,7 +35,7 @@ if (_debug) then {
 	player sideChat _message;
 };
 
-drn_arr_aquaticPatrols_Markers = [];
+a3e_arr_aquaticPatrols_Markers = [];
 drn_fnc_AquaticPatrols_OnSpawnGroup = _fnc_OnSpawnGroup;
 _aquaticPatrolZoneNo = 0;
 
@@ -53,7 +53,7 @@ _aquaticPatrolZoneNo = 0;
     _groupsCount = _maxGroupsCount;
 
 	_aquaticPatrolZone = [_aquaticPatrolZoneName, _aquaticPatrolZonePos, _groupsCount, []];
-	drn_arr_aquaticPatrols_Markers set [count drn_arr_aquaticPatrols_Markers, _aquaticPatrolZone];
+	a3e_arr_aquaticPatrols_Markers set [count a3e_arr_aquaticPatrols_Markers, _aquaticPatrolZone];
 
 	// Set village trigger
 	//#### We should add two trigger, one for population one for depopulation ######
@@ -63,7 +63,7 @@ _aquaticPatrolZoneNo = 0;
 	_trigger setTriggerArea[_spawnRadius, _spawnRadius, 0, false];
 	_trigger setTriggerActivation["MEMBER", "PRESENT", true];
 	_trigger setTriggerTimeout [1, 1, 1, true];
-	_trigger setTriggerStatements["this", "_nil = [drn_arr_aquaticPatrols_Markers select " + str _aquaticPatrolZoneNo + ", " + str _debug + "] spawn drn_fnc_PopulateAquaticPatrol;", "_nil = [drn_arr_aquaticPatrols_Markers select " + str _aquaticPatrolZoneNo + ", " + str _debug + "] spawn drn_fnc_DepopulateAquaticPatrol;"];
+	_trigger setTriggerStatements["this", "_nil = [a3e_arr_aquaticPatrols_Markers select " + str _aquaticPatrolZoneNo + ", " + str _debug + "] spawn drn_fnc_PopulateAquaticPatrol;", "_nil = [a3e_arr_aquaticPatrols_Markers select " + str _aquaticPatrolZoneNo + ", " + str _debug + "] spawn drn_fnc_DepopulateAquaticPatrol;"];
 
 	_aquaticPatrolZoneNo = _aquaticPatrolZoneNo + 1;
 } foreach a3e_patrolBoatMarkers;
