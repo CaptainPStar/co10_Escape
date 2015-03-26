@@ -20,6 +20,8 @@ class CfgFunctions
 			class addUserActions {};
 			class Hijack {};
 			class HealAtBuilding {};
+			class GetPlayers {};
+			class GetPlayerGroup {};
 		};
 		class AI
 		{
@@ -42,8 +44,9 @@ class CfgFunctions
 			class unit_debug_marker {};
 			class drawMapLine {};
 			class TrackGroup {};
-            class debugChat {};
+            class debugMsg {};
 			class rptLog {};
+			class systemChat {};
 		};
 		class Server
 		{
@@ -56,6 +59,7 @@ class CfgFunctions
 			class parameterInit {}; 
             class createComCenters {};
             class createAmmoDepots {};
+			class createMortarSites {};
 			class handleJIP {};
 			class createLocationMarker {};
 		};

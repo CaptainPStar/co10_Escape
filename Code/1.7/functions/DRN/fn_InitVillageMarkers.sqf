@@ -28,11 +28,11 @@ drn_fnc_VillageMarkers_PutVillageMarkersOnMap = {
 		_marker setMarkerSizeLocal _size;
 
 		_villageIndex = _villageIndex + 1;
-	} foreach drn_villageMarkers;
+	} foreach a3e_villageMarkers;
 };
 
 if (isServer) then {
 	[false] call drn_fnc_VillageMarkers_PutVillageMarkersOnMap;
 };
 
-drn_var_villageMarkersInitialized = true;
+a3e_var_villageMarkersInitialized = true;

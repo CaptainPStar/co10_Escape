@@ -157,7 +157,7 @@ drn_fnc_DynamicWeather_SetWeatherLocal = {
     // Set current weather values
     0 setOvercast _currentOvercast;
     0 setFog _currentFog;
-    drn_var_DynamicWeather_Rain = _currentRain;
+    a3e_var_DynamicWeather_Rain = _currentRain;
     setWind [_currentWindX, _currentWindZ, true];
     
     // Set forecast
@@ -174,7 +174,7 @@ if (!isServer) then {
         drn_DynamicWeatherEventArgs call drn_fnc_DynamicWeather_SetWeatherLocal;
     };
 
-    waitUntil {!isNil "drn_var_DynamicWeather_ServerInitialized"};
+    waitUntil {!isNil "a3e_var_DynamicWeather_ServerInitialized"};
     
     drn_AskServerDynamicWeatherEventArgs = [true];
     publicVariable "drn_AskServerDynamicWeatherEventArgs";
@@ -192,7 +192,7 @@ if (isServer) then {
             _currentWeatherChange = "";
         };
         
-        drn_DynamicWeatherEventArgs = [overcast, fog, drn_var_DynamicWeather_Rain, _currentWeatherChange, drn_DynamicWeather_WeatherTargetValue, _timeUntilCompletion, drn_DynamicWeather_WindX, drn_DynamicWeather_WindZ];
+        drn_DynamicWeatherEventArgs = [overcast, fog, a3e_var_DynamicWeather_Rain, _currentWeatherChange, drn_DynamicWeather_WeatherTargetValue, _timeUntilCompletion, drn_DynamicWeather_WindX, drn_DynamicWeather_WindZ];
         publicVariable "drn_DynamicWeatherEventArgs";
         drn_DynamicWeatherEventArgs call drn_fnc_DynamicWeather_SetWeatherLocal;
     };
@@ -253,8 +253,8 @@ if (isServer) then {
         _initialRain = 0;
     };
     
-    drn_var_DynamicWeather_Rain = _initialRain;
-    0 setRain drn_var_DynamicWeather_Rain;
+    a3e_var_DynamicWeather_Rain = _initialRain;
+    0 setRain a3e_var_DynamicWeather_Rain;
     
     _maxWind = _minimumWind + random (_maximumWind - _minimumWind);
     
@@ -280,9 +280,9 @@ if (isServer) then {
     
     sleep 0.05;
     
-    publicVariable "drn_var_DynamicWeather_Rain";
-    drn_var_DynamicWeather_ServerInitialized = true;
-    publicVariable "drn_var_DynamicWeather_ServerInitialized";
+    publicVariable "a3e_var_DynamicWeather_Rain";
+    a3e_var_DynamicWeather_ServerInitialized = true;
+    publicVariable "a3e_var_DynamicWeather_ServerInitialized";
     
     // Start weather thread
     [_minWeatherChangeTimeMin, _maxWeatherChangeTimeMin, _minTimeBetweenWeatherChangesMin, _maxTimeBetweenWeatherChangesMin, _minimumFog, _maximumFog, _minimumOvercast, _maximumOvercast, _minimumWind, _maximumWind, _windChangeProbability, _debug] spawn {
@@ -454,8 +454,8 @@ if (isServer) then {
             _debug = _this select 6;
             
             if (rain > 0) then {
-                drn_var_DynamicWeather_Rain = rain;
-                publicVariable "drn_var_DynamicWeather_Rain";
+                a3e_var_DynamicWeather_Rain = rain;
+                publicVariable "a3e_var_DynamicWeather_Rain";
             };
             
             _nextRainEventTime = time;
@@ -470,14 +470,14 @@ if (isServer) then {
                         
                         // At every rain event time, start or stop rain with 50% probability
                         if (random 100 < _rainIntervalRainProbability && !_forceStop) then {
-                            drn_var_DynamicWeather_rain = _minimumRain + random (_maximumRain - _minimumRain);
-                            publicVariable "drn_var_DynamicWeather_rain";
+                            a3e_var_DynamicWeather_rain = _minimumRain + random (_maximumRain - _minimumRain);
+                            publicVariable "a3e_var_DynamicWeather_rain";
                             
                             _forceStop = _forceRainToStopAfterOneRainInterval;
                         }
                         else {
-                            drn_var_DynamicWeather_rain = 0;
-                            publicVariable "drn_var_DynamicWeather_rain";
+                            a3e_var_DynamicWeather_rain = 0;
+                            publicVariable "a3e_var_DynamicWeather_rain";
                             
                             _forceStop = false;
                         };
@@ -487,14 +487,14 @@ if (isServer) then {
                         _nextRainEventTime = time + _rainTimeSec;
                         
                         if (_debug) then {
-                            ["Rain set to " + str drn_var_DynamicWeather_rain + " for " + str (_rainTimeSec / 60) + " minutes"] call drn_fnc_DynamicWeather_ShowDebugTextAllClients;
+                            ["Rain set to " + str a3e_var_DynamicWeather_rain + " for " + str (_rainTimeSec / 60) + " minutes"] call drn_fnc_DynamicWeather_ShowDebugTextAllClients;
                         };
                     };
                 }
                 else {
-                    if (drn_var_DynamicWeather_rain != 0) then {
-                        drn_var_DynamicWeather_rain = 0;
-                        publicVariable "drn_var_DynamicWeather_rain";
+                    if (a3e_var_DynamicWeather_rain != 0) then {
+                        a3e_var_DynamicWeather_rain = 0;
+                        publicVariable "a3e_var_DynamicWeather_rain";
                         
                         if (_debug) then {
                             ["Rain stops due to low overcast."] call drn_fnc_DynamicWeather_ShowDebugTextAllClients;
@@ -531,7 +531,7 @@ if (isServer) then {
     };
     
     if (_rainIntervalRainProbability > 0) then {
-        _rain = drn_var_DynamicWeather_Rain;
+        _rain = a3e_var_DynamicWeather_Rain;
     }
     else {
         _rain = 0;
@@ -542,11 +542,11 @@ if (isServer) then {
     
     while {true} do {
         if (_rainIntervalRainProbability > 0) then {
-            if (_rain < drn_var_DynamicWeather_Rain) then {
+            if (_rain < a3e_var_DynamicWeather_Rain) then {
                 _rain = _rain + _rainPerSecond;
                 if (_rain > 1) then { _rain = 1; };
             };
-            if (_rain > drn_var_DynamicWeather_Rain) then {
+            if (_rain > a3e_var_DynamicWeather_Rain) then {
                 _rain = _rain - _rainPerSecond;
                 if (_rain < 0) then { _rain = 0; };
             };

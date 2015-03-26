@@ -62,13 +62,6 @@ switch (_paramLoading) do
 	call AT_fnc_ParamsToVar;
 
 
-if((Param_Debug)==0) then {
-    A3E_Debug = false;
-} else {
-    A3E_Debug = true;
-};
-publicVariable "A3E_Debug";
-
 A3E_ParamsParsed = true;
 publicVariable "A3E_ParamsParsed";
 //[paramsArray,"a3e_fnc_WriteParamBriefing",true,true] call BIS_fnc_MP;

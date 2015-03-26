@@ -17,7 +17,7 @@ if (count _this > 8) then {_maxSkill = _this select 8;} else {_maxSkill = 0.6;};
 if (count _this > 9) then {_spawnRadius = _this select 9;} else {_spawnRadius = 750;};
 if (count _this > 10) then {_debug = _this select 10;} else {_debug = false;};
 
-if (isNil "drn_var_commonLibInitialized") then {
+if (isNil "a3e_var_commonLibInitialized") then {
     [] spawn {
         while {true} do { player sideChat "Script AmbientInfantry.sqf needs CommonLib version 1.02"; sleep 5; };
     };
@@ -51,15 +51,15 @@ if (!_isFaction) then {
 
 // Initialize global variable
 sleep random 0.1;
-if (isNil "drn_var_guardedLocationsInstanceNo") then {
-    drn_var_guardedLocationsInstanceNo = 0;
+if (isNil "a3e_var_guardedLocationsInstanceNo") then {
+    a3e_var_guardedLocationsInstanceNo = 0;
 }
 else {
-    drn_var_guardedLocationsInstanceNo = drn_var_guardedLocationsInstanceNo + 1;
+    a3e_var_guardedLocationsInstanceNo = a3e_var_guardedLocationsInstanceNo + 1;
 };
 
-_instanceNo = drn_var_guardedLocationsInstanceNo;
-call compile format ["drn_var_guardedLocations%1 = [];", _instanceNo];
+_instanceNo = a3e_var_guardedLocationsInstanceNo;
+call compile format ["a3e_var_guardedLocations%1 = [];", _instanceNo];
 
 _locationNo = 0;
 _locationFullName = _locationMarkerName + str _locationNo;
@@ -87,7 +87,7 @@ while {_locationExists} do {
 
 	_location = [_locationFullName, "", _soldiers, _locationPos];
 
-    _location call compile format ["drn_var_guardedLocations%1 set [count drn_var_guardedLocations%2, _this];", _instanceNo, _instanceNo];
+    _location call compile format ["a3e_var_guardedLocations%1 set [count a3e_var_guardedLocations%2, _this];", _instanceNo, _instanceNo];
 
     // Set ammo depot trigger
     private ["_marker", "_count", "_populated", "_trigger"];
@@ -97,7 +97,7 @@ while {_locationExists} do {
     _trigger setTriggerArea[_spawnRadius, _spawnRadius, 0, false];
     _trigger setTriggerActivation["MEMBER", "PRESENT", true];
     _trigger setTriggerTimeout [1, 1, 1, true];
-    _trigger setTriggerStatements["this", "_nil = [drn_var_guardedLocations" + str _instanceNo + " select " + str _locationNo + ", " + str _side + ", " + str _maxGroupsCount + ", " + str _debug + "] spawn drn_fnc_PopulateLocation;", "_nil = [drn_var_guardedLocations" + str _instanceNo + " select " + str _locationNo + ", " + str _debug + "] spawn drn_fnc_DepopulateLocation;"];
+    _trigger setTriggerStatements["this", "_nil = [a3e_var_guardedLocations" + str _instanceNo + " select " + str _locationNo + ", " + str _side + ", " + str _maxGroupsCount + ", " + str _debug + "] spawn drn_fnc_PopulateLocation;", "_nil = [a3e_var_guardedLocations" + str _instanceNo + " select " + str _locationNo + ", " + str _debug + "] spawn drn_fnc_DepopulateLocation;"];
     
 	// Get next guarded position
 	_locationNo = _locationNo + 1;

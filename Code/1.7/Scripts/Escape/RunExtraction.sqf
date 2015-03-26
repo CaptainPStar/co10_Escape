@@ -53,10 +53,10 @@ sleep 1;
 (driver _boat2) action ["LightOff", _boat2];
 
 if (isMultiplayer) then {
-    waitUntil {{vehicle _x == _boat1 || vehicle _x == _boat2} count (call drn_fnc_Escape_GetPlayers) == count (call drn_fnc_Escape_GetPlayers)};
+    waitUntil {{vehicle _x == _boat1 || vehicle _x == _boat2} count (call A3E_fnc_GetPlayers) == count (call A3E_fnc_GetPlayers)};
 }
 else {
-    waitUntil {{vehicle _x == _boat1 || vehicle _x == _boat2} count units group ((call drn_fnc_Escape_GetPlayers) select 0) == count units group ((call drn_fnc_Escape_GetPlayers) select 0)};
+    waitUntil {{vehicle _x == _boat1 || vehicle _x == _boat2} count units group ((call A3E_fnc_GetPlayers) select 0) == count units group ((call A3E_fnc_GetPlayers) select 0)};
 };
 
 _boat1 land "NONE";
@@ -82,6 +82,6 @@ sleep 10;
 sleep 25;
 
 
-drn_var_Escape_MissionComplete = true;
-publicVariable "drn_var_Escape_MissionComplete";
+a3e_var_Escape_MissionComplete = true;
+publicVariable "a3e_var_Escape_MissionComplete";
 

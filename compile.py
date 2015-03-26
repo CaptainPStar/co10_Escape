@@ -8,6 +8,10 @@ mods = data['Mods'];
 islands = data['Islands'];
 missions = data['Missions'];
 cpbo = data['cpbo'];
+for the_file in os.listdir(data['BuildDir']):
+    file_path = os.path.join(data['BuildDir'], the_file)
+    if os.path.isfile(file_path):
+        os.unlink(file_path)
 for mission in missions:
     modname =  mission['mod']
     islandname = mission['island']

@@ -1,13 +1,13 @@
 if (!isServer) exitWith {};
 
-private ["_searchAreaMarkerName", "_debug"];
+private ["_searchAreaMarkerName"];
 private ["_trigger","_trigger2","_marker", "_state", "_timeUntilMarkerSizeMediumMin", "_timeUntilMarkerSizeLargeMin", "_searchStartTimeSek", "_markerState", "_lostContactTimeSek", "_maxKnowledge", "_detectedUnit"];
 private ["_unitIsDetected", "_enemyUnit", "_knowledge", "_detectedUnitsPosition", "_unitThatDetected", "_unitThatDetectedPositionAccuracy", "_minTimeUntilReportToHQSec", "_maxTimeUntilReportToHQSec", "_timeUntilReportToHQSec"];
-private ["_reportingUnit", "_debugMsg", "_lastDebugMsg", "_reportingStartTime", "_worldSizeXY", "_searchAreaDiamSmall", "_searchAreaDiamMedium", "_searchAreaDiamLarge", "_searchAreaMarkerCreated"];
+private ["_reportingUnit", "_DebugMsg", "_lastDebugMsg", "_reportingStartTime", "_worldSizeXY", "_searchAreaDiamSmall", "_searchAreaDiamMedium", "_searchAreaDiamLarge", "_searchAreaMarkerCreated"];
 private["_knownPositionHelperObject","_knownPositionMinDistance","_firstsight","_strikesuccess","_lastArtilleryStrike"];
 
 _searchAreaMarkerName = _this select 0;
-if (count _this > 1) then {_debug = _this select 1;} else {_debug = false;};
+
 
 _marker = "";
 //will need to be appropriately changed for stratis
@@ -26,11 +26,13 @@ _lastArtilleryStrike = 0;
 _knownPositionHelperObject = a3e_var_knownPositionHelperObject;
 _knownPositionMinDistance = a3e_var_knownPositionMinDistance;
 
-drn_var_SearchLeader_Detected = false;
-drn_var_Escape_SearchLeader_civilianReporting = false;
+a3e_var_SearchLeader_Detected = false;
+a3e_var_Escape_SearchLeader_civilianReporting = false;
 _lostContactTimeSek = 0;
 _lastDebugMsg = "";
 _searchAreaMarkerCreated = false;
+
+  _reportingStartTime = diag_tickTime;
 
 _state = "KNOW NOTHING";
 _searchStartTimeSek = diag_tickTime;
@@ -39,7 +41,7 @@ _markerState = "SMALL";
 
 _timeUntilReportToHQSec = _minTimeUntilReportToHQSec + random (_maxTimeUntilReportToHQSec - _minTimeUntilReportToHQSec);
 
-if (_debug) then {
+if (A3E_Debug) then {
     player sideChat "Starting search leader...";
 };
 
@@ -48,21 +50,21 @@ if (_debug) then {
 _trigger = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
 _trigger setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
 _trigger setTriggerActivation["WEST", "EAST D", false];
-_trigger setTriggerStatements["this", "drn_var_SearchLeader_Detected = true;", ""];
+_trigger setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 
 _trigger2 = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
 _trigger2 setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
 _trigger2 setTriggerActivation["WEST", "GUER D", false];
-_trigger2 setTriggerStatements["this", "drn_var_SearchLeader_Detected = true;", ""];
+_trigger2 setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 
 // Start thread that sets detected by civilian
 [] spawn {
     while {true} do {
-        if (drn_var_Escape_SearchLeader_civilianReporting) then {
+        if (a3e_var_Escape_SearchLeader_civilianReporting) then {
             {
-                if (side _x == civilian && _x distance ((call drn_fnc_Escape_GetPlayers) select 0) <300) exitWith {
-                    drn_var_SearchLeader_Detected = true;
-                    drn_var_Escape_SearchLeader_ReportingCivilian = _x;
+                if (side _x == civilian && _x distance ((call A3E_fnc_GetPlayers) select 0) <300) exitWith {
+                    a3e_var_SearchLeader_Detected = true;
+                    a3e_var_Escape_SearchLeader_ReportingCivilian = _x;
                 };
             } foreach allUnits;
         };
@@ -71,12 +73,12 @@ _trigger2 setTriggerStatements["this", "drn_var_SearchLeader_Detected = true;", 
     };
 };
 
-//waitUntil {drn_var_SearchLeader_Detected};
+//waitUntil {a3e_var_SearchLeader_Detected};
 
 _detectedUnitsPosition = [0, 0, 0];
 
 while {1 == 1} do {
-	if (drn_var_SearchLeader_Detected) then {
+	if (a3e_var_SearchLeader_Detected) then {
 
 		deleteVehicle _trigger;
 		deleteVehicle _trigger2;
@@ -127,7 +129,7 @@ while {1 == 1} do {
                                     
                                     //"SmokeShellGreen" createVehicle _enemysSupposedPos;
                                 };
-                            } foreach (call drn_fnc_Escape_GetPlayers);
+                            } foreach (call A3E_fnc_GetPlayers);
                             
                             breakTo "scopeAllGroups";
                         };
@@ -137,11 +139,11 @@ while {1 == 1} do {
         } foreach allGroups;
         
         // Check if detected by civilian
-        if (drn_var_Escape_SearchLeader_civilianReporting && !_unitIsDetected) then {
+        if (a3e_var_Escape_SearchLeader_civilianReporting && !_unitIsDetected) then {
 			//We need to check if civilian knows about player atm this is cheating for AI
             _unitIsDetected = true;
-            _detectedUnit = (call drn_fnc_Escape_GetPlayers) select 0;
-            _unitThatDetected = drn_var_Escape_SearchLeader_ReportingCivilian;
+            _detectedUnit = (call A3E_fnc_GetPlayers) select 0;
+            _unitThatDetected = a3e_var_Escape_SearchLeader_ReportingCivilian;
             _reportingUnit = _unitThatDetected;
             _unitThatDetectedPositionAccuracy = 0;
             _maxKnowledge = 4;
@@ -151,18 +153,11 @@ while {1 == 1} do {
 		if (_unitIsDetected) then {
 			_lostContactTimeSek = diag_tickTime;
 
-			if (_debug) then {
-                _debugMsg = (name _unitThatDetected) + "(" + str side _unitThatDetected + ")" + " detected " + (name _detectedUnit) + "(Position accuracy: " + str _unitThatDetectedPositionAccuracy + ").";
-				if (_debugMsg != _lastDebugMsg) then {
-					player sideChat _debugMsg;
-					_lastDebugMsg = _debugMsg;
-				};
-			};
 
             if (_state == "KNOW NOTHING") then {
                 _state = "REPORTING";
                 _reportingStartTime = diag_tickTime;
-                if (drn_var_Escape_SearchLeader_civilianReporting) then {
+                if (a3e_var_Escape_SearchLeader_civilianReporting) then {
                     _timeUntilReportToHQSec = 1;
                 }
                 else {
@@ -171,23 +166,23 @@ while {1 == 1} do {
             };
 		}
 		else {
-			drn_var_SearchLeader_Detected = false;
+			a3e_var_SearchLeader_Detected = false;
 
 			_trigger = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
 			_trigger setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
 			_trigger setTriggerActivation["WEST", "EAST D", false];
-			_trigger setTriggerStatements["this", "drn_var_SearchLeader_Detected = true;", ""];
+			_trigger setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 			
 			_trigger2 = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
 			_trigger2 setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
 			_trigger2 setTriggerActivation["WEST", "GUER D", false];
-			_trigger2 setTriggerStatements["this", "drn_var_SearchLeader_Detected = true;", ""];
+			_trigger2 setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 			
-			if (_debug) then {
-				_debugMsg = "Enemy lost contact of player group.";
-				if (_debugMsg != _lastDebugMsg) then {
-					player sideChat _debugMsg;
-					_lastDebugMsg = _debugMsg;
+			if (A3E_Debug) then {
+				_DebugMsg = "Enemy lost contact of player group.";
+				if (_DebugMsg != _lastDebugMsg) then {
+					player sideChat _DebugMsg;
+					_lastDebugMsg = _DebugMsg;
 				};
 			};
 		};
@@ -203,11 +198,11 @@ while {1 == 1} do {
 				_markerState = "MEDIUM";
 				_marker setMarkerSize [_searchAreaDiamMedium / 2, _searchAreaDiamMedium / 2];
 
-				if (_debug) then {
-					_debugMsg = "Search area has expanded to size MEDIUM.";
-					if (_debugMsg != _lastDebugMsg) then {
-						player sideChat _debugMsg;
-						_lastDebugMsg = _debugMsg;
+				if (A3E_Debug) then {
+					_DebugMsg = "Search area has expanded to size MEDIUM.";
+					if (_DebugMsg != _lastDebugMsg) then {
+						player sideChat _DebugMsg;
+						_lastDebugMsg = _DebugMsg;
 					};
 				};
 			};
@@ -219,11 +214,11 @@ while {1 == 1} do {
                 _markerState = "LARGE";
                 _marker setMarkerSize [_searchAreaDiamLarge / 2, _searchAreaDiamLarge / 2];
                 
-                if (_debug) then {
-                    _debugMsg = "Search area has expanded to size LARGE.";
-                    if (_debugMsg != _lastDebugMsg) then {
-                        player sideChat _debugMsg;
-                        _lastDebugMsg = _debugMsg;
+                if (A3E_Debug) then {
+                    _DebugMsg = "Search area has expanded to size LARGE.";
+                    if (_DebugMsg != _lastDebugMsg) then {
+                        player sideChat _DebugMsg;
+                        _lastDebugMsg = _DebugMsg;
                     };
                 };
             };
@@ -274,7 +269,7 @@ while {1 == 1} do {
 					
 					if((diag_tickTime-_firstsight)>=_artilleryTimeThreshold && (diag_tickTime > (_artilleryCooldown+_lastArtilleryStrike))) then {
 						if(random 100 < a3e_var_artillery_chance) then {
-							if (a3e_debug_artillery) then {
+							if (a3eA3E_Debug_artillery) then {
 								player sidechat "HQ is trying to call an artillery strike";
 							};
 							_strikesuccess = [getpos (_list select 0)] call a3e_fnc_FireArtillery;
@@ -298,7 +293,7 @@ while {1 == 1} do {
 					_marker setMarkerSizeLocal [_searchAreaDiamSmall, _searchAreaDiamSmall];
 					_searchAreaMarkerCreated = true;
 
-					if (!_debug) then {
+					if (!A3E_Debug) then {
 						_marker setMarkerAlphaLocal 0;
 					};
 				};
@@ -306,11 +301,11 @@ while {1 == 1} do {
 				_markerState = "SMALL";
 				_marker setMarkerSize [_searchAreaDiamSmall / 2, _searchAreaDiamSmall / 2];
 
-				if (_debug) then {
-					_debugMsg = name _reportingUnit + " has reported in to HQ.";
-					if (_debugMsg != _lastDebugMsg) then {
-						player sideChat _debugMsg;
-						_lastDebugMsg = _debugMsg;
+				if (A3E_Debug) then {
+					_DebugMsg = name _reportingUnit + " has reported in to HQ.";
+					if (_DebugMsg != _lastDebugMsg) then {
+						player sideChat _DebugMsg;
+						_lastDebugMsg = _DebugMsg;
 					};
 				};
 
@@ -320,11 +315,11 @@ while {1 == 1} do {
 		else { // if reporting unit is not still alive
 			_state = "KNOW NOTHING";
 
-			if (_debug) then {
-				_debugMsg = name _reportingUnit + " is dead and cannot report in to HQ.";
-				if (_debugMsg != _lastDebugMsg) then {
-					player sideChat _debugMsg;
-					_lastDebugMsg = _debugMsg;
+			if (A3E_Debug) then {
+				_DebugMsg = name _reportingUnit + " is dead and cannot report in to HQ.";
+				if (_DebugMsg != _lastDebugMsg) then {
+					player sideChat _DebugMsg;
+					_lastDebugMsg = _DebugMsg;
 				};
 			};
 

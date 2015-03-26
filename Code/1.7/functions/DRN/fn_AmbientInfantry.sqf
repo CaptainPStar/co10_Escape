@@ -15,16 +15,16 @@
  *   [_garbageCollectDistance]: Dead units at this distance from _referenceGroup will be deleted.
  *   [_fnc_OnSpawnUnit]: Code run once for every spawned unit (after the whole group is created). The unit can be accessed through "_this". Default value is {}.
  *   [_fnc_OnSpawnGroup]: Code run once for every spawned group (after the whole group is created). The group can be accessed through "_this". Default value is {};
- *   [_debug]: true if debugmessages and areas will be shown for player. Default false.
+ *   [A3E_Debug]: true if debugmessages and areas will be shown for player. Default false.
  * Dependencies: CommonLib v1.01
  */
 
 if (!isServer) exitWith {};
 
-private ["_referenceGroup", "_side", "_groupsCount", "_minSpawnDistance", "_maxSpawnDistance", "_infantryClasses", "_minSkill", "_maxSkill", "_garbageCollectDistance", "_debug"];
+private ["_referenceGroup", "_side", "_groupsCount", "_minSpawnDistance", "_maxSpawnDistance", "_infantryClasses", "_minSkill", "_maxSkill", "_garbageCollectDistance"];
 private ["_activeGroups", "_activeUnits", "_spawnPos", "_group", "_possibleInfantryTypes", "_infantryType", "_minDistance", "_skill", "_vehicleVarName", "_factionsArray"];
-private ["_minUnitsInGroup", "_maxUnitsInGroup", "_i", "_atScriptStartUp", "_currentEntityNo", "_debugMsg", "_farAwayUnits", "_farAwayUnitsCount", "_unitsToDeleteCount", "_groupsToDeleteCount"];
-private ["_debugMarkers", "_debugMarkerNo", "_debugMarkerName", "_isFaction", "_unitsToDelete", "_groupsToDelete", "_tempGroups", "_tempGroupsCount"];
+private ["_minUnitsInGroup", "_maxUnitsInGroup", "_i", "_atScriptStartUp", "_currentEntityNo", "_DebugMsg", "_farAwayUnits", "_farAwayUnitsCount", "_unitsToDeleteCount", "_groupsToDeleteCount"];
+private ["_DebugMarkers", "_DebugMarkerNo", "_DebugMarkerName", "_isFaction", "_unitsToDelete", "_groupsToDelete", "_tempGroups", "_tempGroupsCount"];
 private ["_fnc_OnSpawnUnit", "_fnc_OnSpawnGroup"];
 
 _referenceGroup = _this select 0;
@@ -40,26 +40,26 @@ if (count _this > 9) then {_maxSkill = _this select 9;} else {_maxSkill = 0.6;};
 if (count _this > 10) then {_garbageCollectDistance = _this select 10;} else {_garbageCollectDistance = 750;};
 if (count _this > 11) then {_fnc_OnSpawnUnit = _this select 11;} else {_fnc_OnSpawnUnit = {};};
 if (count _this > 12) then {_fnc_OnSpawnGroup = _this select 12;} else {_fnc_OnSpawnGroup = {};};
-if (count _this > 13) then {_debug = _this select 13;} else {_debug = false;};
+
 
 //WHY!?!?!?!?!
 _factionsArray = [RESISTANCE, RESISTANCE, RESISTANCE, RESISTANCE, RESISTANCE, RESISTANCE, RESISTANCE, RESISTANCE, EAST, EAST];
 
 
-if (isNil "drn_var_commonLibInitialized") then {
+if (isNil "a3e_var_commonLibInitialized") then {
     [] spawn {
         while {true} do { player sideChat "Script AmbientInfantry.sqf needs CommonLib version 1.02"; sleep 5; };
     };
 };
 
-if (_debug) then {
+if (A3E_Debug) then {
     ["Starting script Ambient Infantry..."] call drn_fnc_CL_ShowDebugTextAllClients;
 };
 
 _activeGroups = [];
 _activeUnits = [];
-_debugMarkers = [];
-_debugMarkerNo = 0;
+A3E_DebugMarkers = [];
+A3E_DebugMarkerNo = 0;
 
 _isFaction = false;
 if (str _infantryClasses == """USMC""") then {
@@ -132,7 +132,7 @@ while {true} do {
         {
             //setskills
             _x setUnitRank "PRIVATE";
-//			[_x, drn_var_Escape_enemyMinSkill] call EGG_EVO_skill;
+//			[_x, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
 
             // Run custom code for units and group
             _x setVariable ["drn_scriptHandle", _x spawn _fnc_OnSpawnUnit]; // Squint complaining, but is ok.
@@ -154,7 +154,7 @@ while {true} do {
         ((units _group) select 0) call compile format ["%1=_this;", _vehicleVarName];
         
         // Start group
-        //[((units _group) select 0), _debug] spawn drn_fnc_MoveInfantryGroup;
+        //[((units _group) select 0), A3E_Debug] spawn drn_fnc_MoveInfantryGroup;
 		
 		_script = [_group, nil] spawn A3E_fnc_Patrol;
 		_group setvariable["A3E_GroupPatrolScript",_script];
@@ -162,7 +162,7 @@ while {true} do {
         _activeGroups set [count _activeGroups, _group];
         _activeUnits = _activeUnits + units _group;
 
-        if (_debug) then {
+        if (A3E_Debug) then {
             ["Infantry group created! Total groups = " + str count _activeGroups] call drn_fnc_CL_ShowDebugTextAllClients;
         };
 	};
@@ -272,17 +272,17 @@ while {true} do {
         deleteGroup _x;
     } foreach _groupsToDelete;
     
-    _debugMsg = "";
+    A3E_DebugMsg = "";
     if (count _unitsToDelete > 0) then {
-        _debugMsg = str (count _unitsToDelete) + " units deleted by Ambient Infantry. ";
+        A3E_DebugMsg = str (count _unitsToDelete) + " units deleted by Ambient Infantry. ";
     };
     
     if (count _groupsToDelete > 0) then {
-        _debugMsg = _debugMsg + str (count _groupsToDelete) + " groups deleted by Ambient Infantry. ";
+        A3E_DebugMsg = A3E_DebugMsg + str (count _groupsToDelete) + " groups deleted by Ambient Infantry. ";
     };
     
-    if (_debug && _debugMsg != "") then {
-        [_debugMsg] call drn_fnc_CL_ShowDebugTextAllClients;
+    if (A3E_Debug && A3E_DebugMsg != "") then {
+        [A3E_DebugMsg] call drn_fnc_CL_ShowDebugTextAllClients;
     };
 
     _tempGroupsCount = 0;
@@ -298,7 +298,7 @@ while {true} do {
             _tempGroupsCount = _tempGroupsCount + 1;
         }
         else {
-            if (_debug) then {
+            if (A3E_Debug) then {
                 ["Ambient Infantry deleting group with all dead units."] call drn_fnc_CL_ShowDebugTextAllClients;
             };
         };
@@ -307,7 +307,7 @@ while {true} do {
     
     _activeGroups = _tempGroups;
     
-    if (_debug) then {
+    if (A3E_Debug) then {
         sleep 1;
     }
     else {

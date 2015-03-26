@@ -3,16 +3,16 @@
 
 if (!isServer) exitWith {};
 
-private ["_chopper", "_searchAreaMarker", "_searchTimeMin", "_refuelTimeMin", "_debug", "_group", "_side", "_state", "_exitScript", "_position", "_waypoint", "_moveOutTimeSek", "_refuelStartTimeSek"];
+private ["_chopper", "_searchAreaMarker", "_searchTimeMin", "_refuelTimeMin", "_group", "_side", "_state", "_exitScript", "_position", "_waypoint", "_moveOutTimeSek", "_refuelStartTimeSek"];
 private ["_oldGroup", "_homePos"];
 
 _chopper = _this select 0;
 _searchAreaMarker = _this select 1;
 _searchTimeMin = _this select 2;
 _refuelTimeMin = _this select 3;
-if (count _this > 4) then {_debug = _this select 4;} else {_debug = false;};
 
-if (isNil "drn_var_commonLibInitialized") exitWith {
+
+if (isNil "a3e_var_commonLibInitialized") exitWith {
 	private ["_message"];
 	_message = "Scripts\DRN\CommonLib\CommonLib.sqf must be called before call to Scripts/DRN/SearchChopper/SearchChopper.sqf.";
 	player sideChat _message;
@@ -23,8 +23,8 @@ _group = group _chopper;
 _side = side leader _group;
 _state = "READY";
 _homePos = getPos _chopper;
-_debug = false;
-if (_debug) then {
+
+if (A3E_Debug) then {
     player sideChat "Starting search chopper script...";
 };
 
@@ -45,7 +45,7 @@ while {!_exitScript} do {
 			_state = "MOVING OUT";
 			_moveOutTimeSek = diag_tickTime;
 
-			if (_debug) then {
+			if (A3E_Debug) then {
 				player sideChat "Search chopper state: MOVING OUT.";
 			};
 
@@ -66,13 +66,13 @@ while {!_exitScript} do {
 			_waypoint setWaypointSpeed "NORMAL";
 			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 
-			if (_debug) then {
+			if (A3E_Debug) then {
 				//"SmokeShellBlue" createVehicle _position;
 				createVehicle ["SmokeShellBlue", _position, [], 0, "NONE"];
 			};
 		};
 		case "SEARCHING": {
-			if (_debug) then {
+			if (A3E_Debug) then {
 				player sideChat "Search chopper state: SEARCHING.";
 			};
 
@@ -89,13 +89,13 @@ while {!_exitScript} do {
 
 			_chopper flyInHeight 120;
 
-			if (_debug) then {
+			if (A3E_Debug) then {
 				//"SmokeShellRed" createVehicle _position;
 				createVehicle ["SmokeShellRed", _position, [], 0, "NONE"];
 			};
 		};
 		case "RETURNING": {
-			if (_debug) then {
+			if (A3E_Debug) then {
 				player sideChat "Search chopper state: RETURNING.";
 			};
 
@@ -112,7 +112,7 @@ while {!_exitScript} do {
 			_waypoint setWaypointSpeed "NORMAL";
 			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 
-			if (_debug) then {
+			if (A3E_Debug) then {
 				//"SmokeShellBlue" createVehicle _homePos;
 				createVehicle ["SmokeShellBlue", _homePos, [], 0, "NONE"];
 			};
@@ -120,7 +120,7 @@ while {!_exitScript} do {
 			_chopper flyInHeight 100;
 		};
 		case "LANDING": {
-			if (_debug) then {
+			if (A3E_Debug) then {
 				player sideChat "Search chopper state: LANDING.";
 			};
 
@@ -131,7 +131,7 @@ while {!_exitScript} do {
 			// Do nothing
 		};
 		case "DEAD": {
-			if (_debug) then {
+			if (A3E_Debug) then {
 				player sideChat "Search chopper state: DEAD.";
 			};
 		};
@@ -169,7 +169,7 @@ while {!_exitScript} do {
 
 		if (_state == "LANDING") exitWith {
 			_state = "REFUELING";
-			if (_debug) then {
+			if (A3E_Debug) then {
 				player sideChat "Search chopper state: REFUELING.";
 			};
 
@@ -196,7 +196,7 @@ while {!_exitScript} do {
 };
 
 if (_exitScript) then {
-	if (_debug) then {
+	if (A3E_Debug) then {
 		player sideChat "Search chopper unable to continue. Script exiting.";
 	};
 };

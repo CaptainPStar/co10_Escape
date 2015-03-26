@@ -81,7 +81,7 @@ A lot of stuff is dynamic/random. Also there are plenty of customization paramet
         _x createDiaryRecord ["Diary", ["Global Background", "NATO has secretly and for some time been planning the invasion and liberation of Altis beginning in a couple of weeks."]];
         
     };
-} foreach call drn_fnc_Escape_GetPlayers;
+} foreach call A3E_fnc_GetPlayers;
 
 // If JIP player then set completed tasks
 if (_isJipPlayer) then {

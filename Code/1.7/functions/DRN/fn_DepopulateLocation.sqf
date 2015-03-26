@@ -1,14 +1,14 @@
 if (!isServer) exitWith {};
 
-private ["_location", "_markerName", "_debug", "_soldierObjects", "_spawned", "_damage", "_soldier", "_script"];
+private ["_location", "_markerName", "_soldierObjects", "_spawned", "_damage", "_soldier", "_script"];
 
 _location = _this select 0;
-if (count _this > 1) then {_debug = _this select 1;} else {_debug = false;};
+
 
 _markerName = _location select 0;
 _soldierObjects = _location select 2;
 
-if (_debug) then {
+if (A3E_Debug) then {
     player sideChat "Depopulating location (" + _markerName + ")";
 };
 

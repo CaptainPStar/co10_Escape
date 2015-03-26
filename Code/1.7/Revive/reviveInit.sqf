@@ -1,6 +1,11 @@
 call compile preprocessFile "Revive\reviveFunctions.sqf";
 call compile preprocessFile "Revive\hscFunctions.sqf";
 
+AT_Revive_StaticRespawns = [];
+AT_Revive_enableRespawn = false;
+AT_Revive_clearedDistance = 0;
+
+
 if(isNil("AT_Revive_StaticRespawns")) then {
 	AT_Revive_enableRespawn = true;
 };

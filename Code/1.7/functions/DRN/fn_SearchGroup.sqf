@@ -27,7 +27,7 @@ _subAreaSize = 100; // Size (width and height) of the sub area
 _stationaryMaxTimeSec = 60; // If the leader in the group is stationary more than this time, a new target position will be choosen (so that the group never gets stuck)
 _defaultSearchAreaMarkerName = _searchAreaMarkerName;
 
-waitUntil {!isNil "drn_var_commonLibInitialized"};
+waitUntil {!isNil "a3e_var_commonLibInitialized"};
 
 sleep random 0.2;
 if (isNil "drn_SearchGroup_CurrentEntityNo") then {

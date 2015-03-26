@@ -1,16 +1,16 @@
 if (!isServer) exitWith {};
 
-private ["_village", "_markerName", "_debug", "_soldiers", "_soldier", "_spawned", "_damage", "_soldierObj"];
+private ["_village", "_markerName", "_soldiers", "_soldier", "_spawned", "_damage", "_soldierObj"];
 private ["_groups", "_soldierPos", "_group", "_hasScript"];
 private ["_deleteGroupDelayed"];
 
 _village = _this select 0;
-if (count _this > 1) then {_debug = _this select 1;} else {_debug = false;};
+
 
 _markerName = _village select 0;
 _groups = _village select 2;
 
-if (_debug) then {
+if (A3E_Debug) then {
     player sideChat "Depopulating village (" + _markerName + ")";
 };
 

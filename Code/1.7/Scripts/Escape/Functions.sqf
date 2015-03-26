@@ -1,4 +1,4 @@
-drn_fnc_Escape_GetPlayers = {
+A3E_fnc_GetPlayers = {
 	drn_players = [];
 	if (!isNil "p1") then {
 		if (isPlayer p1) then {
@@ -89,9 +89,9 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	
 
 	
-    //_this setSkill (drn_var_Escape_enemyMinSkill + random (drn_var_Escape_enemyMaxSkill - drn_var_Escape_enemyMinSkill));
+    //_this setSkill (a3e_var_Escape_enemyMinSkill + random (a3e_var_Escape_enemyMaxSkill - a3e_var_Escape_enemyMinSkill));
     
-	//[_this, drn_var_Escape_enemyMinSkill] call EGG_EVO_skill;
+	//[_this, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
     
 	
     //player sideChat str (precision _this);
@@ -104,12 +104,12 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 
 		removeAllPrimaryWeaponItems _this;
 		if((random 100 < 30)) then {
-			_scopes = a3n_arr_Scopes;
-			if(!a3e_var_noNV) then {
-				_scopes = _scopes + a3n_arr_TWSScopes;
+			_scopes = A3E_arr_Scopes;
+			if(Param_NoNightvision==0) then {
+				_scopes = _scopes + A3E_arr_TWSScopes;
 			};
 			if(_nighttime) then {
-				_scopes = _scopes + a3n_arr_NightScopes;
+				_scopes = _scopes + A3E_arr_NightScopes;
 			};
 			_scope = _scopes select floor(random(count(_scopes)));
 			_this addPrimaryWeaponItem _scope;
@@ -149,7 +149,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 		};
 	};
     if(((random 100 < 5) && (!_nighttime)) OR ((random 100 < 30) && (_nighttime))) then {
-		if(!a3e_var_noNV) then {
+		if(Param_NoNightvision==0) then {
 			_this linkItem "NVGoggles";
 			 _this assignItem "NVGoggles";
 		};
@@ -296,7 +296,7 @@ drn_fnc_Escape_AllPlayersOnStartPos = {
         if (_x distance _startPos > 30) exitWith {
             _allPlayersAtStartPos = false;
         };
-    } foreach call drn_fnc_Escape_GetPlayers;
+    } foreach call A3E_fnc_GetPlayers;
     
     _allPlayersAtStartPos
 };
@@ -304,7 +304,7 @@ drn_fnc_Escape_AllPlayersOnStartPos = {
 drn_fnc_Escape_GetPlayerGroup = {
     private ["_units", "_unit", "_group"];
     
-    _units = call drn_fnc_Escape_GetPlayers;
+    _units = call A3E_fnc_GetPlayers;
     
     _unit = _units select 0;
     _group = group _unit;
@@ -828,9 +828,9 @@ if (isServer) then {
         
         _unitName = drn_fnc_Escape_AskForJipPos select 0;
         
-        _anotherPlayer = (call drn_fnc_Escape_GetPlayers) select 0;
+        _anotherPlayer = (call A3E_fnc_GetPlayers) select 0;
         if (_unitName == str _anotherPlayer) then {
-            _anotherPlayer = (call drn_fnc_Escape_GetPlayers) select 1;
+            _anotherPlayer = (call A3E_fnc_GetPlayers) select 1;
         };
         
         _pos = [((getPos vehicle _anotherPlayer) select 0) + 3, ((getPos vehicle _anotherPlayer) select 1) + 3, 0];
@@ -841,8 +841,8 @@ if (isServer) then {
         diag_log ("Server respond to JIP, pos == " + str getPos _anotherPlayer);
     };
 
-    drn_var_Escape_FunctionsInitializedOnServer = true;
-    publicVariable "drn_var_Escape_FunctionsInitializedOnServer";
+    a3e_var_Escape_FunctionsInitializedOnServer = true;
+    publicVariable "a3e_var_Escape_FunctionsInitializedOnServer";
 };
 
 

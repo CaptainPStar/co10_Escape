@@ -10,11 +10,18 @@ _countNE = 0;
 _countSE = 0;
 _countSW = 0;
 
-if(isNil("A3E_AmmoDepotCount")) then {
-            A3E_AmmoDepotCount = 8;
-    };
-_regionCount = ceil(A3E_AmmoDepotCount/4);
-while {count _positions < A3E_AmmoDepotCount} do {
+if(isNil("A3E_MortarSiteCountMax")) then {
+	A3E_MortarSiteCountMax = 6;
+};
+if(isNil("A3E_MortarSiteCountMin")) then {
+	A3E_MortarSiteCountMin = 4;
+};
+A3E_MortarSiteCountMin = A3E_MortarSiteCountMin * Param_Artillery;
+A3E_MortarSiteCountMax = A3E_MortarSiteCountMax * Param_Artillery;
+_mortarSiteCount = A3E_MortarSiteCountMin + random (A3E_MortarSiteCountMax-A3E_MortarSiteCountMin);
+
+_regionCount = ceil(_mortarSiteCount/4);
+while {count _positions < _mortarSiteCount} do {
     _isOk = false;
     _j = 0;
 
@@ -84,6 +91,8 @@ while {count _positions < A3E_AmmoDepotCount} do {
 };
 
 
-{
-    [_x,a3e_arr_Escape_AmmoDepot_StaticWeaponClasses,a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses] call A3E_fnc_AmmoDepot;
+{	
+	[_x] call A3E_fnc_MortarSite;
+	_playergroup = [] call A3E_fnc_getPlayerGroup;
+	[_playergroup, "A3E_MortarSitePatrolMarker", east, "INS", 1, 1, 2, Param_EnemySkill, Param_EnemySkill, Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
 } foreach _positions;

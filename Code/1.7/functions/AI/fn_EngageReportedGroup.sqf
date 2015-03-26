@@ -1,9 +1,9 @@
-private["_group","_lastPosition","_debug","_leader","_lastSeen","_accuracy","_position","_markername","_marker"];
+private["_group","_lastPosition","_leader","_lastSeen","_accuracy","_position","_markername","_marker"];
 
 _group = _this select 0;
 _lastKnownPosition = _this select 1;
 _lastPosition = getpos _lastKnownPosition;
-_debug = _this select 2;
+
 _leader = (leader _group);
 {
 	if(alive _leader) exitwith {};
@@ -17,7 +17,7 @@ _position = [((getpos _lastKnownPosition) select 0) + (random _accuracy - random
 
 [_group,_position] call a3e_fnc_move;
 
-if(_debug) then {
+if(A3E_Debug) then {
 	_markername = format["Investigate%1",_group];
 	_marker = createMarker [_markername,_position];
 	_marker setMarkerShape "ICON";
@@ -38,7 +38,7 @@ while{true} do {
 
 		[_group,_position] call a3e_fnc_move;
 
-		if(_debug) then {
+		if(A3E_Debug) then {
 			_marker setmarkerpos _position;
 		};
 	};
@@ -46,6 +46,6 @@ while{true} do {
 	if(isNil("_group")) exitwith {};
 };
 
-if(_debug) then {
+if(A3E_Debug) then {
 	deletemarker _marker;
 };

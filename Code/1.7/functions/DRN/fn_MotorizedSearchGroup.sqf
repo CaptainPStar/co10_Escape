@@ -1,6 +1,6 @@
 if (!isServer) exitWith {};
 
-private ["_vehicle", "_searchAreaMarker", "_debug"];
+private ["_vehicle", "_searchAreaMarker"];
 private ["_maxStationaryTimeSec", "_maxWalkDistanceMeters", "_state", "_searchAreaExists", "_shownMissingSearchAreaMsg", "_searchGroupExists", "_destinationPos", "_group", "_soldiers"];
 private ["_side", "_garbageGroup", "_lastPos", "_stationaryTimeSec", "_useVehicle", "_enemyPos", "_enemySighted", "_waypoint", "_currentEntityNo"];
 private ["_fnc_isMounted", "_fnc_isUnMounted", "_fnc_ClearAllWaypoints", "_fnc_GetKnownEnemyPosition", "_fnc_SetNewState"];
@@ -10,14 +10,13 @@ _maxWalkDistanceMeters = 300;
 
 _vehicle = _this select 0;
 _searchAreaMarker = _this select 1;
-if (count _this > 2) then {_debug = _this select 2;} else {_debug = false;};
 
-while {isNil "drn_var_commonLibInitialized"} do {
+while {isNil "a3e_var_commonLibInitialized"} do {
     player sideChat "Script MotorizedSearchGroup.sqf requires CommonLib v1.02.";
     sleep 10;
 };
 
-if (_debug) then {
+if (A3E_Debug) then {
     ["Starting motorized search group script..."] call drn_fnc_CL_ShowDebugTextAllClients;
 };
 
@@ -106,12 +105,12 @@ _fnc_GetKnownEnemyPosition = {
 };
 
 _fnc_SetNewState = {
-    private ["_state", "_debug"];
+    private ["_state"];
     
     _state = _this select 0;
-    _debug = _this select 1;
+    A3E_Debug = _this select 1;
     
-    if (_debug) then {
+    if (A3E_Debug) then {
         ["Motorized search group state = " + _state] call drn_fnc_CL_ShowDebugTextAllClients;
     };
     
@@ -148,7 +147,7 @@ while {!_searchAreaExists} do {
         _searchAreaExists = true;
     }
     else {
-        if (_debug && !_shownMissingSearchAreaMsg) then {
+        if (A3E_Debug && !_shownMissingSearchAreaMsg) then {
             ["Motorized search group waiting for search area assignment..."] call drn_fnc_CL_ShowDebugTextAllClients;
             _shownMissingSearchAreaMsg = true;
         };
@@ -156,7 +155,7 @@ while {!_searchAreaExists} do {
     sleep 1;
 };
 
-if (_debug) then {
+if (A3E_Debug) then {
     ["Search area exists. Motorized search group on its way!"] call drn_fnc_CL_ShowDebugTextAllClients;
 };
 
@@ -175,7 +174,7 @@ scopeName "mainScope";
 
 while {_searchGroupExists} do {
     
-    if (_debug) then {
+    if (A3E_Debug) then {
         ["drn_MotorizedSearchGroup_VehicleDebugMarker" + str _currentEntityNo, getPos (leader group _vehicle), "mil_dot", "ColorRed", "MSG" + str _currentEntityNo] call drn_fnc_CL_SetDebugMarkerAllClients;
     };    
     
@@ -190,20 +189,20 @@ while {_searchGroupExists} do {
     if (_stationaryTimeSec > _maxStationaryTimeSec) then {
         [_group] call _fnc_ClearAllWaypoints;
         
-        if (_debug) then {
+        if (A3E_Debug) then {
             ["Motorized search group stationary for long time. Reseting..."] call drn_fnc_CL_ShowDebugTextAllClients;
         };
         
         _stationaryTimeSec = 0;
-        _state = ["READY", _debug] call _fnc_SetNewState;
+        _state = ["READY", A3E_Debug] call _fnc_SetNewState;
     };
     
     if (count _destinationPos > 0) then {
         if (_state != "ENGAGING" && !([_destinationPos, _searchAreaMarker] call drn_fnc_CL_PositionIsInsideMarker)) then {
             [_group] call _fnc_ClearAllWaypoints;
-            _state = ["READY", _debug] call _fnc_SetNewState;
+            _state = ["READY", A3E_Debug] call _fnc_SetNewState;
             
-            if (_debug) then {
+            if (A3E_Debug) then {
                 ["Motorized search group interrupting and following new intel. Reseting..."] call drn_fnc_CL_ShowDebugTextAllClients;
             };
         };
@@ -236,9 +235,9 @@ while {_searchGroupExists} do {
         _soldiers joinSilent _group;
         (units _crewGroup) call drn_fnc_CL_AddUnitsToGarbageCollector;
         
-        _state = ["BEGIN UNMOUNT", _debug] call _fnc_SetNewState;
+        _state = ["BEGIN UNMOUNT", A3E_Debug] call _fnc_SetNewState;
         
-        if (_debug) then {
+        if (A3E_Debug) then {
             ["Motorized search group abondoning vehicle..."] call drn_fnc_CL_ShowDebugTextAllClients;
         };
     };
@@ -257,7 +256,7 @@ while {_searchGroupExists} do {
 			_destinationPos = [_searchAreaMarker] call drn_fnc_CL_GetRandomMarkerPos;
 		};
         
-        if (_debug) then {
+        if (A3E_Debug) then {
             ["drn_MotorizedSearchGroup_DestinationDebugMarker" + str _currentEntityNo, _destinationPos, "mil_dot", "ColorRed", "MSG" + str _currentEntityNo + " destination"] call drn_fnc_CL_SetDebugMarkerAllClients;
         };
 
@@ -265,38 +264,38 @@ while {_searchGroupExists} do {
             // If distance is within walk distance            
             if (((leader _group) distance _destinationPos) < _maxWalkDistanceMeters) then {
                 if (!([_soldiers] call _fnc_isUnMounted)) then {
-                    _state = ["BEGIN UNMOUNT", _debug] call _fnc_SetNewState;
+                    _state = ["BEGIN UNMOUNT", A3E_Debug] call _fnc_SetNewState;
                 }
                 else {
                     if (_enemySighted) then {
-                        _state = ["BEGIN ENGAGE", _debug] call _fnc_SetNewState;
+                        _state = ["BEGIN ENGAGE", A3E_Debug] call _fnc_SetNewState;
                     }
                     else {
-                        _state = ["BEGIN MOVE", _debug] call _fnc_SetNewState;
+                        _state = ["BEGIN MOVE", A3E_Debug] call _fnc_SetNewState;
                     };
                 };
             }
             else {
                 // If distance is not within walk distance
                 if (_useVehicle) then {
-                    _state = ["BEGIN MOUNT", _debug] call _fnc_SetNewState;
+                    _state = ["BEGIN MOUNT", A3E_Debug] call _fnc_SetNewState;
                 }
                 else {
                     if (_enemySighted) then {
-                        _state = ["BEGIN ENGAGE", _debug] call _fnc_SetNewState;
+                        _state = ["BEGIN ENGAGE", A3E_Debug] call _fnc_SetNewState;
                     }
                     else {
-                        _state = ["BEGIN MOVE", _debug] call _fnc_SetNewState;
+                        _state = ["BEGIN MOVE", A3E_Debug] call _fnc_SetNewState;
                     };
                 }
             };
         }
         else {
             if (_enemySighted) then {
-                _state = ["BEGIN ENGAGE", _debug] call _fnc_SetNewState;
+                _state = ["BEGIN ENGAGE", A3E_Debug] call _fnc_SetNewState;
             }
             else {
-                _state = ["BEGIN MOVE", _debug] call _fnc_SetNewState;
+                _state = ["BEGIN MOVE", A3E_Debug] call _fnc_SetNewState;
             };
         };
     };
@@ -310,7 +309,7 @@ while {_searchGroupExists} do {
             _soldiers orderGetIn true;
         };
         
-        _state = ["MOUNTING", _debug] call _fnc_SetNewState;
+        _state = ["MOUNTING", A3E_Debug] call _fnc_SetNewState;
     };
     
     if (_state == "BEGIN UNMOUNT") then {
@@ -322,22 +321,22 @@ while {_searchGroupExists} do {
             _soldiers allowGetIn false;
         };
         
-        _state = ["UNMOUNTING", _debug] call _fnc_SetNewState;
+        _state = ["UNMOUNTING", A3E_Debug] call _fnc_SetNewState;
     };
     
     if (_state == "MOUNTING") then {
         if ([_soldiers] call _fnc_isMounted) then {
-            _state = ["BEGIN MOVE", _debug] call _fnc_SetNewState;
+            _state = ["BEGIN MOVE", A3E_Debug] call _fnc_SetNewState;
         };
     };
     
     if (_state == "UNMOUNTING") then {
         if ([_soldiers] call _fnc_isUnMounted) then {
             if (_enemySighted) then {
-                _state = ["BEGIN ENGAGE", _debug] call _fnc_SetNewState;
+                _state = ["BEGIN ENGAGE", A3E_Debug] call _fnc_SetNewState;
             }
             else {
-                _state = ["BEGIN MOVE", _debug] call _fnc_SetNewState;
+                _state = ["BEGIN MOVE", A3E_Debug] call _fnc_SetNewState;
             };
         };
     };
@@ -386,7 +385,7 @@ while {_searchGroupExists} do {
         _group setFormation _formation;
         
         _stationaryTimeSec = 0;
-        _state = ["MOVING", _debug] call _fnc_SetNewState;
+        _state = ["MOVING", A3E_Debug] call _fnc_SetNewState;
     };
     
     if (_state == "BEGIN ENGAGE") then {
@@ -394,15 +393,15 @@ while {_searchGroupExists} do {
         
         _destinationPos = _enemyPos;
         
-        if (_debug) then {
+        if (A3E_Debug) then {
             ["drn_MotorizedSearchGroup_DestinationDebugMarker" + str _currentEntityNo, _destinationPos, "mil_dot", "ColorRed", "MSG" + str _currentEntityNo + " target"] call drn_fnc_CL_SetDebugMarkerAllClients;
             //["drn_MotorizedSearchGroup_DestinationDebugMarker" + str _currentEntityNo, _destinationPos, "Warning"] call drn_fnc_CL_SetDebugMarkerAllClients;
             /*
-            if (!isNil "drn_MSG_debugMarker") then {
-                deleteMarkerLocal "drn_MSG_debugMarker";
+            if (!isNil "drn_MSGA3E_DebugMarker") then {
+                deleteMarkerLocal "drn_MSGA3E_DebugMarker";
             };
-            drn_MSG_debugMarker = createMarkerLocal ["drn_MSG_debugMarker", _destinationPos];
-            "drn_MSG_debugMarker" setMarkerTypeLocal "Warning";
+            drn_MSGA3E_DebugMarker = createMarkerLocal ["drn_MSGA3E_DebugMarker", _destinationPos];
+            "drn_MSGA3E_DebugMarker" setMarkerTypeLocal "Warning";
             */
         };
         
@@ -449,7 +448,7 @@ while {_searchGroupExists} do {
         _group setFormation _formation;
         
         _stationaryTimeSec = 0;
-        _state = ["ENGAGING", _debug] call _fnc_SetNewState;
+        _state = ["ENGAGING", A3E_Debug] call _fnc_SetNewState;
     };
     
     if (_state == "MOVING") then {
@@ -462,17 +461,17 @@ while {_searchGroupExists} do {
             _enemyPos = + _currentEnemyPosition;
             
             if (_useVehicle && (count _soldiers > 0) && (!([_soldiers] call _fnc_IsUnMounted))) then {
-                _state = ["BEGIN UNMOUNT", _debug] call _fnc_SetNewState;
+                _state = ["BEGIN UNMOUNT", A3E_Debug] call _fnc_SetNewState;
             }
             else {
-                _state = ["BEGIN ENGAGE", _debug] call _fnc_SetNewState;
+                _state = ["BEGIN ENGAGE", A3E_Debug] call _fnc_SetNewState;
             };
         }
         else {
             if (((leader _group) distance _destinationPos) < 200) then {
                 if (count _soldiers > 0) then {
                     if ([_soldiers] call _fnc_IsMounted) then {
-                        _state = ["BEGIN UNMOUNT", _debug] call _fnc_SetNewState;
+                        _state = ["BEGIN UNMOUNT", A3E_Debug] call _fnc_SetNewState;
                     };
                 }
                 else {
@@ -483,7 +482,7 @@ while {_searchGroupExists} do {
             };
                 
             if (((leader _group) distance _destinationPos) < 25) then {
-                _state = ["READY", _debug] call _fnc_SetNewState;
+                _state = ["READY", A3E_Debug] call _fnc_SetNewState;
             };
         };
     };
@@ -507,7 +506,7 @@ while {_searchGroupExists} do {
     sleep 1;
 };
 
-if (_debug) then {
+if (A3E_Debug) then {
     ["Motorized search group destroyed. Script exiting."] call drn_fnc_CL_ShowDebugTextAllClients;
     ["drn_MotorizedSearchGroup_VehicleDebugMarker" + str _currentEntityNo] call drn_fnc_CL_DeleteDebugMarkerAllClients;
     ["drn_MotorizedSearchGroup_DestinationDebugMarker" + str _currentEntityNo] call drn_fnc_CL_DeleteDebugMarkerAllClients;

@@ -46,7 +46,7 @@ if (_count == 0) then {
 	
 	if(_mode == 0) then {
 		_extractionPointNo = floor(random 8) + 1;
-		drn_var_Escape_ExtractionMarkerPos =  getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
+		a3e_var_Escape_ExtractionMarkerPos =  getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
 	} else {
 		_selectedPos = getMarkerPos ("drn_Escape_ExtractionPos1");
 		_extractionPointNo = 1;
@@ -63,15 +63,15 @@ if (_count == 0) then {
 				_extractionPointNo = _forEachIndex;
 			};
 		};
-		drn_var_Escape_ExtractionMarkerPos = getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
+		a3e_var_Escape_ExtractionMarkerPos = getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
 	};
-    publicVariable "drn_var_Escape_ExtractionMarkerPos";
+    publicVariable "a3e_var_Escape_ExtractionMarkerPos";
     _generatorTrailer setvariable ["A3E_Terminal_Hacked",true,true];
-    if (!isNil "drn_var_Escape_ExtractionMarker") then {
-        deleteMarker drn_var_Escape_ExtractionMarker;
+    if (!isNil "a3e_var_Escape_ExtractionMarker") then {
+        deleteMarker a3e_var_Escape_ExtractionMarker;
     };
-    drn_var_Escape_ExtractionMarker = createMarker ["drn_visibleGoalMarker", drn_var_Escape_ExtractionMarkerPos];
-    drn_var_Escape_ExtractionMarker setMarkerType "Flag_NATO";
+    a3e_var_Escape_ExtractionMarker = createMarker ["drn_visibleGoalMarker", a3e_var_Escape_ExtractionMarkerPos];
+    a3e_var_Escape_ExtractionMarker setMarkerType "Flag_NATO";
     
     [_extractionPointNo] call drn_fnc_Escape_CreateExtractionPointServer;
     

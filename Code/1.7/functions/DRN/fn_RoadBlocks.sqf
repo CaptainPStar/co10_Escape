@@ -267,14 +267,14 @@ while {true} do {
     while {count _roadBlocks < _numberOfRoadBlocks} do {
         
         sleep random 0.05;
-        if (isNil "drn_var_RoadBlocks_InstanceNo") then {
-            drn_var_RoadBlocks_InstanceNo = 0;
+        if (isNil "a3e_var_RoadBlocks_InstanceNo") then {
+            a3e_var_RoadBlocks_InstanceNo = 0;
         }
         else {
-            drn_var_RoadBlocks_InstanceNo = drn_var_RoadBlocks_InstanceNo + 1;
+            a3e_var_RoadBlocks_InstanceNo = a3e_var_RoadBlocks_InstanceNo + 1;
         };
         
-        _instanceNo = drn_var_RoadBlocks_InstanceNo;
+        _instanceNo = a3e_var_RoadBlocks_InstanceNo;
         
         if (_firstLoop) then {
             _minDistance = _minSpawnDistanceAtStartup;

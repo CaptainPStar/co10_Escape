@@ -546,7 +546,7 @@ class Mission
 			interruptable=1;
 			type="END2";
 			age="UNKNOWN";
-			expCond="drn_var_Escape_MissionComplete;";
+			expCond="a3e_var_Escape_MissionComplete;";
 			class Effects
 			{
 			};
@@ -558,7 +558,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expCond="isServer && isMultiplayer && drn_escapeHasStarted && ({(_x getVariable ""AT_Revive_isUnconscious"")} count playableUnits == count playableUnits)";
-			expActiv="call drn_fnc_Escape_SetMissionCompleteTasks;drn_var_Escape_AllPlayersDead = true;publicVariable ""drn_var_Escape_AllPlayersDead"";";
+			expActiv="call drn_fnc_Escape_SetMissionCompleteTasks;a3e_var_Escape_AllPlayersDead = true;publicVariable ""a3e_var_Escape_AllPlayersDead"";";
 			class Effects
 			{
 			};
@@ -571,7 +571,7 @@ class Mission
 			timeoutMax=1;
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="drn_var_Escape_AllPlayersDead || drn_var_Escape_MissionComplete;";
+			expCond="a3e_var_Escape_AllPlayersDead || a3e_var_Escape_MissionComplete;";
 			expActiv="1 cutText ["""", ""BLACK FADED""];";
 			class Effects
 			{
@@ -585,8 +585,8 @@ class Mission
 			timeoutMax=2;
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="drn_var_Escape_AllPlayersDead || drn_var_Escape_MissionComplete;";
-			expActiv="setDate [date select 0, date select 1, date select 2, (date select 3) - drn_var_Escape_hoursSkipped, date select 4];";
+			expCond="a3e_var_Escape_AllPlayersDead || a3e_var_Escape_MissionComplete;";
+			expActiv="setDate [date select 0, date select 1, date select 2, (date select 3) - a3e_var_Escape_hoursSkipped, date select 4];";
 			class Effects
 			{
 			};
@@ -600,7 +600,7 @@ class Mission
 			interruptable=1;
 			type="LOOSE";
 			age="UNKNOWN";
-			expCond="drn_var_Escape_AllPlayersDead;";
+			expCond="a3e_var_Escape_AllPlayersDead;";
 			class Effects
 			{
 			};

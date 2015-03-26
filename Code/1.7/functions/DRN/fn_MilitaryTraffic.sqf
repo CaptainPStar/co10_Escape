@@ -19,7 +19,7 @@ if (count _this > 7) then {_maxSkill = _this select 7;} else {_maxSkill = 0.6;};
 if (count _this > 8) then {_fnc_OnSpawnVehicle = _this select 8;} else {_fnc_OnSpawnVehicle = {};};
 if (count _this > 9) then {_debug = _this select 9;} else {_debug = false;};
 _factionsArray = [EAST, RESISTANCE, EAST, RESISTANCE, EAST, RESISTANCE, EAST, RESISTANCE, EAST, RESISTANCE, EAST, RESISTANCE, EAST, RESISTANCE];
-while {isNil "drn_var_commonLibInitialized"} do {
+while {isNil "a3e_var_commonLibInitialized"} do {
     player sideChat "Script MilitaryTraffic.sqf requires CommonLib v1.02.";
     sleep 10;
 };
@@ -328,7 +328,7 @@ while {true} do {
             // Set crew skill
             {
                 //_skill = _minSkill + random (_maxSkill - _minSkill);
-//                [_x, drn_var_Escape_enemyMinSkill] call EGG_EVO_skill;
+//                [_x, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
 
             } foreach _vehiclesCrew;
             

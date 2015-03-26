@@ -1,17 +1,17 @@
 if (!isServer) exitWith {};
 
-private ["_village", "_markerName", "_debug", "_soldiers", "_soldier", "_spawned", "_damage", "_soldierObj"];
+private ["_village", "_markerName", "_soldiers", "_soldier", "_spawned", "_damage", "_soldierObj"];
 private ["_groups", "_soldierPos", "_group", "_hasScript", "_boats"];
 private ["_deleteGroupDelayed","_flag"];
 
 _village = _this select 0;
-if (count _this > 1) then {_debug = _this select 1;} else {_debug = false;};
+
 
 _markerName = _village select 0;
 _groups = _village select 2;
 _boats = _village select 3;
 
-if (_debug) then {
+if (A3E_Debug) then {
     player sideChat "Depopulating aquatic Patrol (" + _markerName + ")";
 };
 

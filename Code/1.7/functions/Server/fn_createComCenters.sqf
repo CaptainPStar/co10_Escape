@@ -2,7 +2,7 @@ private ["_communicationCenterMarkers", "_comCenNo", "_comCenMarkerNames", "_mar
 
 _comCenMarkerNames = [];
 _comCenNo = 1;
-_markerCoreName = "drn_var_communicationCenter";
+_markerCoreName = "a3e_var_communicationCenter";
 _markerName = _markerCoreName + str _comCenNo;
 
 private["_index","_chosenComCenIndexes","_commCentreMarkers"];
@@ -10,11 +10,11 @@ _chosenComCenIndexes = [];
 
 _distanceBetween = A3E_MinComCenterDistance;
 
-if(isNil("a3e_arr_communicationCenterMarkers")) then {
-    a3e_arr_communicationCenterMarkers = [];
+if(isNil("a3e_communicationCenterMarkers")) then {
+    a3e_communicationCenterMarkers = [];
 	diag_log "Warning: Comcenter Templatearray was empty!";
 };
-_commCentreMarkers = [] + a3e_arr_communicationCenterMarkers;
+_commCentreMarkers = [] + a3e_communicationCenterMarkers;
 
     if(isNil("A3E_ComCenterCount")) then {
             A3E_ComCenterCount = 4;
@@ -39,11 +39,12 @@ for [{_i=0},{_i<_totalMarkerCount},{_i=_i+1}] do {
 			_ok = false;
 		};
 	} foreach _comCenPositions;
-	if (_pos distance drn_startPos < A3E_MinComCenterDistance) then {
+	if (_pos distance A3E_StartPos < A3E_MinComCenterDistance) then {
 			_ok = false;
 	};
 	if(_ok) then {
 		[_pos, _dir,a3e_arr_ComCenStaticWeapons,a3e_arr_ComCenParkedVehicles] call a3e_fnc_BuildComCenter;
+		A3E_Var_ClearedPositions pushBack _pos;
 		["drn_CommunicationCenterMapMarker" + str _instanceNo,_pos,"flag_CSAT"] call A3E_fnc_createLocationMarker;
 
 		_marker = createMarkerLocal ["drn_CommunicationCenterPatrolMarker" + str _instanceNo, _pos];
@@ -59,5 +60,5 @@ for [{_i=0},{_i<_totalMarkerCount},{_i=_i+1}] do {
 	//Nothing
 	};
 };
-drn_var_Escape_communicationCenterPositions = _comCenPositions;
-publicVariable "drn_var_Escape_communicationCenterPositions";
+a3e_var_Escape_communicationCenterPositions = _comCenPositions;
+publicVariable "a3e_var_Escape_communicationCenterPositions";

@@ -44,7 +44,7 @@ if (isNil "drn_ReinforcementTruck_CurrentEntityNo") then {
 _currentEntityNo = drn_ReinforcementTruck_CurrentEntityNo;
 drn_ReinforcementTruck_CurrentEntityNo = drn_ReinforcementTruck_CurrentEntityNo + 1;
 
-if (isNil "drn_var_commonLibInitialized") then {
+if (isNil "a3e_var_commonLibInitialized") then {
     [] spawn {
         while {true} do { player sideChat "Script ReinforcementTruck.sqf needs CommonLib version 1.02"; sleep 5; };
     };

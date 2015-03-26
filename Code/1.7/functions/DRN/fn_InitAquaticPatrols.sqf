@@ -7,7 +7,7 @@ private ["_aquaticPatrolZoneNo", "_aquaticPatrolZoneSize", "_maxGroupsCount", "_
 private ["_script", "_skill", "_ammo", "_trigger", "_soldierPos", "_rank", "_hasScript", "_groupPos", "_roadSegments", "_roadSegment"];
 private ["_message", "_aquaticPatrolZoneName", "_fnc_onSpawnGroup"];
 
-if (isNil "drn_var_villageMarkersInitialized") exitWith {
+if (isNil "a3e_var_villageMarkersInitialized") exitWith {
     [] spawn {
         player sideChat "Scripts\DRN\VillageMarkers\InitVillageMarkers.sqf must be called before call to Scripts/DRN/VillagePatrols/InitVillagePatrols.sqf.";
         sleep 10;

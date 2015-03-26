@@ -35,4 +35,4 @@ if (isServer) then {
 	[false] call drn_fnc_AquticPatrolMarkers_PutAquaticPatrolMarkersOnMap;
 };
 
-drn_var_aquaticPatrolMarkersInitialized = true;
+a3e_var_aquaticPatrolMarkersInitialized = true;

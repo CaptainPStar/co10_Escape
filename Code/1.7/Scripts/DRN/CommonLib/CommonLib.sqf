@@ -11,7 +11,7 @@
 /* Variables */
 
 // Set this variable to true if you want debug info to show only in RTF-file (and not on player's screens).
-drn_var_CL_SilentDebugMode = false;
+a3e_var_CL_SilentDebugMode = false;
 
 /******************************************************************************************/
 /* Functions */
@@ -425,11 +425,11 @@ drn_fnc_CL_AddUnitsToGarbageCollector = {
     private ["_units"];
     _units = _this;
     
-    /*if (isNil "drn_var_CL_GarbageCollectorUnits") then {
-        drn_var_CL_GarbageCollectorUnits = [];
+    /*if (isNil "a3e_var_CL_GarbageCollectorUnits") then {
+        a3e_var_CL_GarbageCollectorUnits = [];
     };
     
-    drn_var_CL_GarbageCollectorUnits = drn_var_CL_GarbageCollectorUnits + _units;*/
+    a3e_var_CL_GarbageCollectorUnits = a3e_var_CL_GarbageCollectorUnits + _units;*/
 };
 
 /*
@@ -439,22 +439,21 @@ drn_fnc_CL_AddUnitsToGarbageCollector = {
  * Arguments:
  *   _referenceGroup: When distance is at least "clean up distance" to every unit in this group (preferrably player group), objects relevant to garbage collector will be garbage collected.
  *   [_cleanUpDistance]: Optional. Distance in meters at which objects will be garbage collected.
- *   [_debug]: Optional. true to enable debug mode, else false.
+ *   [A3E_Debug]: Optional. true to enable debug mode, else false.
  */
 drn_fnc_CL_RunGarbageCollector = {
-    private ["_referenceGroup", "_cleanUpDistance", "_debug"];
+    private ["_referenceGroup", "_cleanUpDistance"];
     private ["_emptyGroups", "_groupsToDelete", "_unitsToDelete"];
     
     _referenceGroup = _this select 0;
     if (count _this > 1) then {_cleanUpDistance = _this select 1;} else {_cleanUpDistance = 750};
-    if (count _this > 2) then { _debug = _this select 2; } else { _debug = false; };
     
-    if (_debug) then {
+    if (A3E_Debug) then {
         ["Garbage collector started."] call drn_fnc_CL_ShowDebugTextAllClients;
     };
     
-    if (isNil "drn_var_CL_GarbageCollectorUnits") then {
-        drn_var_CL_GarbageCollectorUnits = [];
+    if (isNil "a3e_var_CL_GarbageCollectorUnits") then {
+        a3e_var_CL_GarbageCollectorUnits = [];
     };
     
     _emptyGroups = [];
@@ -468,7 +467,7 @@ drn_fnc_CL_RunGarbageCollector = {
             };
         } foreach allGroups;        
         
-        if (_debug) then {
+        if (A3E_Debug) then {
             sleep 1;
         }
         else {
@@ -487,7 +486,7 @@ drn_fnc_CL_RunGarbageCollector = {
         
         // Delete the groups
         {
-            if (_debug) then {
+            if (A3E_Debug) then {
                 ["Group '" + str _x + "' garbage collected."] call drn_fnc_CL_ShowDebugTextAllClients;
             };
             
@@ -511,23 +510,23 @@ drn_fnc_CL_RunGarbageCollector = {
             if (_farAway) then {
                 _unitsToDelete set [count _unitsToDelete, _unit];
             };
-        } foreach drn_var_CL_GarbageCollectorUnits;
+        } foreach a3e_var_CL_GarbageCollectorUnits;
         
-        drn_var_CL_GarbageCollectorUnits = drn_var_CL_GarbageCollectorUnits - _unitsToDelete;
+        a3e_var_CL_GarbageCollectorUnits = a3e_var_CL_GarbageCollectorUnits - _unitsToDelete;
         
         {
             private ["_group"];
             
             _group = group _x;
             
-            if (_debug) then {
+            if (A3E_Debug) then {
                 ["Unit '" + str _x + "' garbage collected."] call drn_fnc_CL_ShowDebugTextAllClients;
             };
             deleteVehicle _x;
             
             if (str _group != "<NULL-group>") then {
                 if (count units _group == 0) then {
-                    if (_debug) then {
+                    if (A3E_Debug) then {
                         ["Group '" + str _group + "' garbage collected."] call drn_fnc_CL_ShowDebugTextAllClients;
                     };
                     
@@ -541,16 +540,16 @@ drn_fnc_CL_RunGarbageCollector = {
 /******************************************************************************************/
 // Debug stuff
 
-drn_CL_DebugTextEventArgs = []; // Empty
-drn_CL_DebugMarkerEventArgs = []; // [name, position, size, direction, shape ("RECTANGLE" or "ELLIPSE"), markerColor, markerText (optional)] or alternatively [name, position, type, markerColor (optional), markerText (optional)]
+drn_CLA3E_DebugTextEventArgs = []; // Empty
+drn_CLA3E_DebugMarkerEventArgs = []; // [name, position, size, direction, shape ("RECTANGLE" or "ELLIPSE"), markerColor, markerText (optional)] or alternatively [name, position, type, markerColor (optional), markerText (optional)]
 drn_CL_DeleteDebugMarkerEventArgs = [];  // [name]
 
-"drn_CL_DebugTextEventArgs" addPublicVariableEventHandler {
-    drn_CL_DebugTextEventArgs call drn_fnc_CL_ShowDebugTextLocal;
+"drn_CLA3E_DebugTextEventArgs" addPublicVariableEventHandler {
+    drn_CLA3E_DebugTextEventArgs call drn_fnc_CL_ShowDebugTextLocal;
 };
 
-"drn_CL_DebugMarkerEventArgs" addPublicVariableEventHandler {
-    drn_CL_DebugMarkerEventArgs call drn_fnc_CL_SetDebugMarkerLocal;
+"drn_CLA3E_DebugMarkerEventArgs" addPublicVariableEventHandler {
+    drn_CLA3E_DebugMarkerEventArgs call drn_fnc_CL_SetDebugMarkerLocal;
 };
 
 "drn_CL_DeleteDebugMarkerEventArgs" addPublicVariableEventHandler {
@@ -560,7 +559,7 @@ drn_CL_DeleteDebugMarkerEventArgs = [];  // [name]
 /*
  * Summary: Shows debug text on local client.
  * Remarks:
- *   if global variable "drn_var_CL_SilentDebugMode" is set to true, debug text will only be written to RTF-file and not shown on screen.
+ *   if global variable "a3e_var_CL_SilentDebugMode" is set to true, debug text will only be written to RTF-file and not shown on screen.
  * Arguments:
  *   _text: Debug text.
  */
@@ -568,7 +567,7 @@ drn_fnc_CL_ShowDebugTextLocal = {
     private ["_minutes", "_seconds"];
     
     if (!isNull player) then {
-        if (!drn_var_CL_SilentDebugMode) then {
+        if (!a3e_var_CL_SilentDebugMode) then {
             player sideChat (_this select 0);
         };
     };
@@ -581,20 +580,20 @@ drn_fnc_CL_ShowDebugTextLocal = {
 /*
  * Summary: Shows debug text on all clients.
  * Remarks:
- *   if global variable "drn_var_CL_SilentDebugMode" is set to true, debug text will only be written to RTF-file and not shown on screen.
+ *   if global variable "a3e_var_CL_SilentDebugMode" is set to true, debug text will only be written to RTF-file and not shown on screen.
  * Arguments:
  *   _text: Debug text.
  */
 drn_fnc_CL_ShowDebugTextAllClients = {
-    drn_CL_DebugTextEventArgs = _this;
-    publicVariable "drn_CL_DebugTextEventArgs";
-    drn_CL_DebugTextEventArgs call drn_fnc_CL_ShowDebugTextLocal;
+    drn_CLA3E_DebugTextEventArgs = _this;
+    publicVariable "drn_CLA3E_DebugTextEventArgs";
+    drn_CLA3E_DebugTextEventArgs call drn_fnc_CL_ShowDebugTextLocal;
 };
 
 /*
  * Summary: Shows debug marker on local client.
  * Remarks:
- *   if global variable "drn_var_CL_SilentDebugMode" is set to true, debug marker will not shown.
+ *   if global variable "a3e_var_CL_SilentDebugMode" is set to true, debug marker will not shown.
  * Arguments alternative #1 (Marker representing an area):
  *   _markerName: Marker's name. (must be global unique).
  *   _position: Marker's position.
@@ -615,7 +614,7 @@ drn_fnc_CL_SetDebugMarkerLocal = {
     private ["_marker"];
 
     if (!isNull player) then {
-        if (!drn_var_CL_SilentDebugMode) then {
+        if (!a3e_var_CL_SilentDebugMode) then {
             _markerName = _this select 0;
             _position = _this select 1;
             _markerColor = "Default";
@@ -675,7 +674,7 @@ drn_fnc_CL_SetDebugMarkerLocal = {
 /*
  * Summary: Shows debug marker on all clients.
  * Remarks:
- *   if global variable "drn_var_CL_SilentDebugMode" is set to true, debug marker will not shown.
+ *   if global variable "a3e_var_CL_SilentDebugMode" is set to true, debug marker will not shown.
  * Arguments alternative #1 (Marker representing an area):
  *   _markerName: Marker's name. (must be global unique).
  *   _position: Marker's position.
@@ -692,9 +691,9 @@ drn_fnc_CL_SetDebugMarkerLocal = {
  *   [_markerText]. Optional. Marker's text.
  */
 drn_fnc_CL_SetDebugMarkerAllClients = {
-    drn_CL_DebugMarkerEventArgs = _this;
-    publicVariable "drn_CL_DebugMarkerEventArgs";
-    drn_CL_DebugMarkerEventArgs call drn_fnc_CL_SetDebugMarkerLocal;
+    drn_CLA3E_DebugMarkerEventArgs = _this;
+    publicVariable "drn_CLA3E_DebugMarkerEventArgs";
+    drn_CLA3E_DebugMarkerEventArgs call drn_fnc_CL_SetDebugMarkerLocal;
 };
 
 /*
@@ -719,6 +718,6 @@ drn_fnc_CL_DeleteDebugMarkerAllClients = {
     drn_CL_DeleteDebugMarkerEventArgs call drn_fnc_CL_DeleteDebugMarkerLocal;
 };
 
-drn_var_CL_CommonLibVersion = 1.04;
-drn_var_commonLibInitialized = true;
+a3e_var_CL_CommonLibVersion = 1.04;
+a3e_var_commonLibInitialized = true;
 

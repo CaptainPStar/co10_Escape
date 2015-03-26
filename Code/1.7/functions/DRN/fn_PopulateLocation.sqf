@@ -53,7 +53,7 @@ _firstGroup = true;
         //_soldier setSkill _skill;
 		
         _soldier setDamage _damage;
-//		[_soldier, drn_var_Escape_enemyMinSkill] call EGG_EVO_skill;
+//		[_soldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
 		_soldier call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
 		
         if (_groupMemberCount == 0) then {

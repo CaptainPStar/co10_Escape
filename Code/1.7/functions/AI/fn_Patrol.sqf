@@ -20,7 +20,7 @@ if(!isNil("_markerName")) then {
 } else {
 	_leader = (leader _group);
 	_searchRange = 3000;
-	_players = [] call drn_fnc_Escape_GetPlayers;
+	_players = [] call A3E_fnc_GetPlayers;
 	_destinationPos = [_players,_searchRange] call a3e_fnc_RandomPatrolPos;
 	//Prevent the unit to patrol to a player far away
 	while {(_destinationPos distance _leader)>(_searchRange*1.5)} do {

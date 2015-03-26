@@ -40,7 +40,7 @@ if (count _groups == 0) exitWith {};
 
 		 	_soldierObj = _newGroup createUnit [_soldierType, _soldierPos, [], 0, "FORM"];
 			//_soldierObj setSkill _skill;
-//			[_soldierObj, drn_var_Escape_enemyMinSkill] call EGG_EVO_skill;
+//			[_soldierObj, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
 			_soldierObj setDamage _damage;
 			//_soldierObj setVehicleAmmo _ammo;
 			_soldierObj setUnitRank _rank;
