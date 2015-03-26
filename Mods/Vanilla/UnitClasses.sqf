@@ -17,14 +17,14 @@ _enemyFrequency = _this select 0;
 a3e_arr_Escape_StartPositionGuardTypes = ["I_Soldier_AR_F", "I_Soldier_GL_F", "I_Soldier_F", "I_Soldier_lite_F"];
 
 // Weapons inside the backpack (and corresponding magazine type).
-drn_var_Escape_InnerFenceGuardSecondaryWeapon = [];
-drn_var_Escape_InnerFenceGuardSecondaryWeapon set [count(drn_var_Escape_InnerFenceGuardSecondaryWeapon),["hgun_ACPC2_F","9Rnd_45ACP_Mag"]];
-drn_var_Escape_InnerFenceGuardSecondaryWeapon set [count(drn_var_Escape_InnerFenceGuardSecondaryWeapon),["hgun_Rook40_F","16Rnd_9x21_Mag"]];
-drn_var_Escape_InnerFenceGuardSecondaryWeapon set [count(drn_var_Escape_InnerFenceGuardSecondaryWeapon),["hgun_PDW2000_F","30Rnd_9x21_Mag"]];
-drn_var_Escape_InnerFenceGuardSecondaryWeapon set [count(drn_var_Escape_InnerFenceGuardSecondaryWeapon),["hgun_P07_F","16Rnd_9x21_Mag"]];
-drn_var_Escape_InnerFenceGuardSecondaryWeapon set [count(drn_var_Escape_InnerFenceGuardSecondaryWeapon),["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"]];
-drn_var_Escape_InnerFenceGuardSecondaryWeapon set [count(drn_var_Escape_InnerFenceGuardSecondaryWeapon),["hgun_P07_snds_F","30Rnd_9x21_Mag"]];
-drn_var_Escape_InnerFenceGuardSecondaryWeapon set [count(drn_var_Escape_InnerFenceGuardSecondaryWeapon),["hgun_Rook40_snds_F","30Rnd_9x21_Mag"]];
+a3e_arr_PrisonBackpackWeapons = [];
+a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["hgun_ACPC2_F","9Rnd_45ACP_Mag"]];
+a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["hgun_Rook40_F","16Rnd_9x21_Mag"]];
+a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["hgun_PDW2000_F","30Rnd_9x21_Mag"]];
+a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["hgun_P07_F","16Rnd_9x21_Mag"]];
+a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"]];
+a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["hgun_P07_snds_F","30Rnd_9x21_Mag"]];
+a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["hgun_Rook40_snds_F","30Rnd_9x21_Mag"]];
 
 // Random array. Civilian vehicle classes for ambient traffic. (Can also be set to a faction name).
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F"];
