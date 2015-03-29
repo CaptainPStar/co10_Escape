@@ -29,6 +29,7 @@ class Mission
 	{
 		briefingName="{* MISSION *} {* ISLANDNAME *} {* MOD *} {* VERSION *}";
 		resistanceWest=0;
+		resistanceEast=1;
 		startWeather=0;
 		startWind=0.099999994;
 		startWaves=0.099999994;
@@ -48,7 +49,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=21;
+		items=5;
 		class Item0
 		{
 			side="LOGIC";
@@ -69,324 +70,6 @@ class Mission
 		};
 		class Item1
 		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={13652.891,54.67527,2914.0051};
-					id=1;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_1";
-				};
-			};
-		};
-		class Item2
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={13677.602,53.075687,2936.7024};
-					id=2;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_2";
-				};
-			};
-		};
-		class Item3
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={3718.4771,401.95428,5976.3569};
-					id=3;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_3";
-				};
-			};
-		};
-		class Item4
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={3714.7661,401.92032,5969.7261};
-					id=4;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_4";
-				};
-			};
-		};
-		class Item5
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={6885.6299,406.2272,11437.828};
-					id=5;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_5";
-				};
-			};
-		};
-		class Item6
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={6875.9961,405.72464,11430.992};
-					id=6;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_6";
-				};
-			};
-		};
-		class Item7
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={12922.525,215.18806,12767.281};
-					id=7;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_7";
-				};
-			};
-		};
-		class Item8
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={12914.593,214.88506,12767.656};
-					id=8;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_8";
-				};
-			};
-		};
-		class Item9
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={11464.668,221,7512.2192};
-					id=9;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_9";
-				};
-			};
-		};
-		class Item10
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={11473.296,221,7507.9385};
-					id=10;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_10";
-				};
-			};
-		};
-		class Item11
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={4859.1777,8.8109617,2535.4526};
-					id=11;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_11";
-				};
-			};
-		};
-		class Item12
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={4869.0859,8.9219475,2542.5298};
-					id=12;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_12";
-				};
-			};
-		};
-		class Item13
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={11482.073,344.03299,11332.656};
-					id=13;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_13";
-				};
-			};
-		};
-		class Item14
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={11488.597,343.94696,11325.666};
-					id=14;
-					side="EAST";
-					vehicle="{* MORTARUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_14";
-				};
-			};
-		};
-		class Item15
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={4167.9185,338.32056,11052.691};
-					azimut=133.05844;
-					id=15;
-					side="EAST";
-					vehicle="{* ARTILLERYUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_15";
-				};
-			};
-			class Waypoints
-			{
-				items=1;
-				class Item0
-				{
-					position[]={4167.9185,338.32056,11052.691};
-					id=15;
-					type="HOLD";
-					class Effects
-					{
-					};
-					showWP="NEVER";
-				};
-			};
-		};
-		class Item16
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={4174.5347,338.49496,11024.409};
-					azimut=133.05844;
-					id=16;
-					side="EAST";
-					vehicle="{* ARTILLERYUNIT *}";
-					leader=1;
-					skill=0.60000002;
-					text="arti_16";
-				};
-			};
-			class Waypoints
-			{
-				items=1;
-				class Item0
-				{
-					position[]={4174.5347,338.49496,11024.409};
-					id=16;
-					type="HOLD";
-					class Effects
-					{
-					};
-					showWP="NEVER";
-				};
-			};
-		};
-		class Item17
-		{
 			side="LOGIC";
 			class Vehicles
 			{
@@ -403,7 +86,7 @@ class Mission
 				};
 			};
 		};
-		class Item18
+		class Item2
 		{
 			side="LOGIC";
 			class Vehicles
@@ -421,7 +104,7 @@ class Mission
 				};
 			};
 		};
-		class Item19
+		class Item3
 		{
 			side="LOGIC";
 			class Vehicles
@@ -439,7 +122,7 @@ class Mission
 				};
 			};
 		};
-		class Item20
+		class Item4
 		{
 			side="WEST";
 			class Vehicles
