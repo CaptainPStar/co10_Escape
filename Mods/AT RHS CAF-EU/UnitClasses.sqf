@@ -58,7 +58,7 @@ a3e_arr_recon_I_InfantryTypes = ["rhs_msv_recon_sergeant","rhs_msv_recon_enginee
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = ["rhs_btr60_msv", "RHS_NSV_TriPod_VDV", "O_static_AT_F"];
-a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = ["CAF_AG_eeur_r_Offroad", "CAF_AG_eeur_r_Offroad_armed_01", "CAF_AG_eeur_r_Offroad_armed_01", "I_HMG_01_hight_f", "I_static_AT_F"];
+a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = ["CAF_AG_eeur_r_Offroad", "CAF_AG_eeur_r_Offroad_armed_01", "CAF_AG_eeur_r_Offroad_armed_01", "I_HMG_01_high_f", "I_static_AT_F"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = ["rhs_gaz66o_msv","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_gaz66_msv"];
