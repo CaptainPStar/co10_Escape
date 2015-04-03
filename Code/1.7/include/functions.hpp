@@ -22,6 +22,7 @@ class CfgFunctions
 			class HealAtBuilding {};
 			class GetPlayers {};
 			class GetPlayerGroup {};
+			class Briefing {};
 		};
 		class AI
 		{
