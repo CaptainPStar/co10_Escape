@@ -390,6 +390,7 @@ AT_FNC_Revive_Ragdoll = {
 			
 			[[_unit,false],"at_fnc_revive_hide",true] call BIS_fnc_MP;
 			[[_unit,"AinjPpneMstpSnonWrflDnon"],"at_fnc_revive_switchMove",true] call BIS_fnc_MP;
+			player switchCamera "Internal";
 			_dummy setpos [0,0,0];
 			deletevehicle _dummy;
 		} else {
