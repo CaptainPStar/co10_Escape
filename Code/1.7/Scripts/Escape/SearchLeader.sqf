@@ -269,7 +269,7 @@ while {1 == 1} do {
 					
 					if((diag_tickTime-_firstsight)>=_artilleryTimeThreshold && (diag_tickTime > (_artilleryCooldown+_lastArtilleryStrike))) then {
 						if(random 100 < a3e_var_artillery_chance) then {
-							if (a3eA3E_Debug_artillery) then {
+							if (a3e_debug_artillery) then {
 								player sidechat "HQ is trying to call an artillery strike";
 							};
 							_strikesuccess = [getpos (_list select 0)] call a3e_fnc_FireArtillery;
