@@ -19,16 +19,13 @@ _deleteBoatDelayed = {
     private ["_boat","_group"];
     _boat = _this select 0;
 	_flag = true;
-	
+	_group = (group ((crew _boat) select 0));
 	if(count(_group)==0) then {_flag = false;};
     {
         if(isplayer _x) then {_flag = false;};
     } foreach crew _boat;
 	
-	if(_flag) then {
-		_script = (group ((crew _boat) select 0)) getvariable ["A3E_GroupPatrolScript",nil];
-		
-		
+	if(_flag) then {		
 		_script = _group getvariable ["A3E_GroupPatrolScript",nil];
 		if(!isNil("_script")) then {
 			if (!(scriptDone _script)) then {
