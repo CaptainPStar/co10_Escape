@@ -78,8 +78,9 @@ _waypoint setWaypointBehaviour "CARELESS";
 sleep 10;
 
 ["Task complete: Rendesvouz with allied forces."] call drn_fnc_CL_ShowTitleTextAllClients;
-["drn_rendesvouzTasks", "SUCCEEDED"] call drn_SetTaskStateOnAllMachines;
-sleep 25;
+A3E_Task_Exfil_Complete = true;
+publicvariable "A3E_Task_Exfil_Complete";
+sleep 35;
 
 
 a3e_var_Escape_MissionComplete = true;

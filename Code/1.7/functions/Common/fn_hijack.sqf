@@ -1,4 +1,4 @@
-private ["_generatorTrailer", "_unit", "_id"];
+private ["_generatorTrailer", "_unit", "_id","_isUnconscious"];
 private ["_marker", "_extractionPointNo", "_count", "_text","_engineer"];
 
 _generatorTrailer = _this select 0;
@@ -12,9 +12,9 @@ if (_engineer == 1) then {
 };
 
 
-while {(_count > 0) && (_unit distance _generatorTrailer < 3)} do
+while {(_count > 0) && (_unit distance _generatorTrailer < 3) && !(_unit getVariable ["AT_Revive_isUnconscious",false])} do
 {
-	_text = "HIJACKING " + str _count;
+	_text = "Hacking " + str _count;
 
 	cutText [_text, "Plain", 1];
 	sleep 1;
@@ -23,6 +23,11 @@ while {(_count > 0) && (_unit distance _generatorTrailer < 3)} do
 };
 
 
+_isUnconscious = _unit getVariable ["AT_Revive_isUnconscious",false];
+if (_count > 0 && _isUnconscious) exitWith {
+    cutText ["Hacking aborted!", "Plain", 1];
+	_generatorTrailer setvariable ["A3E_Terminal_Hacked",false,true];
+};
 
 if (_count > 0 && _unit distance _generatorTrailer > 3) exitWith {
     cutText ["You must get closer!", "Plain", 1];
@@ -75,8 +80,10 @@ if (_count == 0) then {
     
     [_extractionPointNo] call drn_fnc_Escape_CreateExtractionPointServer;
     
-    ["drn_hijackTasks", "SUCCEEDED"] call drn_SetTaskStateOnAllMachines;
-    ["Task complete: Hijack Communication Center (Rendezvous point marked on map)"] call drn_fnc_CL_ShowTitleTextAllClients;
+	A3E_Task_ComCenter_Complete = true;
+	publicvariable "A3E_Task_ComCenter_Complete";
+	
+    ["Task complete: Hack Communication Center (Rendezvous point marked on map)"] call drn_fnc_CL_ShowTitleTextAllClients;
     
     _generatorTrailer removeAction _id;
 };
