@@ -83,7 +83,7 @@ class Params
 		title="Additional Weaponbox at depot";
 		values[]={0,1};
 		texts[]={"Off", "On"};
-		default = 1;
+		default = 0;
 	};
 	class Param_RespawnButton
 	{
