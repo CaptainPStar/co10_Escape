@@ -38,22 +38,27 @@ ATHSC_fnc_createCam = {
 ATHSC_fnc_updateCam = {
 	private["_commit"];
 	_commit = [_this,0,0] call bis_fnc_param;
-	ATHSC_Cam camSetTarget ATHSC_CamTarget;
-	ATHSC_Cam camSetRelPos [0, 8, 15];
-	ATHSC_Cam cameraEffect ["internal", "back"];
-	ATHSC_Cam camCommit _commit;
+	if(!(isNull ATHSC_Cam)) then {
+		ATHSC_Cam camSetTarget ATHSC_CamTarget;
+		ATHSC_Cam camSetRelPos [0, 8, 15];
+		ATHSC_Cam cameraEffect ["internal", "back"];
+		ATHSC_Cam camCommit _commit;
+	};
 };
 ATHSC_fnc_exit = {
 	ATHSC_Run = false;
-	ATHSC_Cam cameraEffect ["terminate","back"];
-	camDestroy ATHSC_Cam;
-	player switchCamera "Internal";
-	closeDialog 123;
-	[] spawn {
-		sleep 1.0;
-		if(alive player && (player getvariable ["AT_Revive_isUnconscious",false]) && !drn_var_Escape_AllPlayersDead) then {
-			[] spawn ATHSC_fnc_createCam;
-			//(findDisplay 46) displayRemoveEventHandler ["KeyDown",ATHSC_KeyDownHandler];
+	if(!isNull ATHSC_Cam) then {
+		ATHSC_Cam cameraEffect ["terminate","back"];
+		camDestroy ATHSC_Cam;
+		ATHSC_Cam = objNull;
+		player switchCamera "Internal";
+		closeDialog 123;
+		[] spawn {
+			sleep 1.0;
+			if(alive player && (player getvariable ["AT_Revive_isUnconscious",false]) && !A3E_var_Escape_AllPlayersDead) then {
+				[] spawn ATHSC_fnc_createCam;
+				//(findDisplay 46) displayRemoveEventHandler ["KeyDown",ATHSC_KeyDownHandler];
+			};
 		};
 	};
 };
