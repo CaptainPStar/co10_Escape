@@ -56,7 +56,9 @@ waituntil {!isNil("A3E_ParamsParsed")};
 call compile preprocessFileLineNumbers "Scripts\Escape\Functions.sqf";
 call compile preprocessFileLineNumbers "Scripts\Escape\AIskills.sqf";
 
-[_isJipPlayer] call compile preprocessFileLineNumbers "Briefing.sqf";
+//[_isJipPlayer] call compile preprocessFileLineNumbers "Briefing.sqf";
+
+[] call a3e_fnc_briefing;
 
 setTerrainGrid (Param_Grass);
 
