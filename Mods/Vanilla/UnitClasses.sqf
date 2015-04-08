@@ -143,6 +143,13 @@ a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["sr
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_EBR_F", 10, 2, 4, ["20Rnd_762x51_Mag"], 9]];
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_GM6_F", 10, 2, 4, ["5Rnd_127x108_Mag"], 9]];
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["LMG_Zafir_F", 50, 2, 4, ["150Rnd_762x51_Box", "150Rnd_762x51_Box_Tracer"], 6]];
+a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["MMG_01_hex_F", 10, 2, 4, ["150Rnd_93x64_Mag"], 6]];
+a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["MMG_02_black_F", 30, 2, 4, ["130Rnd_338_Mag"], 6]];
+a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_DMR_06_olive_F", 10, 2, 4, ["20Rnd_762x51_Mag"], 10]];
+a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_DMR_05_blk_F", 10, 2, 4, ["10Rnd_93x64_DMR_05_Mag"], 12]];
+a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_DMR_04_F", 10, 2, 4, ["10Rnd_127x54_Mag"], 12]];
+a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_DMR_03_khaki_F", 10, 2, 4, ["20Rnd_762x51_Mag"], 10]];
+a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_DMR_02_F", 10, 2, 4, ["10Rnd_338_Mag"], 12]];
 // non-CAST weapons
 //a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_LRR_F", 100, 2, 4, ["7Rnd_408_Mag"], 9]];
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["LMG_Mk200_F", 20, 2, 4, ["200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box_Tracer"], 6]];
@@ -232,7 +239,14 @@ a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["O_UavTerminal", 10, 
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["optic_DMS", 10, 1, 2]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["optic_Yorris", 10, 1, 2]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["optic_LRPS", 10, 1, 2]];
-
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["optic_AMS", 10, 1, 2]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["optic_KHS_blk", 10, 1, 2]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["bipod_01_F_blk", 10, 1, 2]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["bipod_02_F_blk", 10, 1, 2]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["bipod_03_F_blk", 10, 1, 2]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["bipod_01_F_mtp", 10, 1, 2]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["bipod_02_F_hex", 10, 1, 2]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["bipod_03_F_oli", 10, 1, 2]];
 // Weapons that may show up in civilian cars
 
 // Index 0: Weapon classname.
@@ -251,6 +265,7 @@ a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["arifle_Katib
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["arifle_Mk20_GL_ACO_F", "UGL_FlareWhite_F", 8]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["SMG_01_Holo_F", "30Rnd_45ACP_Mag_SMG_01_Tracer_Green", 5]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["SMG_02_ACO_F", "30Rnd_9x21_Mag", 12]];
+a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["srifle_DMR_06_camo_khs_F", "20Rnd_762x51_Mag", 8]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["launch_RPG32_F", "RPG32_F", 2]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["MineDetector", objNull, 0]];
 //a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Medikit", objNull, 0]];
