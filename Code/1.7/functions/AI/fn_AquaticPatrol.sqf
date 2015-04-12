@@ -21,7 +21,7 @@ _group setvariable ["a3e_homeMarker",_markerName,false];
 
 
 
-_waypoint = [_group,_destinationPos,"MOVE","COLUMN","FULL","AWARE",_oncomplete] call a3e_fnc_move;
+_waypoint = [_group,_destinationPos,"MOVE","COLUMN","NORMAL","AWARE",_oncomplete] call a3e_fnc_move;
 if(!isNil("_waypoint")) then {
-	_waypoint setWaypointTimeout [0, 20, 6];
+	_waypoint setWaypointTimeout [0, 30, 60];
 };

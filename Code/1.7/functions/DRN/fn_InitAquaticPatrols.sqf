@@ -45,11 +45,10 @@ _aquaticPatrolZoneNo = 0;
     
     _aquaticPatrolZonePos = _x select 0;
     _aquaticPatrolZoneSize = _x select 3;
-    _maxGroupsCount = ceil (((_aquaticPatrolZoneSize select 0) * (_aquaticPatrolZoneSize select 1)) / _areaPerGroup);
-    
+    //_maxGroupsCount = ceil (((_aquaticPatrolZoneSize select 0) * (_aquaticPatrolZoneSize select 1)) / _areaPerGroup);
+    _maxGroupsCount = 1+random 1;
     // _groupsCount = floor random (_maxGroupsCount + 1);
     // _groupsCount = _groupsCount + (floor random (_maxGroupsCount + 1 - _groupsCount));
-    _groupsCount = floor random (_maxGroupsCount + 1);
     _groupsCount = _maxGroupsCount;
 
 	_aquaticPatrolZone = [_aquaticPatrolZoneName, _aquaticPatrolZonePos, _groupsCount, []];
