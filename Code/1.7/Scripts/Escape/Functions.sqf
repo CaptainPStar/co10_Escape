@@ -62,16 +62,16 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	} else {
 		_nighttime = false;
 	};
-	_this unlinkItem "ItemGPS";
-    _this unlinkItem "ItemMap";
-    _this unlinkItem "ItemCompass";
-    if(EAST == side _this) then {
-	   _this unlinkItem "NVGoggles_OPFOR";
-    } else {
-        if(RESISTANCE == side _this) then {
-            _this unlinkItem "NVGoggles_INDEP";
-        };
-    };
+	//_this unlinkItem "ItemGPS";
+    //_this unlinkItem "ItemMap";
+    //_this unlinkItem "ItemCompass";
+    //if(EAST == side _this) then {
+	//   _this unlinkItem "NVGoggles_OPFOR";
+    //} else {
+    //    if(RESISTANCE == side _this) then {
+    //        _this unlinkItem "NVGoggles_INDEP";
+    //    };
+    //};
    
     
 	//Hopefully fixing BIS broken scripts:
@@ -123,37 +123,55 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 			_this addPrimaryWeaponItem "acc_pointer_IR";
 		};
 	};
+	
+	//Bipod chance
+	if((random 100 < 20)) then {
+		_this addPrimaryWeaponItem (a3e_arr_Bipods select floor(random(count(a3e_arr_Bipods))));
+	};
+	
 	//Chance for silencers
 	if(((random 100 < 10) && (!_nighttime)) OR ((random 100 < 40) && (_nighttime))) then {
 		//Not yet
 	};
-    if (random 100 < 20) then {
-        _this additem "ItemMap";
-        _this assignItem "ItemMap";
+    if (random 100 > 20) then {
+        //_this additem "ItemMap";
+        //_this assignItem "ItemMap";
+		_this unlinkItem "ItemMap";
     };
-	if (random 100 < 30) then {
-        _this additem "ItemCompass";
-        _this assignItem "ItemCompass";
+	if (random 100 > 30) then {
+        //_this additem "ItemCompass";
+        //_this assignItem "ItemCompass";
+		_this unlinkItem "ItemCompass";
     };
-    if (random 100 < 0.5) then {
-        _this additem "ItemGPS";
-        _this assignItem "ItemGPS";
+    if (random 100 > 5) then {
+        //_this additem "ItemGPS";
+       // _this assignItem "ItemGPS";
+		_this unlinkItem "ItemGPS";
     };
-	if (random 100 < 50) then {
-		if (random 100 < 80) then {
-			_this additem "Binocular";
-            _this assignItem "Binocular";
-		} else {
-            _this additem "Rangefinder";
-            _this assignItem "Rangefinder";
+	if ("Binocular" in (assignedItems _this)) then {
+		if (random 100 > 30) then {
+			//_this additem "ItemGPS";
+		   // _this assignItem "ItemGPS";
+			_this unlinkItem "Binocular";
 		};
 	};
-    if(((random 100 < 5) && (!_nighttime)) OR ((random 100 < 30) && (_nighttime))) then {
-		if(Param_NoNightvision==0) then {
-			_this linkItem "NVGoggles";
-			 _this assignItem "NVGoggles";
+	if ("Rangefinder" in (assignedItems _this)) then {
+		if (random 100 > 30) then {
+			//_this additem "ItemGPS";
+		   // _this assignItem "ItemGPS";
+			_this unlinkItem "Rangefinder";
 		};
-    };
+	};
+	if ("NVGoggles_OPFOR" in (assignedItems _this)) then {
+			if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
+				_this unlinkItem "NVGoggles_OPFOR";
+			};
+	};
+	if ("NVGoggles_INDEP" in (assignedItems _this)) then {
+			if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
+				_this unlinkItem "NVGoggles_INDEP";
+			};
+	};
 };
 
 drn_fnc_Escape_FindGoodPos = {
