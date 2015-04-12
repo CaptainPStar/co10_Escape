@@ -61,11 +61,11 @@ if (_count == 0) then {
 			
 			if((getpos _generatorTrailer distance _pos)<(getpos _generatorTrailer distance _selectedPos) AND (_mode == 1)) then {
 				_selectedPos = _pos;
-				_extractionPointNo = _forEachIndex;
+				_extractionPointNo = _i;
 			};
 			if((getpos _generatorTrailer distance _pos)>(getpos _generatorTrailer distance _selectedPos) AND (_mode == 2)) then {
 				_selectedPos = _pos;
-				_extractionPointNo = _forEachIndex;
+				_extractionPointNo = _i;
 			};
 		};
 		a3e_var_Escape_ExtractionMarkerPos = getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
