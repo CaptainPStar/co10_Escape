@@ -8,7 +8,9 @@ _markerName = _markerCoreName + str _comCenNo;
 private["_index","_chosenComCenIndexes","_commCentreMarkers"];
 _chosenComCenIndexes = [];
 
-_distanceBetween = A3E_MinComCenterDistance;
+if(isNil("A3E_MinComCenterDistance")) then {
+	A3E_MinComCenterDistance = 2000;
+};
 
 if(isNil("a3e_communicationCenterMarkers")) then {
     a3e_communicationCenterMarkers = [];
@@ -35,11 +37,11 @@ for [{_i=0},{_i<_totalMarkerCount},{_i=_i+1}] do {
 	_pos = (_suffledComCenterMarkers select _i) select 0;
 	_dir = (_suffledComCenterMarkers select _i) select 1;
 	{
-		if (_pos distance _x < A3E_MinComCenterDistance) then {
+		if ((_pos distance _x) < A3E_MinComCenterDistance) then {
 			_ok = false;
 		};
 	} foreach _comCenPositions;
-	if (_pos distance A3E_StartPos < A3E_MinComCenterDistance) then {
+	if ((_pos distance A3E_StartPos) < A3E_MinComCenterDistance) then {
 			_ok = false;
 	};
 	if(_ok) then {
