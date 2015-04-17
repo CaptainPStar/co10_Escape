@@ -369,7 +369,7 @@ a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["SMA_AUG_A3_F", 5
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["SMA_SKS_F", 10, 1, 2, ["SMA_30Rnd_762x39_SKS","SMA_30Rnd_762x39_SKS_Red"], 6]];
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["hlc_lmg_M60E4", 100, 3, 5, ["hlc_100Rnd_762x51_M_M60E4"], 6]];
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["STI_M32", 50, 2, 4, ["STI_6Rnd_HE_Grenade_shell"], 6]];
-a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["SMA_HK417_16in_afg", 75, 2, 4, ["rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK_green", "rhs_VOG25"], 4]];
+a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["SMA_HK417_16in_afg", 75, 2, 4, ["20Rnd_762x51_Mag", "SMA_20Rnd_762x51mm_M80A1_EPR_Tracer"], 6]];
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["Trixie_M107_Green", 10, 1, 2, ["Trixie_10x127_Mag", "Trixie_10x127_HE_Mag", "Trixie_10x127_HEIAP_Mag"], 6]];
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["hlc_rifle_vendimus", 10, 1, 2, ["29rnd_300BLK_STANAG","29rnd_300BLK_STANAG_T"], 8]];
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["hlc_rifle_g3ka4", 10, 1, 2, ["hlc_20rnd_762x51_T_G3", "hlc_20rnd_762x51_b_G3"], 6]];
