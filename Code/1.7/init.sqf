@@ -38,12 +38,8 @@ onPreloadFinished {
 };
 
 
-enableSaving [true, true];
-
-if (!isDedicated) then {
-    waitUntil {!isNull player};
-    player setCaptive true;
-};
+//enableSaving [true, true];
+enableSaving [ false, false ]; // Saving disabled without autosave.
 
 // Initialization
 a3e_arr_JipSpawnPos = [];
@@ -78,46 +74,11 @@ if (isServer) then {
         a3e_var_Escape_hoursSkipped = _hour - (date select 3);
         publicVariable "a3e_var_Escape_hoursSkipped";
         setDate [date select 0, date select 1, date select 2, _hour, 0];
-    };
-};
-
-if (!isDedicated) then {
-	// Player Initialization
-
-	removeAllWeapons player;
-	removeAllItems player;
-	removeBackpack player;
-
-	player addWeapon "ItemRadio";
-	player addWeapon "ItemWatch";
-
-
-	drn_fnc_Escape_DisableLeaderSetWaypoints = {
-		if (!visibleMap) exitwith {};
-		
-		{
-			player groupSelectUnit [_x, false]; 
-		} foreach units group player;
-	};
-
-	// If multiplayer, then disable the cheating "move to" waypoint feature.
-	if (isMultiplayer) then {
-		[] spawn {
-			waitUntil {!isNull(findDisplay 46)}; 
-			// (findDisplay 46) displayAddEventHandler ["KeyDown","_nil=[_this select 1] call drn_fnc_Escape_DisableLeaderSetWaypoints"];
-			(findDisplay 46) displayAddEventHandler ["MouseButtonDown","_nil=[_this select 1] call drn_fnc_Escape_DisableLeaderSetWaypoints"];
-		};
-	};
-
-
-	if (!isMultiplayer) then {
+    } else {
 		{
 			if (_x != p1) then {
 				deleteVehicle _x;
 			};
 		} foreach units group player;
 	};
-
 };
-
-

@@ -14,7 +14,6 @@ _object setDir _dir;
 _boxType = "Box_NATO_Wps_F";
 _boxpos = _position findEmptyPosition [3,15,_boxType];
  if(count _boxpos >0) then {
-	_box = _boxType createVehicle _boxpos;
 	_box = createVehicle [_boxType, _boxpos, [], 0, "NONE"];
  
 	private ["_weapons", "_weaponMagazines", "_box", "_weaponCount","_items"];

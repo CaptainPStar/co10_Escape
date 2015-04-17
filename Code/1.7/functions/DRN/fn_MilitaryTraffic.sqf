@@ -44,6 +44,11 @@ while {!(["TrafficMarker_SouthWest"] call drn_fnc_CL_MarkerExists)} do {
     sleep 10;
 };
 
+ if(_side != civilian) then {
+	sleep 180; //Wait three mins until creating enemy vehicles
+};
+
+
 if (isNil "drn_fnc_MilitaryTraffic_MoveVehicle") then {
     drn_fnc_MilitaryTraffic_MoveVehicle = {
         private ["_vehicle", "_firstDestinationPos", "_debug"];

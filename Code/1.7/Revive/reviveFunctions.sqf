@@ -455,14 +455,15 @@ AT_FNC_CopyGear = {
 		if((_x select 0)!="" && !((_x select 0) in _blacklist)) then {
 		
 			//This will add the current loaded magazine in the weapon
-			if(!_keep_ammocount) then {
+			//Nobody needs ammo
+			/*if(!_keep_ammocount) then {
 				if(count(_x)>4) then {
 					_u1 addmagazine [(_x select 4) select 0,(_x select 4) select 1];
 				};
 				if(count(_x)>5) then {
 					_u1 addmagazine [(_x select 5) select 0,(_x select 5) select 1];
 				};
-			};
+			};*/
 			_u1 addweapon (_x select 0);
 			_u1 linkitem (_x select 1);
 			_u1 linkitem (_x select 2);

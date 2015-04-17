@@ -7,6 +7,16 @@
 	_trigger setTriggerTimeout [5, 5, 5, false];
 	_trigger setTriggerStatements["a3e_var_Escape_MissionComplete", "[""end2"",true,2] call BIS_fnc_endMission;", ""];
 
+	waituntil{sleep 0.1;!isNil("A3E_PrisonLoudspeakerObject")};
+	private["_soundpos","_trigger"];
+	_soundpos = getpos A3E_PrisonLoudspeakerObject;
+	_soundpos set[2,3];
+	_trigger = createTrigger["EmptyDetector", _soundpos];
+	_trigger setTriggerArea[25, 25, 0, false];
+	_trigger setTriggerActivation["NONE", "PRESENT", false];
+	_trigger setTriggerStatements["A3E_SoundPrisonAlarm", "", ""];
+	_trigger setSoundEffect ["$NONE$", "", "", "AlarmSfx"];
+	
 	//All players are unconscious
 if(isserver) then {
 	_trigger = createTrigger["EmptyDetector", [0,0,0]];

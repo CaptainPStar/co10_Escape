@@ -120,4 +120,11 @@ class Params
 		texts[]={"Reduced","Default","Death in fire"};
 		default = 1;
 	};
+	class Param_War_Torn
+	{
+		title="War-Torn mode (CSAT and AAF are fighting each other)";
+		values[]={0,1};
+		texts[]={"Disabled","Enabled"};
+		default = 0;
+	};
 };

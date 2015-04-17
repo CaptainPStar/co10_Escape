@@ -27,12 +27,31 @@ publicVariable "A3E_Debug";
 
 private ["_EnemyCount","_pos","_enemyMinSkill", "_enemyMaxSkill", "_searchChopperSearchTimeMin", "_searchChopperRefuelTimeMin", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency", "_comCenGuardsExist", "_fenceRotateDir", "_scriptHandle"];
 
-// Developer Variables
-EAST Setfriend [RESISTANCE, 1];
-RESISTANCE setFriend [EAST, 1];
 
+
+
+// Developer Variables
+
+
+createCenter EAST;
+createCenter RESISTANCE;
+
+if(isNil("Param_War_Torn")) then {
+	Param_War_Torn = 0;
+};
 WEST setFriend [RESISTANCE, 0];
 RESISTANCE setFriend [WEST, 0];
+
+WEST setFriend [EAST, 0];
+EAST setFriend [WEST, 0];
+	
+if(Param_War_Torn == 0) then {
+	EAST Setfriend [RESISTANCE, 1];
+	RESISTANCE setFriend [EAST, 1];
+} else {
+	EAST Setfriend [RESISTANCE, 0];
+	RESISTANCE setFriend [EAST, 0];
+};
 
 
 //[] spawn MB_fnc_randomWeather2;
@@ -542,7 +561,7 @@ waitUntil {scriptDone _scriptHandle};
                 _unit linkItem "NVGoggles_INDEP";
             };
             
-            _unit setSkill a3e_var_Escape_enemyMinSkill;
+            //_unit setSkill a3e_var_Escape_enemyMinSkill;
 			//[_unit, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
             _unit removeMagazines "Handgrenade";
             
@@ -553,10 +572,30 @@ waitUntil {scriptDone _scriptHandle};
         [_guardGroup, _marker] spawn drn_fnc_SearchGroup;
         
     } foreach _guardGroups;
-    
-    sleep 0.5;
-    
+        
+	//Add an alert trigger to the prison
 
+	A3E_fnc_soundAlarm = {
+		private ["_guardGroup"];
+		_guardGroups = _this select 0;
+		if(isNil("A3E_SoundPrisonAlarm")) then {
+			A3E_SoundPrisonAlarm = true;
+			publicvariable "A3E_SoundPrisonAlarm";
+			sleep 30;
+			A3E_SoundPrisonAlarm = false;
+			publicvariable "A3E_SoundPrisonAlarm";
+			{
+				_x spawn A3E_fnc_revealPlayers;
+			} foreach _guardGroups;
+		};
+	};
+	A3E_fnc_revealPlayers = {
+		private ["_guardGroup"];
+		_guardGroup = _this;
+		{
+			_guardGroup reveal _x;
+		} foreach call A3E_fnc_GetPlayers;
+	};
     // Start thread that waits for escape to start
     [_guardGroups, _startPos] spawn {
         private ["_guardGroups", "_startPos"];
@@ -566,36 +605,75 @@ waitUntil {scriptDone _scriptHandle};
         
         sleep 5;
         
-        while {isNil "A3E_EscapeHasStarted"} do {
+        while {isNil("A3E_EscapeHasStarted")} do {
+			sleep 1;
             // If any member of the group is to far away from fence, then escape has started
             {
-				if ((_x distance _startPos) > 25 && (_x distance _startPos) < 100) exitWith {
-					A3E_EscapeHasStarted = true;
-					publicVariable "A3E_EscapeHasStarted";
-				};
-				// If any player have picked up a weapon, escape has started
-				if (count weapons _x > 0) exitWith {
-					A3E_EscapeHasStarted = true;
-					publicVariable "A3E_EscapeHasStarted";
+				if(_x getvariable ["A3E_PlayerInitialized",false]) then {
+					if ((_x distance A3E_StartPos) > 15 && (_x distance A3E_StartPos) < 100) exitWith {
+						A3E_EscapeHasStarted = true;
+						publicVariable "A3E_EscapeHasStarted";
+						systemChat "Player ran away!";
+					};
+					// If any player have picked up a weapon, escape has started
+					if (count weapons _x > 0) exitWith {
+						A3E_EscapeHasStarted = true;
+						publicVariable "A3E_EscapeHasStarted";
+						systemChat "Player has weapon!";
+					};
 				};
             } foreach call A3E_FNC_GetPlayers;
-            
-            sleep 1;
         };
         
         // ESCAPE HAS STARTED
-        
-        
-        sleep (15 + random 15);
-        
-        {
-            private ["_guardGroup"];
-            
-            _guardGroup = _x;
-            
-            {
-                _guardGroup reveal _x;
-            } foreach call A3E_fnc_GetPlayers;
-        } foreach _guardGroups;
+        //{
+		//	[[[_x], {(_this select 0) setCaptive false;}], "BIS_fnc_spawn", _x, false] call BIS_fnc_MP;
+		//} foreach call A3E_fnc_GetPlayers;
+	   systemChat "Server: Escape has started.";
+
     };
+	//Spawn alarm watchdog
+	[_guardGroups] spawn {
+	  private ["_guardGroups"];
+        _guardGroups = _this select 0;
+		while{isNil("A3E_SoundPrisonAlarm")} do {
+			if(!isNil("A3E_EscapeHasStarted")) then {
+				{
+					private ["_guardGroup"];					
+					_guardGroup = _x;
+					{
+						if((_guardGroup knowsAbout _x)>2.5) exitwith {
+							[_guardGroups] call A3E_fnc_soundAlarm;
+						};
+					} foreach call A3E_fnc_GetPlayers;
+				} foreach _guardGroups;
+			};
+			if(!isNil("A3E_PrisonGateObject")) then {
+				if((A3E_PrisonGateObject animationPhase "Door_1_rot") > 0.5 ||
+				(A3E_PrisonGateObject animationPhase "Door_2_rot") > 0.5) then {
+					if(isNil("A3E_EscapeHasStarted")) then {
+						A3E_EscapeHasStarted = true;
+						publicVariable "A3E_EscapeHasStarted";
+					};
+					[_guardGroups] call A3E_fnc_soundAlarm;
+				};
+			};
+			sleep 0.5;
+		};
+	};
+	
+	//Watch for captive state
+	[] spawn {
+		while{isNil("A3E_EscapeHasStarted")} do {
+			{
+				if(isNil("A3E_EscapeHasStarted") && !(captive _x)) then {
+					[[[_x], {(_this select 0) setCaptive true;}], "BIS_fnc_spawn", _x, false] call BIS_fnc_MP;
+				};
+			} foreach call A3E_fnc_GetPlayers;
+			sleep 0.5;
+		};
+		{
+			[[[_x], {(_this select 0) setCaptive false;}], "BIS_fnc_spawn", _x, false] call BIS_fnc_MP;
+		} foreach call A3E_fnc_GetPlayers;
+	};
 };

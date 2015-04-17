@@ -61,7 +61,6 @@ class CfgFunctions
             class createComCenters {};
             class createAmmoDepots {};
 			class createMortarSites {};
-			class handleJIP {};
 			class createLocationMarker {};
 		};
 		class Templates
