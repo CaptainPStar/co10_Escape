@@ -139,10 +139,10 @@ a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["arifle
 // Weapons and ammo in the special weapons box
 a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
-a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_DMR_01_F", 10, 2, 4, ["10Rnd_762x51_Mag"], 9]];
+a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_DMR_01_F", 10, 2, 4, ["10Rnd_762x54_Mag"], 9]];
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_EBR_F", 10, 2, 4, ["20Rnd_762x51_Mag"], 9]];
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_GM6_F", 10, 2, 4, ["5Rnd_127x108_Mag"], 9]];
-a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["LMG_Zafir_F", 50, 2, 4, ["150Rnd_762x51_Box", "150Rnd_762x51_Box_Tracer"], 6]];
+a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["LMG_Zafir_F", 50, 2, 4, ["150Rnd_762x54_Box", "150Rnd_762x54_Box_Tracer"], 6]];
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["MMG_01_hex_F", 10, 2, 4, ["150Rnd_93x64_Mag"], 6]];
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["MMG_02_black_F", 30, 2, 4, ["130Rnd_338_Mag"], 6]];
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["srifle_DMR_06_olive_F", 10, 2, 4, ["20Rnd_762x51_Mag"], 10]];
