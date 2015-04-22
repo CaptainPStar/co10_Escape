@@ -202,6 +202,7 @@ if(Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["NVGoggles", 10, 1, 3]];
 };
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["Rangefinder", 10, 1, 2]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["lerca_1200_black", 10, 1, 2]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["Binocular", 50, 2, 3, [], 0]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["ItemCompass", 50, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["ItemGPS", 10, 1, 2]];
@@ -217,7 +218,7 @@ a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_muzzleFlash_
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_dtk3", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_dtk1", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_pgo7v", 10, 1, 3]];
-a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1p63", 20, 1, 3]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1p63", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_pkas", 20, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_ekp1", 20, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_ekp1b", 20, 1, 3]];
@@ -225,7 +226,7 @@ a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_ekp1c", 20, 
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_ekp1d", 20, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_pso1m2", 20, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1p29", 20, 1, 3]];
-a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1p78", 20, 1, 3]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1p78", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhsusf_acc_EOTECH", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhsusf_acc_SF3P556", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhsusf_acc_SFMB556", 10, 1, 3]];

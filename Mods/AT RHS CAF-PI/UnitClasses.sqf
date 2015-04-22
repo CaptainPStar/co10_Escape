@@ -18,6 +18,9 @@ a3e_arr_Escape_StartPositionGuardTypes = ["CAF_AG_AFR_P_AK74", "CAF_AG_AFR_P_GL"
 
 // Inner fence guard's secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
+a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["rhs_weap_pya","rhs_mag_9x19_17"]];
+a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["rhs_weap_makarov_pmm","rhs_mag_9x18_12_57N181S"]];
+a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["rhsusf_weap_m1911a1","rhsusf_mag_7x45acp_MHP"]];
 a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["RH_deagle","RH_7Rnd_50_AE"]];
 a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["RH_bullb","RH_6Rnd_454_Mag"]];
 a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["RH_cz75","RH_16Rnd_9x19_cz"]];
@@ -126,7 +129,7 @@ a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["hlc_ri
 // non-CSAT weapons
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["RH_tt33", 50, 2, 5, ["RH_8Rnd_762_tt33"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["RH_tec9", 10, 1, 2, ["RH_32Rnd_9x19_tec"], 6]];
-a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["RH_mak", 50, 2, 5, ["RH_8Rnd_9x18_Mak"], 6]];
+a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["rhs_weap_makarov_pmm", 50, 2, 5, ["rhs_mag_9x18_12_57N181S"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["RH_vz61", 50, 2, 5, ["RH_20Rnd_32cal_vz61"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["rhs_weap_m14ebrri_leu", 10, 1, 2, ["rhsusf_20Rnd_762x51_m118_special_Mag","rhsusf_20Rnd_762x51_m993_Mag"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["rhs_weap_m4", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"], 6]];
@@ -203,6 +206,7 @@ if(Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["NVGoggles", 10, 1, 3]];
 };
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["Rangefinder", 10, 1, 2]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["lerca_1200_black", 10, 1, 2]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["Binocular", 50, 2, 3, [], 0]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["ItemCompass", 50, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["ItemGPS", 10, 1, 2]];
@@ -213,8 +217,8 @@ a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["acc_flashlight", 50,
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["acc_pointer_IR", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["hlc_muzzle_snds_fal", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["hlc_muzzle_snds_g3", 10, 1, 3]];
-a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["RH_pmsd", 10, 1, 3]];
-a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["RH_pmir", 10, 1, 3]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1p63", 10, 1, 3]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1p78", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["RH_tecsd", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["optic_Aco", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_pgo7v", 10, 1, 3]];
@@ -242,6 +246,7 @@ a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["iansky_rx01", 10, 1,
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["iansky_rds", 10, 1, 3]];
 if(Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1pn93_1", 10, 1, 3]];
+	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1pn93_2", 10, 1, 3]];
 	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["hlc_optic_PVS4FAL", 10, 1, 3]];
 	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["optic_Nightstalker", 10, 1, 3]];
 };
@@ -257,6 +262,8 @@ a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["bipod_03_F_blk", 10,
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["bipod_01_F_mtp", 10, 1, 2]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["bipod_02_F_hex", 10, 1, 2]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["bipod_03_F_oli", 10, 1, 2]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhsusf_acc_harris_bipod", 10, 1, 2]];
+a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_bipod", 30, 1, 2]];
 // Weapons that may show up in civilian cars
 
 // Index 0: Weapon classname.
@@ -288,14 +295,14 @@ a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, [objNull, "Smo
 
 
 // Here is a list of scopes:
-a3e_arr_Scopes = ["optic_Aco","optic_ACO_grn","optic_Arco","optic_Hamr","optic_MRCO","optic_Holosight","rhs_acc_pkas","rhs_acc_pso1m2","rhs_acc_1p29","iansky_deltapoint","iansky_t1","iansky_rx01","iansky_rds","rhs_acc_ekp1","rhs_acc_ekp1b","rhs_acc_ekp1c","rhs_acc_ekp1d"];
+a3e_arr_Scopes = ["optic_Aco","optic_ACO_grn","optic_Arco","optic_Hamr","optic_MRCO","optic_Holosight","rhs_acc_pkas","rhs_acc_pso1m2","rhs_acc_1p29","iansky_deltapoint","iansky_t1","iansky_rx01","iansky_rds","rhs_acc_ekp1","rhs_acc_ekp1b","rhs_acc_ekp1c","rhs_acc_ekp1d","rhs_acc_1p63","rhs_acc_1p78"];
 a3e_arr_Scopes_SMG = ["optic_Aco_smg","optic_Holosight_smg","iansky_deltapoint"];
-a3e_arr_Scopes_Sniper = ["rhs_acc_pso1m2","HLC_Optic_ZFSG1","hlc_optic_accupoint_g3","hlc_optic_suit"];
+a3e_arr_Scopes_Sniper = ["rhs_acc_pso1m2","rhs_acc_1p78","HLC_Optic_ZFSG1","hlc_optic_accupoint_g3","hlc_optic_suit"];
 a3e_arr_NightScopes = ["optic_NVS","rhs_acc_1pn93_1","hlc_optic_PVS4FAL"];
 a3e_arr_TWSScopes = ["optic_Nightstalker","optic_tws","optic_tws_mg"];
 
 // Here is a list of bipods, might get randomly added to enemy patrols:
-a3e_arr_Bipods = ["bipod_01_F_snd","bipod_01_F_blk","bipod_01_F_mtp","bipod_02_F_blk","bipod_02_F_tan","bipod_02_F_hex","bipod_03_F_blk","bipod_03_F_oli"];
+a3e_arr_Bipods = ["rhs_bipod","rhsusf_acc_harris_bipod","bipod_01_F_snd","bipod_01_F_blk","bipod_01_F_mtp","bipod_02_F_blk","bipod_02_F_tan","bipod_02_F_hex","bipod_03_F_blk","bipod_03_F_oli"];
 
 
 //////////////////////////////////////////////////////////////////
@@ -394,3 +401,4 @@ a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["iansky_deltapoint", 
 a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["iansky_t1", 10, 1, 3]];
 a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["hlc_muzzle_snds_g3", 10, 1, 3]];
 a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["SMA_ELCAN_SPECTER", 10, 1, 3]];
+a3e_arr_CrashSiteItems set [count a3e_arr_CrashSiteItems, ["rhsusf_acc_harris_bipod", 10, 1, 3]];
