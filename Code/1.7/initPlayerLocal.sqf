@@ -87,6 +87,7 @@ if(!isNil("paramsArray")) then {
 	paramsArray call A3E_fnc_WriteParamBriefing;
 };
 
+diag_log format["Escape debug: %1 is now ready (clientside).", name player];
 
 titleFadeOut 1;
 sleep 2;
