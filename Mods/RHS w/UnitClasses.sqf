@@ -337,7 +337,7 @@ a3e_arr_AmbientInfantry_Inf_GUE = a3e_arr_Escape_InfantryTypes_Ind;
 // Units spawned to guard ammo camps and com centers
 // Only INS used
 //////////////////////////////////////////////////////////////////
-3e_arr_InitGuardedLocations_Inf_INS = a3e_arr_Escape_InfantryTypes;
+a3e_arr_InitGuardedLocations_Inf_INS = a3e_arr_Escape_InfantryTypes;
 a3e_arr_InitGuardedLocations_Inf_GUE = a3e_arr_Escape_InfantryTypes_Ind;
 
 //////////////////////////////////////////////////////////////////
