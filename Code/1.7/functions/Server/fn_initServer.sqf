@@ -83,8 +83,27 @@ publicVariable "a3e_var_Escape_MissionComplete";
 
 a3e_var_GrpNumber = 0;
 
-_enemyMinSkill = Param_EnemySkill;
-_enemyMaxSkill = _enemyMinskill;
+if(isNil("Param_EnemySkill")) then {
+	Param_EnemySkill = 1;
+};
+
+_enemyMinSkill = 0.40;
+_enemyMaxSkill = 0.60;
+
+//Kudos to Semiconductor
+
+switch (Param_EnemySkill) do { 
+    // Convert value from params.hpp into acceptable range 
+    case 0: { _enemyMinSkill = 0.10; _enemyMaxSkill = 0.30; }; 
+    case 1: { _enemyMinSkill = 0.30; _enemyMaxSkill = 0.50; }; 
+    case 2: { _enemyMinSkill = 0.40; _enemyMaxSkill = 0.60; }; 
+    case 3: { _enemyMinSkill = 0.60; _enemyMaxSkill = 0.80; }; 
+    case 4: { _enemyMinSkill = 0.80; _enemyMaxSkill = 0.95; }; 
+    default { _enemyMinSkill = 0.40; _enemyMaxSkill = 0.60; }; 
+}; 
+
+a3e_var_Escape_enemyMinSkill = _enemyMinSkill; 
+a3e_var_Escape_enemyMaxSkill = _enemyMaxSkill; 
 a3e_var_Escape_enemyMinSkill = _enemyMinSkill;
 a3e_var_Escape_enemyMaxSkill = _enemyMaxSkill;
 

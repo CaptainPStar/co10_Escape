@@ -10,8 +10,8 @@ class Params
     class Param_EnemySkill
 	{
             title = "Enemy Skill";
-            values[] = {0, 1, 2, 3, 4, 6};
-            texts[] = {"Cadet", "Easy", "Normal", "Hard", "Extreme", "Use this setting for AI mods such as Zeus AI"};
+            values[] = {0, 1, 2, 3, 4};
+            texts[] = {"Cadet", "Easy", "Normal", "Hard", "Extreme"};
             default = 1;
 	};
 	class Param_EnemyFrequency

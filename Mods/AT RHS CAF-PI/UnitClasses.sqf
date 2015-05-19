@@ -126,6 +126,8 @@ a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["rhs_we
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["hlc_rifle_FAL5061", 10, 1, 2, ["hlc_20Rnd_762x51_B_fal", "hlc_20Rnd_762x51_t_fal", "hlc_50rnd_762x51_M_FAL", "hlc_20Rnd_762x51_S_fal"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["hlc_rifle_g3a3", 10, 1, 2, ["hlc_20rnd_762x51_T_G3", "hlc_20rnd_762x51_b_G3"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["hlc_rifle_g3sg1", 10, 1, 2, ["hlc_20rnd_762x51_T_G3", "hlc_20rnd_762x51_b_G3"], 6]];
+a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["CUP_smg_bizon", 75, 1, 2, ["CUP_64Rnd_9x19_Bizon_M", "CUP_64Rnd_Red_Tracer_9x19_Bizon_M"], 6]];
+a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["CUP_smg_bizon_snds", 50, 1, 2,["CUP_64Rnd_9x19_Bizon_M", "CUP_64Rnd_Red_Tracer_9x19_Bizon_M"], 6]];
 // non-CSAT weapons
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["RH_tt33", 50, 2, 5, ["RH_8Rnd_762_tt33"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["RH_tec9", 10, 1, 2, ["RH_32Rnd_9x19_tec"], 6]];
@@ -285,6 +287,8 @@ a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["hlc_rifle_ak
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["hlc_rifle_saiga12k", "hlc_10rnd_12g_buck_S12", 10]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Trixie_M24_Clean", "Trixie_5x762_Mag", 12]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["rhs_weap_rshg2","rhs_rshg2_mag", 2]];
+a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["CUP_smg_bizon","CUP_64Rnd_9x19_Bizon_M", 6]];
+a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["CUP_smg_bizon_snds","CUP_64Rnd_9x19_Bizon_M", 6]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["MineDetector", objNull, 0]];
 //a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Medikit", objNull, 0]];
 //a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Toolkit", objNull, 0]];
