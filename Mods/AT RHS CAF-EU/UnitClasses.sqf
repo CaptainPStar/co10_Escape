@@ -371,8 +371,8 @@ a3e_arr_AquaticPatrols = ["O_Boat_Armed_01_hmg_F"];
 // What kind of weapon boxes are spawned when the parameter "additional weapons" is activated
 // use to add boxes from mods to the ammo depots
 //////////////////////////////////////////////////////////////////
-a3e_additional_weapon_box_1 = "AT_Waffelbox_INS";
-a3e_additional_weapon_box_2 = "RHpistammobox";
+a3e_additional_weapon_box_1 = "CUP_RUBasicWeaponsBox";
+a3e_additional_weapon_box_2 = "CUP_RUSpecialWeaponsBox";
 
 
 //////////////////////////////////////////////////////////////////
