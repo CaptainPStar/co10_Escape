@@ -44,3 +44,8 @@ a3e_communicationCenterMarkers set [41, [[2743.65,4733.16,0], 139.074]];
 a3e_communicationCenterMarkers set [42, [[9617.04,1005.51,0], -479.617]];
 a3e_communicationCenterMarkers set [43, [[9172.09,2650.24,0], -382.735]];
 a3e_communicationCenterMarkers set [44, [[9936.31,696.051,0], -434.061]];
+a3e_communicationCenterMarkers set [45, [[3670.31,8418.94,0], 145.839]];
+a3e_communicationCenterMarkers set [46, [[4252.26,8886.09,0], -73.3073]];
+a3e_communicationCenterMarkers set [47, [[3835.12,9149.1,0], 30.6338]];
+a3e_communicationCenterMarkers set [48, [[2319.94,9866.68,0], 0]];
+a3e_communicationCenterMarkers set [49, [[5961.63,9460.15,0], -43.8357]];
