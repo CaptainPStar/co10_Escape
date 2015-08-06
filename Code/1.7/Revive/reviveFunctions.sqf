@@ -53,7 +53,9 @@ AT_FNC_Revive_InitPlayer = {
 		if(count(AT_Revive_StaticRespawns)>0) then {
 			player setpos getpos (AT_Revive_StaticRespawns select 0);
 		};
-		[] spawn ATHSC_fnc_createCam;
+		if(AT_Revive_Camera==1) then {
+			[] spawn ATHSC_fnc_createCam;
+		};		
 		//_anotherPlayer = (call drn_fnc_Escape_GetPlayers) select 0;
         //if (player == _anotherPlayer) then {
         //    _anotherPlayer = (call drn_fnc_Escape_GetPlayers) select 1;
@@ -160,12 +162,16 @@ AT_FNC_Revive_Unconscious =
 	
 	waituntil{scriptDone _ragdoll};
 	
-	[] spawn ATHSC_fnc_createCam;
-	
 	_unit setDamage 0;
     _unit setVelocity [0,0,0];
     _unit allowDamage false;
 	_unit setCaptive true;
+	
+	if(AT_Revive_Camera==1) then {
+		[] spawn ATHSC_fnc_createCam;
+	};
+	
+
 
 	
 	
@@ -223,7 +229,11 @@ AT_FNC_Revive_HandleRevive =
 		if(!(player getVariable ["AT_Revive_isUnconscious",false])) then {
 			_target setVariable ["AT_Revive_isUnconscious", false, true];
 			[[_target,"amovppnemstpsraswrfldnon"],"at_fnc_revive_playMove",true] call BIS_fnc_MP;
-			[[],"ATHSC_fnc_exit",_target] call BIS_fnc_MP;
+			
+			if(AT_Revive_Camera==1) then {
+				[[],"ATHSC_fnc_exit",_target] call BIS_fnc_MP;
+			};
+
 		};
 		
 		if (!isPlayer _target) then

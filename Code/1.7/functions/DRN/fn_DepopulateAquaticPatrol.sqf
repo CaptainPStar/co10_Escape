@@ -20,7 +20,7 @@ _deleteBoatDelayed = {
     _boat = _this select 0;
 	_flag = true;
 	_group = (group ((crew _boat) select 0));
-	if(count(_group)==0) then {_flag = false;};
+	if(count(units _group)==0) then {_flag = false;};
     {
         if(isplayer _x) then {_flag = false;};
     } foreach crew _boat;

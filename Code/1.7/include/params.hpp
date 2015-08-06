@@ -127,4 +127,11 @@ class Params
 		texts[]={"Disabled","Enabled"};
 		default = 0;
 	};
+	class Param_ReviveView
+	{
+		title="Unconscious View";
+		values[]={0,1};
+		texts[]={"First-/Third-Person","Hindsight Cam"};
+		default = 1;
+	};
 };

@@ -576,8 +576,8 @@ waitUntil {scriptDone _scriptHandle};
 				removeAllPrimaryWeaponItems _unit;
 				
 			};
-            if ((random 100 < 20) && (Param_NoNightvision==0)) then {
-                _unit linkItem "NVGoggles_INDEP";
+            if ((random 100 > 20) || (Param_NoNightvision==1)) then {
+				_unit unlinkItem "NVGoggles_INDEP";
             };
             
             //_unit setSkill a3e_var_Escape_enemyMinSkill;

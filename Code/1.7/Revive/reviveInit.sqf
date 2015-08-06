@@ -4,7 +4,7 @@ call compile preprocessFile "Revive\hscFunctions.sqf";
 AT_Revive_StaticRespawns = [];
 AT_Revive_enableRespawn = false;
 AT_Revive_clearedDistance = 0;
-
+AT_Revive_Camera = 0;
 
 if(isNil("AT_Revive_StaticRespawns")) then {
 	AT_Revive_enableRespawn = true;

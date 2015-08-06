@@ -10,12 +10,11 @@ ATHSC_fnc_createCam = {
 	if(isNil("AT_Revive_clearedDistance")) then {
 		AT_Revive_clearedDistance = 100;
 	};
-
 	ATHSC_Cam = objNull;
 	ATHSC_CamTarget = player;
 	ATHSC_AttempRespawn = false;
 	ATHSC_AttempRespawnCounter = 0;
-
+	ATHSC_NVEnabled = false;
 	ATHSC_Cam = "camera" camCreate (eyePos player);
 	
 	ATHSC_Dialog = createDialog "ATHSC_Main";
@@ -187,6 +186,9 @@ ATHSC_fnc_keyDown = {
 			};
 		};
 	};
+	if(_dikCode == DIK_N) then {
+		call ATHSC_fnc_toggleNV;
+	};
 	if(_dikCode == DIK_ESCAPE) then {
 		call ATHSC_fnc_exit;
 	};
@@ -221,4 +223,12 @@ ATHSC_fnc_updateText = {
 		_control ctrlSetStructuredText parseText (_line1);
 	};
 };
-
+ATHSC_fnc_toggleNV = {
+	if(ATHSC_NVEnabled) then {
+		camUseNVG false;
+		ATHSC_NVEnabled = false;
+	} else {
+		camUseNVG true;
+		ATHSC_NVEnabled = true;
+	};
+};
