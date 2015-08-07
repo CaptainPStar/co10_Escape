@@ -66,7 +66,7 @@ switch (_enemyFrequency) do {
 		"I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_MRAP_03_F", "I_MRAP_03_hmg_F", 
 		"I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F","I_G_Offroad_01_F",
 		"I_MBT_03_cannon_F","I_MBT_03_cannon_F",
-		"I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F""I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F"];
+		"I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -84,7 +84,7 @@ switch (_enemyFrequency) do {
 		"I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_MRAP_03_F", "I_MRAP_03_hmg_F", 
 		"I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F","I_G_Offroad_01_F",
 		"I_MBT_03_cannon_F","I_MBT_03_cannon_F",
-		"I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F""I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F"];
+		"I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F"];
     };
 };
 
@@ -158,7 +158,7 @@ a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["SMG_02
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["arifle_Katiba_F", 100, 2, 4, ["30Rnd_65x39_caseless_green"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["arifle_Katiba_C_F", 50, 2, 4, ["30Rnd_65x39_caseless_green", "30Rnd_65x39_caseless_green_mag_Tracer"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["arifle_Katiba_GL_F", 75, 2, 4, ["30Rnd_65x39_caseless_green", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "UGL_FlareWhite_F"], 4]];
-a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["arifle_Mk20_F", 50, 2, 4, ["30Rnd_556x45_Stanag", "", "", ""], 6]];
+a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["arifle_Mk20_F", 50, 2, 4, ["30Rnd_556x45_Stanag"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["arifle_Mk20_GL_F", 50, 2, 4, ["30Rnd_556x45_Stanag", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "UGL_FlareWhite_F"], 4]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["arifle_Mk20C_F", 50, 2, 4, ["30Rnd_556x45_Stanag"], 6]];
 // non-CSAT weapons
