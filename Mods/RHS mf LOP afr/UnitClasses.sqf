@@ -35,17 +35,71 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = ["LOP_AFR_Civ_Hatchback"
 // Random arrays. Enemy vehicle classes for ambient traffic. (Can also be set to a faction name).
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
 switch (_enemyFrequency) do {
-    case 1: {
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = ["rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_ap2_msv","rhs_gaz66_repair_msv","rhs_ural_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_open_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_zsu234_aa","rhs_bmd1","rhs_bmd1k","rhs_bmd1p","rhs_bmd1pk","rhs_bmd1r","rhs_bmd2","rhs_bmd2k","rhs_bmd2m","rhs_bmd4_msv","rhs_bmd4m_msv","rhs_bmp1_msv","rhs_bmp1p_msv","rhs_bmp1k_msv","rhs_bmp1d_msv","rhs_bmp2_msv","rhs_bmp2d_msv","rhs_brm1k_msv","rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv","rhs_btr80a_msv","rhs_t72ba_tv","rhs_t80","rhs_t80a","rhs_t90_tv","rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = ["LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad","LOP_AFR_M113_W","LOP_AFR_BTR60","LOP_AFR_T72BA"];
+    case 1: {//Few (1-3)
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
+		"rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01",
+		"rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv",
+		"rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv","rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv",
+		"rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01",
+		"rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01",
+		"rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv",
+		"rhs_zsu234_aa","rhs_zsu234_aa",
+		"rhs_bmd1","rhs_bmd1p",
+		"rhs_bmd2","rhs_bmd2k",
+		"rhs_bmp1_msv","rhs_bmp1k_msv",
+		"rhs_bmp2_msv","rhs_bmp2k_msv",
+		"rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv",
+		"rhs_t72ba_tv","rhs_t72bc_tv",
+		"rhs_t80","rhs_t80a",
+		"rhs_t90_tv",
+		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
+		"LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad","LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad",
+		"LOP_AFR_M113_W","LOP_AFR_BTR60","LOP_AFR_T72BA"];
     };
-    case 2: {
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = ["rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_ap2_msv","rhs_gaz66_repair_msv","rhs_ural_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_open_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_zsu234_aa","rhs_bmd1","rhs_bmd1k","rhs_bmd1p","rhs_bmd1pk","rhs_bmd1r","rhs_bmd2","rhs_bmd2k","rhs_bmd2m","rhs_bmd4_msv","rhs_bmd4m_msv","rhs_bmd4ma_msv","rhs_bmp1_msv","rhs_bmp1p_msv","rhs_bmp1k_msv","rhs_bmp1d_msv","rhs_bmp2e_msv","rhs_bmp2_msv","rhs_bmp2k_msv","rhs_bmp2d_msv","rhs_brm1k_msv","rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv","rhs_btr80a_msv","rhs_t72ba_tv","rhs_t72bb_tv","rhs_t72bc_tv","rhs_t80","rhs_t80a","rhs_t80b","rhs_t80bk","rhs_t80bv","rhs_t80bvk","rhs_t80u","rhs_t90_tv","rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = ["LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad","LOP_AFR_M113_W","LOP_AFR_BTR60","LOP_AFR_T72BA"];
+    case 2: {//Some (4-6)
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
+		"rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01",
+		"rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv",
+		"rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv","rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv",
+		"rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01",
+		"rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01",
+		"rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv",
+		"rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa",
+		"rhs_bmd1","rhs_bmd1k","rhs_bmd1p",
+		"rhs_bmd2","rhs_bmd2k","rhs_bmd4_msv",
+		"rhs_bmp1_msv","rhs_bmp1k_msv","rhs_bmp1d_msv",
+		"rhs_bmp2_msv","rhs_bmp2k_msv","rhs_bmp2d_msv",
+		"rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv","rhs_btr80a_msv",
+		"rhs_t72ba_tv","rhs_t72bc_tv",
+		"rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u",
+		"rhs_t90_tv",
+		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
+		"LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad","LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad",
+		"LOP_AFR_M113_W","LOP_AFR_BTR60","LOP_AFR_T72BA"];
     };
-    default {
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = ["rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_ap2_msv","rhs_gaz66_repair_msv","rhs_ural_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_open_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_zsu234_aa","rhs_bmd1","rhs_bmd1k","rhs_bmd1p","rhs_bmd1pk","rhs_bmd1r","rhs_bmd2","rhs_bmd2k","rhs_bmd2m","rhs_bmd4_msv","rhs_bmd4m_msv","rhs_bmd4ma_msv","rhs_bmp1_msv","rhs_bmp1p_msv","rhs_bmp1k_msv","rhs_bmp1d_msv","rhs_bmp2e_msv","rhs_bmp2_msv","rhs_bmp2k_msv","rhs_bmp2d_msv","rhs_brm1k_msv","rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv","rhs_btr80a_msv","rhs_t72ba_tv","rhs_t72bb_tv","rhs_t72bc_tv","rhs_t80","rhs_t80a","rhs_t80b","rhs_t80bk","rhs_t80bv","rhs_t80bvk","rhs_t80u","rhs_t90_tv","rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = ["LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad","LOP_AFR_M113_W","LOP_AFR_BTR60","LOP_AFR_T72BA"];
+    default {//A lot (7-8)
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
+		"rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01",
+		"rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv",
+		"rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv","rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv",
+		"rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01",
+		"rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01",
+		"rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv",
+		"rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa",
+		"rhs_bmd1","rhs_bmd1k","rhs_bmd1p",
+		"rhs_bmd2","rhs_bmd2k","rhs_bmd4_msv",
+		"rhs_bmp1_msv","rhs_bmp1k_msv","rhs_bmp1d_msv",
+		"rhs_bmp2_msv","rhs_bmp2k_msv","rhs_bmp2d_msv",
+		"rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv","rhs_btr80a_msv",
+		"rhs_t72ba_tv","rhs_t72bc_tv",
+		"rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u",
+		"rhs_t90_tv",
+		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
+		"LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad","LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad",
+		"LOP_AFR_M113_W","LOP_AFR_BTR60","LOP_AFR_T72BA"];
     };
 };
 

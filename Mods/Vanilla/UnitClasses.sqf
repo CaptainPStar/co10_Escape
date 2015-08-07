@@ -32,17 +32,59 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = ["C_Hatchback_01_F", "C_
 // Random arrays. Enemy vehicle classes for ambient traffic. (Can also be set to a faction name).
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
 switch (_enemyFrequency) do {
-    case 1: {
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = ["O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_hmg_F", "O_MRAP_02_hmg_F", "O_Quadbike_01_F", "O_Quadbike_01_F", "O_Quadbike_01_F", "O_Truck_02_covered_F", "O_Truck_02_transport_F", "O_Truck_02_ammo_F", "O_Truck_02_box_F", "O_Truck_02_fuel_F", "O_Truck_02_medical_F", "O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_AA_F", "O_APC_Tracked_02_cannon_F", "O_MBT_02_arty_F", "O_MBT_02_cannon_F","O_Truck_03_device_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_03_ammo_F","O_Truck_03_fuel_F","O_Truck_03_medical_F","O_Truck_03_repair_F"];
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = ["I_G_Offroad_01_repair_F","I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F","I_G_Offroad_01_F","I_MBT_03_cannon_F","I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F"];
+    case 1: {//Few (1-3)
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
+		"O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_hmg_F", "O_MRAP_02_hmg_F", 
+		"O_Quadbike_01_F", "O_Quadbike_01_F", "O_Quadbike_01_F", 
+		"O_Truck_02_covered_F", "O_Truck_02_transport_F", 
+		"O_Truck_02_ammo_F", "O_Truck_02_box_F", "O_Truck_02_fuel_F", "O_Truck_02_medical_F", 
+		"O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_AA_F", "O_APC_Tracked_02_cannon_F", 
+		"O_MBT_02_arty_F", 
+		"O_MBT_02_cannon_F",
+		"O_Truck_03_device_F","O_Truck_03_transport_F","O_Truck_03_covered_F",
+		"O_Truck_03_ammo_F","O_Truck_03_fuel_F","O_Truck_03_medical_F","O_Truck_03_repair_F"];
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
+		"I_G_Offroad_01_repair_F",
+		"I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_MRAP_03_F", "I_MRAP_03_hmg_F", 
+		"I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F","I_G_Offroad_01_F",
+		"I_MBT_03_cannon_F",
+		"I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F"];
     };
-    case 2: {
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = ["O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_hmg_F", "O_MRAP_02_hmg_F", "O_Quadbike_01_F", "O_Quadbike_01_F", "O_Truck_02_covered_F", "O_Truck_02_transport_F", "O_Truck_02_ammo_F", "O_Truck_02_box_F", "O_Truck_02_fuel_F", "O_Truck_02_medical_F", "O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_AA_F", "O_APC_Tracked_02_cannon_F", "O_MBT_02_arty_F", "O_MBT_02_cannon_F","O_Truck_03_device_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_03_ammo_F","O_Truck_03_fuel_F","O_Truck_03_medical_F","O_Truck_03_repair_F"];
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = ["I_G_Offroad_01_repair_F","I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F","I_G_Offroad_01_F","I_MBT_03_cannon_F","I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F"];
+    case 2: {//Some (4-6)
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
+		"O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_hmg_F", "O_MRAP_02_hmg_F", 
+		"O_Quadbike_01_F", "O_Quadbike_01_F", 
+		"O_Truck_02_covered_F", "O_Truck_02_transport_F", 
+		"O_Truck_02_ammo_F", "O_Truck_02_box_F", "O_Truck_02_fuel_F", "O_Truck_02_medical_F", 
+		"O_APC_Wheeled_02_rcws_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F",
+		"O_MBT_02_arty_F","O_MBT_02_arty_F",
+		"O_MBT_02_cannon_F","O_MBT_02_cannon_F",
+		"O_Truck_03_device_F","O_Truck_03_transport_F","O_Truck_03_covered_F",
+		"O_Truck_03_ammo_F","O_Truck_03_fuel_F","O_Truck_03_medical_F","O_Truck_03_repair_F"];
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
+		"I_G_Offroad_01_repair_F",
+		"I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_MRAP_03_F", "I_MRAP_03_hmg_F", 
+		"I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F","I_G_Offroad_01_F",
+		"I_MBT_03_cannon_F","I_MBT_03_cannon_F",
+		"I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F""I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F"];
     };
-    default {
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = ["O_MRAP_02_F", "O_MRAP_02_hmg_F", "O_MRAP_02_F", "O_MRAP_02_hmg_F", "O_Quadbike_01_F", "O_Quadbike_01_F", "O_Truck_02_covered_F", "O_Truck_02_transport_F", "O_Truck_02_ammo_F", "O_Truck_02_box_F", "O_Truck_02_fuel_F", "O_Truck_02_medical_F", "O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_AA_F", "O_APC_Tracked_02_cannon_F", "O_MBT_02_arty_F", "O_MBT_02_cannon_F","O_Truck_03_device_F","O_Truck_03_transport_F","O_Truck_03_covered_F","O_Truck_03_ammo_F","O_Truck_03_fuel_F","O_Truck_03_medical_F","O_Truck_03_repair_F"];
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = ["I_G_Offroad_01_repair_F","I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F","I_G_Offroad_01_F","I_MBT_03_cannon_F","I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F"];
+    default {//A lot (7-8)
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
+		"O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_F", "O_MRAP_02_hmg_F", "O_MRAP_02_hmg_F", 
+		"O_Quadbike_01_F", "O_Quadbike_01_F", 
+		"O_Truck_02_covered_F", "O_Truck_02_transport_F", 
+		"O_Truck_02_ammo_F", "O_Truck_02_box_F", "O_Truck_02_fuel_F", "O_Truck_02_medical_F", 
+		"O_APC_Wheeled_02_rcws_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F",
+		"O_MBT_02_arty_F","O_MBT_02_arty_F",
+		"O_MBT_02_cannon_F","O_MBT_02_cannon_F",
+		"O_Truck_03_device_F","O_Truck_03_transport_F","O_Truck_03_covered_F",
+		"O_Truck_03_ammo_F","O_Truck_03_fuel_F","O_Truck_03_medical_F","O_Truck_03_repair_F"];
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
+		"I_G_Offroad_01_repair_F",
+		"I_MRAP_03_F", "I_MRAP_03_hmg_F", "I_MRAP_03_F", "I_MRAP_03_hmg_F", 
+		"I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F","I_G_Offroad_01_F",
+		"I_MBT_03_cannon_F","I_MBT_03_cannon_F",
+		"I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F""I_APC_tracked_03_cannon_F","I_APC_tracked_03_cannon_F"];
     };
 };
 
