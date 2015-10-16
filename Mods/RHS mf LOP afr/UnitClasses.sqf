@@ -52,7 +52,7 @@ switch (_enemyFrequency) do {
 		"rhs_t72ba_tv","rhs_t72bc_tv",
 		"rhs_t80","rhs_t80a",
 		"rhs_t90_tv",
-		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad","LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad",
 		"LOP_AFR_M113_W","LOP_AFR_BTR60","LOP_AFR_T72BA"];
@@ -74,7 +74,7 @@ switch (_enemyFrequency) do {
 		"rhs_t72ba_tv","rhs_t72bc_tv",
 		"rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u",
 		"rhs_t90_tv",
-		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad","LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad",
 		"LOP_AFR_M113_W","LOP_AFR_BTR60","LOP_AFR_T72BA"];
@@ -96,7 +96,7 @@ switch (_enemyFrequency) do {
 		"rhs_t72ba_tv","rhs_t72bc_tv",
 		"rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u",
 		"rhs_t90_tv",
-		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad","LOP_AFR_Landrover","LOP_AFR_Landrover_M2","LOP_AFR_Offroad_M2","LOP_AFR_Offroad",
 		"LOP_AFR_M113_W","LOP_AFR_BTR60","LOP_AFR_T72BA"];

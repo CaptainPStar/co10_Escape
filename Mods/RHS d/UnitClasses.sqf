@@ -52,7 +52,7 @@ switch (_enemyFrequency) do {
 		"rhs_t72ba_tv","rhs_t72bc_tv",
 		"rhs_t80","rhs_t80a",
 		"rhs_t90_tv",
-		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"I_G_Offroad_01_repair_F","I_G_Offroad_01_F","I_G_Offroad_01_repair_F","I_G_Offroad_01_F",
 		"I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F",
@@ -80,7 +80,7 @@ switch (_enemyFrequency) do {
 		"rhs_t72ba_tv","rhs_t72bc_tv",
 		"rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u",
 		"rhs_t90_tv",
-		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"I_G_Offroad_01_repair_F","I_G_Offroad_01_F","I_G_Offroad_01_repair_F","I_G_Offroad_01_F",
 		"I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F",
@@ -92,7 +92,7 @@ switch (_enemyFrequency) do {
 		"rhs_t72bb_chdkz"];
     };
     default {//A lot (7-8)
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = ["rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv","rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa","rhs_bmd1","rhs_bmd1k","rhs_bmd1p","rhs_bmd2","rhs_bmd2k","rhs_bmd4_msv","rhs_bmp1_msv","rhs_bmp1k_msv","rhs_bmp1d_msv","rhs_bmp2_msv","rhs_bmp2k_msv","rhs_bmp2d_msv","rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv","rhs_btr80a_msv","rhs_t72ba_tv","rhs_t72bc_tv","rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u","rhs_t90_tv","rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = ["rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv","rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa","rhs_bmd1","rhs_bmd1k","rhs_bmd1p","rhs_bmd2","rhs_bmd2k","rhs_bmd4_msv","rhs_bmp1_msv","rhs_bmp1k_msv","rhs_bmp1d_msv","rhs_bmp2_msv","rhs_bmp2k_msv","rhs_bmp2d_msv","rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv","rhs_btr80a_msv","rhs_t72ba_tv","rhs_t72bc_tv","rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u","rhs_t90_tv","rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = ["I_G_Offroad_01_repair_F","I_G_Offroad_01_F","I_G_Offroad_01_repair_F","I_G_Offroad_01_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","RHS_UAZ_chdkz","rhs_uaz_open_chdkz","RHS_UAZ_chdkz","rhs_uaz_open_chdkz","RHS_UAZ_chdkz","rhs_uaz_open_chdkz","rhs_ural_chdkz","rhs_ural_open_chdkz","rhs_ural_work_chdkz","rhs_ural_work_open_chdkz","RHS_BM21_chdkz","rhs_zsu234_chdkz","rhs_bmd2_chdkz","rhs_btr70_chdkz","rhs_t72bb_chdkz"];
     };
 };

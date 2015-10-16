@@ -32,7 +32,7 @@ a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["RH_fn5
 a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["RH_vz61","RH_20Rnd_32cal_vz61"]];
 
 // Random array. Civilian vehicle classes for ambient traffic. (Can also be set to a faction name).
-a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F"];
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F","beetle_red","beetle_white"];
 
 // Random arrays. Enemy vehicle classes for ambient traffic. (Can also be set to a faction name).
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -54,7 +54,7 @@ switch (_enemyFrequency) do {
 		"rhs_t72ba_tv","rhs_t72bc_tv",
 		"rhs_t80","rhs_t80a",
 		"rhs_t90_tv",
-		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"CAF_AG_eeur_r_Offroad","CAF_AG_eeur_r_Offroad",
 		"CAF_AG_eeur_r_Offroad_armed_01","CAF_AG_eeur_r_Offroad_armed_01","CAF_AG_eeur_r_Offroad_armed_01","CAF_AG_eeur_r_Offroad_armed_01",
@@ -77,7 +77,7 @@ switch (_enemyFrequency) do {
 		"rhs_t72ba_tv","rhs_t72bc_tv",
 		"rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u",
 		"rhs_t90_tv",
-		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"CAF_AG_eeur_r_Offroad","CAF_AG_eeur_r_Offroad",
 		"CAF_AG_eeur_r_Offroad_armed_01","CAF_AG_eeur_r_Offroad_armed_01","CAF_AG_eeur_r_Offroad_armed_01","CAF_AG_eeur_r_Offroad_armed_01",
@@ -100,7 +100,7 @@ switch (_enemyFrequency) do {
 		"rhs_t72ba_tv","rhs_t72bc_tv",
 		"rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u",
 		"rhs_t90_tv",
-		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K"];
+		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"CAF_AG_eeur_r_Offroad","CAF_AG_eeur_r_Offroad",
 		"CAF_AG_eeur_r_Offroad_armed_01","CAF_AG_eeur_r_Offroad_armed_01","CAF_AG_eeur_r_Offroad_armed_01","CAF_AG_eeur_r_Offroad_armed_01",
@@ -347,6 +347,9 @@ a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Trixie_M24_C
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["rhs_weap_rshg2","rhs_rshg2_mag", 1]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["CUP_smg_bizon","CUP_64Rnd_9x19_Bizon_M", 6]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["CUP_smg_bizon_snds","CUP_64Rnd_9x19_Bizon_M", 6]];
+a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["arifle_M134_F","762x51_Minigun_Tracer_Red", 6]];
+a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Sawed_Off_Shotgun","2Rnd_Sawed_Off_Shotgun_Pellets", 8]];
+a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["arifle_MRC_GL_F","MRC_492x34_B_skin1", 8]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["MineDetector", objNull, 0]];
 //a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Medikit", objNull, 0]];
 //a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Toolkit", objNull, 0]];
