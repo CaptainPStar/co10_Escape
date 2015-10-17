@@ -39,7 +39,7 @@ if (_debug) then {
 };
 
 _fnc_OnDroppingGroup = {
-    [_this, "drn_searchAreaMarker", [0, 0, 0], a3e_var_Escape_DebugSearchGroup] spawn drn_fnc_SearchGroup;
+    [_this, "drn_searchAreaMarker", [0, 0, 0]] spawn drn_fnc_SearchGroup;
 };
 
 [_referenceGroup, _vehicle, _group, _fnc_OnDroppingGroup, _debug] execVM "Scripts\Escape\CivilEnemy.sqf";

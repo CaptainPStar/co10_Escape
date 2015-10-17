@@ -17,10 +17,10 @@ private ["_subAreaSearchTimeSec", "_subAreaSize", "_defaultSearchAreaMarkerName"
 private ["_subSearchAreaMarker", "_currentEntityNo", "_subSearchAreaMarkerName"];
 private ["_debugGroupMarkerName", "_debugDestinationMarkerName", "_debugSubAreaMarkerName"];
 
-_group = _this select 0;
-_searchAreaMarkerName = _this select 1;
-if (count _this > 2) then {_firstPos = _this select 2;} else {_firstPos = [0, 0, 0];};
-if (count _this > 3) then {_debug = _this select 3;} else {_debug = false;};
+_group = param [0,grpNull];
+_searchAreaMarkerName = param [1,grpNull];
+_firstPos = param [2,[0,0,0]];
+_debug = param [3,false];
 
 _subAreaSearchTimeSec = 180; // How long time the search group will search the area where enemy was last seen
 _subAreaSize = 100; // Size (width and height) of the sub area

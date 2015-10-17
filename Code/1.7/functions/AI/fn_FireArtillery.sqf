@@ -4,7 +4,7 @@ _position = [_this,0,[0,0,0],[[]]] call bis_fnc_param;
 
 _success = false;
 {
-	if(_position inRangeOfArtillery [[_x], (getArtilleryAmmo [_x]) select 0]) then {
+	if((0 < count getArtilleryAmmo [_x]) and {_position inRangeOfArtillery [[_x], (getArtilleryAmmo [_x]) select 0] and {alive gunner _x}}) then {
 		[_x,_position] spawn {
 			private["_mortar","_center","_radius","_artilleryRounds"];
 			_artilleryRounds= a3e_var_artillery_rounds*Param_Artillery;

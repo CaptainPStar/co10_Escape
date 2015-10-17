@@ -286,6 +286,7 @@
 		{
 			"name" : "Altis",
 			"class" : "Altis",
+			"sqm" : "Altis",
 			"path" : "./Islands/Altis/",
 			"replace" :
 				{
@@ -296,6 +297,7 @@
 		{
 			"name" : "Stratis",
 			"class" : "Stratis",
+			"sqm" : "Stratis",
 			"path" : "./Islands/Stratis/",
 			"replace" :
 				{
@@ -306,6 +308,7 @@
 		{
 			"name" : "Bornholm",
 			"class" : "Bornholm",
+			"sqm" : "Bornholm",
 			"path" : "./Islands/Bornholm/",
 			"replace" :
 				{
@@ -316,6 +319,7 @@
 		{
 			"name" : "Chernarus",
 			"class" : "Chernarus",
+			"sqm" : "Chernarus",
 			"path" : "./Islands/Chernarus/",
 			"replace" :
 				{
@@ -326,6 +330,7 @@
 		{
 			"name" : "Chernarus_Summer",
 			"class" : "Chernarus_Summer",
+			"sqm" : "Chernarus_Summer",
 			"path" : "./Islands/Chernarus_Summer/",
 			"replace" :
 				{
@@ -336,6 +341,7 @@
 		{
 			"name" : "ChernarusPlus",
 			"class" : "ChernarusPlus",
+			"sqm" : "ChernarusPlus",
 			"path" : "./Islands/ChernarusPlus/",
 			"replace" :
 				{
@@ -346,6 +352,7 @@
 		{
 			"name" : "Podagorsk",
 			"class" : "FDF_Isle1_a",
+			"sqm" : "FDF_Isle1_a",
 			"path" : "./Islands/FDF_Isle1_a/",
 			"replace" :
 				{
@@ -366,6 +373,7 @@
 		{
 			"name" : "Isla Duala",
 			"class" : "IslaDuala3",
+			"sqm" : "IslaDuala3",
 			"path" : "./Islands/IslaDuala3/",
 			"replace" :
 				{
@@ -376,6 +384,7 @@
 		{
 			"name" : "Lingor",
 			"class" : "Lingor3",
+			"sqm" : "Lingor3",
 			"path" : "./Islands/Lingor3/",
 			"replace" :
 				{
@@ -384,8 +393,20 @@
 				}
 		},
 		{
+			"name" : "Lingor Zombies",
+			"class" : "Lingor3",
+			"sqm" : "Lingor3_Zombies",
+			"path" : "./Islands/Lingor3/",
+			"replace" :
+				{
+				"ISLAND" : "Lingor",
+				"ISLANDNAME" : "Lingor Z"
+				}
+		},
+		{
 			"name" : "Sahrani",
 			"class" : "Sara",
+			"sqm" : "Sara",
 			"path" : "./Islands/Sara/",
 			"replace" :
 				{
@@ -396,16 +417,18 @@
 		{
 			"name" : "United Sahrani",
 			"class" : "Sara_dbe1",
+			"sqm" : "Sara_dbe1",
 			"path" : "./Islands/Sara_dbe1/",
 			"replace" :
 				{
 				"ISLAND" : "United Sahrani",
-				"ISLANDNAME" : "UNited Sahrani"
+				"ISLANDNAME" : "United Sahrani"
 				}
 		},
 		{
 			"name" : "SMD Sahrani",
 			"class" : "smd_sahrani_a3",
+			"sqm" : "smd_sahrani_a3",
 			"path" : "./Islands/smd_sahrani_a3/",
 			"replace" :
 				{
@@ -416,6 +439,7 @@
 		{
 			"name" : "Celle",
 			"class" : "mbg_celle2",
+			"sqm" : "mbg_celle2",
 			"path" : "./Islands/mbg_celle2/",
 			"replace" :
 				{
@@ -426,6 +450,7 @@
 		{
 			"name" : "Takistan",
 			"class" : "Takistan",
+			"sqm" : "Takistan",
 			"path" : "./Islands/Takistan/",
 			"replace" :
 				{
@@ -436,6 +461,7 @@
 		{
 			"name" : "Porto",
 			"class" : "Porto",
+			"sqm" : "Porto",
 			"path" : "./Islands/Porto/",
 			"replace" :
 				{
@@ -446,6 +472,7 @@
 		{
 			"name" : "Thirsk",
 			"class" : "Thirsk",
+			"sqm" : "Thirsk",
 			"path" : "./Islands/Thirsk/",
 			"replace" :
 				{
@@ -456,6 +483,7 @@
 		{
 			"name" : "Thirsk Winter",
 			"class" : "ThirskW",
+			"sqm" : "ThirskW",
 			"path" : "./Islands/ThirskW/",
 			"replace" :
 				{
@@ -466,6 +494,7 @@
 		{
 			"name" : "Capraia",
 			"class" : "IsolaDiCapraia",
+			"sqm" : "IsolaDiCapraia",
 			"path" : "./Islands/IsolaDiCapraia/",
 			"replace" :
 				{
@@ -644,6 +673,12 @@
 			"name" : "co10_Escape_AT"
 		},
 		{
+			"island" : "Lingor Zombies",
+			"mod" : "AT RHS CAF-PI",
+			"replace" : {},
+			"name" : "co10_Escape_AT_Zombies"
+		},
+		{
 			"island" : "Sahrani",
 			"mod" : "AT RHS CAF-EU",
 			"replace" : {},
@@ -750,6 +785,12 @@
 			"mod" : "RHS mf",
 			"replace" : {},
 			"name" : "co10_Escape_RHS"
+		},	
+		{
+			"island" : "Lingor Zombies",
+			"mod" : "RHS mf",
+			"replace" : {},
+			"name" : "co10_Escape_Zombies_RHS"
 		},
 		{
 			"island" : "Sahrani",
@@ -860,6 +901,12 @@
 			"name" : "co10_Escape_RHS_CAF"
 		},
 		{
+			"island" : "Lingor Zombies",
+			"mod" : "RHS mf CAF pi",
+			"replace" : {},
+			"name" : "co10_Escape_Zombies_RHS_CAF"
+		},
+		{
 			"island" : "Sahrani",
 			"mod" : "RHS w CAF eu",
 			"replace" : {},
@@ -966,6 +1013,12 @@
 			"mod" : "RHS mf LOP afr",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_LOP"
+		},
+		{
+			"island" : "Lingor Zombies",
+			"mod" : "RHS mf LOP afr",
+			"replace" : {},
+			"name" : "co10_Escape_Zombies_RHS_LOP"
 		},
 		{
 			"island" : "Sahrani",

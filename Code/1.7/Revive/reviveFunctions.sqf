@@ -142,7 +142,6 @@ AT_FNC_Revive_Unconscious =
 	private["_unit", "_killer","_msg","_pos"];
 	_unit = _this select 0;
 	_killer = _this select 1;
-	
 	_unit setVariable ["AT_Revive_isUnconscious", true, true];
 		
 	_msg = format["%1 is unconscious.",name _unit];
@@ -159,13 +158,15 @@ AT_FNC_Revive_Unconscious =
 	};
 	
 	_ragdoll = [_unit] spawn at_fnc_revive_ragdoll;
-	
 	waituntil{scriptDone _ragdoll};
 	
 	_unit setDamage 0;
     _unit setVelocity [0,0,0];
     _unit allowDamage false;
 	_unit setCaptive true;
+	if(surfaceIsWater getpos _unit && ((getPosASL _unit) select 2)>2) then {
+		[_unit] call AT_FNC_Revive_WashAshore;
+	};
 	
 	if(AT_Revive_Camera==1) then {
 		[] spawn ATHSC_fnc_createCam;
@@ -279,7 +280,7 @@ AT_FNC_Revive_Drag =
 
 	[[_target],"AT_FNC_Revive_FixRotation",true] call BIS_fnc_MP;
 	
-	[[player,"AcinPknlMstpSrasWrflDnon"],"at_fnc_revive_playMove",true] call BIS_fnc_MP;
+	[[player,"AcinPknlMstpSrasWrflDnon"],"at_fnc_revive_switchMove",true] call BIS_fnc_MP;
 	
 	//player playMoveNow "AcinPknlMstpSrasWrflDnon";
 	
@@ -571,4 +572,61 @@ AT_FNC_CopyGear = {
 	_u1 selectWeapon (currentWeapon _u2);
 	//_zeroing = currentZeroing _u2; 
 	//weaponState player;
+};
+
+//AT_FNC_Revive_WashAshore = {
+//	_player = param[0,objNull];
+//	_center = SouthWest vectorAdd (NorthEast vectordiff SouthWest);
+//	_radius = 10;
+//	_wpos = [];
+//	while{count(_wpos)<3 && (_player getVariable "AT_Revive_isUnconscious")} do {
+//		_wpos = (position _player) findEmptyPosition [0,_radius];
+//		if(count(_wpos)==3) then {
+//			_wpos = _wpos isFlatEmpty [1, 0, 0.5, 1, 1, true, _player];
+//		};
+//		systemchat format["Checking %1 m (%2)",_radius,_wpos];
+//		_radius = _radius + 10;
+//		sleep 0.1;
+//	};
+//	if((_player getVariable "AT_Revive_isUnconscious")) then {
+//		_player setpos _wpos;
+//		_msg = format["%1 body washed ashore.",name _player];
+//		[[_msg],"AT_FNC_Revive_GlobalMsg",true] call bis_fnc_MP;
+//	};
+
+//};
+AT_FNC_Revive_WashAshore = {
+	private["_unit","_center","_pos","_distance","_vec","_found","_npos"];
+
+	_unit = param[0];
+
+	_center = (position SouthWest) vectorAdd ((position NorthEast) vectordiff (position SouthWest));
+	_pos = getpos _unit;
+	_distance = _unit distance _center;
+	_vec = [((_center select 0)-(_pos select 0))/_distance,((_center select 1)-(_pos select 1))/_distance];
+	_found = false;
+	
+	for[{_i = 0},{_i<=_distance && !_found},{_i=_i+1}] do {
+		_npos = [((_pos select 0)+(_vec select 0)*_i),((_pos select 1)+(_vec select 1)*_i) ,0];
+		if(!(surfaceIsWater _npos)) then {
+			_found = true;
+			_pos = _npos;
+		}
+	};
+	if(_found) then {
+		sleep 1;
+		if(_unit == player) then {
+            titleText ["", "BLACK",1];
+        };
+		sleep 1;
+		_unit setpos _pos; 
+		_msg = format["%1's body washed ashore.",name _unit];
+		[[_msg],"AT_FNC_Revive_GlobalMsg",true] call bis_fnc_MP;
+		sleep 1;
+	    if(_unit == player) then {
+			titleFadeOut 1;
+	    };
+	} else {
+		systemchat "Can't find dry land.";
+	};
 };

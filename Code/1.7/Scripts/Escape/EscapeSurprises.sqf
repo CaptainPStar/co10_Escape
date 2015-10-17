@@ -307,7 +307,7 @@ while {true} do {
                         sleep 1;
                     };
                     
-                    [call drn_fnc_Escape_GetPlayerGroup, getPos _spawnSegment, east, a3e_arr_Escape_EnemyCivilianCarTypes, A3E_arr_recon_InfantryTypes, _enemyFrequency, a3e_var_Escape_debugCivilEnemy] execVM "Scripts\Escape\CreateCivilEnemy.sqf";
+                    [call drn_fnc_Escape_GetPlayerGroup, getPos _spawnSegment, east, a3e_arr_Escape_EnemyCivilianCarTypes, A3E_arr_recon_InfantryTypes, _enemyFrequency] execVM "Scripts\Escape\CreateCivilEnemy.sqf";
                     
                     _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
                     _timeInSek = 15 * 60 + random (45 * 60);

@@ -15,6 +15,8 @@ ATHSC_fnc_createCam = {
 	ATHSC_AttempRespawn = false;
 	ATHSC_AttempRespawnCounter = 0;
 	ATHSC_NVEnabled = false;
+	ATHSC_CamDir = random 360;
+	ATHSC_CamHeight = 15;
 	ATHSC_Cam = "camera" camCreate (eyePos player);
 	
 	ATHSC_Dialog = createDialog "ATHSC_Main";
@@ -25,7 +27,7 @@ ATHSC_fnc_createCam = {
 	ATHSC_Cam camSetPos (ASLToATL (eyePos player));
 	ATHSC_Cam camCommit 0;
 	ATHSC_Cam camSetTarget player;
-	ATHSC_Cam camSetRelPos [0, 8, 15];
+	ATHSC_Cam camSetPos ((getpos player) vectorAdd [-cos(ATHSC_CamDir)*8,sin(ATHSC_CamDir)*8, ATHSC_CamHeight]);
 	ATHSC_Cam cameraEffect ["internal", "back"];
 	ATHSC_Cam camCommit 2;
 	
@@ -38,8 +40,21 @@ ATHSC_fnc_updateCam = {
 	private["_commit"];
 	_commit = [_this,0,0] call bis_fnc_param;
 	if(!(isNull ATHSC_Cam)) then {
+		if(ATHSC_CamHeight<5) then {
+			ATHSC_CamHeight = 5;
+		};
+		if(ATHSC_CamHeight > 25) then {
+			ATHSC_CamHeight = 25;
+		};
+		if(ATHSC_CamDir>=360) then {
+			ATHSC_CamDir = ATHSC_CamDir %360;
+		};
+		if(ATHSC_CamDir<0) then {
+			ATHSC_CamDir = (360 - ATHSC_CamDir%360);
+		};
 		ATHSC_Cam camSetTarget ATHSC_CamTarget;
-		ATHSC_Cam camSetRelPos [0, 8, 15];
+		//ATHSC_Cam camSetRelPos [0, 8, 15];
+		ATHSC_Cam camSetPos ((getpos ATHSC_CamTarget) vectorAdd [-sin(ATHSC_CamDir)*8,cos(ATHSC_CamDir)*8, ATHSC_CamHeight]);
 		ATHSC_Cam cameraEffect ["internal", "back"];
 		ATHSC_Cam camCommit _commit;
 	};
@@ -173,6 +188,18 @@ ATHSC_fnc_keyDown = {
 
 	if(_dikCode == DIK_A) then {
 		[true] call ATHSC_fnc_cycleEntity;
+	};
+	if(_dikCode == DIK_RIGHT) then {
+		ATHSC_CamDir = ATHSC_CamDir + 5;
+	};
+	if(_dikCode == DIK_LEFT) then {
+		ATHSC_CamDir = ATHSC_CamDir - 5;
+	};
+	if(_dikCode == DIK_DOWN) then {
+		ATHSC_CamHeight = ATHSC_CamHeight + 0.5;
+	};
+	if(_dikCode == DIK_UP) then {
+		ATHSC_CamHeight = ATHSC_CamHeight - 0.5;
 	};
 	if(_dikCode == DIK_D) then {
 		[false] call ATHSC_fnc_cycleEntity;

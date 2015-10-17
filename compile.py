@@ -36,7 +36,8 @@ for mission in missions:
     shutil.copytree(data['Code']+'/',missiondir)
     shutil.copytree(missionIsland['path']+'/',missiondir+'/Island/')
     shutil.copytree(missionMod['path']+'/',missiondir+'/Units')
-    shutil.copy('./Missions/'+missionIsland['class']+'/mission.sqm',missiondir+'/mission.sqm')
+    
+    shutil.copy('./Missions/'+missionIsland['sqm']+'/mission.sqm',missiondir+'/mission.sqm')
     replace = dict(list(data['replace'].items()) + list(missionMod['replace'].items()) + list(missionIsland['replace'].items()));
     for root, subFolders, files in os.walk(missiondir):
         for rfile in data['ParsedFiles']:

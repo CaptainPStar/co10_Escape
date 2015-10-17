@@ -31,6 +31,7 @@ class CfgFunctions
 			class InCombat {};
 			class Move {};
 			class Search {};
+			class SearchDrone {};
 			class Patrol {};
 			class Flee {};
 			class FireArtillery {};

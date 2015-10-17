@@ -70,7 +70,7 @@ for "_i" from 1 to _soldiersCount do {
 } foreach units _group;
 
 _fnc_OnDroppingGroup = {
-    [_this, "drn_searchAreaMarker", [0, 0, 0], a3e_var_Escape_DebugSearchGroup] spawn drn_fnc_SearchGroup;
+    [_this, "drn_searchAreaMarker", [0, 0, 0]] spawn drn_fnc_SearchGroup;
 };
 
 [_vehicle, _cargoGroup, drn_searchAreaMarkerName, true, _fnc_OnDroppingGroup, _debug] spawn drn_fnc_InsertionTruck;
