@@ -1,57 +1,7 @@
 A3E_fnc_GetPlayers = {
-	drn_players = [];
-	if (!isNil "p1") then {
-		if (isPlayer p1) then {
-			drn_players set [count drn_players, p1];
-		};
-	};
-	if (!isNil "p2") then {
-		if (isPlayer p2) then {
-			drn_players set [count drn_players, p2];
-		};
-	};
-	if (!isNil "p3") then {
-		if (isPlayer p3) then {
-			drn_players set [count drn_players, p3];
-		};
-	};
-	if (!isNil "p4") then {
-		if (isPlayer p4) then {
-			drn_players set [count drn_players, p4];
-		};
-	};
-	if (!isNil "p5") then {
-		if (isPlayer p5) then {
-			drn_players set [count drn_players, p5];
-		};
-	};
-	if (!isNil "p6") then {
-		if (isPlayer p6) then {
-			drn_players set [count drn_players, p6];
-		};
-	};
-	if (!isNil "p7") then {
-		if (isPlayer p7) then {
-			drn_players set [count drn_players, p7];
-		};
-	};
-	if (!isNil "p8") then {
-		if (isPlayer p8) then {
-			drn_players set [count drn_players, p8];
-		};
-	};
-	if (!isNil "p9") then {
-		if (isPlayer p9) then {
-			drn_players set [count drn_players, p9];
-		};
-	};
-	if (!isNil "p10") then {
-		if (isPlayer p10) then {
-			drn_players set [count drn_players, p10];
-		};
-	};
-
-	drn_players
+	private["_players"];
+	_players = allPlayers;
+	_players;
 };
 
 drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
@@ -61,31 +11,19 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 		_nighttime = true;
 	} else {
 		_nighttime = false;
-	};
-	//_this unlinkItem "ItemGPS";
-    //_this unlinkItem "ItemMap";
-    //_this unlinkItem "ItemCompass";
-    //if(EAST == side _this) then {
-	//   _this unlinkItem "NVGoggles_OPFOR";
-    //} else {
-    //    if(RESISTANCE == side _this) then {
-    //        _this unlinkItem "NVGoggles_INDEP";
-    //    };
-    //};
-   
-    
+	};   
 	//Hopefully fixing BIS broken scripts:
-	_this setskill 0.2;
-	_this setskill ["aimingspeed", 0.1];
-	_this setskill ["spotdistance", 0.2];
-	_this setskill ["aimingaccuracy", 0.2]; 
-	_this setskill ["aimingshake", 0.1]; 
-	_this setskill ["spottime", 0.1];
-	_this setskill ["commanding", 0.2]; 
-	_this setskill ["general", 0.3];
-	_this setskill ["reloadspeed", 0.2];
-	_this setskill ["courage", 0.2];
-	_this setskill ["endurance", 0.2];
+	//_this setskill 0.2;
+	//_this setskill ["aimingspeed", 0.1];
+	//_this setskill ["spotdistance", 0.2];
+	//_this setskill ["aimingaccuracy", 0.2]; 
+	//_this setskill ["aimingshake", 0.1]; 
+	//_this setskill ["spottime", 0.1];
+	//_this setskill ["commanding", 0.2]; 
+	//_this setskill ["general", 0.3];
+	//_this setskill ["reloadspeed", 0.2];
+	//_this setskill ["courage", 0.2];
+	//_this setskill ["endurance", 0.2];
 	
 
 	
@@ -162,15 +100,26 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 			_this unlinkItem "Rangefinder";
 		};
 	};
-	if ("NVGoggles_OPFOR" in (assignedItems _this)) then {
-			if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
-				_this unlinkItem "NVGoggles_OPFOR";
-			};
-	};
-	if ("NVGoggles_INDEP" in (assignedItems _this)) then {
-			if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
-				_this unlinkItem "NVGoggles_INDEP";
-			};
+	//if ("NVGoggles_OPFOR" in (assignedItems _this)) then {
+	//		if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
+	//			_this unlinkItem "NVGoggles_OPFOR";
+	//		};
+	//};
+	//if ("NVGoggles_INDEP" in (assignedItems _this)) then {
+	//		if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
+	//			_this unlinkItem "NVGoggles_INDEP";
+	//		};
+	//};
+	private["_nvgs"];
+	_nvgs = hmd _this; //NVGoggles
+	if(_nvgs != "") then {
+		if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
+			_this unlinkItem _nvgs;
+		};
+	} else {
+		if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (Param_NoNightvision==0)) then {
+			_this linkItem "NVGoggles_OPFOR";
+		};
 	};
 };
 
@@ -554,25 +503,6 @@ drn_fnc_Escape_TrafficSearch = {
     };
 };
 
-drn_fnc_Escape_SetMissionCompleteTasks = {
-    if (!isServer) exitWith {};
-    
-    // Hijack Communication Center
-    if (drn_hijackTasksStatus == "SUCCEEDED") then {
-        ["drn_hijackTasks", "SUCCEEDED"] call drn_SetTaskStateOnAllMachines;
-    }
-    else {
-        ["drn_hijackTasks", "FAILED"] call drn_SetTaskStateOnAllMachines;
-    };
-    
-    // Rendezvous
-    if (drn_rendesvouzTasksStatus == "SUCCEEDED") then {
-        ["drn_rendesvouzTasks", "SUCCEEDED"] call drn_SetTaskStateOnAllMachines;
-    }
-    else {
-        ["drn_rendesvouzTasks", "FAILED"] call drn_SetTaskStateOnAllMachines;
-    };
-};
 
 drn_fnc_Escape_AddRemoveComCenArmor = {
     private ["_comCenArmorIndex", "_armorClasses", "_armorObjects"];
@@ -841,24 +771,6 @@ drn_fnc_Escape_PopulateVehicle = {
 };
 
 if (isServer) then {
-    "drn_fnc_Escape_AskForJipPos" addPublicVariableEventHandler {
-        private ["_anotherPlayer"];
-        
-        _unitName = drn_fnc_Escape_AskForJipPos select 0;
-        
-        _anotherPlayer = (call A3E_fnc_GetPlayers) select 0;
-        if (_unitName == str _anotherPlayer) then {
-            _anotherPlayer = (call A3E_fnc_GetPlayers) select 1;
-        };
-        
-        _pos = [((getPos vehicle _anotherPlayer) select 0) + 3, ((getPos vehicle _anotherPlayer) select 1) + 3, 0];
-        
-        a3e_arr_JipSpawnPos = [_unitName, _pos];
-        publicVariable "a3e_arr_JipSpawnPos";
-        
-        diag_log ("Server respond to JIP, pos == " + str getPos _anotherPlayer);
-    };
-
     a3e_var_Escape_FunctionsInitializedOnServer = true;
     publicVariable "a3e_var_Escape_FunctionsInitializedOnServer";
 };

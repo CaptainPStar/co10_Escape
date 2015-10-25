@@ -54,6 +54,7 @@ if(Param_War_Torn == 0) then {
 };
 
 
+
 //[] spawn MB_fnc_randomWeather2;
 private["_weather","_weatherTrend"];
 _weather = ["clear","sunny","cloudy","foggy","bad","random"] select Param_Weather;
@@ -210,7 +211,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 		sleep 1;
 	};
 	
-	[getPos _spawnSegment, drn_searchAreaMarkerName, _enemyFrequency, _enemyMinSkill, _enemyMaxSkill,A3E_Debug] execVM "Scripts\Escape\CreateMotorizedSearchGroup.sqf";
+	[getPos _spawnSegment, drn_searchAreaMarkerName, _enemyFrequency, _enemyMinSkill, _enemyMaxSkill, A3E_Debug] execVM "Scripts\Escape\CreateMotorizedSearchGroup.sqf";
 };
 
 
@@ -570,14 +571,17 @@ waitUntil {scriptDone _scriptHandle};
 			_unit unlinkItem "ItemMap";
             _unit unlinkItem "ItemCompass";
             _unit unlinkItem "ItemGPS";
-			_unit unlinkItem "NVGoggles_INDEP";
 			
 			if(random 100 < 80) then {
 				removeAllPrimaryWeaponItems _unit;
 				
 			};
+			private["_hmd"];
+			_hmd = hmd _unit;
             if ((random 100 > 20) || (Param_NoNightvision==1)) then {
-				_unit unlinkItem "NVGoggles_INDEP";
+				if(_hmd != "") then {
+					_unit unlinkItem _hmd;
+				};
             };
             
             //_unit setSkill a3e_var_Escape_enemyMinSkill;

@@ -77,13 +77,13 @@ if (_count == 0) then {
     };
     a3e_var_Escape_ExtractionMarker = createMarker ["drn_visibleGoalMarker", a3e_var_Escape_ExtractionMarkerPos];
     a3e_var_Escape_ExtractionMarker setMarkerType "Flag_NATO";
-    
-    [_extractionPointNo] call drn_fnc_Escape_CreateExtractionPointServer;
+	
+    [_extractionPointNo] remoteExec ["A3E_fnc_CreateExtractionPoint",2,false];
     
 	A3E_Task_ComCenter_Complete = true;
 	publicvariable "A3E_Task_ComCenter_Complete";
 	
     ["Task complete: Hack Communication Center (Rendezvous point marked on map)"] call drn_fnc_CL_ShowTitleTextAllClients;
     
-    _generatorTrailer removeAction _id;
+   // _generatorTrailer removeAction _id;
 };

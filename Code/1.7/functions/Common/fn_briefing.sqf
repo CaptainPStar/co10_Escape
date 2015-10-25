@@ -13,8 +13,8 @@
 	_soundpos set[2,3];
 	_trigger = createTrigger["EmptyDetector", _soundpos];
 	_trigger setTriggerArea[25, 25, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerStatements["A3E_SoundPrisonAlarm", "", ""];
+	_trigger setTriggerActivation["NONE", "PRESENT", true];
+	_trigger setTriggerStatements["A3E_SoundPrisonAlarm", "!A3E_SoundPrisonAlarm", ""];
 	_trigger setSoundEffect ["$NONE$", "", "", "AlarmSfx"];
 	
 	//All players are unconscious
