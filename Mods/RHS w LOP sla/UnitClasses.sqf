@@ -52,7 +52,7 @@ switch (_enemyFrequency) do {
 		"rhs_t72ba_tv","rhs_t72bc_tv",
 		"rhs_t80","rhs_t80a",
 		"rhs_t90_tv",
-		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
+		"rhs_sprut_vdv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"LOP_SLA_UAZ","LOP_SLA_UAZ_Open","LOP_SLA_UAZ","LOP_SLA_UAZ_Open",
 		"LOP_SLA_Ural_open","LOP_SLA_Ural","LOP_SLA_Ural_open","LOP_SLA_Ural",
@@ -71,14 +71,14 @@ switch (_enemyFrequency) do {
 		"rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv",
 		"rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa",
 		"rhs_bmd1","rhs_bmd1k","rhs_bmd1p",
-		"rhs_bmd2","rhs_bmd2k","rhs_bmd4_msv",
+		"rhs_bmd2","rhs_bmd2k","rhs_bmd4_vdv",
 		"rhs_bmp1_msv","rhs_bmp1k_msv","rhs_bmp1d_msv",
 		"rhs_bmp2_msv","rhs_bmp2k_msv","rhs_bmp2d_msv",
 		"rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv","rhs_btr80a_msv",
 		"rhs_t72ba_tv","rhs_t72bc_tv",
 		"rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u",
 		"rhs_t90_tv",
-		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
+		"rhs_sprut_vdv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"LOP_SLA_UAZ","LOP_SLA_UAZ_Open","LOP_SLA_UAZ","LOP_SLA_UAZ_Open",
 		"LOP_SLA_Ural_open","LOP_SLA_Ural","LOP_SLA_Ural_open","LOP_SLA_Ural",
@@ -97,14 +97,14 @@ switch (_enemyFrequency) do {
 		"rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv",
 		"rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa",
 		"rhs_bmd1","rhs_bmd1k","rhs_bmd1p",
-		"rhs_bmd2","rhs_bmd2k","rhs_bmd4_msv",
+		"rhs_bmd2","rhs_bmd2k","rhs_bmd4_vdv",
 		"rhs_bmp1_msv","rhs_bmp1k_msv","rhs_bmp1d_msv",
 		"rhs_bmp2_msv","rhs_bmp2k_msv","rhs_bmp2d_msv",
 		"rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv","rhs_btr80a_msv",
 		"rhs_t72ba_tv","rhs_t72bc_tv",
 		"rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u",
 		"rhs_t90_tv",
-		"rhs_sprut_msv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
+		"rhs_sprut_vdv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"LOP_SLA_UAZ","LOP_SLA_UAZ_Open","LOP_SLA_UAZ","LOP_SLA_UAZ_Open",
 		"LOP_SLA_Ural_open","LOP_SLA_Ural","LOP_SLA_Ural_open","LOP_SLA_Ural",
@@ -118,8 +118,8 @@ switch (_enemyFrequency) do {
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
 a3e_arr_Escape_InfantryTypes = ["rhs_msv_officer_armored","rhs_msv_officer","rhs_msv_sergeant","rhs_msv_junior_sergeant","rhs_msv_engineer", "rhs_msv_medic","rhs_msv_rifleman","rhs_msv_efreitor","rhs_msv_grenadier","rhs_msv_machinegunner","rhs_msv_machinegunner_assistant","rhs_msv_at","rhs_msv_strelok_rpg_assist","rhs_msv_marksman","rhs_msv_aa","rhs_msv_LAT","rhs_msv_engineer", "rhs_msv_medic"];
 a3e_arr_Escape_InfantryTypes_Ind = ["LOP_SLA_Infantry_TL","LOP_SLA_Infantry_SL","LOP_SLA_Infantry_Corpsman","LOP_SLA_Infantry_Engineer","LOP_SLA_Infantry_Rifleman","LOP_SLA_Infantry_GL","LOP_SLA_Infantry_MG","LOP_SLA_Infantry_MG_Asst","LOP_SLA_Infantry_AT","LOP_SLA_Infantry_AT_Asst","LOP_SLA_Infantry_AA","LOP_SLA_Infantry_Marksman","LOP_SLA_Infantry_Officer"];
-a3e_arr_recon_InfantryTypes = ["rhs_vdv_recon_sergeant","rhs_vdv_recon_engineer","rhs_vdv_recon_marksman","rhs_vdv_recon_machinegunner","rhs_vdv_recon_medic","rhs_vdv_recon_at","rhs_vdv_recon_rifleman","rhs_vdv_recon_rifleman","rhs_vdv_recon_rifleman"];
-a3e_arr_recon_I_InfantryTypes = ["rhs_vdv_recon_sergeant","rhs_vdv_recon_engineer","rhs_vdv_recon_marksman","rhs_vdv_recon_machinegunner","rhs_vdv_recon_medic","rhs_vdv_recon_at","rhs_vdv_recon_rifleman","rhs_vdv_recon_rifleman","rhs_vdv_recon_rifleman"];
+a3e_arr_recon_InfantryTypes = ["rhs_vdv_sergeant","rhs_vdv_engineer","rhs_vdv_marksman","rhs_vdv_machinegunner","rhs_vdv_medic","rhs_vdv_at","rhs_vdv_rifleman","rhs_vdv_rifleman","rhs_vdv_rifleman"];
+a3e_arr_recon_I_InfantryTypes = ["rhs_vdv_sergeant","rhs_vdv_engineer","rhs_vdv_marksman","rhs_vdv_machinegunner","rhs_vdv_medic","rhs_vdv_at","rhs_vdv_rifleman","rhs_vdv_rifleman","rhs_vdv_rifleman"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = ["rhs_btr60_msv", "RHS_NSV_TriPod_VDV", "O_static_AT_F", "LOP_SLA_NSV_TriPod"];
@@ -162,8 +162,8 @@ a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = ["RHS_NSV_TriPod_VDV", "O_GMG_01_
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = ["rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_ap2_msv","rhs_gaz66_repair_msv","rhs_ural_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_open_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv", "LOP_SLA_UAZ", "LOP_SLA_Ural_open", "LOP_SLA_Ural"];
 
 //Random array. Types of helicopters to spawn
-a3e_arr_O_attack_heli = ["RHS_Mi24V_msv","RHS_Mi24V_FAB_vdv","RHS_Mi24P_CAS_vdv","RHS_Mi24V_UPK23_vvsc","RHS_Ka52_vvs","RHS_Ka52_vvsc"];
-a3e_arr_O_transport_heli = ["rhs_ka60_grey","rhs_ka60_c","RHS_Mi8AMT_msv","RHS_Mi8AMT_vvsc","RHS_Mi8AMTSh_vvsc","RHS_Mi8mt_Cargo_vv"];
+a3e_arr_O_attack_heli = ["RHS_Mi24V_vvsc","RHS_Mi24V_AT_vvsc","RHS_Mi24P_CAS_vvsc","RHS_Mi24P_AT_vvsc","RHS_Mi24V_UPK23_vvsc","RHS_Ka52_vvs","RHS_Ka52_vvsc","RHS_Mi8AMTSh_vvsc","RHS_Mi8AMTSh_UPK23_vvsc","RHS_Mi8MTV3_vvsc","RHS_Mi8MTV3_UPK23_vvsc"];
+a3e_arr_O_transport_heli = ["rhs_ka60_grey","rhs_ka60_c","RHS_Mi8amt_chdkz","RHS_Mi8AMT_vvsc","RHS_Mi8mt_Cargo_vv"];
 a3e_arr_O_pilots = ["rhs_pilot","rhs_pilot_transport_heli"];
 a3e_arr_I_transport_heli = ["LOP_SLA_Mi8MT_Cargo","LOP_SLA_Mi8MTV3_UPK23"];
 a3e_arr_I_pilots = ["LOP_SLA_Infantry_Pilot"];
@@ -387,7 +387,7 @@ a3e_arr_searchdrone = ["rhs_pchela1t_vvs"];
 // first chopper that's called when you escape
 // only chopper used right now
 //////////////////////////////////////////////////////////////////
-a3e_arr_searchChopper = ["RHS_Mi8AMTSh_vvsc","RHS_Mi8MTV3_FAB_vvs","RHS_Mi8AMTSh_vvs","RHS_Mi8mt_vdv","RHS_Mi8MTV3_vdv","RHS_Mi8mt_vv","RHS_Mi8mt_vvs","RHS_Mi8MTV3_vvs","RHS_Mi8mt_vvsc","RHS_Mi8MTV3_vvsc"];
+a3e_arr_searchChopper = ["RHS_Mi8MTV3_FAB_vvs","RHS_Mi8AMTSh_vvs","RHS_Mi8mt_vdv","RHS_Mi8mt_vv","RHS_Mi8mt_vvs","RHS_Mi8MTV3_vvs","RHS_Mi8mt_vvsc","RHS_Mi8mt_vdv","RHS_Mi8mt_vv","RHS_Mi8mt_vvs","RHS_Mi8mt_vvsc"];
 a3e_arr_searchChopper_pilot = ["rhs_pilot"];
 a3e_arr_searchChopper_crew = ["rhs_pilot_transport_heli"];
 
@@ -430,8 +430,8 @@ a3e_arr_AquaticPatrols = ["O_Boat_Armed_01_hmg_F"];
 // What kind of weapon boxes are spawned when the parameter "additional weapons" is activated
 // use to add boxes from mods to the ammo depots
 //////////////////////////////////////////////////////////////////
-a3e_additional_weapon_box_1 = "rhs_weapons_crate_ak_standard";
-a3e_additional_weapon_box_2 = "rhs_weapons_crate_ak_ammo_545x39_standard";
+a3e_additional_weapon_box_1 = "rhs_weapon_crate";
+a3e_additional_weapon_box_2 = "rhs_mags_crate";
 
 
 //////////////////////////////////////////////////////////////////
