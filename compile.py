@@ -37,8 +37,15 @@ for mission in missions:
     shutil.copytree(missionIsland['path']+'/',missiondir+'/Island/')
     shutil.copytree(missionMod['path']+'/',missiondir+'/Units')
     
-    shutil.copy('./Missions/'+missionIsland['sqm']+'/mission.sqm',missiondir+'/mission.sqm')
+    required = ''
+    for req in missionMod['require']:
+        required = required + '"'+ req + '",'
+    #if len(required) == 0 :
+    #    required = '\b\b'
+    
+    shutil.copy('./Missions/'+mission['sqm']+'/mission.sqm',missiondir+'/mission.sqm')
     replace = dict(list(data['replace'].items()) + list(missionMod['replace'].items()) + list(missionIsland['replace'].items()));
+    replace['REQUIRE'] = required
     for root, subFolders, files in os.walk(missiondir):
         for rfile in data['ParsedFiles']:
             if rfile in files:
