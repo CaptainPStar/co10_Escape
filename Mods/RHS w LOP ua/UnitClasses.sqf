@@ -214,6 +214,7 @@ a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["rh
 // non-CAST weapons
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["rhs_weap_pkm", 50, 2, 4, ["rhs_100Rnd_762x54mmR","rhs_100Rnd_762x54mmR_green"], 3]];
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["rhs_weap_m249_pip", 10, 1, 2, ["rhsusf_100Rnd_556x45_soft_pouch"], 4]];
+a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["rhs_weap_tr8", 50, 1, 2, ["HandGrenade"], 4]];
 
 
 // Weapons and ammo in the launchers box
@@ -309,7 +310,6 @@ a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhsusf_acc_SR25S", 1
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhsusf_acc_compm4", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhsusf_acc_eotech_552", 10, 1, 3]];
 a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhsusf_acc_ACOG3", 10, 1, 3]];
-a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhsusf_acc_ACOG_pip", 10, 1, 3]];
 if(Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1pn93_1", 10, 1, 3]];
 	a3e_arr_AmmoDepotItems set [count a3e_arr_AmmoDepotItems, ["rhs_acc_1pn93_2", 10, 1, 3]];
@@ -360,7 +360,7 @@ a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, [objNull, "Smo
 
 
 // Here is a list of scopes:
-a3e_arr_Scopes = ["rhs_acc_1p29","rhs_acc_1p63","rhs_acc_pkas","rhs_acc_ekp1","rhs_acc_ekp1b","rhs_acc_ekp1c","rhs_acc_ekp1d","rhs_acc_1p78","rhs_acc_pso1m2","rhs_acc_pgo7v","rhsusf_acc_LEUPOLDMK4","rhsusf_acc_LEUPOLDMK4_2","rhsusf_acc_EOTECH","rhsusf_acc_eotech_552","rhsusf_acc_compm4","rhsusf_acc_ELCAN","rhsusf_acc_ACOG","rhsusf_acc_ACOG2","rhsusf_acc_ACOG3","rhsusf_acc_ACOG_PIP"];
+a3e_arr_Scopes = ["rhs_acc_1p29","rhs_acc_1p63","rhs_acc_pkas","rhs_acc_ekp1","rhs_acc_ekp1b","rhs_acc_ekp1c","rhs_acc_ekp1d","rhs_acc_1p78","rhs_acc_pso1m2","rhs_acc_pgo7v","rhsusf_acc_LEUPOLDMK4","rhsusf_acc_LEUPOLDMK4_2","rhsusf_acc_EOTECH","rhsusf_acc_eotech_552","rhsusf_acc_compm4","rhsusf_acc_ELCAN","rhsusf_acc_ACOG","rhsusf_acc_ACOG2","rhsusf_acc_ACOG3"];
 a3e_arr_Scopes_SMG = ["rhsusf_acc_EOTECH","rhsusf_acc_eotech_552","rhs_acc_ekp1"];
 a3e_arr_Scopes_Sniper = ["rhs_acc_pso1m2","rhs_acc_1p78"];
 a3e_arr_NightScopes = ["optic_NVS","rhs_acc_1pn93_1","rhs_acc_1pn93_2"];

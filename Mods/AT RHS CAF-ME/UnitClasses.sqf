@@ -209,6 +209,7 @@ a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["rh
 // non-CAST weapons
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["Trixie_CZ550", 20, 1, 2, ["Trixie_CZ550_Mag"], 9]];
 a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["rhs_weap_m249_pip", 10, 1, 2, ["rhsusf_100Rnd_556x45_soft_pouch"], 6]];
+a3e_arr_AmmoDepotSpecialWeapons set [count a3e_arr_AmmoDepotSpecialWeapons, ["rhs_weap_tr8", 50, 1, 2, ["HandGrenade"], 4]];
 
 
 // Weapons and ammo in the launchers box
