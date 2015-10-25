@@ -346,7 +346,7 @@ a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Trixie_M24_C
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["rhs_weap_rshg2","rhs_rshg2_mag", 2]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["CUP_smg_bizon","CUP_64Rnd_9x19_Bizon_M", 6]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["CUP_smg_bizon_snds","CUP_64Rnd_9x19_Bizon_M", 6]];
-a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["arifle_M134_F","762x51_Minigun_Tracer_Red", 6]];
+a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["arifle_M134_F","200Rnd_762x51_Belt", 6]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Sawed_Off_Shotgun","2Rnd_Sawed_Off_Shotgun_Pellets", 8]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["arifle_MRC_GL_F","MRC_492x34_B_skin1", 8]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["MineDetector", objNull, 0]];

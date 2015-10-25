@@ -14,6 +14,7 @@
 		{
 			"name" : "Vanilla",
 			"path" : "./Mods/Vanilla/",
+			"require" : [],
 			"replace" :
 				{
 					"MOD" : "Vanilla",
@@ -32,6 +33,7 @@
 		{
 			"name" : "AT RHS CAF-EU",
 			"path" : "./Mods/AT RHS CAF-EU/",
+			"require" : ["AT_UNITS","rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "AT",
@@ -50,6 +52,7 @@
 		{
 			"name" : "AT RHS CAF-ME",
 			"path" : "./Mods/AT RHS CAF-ME/",
+			"require" : ["AT_UNITS","rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "AT",
@@ -68,6 +71,7 @@
 		{
 			"name" : "AT RHS CAF-PI",
 			"path" : "./Mods/AT RHS CAF-PI/",
+			"require" : ["AT_UNITS","rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "AT",
@@ -86,6 +90,7 @@
 		{
 			"name" : "RHS w",
 			"path" : "./Mods/RHS w/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr","rhs_cti_insurgents"],
 			"replace" :
 				{
 					"MOD" : "RHS",
@@ -104,6 +109,7 @@
 		{
 			"name" : "RHS d",
 			"path" : "./Mods/RHS d/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr","rhs_cti_insurgents"],
 			"replace" :
 				{
 					"MOD" : "RHS",
@@ -122,6 +128,7 @@
 		{
 			"name" : "RHS mf",
 			"path" : "./Mods/RHS mf/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr","rhs_cti_insurgents"],
 			"replace" :
 				{
 					"MOD" : "RHS",
@@ -140,6 +147,7 @@
 		{
 			"name" : "RHS w CAF eu",
 			"path" : "./Mods/RHS w CAF eu/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "RHS CAF",
@@ -158,6 +166,7 @@
 		{
 			"name" : "RHS d CAF me",
 			"path" : "./Mods/RHS d CAF me/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "RHS CAF",
@@ -176,6 +185,7 @@
 		{
 			"name" : "RHS mf CAF pi",
 			"path" : "./Mods/RHS mf CAF pi/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "RHS CAF",
@@ -194,6 +204,7 @@
 		{
 			"name" : "RHS w LOP ua",
 			"path" : "./Mods/RHS w LOP ua/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "RHS LOP",
@@ -212,6 +223,7 @@
 		{
 			"name" : "RHS w LOP sla",
 			"path" : "./Mods/RHS w LOP sla/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "RHS LOP",
@@ -230,6 +242,7 @@
 		{
 			"name" : "RHS d LOP am",
 			"path" : "./Mods/RHS d LOP am/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "RHS LOP",
@@ -248,6 +261,7 @@
 		{
 			"name" : "RHS mf LOP afr",
 			"path" : "./Mods/RHS mf LOP afr/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "RHS LOP",
@@ -266,6 +280,7 @@
 		{
 			"name" : "RHS-US w",
 			"path" : "./Mods/RHS-US w/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "RHS-US",

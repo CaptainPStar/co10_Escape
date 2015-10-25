@@ -109,7 +109,7 @@ switch (_enemyFrequency) do {
 };
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
-a3e_arr_Escape_InfantryTypes =      ["rhs_msv_officer_armored","rhs_msv_officer","rhs_msv_sergeant","rhs_msv_junior_sergeant","rhs_msv_engineer", "rhs_msv_medic","rhs_msv_rifleman","rhs_msv_efreitor","rhs_msv_grenadier","rhs_msv_machinegunner","rhs_msv_machinegunner_assistant","rhs_msv_at","rhs_msv_strelok_rpg_assist","rhs_msv_marksman","rhs_msv_aa","rhs_msv_LAT","rhs_msv_engineer", "rhs_msv_medic"];
+a3e_arr_Escape_InfantryTypes = ["rhs_msv_officer_armored","rhs_msv_officer","rhs_msv_sergeant","rhs_msv_junior_sergeant","rhs_msv_engineer", "rhs_msv_medic","rhs_msv_rifleman","rhs_msv_efreitor","rhs_msv_grenadier","rhs_msv_machinegunner","rhs_msv_machinegunner_assistant","rhs_msv_at","rhs_msv_strelok_rpg_assist","rhs_msv_marksman","rhs_msv_aa","rhs_msv_LAT","rhs_msv_engineer", "rhs_msv_medic"];
 a3e_arr_Escape_InfantryTypes_Ind =  ["at_CAF_AG_EEUR_R_AKS74_PSO1","at_CAF_AG_EEUR_R_Medic","at_CAF_AG_EEUR_R_Engineer","CAF_AG_EEUR_R_AK47","CAF_AG_EEUR_R_AK74","CAF_AG_EEUR_R_RPK74","CAF_AG_EEUR_R_PKM","CAF_AG_EEUR_R_RPG","CAF_AG_EEUR_R_GL","at_CAF_AG_EEUR_R_AKS74","at_CAF_AG_EEUR_R_AK74_dirty","at_CAF_AG_EEUR_R_AKS74U","at_CAF_AG_EEUR_R_AKM","at_CAF_AG_EEUR_R_saiga","at_CAF_AG_EEUR_R_FAL","at_CAF_AG_EEUR_R_G3","at_CAF_AG_EEUR_R_G3SG1","at_CAF_AG_EEUR_R_CZ550"];
 a3e_arr_recon_InfantryTypes = ["rhs_vdv_recon_sergeant","rhs_vdv_recon_engineer","rhs_vdv_recon_marksman","rhs_vdv_recon_machinegunner","rhs_vdv_recon_medic","rhs_vdv_recon_at","rhs_vdv_recon_rifleman","rhs_vdv_recon_rifleman","rhs_vdv_recon_rifleman"];
 a3e_arr_recon_I_InfantryTypes = ["rhs_vdv_recon_sergeant","rhs_vdv_recon_engineer","rhs_vdv_recon_marksman","rhs_vdv_recon_machinegunner","rhs_vdv_recon_medic","rhs_vdv_recon_at","rhs_vdv_recon_rifleman","rhs_vdv_recon_rifleman","rhs_vdv_recon_rifleman"];
@@ -347,7 +347,7 @@ a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Trixie_M24_C
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["rhs_weap_rshg2","rhs_rshg2_mag", 1]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["CUP_smg_bizon","CUP_64Rnd_9x19_Bizon_M", 6]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["CUP_smg_bizon_snds","CUP_64Rnd_9x19_Bizon_M", 6]];
-a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["arifle_M134_F","762x51_Minigun_Tracer_Red", 6]];
+a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["arifle_M134_F","200Rnd_762x51_Belt", 6]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["Sawed_Off_Shotgun","2Rnd_Sawed_Off_Shotgun_Pellets", 8]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["arifle_MRC_GL_F","MRC_492x34_B_skin1", 8]];
 a3e_arr_CivilianCarWeapons set [count a3e_arr_CivilianCarWeapons, ["MineDetector", objNull, 0]];
