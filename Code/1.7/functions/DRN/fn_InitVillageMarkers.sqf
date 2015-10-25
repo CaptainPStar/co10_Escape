@@ -1,10 +1,14 @@
-call compile preprocessFileLineNumbers ("Island\VillageMarkers" + ".sqf");
+call compile preprocessFileLineNumbers ("Island\VillageMarkers.sqf");
 
-drn_fnc_VillageMarkers_PutVillageMarkersOnMap = {
+if (isServer) then {
+
+	if(isNil "a3e_villageMarkers") exitwith {
+		["Village markers not found!"] call BIS_fnc_error;
+	};
 	private ["_showMarkers"];
 	private ["_markerName", "_villageIndex"];
 
-	if (count _this > 0) then {_showMarkers = _this select 0;} else {_showMarkers = true};
+	_showMarkers = A3E_Debug;
 	_villageIndex = 0;
 
 	{
@@ -29,10 +33,5 @@ drn_fnc_VillageMarkers_PutVillageMarkersOnMap = {
 
 		_villageIndex = _villageIndex + 1;
 	} foreach a3e_villageMarkers;
+	a3e_var_villageMarkersInitialized = true;
 };
-
-if (isServer) then {
-	[false] call drn_fnc_VillageMarkers_PutVillageMarkersOnMap;
-};
-
-a3e_var_villageMarkersInitialized = true;

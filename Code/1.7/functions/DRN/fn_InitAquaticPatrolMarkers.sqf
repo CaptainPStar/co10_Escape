@@ -1,10 +1,14 @@
-call compile preprocessFileLineNumbers ("Island\PatrolBoatMarkers" + ".sqf");
 
-drn_fnc_AquticPatrolMarkers_PutAquaticPatrolMarkersOnMap = {
+if (isServer) then {
+	call compile preprocessFileLineNumbers ("Island\PatrolBoatMarkers.sqf");
+	
+	if(isNil "a3e_patrolBoatMarkers") exitwith {
+		["Patrolboatmarkers not found!"] call BIS_fnc_error;
+	};
 	private ["_showMarkers"];
 	private ["_markerName", "_villageIndex"];
 
-	if (count _this > 0) then {_showMarkers = _this select 0;} else {_showMarkers = true};
+	_showMarkers = A3E_Debug;
 	_villageIndex = 0;
 
 	{
@@ -29,10 +33,7 @@ drn_fnc_AquticPatrolMarkers_PutAquaticPatrolMarkersOnMap = {
 
 		_villageIndex = _villageIndex + 1;
 	} foreach a3e_patrolBoatMarkers;
+	a3e_var_aquaticPatrolMarkersInitialized = true;
 };
 
-if (isServer) then {
-	[false] call drn_fnc_AquticPatrolMarkers_PutAquaticPatrolMarkersOnMap;
-};
 
-a3e_var_aquaticPatrolMarkersInitialized = true;
