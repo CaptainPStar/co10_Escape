@@ -434,6 +434,11 @@ a3e_arr_AquaticPatrols = ["O_Boat_Armed_01_hmg_F"];
 a3e_additional_weapon_box_1 = "CUP_RUBasicWeaponsBox";
 a3e_additional_weapon_box_2 = "CUP_RUSpecialWeaponsBox";
 
+//////////////////////////////////////////////////////////////////
+// fn_MortarSite
+// mortar spawned in the mortar camps
+//////////////////////////////////////////////////////////////////
+a3e_arr_MortarSite = ["O_Mortar_01_F"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite

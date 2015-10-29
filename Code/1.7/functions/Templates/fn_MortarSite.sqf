@@ -35,7 +35,7 @@ _dir = 0;
 _obj setdir _dir;
 _obj setpos _objpos;
 _objpos = _position vectoradd [-0.105957,-0.183716,0.0648341];
-_obj = "O_Mortar_01_F" createvehicle _objpos;
+_obj = createVehicle [a3e_arr_CrashSiteWrecks select(floor(random(count(a3e_arr_CrashSiteWrecks)))), _objpos, [], 0, "NONE"];
 _gunner = [_obj,east] spawn A3E_fnc_AddStaticGunner; 
 a3e_var_artillery_units pushBack _obj;
 _dir = 180.555;

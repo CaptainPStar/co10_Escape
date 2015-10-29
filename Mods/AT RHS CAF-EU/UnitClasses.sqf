@@ -162,6 +162,11 @@ a3e_arr_O_pilots = ["rhs_pilot","rhs_pilot_transport_heli"];
 a3e_arr_I_transport_heli = ["RHS_Mi8amt_chdkz"];
 a3e_arr_I_pilots = ["rhs_g_Crew_F","rhs_g_Crew_F"];
 
+//////////////////////////////////////////////////////////////////
+// fn_MortarSite
+// mortar spawned in the mortar camps
+//////////////////////////////////////////////////////////////////
+a3e_arr_MortarSite = ["O_Mortar_01_F"];
 
 // The following arrays define weapons and ammo contained at the ammo depots
 // Index 0: Weapon classname.
