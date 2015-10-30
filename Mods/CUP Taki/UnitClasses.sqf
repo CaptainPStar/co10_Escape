@@ -97,6 +97,7 @@ switch (_enemyFrequency) do {
 		"CAF_AG_ME_T_van_01","CAF_AG_ME_T_van_01"];
     };
     default {//A lot (7-8)
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
         "CUP_O_LR_Transport_TKA","CUP_O_LR_MG_TKA","CUP_O_LR_Ambulance_TKA","CUP_O_LR_SPG9_TKA",
 		"CUP_O_UAZ_Unarmed_TKA","CUP_O_UAZ_Open_TKA","CUP_O_UAZ_MG_TKA","CUP_O_UAZ_AGS30_TKA","CUP_O_UAZ_SPG9_TKA",
 		"CUP_O_Ural_TKA","CUP_O_Ural_Open_TKA","CUP_O_Ural_Empty_TKA",
