@@ -57,7 +57,7 @@ if (_count == 0) then {
 		_extractionPointNo = 1;
 		for[{_i = 1},{_i<=8},{_i = _i +1}] do {
 
-			_pos = getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
+			_pos = getMarkerPos ("drn_Escape_ExtractionPos" + str _i);
 			
 			if((getpos _generatorTrailer distance _pos)<(getpos _generatorTrailer distance _selectedPos) AND (_mode == 1)) then {
 				_selectedPos = _pos;

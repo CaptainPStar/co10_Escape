@@ -37,24 +37,17 @@ ATHSC_fnc_createCam = {
 	[] spawn ATHSC_fnc_camLoop;
 };
 ATHSC_fnc_updateCam = {
-	private["_commit"];
-	_commit = [_this,0,0] call bis_fnc_param;
+	private["_commit","_target"];
+	_commit = param [0,0];
 	if(!(isNull ATHSC_Cam)) then {
-		if(ATHSC_CamHeight<5) then {
-			ATHSC_CamHeight = 5;
+		_target = ATHSC_CamTarget;
+		if(vehicle _target != _target) then {
+			_target = vehicle _target;
+			_commit = 0.05;
 		};
-		if(ATHSC_CamHeight > 25) then {
-			ATHSC_CamHeight = 25;
-		};
-		if(ATHSC_CamDir>=360) then {
-			ATHSC_CamDir = ATHSC_CamDir %360;
-		};
-		if(ATHSC_CamDir<0) then {
-			ATHSC_CamDir = (360 - ATHSC_CamDir%360);
-		};
-		ATHSC_Cam camSetTarget ATHSC_CamTarget;
+		ATHSC_Cam camSetTarget _target;
 		//ATHSC_Cam camSetRelPos [0, 8, 15];
-		ATHSC_Cam camSetPos ((getpos ATHSC_CamTarget) vectorAdd [-sin(ATHSC_CamDir)*8,cos(ATHSC_CamDir)*8, ATHSC_CamHeight]);
+		ATHSC_Cam camSetPos ((getpos _target) vectorAdd [-sin(ATHSC_CamDir)*8,cos(ATHSC_CamDir)*8, ATHSC_CamHeight]);
 		ATHSC_Cam cameraEffect ["internal", "back"];
 		ATHSC_Cam camCommit _commit;
 	};
@@ -98,7 +91,6 @@ ATHSC_fnc_camLoop = {
 				};
 			};
 		};
-		sleep 0.1;
 	};
 };
 ATHSC_fnc_cycleEntity = {
@@ -219,7 +211,18 @@ ATHSC_fnc_keyDown = {
 	if(_dikCode == DIK_ESCAPE) then {
 		call ATHSC_fnc_exit;
 	};
-	
+	if(ATHSC_CamHeight<5) then {
+		ATHSC_CamHeight = 5;
+	};
+	if(ATHSC_CamHeight > 25) then {
+		ATHSC_CamHeight = 25;
+	};
+	if(ATHSC_CamDir>=360) then {
+		ATHSC_CamDir = ATHSC_CamDir %360;
+	};
+	if(ATHSC_CamDir<0) then {
+		ATHSC_CamDir = (360 - ATHSC_CamDir%360);
+	};
 	_handled;  
 };
 ATHSC_fnc_updateText = {

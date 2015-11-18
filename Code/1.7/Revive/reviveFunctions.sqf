@@ -70,8 +70,11 @@ AT_FNC_Revive_InitPlayer = {
 AT_FNC_Revive_Actions = {
 	if (alive player) then 
 	{
+		player addAction ["<t size=""1.25"" color=""#C90000"">" + "Revive (with FAK)" + "</t>", "Revive\reviveAction.sqf", ["revivefak"], 19, true, true, "", "call AT_FNC_Revive_Check_Revive_FAK"];
 		player addAction ["<t size=""1.25"" color=""#C90000"">" + "Revive" + "</t>", "Revive\reviveAction.sqf", ["revive"], 18, true, true, "", "call AT_FNC_Revive_Check_Revive"];
-		player addAction ["<t size=""1.25"" color=""#C90000"">" + "Drag" + "</t>", "Revive\reviveAction.sqf", ["drag"], 17, false, true, "", "call AT_FNC_Revive_Check_Dragging"];
+		player addAction ["<t size=""1.25"" color=""#FFA500"">" + "Drag" + "</t>", "Revive\reviveAction.sqf", ["drag"], 17, false, true, "", "call AT_FNC_Revive_Check_Dragging"];
+		player addAction ["<t size=""1.25"" color=""#FFA500"">" + "Put in injured" + "</t>", "Revive\reviveAction.sqf", ["putin"], 17, false, true, "", "call AT_FNC_Revive_Check_Putin"];
+		player addAction ["<t size=""1.25"" color=""#FFA500"">" + "Pull out injured" + "</t>", "Revive\reviveAction.sqf", ["pullout"], 17, false, true, "", "call AT_FNC_Revive_Check_Pullout"];
 	};
 
 };
@@ -87,8 +90,8 @@ AT_FNC_Revive_HandleDamage = {
 	
 	if (alive _unit && _amountOfDamage >= 1  && !(_isUnconscious) && _bodyPart in ["","head_hit","body"]) then 
 	{
-		_unit setDamage 0;
-		_unit allowDamage false;
+		_unit setDammage 0;
+		_unit allowDammage false;
 		_amountOfDamage = 0;
 		[_unit, _killer] spawn AT_FNC_Revive_Unconscious;
 	};
@@ -141,7 +144,7 @@ AT_FNC_Revive_Switchmove = {
 };
 AT_FNC_Revive_Unconscious =
 {
-	private["_unit", "_killer","_msg","_pos"];
+	private["_unit", "_killer","_msg","_pos","_inVehicle"];
 	_unit = _this select 0;
 	_killer = _this select 1;
 	_unit setVariable ["AT_Revive_isUnconscious", true, true];
@@ -151,36 +154,44 @@ AT_FNC_Revive_Unconscious =
 	
 	
 	// Eject unit if inside vehicle
-	while {vehicle _unit != _unit} do 
+	/*while {vehicle _unit != _unit} do 
 	{
 		unAssignVehicle _unit;
 		_unit action ["eject", vehicle _unit];
 		
 		sleep 0.5;
+	};*/
+	_inVehicle = false;
+	if(vehicle _unit == _unit) then {
+		_ragdoll = [_unit] spawn at_fnc_revive_ragdoll;
+		waituntil{scriptDone _ragdoll};
+	} else {
+		private["_vehicle","_EH"];
+		_vehicle = vehicle _unit;
+		if(getdammage _vehicle < 1) then {
+			_inVehicle = true;
+		} else {
+			moveOut _unit;
+			_ragdoll = [_unit] spawn at_fnc_revive_ragdoll;
+		};
 	};
 	
-	_ragdoll = [_unit] spawn at_fnc_revive_ragdoll;
-	waituntil{scriptDone _ragdoll};
-	
-	_unit setDamage 0;
+	_unit setDamage 0.9;
     _unit setVelocity [0,0,0];
-    _unit allowDamage false;
+    _unit allowDammage false;
 	_unit setCaptive true;
-	if(surfaceIsWater getpos _unit && ((getPosASL _unit) select 2)>2) then {
+	if(surfaceIsWater getpos _unit && ((getPosASL _unit) select 2)>2 && (vehicle _unit != _unit)) then {
 		[_unit] call AT_FNC_Revive_WashAshore;
 	};
 	
 	if(AT_Revive_Camera==1) then {
 		[] spawn ATHSC_fnc_createCam;
 	};
-	
-
-
-	
-	
 	sleep 0.5;
-    
-	[[_unit,"AinjPpneMstpSnonWrflDnon"],"at_fnc_revive_switchMove",true] call BIS_fnc_MP;
+	
+    if(vehicle _unit == _unit) then {
+		[[_unit,"AinjPpneMstpSnonWrflDnon"],"at_fnc_revive_switchMove",true] call BIS_fnc_MP;
+	};
 	_unit enableSimulation false;
 	
 	//_unit setVariable ["AT_Revive_isUnconscious", true, true];
@@ -191,6 +202,21 @@ AT_FNC_Revive_Unconscious =
 		
 		while { !isNull _unit && alive _unit && (_unit getVariable "AT_Revive_isUnconscious")} do
 		{			
+			if(vehicle _unit == _unit && _inVehicle) then {
+				_inVehicle = false;
+				_unit enableSimulation true;
+				_ragdoll = [_unit] spawn at_fnc_revive_ragdoll;
+				waituntil{scriptDone _ragdoll};
+				sleep 0.25;
+				_unit enableSimulation false;
+			};
+			if(vehicle _unit != _unit && !_inVehicle) then {
+				_inVehicle = true;
+				_unit enableSimulation true;
+				[_unit] call AT_FNC_Revive_SwitchVehicleDeadAnimation;
+				sleep 0.25;
+				_unit enableSimulation false;
+			};
 			sleep 0.5;
 		};
 		_pos = getposATL _unit;
@@ -201,7 +227,6 @@ AT_FNC_Revive_Unconscious =
 
 		_unit enableSimulation true;
 		_unit allowDamage true;
-		_unit setDamage 0;
 		_unit setCaptive false;
 		
 		sleep 0.5;
@@ -210,13 +235,40 @@ AT_FNC_Revive_Unconscious =
 	};
 };
 
+AT_FNC_Revive_SwitchVehicleDeadAnimation = {
+	private["_interpolates"];
+	_unit = param[0];
+	if(vehicle _unit != _unit) then {
+		_interpolates = [(configfile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit),"interpolateTo",""] call BIS_fnc_returnConfigEntry;
+		{
+			if(typeName _x == "STRING") then {
+				private["_stateAction"];
+				if(configName (inheritsFrom (configfile >> "CfgMovesMaleSdr" >> "States" >> _x)) == "DefaultDie") then {
+					[[_unit,_x],"at_fnc_revive_switchMove",true] call BIS_fnc_MP;
+				};
+			};
+		} foreach _interpolates;
+	};
+};
+
+AT_FNC_Revive_WatchVehicle = {
+	private["_hnd"];
+	_vehicle = param[0];
+	_unit = param[2];
+	if(local _unit && (_unit getVariable ["AT_Revive_isUnconscious",false])) then {
+		_hnd = [_unit] spawn at_fnc_revive_ragdoll;
+		waituntil{scriptDone _hnd};
+		sleep 0.5;
+		[[_unit,"AinjPpneMstpSnonWrflDnon"],"at_fnc_revive_switchMove",true] call BIS_fnc_MP;
+	};
+};
 
 AT_FNC_Revive_HandleRevive =
 {
-	private ["_target"];
-
-	_target = _this select 0;
-
+	private["_attendant"];
+	_target = param [0,objNull];
+	_fakUsed = param [1,false];
+	
 	if (alive _target) then
 	{
 		if(primaryWeapon player != "") then {
@@ -243,10 +295,20 @@ AT_FNC_Revive_HandleRevive =
 		{
 			_target enableSimulation true;
 			_target allowDamage true;
-			_target setDamage 0;
 			_target setCaptive false;
-			
 			[[_target,"amovppnemstpsraswrfldnon"],"at_fnc_revive_playMove",true] call BIS_fnc_MP;
+		};
+		
+		_attendant = [(configfile >> "CfgVehicles" >> typeof player),"attendant",0] call BIS_fnc_returnConfigEntry; 
+		if(_attendant == 1 && ("Medikit" in items player)) then {
+			_target setDamage 0;
+		} else {
+			if(_fakUsed && ("FirstAidKit" in items player)) then {
+				_target setDamage 0;
+				player removeItem "FirstAidKit";
+			} else {
+				_target setDamage (random 0.3)+0.1;
+			};
 		};
 	};
 };
@@ -288,7 +350,7 @@ AT_FNC_Revive_Drag =
 	
 	
 
-	_id = player addAction ["<t color=""#C90000"">" + "Release" + "</t>", "Revive\reviveAction.sqf", ["release"], 10, true, true, "", "true"];
+	_id = player addAction ["<t color=""#FFA500"">" + "Release" + "</t>", "Revive\reviveAction.sqf", ["release"], 10, true, true, "", "true"];
 	
 	
 	waitUntil 
@@ -315,7 +377,14 @@ AT_FNC_Revive_Release =
 	player setVariable ["AT_Revive_isDragging",objNull,true];
 	
 };
-
+AT_FNC_Revive_AddVehicleWatchdog = {
+	_vehicle = param[0];
+	_EH = _vehicle getvariable ["AT_Revive_VehicleWatchdog",-1];
+	if(_EH>=0) then {
+		_EH = _vehicle addEventHandler ["GetOut", {_this spawn AT_FNC_Revive_WatchVehicle;}];
+		_vehicle setvariable ["AT_Revive_VehicleWatchdog",_EH,false];
+	};
+};
 
 
 AT_FNC_Revive_Check_Revive = 
@@ -346,8 +415,17 @@ AT_FNC_Revive_Check_Revive =
 	
 	_return
 };
-
-
+AT_FNC_Revive_Check_Revive_FAK = 
+{
+	private["_return"];
+	_return = [] call AT_FNC_Revive_Check_Revive;
+	if(_return && ("FirstAidKit" in items player)) then {
+		_return = true;
+	} else {
+		_return = false;
+	};
+	_return
+};
 AT_FNC_Revive_Check_Dragging =
 {
 	private ["_target","_isPlayerUnconscious", "_isTargetUnconscious", "_isDragging", "_isDragged","_return"];
@@ -372,6 +450,56 @@ AT_FNC_Revive_Check_Dragging =
 	};
 		
 	_return
+};
+AT_FNC_Revive_Check_Putin = {
+	private["_vehicle","_isDragging","_freeCargoPositions","_return"];
+	_vehicle = cursortarget;
+	_isDragging = player getVariable ["AT_Revive_isDragging",false];
+	_freeCargoPositions = _vehicle emptyPositions "cargo";
+	_return = false;
+	if(_freeCargoPositions >0 && !isNull(_isDragging)) then {
+		_return = true;
+	};
+	_return
+};
+
+AT_FNC_Revive_Check_Pullout = {
+	private["_vehicle","_isDragging","_freeCargoPositions","_return"];
+	_vehicle = cursortarget;
+	_return = false;
+	{
+		if((_x getVariable ["AT_Revive_isUnconscious",false]) && (_x != _vehicle)) exitwith {
+			_return = true;
+		};
+	} foreach (crew _vehicle);
+	_return
+};
+
+AT_FNC_Revive_PutInVehicle = {
+	private["_vehicle","_isDragging","_freeCargoPositions"];
+	_vehicle = cursortarget;
+	_isDragging = player getVariable ["AT_Revive_isDragging",objNull];
+	_freeCargoPositions = _vehicle emptyPositions "cargo";
+	if(_freeCargoPositions>0 && !isNull(_isDragging)) then {
+		[] call AT_FNC_Revive_Release;
+		sleep 0.5;
+		[_isDragging,_vehicle] remoteExec ["AT_FNC_Revive_MoveInjuredInVehicle", _isDragging];
+		[_vehicle] remoteExec ["AT_FNC_Revive_AddVehicleWatchdog", 0]; 
+	};
+};
+AT_FNC_Revive_MoveInjuredInVehicle = {
+	_injured = param[0];
+	_vehicle = param[1];
+	_injured moveInCargo _vehicle;
+};
+AT_FNC_Revive_PullPutVehicle = {
+private["_vehicle","_isDragging","_freeCargoPositions"];
+	_vehicle = cursortarget;
+	{
+		if((_x getVariable ["AT_Revive_isUnconscious",false])) exitwith {
+			moveout _x;
+		};
+	} foreach (crew _vehicle);
 };
 
 AT_FNC_Revive_Ragdoll = {

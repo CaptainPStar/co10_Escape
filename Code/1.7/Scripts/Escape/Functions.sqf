@@ -13,17 +13,17 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 		_nighttime = false;
 	};   
 	//Hopefully fixing BIS broken scripts:
-	//_this setskill 0.2;
-	//_this setskill ["aimingspeed", 0.1];
-	//_this setskill ["spotdistance", 0.2];
-	//_this setskill ["aimingaccuracy", 0.2]; 
-	//_this setskill ["aimingshake", 0.1]; 
-	//_this setskill ["spottime", 0.1];
-	//_this setskill ["commanding", 0.2]; 
-	//_this setskill ["general", 0.3];
-	//_this setskill ["reloadspeed", 0.2];
-	//_this setskill ["courage", 0.2];
-	//_this setskill ["endurance", 0.2];
+	_this setskill 0.2;
+	_this setskill ["aimingspeed", 0.1];
+	_this setskill ["spotdistance", 0.2];
+	_this setskill ["aimingaccuracy", 0.2]; 
+	_this setskill ["aimingshake", 0.1]; 
+	_this setskill ["spottime", 0.1];
+	_this setskill ["commanding", 0.2]; 
+	_this setskill ["general", 0.3];
+	_this setskill ["reloadspeed", 0.2];
+	_this setskill ["courage", 0.2];
+	_this setskill ["endurance", 0.2];
 	
 
 	
