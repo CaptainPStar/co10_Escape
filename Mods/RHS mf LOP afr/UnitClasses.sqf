@@ -14,7 +14,7 @@ private ["_enemyFrequency"];
 _enemyFrequency = _this select 0;
 
 // Random array. Start position guard types.
-a3e_arr_Escape_StartPositionGuardTypes = ["LOP_AFRCiv_Soldier", "LOP_AFRCiv_Soldier_GL", "LOP_AFRCiv_Soldier", "LOP_AFRCiv_Soldier_AR"];
+a3e_arr_Escape_StartPositionGuardTypes = ["LOP_AFR_Infantry_Rifleman", "LOP_AFR_Infantry_GL", "LOP_AFR_Infantry_Rifleman", "LOP_AFR_Infantry_AR"];
 
 // Inner fence guard's secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
@@ -105,7 +105,7 @@ switch (_enemyFrequency) do {
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
 a3e_arr_Escape_InfantryTypes = ["rhs_vdv_mflora_officer_armored","rhs_vdv_mflora_officer","rhs_vdv_mflora_sergeant","rhs_vdv_mflora_junior_sergeant","rhs_vdv_mflora_engineer", "rhs_vdv_mflora_medic","rhs_vdv_mflora_rifleman","rhs_vdv_mflora_efreitor","rhs_vdv_mflora_grenadier","rhs_vdv_mflora_machinegunner","rhs_vdv_mflora_machinegunner_assistant","rhs_vdv_mflora_at","rhs_vdv_mflora_aa","rhs_vdv_mflora_strelok_rpg_assist","rhs_vdv_mflora_marksman","rhs_vdv_mflora_LAT","rhs_vdv_mflora_RShG2","rhs_vdv_mflora_engineer", "rhs_vdv_mflora_medic"];
-a3e_arr_Escape_InfantryTypes_Ind = ["LOP_AFR_Infantry_TL","LOP_AFR_Infantry_SL","LOP_AFR_Infantry_Corpsman","LOP_AFR_Infantry_AR","LOP_AFR_Infantry_AT","LOP_AFR_Infantry_Marksman","LOP_AFR_Infantry_IED","LOP_AFR_Infantry_Rifleman","LOP_AFR_Infantry_GL","LOP_AFRCiv_Soldier_TL","LOP_AFRCiv_Soldier_SL","LOP_AFRCiv_Soldier_Medic","LOP_AFRCiv_Soldier_AR","LOP_AFRCiv_Soldier_AT","LOP_AFRCiv_Soldier_Marksman","LOP_AFRCiv_Soldier_IED","LOP_AFRCiv_Soldier","LOP_AFRCiv_Soldier_GL",];
+a3e_arr_Escape_InfantryTypes_Ind = ["LOP_AFR_Infantry_TL","LOP_AFR_Infantry_SL","LOP_AFR_Infantry_Corpsman","LOP_AFR_Infantry_AR","LOP_AFR_Infantry_AT","LOP_AFR_Infantry_Marksman","LOP_AFR_Infantry_IED","LOP_AFR_Infantry_Rifleman","LOP_AFR_Infantry_GL"];
 a3e_arr_recon_InfantryTypes = ["rhs_vdv_mflora_officer_armored","rhs_vdv_mflora_officer","rhs_vdv_mflora_sergeant","rhs_vdv_mflora_junior_sergeant","rhs_vdv_mflora_engineer", "rhs_vdv_mflora_medic","rhs_vdv_mflora_rifleman","rhs_vdv_mflora_efreitor","rhs_vdv_mflora_grenadier","rhs_vdv_mflora_machinegunner","rhs_vdv_mflora_machinegunner_assistant","rhs_vdv_mflora_at","rhs_vdv_mflora_aa","rhs_vdv_mflora_strelok_rpg_assist","rhs_vdv_mflora_marksman","rhs_vdv_mflora_LAT","rhs_vdv_mflora_RShG2","rhs_vdv_mflora_engineer", "rhs_vdv_mflora_medic"];
 a3e_arr_recon_I_InfantryTypes = ["LOP_AFR_Infantry_TL","LOP_AFR_Infantry_SL","LOP_AFR_Infantry_Corpsman","LOP_AFR_Infantry_AR","LOP_AFR_Infantry_AT","LOP_AFR_Infantry_Marksman","LOP_AFR_Infantry_IED","LOP_AFR_Infantry_Rifleman","LOP_AFR_Infantry_GL"];
 
