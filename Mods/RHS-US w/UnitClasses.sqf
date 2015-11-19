@@ -20,7 +20,7 @@ A3E_VAR_Side_Blufor = east;
 A3E_VAR_Side_Opfor = west;
 A3E_VAR_Side_Ind = resistance;
 
-A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Player];
+A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
 A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 

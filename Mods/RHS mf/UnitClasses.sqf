@@ -13,6 +13,14 @@ private ["_enemyFrequency"];
 
 _enemyFrequency = _this select 0;
 
+A3E_VAR_Side_Blufor = west;
+A3E_VAR_Side_Opfor = east;
+A3E_VAR_Side_Ind = resistance;
+
+A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
+A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
+A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
+
 // Random array. Start position guard types.
 a3e_arr_Escape_StartPositionGuardTypes = ["rhs_g_Soldier_F", "rhs_g_Soldier_GL_F", "rhs_g_Soldier_F2", "rhs_g_Soldier_F3"];
 
