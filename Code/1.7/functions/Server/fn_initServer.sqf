@@ -25,9 +25,12 @@ publicVariable "A3E_Debug";
 //##############
 
 
-private ["_EnemyCount","_pos","_enemyMinSkill", "_enemyMaxSkill", "_searchChopperSearchTimeMin", "_searchChopperRefuelTimeMin", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency", "_comCenGuardsExist", "_fenceRotateDir", "_scriptHandle"];
+private ["_villagePatrolSpawnArea","_EnemyCount","_pos","_enemyMinSkill", "_enemyMaxSkill", "_searchChopperSearchTimeMin", "_searchChopperRefuelTimeMin", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency", "_comCenGuardsExist", "_fenceRotateDir", "_scriptHandle"];
 
+_enemyFrequency = (Param_EnemyFrequency);
+_enemySpawnDistance = (Param_EnemySpawnDistance);
 
+[_enemyFrequency] call compile preprocessFileLineNumbers "Units\UnitClasses.sqf";
 
 
 // Developer Variables
@@ -112,8 +115,7 @@ a3e_var_Escape_enemyMaxSkill = _enemyMaxSkill;
 _searchChopperSearchTimeMin = (5 + random 10);
 _searchChopperRefuelTimeMin = (5 + random 10);
 
-_enemyFrequency = (Param_EnemyFrequency);
-_enemySpawnDistance = (Param_EnemySpawnDistance);
+
 _villagePatrolSpawnArea = (Param_VillageSpawnCount);
 
 drn_searchAreaMarkerName = "drn_searchAreaMarker";
@@ -143,8 +145,6 @@ publicVariable "A3E_FenceIsCreated";
 
 [true] call drn_fnc_InitVillageMarkers; 
 [true] call drn_fnc_InitAquaticPatrolMarkers; 
-
-[_enemyFrequency] call compile preprocessFileLineNumbers "Units\UnitClasses.sqf";
 
 
 _playerGroup = [] call A3E_fnc_GetPlayerGroup;
