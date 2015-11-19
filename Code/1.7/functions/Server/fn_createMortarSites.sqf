@@ -90,9 +90,8 @@ while {count _positions < _mortarSiteCount} do {
     };
 };
 
-
 {	
 	[_x] call A3E_fnc_MortarSite;
 	_playergroup = [] call A3E_fnc_getPlayerGroup;
-	[_playergroup, "A3E_MortarSitePatrolMarker", east, "INS", 1, 1, 2, Param_EnemySkill, Param_EnemySkill, Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
+	[_playergroup, "A3E_MortarSitePatrolMarker", A3E_VAR_Side_Opfor, "INS", 1, 1, 2, Param_EnemySkill, Param_EnemySkill, Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
 } foreach _positions;

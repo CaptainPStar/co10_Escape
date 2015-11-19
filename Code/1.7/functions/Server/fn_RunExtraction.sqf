@@ -9,16 +9,15 @@ _extractionMarkerName = "drn_Escape_ExtractionPos" + str _extractionPointNo;
 _extractionMarkerName2 = "drn_Escape_ExtractionPos" + str _extractionPointNo + "_1";
 
 
-
-_result = [[((getMarkerPos _spawnMarkerName) select 0) + 25, ((getMarkerPos _spawnMarkerName) select 1) + 20, 100], 0, (a3e_arr_extraction_chopper select floor (random count a3e_arr_extraction_chopper)), west] call BIS_fnc_spawnVehicle;
+_result = [[((getMarkerPos _spawnMarkerName) select 0) + 25, ((getMarkerPos _spawnMarkerName) select 1) + 20, 100], 0, (a3e_arr_extraction_chopper select floor (random count a3e_arr_extraction_chopper)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 _boat1 = _result select 0;
 _group1 = _result select 2;
 
-_result = [[((getMarkerPos _spawnMarkerName) select 0) - 25, ((getMarkerPos _spawnMarkerName) select 1) - 20, 100], 0, (a3e_arr_extraction_chopper select floor (random count a3e_arr_extraction_chopper)), west] call BIS_fnc_spawnVehicle;
+_result = [[((getMarkerPos _spawnMarkerName) select 0) - 25, ((getMarkerPos _spawnMarkerName) select 1) - 20, 100], 0, (a3e_arr_extraction_chopper select floor (random count a3e_arr_extraction_chopper)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 _boat2 = _result select 0;
 _group2 = _result select 2;
 
-_result = [[((getMarkerPos _spawnMarkerName) select 0) - 40, ((getMarkerPos _spawnMarkerName) select 1) - 40, 100], 0, (a3e_arr_extraction_chopper_escort select floor (random count a3e_arr_extraction_chopper_escort)), west] call BIS_fnc_spawnVehicle;
+_result = [[((getMarkerPos _spawnMarkerName) select 0) - 40, ((getMarkerPos _spawnMarkerName) select 1) - 40, 100], 0, (a3e_arr_extraction_chopper_escort select floor (random count a3e_arr_extraction_chopper_escort)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 _boat3 = _result select 0;
 _group3 = _result select 2;
 

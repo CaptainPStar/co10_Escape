@@ -31,7 +31,7 @@ _success = false;
 				private["_group","_group","_rotation","_pos","_fleepos"];
 				_position = _this select 0;
 				_group = _x;
-				if((side _group) == resistance || (side _group) == east) then {
+				if((side _group) == A3E_VAR_Side_Opfor  || (side _group) == A3E_VAR_Side_Ind ) then {
 					if((((units _group) select 0) distance _position)<a3e_var_artillery_fleeingDistance) then {
 						_pos = getposATL((units _x) select 0);
 						_rotation = [_position,getposATL((units _group) select 0)] call bis_fnc_DirTo;

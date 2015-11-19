@@ -15,7 +15,7 @@ _vehicleClass = a3e_arr_Escape_ReinforcementTruck_vehicleClasses select _index;
 
 _vehicleMaxCargo = a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo select _index;
 
-_result = [_spawnPos, 0, _vehicleClass, east] call BIS_fnc_spawnVehicle;
+_result = [_spawnPos, 0, _vehicleClass, A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
 _vehicle = _result select 0;
 _crew = _result select 1;
 _group = _result select 2;
@@ -45,7 +45,7 @@ if (_debug) then {
 
 // Create cargo
 
-_cargoGroup = createGroup east;
+_cargoGroup = createGroup A3E_VAR_Side_Opfor;
 _insurgentSoldiers = [];
 _soldiersCount = _enemyFrequency + 3 + floor random (4 * _enemyFrequency);
 if (_soldiersCount > _vehicleMaxCargo) then {

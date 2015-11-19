@@ -73,8 +73,9 @@ _boxpos = _position findEmptyPosition [3,15,_boxType];
 		_box addItemCargoGlobal _x;
 	} foreach _items;
 	
+
 	
-	_grp = createGroup west;
+	_grp = createGroup A3E_VAR_Side_Blufor;
 	_deadcrew = _grp createUnit [a3e_arr_CrashSiteCrew select(floor(random(count(a3e_arr_CrashSiteCrew)))), getpos _box, [], 15, "FORM"] ;   
 	_deadcrew setdammage 1;
 	_deadcrew = _grp createUnit [a3e_arr_CrashSiteCrew select(floor(random(count(a3e_arr_CrashSiteCrew)))), getpos _box, [], 15, "FORM"] ;   

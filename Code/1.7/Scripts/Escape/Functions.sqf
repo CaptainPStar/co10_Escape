@@ -530,7 +530,7 @@ drn_fnc_Escape_AddRemoveComCenArmor = {
 				_roadSegments = (_pos nearRoads 1000);
 			};
             _spawnPos = getPos (_roadSegments select floor random count _roadSegments);
-            _result = [_spawnPos, 0, _x, east] call BIS_fnc_spawnVehicle;
+            _result = [_spawnPos, 0, _x, A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
             _vehicle = _result select 0;
             _crew = _result select 1;
             _group = _result select 2;

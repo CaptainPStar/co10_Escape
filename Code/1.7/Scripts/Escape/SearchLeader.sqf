@@ -45,16 +45,17 @@ if (A3E_Debug) then {
     player sideChat "Starting search leader...";
 };
 
+
 // Create detection trigger
 
 _trigger = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
 _trigger setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
-_trigger setTriggerActivation["WEST", "EAST D", false];
+_trigger setTriggerActivation[A3E_VAR_Side_Blufor_Str, format["%1 D",A3E_VAR_Side_Opfor], false];
 _trigger setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 
 _trigger2 = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
 _trigger2 setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
-_trigger2 setTriggerActivation["WEST", "GUER D", false];
+_trigger2 setTriggerActivation[A3E_VAR_Side_Blufor,  format["%1 D",A3E_VAR_Side_Ind], false];
 _trigger2 setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 
 // Start thread that sets detected by civilian
@@ -104,7 +105,7 @@ while {1 == 1} do {
 				_leader = _x;
 			} foreach units _x;
 
-            if (alive _leader && (side _x == east || side _x == resistance)) then {
+            if (alive _leader && (side _x == A3E_VAR_Side_Opfor || side _x == A3E_VAR_Side_Ind)) then {
 				_nearestEnemy = _leader findNearestEnemy position _leader;
 				
                 if (!isNull _nearestEnemy) then {
@@ -170,12 +171,12 @@ while {1 == 1} do {
 
 			_trigger = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
 			_trigger setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
-			_trigger setTriggerActivation["WEST", "EAST D", false];
+			_trigger setTriggerActivation[A3E_VAR_Side_Blufor_Str, A3E_VAR_Side_Opfor_Str+" D", false];
 			_trigger setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 			
 			_trigger2 = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
 			_trigger2 setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
-			_trigger2 setTriggerActivation["WEST", "GUER D", false];
+			_trigger2 setTriggerActivation[A3E_VAR_Side_Blufor_Str, A3E_VAR_Side_Ind_Str+" D", false];
 			_trigger2 setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 			
 			if (A3E_Debug) then {
@@ -234,7 +235,7 @@ while {1 == 1} do {
                 // Reveal players for enemy units in the vicinity (if its not dark)
                 if ((date select 3) > 6 && (date select 3) < 18) then {
                     {
-                        if (side _x == east && count units _x > 0) then {
+                        if ((side _x == A3E_VAR_Side_Opfor  || side _x == A3E_VAR_Side_Ind) && count units _x > 0) then {
                             if (((units _x) select 0) distance _detectedUnit < (350 * (1 - fog))) then {
                                 _x reveal _detectedUnit;
                             };

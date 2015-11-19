@@ -46,7 +46,7 @@ while {!(isNil _vehicleVarName)} do {
 
 //_chopper = "O_Heli_Light_02_F" createVehicle _homePos;
 //_chopper = createVehicle ["RHS_Mi8AMTSh_vvsc", _homePos, [], 0, "NONE"];
-_chopperspawn = [_homePos, random 360, (a3e_arr_searchChopper select floor (random count a3e_arr_searchChopper)), EAST] call BIS_fnc_spawnVehicle;
+_chopperspawn = [_homePos, random 360, (a3e_arr_searchChopper select floor (random count a3e_arr_searchChopper)), A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
 _chopper = _chopperspawn select 0;
 _chopper lock 0;
 _chopper setVehicleVarName _vehicleVarName;

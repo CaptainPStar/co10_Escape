@@ -178,7 +178,7 @@
         _object = createVehicle [_gun, _pos, [], 0, "NONE"];
         _object setPos _pos;
         _object setDir _angle;
-		[_object,east] spawn A3E_fnc_AddStaticGunner; 
+		[_object,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
     };
     
     // Cars
@@ -209,7 +209,7 @@
         _object = createVehicle [_car, _pos, [], 0, "NONE"];
         _object setPos _pos;
         _object setDir _angle;
-		[_object,east] spawn A3E_fnc_AddStaticGunner; 
+		[_object,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
     };
     
     // Weapons

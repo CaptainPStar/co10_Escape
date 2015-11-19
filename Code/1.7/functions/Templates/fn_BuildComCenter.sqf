@@ -262,7 +262,7 @@ if (count _staticWeaponClasses > 0) then {
     
     _gun = _staticWeaponClasses select floor random count _staticWeaponClasses;
     _static = [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
-	[_static,east] spawn A3E_fnc_AddStaticGunner; 
+	[_static,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
     
     _pos = [17, -9.5];
     _dir = 135;
@@ -271,7 +271,7 @@ if (count _staticWeaponClasses > 0) then {
     _guns = ["O_HMG_01_high_F"];
     _gun = _guns select floor random count _guns;
     _static = [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
-	[_static,east] spawn A3E_fnc_AddStaticGunner; 
+	[_static,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
 };
 
 if (count _parkedVehicleClasses > 0) then {

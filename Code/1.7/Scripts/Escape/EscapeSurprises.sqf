@@ -131,7 +131,7 @@ while {true} do {
                     
                     _noOfDropUnits = _surpriseArgs select 0;
                     
-                    _dropGroup = createGroup east;
+                    _dropGroup = createGroup A3E_VAR_Side_Opfor;
                     _dropUnits = [];
                     
                     for [{_i = 0}, {_i < _noOfDropUnits}, {_i = _i + 1}] do {
@@ -157,7 +157,7 @@ while {true} do {
                     };
                     _helitype = a3e_arr_O_transport_heli select floor(random(count(a3e_arr_O_transport_heli)));
 					_crewtype = a3e_arr_O_pilots select floor(random(count(a3e_arr_O_pilots)));
-                    [getMarkerPos "drn_dropChopperStartPosMarker", east, _helitype, _crewtype, _dropUnits, _dropPosition, _minEnemySkill, _maxEnemySkill, _onGroupDropped, A3E_Debug] execVM "Scripts\Escape\CreateDropChopper.sqf";
+                    [getMarkerPos "drn_dropChopperStartPosMarker", A3E_VAR_Side_Opfor, _helitype, _crewtype, _dropUnits, _dropPosition, _minEnemySkill, _maxEnemySkill, _onGroupDropped, A3E_Debug] execVM "Scripts\Escape\CreateDropChopper.sqf";
                     
                     // Create next drop chopper
                     _surpriseArgs = [(_enemyFrequency + 2) + floor random (_enemyFrequency * 2)]; // [NoOfDropUnits]
@@ -176,7 +176,7 @@ while {true} do {
                     
                     _noOfDropUnits = _surpriseArgs select 0;
                     
-                    _dropGroup = createGroup resistance;
+                    _dropGroup = createGroup A3E_VAR_Side_Ind;
                     _dropUnits = [];
                     
                     for [{_i = 0}, {_i < _noOfDropUnits}, {_i = _i + 1}] do {
@@ -202,7 +202,7 @@ while {true} do {
                     };
                     _helitype = a3e_arr_I_transport_heli select floor(random(count(a3e_arr_I_transport_heli)));
 					_crewtype = a3e_arr_I_pilots select floor(random(count(a3e_arr_I_pilots)));
-                    [getMarkerPos "drn_dropChopperStartPosMarker", resistance, _helitype, _crewtype, _dropUnits, _dropPosition, _minEnemySkill, _maxEnemySkill, _onGroupDropped, A3E_Debug] execVM "Scripts\Escape\CreateDropChopper.sqf";
+                    [getMarkerPos "drn_dropChopperStartPosMarker", A3E_VAR_Side_Ind, _helitype, _crewtype, _dropUnits, _dropPosition, _minEnemySkill, _maxEnemySkill, _onGroupDropped, A3E_Debug] execVM "Scripts\Escape\CreateDropChopper.sqf";
                     
                     // Create next drop chopper
                     _surpriseArgs = [(_enemyFrequency + 2) + floor random (_enemyFrequency * 2)]; // [NoOfDropUnits]
@@ -224,7 +224,7 @@ while {true} do {
                     _chopper setVehicleVarName "drn_russianSearchChopper";
                     _chopper call compile format ["%1=_this;", "drn_russianSearchChopper"];
                     
-                    _group = createGroup east;
+                    _group = createGroup A3E_VAR_Side_Opfor;
 
                     //"O_Pilot_F" createUnit [[0, 0, 30], _group, "", (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill)), "LIEUTNANT"];
                     //"O_Pilot_F" createUnit [[0, 0, 30], _group, "", (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill)), "LIEUTNANT"];
@@ -257,7 +257,7 @@ while {true} do {
 				if (_surpriseID == "SEARCHDRONE") then {
                     private ["_chopper", "_result", "_group","_helitype","_arr"];
 					
-					_arr = [(getMarkerPos "drn_russianSearchChopperStartPosMarker"), 0, (a3e_arr_searchdrone select floor (random count a3e_arr_searchdrone)), RESISTANCE] call bis_fnc_spawnvehicle;
+					_arr = [(getMarkerPos "drn_russianSearchChopperStartPosMarker"), 0, (a3e_arr_searchdrone select floor (random count a3e_arr_searchdrone)), A3E_VAR_Side_Ind] call bis_fnc_spawnvehicle;
 					_chopper = _arr select 0;
 					_group = _arr select 2;
 					_chopper lock false;
@@ -307,7 +307,7 @@ while {true} do {
                         sleep 1;
                     };
                     
-                    [call drn_fnc_Escape_GetPlayerGroup, getPos _spawnSegment, east, a3e_arr_Escape_EnemyCivilianCarTypes, A3E_arr_recon_InfantryTypes, _enemyFrequency] execVM "Scripts\Escape\CreateCivilEnemy.sqf";
+                    [call drn_fnc_Escape_GetPlayerGroup, getPos _spawnSegment, A3E_VAR_Side_Opfor, a3e_arr_Escape_EnemyCivilianCarTypes, A3E_arr_recon_InfantryTypes, _enemyFrequency] execVM "Scripts\Escape\CreateCivilEnemy.sqf";
                     
                     _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
                     _timeInSek = 15 * 60 + random (45 * 60);

@@ -43,7 +43,7 @@ if (count _this > 12) then {_fnc_OnSpawnGroup = _this select 12;} else {_fnc_OnS
 
 
 //WHY!?!?!?!?!
-_factionsArray = [RESISTANCE, RESISTANCE, RESISTANCE, RESISTANCE, RESISTANCE, RESISTANCE, RESISTANCE, RESISTANCE, EAST, EAST];
+_factionsArray = [A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor ,A3E_VAR_Side_Opfor];
 
 
 if (isNil "a3e_var_commonLibInitialized") then {
@@ -112,10 +112,10 @@ while {true} do {
         _skill = _minSkill + random (_maxSkill - _minSkill);
         
         _faction = _factionsArray select (floor (random (count _factionsArray)));
-        if(_faction == EAST) then {
+        if(_faction == A3E_VAR_Side_Opfor) then {
             _possibleInfantryTypes = a3e_arr_Escape_InfantryTypes;
         };
-        if (_faction == RESISTANCE) then {
+        if (_faction == A3E_VAR_Side_Ind) then {
             _possibleInfantryTypes = a3e_arr_Escape_InfantryTypes_Ind;
         };
 

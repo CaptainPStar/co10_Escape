@@ -33,24 +33,25 @@ private ["_EnemyCount","_pos","_enemyMinSkill", "_enemyMaxSkill", "_searchChoppe
 // Developer Variables
 
 
-createCenter EAST;
-createCenter RESISTANCE;
+
+createCenter A3E_VAR_Side_Opfor;
+createCenter A3E_VAR_Side_Ind;
 
 if(isNil("Param_War_Torn")) then {
 	Param_War_Torn = 0;
 };
-WEST setFriend [RESISTANCE, 0];
-RESISTANCE setFriend [WEST, 0];
+A3E_VAR_Side_Blufor setFriend [A3E_VAR_Side_Ind, 0];
+A3E_VAR_Side_Ind setFriend [A3E_VAR_Side_Blufor, 0];
 
-WEST setFriend [EAST, 0];
-EAST setFriend [WEST, 0];
+A3E_VAR_Side_Blufor setFriend [A3E_VAR_Side_Opfor, 0];
+A3E_VAR_Side_Opfor setFriend [A3E_VAR_Side_Blufor, 0];
 	
 if(Param_War_Torn == 0) then {
-	EAST Setfriend [RESISTANCE, 1];
-	RESISTANCE setFriend [EAST, 1];
+	A3E_VAR_Side_Opfor Setfriend [A3E_VAR_Side_Ind, 1];
+	A3E_VAR_Side_Ind setFriend [A3E_VAR_Side_Opfor, 1];
 } else {
-	EAST Setfriend [RESISTANCE, 0];
-	RESISTANCE setFriend [EAST, 0];
+	A3E_VAR_Side_Opfor Setfriend [A3E_VAR_Side_Ind, 0];
+	A3E_VAR_Side_Ind setFriend [A3E_VAR_Side_Opfor, 0];
 };
 
 
@@ -158,7 +159,7 @@ _playerGroup = [] call A3E_fnc_GetPlayerGroup;
 
 _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 
-[_playerGroup, "drn_CommunicationCenterPatrolMarker", east, "INS", 4, _EnemyCount select 0, _EnemyCount select 1, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance] call drn_fnc_InitGuardedLocations;
+[_playerGroup, "drn_CommunicationCenterPatrolMarker", A3E_VAR_Side_Opfor, "INS", 4, _EnemyCount select 0, _EnemyCount select 1, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance] call drn_fnc_InitGuardedLocations;
 
 // Initialize armor defence at communication centers
 
@@ -188,7 +189,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 	
 	[] call A3E_fnc_createAmmoDepots;
 	
-	[_playerGroup, "drn_AmmoDepotPatrolMarker", east, "INS", 3, _minEnemies, _maxEnemies, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, A3E_Debug] spawn drn_fnc_InitGuardedLocations;
+	[_playerGroup, "drn_AmmoDepotPatrolMarker", A3E_VAR_Side_Opfor , "INS", 3, _minEnemies, _maxEnemies, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, A3E_Debug] spawn drn_fnc_InitGuardedLocations;
 };
 
 
@@ -258,7 +259,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
             } foreach units _this;
         };
         
-       [_playerGroup, "drn_villageMarker", east, "INS", 5, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _villagePatrolSpawnArea, A3E_Debug] call drn_fnc_InitVillagePatrols;
+       [_playerGroup, "drn_villageMarker", A3E_VAR_Side_Opfor, "INS", 5, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _villagePatrolSpawnArea, A3E_Debug] call drn_fnc_InitVillagePatrols;
 
         switch (_enemyFrequency) do
         {
@@ -285,7 +286,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
             } foreach units _this;
         };
         
-        [(units _playerGroup) select 0, east, a3e_arr_Escape_InfantryTypes, _minEnemiesPerGroup, _maxEnemiesPerGroup, 500000, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance + 250, _fnc_OnSpawnGroup, A3E_Debug] call drn_fnc_InitAquaticPatrols;
+        [(units _playerGroup) select 0, A3E_VAR_Side_Opfor, a3e_arr_Escape_InfantryTypes, _minEnemiesPerGroup, _maxEnemiesPerGroup, 500000, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance + 250, _fnc_OnSpawnGroup, A3E_Debug] call drn_fnc_InitAquaticPatrols;
 
 
     
@@ -347,7 +348,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 	_radius = (_enemySpawnDistance + 500) / 1000;
 	_infantryGroupsCount = round (_groupsPerSqkm * _radius * _radius * 3.141592);
 	
-	[_playerGroup, east, a3e_arr_Escape_InfantryTypes, _infantryGroupsCount, _enemySpawnDistance + 200, _enemySpawnDistance + 500, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, 750, _fnc_OnSpawnAmbientInfantryUnit, _fnc_OnSpawnAmbientInfantryGroup, A3E_Debug] spawn drn_fnc_AmbientInfantry;
+	[_playerGroup, A3E_VAR_Side_Opfor, a3e_arr_Escape_InfantryTypes, _infantryGroupsCount, _enemySpawnDistance + 200, _enemySpawnDistance + 500, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, 750, _fnc_OnSpawnAmbientInfantryUnit, _fnc_OnSpawnAmbientInfantryGroup, A3E_Debug] spawn drn_fnc_AmbientInfantry;
 
     
     // Initialize the Escape military and civilian traffic
@@ -429,7 +430,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 	
 	_radius = _enemySpawnDistance + 500;
 	_vehiclesCount = round (_vehiclesPerSqkm * (_radius / 1000) * (_radius / 1000) * 3.141592);
-	[_playerGroup, east, a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses, _vehiclesCount, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
+	[_playerGroup, A3E_VAR_Side_Opfor, a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses, _vehiclesCount, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
 
     
 
@@ -458,7 +459,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 		_roadBlockCount = 1;
 	};
 	
-	[_playerGroup, east, a3e_arr_Escape_InfantryTypes, a3e_arr_Escape_RoadBlock_MannedVehicleTypes, _roadBlockCount, _enemySpawnDistance, _enemySpawnDistance + 500, 750, 300, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, A3E_Debug] spawn drn_fnc_RoadBlocks;
+	[_playerGroup, A3E_VAR_Side_Opfor, a3e_arr_Escape_InfantryTypes, a3e_arr_Escape_RoadBlock_MannedVehicleTypes, _roadBlockCount, _enemySpawnDistance, _enemySpawnDistance + 500, 750, 300, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, A3E_Debug] spawn drn_fnc_RoadBlocks;
 
 	//Spawn crashsites
 	if(isNil("A3E_CrashSiteCountMax")) then {
@@ -500,7 +501,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 // Create search chopper
 
 private ["_scriptHandle"];
-_scriptHandle = [getMarkerPos "drn_searchChopperStartPosMarker", east, drn_searchAreaMarkerName, _searchChopperSearchTimeMin, _searchChopperRefuelTimeMin, _enemyMinSkill, _enemyMaxSkill, [], A3E_Debug] execVM "Scripts\Escape\CreateSearchChopper.sqf";
+_scriptHandle = [getMarkerPos "drn_searchChopperStartPosMarker", A3E_VAR_Side_Opfor, drn_searchAreaMarkerName, _searchChopperSearchTimeMin, _searchChopperRefuelTimeMin, _enemyMinSkill, _enemyMaxSkill, [], A3E_Debug] execVM "Scripts\Escape\CreateSearchChopper.sqf";
 waitUntil {scriptDone _scriptHandle};
 
 
@@ -547,7 +548,7 @@ waitUntil {scriptDone _scriptHandle};
         };
         
         if (_createNewGroup) then {
-            _guardGroup = createGroup RESISTANCE;
+            _guardGroup = createGroup A3E_VAR_Side_Ind;
             _guardGroups set [count _guardGroups, _guardGroup];
             _createNewGroup = false;
         };

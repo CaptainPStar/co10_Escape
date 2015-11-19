@@ -28,7 +28,7 @@ if (count _this > 7) then {_maxSkill = _this select 7;} else {_maxSkill = 0.6;};
 if (count _this > 8) then {_spawnRadius = _this select 8;} else {_spawnRadius = 750;};
 if (count _this > 9) then {_fnc_onSpawnGroup = _this select 9;} else {_fnc_onSpawnGroup = {};};
 if (count _this > 10) then {_debug = _this select 10;} else {_debug = false;};
-_factionsArray = [RESISTANCE, RESISTANCE, RESISTANCE, RESISTANCE, EAST, RESISTANCE, EAST, RESISTANCE, EAST, RESISTANCE, EAST, RESISTANCE, EAST, RESISTANCE];
+_factionsArray = [A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor ,A3E_VAR_Side_Opfor];
 if (_debug) then {
 	_message = "Initializing aquatic patrols.";
 	diag_log _message;
