@@ -312,6 +312,26 @@
 				}
 		},
 		{
+			"name" : "RHS-US w LOP napa+pmc",
+			"path" : "./Mods/RHS-US w LOP napa+pmc/",
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr","lop_faction_napa","lop_faction_pmc"],
+			"replace" :
+				{
+					"MOD" : "RHS-US LOP",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "rhs_vdv_flora_sergeant",
+					"PLAYERUNIT_2" : "rhs_vdv_flora_junior_sergeant",
+					"PLAYERUNIT_3" : "rhs_vdv_flora_marksman",
+					"PLAYERUNIT_4" : "rhs_vdv_flora_engineer",
+					"PLAYERUNIT_5" : "rhs_vdv_flora_grenadier",
+					"PLAYERUNIT_6" : "rhs_vdv_flora_machinegunner",
+					"PLAYERUNIT_7" : "rhs_vdv_flora_at",
+					"PLAYERUNIT_8" : "rhs_vdv_flora_rifleman",
+					"PLAYERUNIT_9" : "rhs_vdv_flora_machinegunner_assistant",
+					"PLAYERUNIT_10" : "rhs_vdv_flora_medic"
+				}
+		},
+		{
 			"name" : "CUP Taki",
 			"path" : "./Mods/CUP Taki/",
 			"require" : ["CUP_Creatures_Military_Germany","CUP_Creatures_Military_Taki","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
@@ -1206,11 +1226,144 @@
 			"name" : "co10_Escape_RHS_LOP"
 		},
 		{
+			"island" : "Altis",
+			"sqm": "Altis",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US"
+		},
+		{
+			"island" : "Stratis",
+			"sqm": "Stratis",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US"
+		},
+		{
+			"island" : "Bornholm",
+			"sqm": "Bornholm",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US"
+		},
+		{
+			"island" : "Chernarus",
+			"sqm": "Chernarus",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US"
+		},
+		{
 			"island" : "Chernarus_Summer",
 			"sqm": "Chernarus_Summer",
 			"mod" : "RHS-US w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS-US"
+		},
+		{
+			"island" : "Podagorsk",
+			"sqm": "FDF_Isle1_a",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US"
+		},
+		{
+			"island" : "Panthera",
+			"sqm": "Panthera3",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US"
+		},
+		{
+			"island" : "Celle",
+			"sqm": "mbg_celle2",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US"
+		},
+		{
+			"island" : "Thirsk",
+			"sqm": "Thirsk",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US"
+		},
+		{
+			"island" : "Thirsk Winter",
+			"sqm": "ThirskW",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US"
+		},
+		{
+			"island" : "Altis",
+			"sqm": "Altis",
+			"mod" : "RHS-US w LOP napa+pmc",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US_LOP"
+		},
+		{
+			"island" : "Stratis",
+			"sqm": "Stratis",
+			"mod" : "RHS-US w LOP napa+pmc",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US_LOP"
+		},
+		{
+			"island" : "Bornholm",
+			"sqm": "Bornholm",
+			"mod" : "RHS-US w LOP napa+pmc",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US_LOP"
+		},
+		{
+			"island" : "Chernarus",
+			"sqm": "Chernarus",
+			"mod" : "RHS-US w LOP napa+pmc",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US_LOP"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"sqm": "Chernarus_Summer",
+			"mod" : "RHS-US w LOP napa+pmc",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US_LOP"
+		},
+		{
+			"island" : "Podagorsk",
+			"sqm": "FDF_Isle1_a",
+			"mod" : "RHS-US w LOP napa+pmc",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US_LOP"
+		},
+		{
+			"island" : "Panthera",
+			"sqm": "Panthera3",
+			"mod" : "RHS-US w LOP napa+pmc",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US_LOP"
+		},
+		{
+			"island" : "Celle",
+			"sqm": "mbg_celle2",
+			"mod" : "RHS-US w LOP napa+pmc",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US_LOP"
+		},
+		{
+			"island" : "Thirsk",
+			"sqm": "Thirsk",
+			"mod" : "RHS-US w LOP napa+pmc",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US_LOP"
+		},
+		{
+			"island" : "Thirsk Winter",
+			"sqm": "ThirskW",
+			"mod" : "RHS-US w LOP napa+pmc",
+			"replace" : {},
+			"name" : "co10_Escape_RHS-US_LOP"
 		}
 	]
 	
