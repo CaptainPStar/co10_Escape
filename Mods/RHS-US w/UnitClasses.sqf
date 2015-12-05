@@ -459,7 +459,7 @@ a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["rhs_weap_ak74m_g
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["rhs_weap_rpg26", 10, 1, 2, ["rhs_rpg26_mag"], 1]];
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["rhs_weap_ak74m_2mag_camo", 100, 3, 5, ["rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK_green"], 4]];
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["rhs_weap_pkm", 10, 1, 2, ["rhs_100Rnd_762x54mmR","rhs_100Rnd_762x54mmR_green"], 3]];
-a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["rhs_weap_aks74u", 75, 2, 4, ["rhs_30Rnd_545x39_7N10_AK","rhs_45Rnd_545x39_7N10_AK"], 4]];
+a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["rhs_weap_akms", 75, 2, 4, ["rhs_30Rnd_545x39_7N10_AK","rhs_45Rnd_545x39_7N10_AK"], 4]];
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["rhs_weap_svdp_npz", 20, 1, 2, ["rhs_10Rnd_762x54mmR_7N1"], 8]];
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["rhs_weap_svd_pso1", 10, 1, 2, ["rhs_10Rnd_762x54mmR_7N1"], 8]];
 a3e_arr_CrashSiteWeapons set [count a3e_arr_CrashSiteWeapons, ["rhs_weap_pkp_pkas", 10, 1, 2, ["rhs_100Rnd_762x54mmR"], 6]];
