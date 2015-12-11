@@ -52,43 +52,103 @@
 				}
 		},
 		{
-			"name" : "AT RHS CAF-ME",
-			"path" : "./Mods/AT RHS CAF-ME/",
+			"name" : "AT desert RHS CAF-ME",
+			"path" : "./Mods/AT desert RHS CAF-ME/",
 			"require" : ["AT_UNITS","rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "AT",
 					"PLAYERSIDE" : "WEST",
-					"PLAYERUNIT_1" : "rhsusf_army_ucp_teamleader",
-					"PLAYERUNIT_2" : "rhsusf_army_ucp_autorifleman",
-					"PLAYERUNIT_3" : "rhsusf_army_ucp_marksman",
-					"PLAYERUNIT_4" : "rhsusf_army_ucp_engineer",
-					"PLAYERUNIT_5" : "rhsusf_army_ucp_grenadier",
-					"PLAYERUNIT_6" : "rhsusf_army_ucp_machinegunner",
-					"PLAYERUNIT_7" : "rhsusf_army_ucp_javelin",
-					"PLAYERUNIT_8" : "rhsusf_army_ucp_riflemanl",
-					"PLAYERUNIT_9" : "rhsusf_army_ucp_machinegunnera",
-					"PLAYERUNIT_10" : "rhsusf_army_ucp_medic"
+					"PLAYERUNIT_1" : "AT_Soldier_Desert_TL_B",
+					"PLAYERUNIT_2" : "AT_Soldier_Desert_AR_B",
+					"PLAYERUNIT_3" : "FEM_NATO_F",
+					"PLAYERUNIT_4" : "AT_Soldier_Desert_Repair_B",
+					"PLAYERUNIT_5" : "AT_Soldier_Desert_GL_B",
+					"PLAYERUNIT_6" : "AT_Soldier_Desert_AR_B",
+					"PLAYERUNIT_7" : "AT_Soldier_Desert_LAT_B",
+					"PLAYERUNIT_8" : "AT_Soldier_Desert_Explosives_B",
+					"PLAYERUNIT_9" : "AT_Soldier_Desert_Marksman_B",
+					"PLAYERUNIT_10" : "AT_Soldier_Desert_Medic_B"
 				}
 		},
 		{
-			"name" : "AT RHS CAF-PI",
-			"path" : "./Mods/AT RHS CAF-PI/",
+			"name" : "AT jungle RHS CAF-PI",
+			"path" : "./Mods/AT jungle RHS CAF-PI/",
 			"require" : ["AT_UNITS","rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "AT",
 					"PLAYERSIDE" : "WEST",
-					"PLAYERUNIT_1" : "AT_Soldier_TL_B",
-					"PLAYERUNIT_2" : "AT_Soldier_AR_B",
+					"PLAYERUNIT_1" : "AT_Soldier_Jungle_TL_B",
+					"PLAYERUNIT_2" : "AT_Soldier_Jungle_AR_B",
 					"PLAYERUNIT_3" : "FEM_NATO_F",
-					"PLAYERUNIT_4" : "AT_Soldier_Repair_B",
-					"PLAYERUNIT_5" : "AT_Soldier_GL_B",
-					"PLAYERUNIT_6" : "AT_Soldier_AR_B",
-					"PLAYERUNIT_7" : "AT_Soldier_LAT_B",
-					"PLAYERUNIT_8" : "AT_Soldier_Explosives_B",
-					"PLAYERUNIT_9" : "AT_Soldier_Marksman_B",
-					"PLAYERUNIT_10" : "AT_Soldier_Medic_B"
+					"PLAYERUNIT_4" : "AT_Soldier_Jungle_Repair_B",
+					"PLAYERUNIT_5" : "AT_Soldier_Jungle_GL_B",
+					"PLAYERUNIT_6" : "AT_Soldier_Jungle_AR_B",
+					"PLAYERUNIT_7" : "AT_Soldier_Jungle_LAT_B",
+					"PLAYERUNIT_8" : "AT_Soldier_Jungle_Explosives_B",
+					"PLAYERUNIT_9" : "AT_Soldier_Jungle_Marksman_B",
+					"PLAYERUNIT_10" : "AT_Soldier_Jungle_Medic_B"
+				}
+		},
+		{
+			"name" : "AT arctic RHS CAF-EU",
+			"path" : "./Mods/AT RHS CAF-EU/",
+			"require" : ["AT_UNITS","rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
+			"replace" :
+				{
+					"MOD" : "AT",
+					"PLAYERSIDE" : "WEST",
+					"PLAYERUNIT_1" : "AT_Soldier_Arctic_TL_B",
+					"PLAYERUNIT_2" : "AT_Soldier_Arctic_AR_B",
+					"PLAYERUNIT_3" : "FEM_NATO_F",
+					"PLAYERUNIT_4" : "AT_Soldier_Arctic_Repair_B",
+					"PLAYERUNIT_5" : "AT_Soldier_Arctic_GL_B",
+					"PLAYERUNIT_6" : "AT_Soldier_Arctic_AR_B",
+					"PLAYERUNIT_7" : "AT_Soldier_Arctic_LAT_B",
+					"PLAYERUNIT_8" : "AT_Soldier_Arctic_Explosives_B",
+					"PLAYERUNIT_9" : "AT_Soldier_Arctic_Marksman_B",
+					"PLAYERUNIT_10" : "AT_Soldier_Arctic_Medic_B"
+				}
+		},
+		{
+			"name" : "AT woodland RHS CAF-EU",
+			"path" : "./Mods/AT RHS CAF-EU/",
+			"require" : ["AT_UNITS","rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
+			"replace" :
+				{
+					"MOD" : "AT",
+					"PLAYERSIDE" : "WEST",
+					"PLAYERUNIT_1" : "AT_Soldier_Woodland_TL_B",
+					"PLAYERUNIT_2" : "AT_Soldier_Woodland_AR_B",
+					"PLAYERUNIT_3" : "FEM_NATO_F",
+					"PLAYERUNIT_4" : "AT_Soldier_Woodland_Repair_B",
+					"PLAYERUNIT_5" : "AT_Soldier_Woodland_GL_B",
+					"PLAYERUNIT_6" : "AT_Soldier_Woodland_AR_B",
+					"PLAYERUNIT_7" : "AT_Soldier_Woodland_LAT_B",
+					"PLAYERUNIT_8" : "AT_Soldier_Woodland_Explosives_B",
+					"PLAYERUNIT_9" : "AT_Soldier_Woodland_Marksman_B",
+					"PLAYERUNIT_10" : "AT_Soldier_Woodland_Medic_B"
+				}
+		},
+		{
+			"name" : "AT tiger RHS CAF-EU",
+			"path" : "./Mods/AT RHS CAF-EU/",
+			"require" : ["AT_UNITS","rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
+			"replace" :
+				{
+					"MOD" : "AT",
+					"PLAYERSIDE" : "WEST",
+					"PLAYERUNIT_1" : "AT_Soldier_Tiger_TL_B",
+					"PLAYERUNIT_2" : "AT_Soldier_Tiger_AR_B",
+					"PLAYERUNIT_3" : "FEM_NATO_F",
+					"PLAYERUNIT_4" : "AT_Soldier_Tiger_Repair_B",
+					"PLAYERUNIT_5" : "AT_Soldier_Tiger_GL_B",
+					"PLAYERUNIT_6" : "AT_Soldier_Tiger_AR_B",
+					"PLAYERUNIT_7" : "AT_Soldier_Tiger_LAT_B",
+					"PLAYERUNIT_8" : "AT_Soldier_Tiger_Explosives_B",
+					"PLAYERUNIT_9" : "AT_Soldier_Tiger_Marksman_B",
+					"PLAYERUNIT_10" : "AT_Soldier_Tiger_Medic_B"
 				}
 		},
 		{
@@ -702,14 +762,14 @@
 		{
 			"island" : "Bornholm",
 			"sqm": "Bornholm",
-			"mod" : "AT RHS CAF-EU",
+			"mod" : "AT woodland RHS CAF-EU",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
 		{
 			"island" : "Chernarus",
 			"sqm": "Chernarus",
-			"mod" : "AT RHS CAF-EU",
+			"mod" : "AT woodland RHS CAF-EU",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
@@ -723,28 +783,28 @@
 		{
 			"island" : "ChernarusPlus",
 			"sqm": "ChernarusPlus",
-			"mod" : "AT RHS CAF-EU",
+			"mod" : "AT woodland RHS CAF-EU",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
 		{
 			"island" : "Podagorsk",
 			"sqm": "FDF_Isle1_a",
-			"mod" : "AT RHS CAF-EU",
+			"mod" : "AT woodland RHS CAF-EU",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
 		{
 			"island" : "Panthera",
 			"sqm": "Panthera3",
-			"mod" : "AT RHS CAF-EU",
+			"mod" : "AT tiger RHS CAF-EU",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
 		{
 			"island" : "Isla Duala",
 			"sqm": "IslaDuala3",
-			"mod" : "AT RHS CAF-PI",
+			"mod" : "AT jungle RHS CAF-PI",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
@@ -758,13 +818,13 @@
 		{
 			"island" : "Lingor",
 			"sqm": "Lingor3",
-			"mod" : "AT RHS CAF-PI",
+			"mod" : "AT jungle RHS CAF-PI",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
 		{
 			"island" : "Lingor",
-			"mod" : "AT RHS CAF-PI",
+			"mod" : "AT jungle RHS CAF-PI",
 			"sqm" :  "Lingor3_Zombies",
 			"replace" : {},
 			"name" : "co10_Escape_AT_Zombies"
@@ -793,14 +853,14 @@
 		{
 			"island" : "Celle",
 			"sqm": "mbg_celle2",
-			"mod" : "AT RHS CAF-EU",
+			"mod" : "AT woodland RHS CAF-EU",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
 		{
 			"island" : "Takistan",
 			"sqm": "Takistan",
-			"mod" : "AT RHS CAF-ME",
+			"mod" : "AT desert RHS CAF-ME",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
@@ -814,28 +874,28 @@
 		{
 			"island" : "Porto",
 			"sqm": "Porto",
-			"mod" : "AT RHS CAF-PI",
+			"mod" : "AT jungle RHS CAF-PI",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
 		{
 			"island" : "Thirsk",
 			"sqm": "Thirsk",
-			"mod" : "AT RHS CAF-EU",
+			"mod" : "AT woodland RHS CAF-EU",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
 		{
 			"island" : "Thirsk Winter",
 			"sqm": "ThirskW",
-			"mod" : "AT RHS CAF-EU",
+			"mod" : "AT arctic RHS CAF-EU",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
 		{
 			"island" : "Capraia",
 			"sqm": "IsolaDiCapraia",
-			"mod" : "AT RHS CAF-ME",
+			"mod" : "AT desert RHS CAF-ME",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},

@@ -40,7 +40,7 @@ a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["RH_fn5
 a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["RH_vz61","RH_20Rnd_32cal_vz61"]];
 
 // Random array. Civilian vehicle classes for ambient traffic. (Can also be set to a faction name).
-a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F","beetle_red","beetle_white"];
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F","beetle_red","beetle_white","SIG_SuperBeeB","SIG_SuperBeeM","SIG_Magnums","SIG_Hcode"];
 
 // Random arrays. Enemy vehicle classes for ambient traffic. (Can also be set to a faction name).
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
