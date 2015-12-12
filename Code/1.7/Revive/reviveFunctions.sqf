@@ -88,7 +88,10 @@ AT_FNC_Revive_HandleDamage = {
 	_projectile = _this select 4;
 	_isUnconscious = _unit getVariable "AT_Revive_isUnconscious";
 	
-	if (alive _unit && _amountOfDamage >= 1  && !(_isUnconscious) && _bodyPart in ["","head_hit","body"]) then 
+	if (alive _unit && 
+		_amountOfDamage >= 1  
+		&& !(_isUnconscious) 
+		&& _bodyPart in ["","head","face_hub","neck","spine1","spine2","spine3","pelvis","body"]) then 
 	{
 		_unit setDammage 0;
 		_unit allowDammage false;
