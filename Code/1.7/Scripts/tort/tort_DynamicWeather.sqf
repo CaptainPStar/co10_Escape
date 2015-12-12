@@ -92,7 +92,7 @@ if (fWS < _windMin) then {fWS = _windMin}; if (fWS > _windMax) then {fWS = _wind
 cOc = fOc; cWS=fWS; cFog=fFogVal; cRain=fRain;
 
 // apply initial weather
-skiptime -24; 86400 setOvercast fOc; skiptime 24; 0 setRain fRain;
+skiptime -24; 86400 setOvercast fOc; skiptime 24; 0 setRain 0;
 sleep 0.5;simulWeatherSync;sleep 0.5;ForceWeatherChange;sleep 0.5;
 0 setFog [fFogVal, fFogDecay, fFogBase]; 0 setWindStr fWS; 0 setWindDir fWD;
 

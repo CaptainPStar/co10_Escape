@@ -95,12 +95,10 @@ AT_FNC_Revive_HandleDamage = {
 	{
 		_unit setDammage 0;
 		_unit allowDammage false;
-		_amountOfDamage = 0;
+		_damage = 0;
 		[_unit, _killer] spawn AT_FNC_Revive_Unconscious;
 	};
-	
 	_amountOfDamage
-
 };
 AT_FNC_Revive_GlobalMsg =
 {
@@ -173,6 +171,7 @@ AT_FNC_Revive_Unconscious =
 		_vehicle = vehicle _unit;
 		if(getdammage _vehicle < 1) then {
 			_inVehicle = true;
+			[_unit] call AT_FNC_Revive_SwitchVehicleDeadAnimation;
 		} else {
 			moveOut _unit;
 			_ragdoll = [_unit] spawn at_fnc_revive_ragdoll;

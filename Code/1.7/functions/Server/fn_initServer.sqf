@@ -61,10 +61,11 @@ if(Param_War_Torn == 0) then {
 
 //[] spawn MB_fnc_randomWeather2;
 private["_weather","_weatherTrend"];
-_weather = ["clear","sunny","cloudy","foggy","bad","random"] select Param_Weather;
-_weatherTrend = ["constant","worse","pWorse","better","pBetter","freeCycle","random"] select Param_WeatherTrend;
+//_weather = ["clear","sunny","cloudy","foggy","bad","random"] select Param_Weather;
+//_weatherTrend = ["constant","worse","pWorse","better","pBetter","freeCycle","random"] select Param_WeatherTrend;
 
-0 = [_weather, _weatherTrend, 0, [0, 0.2], 0, [0, 1, 0, 0.4, 0, 1]] execVM "Scripts\tort\tort_DynamicWeather.sqf";
+//0 = [_weather, _weatherTrend, 0, [0, 0.2], 0, [0, 1, 0, 0.4, 0, 1]] execVM "Scripts\tort\tort_DynamicWeather.sqf";
+[] spawn MB_fnc_randomWeather2;
 
 private ["_hour","_date"];
 _hour = Param_TimeOfDay;

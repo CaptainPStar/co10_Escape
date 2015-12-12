@@ -53,21 +53,23 @@ rw2Param = 3;
 // Setup Weather Types Array [Weather Name, Possible Weather Forecasts, Weather Settings] - Suggested that they are left as is.
 
 weatherTemplates = [
-        ["Clear",[0,1,5],[0.30,0,0,1,1]],
-        ["Overcast",[0,1,2],[0.50,0,0,2,2]],
-        ["Light Rain",[1,2,3,5],[0.60,0.3,0.05,3,3]],
-        ["Medium Rain",[2,3,4],[0.70,0.5,0.05,4,4]],
-        ["Rainstorm",[3],[0.80,0.9,0.1,5,5]],
-        ["Light Fog",[0,2,5,6],[0.4,0,[0.2,0.01,10],0,0]],
-        ["Medium Fog",[5,6,7],[0.4,0,[0.4,0.005,20],0,0]],
-        ["Dense Fog",[6],[0.5,0,[0.4,0.0025,30],0,0]]
+        ["Clear",[0,1,5],[0.30,0,0,1,1,0]],
+        ["Overcast",[0,1,2],[0.50,0,0,2,2,0]],
+        ["Light Rain",[1,2,3,5],[0.60,0.3,0.05,3,3,0]],
+        ["Medium Rain",[2,3,4],[0.70,0.5,0.05,4,4,0]],
+        ["Rainstorm",[3],[0.80,0.9,0.1,5,5,0.2]],
+        ["Light Fog",[0,2,5,6],[0.4,0,[0.2,0.01,10],0,0,0]],
+        ["Medium Fog",[5,6,7],[0.4,0,[0.4,0.005,20],0,0,0]],
+        ["Dense Fog",[6],[0.5,0,[0.4,0.0025,30],0,0,0]],
+		["Nightmare",[6],[0.5,0,[0.8,0.0025,30],0,0,0]],
+		["Thunderstorm",[3],[1.0,1.0,0.1,5,5,1]]
 	];
 	
 // DO NOT EDIT BELOW THIS LINE //
 
 // Setup Initial Weather Function
 mb_fnc_InitialWeather = {
-	private["_weatherInitialArray","_weatherInitialSettings","_weatherInitialOvercast","_weatherInitialRainSnow","_weatherInitialFog","_weatherInitialWindEW","_weatherInitialWindNS"];
+	private["_weatherInitialArray","_weatherInitialSettings","_weatherInitialOvercast","_weatherInitialRainSnow","_weatherInitialFog","_weatherInitialWindEW","_weatherInitialWindNS","_weatherInitialLightning"];
 	
 	waitUntil {!isNil "rw2_Current_Weather"};
 	_weatherInitialArray = weatherTemplates select rw2_Current_Weather;
@@ -79,11 +81,13 @@ mb_fnc_InitialWeather = {
     _weatherInitialFog = _weatherInitialSettings select 2;
     _weatherInitialWindEW = _weatherInitialSettings select 3;
     _weatherInitialWindNS = _weatherInitialSettings select 4;	
-
+	_weatherInitialLightning = _weatherInitialSettings select 5;
+	
 		skipTime -24;
         86400 setOvercast _weatherInitialOvercast;
         0 setRain _weatherInitialRainSnow;
         86400 setFog _weatherInitialFog;
+		86400 setLightnings _weatherInitialLightning;
         setWind [_weatherInitialWindEW,_weatherInitialWindNS,true];
 		skipTime 24;
 		sleep 1;
@@ -107,22 +111,32 @@ mb_fnc_UpdateWeather = {
 	_weatherNextFog = _weatherNextSettings select 2;
 	_weatherNextWindEW = _weatherNextSettings select 3;
 	_weatherNextWindNS = _weatherNextSettings select 4;	
-
-	if (overcast < _weatherNextOvercast) then {0 setOvercast 1;} else {0 setOvercast 0;};
+	_weatherNextLightning = _weatherNextSettings select 5;
+	
+	if (overcast < _weatherNextOvercast) then {1200 setOvercast 1;} else {1200 setOvercast 0;};
     1200 setRain _weatherNextRainSnow;
     1200 setFog _weatherNextFog;
+	1200 setLightnings _weatherNextLightning;
     setWind [_weatherNextWindEW,_weatherNextWindNS,true];
 	
 	if (rw2Debug == 1) then {hint format ["Debug Updating Weather - %1\nOvercast: %2\nRain/Snow: %3\nFog: %4\nWind EW/NS: %5|%6",weatherNextName,_weatherNextOvercast,_weatherNextRainSnow,_weatherNextFog,_weatherNextWindEW,_weatherNextWindNS];};
 };
-
+if(isNil("Param_Weather")) then {
+	Param_Weather = 4;
+};
+if(isNil("rw2_Current_Weather")) then {
+	rw2_Current_Weather = 0;
+};
+if(isNil("rw2_Next_Weather")) then {
+	rw2_Next_Weather = 0;
+};
 if (isServer) then {
 private ["_weatherUpdateArray","_weatherUpdateForecasts"];
 // Check if there is no ParamsArray, and pick random if so, otherwise pick from paramsArray.
       if(isNil('paramsArray')) then {
         rw2_Current_Weather = floor(random(count(weatherTemplates)));
 		} else {
-        initialWeatherParam = (paramsArray select rw2Param);
+        initialWeatherParam = (paramsArray select Param_Weather);
 		switch (initialWeatherParam) do{
 			case 0: {rw2_Current_Weather = 0;};    										// Clear
             case 1: {rw2_Current_Weather = 1;};    										// Overcast

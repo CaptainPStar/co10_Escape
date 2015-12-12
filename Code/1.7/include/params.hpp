@@ -36,19 +36,11 @@ class Params
 		texts[]={"1:1 (Normal)","1:6 (Day = 4 Hours)","1:12 (Day = 2 Hours)","1:24 (Day = 1 Hour)","1:36 (Day = 40 Minutes)"};
 		default = 1;
 	};
-	class Param_Weather
-	{
-		title = "Weather"; //--- ToDo: Localize
-		values[] = {0,1,2,3,4,5};
-		texts[] = {"Clear","Sunny","Cloudy","Foggy","Stormy","Random"}; //--- ToDo: Localize
-		default = 5;
-	};
-	class Param_WeatherTrend
-	{
-		title = "Weather Trend"; //--- ToDo: Localize
-		values[] = {0,1,2,3,4,5,6};
-		texts[] = {"Constant","Worse","2/3 Worse","Better","2/3 Better","Cycle","Random"}; //--- ToDo: Localize
-		default = 6;
+	class Param_Weather {
+		title="Weather";
+		values[] = {0,1,2,3,4};
+		texts[] = {"Clear","Overcast","Rain","Fog","Random"};
+		default = 4;
 	};
 	class Param_Grass
 	{	
