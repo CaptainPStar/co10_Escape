@@ -17,6 +17,7 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
 		"A3_Characters_F_Gamma",
+		"A3_Boat_F_Boat_Transport_01",
 		"esseker"
 	};
 	randomSeed=12830120;
@@ -255,9 +256,58 @@ class Mission
 			};
 		};
 	};
+	class Vehicles
+	{
+		items=5;
+		class Item0
+		{
+			position[]={7583.3667,-0.010445441,5516.6719};
+			azimut=206.48396;
+			id=14;
+			side="EMPTY";
+			vehicle="C_Rubberboat";
+			skill=0.60000002;
+		};
+		class Item1
+		{
+			position[]={8292.3564,0.004222828,5277.4697};
+			azimut=108.96424;
+			id=15;
+			side="EMPTY";
+			vehicle="C_Rubberboat";
+			skill=0.60000002;
+		};
+		class Item2
+		{
+			position[]={9978.9473,0,5419.1709};
+			azimut=265.66446;
+			id=16;
+			side="EMPTY";
+			vehicle="C_Rubberboat";
+			skill=0.60000002;
+		};
+		class Item3
+		{
+			position[]={10855.31,1.2063015e-006,5401.0059};
+			azimut=206.48396;
+			id=17;
+			side="EMPTY";
+			vehicle="C_Rubberboat";
+			skill=0.60000002;
+		};
+		class Item4
+		{
+			position[]={10689.654,0,5488.2285};
+			azimut=281.88824;
+			id=18;
+			side="EMPTY";
+			vehicle="C_Rubberboat";
+			skill=0.60000002;
+		};
+	};
 	class Markers
 	{
-		items=42;
+		items=45;
 		class Item0
 		{
 			position[]={1211.8943,150.07253,10233.438};
@@ -376,21 +426,21 @@ class Mission
 		class Item15
 		{
 			position[]={9425.9014,167.9371,2769.1125};
-			name="drn_Escape_ExtractionPos6";
+			name="drn_Escape_ExtractionPos9";
 			type="Empty";
-			angle=236.1853;
+			angle=236.185;
 		};
 		class Item16
 		{
 			position[]={12230.126,117.87,1598.7275};
-			name="drn_Escape_ExtracionBoatSpawnPos6";
+			name="drn_Escape_ExtracionBoatSpawnPos9";
 			type="Empty";
-			angle=152.84814;
+			angle=152.84801;
 		};
 		class Item17
 		{
 			position[]={9411.8066,168.51271,2736.6677};
-			name="drn_Escape_ExtractionPos6_1";
+			name="drn_Escape_ExtractionPos9_1";
 			type="Empty";
 			angle=276.37;
 		};
@@ -484,7 +534,7 @@ class Mission
 		};
 		class Item31
 		{
-			position[]={1612.3053,188.86136,6782.8149};
+			position[]={1617.0499,188.98152,6793.2012};
 			name="drn_Escape_ExtractionPos1_1";
 			type="Empty";
 		};
@@ -566,6 +616,27 @@ class Mission
 			text="TrafficMarker_AirField";
 			type="Empty";
 			colorName="ColorOrange";
+		};
+		class Item42
+		{
+			position[]={2037.9985,158.53903,11067.076};
+			name="drn_Escape_ExtractionPos6";
+			type="Empty";
+			angle=57.375305;
+		};
+		class Item43
+		{
+			position[]={10.333878,57.7435,12478.932};
+			name="drn_Escape_ExtracionBoatSpawnPos6";
+			type="Empty";
+			angle=-25.961658;
+		};
+		class Item44
+		{
+			position[]={2050.5732,156.92032,11099.22};
+			name="drn_Escape_ExtractionPos6_1";
+			type="Empty";
+			angle=97.560257;
 		};
 	};
 };
