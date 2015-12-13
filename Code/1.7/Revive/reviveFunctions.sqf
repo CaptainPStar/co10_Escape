@@ -91,11 +91,11 @@ AT_FNC_Revive_HandleDamage = {
 	if (alive _unit && 
 		_amountOfDamage >= 1  
 		&& !(_isUnconscious) 
-		&& _bodyPart in ["","head","face_hub","neck","spine1","spine2","spine3","pelvis","body"]) then 
+		&& _bodyPart in ["","head","face_hub","head_hit","neck","spine1","spine2","spine3","pelvis","body"]) then 
 	{
 		_unit setDammage 0;
 		_unit allowDammage false;
-		_damage = 0;
+		_amountOfDamage = 0;
 		[_unit, _killer] spawn AT_FNC_Revive_Unconscious;
 	};
 	_amountOfDamage
