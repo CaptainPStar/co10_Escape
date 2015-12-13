@@ -80,10 +80,10 @@ AT_FNC_Revive_Actions = {
 };
 
 AT_FNC_Revive_HandleDamage = {
-	private ["_unit", "_killer", "_amountOfDamage", "_isUnconscious","_bodyPart","_projectile"];
+	private ["_unit", "_killer", "_damage", "_isUnconscious","_bodyPart","_projectile"];
 	_unit = _this select 0;
 	_bodyPart = _this select 1;
-	_amountOfDamage = _this select 2;
+	_damage = _this select 2;
 	_killer = _this select 3;
 	_projectile = _this select 4;
 	_isUnconscious = _unit getVariable "AT_Revive_isUnconscious";
@@ -91,11 +91,11 @@ AT_FNC_Revive_HandleDamage = {
 	if (alive _unit && 
 		_amountOfDamage >= 1  
 		&& !(_isUnconscious) 
-		&& _bodyPart in ["","head","face_hub","neck","spine1","spine2","spine3","pelvis","body"]) then 
+		&& _bodyPart in ["","head","face_hub","head_hit","neck","spine1","spine2","spine3","pelvis","body"]) then 
 	{
 		_unit setDammage 0;
 		_unit allowDammage false;
-		_damage = 0;
+		_amountOfDamage = 0;
 		[_unit, _killer] spawn AT_FNC_Revive_Unconscious;
 	};
 	_amountOfDamage
