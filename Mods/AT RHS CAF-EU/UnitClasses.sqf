@@ -22,7 +22,7 @@ A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
 A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
 // Random array. Start position guard types.
-a3e_arr_Escape_StartPositionGuardTypes = ["CAF_AG_EEUR_R_AK74", "CAF_AG_EEUR_R_GL", "at_CAF_AG_EEUR_R_AKS74", "at_CAF_AG_EEUR_R_AK74_dirty"];
+a3e_arr_Escape_StartPositionGuardTypes = ["CAF_AG_EEUR_R_AK74", "CAF_AG_EEUR_R_GL", "at_CAF_AG_EEUR_R_AKS74", "at_CAF_AG_EEUR_R_AK74_dirty","at_CAF_AG_EEUR_R_AKS74U","at_CAF_AG_EEUR_R_AKM","at_CAF_AG_EEUR_R_saiga","at_CAF_AG_EEUR_R_M1903","at_CAF_AG_EEUR_R_STGW57","at_CAF_AG_EEUR_R_STGW57C"];
 
 // Inner fence guard's secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
@@ -118,7 +118,7 @@ switch (_enemyFrequency) do {
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
 a3e_arr_Escape_InfantryTypes = ["rhs_msv_officer_armored","rhs_msv_officer","rhs_msv_sergeant","rhs_msv_junior_sergeant","rhs_msv_engineer", "rhs_msv_medic","rhs_msv_rifleman","rhs_msv_efreitor","rhs_msv_grenadier","rhs_msv_machinegunner","rhs_msv_machinegunner_assistant","rhs_msv_at","rhs_msv_strelok_rpg_assist","rhs_msv_marksman","rhs_msv_aa","rhs_msv_LAT","rhs_msv_engineer", "rhs_msv_medic"];
-a3e_arr_Escape_InfantryTypes_Ind =  ["at_CAF_AG_EEUR_R_AKS74_PSO1","at_CAF_AG_EEUR_R_Medic","at_CAF_AG_EEUR_R_Engineer","CAF_AG_EEUR_R_AK47","CAF_AG_EEUR_R_AK74","CAF_AG_EEUR_R_RPK74","CAF_AG_EEUR_R_PKM","CAF_AG_EEUR_R_RPG","CAF_AG_EEUR_R_GL","at_CAF_AG_EEUR_R_AKS74","at_CAF_AG_EEUR_R_AK74_dirty","at_CAF_AG_EEUR_R_AKS74U","at_CAF_AG_EEUR_R_AKM","at_CAF_AG_EEUR_R_saiga","at_CAF_AG_EEUR_R_FAL","at_CAF_AG_EEUR_R_G3","at_CAF_AG_EEUR_R_G3SG1","at_CAF_AG_EEUR_R_CZ550"];
+a3e_arr_Escape_InfantryTypes_Ind =  ["at_CAF_AG_EEUR_R_AKS74_PSO1","at_CAF_AG_EEUR_R_Medic","at_CAF_AG_EEUR_R_Engineer","CAF_AG_EEUR_R_AK47","CAF_AG_EEUR_R_AK74","CAF_AG_EEUR_R_RPK74","CAF_AG_EEUR_R_PKM","CAF_AG_EEUR_R_RPG","CAF_AG_EEUR_R_GL","at_CAF_AG_EEUR_R_AKS74","at_CAF_AG_EEUR_R_AK74_dirty","at_CAF_AG_EEUR_R_AKS74U","at_CAF_AG_EEUR_R_AKM","at_CAF_AG_EEUR_R_saiga","at_CAF_AG_EEUR_R_FAL","at_CAF_AG_EEUR_R_G3","at_CAF_AG_EEUR_R_G3SG1","at_CAF_AG_EEUR_R_CZ550","at_CAF_AG_EEUR_R_M1903","at_CAF_AG_EEUR_R_M1903_Sniper","at_CAF_AG_EEUR_R_STGW57","at_CAF_AG_EEUR_R_STGW57C","at_CAF_AG_EEUR_R_G36E1"];
 a3e_arr_recon_InfantryTypes = ["rhs_vdv_sergeant","rhs_vdv_engineer","rhs_vdv_marksman","rhs_vdv_machinegunner","rhs_vdv_medic","rhs_vdv_at","rhs_vdv_rifleman","rhs_vdv_rifleman","rhs_vdv_rifleman"];
 a3e_arr_recon_I_InfantryTypes = ["rhs_vdv_sergeant","rhs_vdv_engineer","rhs_vdv_marksman","rhs_vdv_machinegunner","rhs_vdv_medic","rhs_vdv_at","rhs_vdv_rifleman","rhs_vdv_rifleman","rhs_vdv_rifleman"];
 
