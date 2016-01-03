@@ -65,10 +65,14 @@ switch (_enemyFrequency) do {
 		"I_G_Offroad_01_repair_F","I_G_Offroad_01_F","I_G_Offroad_01_repair_F","I_G_Offroad_01_F",
 		"I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F",
 		"RHS_UAZ_chdkz","rhs_uaz_open_chdkz","RHS_UAZ_chdkz","rhs_uaz_open_chdkz","RHS_UAZ_chdkz","rhs_uaz_open_chdkz",
+		"rhs_uaz_dshkm_chdkz","rhs_uaz_ags_chdkz","rhs_uaz_spg9_chdkz",
 		"rhs_ural_chdkz","rhs_ural_open_chdkz","rhs_ural_work_chdkz","rhs_ural_work_open_chdkz",
 		"RHS_BM21_chdkz",
 		"rhs_zsu234_chdkz",
-		"rhs_bmd2_chdkz","rhs_btr70_chdkz",
+		"rhs_btr60_chdkz","rhs_btr70_chdkz",
+		"rhs_bmd1_chdkz","rhs_bmd2_chdkz",
+		"rhs_bmp1_chdkz","rhs_bmp1p_chdkz","rhs_bmp1d_chdkz","rhs_bmp1k_chdkz",
+		"rhs_bmp2_chdkz","rhs_bmp2e_chdkz","rhs_bmp2k_chdkz","rhs_bmp2d_chdkz",
 		"rhs_t72bb_chdkz"];
     };
     case 2: {//Some (4-6)
@@ -93,23 +97,55 @@ switch (_enemyFrequency) do {
 		"I_G_Offroad_01_repair_F","I_G_Offroad_01_F","I_G_Offroad_01_repair_F","I_G_Offroad_01_F",
 		"I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F",
 		"RHS_UAZ_chdkz","rhs_uaz_open_chdkz","RHS_UAZ_chdkz","rhs_uaz_open_chdkz","RHS_UAZ_chdkz","rhs_uaz_open_chdkz",
+		"rhs_uaz_dshkm_chdkz","rhs_uaz_ags_chdkz","rhs_uaz_spg9_chdkz",
 		"rhs_ural_chdkz","rhs_ural_open_chdkz","rhs_ural_work_chdkz","rhs_ural_work_open_chdkz",
 		"RHS_BM21_chdkz",
 		"rhs_zsu234_chdkz",
-		"rhs_bmd2_chdkz","rhs_btr70_chdkz",
+		"rhs_btr60_chdkz","rhs_btr70_chdkz",
+		"rhs_bmd1_chdkz","rhs_bmd2_chdkz",
+		"rhs_bmp1_chdkz","rhs_bmp1p_chdkz","rhs_bmp1d_chdkz","rhs_bmp1k_chdkz",
+		"rhs_bmp2_chdkz","rhs_bmp2e_chdkz","rhs_bmp2k_chdkz","rhs_bmp2d_chdkz",
 		"rhs_t72bb_chdkz"];
     };
     default {//A lot (7-8)
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = ["rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv","rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa","rhs_bmd1","rhs_bmd1k","rhs_bmd1p","rhs_bmd2","rhs_bmd2k","rhs_bmd4_vdv","rhs_bmp1_msv","rhs_bmp1k_msv","rhs_bmp1d_msv","rhs_bmp2_msv","rhs_bmp2k_msv","rhs_bmp2d_msv","rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv","rhs_btr80a_msv","rhs_t72ba_tv","rhs_t72bc_tv","rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u","rhs_t90_tv","rhs_sprut_vdv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = ["I_G_Offroad_01_repair_F","I_G_Offroad_01_F","I_G_Offroad_01_repair_F","I_G_Offroad_01_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","RHS_UAZ_chdkz","rhs_uaz_open_chdkz","RHS_UAZ_chdkz","rhs_uaz_open_chdkz","RHS_UAZ_chdkz","rhs_uaz_open_chdkz","rhs_ural_chdkz","rhs_ural_open_chdkz","rhs_ural_work_chdkz","rhs_ural_work_open_chdkz","RHS_BM21_chdkz","rhs_zsu234_chdkz","rhs_bmd2_chdkz","rhs_btr70_chdkz","rhs_t72bb_chdkz"];
+        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
+		"rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01",
+		"rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv",
+		"rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv","rhs_gaz66_repair_msv","rhs_gaz66_ap2_msv","rhs_gaz66_ammo_msv",
+		"rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01","rhs_ural_MSV_01","rhs_ural_open_MSV_01",
+		"rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_fuel_MSV_01",
+		"rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv",
+		"rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa","rhs_zsu234_aa",
+		"rhs_bmd1","rhs_bmd1k","rhs_bmd1p",
+		"rhs_bmd2","rhs_bmd2k","rhs_bmd4_vdv",
+		"rhs_bmp1_msv","rhs_bmp1k_msv","rhs_bmp1d_msv",
+		"rhs_bmp2_msv","rhs_bmp2k_msv","rhs_bmp2d_msv",
+		"rhs_btr60_msv","rhs_btr70_msv","rhs_btr80_msv","rhs_btr80a_msv",
+		"rhs_t72ba_tv","rhs_t72bc_tv",
+		"rhs_t80","rhs_t80a","rhs_t80b","rhs_t80u",
+		"rhs_t90_tv",
+		"rhs_sprut_vdv","rhs_2s3_tv","RHS_BM21_msv_01","rhs_9k79","rhs_9k79_B","rhs_9k79_K","rhs_pts_vmf"];
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
+        "I_G_Offroad_01_repair_F","I_G_Offroad_01_F","I_G_Offroad_01_repair_F","I_G_Offroad_01_F",
+		"I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F",
+		"RHS_UAZ_chdkz","rhs_uaz_open_chdkz","RHS_UAZ_chdkz","rhs_uaz_open_chdkz","RHS_UAZ_chdkz","rhs_uaz_open_chdkz",
+		"rhs_uaz_dshkm_chdkz","rhs_uaz_ags_chdkz","rhs_uaz_spg9_chdkz",
+		"rhs_ural_chdkz","rhs_ural_open_chdkz","rhs_ural_work_chdkz","rhs_ural_work_open_chdkz",
+		"RHS_BM21_chdkz",
+		"rhs_zsu234_chdkz",
+		"rhs_btr60_chdkz","rhs_btr70_chdkz",
+		"rhs_bmd1_chdkz","rhs_bmd2_chdkz",
+		"rhs_bmp1_chdkz","rhs_bmp1p_chdkz","rhs_bmp1d_chdkz","rhs_bmp1k_chdkz",
+		"rhs_bmp2_chdkz","rhs_bmp2e_chdkz","rhs_bmp2k_chdkz","rhs_bmp2d_chdkz",
+		"rhs_t72bb_chdkz"];
     };
 };
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
-a3e_arr_Escape_InfantryTypes = ["rhs_msv_officer_armored","rhs_msv_officer","rhs_msv_sergeant","rhs_msv_junior_sergeant","rhs_msv_engineer", "rhs_msv_medic","rhs_msv_rifleman","rhs_msv_efreitor","rhs_msv_grenadier","rhs_msv_machinegunner","rhs_msv_machinegunner_assistant","rhs_msv_at","rhs_msv_strelok_rpg_assist","rhs_msv_marksman","rhs_msv_aa","rhs_msv_LAT","rhs_msv_engineer", "rhs_msv_medic"];
+a3e_arr_Escape_InfantryTypes = ["rhs_vdv_des_sergeant","rhs_vdv_des_junior_sergeant","rhs_vdv_des_officer_armored","rhs_vdv_des_officer","rhs_vdv_des_grenadier_rpg","rhs_vdv_des_efreitor","rhs_vdv_des_rifleman","rhs_vdv_des_grenadier","rhs_vdv_des_rifleman_asval","rhs_vdv_des_arifleman","rhs_vdv_des_machinegunner","rhs_vdv_des_machinegunner_assistant","rhs_vdv_des_marksman","rhs_vdv_des_marksman_asval","rhs_vdv_des_RShG2","rhs_vdv_des_LAT","rhs_vdv_des_grenadier_rpg","rhs_vdv_des_at","rhs_vdv_des_aa","rhs_vdv_des_strelok_rpg_assist","rhs_vdv_des_medic","rhs_vdv_des_engineer","rhs_vdv_des_medic","rhs_vdv_des_engineer"];
 a3e_arr_Escape_InfantryTypes_Ind = ["rhs_g_Soldier_TL_F","rhs_g_Soldier_SL_F","rhs_g_Soldier_F","rhs_g_Soldier_F2","rhs_g_Soldier_F3","rhs_g_Soldier_lite_F","rhs_g_Soldier_AR_F","rhs_g_medic_F","rhs_g_engineer_F","rhs_g_Soldier_exp_F","rhs_g_Soldier_GL_F","rhs_g_Soldier_M_F","rhs_g_Soldier_LAT_F","rhs_g_Soldier_AT_F","rhs_g_Soldier_AA_F","rhs_g_Soldier_AAR_F","rhs_g_Soldier_AAT_F"];
-a3e_arr_recon_InfantryTypes = ["rhs_vdv_sergeant","rhs_vdv_engineer","rhs_vdv_marksman","rhs_vdv_machinegunner","rhs_vdv_medic","rhs_vdv_at","rhs_vdv_rifleman","rhs_vdv_rifleman","rhs_vdv_rifleman"];
-a3e_arr_recon_I_InfantryTypes = ["rhs_vdv_sergeant","rhs_vdv_engineer","rhs_vdv_marksman","rhs_vdv_machinegunner","rhs_vdv_medic","rhs_vdv_at","rhs_vdv_rifleman","rhs_vdv_rifleman","rhs_vdv_rifleman"];
+a3e_arr_recon_InfantryTypes = ["rhs_vdv_des_sergeant","rhs_vdv_des_junior_sergeant","rhs_vdv_des_officer_armored","rhs_vdv_des_officer","rhs_vdv_des_grenadier_rpg","rhs_vdv_des_efreitor","rhs_vdv_des_rifleman","rhs_vdv_des_grenadier","rhs_vdv_des_rifleman_asval","rhs_vdv_des_arifleman","rhs_vdv_des_machinegunner","rhs_vdv_des_machinegunner_assistant","rhs_vdv_des_marksman","rhs_vdv_des_marksman_asval","rhs_vdv_des_RShG2","rhs_vdv_des_LAT","rhs_vdv_des_grenadier_rpg","rhs_vdv_des_at","rhs_vdv_des_aa","rhs_vdv_des_strelok_rpg_assist","rhs_vdv_des_medic","rhs_vdv_des_engineer","rhs_vdv_des_medic","rhs_vdv_des_engineer"];
+a3e_arr_recon_I_InfantryTypes = ["rhs_vdv_des_sergeant","rhs_vdv_des_junior_sergeant","rhs_vdv_des_officer_armored","rhs_vdv_des_officer","rhs_vdv_des_grenadier_rpg","rhs_vdv_des_efreitor","rhs_vdv_des_rifleman","rhs_vdv_des_grenadier","rhs_vdv_des_rifleman_asval","rhs_vdv_des_arifleman","rhs_vdv_des_machinegunner","rhs_vdv_des_machinegunner_assistant","rhs_vdv_des_marksman","rhs_vdv_des_marksman_asval","rhs_vdv_des_RShG2","rhs_vdv_des_LAT","rhs_vdv_des_grenadier_rpg","rhs_vdv_des_at","rhs_vdv_des_aa","rhs_vdv_des_strelok_rpg_assist","rhs_vdv_des_medic","rhs_vdv_des_engineer","rhs_vdv_des_medic","rhs_vdv_des_engineer"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = ["rhs_btr60_msv", "RHS_NSV_TriPod_VDV", "O_static_AT_F"];
