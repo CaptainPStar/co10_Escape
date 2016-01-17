@@ -38,6 +38,7 @@ player removeitem "B_UavTerminal";
 removeAllWeapons player;
 removeAllItems player;
 removeBackpack player;
+removeVest player;
   
   
 player addItem "ItemRadio";
