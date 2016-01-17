@@ -2,7 +2,7 @@ if (!isServer) exitWith {};
 
 private ["_referenceGroup", "_side", "_vehicleClasses", "_vehicleCount", "_minSpawnDistance", "_maxSpawnDistance", "_minSkill", "_maxSkill", "_debug"];
 private ["_activeVehiclesAndGroup", "_vehiclesGroup", "_spawnSegment", "_vehicle", "_group", "_result", "_possibleVehicles", "_vehicleType", "_vehiclesCrew", "_skill", "_minDistance", "_tries", "_trafficLocation"];
-private ["_currentEntityNo", "_vehicleVarName", "_isFaction", "_tempVehiclesAndGroup", "_deletedVehiclesCount", "_firstIteration", "_roadSegments", "_destinationSegment", "_destinationPos", "_direction"];
+private ["_currentEntityNo", "_vehicleVarName", "_tempVehiclesAndGroup", "_deletedVehiclesCount", "_firstIteration", "_roadSegments", "_destinationSegment", "_destinationPos", "_direction"];
 private ["_roadSegmentDirection", "_testDirection", "_facingAway", "_posX", "_posY", "_pos"];
 private ["_fnc_OnSpawnVehicle", "_fnc_FindSpawnSegment"];
 private ["_debugMarkerName", "_allRoadSegments"];
@@ -10,7 +10,7 @@ private ["_debugMarkerName", "_allRoadSegments"];
 
 _referenceGroup = _this select 0;
 _side = _this select 1;
-_vehicleClasses = _this select 2;
+_vehicleClasses = _this select 2; //Unused
 if (count _this > 3) then {_vehicleCount = _this select 3;} else {_vehicleCount = 10;};
 if (count _this > 4) then {_minSpawnDistance = _this select 4;} else {_minSpawnDistance = 1000;};
 if (count _this > 5) then {_maxSpawnDistance = _this select 5;} else {_maxSpawnDistance = 1500;};
@@ -18,7 +18,7 @@ if (count _this > 6) then {_minSkill = _this select 6;} else {_minSkill = 0.4;};
 if (count _this > 7) then {_maxSkill = _this select 7;} else {_maxSkill = 0.6;};
 if (count _this > 8) then {_fnc_OnSpawnVehicle = _this select 8;} else {_fnc_OnSpawnVehicle = {};};
 if (count _this > 9) then {_debug = _this select 9;} else {_debug = false;};
-_factionsArray = [A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor ,A3E_VAR_Side_Opfor];
+
 while {isNil "a3e_var_commonLibInitialized"} do {
     player sideChat "Script MilitaryTraffic.sqf requires CommonLib v1.02.";
     sleep 10;
@@ -92,35 +92,8 @@ if (_debug) then {
 
 _activeVehiclesAndGroup = [];
 
-_isFaction = false;
-if (str _vehicleClasses == """USMC""") then {
-    _possibleVehicles = ["HMMWV", "HMMWV_M2", "HMMWV_Armored", "HMMWV_MK19", "HMMWV_TOW", "HMMWV_Avenger", "M1030", "MMT_USMC", "MTVR", "HMMWV_Ambulance", "MtvrReammo", "MtvrRefuel", "MtvrRepair", "AAV", "LAV25", "LAV25_HQ", "M1A1", "M1A2_TUSK_MG", "MLRS"];
-    _isFaction = true;
-};
-if (str _vehicleClasses == """CDF""") then {
-    _possibleVehicles = ["GRAD_CDF", "UAZ_CDF", "UAZ_AGS30_CDF", "UAZ_MG_CDF", "Ural_CDF", "UralOpen_CDF", "Ural_ZU23_CDF", "BMP2_Ambul_CDF", "UralReammo_CDF", "UralRefuel_CDF", "UralRepair_CDF", "BMP2_CDF", "BMP2_HQ_CDF", "BRDM2_CDF", "BRDM2_ATGM_CDF", "T72_CDF", "ZSU_CDF"];
-    _isFaction = true;
-};
-if (str _vehicleClasses == """RU""") then {
-    _possibleVehicles = ["GRAD_RU", "UAZ_RU", "UAZ_AGS30_RU", "Kamaz", "KamazOpen", "KamazReammo", "KamazRefuel", "KamazRepair", "GAZ_Vodnik_MedEvac", "2S6M_Tunguska", "BMP3", "BTR90", "BTR90_HQ", "T72_RU", "T90", "GAZ_Vodnik", "GAZ_Vodnik_HMG"];
-    _isFaction = true;
-};
-if (str _vehicleClasses == """INS""") then {
-    _possibleVehicles = ["O_MRAP_02_F", "O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F", "O_Quadbike_01_F", "O_Truck_02_covered_F", "O_Truck_02_transport_F", "O_Truck_02_ammo_F", "O_Truck_02_box_F", "O_Truck_02_fuel_F", "O_Truck_02_medical_F", "O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_AA_F", "O_APC_Tracked_02_cannon_F", "O_MBT_02_arty_F", "O_MBT_02_cannon_F"];
-    _isFaction = true;
-};
-if (str _vehicleClasses == """GUE""") then {
-    _possibleVehicles = ["TT650_Gue", "Offroad_DSHKM_Gue", "Offroad_SPG9_Gue", "Pickup_PK_GUE", "V3S_Gue", "Ural_ZU23_Gue", "BMP2_Gue", "BRDM2_Gue", "BRDM2_HQ_Gue", "T34", "T72_Gue"];
-    _isFaction = true;
-};
-if (str _vehicleClasses == """CIV""") then {
-    _possibleVehicles = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F"];;
-    _isFaction = true;
-};
 
-if (!_isFaction) then {
-    _possibleVehicles =+ _vehicleClasses;
-};
+_possibleVehicles = [];
 
 _fnc_FindSpawnSegment = {
     private ["_referenceGroup", "_minSpawnDistance", "_maxSpawnDistance", "_activeVehiclesAndGroup"];
@@ -297,22 +270,24 @@ while {true} do {
             _pos = [_posX, _posY, 0];
             _faction = _side;
             // Create vehicle
-            if(_side != civilian) then {
-                _faction = _factionsArray select (floor (random (count _factionsArray)));
-            };
-            if(_side == civilian) then {
-                _faction = civilian;
-                _possibleVehicles = a3e_arr_Escape_EnemyCivilianCarTypes;
-            };
-            if(_faction == A3E_VAR_Side_Opfor) then {
+            //if(_side != civilian) then {
+            //    _faction = _factionsArray select (floor (random (count _factionsArray)));
+            //};
+            //if(_side == civilian) then {
+            //    _faction = civilian;
+            //    _possibleVehicles = a3e_arr_Escape_EnemyCivilianCarTypes;
+            //};
+            if(_side == A3E_VAR_Side_Opfor) then {
                 _possibleVehicles = a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses;
             };
-            if (_faction == A3E_VAR_Side_Ind ) then {
+            if (_side == A3E_VAR_Side_Ind ) then {
                 _possibleVehicles = a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_Ind;
             };
-
+			if(_side == civilian) then {
+                _possibleVehicles = a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses;
+            };
             _vehicleType = _possibleVehicles select floor (random count _possibleVehicles);
-            _result = [_pos, _direction + 90, _vehicleType, _faction] call BIS_fnc_spawnVehicle;
+            _result = [_pos, _direction + 90, _vehicleType, _side] call BIS_fnc_spawnVehicle;
             _vehicle = _result select 0;
             _vehiclesCrew = _result select 1;
             _vehiclesGroup = _result select 2;
