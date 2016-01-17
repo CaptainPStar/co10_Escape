@@ -10,6 +10,8 @@ _rotateDir = _this select 1;
 if (count _this > 2) then { _staticWeaponClasses = _this select 2; } else { _staticWeaponClasses = []; };
 if (count _this > 3) then { _parkedVehicleClasses = _this select 3; } else { _parkedVehicleClasses = []; };
 
+[_centerPos,40] call a3e_fnc_cleanupTerrain;
+
 _fnc_CreateObject = {
     private ["_className", "_relativePos", "_relativeDir", "_centerPos", "_rotateDir"];
     private ["_object", "_realPos", "_realDir"];
@@ -216,11 +218,16 @@ _dir = 90;
 // Antennas
 
 _pos = [0, -9];
-_dir = 90;
-_obj = ["Land_PowerGenerator_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+_dir = 180;
+_obj = ["Land_DataTerminal_01_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 //[[_obj, "Hijack", "Scripts\Escape\Hijack.sqf"], "a3e_fnc_addHijackAction", nil, false] spawn BIS_fnc_MP;
 _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
+[_obj,"green","green","green"] call BIS_fnc_DataTerminalColor;
+
+_pos = [0, -9];
+_dir = 180;
+_obj = ["HeliHEmpty", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 
 _pos = [13, 1];
 _dir = 90;

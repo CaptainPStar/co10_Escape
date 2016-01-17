@@ -23,6 +23,7 @@ class CfgFunctions
 			class GetPlayers {};
 			class GetPlayerGroup {};
 			class Briefing {};
+			class cleanupTerrain {};
 		};
 		class AI
 		{
