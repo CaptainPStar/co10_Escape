@@ -1,4 +1,4 @@
-player addAction ["<t color=""#cccc00"">" + "Hack Terminal" + "</t>", {_this call A3E_fnc_Hijack;}, [], 9, false, true, "", "call at_fnc_checkTerminalHack"];
+player addAction ["<t color=""#cccc00"">" + "Hack Terminal" + "</t>", "_this call A3E_fnc_Hijack;", [], 9, false, true, "", "call at_fnc_checkTerminalHack"];
 
 at_fnc_checkTerminalHack = {
 	_return = false;
@@ -11,7 +11,7 @@ at_fnc_checkTerminalHack = {
 	_return;
 };
 
-player addAction ["<t color=""#cc0000"">" + "Heal" + "</t>", {_this call A3E_fnc_HealAtBuilding;}, [], 9, false, true, "", "call at_fnc_checkHealAtBuilding"];
+player addAction ["<t color=""#cc0000"">" + "Heal" + "</t>", "_this call A3E_fnc_HealAtBuilding;", [], 9, false, true, "", "call at_fnc_checkHealAtBuilding"];
 
 at_fnc_checkHealAtBuilding = {
 	_return = false;
