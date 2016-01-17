@@ -8,6 +8,12 @@ waituntil{!isNull(player)};
 };
 titleText ["Loading...", "BLACK",0.1];
 
+AT_Revive_StaticRespawns = [];
+AT_Revive_enableRespawn = false;
+AT_Revive_clearedDistance = 0;
+AT_Revive_Camera = 1;
+
+
 call compile preprocessFile "Revive\reviveInit.sqf";
 call compile preprocessFile "Scripts\AT\dronehack_init.sqf";
 [] call A3E_fnc_addUserActions;
