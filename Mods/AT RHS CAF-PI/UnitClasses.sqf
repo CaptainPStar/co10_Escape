@@ -40,7 +40,7 @@ a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["RH_fn5
 a3e_arr_PrisonBackpackWeapons set [count(a3e_arr_PrisonBackpackWeapons),["RH_vz61","RH_20Rnd_32cal_vz61"]];
 
 // Random array. Civilian vehicle classes for ambient traffic. (Can also be set to a faction name).
-a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F","beetle_coci","beetle_psycha1","SIG_SuperBeeB","SIG_SuperBeeM","SIG_Magnums","SIG_Hcode"];
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F","CUP_C_UAZ_Unarmed_TK_CIV","CUP_C_UAZ_Open_TK_CIV","CUP_C_Ural_Civ_01","CUP_C_Ural_Civ_02","CUP_C_Ural_Civ_03","CUP_C_Ural_Open_Civ_01","CUP_C_Ural_Open_Civ_02","CUP_C_Ural_Open_Civ_03","CUP_C_Datsun","CUP_C_Datsun_4seat","CUP_C_Datsun_Plain","CUP_C_Datsun_Covered","CUP_C_Datsun_Tubeframe","beetle_coci","beetle_psycha1","SIG_SuperBeeB","SIG_SuperBeeM","SIG_Magnums","SIG_Hcode"];
 
 // Random arrays. Enemy vehicle classes for ambient traffic. (Can also be set to a faction name).
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -154,7 +154,7 @@ a3e_arr_ComCenStaticWeapons = ["O_HMG_01_high_F"];
 a3e_arr_ComCenParkedVehicles = ["I_G_Offroad_01_repair_F","rhs_uaz_MSV_01","rhs_uaz_open_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_r142_msv","rhs_gaz66_ap2_msv","rhs_gaz66_repair_msv","rhs_ural_MSV_01","rhs_ural_fuel_MSV_01","rhs_ural_open_MSV_01","rhs_tigr_ffv_3camo_msv","rhs_tigr_ffv_msv", "CAF_AG_afr_p_Offroad", "CAF_AG_afr_p_Offroad_armed_01", "CAF_AG_afr_p_Offroad_armed_01", "CAF_AG_afr_p_van_01"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
-a3e_arr_Escape_EnemyCivilianCarTypes = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F"];
+a3e_arr_Escape_EnemyCivilianCarTypes = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F","CUP_C_Datsun_4seat","CUP_C_UAZ_Unarmed_TK_CIV","CUP_C_UAZ_Open_TK_CIV","CUP_C_Ural_Civ_01","CUP_C_Ural_Civ_02","CUP_C_Ural_Civ_03","CUP_C_Ural_Open_Civ_01","CUP_C_Ural_Open_Civ_02","CUP_C_Ural_Open_Civ_03","beetle_coci","beetle_psycha1","SIG_SuperBeeB","SIG_SuperBeeM","SIG_Magnums","SIG_Hcode"];
 
 // Vehicles, weapons and ammo at ammo depots
 
@@ -204,7 +204,7 @@ a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["rhs_we
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["rhs_weap_m4a1", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["hlc_rifle_SAMR", 10, 1, 2, ["hlc_30rnd_556x45_SOST", "hlc_30rnd_556x45_EPR"], 6]];
 a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["rhs_weap_m16a4", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Green", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Yellow"], 6]];
-a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["g36a", 10, 1, 2, ["G36_mag"], 6]];
+a3e_arr_AmmoDepotBasicWeapons set [count a3e_arr_AmmoDepotBasicWeapons, ["hlc_rifle_G36E1", 10, 1, 2, ["hlc_30rnd_556x45_EPR_G36"], 6]];
 
 
 // Weapons and ammo in the special weapons box
