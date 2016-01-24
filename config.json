@@ -392,12 +392,12 @@
 				}
 		},
 		{
-			"name" : "CUP Taki",
-			"path" : "./Mods/CUP Taki/",
+			"name" : "CUP Taki CAF",
+			"path" : "./Mods/CUP Taki CAF/",
 			"require" : ["CUP_Creatures_Military_Germany","CUP_Creatures_Military_Taki","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
-					"MOD" : "CUP",
+					"MOD" : "CUP CAF",
 					"PLAYERSIDE" : "WEST",
 					"PLAYERUNIT_1" : "CUP_B_GER_Soldier_TL",
 					"PLAYERUNIT_2" : "CUP_B_GER_Soldier_Scout",
@@ -412,12 +412,12 @@
 				}
 		},
 		{
-			"name" : "CUP-US USMC",
-			"path" : "./Mods/CUP-US USMC/",
+			"name" : "CUP-US USMC LOP",
+			"path" : "./Mods/CUP-US USMC LOP/",
 			"require" : ["CUP_Creatures_Military_USMC","lop_faction_us"],
 			"replace" :
 				{
-					"MOD" : "CUP-US",
+					"MOD" : "CUP-US LOP",
 					"PLAYERSIDE" : "EAST",
 					"PLAYERUNIT_1" : "LOP_US_Infantry_TL",
 					"PLAYERUNIT_2" : "LOP_US_Infantry_GL",
@@ -429,6 +429,26 @@
 					"PLAYERUNIT_8" : "LOP_US_Infantry_AT_Asst",
 					"PLAYERUNIT_9" : "LOP_US_Infantry_Rifleman",
 					"PLAYERUNIT_10" : "LOP_US_Infantry_Corpsman"
+				}
+		},
+		{
+			"name" : "CUP-US USMC",
+			"path" : "./Mods/CUP-US USMC/",
+			"require" : ["CUP_Creatures_Military_USMC","CUP_Creatures_Military_Napa_Soldier","CUP_Creatures_Military_Taki"],
+			"replace" :
+				{
+					"MOD" : "CUP-US",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "CUP_O_TK_Soldier_SL",
+					"PLAYERUNIT_2" : "CUP_O_TK_Soldier_GL",
+					"PLAYERUNIT_3" : "CUP_O_TK_Sniper",
+					"PLAYERUNIT_4" : "CUP_O_TK_Engineer",
+					"PLAYERUNIT_5" : "CUP_O_TK_Soldier_AA",
+					"PLAYERUNIT_6" : "CUP_O_TK_Soldier_MG",
+					"PLAYERUNIT_7" : "CUP_O_TK_Soldier_AT",
+					"PLAYERUNIT_8" : "CUP_O_TK_Soldier_AAT",
+					"PLAYERUNIT_9" : "CUP_O_TK_Soldier",
+					"PLAYERUNIT_10" : "CUP_O_TK_Medic"
 				}
 		}
 	],
@@ -828,9 +848,9 @@
 		{
 			"island" : "Isla Duala",
 			"sqm": "IslaDuala3",
-			"mod" : "CUP Taki",
+			"mod" : "CUP Taki CAF",
 			"replace" : {},
-			"name" : "co10_Escape_CUP"
+			"name" : "co10_Escape_CUP_CAF"
 		},
 		{
 			"island" : "Lingor",
@@ -884,9 +904,9 @@
 		{
 			"island" : "Takistan",
 			"sqm": "Takistan",
-			"mod" : "CUP Taki",
+			"mod" : "CUP Taki CAF",
 			"replace" : {},
-			"name" : "co10_Escape_CUP"
+			"name" : "co10_Escape_CUP_CAF"
 		},
 		{
 			"island" : "Porto",
@@ -919,9 +939,9 @@
 		{
 			"island" : "Capraia",
 			"sqm": "IsolaDiCapraia",
-			"mod" : "CUP Taki",
+			"mod" : "CUP Taki CAF",
 			"replace" : {},
-			"name" : "co10_Escape_CUP"
+			"name" : "co10_Escape_CUP_CAF"
 		},
 		{
 			"island" : "Esseker",
@@ -1580,6 +1600,83 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP-US"
+		},
+		{
+			"island" : "Altis",
+			"sqm": "Altis",
+			"mod" : "CUP-US USMC LOP",
+			"replace" : {},
+			"name" : "co10_Escape_CUP-US_LOP"
+		},
+		{
+			"island" : "Stratis",
+			"sqm": "Stratis",
+			"mod" : "CUP-US USMC LOP",
+			"replace" : {},
+			"name" : "co10_Escape_CUP-US_LOP"
+		},
+		{
+			"island" : "Bornholm",
+			"sqm": "Bornholm",
+			"mod" : "CUP-US USMC LOP",
+			"replace" : {},
+			"name" : "co10_Escape_CUP-US_LOP"
+		},
+		{
+			"island" : "Chernarus",
+			"sqm": "Chernarus",
+			"mod" : "CUP-US USMC LOP",
+			"replace" : {},
+			"name" : "co10_Escape_CUP-US_LOP"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"sqm": "Chernarus_Summer",
+			"mod" : "CUP-US USMC LOP",
+			"replace" : {},
+			"name" : "co10_Escape_CUP-US_LOP"
+		},
+		{
+			"island" : "Podagorsk",
+			"sqm": "FDF_Isle1_a",
+			"mod" : "CUP-US USMC LOP",
+			"replace" : {},
+			"name" : "co10_Escape_CUP-US_LOP"
+		},
+		{
+			"island" : "Panthera",
+			"sqm": "Panthera3",
+			"mod" : "CUP-US USMC LOP",
+			"replace" : {},
+			"name" : "co10_Escape_CUP-US_LOP"
+		},
+		{
+			"island" : "Celle",
+			"sqm": "mbg_celle2",
+			"mod" : "CUP-US USMC LOP",
+			"replace" : {},
+			"name" : "co10_Escape_CUP-US_LOP"
+		},
+		{
+			"island" : "Thirsk",
+			"sqm": "Thirsk",
+			"mod" : "CUP-US USMC LOP",
+			"replace" : {},
+			"name" : "co10_Escape_CUP-US_LOP"
+		},
+		{
+			"island" : "Esseker",
+			"sqm": "Esseker",
+			"mod" : "CUP-US USMC LOP",
+			"replace" : {},
+			"name" : "co10_Escape_CUP-US_LOP"
+		},
+		{
+			"island" : "Thirsk Winter",
+			"sqm": "ThirskW",
+			"mod" : "CUP-US USMC LOP",
+			"replace" : {},
+			"name" : "co10_Escape_CUP-US_LOP"
 		}
 	]
 	

@@ -25,7 +25,7 @@ A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
 A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
 // Random array. Start position guard types.
-a3e_arr_Escape_StartPositionGuardTypes = ["CUP_I_GUE_Soldier_AKS74","CUP_I_GUE_Soldier_AKM","CUP_I_GUE_Soldier_AKSU","CUP_I_GUE_Soldier_GL","CUP_I_GUE_Soldier_AR","CUP_I_GUE_Soldier_AKS74"];
+a3e_arr_Escape_StartPositionGuardTypes = ["LOP_NAPA_Infantry_Rifleman","LOP_NAPA_Infantry_Prizrak","LOP_NAPA_Infantry_GL","LOP_NAPA_Infantry_AR","LOP_NAPA_Infantry_Rifleman","LOP_NAPA_Infantry_Rifleman"];
 
 // Inner fence guard's secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
@@ -73,8 +73,8 @@ switch (_enemyFrequency) do {
 		"CUP_B_M1A1_Woodland_US_Army","CUP_B_M1A1_Woodland_USMC",
 		"CUP_B_M270_HE_USMC","CUP_B_M270_DPICM_USMC"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"CUP_I_Datsun_PK","CUP_I_Datsun_PK_Random","CUP_I_Ural_ZU23_NAPA","CUP_I_BMP2_AMB_NAPA","CUP_I_BRDM2_HQ_NAPA","CUP_I_BMP_HQ_NAPA",
-		"CUP_I_BRDM2_NAPA","CUP_I_BRDM2_ATGM_NAPA","CUP_I_BMP2_NAPA","CUP_I_T72_NAPA"];
+		"LOP_NAPA_Truck","LOP_NAPA_Offroad","LOP_NAPA_Offroad_M2","LOP_NAPA_Landrover","LOP_NAPA_Landrover_M2",
+		"LOP_PMC_Truck","LOP_PMC_Offroad","LOP_PMC_Offroad_M2","LOP_PMC_SUV"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -89,8 +89,8 @@ switch (_enemyFrequency) do {
 		"CUP_B_M1A2_TUSK_MG_US_Army","CUP_B_M1A2_TUSK_MG_USMC",
 		"CUP_B_M270_HE_USMC","CUP_B_M270_DPICM_USMC"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"CUP_I_Datsun_PK","CUP_I_Datsun_PK_Random","CUP_I_Ural_ZU23_NAPA","CUP_I_BMP2_AMB_NAPA","CUP_I_BRDM2_HQ_NAPA","CUP_I_BMP_HQ_NAPA",
-		"CUP_I_BRDM2_NAPA","CUP_I_BRDM2_ATGM_NAPA","CUP_I_BMP2_NAPA","CUP_I_T72_NAPA"];
+		"LOP_NAPA_Truck","LOP_NAPA_Offroad","LOP_NAPA_Offroad_M2","LOP_NAPA_Landrover","LOP_NAPA_Landrover_M2",
+		"LOP_PMC_Truck","LOP_PMC_Offroad","LOP_PMC_Offroad_M2","LOP_PMC_SUV"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -105,26 +105,26 @@ switch (_enemyFrequency) do {
 		"CUP_B_M1A2_TUSK_MG_US_Army","CUP_B_M1A2_TUSK_MG_USMC",
 		"CUP_B_M270_HE_USMC","CUP_B_M270_DPICM_USMC"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"CUP_I_Datsun_PK","CUP_I_Datsun_PK_Random","CUP_I_Ural_ZU23_NAPA","CUP_I_BMP2_AMB_NAPA","CUP_I_BRDM2_HQ_NAPA","CUP_I_BMP_HQ_NAPA",
-		"CUP_I_BRDM2_NAPA","CUP_I_BRDM2_ATGM_NAPA","CUP_I_BMP2_NAPA","CUP_I_T72_NAPA"];
+		"LOP_NAPA_Truck","LOP_NAPA_Offroad","LOP_NAPA_Offroad_M2","LOP_NAPA_Landrover","LOP_NAPA_Landrover_M2",
+		"LOP_PMC_Truck","LOP_PMC_Offroad","LOP_PMC_Offroad_M2","LOP_PMC_SUV"];
     };
 };
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
 a3e_arr_Escape_InfantryTypes = ["CUP_B_USMC_Soldier","CUP_B_USMC_Soldier_GL","CUP_B_USMC_Officer","CUP_B_USMC_Soldier_SL","CUP_B_USMC_Soldier_TL","CUP_B_USMC_Soldier_LAT","CUP_B_USMC_Soldier_HAT","CUP_B_USMC_Soldier_AA","CUP_B_USMC_Medic","CUP_B_USMC_Medic","CUP_B_USMC_Soldier_AR","CUP_B_USMC_Spotter","CUP_B_USMC_Sniper_M40A3","CUP_B_USMC_Sniper_M107","CUP_B_USMC_Soldier_Marksman","CUP_B_USMC_Engineer","CUP_B_USMC_Engineer","CUP_B_USMC_Soldier_AT","CUP_B_USMC_Soldier_MG"];
-a3e_arr_Escape_InfantryTypes_Ind = ["CUP_I_GUE_Officer","CUP_I_GUE_Soldier_AKS74","CUP_I_GUE_Soldier_AKM","CUP_I_GUE_Soldier_AKSU","CUP_I_GUE_Soldier_AR","CUP_I_GUE_Soldier_MG","CUP_I_GUE_Soldier_GL","CUP_I_GUE_Soldier_AA","CUP_I_GUE_Soldier_AT","CUP_I_GUE_Soldier_Scout","CUP_I_GUE_Sniper","CUP_I_GUE_Saboteur","CUP_I_GUE_Medic","CUP_I_GUE_Medic"];
+a3e_arr_Escape_InfantryTypes_Ind = ["LOP_NAPA_Infantry_TL","LOP_NAPA_Infantry_SL","LOP_NAPA_Infantry_Rifleman","LOP_NAPA_Infantry_Prizrak","LOP_NAPA_Infantry_AR","LOP_NAPA_Infantry_AT","LOP_NAPA_Infantry_Marksman","LOP_NAPA_Infantry_GL","LOP_NAPA_Infantry_Corpsman","LOP_NAPA_Infantry_Engineer","LOP_NAPA_Infantry_Corpsman","LOP_NAPA_Infantry_Engineer"];
 a3e_arr_recon_InfantryTypes = ["CUP_B_USMC_SpecOps_SD","CUP_B_FR_Commander","CUP_B_FR_Saboteur","CUP_B_FR_Soldier_Marksman","CUP_B_FR_Soldier_AR","CUP_B_FR_Soldier_GL","CUP_B_FR_Soldier_Exp","CUP_B_FR_Soldier_Operator","CUP_B_FR_Soldier_Assault_GL","CUP_B_FR_Soldier_TL","CUP_B_FR_Medic","CUP_B_FR_Medic","CUP_B_FR_Soldier_Assault","CUP_B_USMC_SpecOps"];
-a3e_arr_recon_I_InfantryTypes = ["CUP_I_GUE_Officer","CUP_I_GUE_Soldier_AKS74","CUP_I_GUE_Soldier_AKM","CUP_I_GUE_Soldier_AKSU","CUP_I_GUE_Soldier_AR","CUP_I_GUE_Soldier_MG","CUP_I_GUE_Soldier_GL","CUP_I_GUE_Soldier_AA","CUP_I_GUE_Soldier_AT","CUP_I_GUE_Soldier_Scout","CUP_I_GUE_Sniper","CUP_I_GUE_Saboteur","CUP_I_GUE_Medic","CUP_I_GUE_Medic"];
+a3e_arr_recon_I_InfantryTypes = ["LOP_PMC_Infantry_TL","LOP_PMC_Infantry_SL","LOP_PMC_Infantry_Rifleman","LOP_PMC_Infantry_AT","LOP_PMC_Infantry_AT_Asst","LOP_PMC_Infantry_MG_Asst","LOP_PMC_Infantry_Marksman","LOP_PMC_Infantry_GL","LOP_PMC_Infantry_Engineer","LOP_PMC_Infantry_Corpsman","LOP_PMC_Infantry_Engineer","LOP_PMC_Infantry_Corpsman"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = ["CUP_B_HMMWV_M2_USMC","CUP_B_HMMWV_MK19_USMC","CUP_B_HMMWV_TOW_USMC","CUP_B_M113_USA","CUP_B_LAV25M240_USMC","CUP_I_M2StaticMG_AAF","CUP_I_M2StaticMG_MiniTripod_AAF","CUP_I_MK19_TriPod_AAF","CUP_I_TOW_TriPod_AAF"];
-a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = ["CUP_I_Datsun_PK","CUP_I_Datsun_PK_Random","CUP_I_BRDM2_NAPA"];
+a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = ["LOP_NAPA_Offroad_M2","LOP_NAPA_Landrover_M2","LOP_PMC_Offroad_M2"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
-a3e_arr_Escape_ReinforcementTruck_vehicleClasses = ["CUP_B_HMMWV_M1114_USMC","CUP_B_AAV_USMC","CUP_B_M113_USA"];
-a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = ["CUP_I_Datsun_PK","CUP_I_BMP_HQ_NAPA"];
+a3e_arr_Escape_ReinforcementTruck_vehicleClasses = ["CUP_B_HMMWV_M1114_USMC","CUP_B_M113_USA","CUP_B_AAV_USMC"];
+a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = ["LOP_NAPA_Landrover","LOP_NAPA_Truck","LOP_PMC_Truck"];
 // Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
-a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [3, 7, 11];
+a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [3, 11, 7];
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
@@ -163,8 +163,8 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 a3e_arr_O_attack_heli = ["CUP_B_AH64D_AT_USA","CUP_B_AH64D_ES_USA","CUP_B_AH64D_USA","CUP_B_AH64D_MR_USA","CUP_B_AH1Z","CUP_B_AH1Z_AT","CUP_B_AH1Z_Escort","CUP_B_AH1Z_7RndHydra","CUP_B_AH1Z_14RndHydra","CUP_B_AH1Z_NOAA"];
 a3e_arr_O_transport_heli = ["CUP_B_CH53E_USMC","CUP_B_CH47F_USA","CUP_B_MH60S_USMC","CUP_B_MH60S_FFV_USMC","CUP_B_MV22_USMC","CUP_B_MV22_USMC_GUN","CUP_B_UH1Y_GUNSHIP_F","CUP_B_UH1Y_MEV_F","CUP_B_UH60M_US","CUP_B_UH60M_FFV_US","CUP_B_UH60L_FFV_US","CUP_B_UH60M_Unarmed_FFV_US","CUP_B_UH60L_Unarmed_FFV_US","CUP_B_UH60M_Unarmed_FFV_MEV_US","CUP_B_UH60L_Unarmed_FFV_MEV_US"];
 a3e_arr_O_pilots = ["CUP_B_USMC_Pilot","CUP_B_US_Pilot"];
-a3e_arr_I_transport_heli = ["CUP_B_UH60M_Unarmed_FFV_US"];
-a3e_arr_I_pilots = ["CUP_I_GUE_Pilot"];
+a3e_arr_I_transport_heli = ["LOP_PMC_MH9","LOP_PMC_Mi8AMT","LOP_PMC_M900"];
+a3e_arr_I_pilots = ["LOP_PMC_Infantry_Pilot"];
 
 
 // The following arrays define weapons and ammo contained at the ammo depots
@@ -385,9 +385,9 @@ a3e_arr_searchdrone = ["B_UAV_02_F","B_UAV_02_CAS_F"];
 // first chopper that's called when you escape
 // only chopper used right now
 //////////////////////////////////////////////////////////////////
-a3e_arr_searchChopper = ["CUP_B_Mi17_CDF"];
-a3e_arr_searchChopper_pilot = ["CUP_I_GUE_Pilot"];
-a3e_arr_searchChopper_crew = ["CUP_I_GUE_Pilot"];
+a3e_arr_searchChopper = ["LOP_PMC_Mi8AMT","LOP_PMC_MH9_armed"];
+a3e_arr_searchChopper_pilot = ["LOP_PMC_Infantry_Pilot"];
+a3e_arr_searchChopper_crew = ["LOP_PMC_Infantry_Pilot"];
 
 //////////////////////////////////////////////////////////////////
 // fn_AmbientInfantry
