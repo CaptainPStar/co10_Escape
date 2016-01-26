@@ -42,7 +42,7 @@ _waypoint setWaypointFormation "WEDGE";
 
 _boat1 flyinheight 30;
 _boat2 flyinheight 30;
-_boat3 flyinheight 30;
+_boat3 flyinheight 50;
 
 sleep 1;
 
@@ -81,7 +81,11 @@ A3E_Task_Exfil_Complete = true;
 publicvariable "A3E_Task_Exfil_Complete";
 sleep 35;
 
-
-a3e_var_Escape_MissionComplete = true;
-publicVariable "a3e_var_Escape_MissionComplete";
+if({vehicle _x == _boat1 || vehicle _x == _boat2} count (call A3E_fnc_GetPlayers) == count (call A3E_fnc_GetPlayers)) then {
+	a3e_var_Escape_MissionComplete = true;
+	publicVariable "a3e_var_Escape_MissionComplete";
+} else {
+	a3e_var_Escape_MissionFailed_LeftBehind = true;
+	publicVariable "a3e_var_Escape_MissionFailed_LeftBehind";
+};
 

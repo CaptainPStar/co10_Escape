@@ -66,6 +66,8 @@ class CfgFunctions
 			class createLocationMarker {};
 			class createExtractionPoint {};
 			class runExtraction {};
+			class firedNearExtraction {};
+			class weather {};
 		};
 		class Templates
 		{

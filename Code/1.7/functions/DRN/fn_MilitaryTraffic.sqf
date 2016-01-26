@@ -319,7 +319,7 @@ while {true} do {
             // Start vehicle
             [_vehicle, _destinationPos, _debug] spawn drn_fnc_MilitaryTraffic_MoveVehicle;
 			
-            _activeVehiclesAndGroup set [count _activeVehiclesAndGroup, [_vehicle, _vehiclesGroup, _vehiclesCrew, _debugMarkerName, _result spawn _fnc_OnSpawnVehicle]];
+            _activeVehiclesAndGroup pushBack [_vehicle, _vehiclesGroup, _vehiclesCrew, _debugMarkerName, _result spawn _fnc_OnSpawnVehicle];
             
             // Run spawn script
             //_vehiclesGroup setVariable ["drn_scriptHandle", _result spawn _fnc_OnSpawnVehicle]; // Squint complaining, but is ok.
@@ -334,7 +334,6 @@ while {true} do {
     };
     
     _firstIteration = false;
-
     if (_debug) then {
         {
             private ["_debugMarkerColor"];
@@ -364,8 +363,8 @@ while {true} do {
     };
     
 	// If any vehicle is too far away, delete it
-    _tempVehiclesAndGroup = [];
     _deletedVehiclesCount = 0;
+	private _players = [] call A3E_FNC_GetPlayers;
 	{
         private ["_closestUnitDistance", "_distance", "_crewUnits"];
         private ["_scriptHandle"];
@@ -383,12 +382,11 @@ while {true} do {
             if (_distance < _closestUnitDistance) then {
                 _closestUnitDistance = _distance;
             };
-        } foreach units _referenceGroup;
+        } foreach _players;
         
-        if (_closestUnitDistance < _maxSpawnDistance) then {
-            _tempVehiclesAndGroup set [count _tempVehiclesAndGroup, _x];
-        }
-        else {
+		//Failsafe deletion... just to make sure
+        if (_closestUnitDistance > _maxSpawnDistance && ({isPlayer _x} count (crew _vehicle) == 0)) then {
+			//Deleting the old crew here... must be somewhere
             {
                 deleteVehicle _x;
             } foreach _crewUnits;
@@ -408,10 +406,10 @@ while {true} do {
             if (_debug) then {
                 ["Vehicle deleted! Total vehicles = " + str (count _activeVehiclesAndGroup - _deletedVehiclesCount)] call drn_fnc_CL_ShowDebugTextAllClients
             };
+			_activeVehiclesAndGroup deleteAt _forEachIndex;
         };
 	} foreach _activeVehiclesAndGroup;
     
-    _activeVehiclesAndGroup = _tempVehiclesAndGroup;
     
     sleep 1;
 };

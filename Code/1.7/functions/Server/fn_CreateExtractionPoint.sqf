@@ -1,15 +1,18 @@
 if (!isServer) exitWith {};
 
-private ["_markerNo", "_markerName", "_trigger"];
+private ["_markerNo", "_markerName"];
 
 _markerNo = _this select 0;
 _markerName = "drn_Escape_ExtractionPos" + str _markerNo;
+//private _pos = getMarkerPos _markerName;
 
-_trigger = createTrigger["EmptyDetector", getMarkerPos _markerName];
-_trigger setTriggerArea[150, 150, 0, false];
-_trigger setTriggerActivation["MEMBER", "PRESENT", false];
-_trigger triggerAttachVehicle [(call A3E_fnc_GetPlayers) select 0];
-_trigger setTriggerStatements["this", "_nil = [" + str _markerNo + "] spawn A3E_fnc_RunExtraction;", ""];
+private _location = "HeliHEmpty" createvehicle (getMarkerPos _markerName);
+
+_location setvariable ["A3E_ExtractionOnStandby",true];
+
+private _code = compile format["[%1,_this] call A3E_fnc_firedNearExtraction;",_markerNo];
+
+_location addeventhandler["firedNear",_code];
 
 a3e_var_Escape_ExtractionMarkerNo = _markerNo;
 publicVariable "a3e_var_Escape_ExtractionMarkerNo";

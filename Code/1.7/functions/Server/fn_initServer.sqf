@@ -65,7 +65,8 @@ private["_weather","_weatherTrend"];
 //_weatherTrend = ["constant","worse","pWorse","better","pBetter","freeCycle","random"] select Param_WeatherTrend;
 
 //0 = [_weather, _weatherTrend, 0, [0, 0.2], 0, [0, 1, 0, 0.4, 0, 1]] execVM "Scripts\tort\tort_DynamicWeather.sqf";
-[] spawn MB_fnc_randomWeather2;
+//[] spawn MB_fnc_randomWeather2;
+[] spawn A3E_fnc_weather;
 
 private ["_hour","_date"];
 _hour = Param_TimeOfDay;

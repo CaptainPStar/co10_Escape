@@ -38,9 +38,15 @@ class Params
 	};
 	class Param_Weather {
 		title="Weather";
-		values[] = {0,1,2,3,4};
-		texts[] = {"Clear","Overcast","Rain","Fog","Random"};
-		default = 4;
+		values[] = {0,1,2,3,4,-1};
+		texts[] = {"Clear","Overcast","Rain","Fog","Storm","Random"};
+		default = -1;
+	};
+	class Param_DynamicWeather {
+		title="Dynamic Weather";
+		values[] = {0,1};
+		texts[] = {"Constant","Random"};
+		default = 1;
 	};
 	class Param_Grass
 	{	
@@ -100,10 +106,10 @@ class Params
 	};
 	class Param_RevealMarkers
 	{
-		title="Direct reveal of markers";
-		values[]={0,1};
-		texts[]={"Off","On"};
-		default = 0;
+		title="Mapmarkers";
+		values[]={0,1,2,3};
+		texts[]={"Always show (with type)","Always show marker but hide type (questionmark)","Show marker upon discovery","Never show markers"};
+		default = 1;
 	};
 	class Param_Artillery
 	{

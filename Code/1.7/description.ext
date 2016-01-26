@@ -34,6 +34,31 @@ wreckRemovalMinTime = 600; //seconds
 wreckRemovalMaxTime = 1800; //seconds
 
 ///////////////////////////////////////////////////////////////////////////////////////////
+ class CfgDebriefing
+{  
+    class End1
+    {
+        title = "Mission failed";
+        subtitle = "";
+        description = "We haven't made it home. Everybody is dead.";
+        pictureBackground = "";
+    };
+    class End2
+    {
+        title = "Mission Completed";
+        subtitle = "";
+        description = "We escaped the enemy and made it back home. Our gathered intel will be valuable in the upcoming invasion.";
+        pictureBackground = "";
+    };
+	class End3
+    {
+        title = "Mission failed";
+        subtitle = "";
+        description = "We escaped the enemy but not everybody made it home!";
+        pictureBackground = "";
+    };
+};
+
 
 #include "include\params.hpp"
 #include "include\functions.hpp"
