@@ -273,7 +273,14 @@ while {1 == 1} do {
 							if (a3e_debug_artillery) then {
 								player sidechat "HQ is trying to call an artillery strike";
 							};
+							
+							//_strikesuccess = [getpos (_list select 0)] call a3e_fnc_FireArtillery;
+							if(random 100 < 10) then {
 							_strikesuccess = [getpos (_list select 0)] call a3e_fnc_FireArtillery;
+							} else {
+							_strikesuccess = [getpos (_list select 0)] call a3e_fnc_CallCAS;
+							};
+							
 							if(_strikesuccess) then {
 								_lastArtilleryStrike = diag_tickTime;
 								_strikesuccess = false;

@@ -170,12 +170,6 @@ a3e_arr_O_pilots = ["rhs_pilot","rhs_pilot_transport_heli"];
 a3e_arr_I_transport_heli = ["RHS_Mi8amt_chdkz"];
 a3e_arr_I_pilots = ["rhs_g_Crew_F","rhs_g_Crew_F"];
 
-//////////////////////////////////////////////////////////////////
-// fn_MortarSite
-// mortar spawned in the mortar camps
-//////////////////////////////////////////////////////////////////
-a3e_arr_MortarSite = ["O_Mortar_01_F"];
-
 // The following arrays define weapons and ammo contained at the ammo depots
 // Index 0: Weapon classname.
 // Index 1: Weapon's probability of presence (in percent, 0-100).
@@ -448,6 +442,18 @@ a3e_arr_AquaticPatrols = ["O_Boat_Armed_01_hmg_F"];
 a3e_additional_weapon_box_1 = "CUP_RUBasicWeaponsBox";
 a3e_additional_weapon_box_2 = "CUP_RUSpecialWeaponsBox";
 
+
+//////////////////////////////////////////////////////////////////
+// fn_MortarSite
+// mortar spawned in the mortar camps
+//////////////////////////////////////////////////////////////////
+a3e_arr_MortarSite = ["O_Mortar_01_F"];
+
+//////////////////////////////////////////////////////////////////
+// fn_CallCAS.sqf
+// Classnames of planes for the CAS module
+//////////////////////////////////////////////////////////////////
+a3e_arr_CASplane = ["RHS_Su25SM_vvs"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
