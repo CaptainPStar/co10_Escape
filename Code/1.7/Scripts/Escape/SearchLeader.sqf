@@ -275,10 +275,12 @@ while {1 == 1} do {
 							};
 							
 							//_strikesuccess = [getpos (_list select 0)] call a3e_fnc_FireArtillery;
-							if(random 100 < 10) then {
-							_strikesuccess = [getpos (_list select 0)] call a3e_fnc_FireArtillery;
+							if(random 100 < 20) then {
+								diag_log ("Escape Searchleader: Calling for artillery strike!");
+								_strikesuccess = [getpos (_list select 0)] call a3e_fnc_FireArtillery;
 							} else {
-							_strikesuccess = [getpos (_list select 0)] call a3e_fnc_CallCAS;
+								diag_log ("Escape Searchleader: Calling for CAS strike!");
+								_strikesuccess = [getpos (_list select 0)] call a3e_fnc_CallCAS;
 							};
 							
 							if(_strikesuccess) then {

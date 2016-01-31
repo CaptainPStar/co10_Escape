@@ -25,7 +25,7 @@ _dir = _this select 2;
 };
 
 
-_obj = "HeliHEmpty" createvehicle _center;
+_obj = "Land_ClutterCutter_large_F" createvehicle _center;
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _center;
 

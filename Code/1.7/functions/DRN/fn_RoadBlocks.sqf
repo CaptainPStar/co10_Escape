@@ -14,72 +14,22 @@ if (count _this > 8) then { _minSpawnDistanceAtStartup = _this select 8; } else 
 if (count _this > 9) then { _fnc_OnSpawnInfantryGroup = _this select 9; } else { _fnc_OnSpawnInfantryGroup = {}; };
 if (count _this > 10) then { _fnc_OnSpawnMannedVehicle = _this select 10; } else { _fnc_OnSpawnMannedVehicle = {}; };
 if (count _this > 11) then { _debug = _this select 11; } else { _debug = false; };
-_factionsArray = [A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor ,A3E_VAR_Side_Opfor];
 
-_isFaction = false;
-if (str _infantryClasses == """USMC""") then {
-    _possibleInfantryTypes = a3e_arr_roadblocks_Inf_USMC;
-    _isFaction = true;
-};
-if (str _infantryClasses == """CDF""") then {
-    _possibleInfantryTypes = a3e_arr_roadblocks_Inf_CDF;
-    _isFaction = true;
-};
-if (str _infantryClasses == """RU""") then {
-    _possibleInfantryTypes = a3e_arr_roadblocks_Inf_RU;
-    _isFaction = true;
-};
-if (str _infantryClasses == """INS""") then {
-    _possibleInfantryTypes = a3e_arr_roadblocks_Inf_INS;
-    _isFaction = true;
-};
-if (str _infantryClasses == """GUE""") then {
-    _possibleInfantryTypes = a3e_arr_roadblocks_Inf_GUE;
-    _isFaction = true;
-};
+_factionsArray = [A3E_VAR_Side_Ind , A3E_VAR_Side_Opfor];
 
-if (!_isFaction) then {
-    _possibleInfantryTypes =+ _infantryClasses;
-};
-
-_isFaction = false;
-if (str _mannedVehicleClasses == """USMC""") then {
-    _possibleVehicleTypes = a3e_arr_roadblocks_Veh_USMC;
-    _isFaction = true;
-};
-if (str _mannedVehicleClasses == """CDF""") then {
-    _possibleVehicleTypes = a3e_arr_roadblocks_Veh_CDF;
-    _isFaction = true;
-};
-if (str _mannedVehicleClasses == """RU""") then {
-    _possibleVehicleTypes = a3e_arr_roadblocks_Veh_RU;
-    _isFaction = true;
-};
-if (str _mannedVehicleClasses == """INS""") then {
-    _possibleVehicleTypes = a3e_arr_roadblocks_Veh_INS;
-    _isFaction = true;
-};
-if (str _mannedVehicleClasses == """GUE""") then {
-    _possibleVehicleTypes = a3e_arr_roadblocks_Veh_GUE;
-    _isFaction = true;
-};
-
-if (!_isFaction) then {
-    _possibleVehicleTypes =+ _mannedVehicleClasses;
-};
 
 _roadBlocks = [];
 
 _fnc_FindRoadBlockSegment = {
     private ["_roadBlocks", "_referenceGroup", "_minSpawnDistance", "_maxSpawnDistance", "_minDistanceBetweenRoadBlocks", "_nullVal"];
-    private ["_refUnit", "_roadSegments", "_roadSegment", "_isOk", "_tries", "_result", "_spawnDistanceDiff", "_refPosX", "_refPosY", "_dir", "_tooClose", "_tooFarAwayFromAll"];
+    private ["_refUnit", "_isOk", "_tries", "_spawnDistanceDiff", "_refPosX", "_refPosY", "_dir", "_tooClose", "_tooFarAwayFromAll"];
 
     _roadBlocks = _this select 0;
     _referenceGroup = _this select 1;
     _minSpawnDistance = _this select 2;
     _maxSpawnDistance = _this select 3;
     _minDistanceBetweenRoadBlocks = _this select 4;
-	_result = _this select 5;
+	private _result = objNull;
     
     _spawnDistanceDiff = _maxSpawnDistance - _minSpawnDistance;//Half?
     _roadSegment = _result;
@@ -94,7 +44,8 @@ _fnc_FindRoadBlockSegment = {
         _refPosX = ((getPos _refUnit) select 0) + (_minSpawnDistance + _spawnDistanceDiff) * sin _dir;
         _refPosY = ((getPos _refUnit) select 1) + (_minSpawnDistance + _spawnDistanceDiff) * cos _dir;
         
-        _roadSegments = [_refPosX, _refPosY] nearRoads (_spawnDistanceDiff);
+        private _roadSegments = [_refPosX, _refPosY] nearRoads (_spawnDistanceDiff);
+		_roadSegment = objNull;
 		if(count _roadSegments > 0) then {
 			_roadSegment = _roadSegments select floor random count _roadSegments;
             _isOk = true;
@@ -151,7 +102,7 @@ _fnc_FindRoadBlockSegment = {
         _result = _roadSegment;
     };
     
-    _result
+    _result;
 };
 
 _fnc_CreateRoadBlock = {
@@ -160,11 +111,9 @@ _fnc_CreateRoadBlock = {
     
     _roadSegment = _this select 0;
     _side = _this select 1;
-    _possibleInfantryTypes = _this select 2;
-    _possibleVehicleTypes = _this select 3;
-    _fnc_OnSpawnInfantryGroup = _this select 4;
-    _fnc_OnSpawnMannedVehicle = _this select 5;
-    
+    _fnc_OnSpawnInfantryGroup = _this select 2;
+    _fnc_OnSpawnMannedVehicle = _this select 3;
+    _instanceNo = param[4];
 
     _units = [];
     
@@ -172,19 +121,17 @@ _fnc_CreateRoadBlock = {
     _pos = getPos _roadSegment;
     
     if (random 100 < 50) then {
-        _angle = 90;
+        _angle = 0;
     }
     else {
-        _angle = -90;
+        _angle = 180;
     };
     
-    _posX = (getPos _roadSegment) select 0;
-    _posY = (getPos _roadSegment) select 1;
-    
-    _posX = _posX + 7.5 * sin (_dir + _angle);
-    _posY = _posY + 7.5 * cos (_dir + _angle);
-    _pos = [_posX, _posY];
-
+	private _marker = createMarkerLocal [format["a3e_roadBlockArea%1",_instanceNo], _pos];
+    _marker setMarkerAlpha 0;
+    _marker setMarkerShapeLocal "ELLIPSE";
+    _marker setMarkerSizeLocal [15, 15];
+	
 
     if(_side == A3E_VAR_Side_Opfor) then {
         _possibleVehicles = a3e_arr_Escape_RoadBlock_MannedVehicleTypes;
@@ -192,38 +139,24 @@ _fnc_CreateRoadBlock = {
     if (_side == A3E_VAR_Side_Ind) then {
         _possibleVehicles = a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
     };
+		
+	
     _result = [_pos, _dir, _possibleVehicles select floor random count _possibleVehicles, _side] call BIS_fnc_spawnVehicle;
     _vehicle = _result select 0;
     _crew = _result select 1;
     _group = _result select 2;
     
-    _units = _units + [_vehicle];
-    _units = _units + _crew;
-    
-    //_waypoint = _group addWaypoint [_pos, 0];
-    //_waypoint setWaypointType "MOVE";
-    //_waypoint setWaypointBehaviour "AWARE";
-    //_waypoint setWaypointCombatMode "RED";
-    
-    _result spawn _fnc_OnSpawnMannedVehicle;
-    
-    _posX = (getPos _roadSegment) select 0;
-    _posY = (getPos _roadSegment) select 1;
-    
-    _posX = _posX + 7.5 * sin (_dir - _angle);
-    _posY = _posY + 7.5 * cos (_dir - _angle);
-    _pos = [_posX, _posY];
-    
-    _barrier = "RoadCone_L_F" createVehicle _pos;
-    _barrier setDir (_dir);
-    _units = _units + [_barrier];
-    
-    _posX = (getPos _roadSegment) select 0;
-    _posY = (getPos _roadSegment) select 1;
-    
-    _posX = _posX + 11 * sin (_dir - _angle);
-    _posY = _posY + 11 * cos (_dir - _angle);
-    _pos = [_posX, _posY];
+    _units pushback _vehicle;
+    _units append (units _group);
+	
+	_result spawn _fnc_OnSpawnMannedVehicle;
+	
+    _gun = a3e_arr_ComCenStaticWeapons select floor random count a3e_arr_ComCenStaticWeapons;
+   // private _static = [_gun, (_pos vectoradd [10,0,0]), _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+	private _static = createVehicle [_gun, (_pos vectoradd [10,0,0]), [], 0, "NONE"];
+	_units pushback ([_static,_side] call A3E_fnc_AddStaticGunner); 
+	// A3E_fnc_Roadblock ["_center","_rotation","_static","_vehicle"];
+	_units append ([_pos,(_dir + _angle),_static,_vehicle] call A3E_fnc_Roadblock);
     
     _group = createGroup _side;
 
@@ -247,8 +180,10 @@ _fnc_CreateRoadBlock = {
         _x setUnitRank "LIEUTNANT";
     } foreach units _group;
     
-    _units = _units + units _group;
+    _units append (units _group);
     
+	[_group, _marker] spawn drn_fnc_SearchGroup;
+	
     //_waypoint = _group addWaypoint [_pos, 0];
     //_waypoint setWaypointType "MOVE";
     //_waypoint setWaypointBehaviour "AWARE";
@@ -256,13 +191,14 @@ _fnc_CreateRoadBlock = {
     
     _group spawn _fnc_OnSpawnInfantryGroup;
     
-    _units
+    _units;
 };
 
 _firstLoop = true;
-_nullRoad = ((getMarkerPos "RoadBlockNullRoad") nearRoads 50) select 0;
+//_nullRoad = ((getMarkerPos "RoadBlockNullRoad") nearRoads 50) select 0;
+
 while {true} do {
-	private ["_roadSegment", "_faction"];
+	private ["_roadSegment"];
     // Spawn road blocks
     while {count _roadBlocks < _numberOfRoadBlocks} do {
         
@@ -283,26 +219,22 @@ while {true} do {
             _minDistance = _minSpawnDistance;
         };
 		
-        _roadSegment = [_roadBlocks, _referenceGroup, _minDistance, _maxSpawnDistance, _minDistanceBetweenRoadBlocks, _nullRoad] call _fnc_FindRoadBlockSegment;
+        _roadSegment = [_roadBlocks, _referenceGroup, _minDistance, _maxSpawnDistance, _minDistanceBetweenRoadBlocks] call _fnc_FindRoadBlockSegment;
         if(!(isNil "_roadSegment")) then {
-            if(!(_nullRoad == _roadSegment)) then {
-    			if (!isNull _roadSegment) then {
-                    _faction = _factionsArray select (floor (random (count _factionsArray)));
-    				_units = [_roadSegment, _faction, _possibleInfantryTypes, _possibleVehicleTypes, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle] call _fnc_CreateRoadBlock;
-    				
-    				_roadBlockItem = [_instanceNo, _roadSegment, _units]; // instance no, road segment, units
-    				_roadBlocks set [count _roadBlocks, _roadBlockItem];
-    				
-    				if (_debug) then {
-    					["Road block created. Number of road blocks: " + str count _roadBlocks] call drn_fnc_CL_ShowDebugTextAllClients;
-    					["drn_DebugMarker_RoadBlocks_" + str _instanceNo, getPos _roadSegment, "mil_dot", "ColorRed", "Road Block"] call drn_fnc_CL_SetDebugMarkerAllClients;
-    				};
-    			};
-    		};
+			if (!isNull _roadSegment) then {
+				private _side = _factionsArray select (floor (random (count _factionsArray)));
+				private _units = [_roadSegment, _side, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle,_instanceNo] call _fnc_CreateRoadBlock;
+				_roadBlocks pushback [_instanceNo, _roadSegment, _units];
+				
+				if (false) then {
+					["Road block created. Number of road blocks: " + str count _roadBlocks] call drn_fnc_CL_ShowDebugTextAllClients;
+					["drn_DebugMarker_RoadBlocks_" + str _instanceNo, getPos _roadSegment, "mil_dot", "ColorRed", "Road Block"] call drn_fnc_CL_SetDebugMarkerAllClients;
+				};
+			};
         };
     };
     
-    if (_debug) then {
+    if (false) then {
         sleep 1;
     }
     else {
@@ -313,13 +245,14 @@ while {true} do {
     _tempRoadBlocks = [];
     _roadBlocksDeleted = 0;
     {
-        private ["_roadBlockUnits"];
         
-        _roadBlockItem = _x;
-        _instanceNo = _roadBlockItem select 0;
-        _roadSegment = _roadBlockItem select 1;
-        _roadBlockUnits = _roadBlockItem select 2;
-        
+        private _roadBlockItem = _x;
+		private _roadBlockIndex = _forEachIndex;
+        private _instanceNo = _roadBlockItem select 0;
+        private _roadSegment = _roadBlockItem select 1;
+        private _roadBlockUnits = _roadBlockItem select 2;
+		
+		private _players = [] call A3E_fnc_getPlayers;
         _farAway = true;
         {
             private ["_referenceUnit"];
@@ -327,12 +260,12 @@ while {true} do {
             _referenceUnit = vehicle _x;
             
             {
-                if (_x distance _referenceUnit < _maxSpawnDistance) then {
+                if (_x distance _referenceUnit < _maxSpawnDistance) exitwith {
                     _farAway = false;
                 };
             } foreach _roadBlockUnits;
             
-        } foreach units _referenceGroup;
+        } foreach _players;
         
         if (_farAway) then {
             private ["_groups", "_units"];
@@ -357,18 +290,16 @@ while {true} do {
              
              _roadBlocksDeleted = _roadBlocksDeleted + 1;
              
-             if (_debug) then {
+			 _roadBlocks deleteAt _roadBlockIndex;
+			 
+             if (false) then {
                  ["Road block deleted. Number of road blocks: " + str ((count _roadBlocks) - _roadBlocksDeleted)] call drn_fnc_CL_ShowDebugTextAllClients;
                  ["drn_DebugMarker_RoadBlocks_" + str _instanceNo] call drn_fnc_CL_DeleteDebugMarkerAllClients;
              };
-        }
-        else {
-            _tempRoadBlocks set [count _tempRoadBlocks, _roadBlockItem];
         };
         
     } foreach _roadBlocks;
-    
-    _roadBlocks = _tempRoadBlocks;
+	
     _firstLoop = false;
 };
 

@@ -76,6 +76,7 @@ class CfgFunctions
             class AmmoDepot {};
 			class CrashSite {};
 			class MortarSite {};
+			class Roadblock {};
 		};
 		class Chronos
 		{

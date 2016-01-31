@@ -59,4 +59,4 @@ for mission in missions:
                     f.write(s)
                     f.flush()
                     f.close()
-    subprocess.call([cpbo, "-p", missiondir])
+    #subprocess.call([cpbo, "-p", missiondir])
