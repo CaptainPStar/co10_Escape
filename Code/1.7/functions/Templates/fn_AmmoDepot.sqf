@@ -498,7 +498,7 @@
       //_marker setMarkerType "o_installation";
 	  
     ["drn_AmmoDepotMapMarker" + str _instanceNo,_middlePos,"o_installation"] call A3E_fnc_createLocationMarker;
-	
+
     _marker = createMarkerLocal ["drn_AmmoDepotPatrolMarker" + str _instanceNo, _middlePos];
     _marker setMarkerShapeLocal "ELLIPSE";
     _marker setMarkerAlpha 0;
