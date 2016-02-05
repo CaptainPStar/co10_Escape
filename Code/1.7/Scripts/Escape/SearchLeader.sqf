@@ -275,7 +275,7 @@ while {1 == 1} do {
 							};
 							
 							//_strikesuccess = [getpos (_list select 0)] call a3e_fnc_FireArtillery;
-							if(random 100 < 20) then {
+							if(random 100 < 80) then {
 								diag_log ("Escape Searchleader: Calling for artillery strike!");
 								_strikesuccess = [getpos (_list select 0)] call a3e_fnc_FireArtillery;
 							} else {

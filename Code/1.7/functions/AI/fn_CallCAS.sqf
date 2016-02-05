@@ -15,7 +15,7 @@ _success = false;
 _cas = _group createUnit ["ModuleCAS_F",_position , [], 0, ""]; 
 _cas setDir (random 360);
 _cas setVariable ["vehicle",(a3e_arr_CASplane select floor (random count a3e_arr_CASplane)),true];
-_cas setVariable ["type", 0,true];
+_cas setVariable ["type", 0,true]; //0=guns	1=missiles	2=both
 
 
 
