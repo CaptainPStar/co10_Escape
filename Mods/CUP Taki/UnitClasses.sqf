@@ -831,7 +831,7 @@ a3e_arr_CrashSiteWeapons pushback ["CUP_launch_M136", 10, 1, 2, ["CUP_M136_M"], 
 a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_G36K_camo", 100, 3, 5, ["CUP_30Rnd_556x45_G36"], 6];
 a3e_arr_CrashSiteWeapons pushback ["CUP_glaunch_M32", 10, 1, 2, ["CUP_6Rnd_HE_M203"], 6];
 a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_G36C_camo_holo_snds", 75, 2, 4, ["CUP_30Rnd_556x45_G36"], 4];
-a3e_arr_CrashSiteWeapons pushback ["CUP_lmg_M60A4", 20, 1, 2, ["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M"], 5];
+a3e_arr_CrashSiteWeapons pushback ["CUP_lmg_M60E4", 20, 1, 2, ["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M"], 5];
 a3e_arr_CrashSiteWeapons pushback ["CUP_srifle_M24_des_LeupoldMk4LRT", 10, 1, 2, ["CUP_5Rnd_762x51_M24"], 8];
 a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_MG36", 10, 1, 2, ["CUP_100Rnd_556x45_BetaCMag"], 6];
 // Attachments and other items in crash site box
