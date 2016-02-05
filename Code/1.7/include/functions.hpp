@@ -38,6 +38,7 @@ class CfgFunctions
 			class Patrol {};
 			class Flee {};
 			class FireArtillery {};
+			class CallCAS {};
 			class OrderSearch {};
 			class SetTaskState {};
 			class GetTaskState {};
