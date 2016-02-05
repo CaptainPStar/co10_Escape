@@ -392,9 +392,9 @@
 				}
 		},
 		{
-			"name" : "CUP Taki CAF",
-			"path" : "./Mods/CUP Taki CAF/",
-			"require" : ["CUP_Creatures_Military_Germany","CUP_Creatures_Military_Taki","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
+			"name" : "CUP Taki",
+			"path" : "./Mods/CUP Taki/",
+			"require" : ["CUP_Creatures_Military_Germany","CUP_Creatures_Military_Taki","CUP_Creatures_Military_TakiInsurgents"],
 			"replace" :
 				{
 					"MOD" : "CUP CAF",
@@ -434,21 +434,21 @@
 		{
 			"name" : "CUP-US USMC",
 			"path" : "./Mods/CUP-US USMC/",
-			"require" : ["CUP_Creatures_Military_USMC","CUP_Creatures_Military_Napa_Soldier","CUP_Creatures_Military_Taki"],
+			"require" : ["CUP_Creatures_Military_USMC","CUP_Creatures_Military_NAPA","CUP_Creatures_Military_SLA"],
 			"replace" :
 				{
 					"MOD" : "CUP-US",
 					"PLAYERSIDE" : "EAST",
-					"PLAYERUNIT_1" : "CUP_O_TK_Soldier_SL",
-					"PLAYERUNIT_2" : "CUP_O_TK_Soldier_GL",
-					"PLAYERUNIT_3" : "CUP_O_TK_Sniper",
-					"PLAYERUNIT_4" : "CUP_O_TK_Engineer",
-					"PLAYERUNIT_5" : "CUP_O_TK_Soldier_AA",
-					"PLAYERUNIT_6" : "CUP_O_TK_Soldier_MG",
-					"PLAYERUNIT_7" : "CUP_O_TK_Soldier_AT",
-					"PLAYERUNIT_8" : "CUP_O_TK_Soldier_AAT",
-					"PLAYERUNIT_9" : "CUP_O_TK_Soldier",
-					"PLAYERUNIT_10" : "CUP_O_TK_Medic"
+					"PLAYERUNIT_1" : "CUP_O_sla_Soldier_SL",
+					"PLAYERUNIT_2" : "CUP_O_sla_Soldier_GL",
+					"PLAYERUNIT_3" : "CUP_O_sla_Sniper",
+					"PLAYERUNIT_4" : "CUP_O_sla_Engineer",
+					"PLAYERUNIT_5" : "CUP_O_sla_Soldier_AA",
+					"PLAYERUNIT_6" : "CUP_O_sla_Soldier_MG",
+					"PLAYERUNIT_7" : "CUP_O_sla_Soldier_AT",
+					"PLAYERUNIT_8" : "CUP_O_sla_Soldier_AAT",
+					"PLAYERUNIT_9" : "CUP_O_sla_Soldier",
+					"PLAYERUNIT_10" : "CUP_O_sla_Medic"
 				}
 		}
 	],
@@ -848,9 +848,9 @@
 		{
 			"island" : "Isla Duala",
 			"sqm": "IslaDuala3",
-			"mod" : "CUP Taki CAF",
+			"mod" : "CUP Taki",
 			"replace" : {},
-			"name" : "co10_Escape_CUP_CAF"
+			"name" : "co10_Escape_CUP"
 		},
 		{
 			"island" : "Lingor",
@@ -904,9 +904,9 @@
 		{
 			"island" : "Takistan",
 			"sqm": "Takistan",
-			"mod" : "CUP Taki CAF",
+			"mod" : "CUP Taki",
 			"replace" : {},
-			"name" : "co10_Escape_CUP_CAF"
+			"name" : "co10_Escape_CUP"
 		},
 		{
 			"island" : "Porto",
@@ -939,9 +939,9 @@
 		{
 			"island" : "Capraia",
 			"sqm": "IsolaDiCapraia",
-			"mod" : "CUP Taki CAF",
+			"mod" : "CUP Taki",
 			"replace" : {},
-			"name" : "co10_Escape_CUP_CAF"
+			"name" : "co10_Escape_CUP"
 		},
 		{
 			"island" : "Esseker",

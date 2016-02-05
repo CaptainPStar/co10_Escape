@@ -67,6 +67,14 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 		,"CUP_C_Datsun_Plain"
 		,"CUP_C_Datsun_Covered"
 		,"CUP_C_Datsun_Tubeframe"
+		,"CUP_C_Octavia_CIV"
+		,"CUP_C_Skoda_White_CIV"
+		,"CUP_C_Skoda_Red_CIV"
+		,"CUP_C_Skoda_Blue_CIV"
+		,"CUP_C_Skoda_Green_CIV"
+		,"CUP_C_Golf4_red_Civ"
+		,"CUP_C_Golf4_random_Civ"
+		,"CUP_C_Golf4_random_Civ"
 		,"C_Hatchback_01_F"
 		,"C_Hatchback_01_sport_F"
 		,"C_Offroad_01_F"
@@ -95,6 +103,9 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_M1114_USMC"
 		,"CUP_B_Dingo_Wdl"
 		,"CUP_B_Dingo_GL_Wdl"
+		,"CUP_RG31_M2"
+		,"CUP_RG31_Mk19"
+		,"CUP_RG31E_M2"
 		,"CUP_B_M113_USA"
 		,"CUP_B_M113_Med_USA"
 		,"CUP_B_M163_USA"
@@ -102,6 +113,13 @@ switch (_enemyFrequency) do {
 		,"CUP_B_LAV25_USMC"
 		,"CUP_B_LAV25M240_USMC"
 		,"CUP_B_LAV25_HQ_USMC"
+		,"CUP_B_M1126_ICV_M2_Woodland"
+		,"CUP_B_M1126_ICV_MK19_Woodland"
+		,"CUP_B_M1130_CV_M2_Woodland"
+		,"CUP_B_M1129_MC_MK19_Woodland"
+		,"CUP_B_M1135_ATGMV_Woodland"
+		,"CUP_B_M1128_MGS_Woodland"
+		,"CUP_B_M1133_MEV_Woodland"
 		,"CUP_B_M1A1_Woodland_US_Army"
 		,"CUP_B_M1A1_Woodland_USMC"
 		,"CUP_B_M270_HE_USMC"
@@ -129,6 +147,9 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_M1114_USMC"
 		,"CUP_B_Dingo_Wdl"
 		,"CUP_B_Dingo_GL_Wdl"
+		,"CUP_RG31_M2"
+		,"CUP_RG31_Mk19"
+		,"CUP_RG31E_M2"
 		,"CUP_B_M113_USA"
 		,"CUP_B_M113_Med_USA"
 		,"CUP_B_M163_USA"
@@ -136,6 +157,13 @@ switch (_enemyFrequency) do {
 		,"CUP_B_LAV25_USMC"
 		,"CUP_B_LAV25M240_USMC"
 		,"CUP_B_LAV25_HQ_USMC"
+		,"CUP_B_M1126_ICV_M2_Woodland"
+		,"CUP_B_M1126_ICV_MK19_Woodland"
+		,"CUP_B_M1130_CV_M2_Woodland_Slat"
+		,"CUP_B_M1129_MC_MK19_Woodland"
+		,"CUP_B_M1135_ATGMV_Woodland"
+		,"CUP_B_M1128_MGS_Woodland_Slat"
+		,"CUP_B_M1133_MEV_Woodland_Slat"
 		,"CUP_B_M1A1_Woodland_US_Army"
 		,"CUP_B_M1A1_Woodland_USMC"
 		,"CUP_B_M1A2_TUSK_MG_US_Army"
@@ -165,6 +193,9 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_M1114_USMC"
 		,"CUP_B_Dingo_Wdl"
 		,"CUP_B_Dingo_GL_Wdl"
+		,"CUP_RG31_M2"
+		,"CUP_RG31_Mk19"
+		,"CUP_RG31E_M2"
 		,"CUP_B_M113_USA"
 		,"CUP_B_M113_Med_USA"
 		,"CUP_B_M163_USA"
@@ -172,6 +203,13 @@ switch (_enemyFrequency) do {
 		,"CUP_B_LAV25_USMC"
 		,"CUP_B_LAV25M240_USMC"
 		,"CUP_B_LAV25_HQ_USMC"
+		,"CUP_B_M1126_ICV_M2_Woodland_Slat"
+		,"CUP_B_M1126_ICV_MK19_Woodland_Slat"
+		,"CUP_B_M1130_CV_M2_Woodland_Slat"
+		,"CUP_B_M1129_MC_MK19_Woodland_Slat"
+		,"CUP_B_M1135_ATGMV_Woodland_Slat"
+		,"CUP_B_M1128_MGS_Woodland_Slat"
+		,"CUP_B_M1133_MEV_Woodland_Slat"
 		,"CUP_B_M1A1_Woodland_US_Army"
 		,"CUP_B_M1A1_Woodland_USMC"
 		,"CUP_B_M1A2_TUSK_MG_US_Army"
@@ -222,10 +260,13 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"CUP_I_GUE_Soldier_MG"
 	,"CUP_I_GUE_Soldier_GL"
 	,"CUP_I_GUE_Soldier_AA"
+	,"CUP_I_GUE_Soldier_AA2"
 	,"CUP_I_GUE_Soldier_AT"
 	,"CUP_I_GUE_Soldier_Scout"
+	,"CUP_I_GUE_Ammobearer"
 	,"CUP_I_GUE_Sniper"
 	,"CUP_I_GUE_Saboteur"
+	,"CUP_I_GUE_Engineer"
 	,"CUP_I_GUE_Medic"
 	,"CUP_I_GUE_Medic"];
 a3e_arr_recon_InfantryTypes = [
@@ -252,10 +293,13 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"CUP_I_GUE_Soldier_MG"
 	,"CUP_I_GUE_Soldier_GL"
 	,"CUP_I_GUE_Soldier_AA"
+	,"CUP_I_GUE_Soldier_AA2"
 	,"CUP_I_GUE_Soldier_AT"
 	,"CUP_I_GUE_Soldier_Scout"
+	,"CUP_I_GUE_Ammobearer"
 	,"CUP_I_GUE_Sniper"
 	,"CUP_I_GUE_Saboteur"
+	,"CUP_I_GUE_Engineer"
 	,"CUP_I_GUE_Medic"
 	,"CUP_I_GUE_Medic"];
 
@@ -266,6 +310,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"CUP_B_HMMWV_TOW_USMC"
 	,"CUP_B_M113_USA"
 	,"CUP_B_LAV25M240_USMC"
+	,"CUP_B_M1130_CV_M2_Woodland"
 	,"CUP_I_M2StaticMG_AAF"
 	,"CUP_I_M2StaticMG_MiniTripod_AAF"
 	,"CUP_I_MK19_TriPod_AAF"
@@ -294,10 +339,11 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"CUP_B_HMMWV_TOW_USMC"
 	,"CUP_B_LAV25M240_USMC"
 	,"CUP_B_LAV25_USMC"
+	,"CUP_B_M1130_CV_M2_Woodland"
 	,"CUP_B_M113_USA"
 	,"CUP_B_AAV_USMC"];
 // Total cargo motorized search group vehicle. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses above.
-a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [3, 3, 3, 6, 6, 11, 19];
+a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [3, 3, 3, 6, 6, 10, 11, 19];
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
 // light *and* a random heavy armor.
@@ -310,7 +356,11 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 	,"CUP_B_AAV_USMC"
 	,"CUP_B_Dingo_Wdl"
 	,"CUP_B_Dingo_GL_Wdl"
+	,"CUP_RG31_M2"
+	,"CUP_RG31_Mk19"
+	,"CUP_RG31E_M2"
 	,"CUP_B_LAV25_USMC"
+	,"CUP_B_M1130_CV_M2_Woodland_Slat"
 	,"CUP_B_AAV_USMC"
 	,"CUP_B_HMMWV_MK19_USMC"
 	,"CUP_B_HMMWV_TOW_USMC"];
@@ -364,6 +414,14 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"CUP_C_Datsun_Plain"
 	,"CUP_C_Datsun_Covered"
 	,"CUP_C_Datsun_Tubeframe"
+	,"CUP_C_Octavia_CIV"
+	,"CUP_C_Skoda_White_CIV"
+	,"CUP_C_Skoda_Red_CIV"
+	,"CUP_C_Skoda_Blue_CIV"
+	,"CUP_C_Skoda_Green_CIV"
+	,"CUP_C_Golf4_red_Civ"
+	,"CUP_C_Golf4_random_Civ"
+	,"CUP_C_Golf4_random_Civ"
 	,"C_Hatchback_01_F"
 	,"C_Hatchback_01_sport_F"
 	,"C_Offroad_01_F"
@@ -672,7 +730,8 @@ a3e_arr_Bipods = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"CUP_O_Mi8_RU"
-	,"CUP_O_Mi8_medevac_RU"];
+	,"CUP_O_Mi8_medevac_RU"
+	,"CUP_O_MI6T_RU"];
 a3e_arr_extraction_chopper_escort = [
 	"CUP_O_Mi24_P_RU"
 	,"CUP_O_Mi24_V_RU"
@@ -754,7 +813,8 @@ a3e_arr_MortarSite = [
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
-	"CUP_B_A10_CAS_USA"];
+	"CUP_B_A10_CAS_USA"
+	,"CUP_B_F35B_CAS_USMC"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
