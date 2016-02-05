@@ -1,5 +1,5 @@
 private ["_referenceGroup", "_side", "_infantryClasses", "_mannedVehicleClasses", "_numberOfRoadBlocks", "_minSpawnDistance", "_maxSpawnDistance", "_minDistanceBetweenRoadBlocks", "_minSpawnDistanceAtStartup", "_fnc_OnSpawnInfantryGroup", "_fnc_OnSpawnMannedVehicle", "_debug"];
-private ["_roadBlocks", "_roadSegment", "_roadBlockItem", "_roadBlocksDeleted", "_instanceNo", "_tempRoadBlocks", "_farAway", "_units", "_group", "_firstLoop", "_minDistance", "_isFaction", "_factionsArray"];
+private ["_roadBlocks", "_roadSegment", "_roadBlockItem", "_roadBlocksDeleted", "_instanceNo", "_tempRoadBlocks", "_units", "_group", "_firstLoop", "_minDistance", "_isFaction", "_factionsArray"];
 private ["_possibleInfantryTypes", "_possibleVehicleTypes", "_fnc_FindRoadBlockSegment", "_fnc_CreateRoadBlock"];
 
 _referenceGroup = _this select 0;
@@ -116,7 +116,7 @@ _fnc_CreateRoadBlock = {
     _instanceNo = param[4];
 
     _units = [];
-    
+    private _vehicles = [];
     _dir = direction _roadSegment;
     _pos = getPos _roadSegment;
     
@@ -146,7 +146,7 @@ _fnc_CreateRoadBlock = {
     _crew = _result select 1;
     _group = _result select 2;
     
-    _units pushback _vehicle;
+    _vehicles pushback _vehicle;
     _units append (units _group);
 	
 	_result spawn _fnc_OnSpawnMannedVehicle;
@@ -154,6 +154,7 @@ _fnc_CreateRoadBlock = {
     _gun = a3e_arr_ComCenStaticWeapons select floor random count a3e_arr_ComCenStaticWeapons;
    // private _static = [_gun, (_pos vectoradd [10,0,0]), _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 	private _static = createVehicle [_gun, (_pos vectoradd [10,0,0]), [], 0, "NONE"];
+	_vehicles pushBack _static;
 	_units pushback ([_static,_side] call A3E_fnc_AddStaticGunner); 
 	// A3E_fnc_Roadblock ["_center","_rotation","_static","_vehicle"];
 	_units append ([_pos,(_dir + _angle),_static,_vehicle] call A3E_fnc_Roadblock);
@@ -182,7 +183,7 @@ _fnc_CreateRoadBlock = {
     
     _units append (units _group);
     
-	[_group, _marker] spawn drn_fnc_SearchGroup;
+	[_group, _marker] spawn a3e_fnc_Patrol;
 	
     //_waypoint = _group addWaypoint [_pos, 0];
     //_waypoint setWaypointType "MOVE";
@@ -191,7 +192,7 @@ _fnc_CreateRoadBlock = {
     
     _group spawn _fnc_OnSpawnInfantryGroup;
     
-    _units;
+    [_units,_vehicles];
 };
 
 _firstLoop = true;
@@ -223,8 +224,8 @@ while {true} do {
         if(!(isNil "_roadSegment")) then {
 			if (!isNull _roadSegment) then {
 				private _side = _factionsArray select (floor (random (count _factionsArray)));
-				private _units = [_roadSegment, _side, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle,_instanceNo] call _fnc_CreateRoadBlock;
-				_roadBlocks pushback [_instanceNo, _roadSegment, _units];
+				private _composition = [_roadSegment, _side, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle,_instanceNo] call _fnc_CreateRoadBlock;
+				_roadBlocks pushback [_instanceNo, _roadSegment, _composition select 0, _composition select 1];
 				
 				if (false) then {
 					["Road block created. Number of road blocks: " + str count _roadBlocks] call drn_fnc_CL_ShowDebugTextAllClients;
@@ -250,31 +251,41 @@ while {true} do {
 		private _roadBlockIndex = _forEachIndex;
         private _instanceNo = _roadBlockItem select 0;
         private _roadSegment = _roadBlockItem select 1;
-        private _roadBlockUnits = _roadBlockItem select 2;
+        private _roadBlockObjects = _roadBlockItem select 2;
+		private _roadBlockVehicles = _roadBlockItem select 3;
 		
 		private _players = [] call A3E_fnc_getPlayers;
-        _farAway = true;
+        private _farAway = true;
         {
-            private ["_referenceUnit"];
             
-            _referenceUnit = vehicle _x;
-            
-            {
-                if (_x distance _referenceUnit < _maxSpawnDistance) exitwith {
-                    _farAway = false;
-                };
-            } foreach _roadBlockUnits;
-            
+			if ((vehicle _x) distance _roadSegment < _maxSpawnDistance) exitwith {
+				_farAway = false;
+			};
         } foreach _players;
         
         if (_farAway) then {
             private ["_groups", "_units"];
             
-            _units = _roadBlockItem select 2;
+            //_units = _roadBlockItem select 2;
             
             // Delete road block
-            
-            _groups = [];
+            {
+				deleteVehicle _x;
+			} foreach _roadBlockObjects;
+			
+			 {
+				_farAway = true;
+				{
+					if ((vehicle _x) distance _roadSegment < _maxSpawnDistance) exitwith {
+						_farAway = false;
+					};
+				} foreach _players;
+				if(_farAway && count((crew _x) arrayIntersect _players)==0) then {
+					deleteVehicle _x;
+				};
+			} foreach _roadBlockVehicles;
+			
+            /*_groups = [];
             {
                 _group = group _x;
                 if (str _group != "<NULL-group>" && !(_group in _groups)) then {
@@ -286,7 +297,7 @@ while {true} do {
             
             {
                 deleteGroup _x;
-            } foreach _groups;
+            } foreach _groups;*/
              
              _roadBlocksDeleted = _roadBlocksDeleted + 1;
              

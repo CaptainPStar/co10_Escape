@@ -551,8 +551,8 @@ drn_fnc_Escape_AddRemoveComCenArmor = {
     }
     else {
         private ["_group"];
-        
-        {
+        private _players = [] call A3E_fnc_getPlayers;
+       /* {
             _group = group _x;
             
             {
@@ -561,8 +561,20 @@ drn_fnc_Escape_AddRemoveComCenArmor = {
             
             deleteVehicle _x;
             deleteGroup _group;
-        } foreach _armorObjects;
+        } foreach _armorObjects;*/
         
+		 {
+			if(count((crew _x) arrayIntersect _players)==0) then {
+				private _group = group _x;
+				
+				{
+					deleteVehicle _x;
+				} foreach crew _x;
+				
+				deleteVehicle _x;
+			};
+		} foreach _armorObjects;
+
         _comCenArmorItem set [2, []];
     };
 };

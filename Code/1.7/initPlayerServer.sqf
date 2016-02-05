@@ -12,11 +12,17 @@ if(name _player == "HC") then {
 } else {
     //[format["%1 joined the Game!",name _player]] spawn a3e_fnc_debugmsg;
 	
+	
+	//The following is outdates. We are now using "allplayers". But this might be referenced somewhere
 	if(isNil("A3E_Players")) then {
 		A3E_Players = [];
 	};
     A3E_Players = A3E_Players + [_player];
     publicVariable "A3E_Players";
+	
+
+	_player addeventhandler["HandleScore","_this call A3E_FNC_handleScore;"];
+	
 	
 	[[[_player], {(_this select 0) setCaptive true;}], "BIS_fnc_spawn", _player, false] call BIS_fnc_MP;
 	diag_log format["Escape debug: %1 is waiting for prison creation.", name _player];

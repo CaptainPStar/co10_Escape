@@ -25,9 +25,30 @@ _dir = _this select 2;
 };
 
 
-_obj = "Land_ClutterCutter_large_F" createvehicle _center;
+_pos = [_center,_center vectorAdd [random 2.0 - 1, random 2.0 -1,0],_rotation] call _fnc_rotatePos;
+private _backpack = "B_AssaultPack_khk" createvehicle _pos;
+_backpack setdir ((getdir _backpack) + _rotation);
+_backpack setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [4,0,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_ClutterCutter_large_F" createvehicle _pos;
 _obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _center;
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [-4,0,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_ClutterCutter_large_F" createvehicle _pos;
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [0,4,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_ClutterCutter_large_F" createvehicle _pos;
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [0,-4,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_ClutterCutter_large_F" createvehicle _pos;
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-6.69727,-3.16309,1.33838],_rotation] call _fnc_rotatePos;
 _obj = "Land_HBarrier_1_F" createvehicle _pos;
@@ -139,6 +160,10 @@ _obj setPosATL _pos;
 _pos = [_center,_center vectorAdd [-2.60461,12.8789,-0.0299988],_rotation] call _fnc_rotatePos;
 _obj = "Campfire_burning_F" createvehicle _pos;
 _obj setVectorDirAndUp [[0,1,0],[0,0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_obj = "Land_ClutterCutter_medium_F" createvehicle _pos;
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
@@ -285,4 +310,6 @@ _obj = "Land_Portable_generator_F" createvehicle _pos;
 _obj setVectorDirAndUp [[0.667424,-0.744678,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
+
+_backpack;
 

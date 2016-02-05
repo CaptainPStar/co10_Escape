@@ -23,9 +23,9 @@ _weatherTemplates pushBack [0.6,0.1,0,0];
 //Nice
 _weatherTemplates pushBack [0.1,0,0,0];
 //Morningmood
-_weatherTemplates pushBack [0,0,[0.2+random 0.3,0.1,random 25 + 10],0];
+_weatherTemplates pushBack [0,0,[0.2+random 0.3,0.1,random 10 + 10],0];
 //Morningmood2
-_weatherTemplates pushBack [0,0,[0.1+random 0.3,0.5,random 25 + 10],0];
+_weatherTemplates pushBack [0,0,[0.1+random 0.3,0.075,random 25 + 10],0];
 
 //Make sure all used vars are initialised
 if(isNil("Param_Weather")) then {

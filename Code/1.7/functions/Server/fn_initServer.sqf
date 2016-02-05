@@ -138,7 +138,7 @@ if(isNil("A3E_ClearedPositionDistance")) then {
 
 // Build start position
 _fenceRotateDir = random 360;
-_scriptHandle = [A3E_StartPos, _fenceRotateDir] spawn a3e_fnc_BuildPrison;
+private _backPack = [A3E_StartPos, _fenceRotateDir] call a3e_fnc_BuildPrison;
 
 A3E_FenceIsCreated = true;
 publicVariable "A3E_FenceIsCreated";
@@ -390,9 +390,13 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 			
 			_x addeventhandler ["killed",{
 				if ((_this select 1) in (call A3E_fnc_GetPlayers)) then {
-					a3e_var_Escape_SearchLeader_civilianReporting = true;
-					publicVariable "a3e_var_Escape_SearchLeader_civilianReporting";
-					(_this select 1) addScore -4;
+					if(isNil("a3e_var_Escape_SearchLeader_civilianReporting")) then {
+						a3e_var_Escape_SearchLeader_civilianReporting = true;
+						publicVariable "a3e_var_Escape_SearchLeader_civilianReporting";
+						(_this select 1) addScore -4;
+					} else {
+						(_this select 1) addScore 1;
+					};
 					[name (_this select 1) + " has killed a civilian."] call drn_fnc_CL_ShowCommandTextAllClients;
 				}
 			}];
@@ -460,7 +464,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 	if (_roadBlockCount < 1) then {
 		_roadBlockCount = 1;
 	};
-	
+	//A3E_VAR_Side_Ind
 	[_playerGroup, A3E_VAR_Side_Opfor, a3e_arr_Escape_InfantryTypes, a3e_arr_Escape_RoadBlock_MannedVehicleTypes, _roadBlockCount, _enemySpawnDistance, _enemySpawnDistance + 500, 750, 300, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, A3E_Debug] spawn drn_fnc_RoadBlocks;
 
 	//Spawn crashsites
@@ -508,23 +512,19 @@ waitUntil {scriptDone _scriptHandle};
 
 
 // Spawn creation of start position settings
-[A3E_StartPos, _enemyMinSkill, _enemyMaxSkill, _enemyFrequency, _fenceRotateDir] spawn {
-    private ["_startPos", "_enemyMinSkill", "_enemyMaxSkill", "_guardsAreArmed", "_guardsExist", "_guardLivesLong", "_enemyFrequency", "_fenceRotateDir"];
-    private ["_backpack","_debugAllUnits","_i", "_guard", "_guardGroup", "_marker", "_guardCount", "_guardGroups", "_unit", "_createNewGroup", "_guardPos"];
+[A3E_StartPos, _backPack, _enemyFrequency, _fenceRotateDir] spawn {
+    private ["_startPos", "_guardsAreArmed", "_guardsExist", "_guardLivesLong", "_enemyFrequency", "_fenceRotateDir"];
+    private ["_backpack","_debugAllUnits","_i", "_guard", "_guardGroup", "_marker", "_guardCount", "_guardGroups", "_unit", "_createNewGroup"];
     
     _startPos = _this select 0;
-    _enemyMinSkill = _this select 1;
-    _enemyMaxSkill = _this select 2;
-    _enemyFrequency = _this select 3;
-    _fenceRotateDir = _this select 4;
+    _backPack = _this select 1;
+    _enemyFrequency = _this select 2;
+    _fenceRotateDir = _this select 3;
 	 
     // Spawn guard
 
-    _guardPos = [_startPos, [(_startPos select 0) - 4, (_startPos select 1) + 4, 0], _fenceRotateDir] call drn_fnc_CL_RotatePosition;
 	
-	_backpack = "B_AssaultPack_khk" createvehicle _startPos;
-
-	for [{_i = 0}, {_i < 5}, {_i = _i + 1}] do {
+	for [{_i = 0}, {_i < (Param_EnemyFrequency*2)}, {_i = _i + 1}] do {
 		_weapon = a3e_arr_PrisonBackpackWeapons select floor(random(count(a3e_arr_PrisonBackpackWeapons)));
 		_backpack addWeaponCargoGlobal[(_weapon select 0),1];
 		_backpack addMagazineCargoGlobal[(_weapon select 1),3];
@@ -589,13 +589,15 @@ waitUntil {scriptDone _scriptHandle};
             
             //_unit setSkill a3e_var_Escape_enemyMinSkill;
 			//[_unit, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
+			
+			//This should remove all types of handgrenades (for example RHS)
             _unit removeMagazines "Handgrenade";
             
             _unit setVehicleAmmo 0.3 + random 0.7;
 
         } foreach units _guardGroup;
         
-        [_guardGroup, _marker] spawn drn_fnc_SearchGroup;
+        [_guardGroup, _marker] spawn A3E_fnc_Patrol;
         
     } foreach _guardGroups;
         

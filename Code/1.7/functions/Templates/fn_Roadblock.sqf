@@ -33,6 +33,7 @@ if(!(isNull _vehicle)) then {
 	_vehicle setPosATL _pos;
 };
 
+
 _pos = [_center,_center vectorAdd [6.06116,-3.30908,-0.0952728],_rotation] call _fnc_rotatePos;
 _obj = "Land_BagBunker_Tower_F" createvehicle _pos;
 _obj setVectorDirAndUp [[0.00573361,-0.999984,0],[0,-0,1]];
@@ -47,6 +48,7 @@ if(!(isNull _static)) then {
 	_static setdir ((getdir _static) + _rotation);
 	_static setPosATL _pos;
 };
+
 
 _pos = [_center,_center vectorAdd [-4.17871,-2.42529,0],_rotation] call _fnc_rotatePos;
 _obj = "Land_HBarrier_5_F" createvehicle _pos;

@@ -340,6 +340,9 @@ AT_FNC_Revive_InstantRevive =
 	_target setVariable ["AT_Revive_isDragged", objNull, true];
 	_target setVariable ["AT_Revive_isDragging",objNull,true];
 	[[_target,""],"at_fnc_revive_switchMove",true] call BIS_fnc_MP;
+	if(AT_Revive_Camera==1) then {
+		[] call athsc_fnc_exit;
+	};
 };
 
 AT_FNC_Revive_Drag =

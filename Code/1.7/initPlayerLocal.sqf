@@ -39,7 +39,9 @@ removeAllWeapons player;
 removeAllItems player;
 removeBackpack player;
 removeVest player;
+removeHeadgear player;
   
+player addeventhandler["HandleRating","_this call A3E_FNC_handleRating;"];
   
 player addItem "ItemRadio";
 player assignItem "ItemRadio";

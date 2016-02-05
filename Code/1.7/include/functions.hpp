@@ -24,6 +24,8 @@ class CfgFunctions
 			class GetPlayerGroup {};
 			class Briefing {};
 			class cleanupTerrain {};
+			class handleRating {};
+			class handleScore {};
 		};
 		class AI
 		{
