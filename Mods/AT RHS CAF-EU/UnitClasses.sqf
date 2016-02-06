@@ -336,7 +336,8 @@ switch (_enemyFrequency) do {
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
 a3e_arr_Escape_InfantryTypes = [
 	"rhs_msv_officer_armored"
-	,"rhs_msv_officer","rhs_msv_sergeant"
+	,"rhs_msv_officer"
+	,"rhs_msv_sergeant"
 	,"rhs_msv_junior_sergeant"
 	,"rhs_msv_engineer"
 	,"rhs_msv_engineer"
@@ -345,13 +346,16 @@ a3e_arr_Escape_InfantryTypes = [
 	,"rhs_msv_rifleman"
 	,"rhs_msv_efreitor"
 	,"rhs_msv_grenadier"
+	,"rhs_msv_grenadier_rpg"
 	,"rhs_msv_machinegunner"
 	,"rhs_msv_machinegunner_assistant"
 	,"rhs_msv_at"
 	,"rhs_msv_strelok_rpg_assist"
 	,"rhs_msv_marksman"
 	,"rhs_msv_aa"
-	,"rhs_msv_LAT"];
+	,"rhs_msv_LAT"
+	,"rhs_msv_RShG2"
+	,"rhs_msv_arifleman"];
 a3e_arr_Escape_InfantryTypes_Ind =  [
 	"at_CAF_AG_EEUR_R_AKS74_PSO1"
 	,"at_CAF_AG_EEUR_R_Medic"

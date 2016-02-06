@@ -21,7 +21,13 @@ A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
 A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
 // Random array. Start position guard types around the prison
-a3e_arr_Escape_StartPositionGuardTypes = ["LOP_NAPA_Infantry_Rifleman","LOP_NAPA_Infantry_Prizrak","LOP_NAPA_Infantry_GL","LOP_NAPA_Infantry_AR","LOP_NAPA_Infantry_Rifleman","LOP_NAPA_Infantry_Rifleman"];
+a3e_arr_Escape_StartPositionGuardTypes = [
+	"LOP_NAPA_Infantry_Rifleman"
+	,"LOP_NAPA_Infantry_Prizrak"
+	,"LOP_NAPA_Infantry_GL"
+	,"LOP_NAPA_Infantry_AR"
+	,"LOP_NAPA_Infantry_Rifleman"
+	,"LOP_NAPA_Infantry_Rifleman"];
 
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
@@ -37,94 +43,285 @@ a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_snds_F","30Rnd_9x21_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_Rook40_snds_F","30Rnd_9x21_Mag"];
 
 // Random array. Civilian vehicle classes for ambient traffic.
-a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = ["C_Hatchback_01_F","C_Hatchback_01_sport_F","C_Offroad_01_F","C_Quadbike_01_F","C_SUV_01_F","C_Hatchback_01_F","C_Hatchback_01_sport_F","C_Offroad_01_F","C_Quadbike_01_F","C_SUV_01_F","C_Van_01_box_F","C_Van_01_transport_F","C_Van_01_fuel_F","C_Van_01_fuel_F","C_Van_01_fuel_F"];
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
+	"C_Hatchback_01_F"
+	,"C_Hatchback_01_sport_F"
+	,"C_Offroad_01_F"
+	,"C_Quadbike_01_F"
+	,"C_SUV_01_F"
+	,"C_Hatchback_01_F"
+	,"C_Hatchback_01_sport_F"
+	,"C_Offroad_01_F"
+	,"C_Quadbike_01_F"
+	,"C_SUV_01_F"
+	,"C_Van_01_box_F"
+	,"C_Van_01_transport_F"
+	,"C_Van_01_fuel_F"
+	,"C_Van_01_fuel_F"
+	,"C_Van_01_fuel_F"];
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
 switch (_enemyFrequency) do {
     case 1: {//Few (1-3)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"rhsusf_m998_w_2dr","rhsusf_m998_w_2dr_halftop","rhsusf_m998_w_2dr_fulltop","rhsusf_m998_w_4dr","rhsusf_m998_w_4dr_halftop","rhsusf_m998_w_4dr_fulltop",
-		"rhsusf_m1025_w","rhsusf_m1025_w_m2","rhsusf_m1025_w_mk19",
-		"rhsusf_M1078A1P2_wd_fmtv_usarmy","rhsusf_M1078A1P2_wd_open_fmtv_usarmy","rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy",
-		"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy","rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy",
-		"rhsusf_M1083A1P2_wd_fmtv_usarmy","rhsusf_M1083A1P2_wd_open_fmtv_usarmy","rhsusf_M1083A1P2_wd_flatbed_fmtv_usarmy",
-		"rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy","rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy",
-		"rhsusf_M977A2_CPK_usarmy_wd","rhsusf_M978A2_usarmy_wd","rhsusf_M978A2_CPK_usarmy_wd",
-		"rhsusf_rg33_wd","rhsusf_rg33_m2_wd",
-		"rhsusf_m113_usarmy",
-		"RHS_M6_wd",
-		"RHS_M2A2_wd",
-		"RHS_M2A3_wd",
-		"rhsusf_m1a1aimwd_usarmy","rhsusf_m1a1aim_tuski_wd",
-		"rhsusf_m109_usarmy"];
+		"rhsusf_m998_w_2dr"
+		,"rhsusf_m998_w_2dr_halftop"
+		,"rhsusf_m998_w_2dr_fulltop"
+		,"rhsusf_m998_w_4dr"
+		,"rhsusf_m998_w_4dr_halftop"
+		,"rhsusf_m998_w_4dr_fulltop"
+		,"rhsusf_m1025_w"
+		,"rhsusf_m1025_w_m2"
+		,"rhsusf_m1025_w_mk19"
+		,"rhsusf_M1078A1P2_wd_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_wd_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M977A2_CPK_usarmy_wd"
+		,"rhsusf_M978A2_usarmy_wd"
+		,"rhsusf_M978A2_CPK_usarmy_wd"
+		,"rhsusf_rg33_wd"
+		,"rhsusf_rg33_m2_wd"
+		,"rhsusf_m113_usarmy"
+		,"RHS_M6_wd","RHS_M6_wd"
+		,"RHS_M2A2_wd"
+		,"RHS_M2A2_BUSKI_WD"
+		,"RHS_M2A3_wd"
+		,"RHS_M2A3_BUSKI_wd"
+		,"rhsusf_m1a1aimwd_usarmy"
+		,"rhsusf_m1a1aim_tuski_wd"
+		,"rhsusf_m1a2sep1wd_usarmy"
+		,"rhsusf_m1a2sep1tuskiwd_usarmy"
+		,"rhsusf_m1a2sep1tuskiiwd_usarmy"
+		,"rhsusf_m109_usarmy"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"LOP_NAPA_Truck","LOP_NAPA_Offroad","LOP_NAPA_Offroad_M2","LOP_NAPA_Landrover","LOP_NAPA_Landrover_M2",
-		"LOP_PMC_Truck","LOP_PMC_Offroad","LOP_PMC_Offroad_M2","LOP_PMC_SUV"];
+		"LOP_NAPA_Truck"
+		,"LOP_NAPA_Offroad"
+		,"LOP_NAPA_Offroad_M2"
+		,"LOP_NAPA_Landrover"
+		,"LOP_NAPA_Landrover_M2"
+		,"LOP_PMC_Truck"
+		,"LOP_PMC_Offroad"
+		,"LOP_PMC_Offroad_M2"
+		,"LOP_PMC_SUV"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"rhsusf_m998_w_2dr","rhsusf_m998_w_2dr_halftop","rhsusf_m998_w_2dr_fulltop","rhsusf_m998_w_4dr","rhsusf_m998_w_4dr_halftop","rhsusf_m998_w_4dr_fulltop",
-		"rhsusf_m1025_w","rhsusf_m1025_w_m2","rhsusf_m1025_w_mk19",
-		"rhsusf_M1078A1P2_wd_fmtv_usarmy","rhsusf_M1078A1P2_wd_open_fmtv_usarmy","rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy",
-		"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy","rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy","rhsusf_M1078A1P2_B_M2_wd_flatbed_fmtv_usarmy",
-		"rhsusf_M1083A1P2_wd_fmtv_usarmy","rhsusf_M1083A1P2_wd_open_fmtv_usarmy","rhsusf_M1083A1P2_wd_flatbed_fmtv_usarmy",
-		"rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy","rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy","rhsusf_M1083A1P2_B_M2_wd_flatbed_fmtv_usarmy",
-		"rhsusf_M977A2_CPK_usarmy_wd","rhsusf_M978A2_usarmy_wd","rhsusf_M978A2_CPK_usarmy_wd",
-		"rhsusf_rg33_wd","rhsusf_rg33_m2_wd",
-		"rhsusf_m113_usarmy",
-		"RHS_M6_wd","RHS_M6_wd",
-		"RHS_M2A2_wd","RHS_M2A2_BUSKI_WD",
-		"RHS_M2A3_wd","RHS_M2A3_BUSKI_wd",
-		"rhsusf_m1a1aimwd_usarmy","rhsusf_m1a1aim_tuski_wd",
-		"rhsusf_m1a2sep1wd_usarmy","rhsusf_m1a2sep1tuskiwd_usarmy","rhsusf_m1a2sep1tuskiiwd_usarmy",
-		"rhsusf_m109_usarmy"];
+		"rhsusf_m998_w_2dr"
+		,"rhsusf_m998_w_2dr_halftop"
+		,"rhsusf_m998_w_2dr_fulltop"
+		,"rhsusf_m998_w_4dr"
+		,"rhsusf_m998_w_4dr_halftop"
+		,"rhsusf_m998_w_4dr_fulltop"
+		,"rhsusf_m1025_w"
+		,"rhsusf_m1025_w_m2"
+		,"rhsusf_m1025_w_mk19"
+		,"rhsusf_M1078A1P2_wd_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_wd_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M977A2_CPK_usarmy_wd"
+		,"rhsusf_M978A2_usarmy_wd"
+		,"rhsusf_M978A2_CPK_usarmy_wd"
+		,"rhsusf_rg33_wd"
+		,"rhsusf_rg33_m2_wd"
+		,"rhsusf_m113_usarmy"
+		,"RHS_M6_wd"
+		,"RHS_M6_wd"
+		,"RHS_M2A2_wd"
+		,"RHS_M2A2_BUSKI_WD"
+		,"RHS_M2A3_wd"
+		,"RHS_M2A3_BUSKI_wd"
+		,"rhsusf_m1a1aimwd_usarmy"
+		,"rhsusf_m1a1aim_tuski_wd"
+		,"rhsusf_m1a2sep1wd_usarmy"
+		,"rhsusf_m1a2sep1tuskiwd_usarmy"
+		,"rhsusf_m1a2sep1tuskiiwd_usarmy"
+		,"rhsusf_m109_usarmy"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"LOP_NAPA_Truck","LOP_NAPA_Offroad","LOP_NAPA_Offroad_M2","LOP_NAPA_Landrover","LOP_NAPA_Landrover_M2",
-		"LOP_PMC_Truck","LOP_PMC_Offroad","LOP_PMC_Offroad_M2","LOP_PMC_SUV"];
+		"LOP_NAPA_Truck"
+		,"LOP_NAPA_Offroad"
+		,"LOP_NAPA_Offroad_M2"
+		,"LOP_NAPA_Landrover"
+		,"LOP_NAPA_Landrover_M2"
+		,"LOP_PMC_Truck"
+		,"LOP_PMC_Offroad"
+		,"LOP_PMC_Offroad_M2"
+		,"LOP_PMC_SUV"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"rhsusf_m998_w_2dr","rhsusf_m998_w_2dr_halftop","rhsusf_m998_w_2dr_fulltop","rhsusf_m998_w_4dr","rhsusf_m998_w_4dr_halftop","rhsusf_m998_w_4dr_fulltop",
-		"rhsusf_m1025_w","rhsusf_m1025_w_m2","rhsusf_m1025_w_mk19",
-		"rhsusf_M1078A1P2_wd_fmtv_usarmy","rhsusf_M1078A1P2_wd_open_fmtv_usarmy","rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy",
-		"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy","rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy","rhsusf_M1078A1P2_B_M2_wd_flatbed_fmtv_usarmy",
-		"rhsusf_M1083A1P2_wd_fmtv_usarmy","rhsusf_M1083A1P2_wd_open_fmtv_usarmy","rhsusf_M1083A1P2_wd_flatbed_fmtv_usarmy",
-		"rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy","rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy","rhsusf_M1083A1P2_B_M2_wd_flatbed_fmtv_usarmy",
-		"rhsusf_M977A2_CPK_usarmy_wd","rhsusf_M978A2_usarmy_wd","rhsusf_M978A2_CPK_usarmy_wd",
-		"rhsusf_rg33_wd","rhsusf_rg33_m2_wd",
-		"rhsusf_m113_usarmy",
-		"RHS_M6_wd","RHS_M6_wd",
-		"RHS_M2A2_wd","RHS_M2A2_BUSKI_WD",
-		"RHS_M2A3_wd","RHS_M2A3_BUSKI_wd",
-		"rhsusf_m1a1aimwd_usarmy","rhsusf_m1a1aim_tuski_wd",
-		"rhsusf_m1a2sep1wd_usarmy","rhsusf_m1a2sep1tuskiwd_usarmy","rhsusf_m1a2sep1tuskiiwd_usarmy",
-		"rhsusf_m109_usarmy"];
+		"rhsusf_m998_w_2dr"
+		,"rhsusf_m998_w_2dr_halftop"
+		,"rhsusf_m998_w_2dr_fulltop"
+		,"rhsusf_m998_w_4dr"
+		,"rhsusf_m998_w_4dr_halftop"
+		,"rhsusf_m998_w_4dr_fulltop"
+		,"rhsusf_m1025_w"
+		,"rhsusf_m1025_w_m2"
+		,"rhsusf_m1025_w_mk19"
+		,"rhsusf_M1078A1P2_wd_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_wd_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_wd_flatbed_fmtv_usarmy"
+		,"rhsusf_M977A2_CPK_usarmy_wd"
+		,"rhsusf_M978A2_usarmy_wd"
+		,"rhsusf_M978A2_CPK_usarmy_wd"
+		,"rhsusf_rg33_wd"
+		,"rhsusf_rg33_m2_wd"
+		,"rhsusf_m113_usarmy"
+		,"RHS_M6_wd"
+		,"RHS_M6_wd"
+		,"RHS_M2A2_wd"
+		,"RHS_M2A2_BUSKI_WD"
+		,"RHS_M2A3_wd"
+		,"RHS_M2A3_BUSKI_wd"
+		,"rhsusf_m1a1aimwd_usarmy"
+		,"rhsusf_m1a1aim_tuski_wd"
+		,"rhsusf_m1a2sep1wd_usarmy"
+		,"rhsusf_m1a2sep1tuskiwd_usarmy"
+		,"rhsusf_m1a2sep1tuskiiwd_usarmy"
+		,"rhsusf_m109_usarmy"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"LOP_NAPA_Truck","LOP_NAPA_Offroad","LOP_NAPA_Offroad_M2","LOP_NAPA_Landrover","LOP_NAPA_Landrover_M2",
-		"LOP_PMC_Truck","LOP_PMC_Offroad","LOP_PMC_Offroad_M2","LOP_PMC_SUV"];
+		"LOP_NAPA_Truck"
+		,"LOP_NAPA_Offroad"
+		,"LOP_NAPA_Offroad_M2"
+		,"LOP_NAPA_Landrover"
+		,"LOP_NAPA_Landrover_M2"
+		,"LOP_PMC_Truck"
+		,"LOP_PMC_Offroad"
+		,"LOP_PMC_Offroad_M2"
+		,"LOP_PMC_SUV"];
     };
 };
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
-a3e_arr_Escape_InfantryTypes = ["rhsusf_army_ocp_officer","rhsusf_army_ocp_squadleader","rhsusf_army_ocp_teamleader","rhsusf_army_ocp_engineer", "rhsusf_army_ocp_medic","rhsusf_army_ocp_rifleman","rhsusf_army_ocp_riflemanl","rhsusf_army_ocp_grenadier","rhsusf_army_ocp_machinegunner","rhsusf_army_ocp_machinegunnera","rhsusf_army_ocp_riflemanat","rhsusf_army_ocp_explosives","rhsusf_army_ocp_marksman","rhsusf_army_ocp_aa","rhsusf_army_ocp_javelin","rhsusf_army_ocp_autorifleman","rhsusf_army_ocp_autoriflemana","rhsusf_army_ocp_rifleman_m4","rhsusf_army_ocp_rifleman_m16","rhsusf_army_ocp_rifleman_m590","rhsusf_army_ocp_engineer","rhsusf_army_ocp_medic","rhsusf_army_ocp_engineer","rhsusf_army_ocp_medic"];
-a3e_arr_Escape_InfantryTypes_Ind = ["LOP_NAPA_Infantry_TL","LOP_NAPA_Infantry_SL","LOP_NAPA_Infantry_Rifleman","LOP_NAPA_Infantry_Prizrak","LOP_NAPA_Infantry_AR","LOP_NAPA_Infantry_AT","LOP_NAPA_Infantry_Marksman","LOP_NAPA_Infantry_GL","LOP_NAPA_Infantry_Corpsman","LOP_NAPA_Infantry_Engineer","LOP_NAPA_Infantry_Corpsman","LOP_NAPA_Infantry_Engineer"];
-a3e_arr_recon_InfantryTypes = ["rhsusf_socom_marsoc_teamleader","rhsusf_socom_marsoc_teamchief","rhsusf_socom_marsoc_elementleader","rhsusf_socom_marsoc_cso_mechanic","rhsusf_socom_marsoc_marksman","rhsusf_socom_marsoc_cso_cqb","rhsusf_socom_marsoc_cso_breacher","rhsusf_socom_marsoc_cso_light","rhsusf_socom_marsoc_cso","rhsusf_navy_marpat_wd_medic"];
-a3e_arr_recon_I_InfantryTypes = ["LOP_PMC_Infantry_TL","LOP_PMC_Infantry_SL","LOP_PMC_Infantry_Rifleman","LOP_PMC_Infantry_AT","LOP_PMC_Infantry_AT_Asst","LOP_PMC_Infantry_MG_Asst","LOP_PMC_Infantry_Marksman","LOP_PMC_Infantry_GL","LOP_PMC_Infantry_Engineer","LOP_PMC_Infantry_Corpsman","LOP_PMC_Infantry_Engineer","LOP_PMC_Infantry_Corpsman"];
+a3e_arr_Escape_InfantryTypes = [
+	"rhsusf_army_ocp_officer"
+	,"rhsusf_army_ocp_squadleader"
+	,"rhsusf_army_ocp_teamleader"
+	,"rhsusf_army_ocp_engineer"
+	,"rhsusf_army_ocp_engineer"
+	,"rhsusf_army_ocp_medic"
+	,"rhsusf_army_ocp_medic"
+	,"rhsusf_army_ocp_rifleman"
+	,"rhsusf_army_ocp_riflemanl"
+	,"rhsusf_army_ocp_grenadier"
+	,"rhsusf_army_ocp_machinegunner"
+	,"rhsusf_army_ocp_machinegunnera"
+	,"rhsusf_army_ocp_riflemanat"
+	,"rhsusf_army_ocp_explosives"
+	,"rhsusf_army_ocp_marksman"
+	,"rhsusf_army_ocp_aa"
+	,"rhsusf_army_ocp_javelin"
+	,"rhsusf_army_ocp_autorifleman"
+	,"rhsusf_army_ocp_autoriflemana"
+	,"rhsusf_army_ocp_rifleman_m4"
+	,"rhsusf_army_ocp_rifleman_m16"
+	,"rhsusf_army_ocp_rifleman_m590"];
+a3e_arr_Escape_InfantryTypes_Ind = [
+	"LOP_NAPA_Infantry_TL"
+	,"LOP_NAPA_Infantry_SL"
+	,"LOP_NAPA_Infantry_Rifleman"
+	,"LOP_NAPA_Infantry_Prizrak"
+	,"LOP_NAPA_Infantry_AR"
+	,"LOP_NAPA_Infantry_AT"
+	,"LOP_NAPA_Infantry_Marksman"
+	,"LOP_NAPA_Infantry_GL"
+	,"LOP_NAPA_Infantry_Corpsman"
+	,"LOP_NAPA_Infantry_Engineer"
+	,"LOP_NAPA_Infantry_Corpsman"
+	,"LOP_NAPA_Infantry_Engineer"];
+a3e_arr_recon_InfantryTypes = [
+	"rhsusf_socom_marsoc_teamleader"
+	,"rhsusf_socom_marsoc_teamchief"
+	,"rhsusf_socom_marsoc_elementleader"
+	,"rhsusf_socom_marsoc_cso_mechanic"
+	,"rhsusf_socom_marsoc_marksman"
+	,"rhsusf_socom_marsoc_cso_cqb"
+	,"rhsusf_socom_marsoc_cso_breacher"
+	,"rhsusf_socom_marsoc_cso_light"
+	,"rhsusf_socom_marsoc_cso"
+	,"rhsusf_navy_marpat_wd_medic"];
+a3e_arr_recon_I_InfantryTypes = [
+	"LOP_PMC_Infantry_TL"
+	,"LOP_PMC_Infantry_SL"
+	,"LOP_PMC_Infantry_Rifleman"
+	,"LOP_PMC_Infantry_AT"
+	,"LOP_PMC_Infantry_AT_Asst"
+	,"LOP_PMC_Infantry_MG_Asst"
+	,"LOP_PMC_Infantry_Marksman"
+	,"LOP_PMC_Infantry_GL"
+	,"LOP_PMC_Infantry_Engineer"
+	,"LOP_PMC_Infantry_Corpsman"
+	,"LOP_PMC_Infantry_Engineer"
+	,"LOP_PMC_Infantry_Corpsman"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
-a3e_arr_Escape_RoadBlock_MannedVehicleTypes = ["rhsusf_m1025_w_m2","rhsusf_m1025_w_mk19","rhsusf_m113_usarmy","RHS_M2StaticMG_D","RHS_M2StaticMG_MiniTripod_D"];
-a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = ["LOP_NAPA_Offroad_M2","LOP_NAPA_Landrover_M2","LOP_PMC_Offroad_M2"];
+a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
+	"rhsusf_m1025_w_m2"
+	,"rhsusf_m1025_w_mk19"
+	,"rhsusf_m113_usarmy"
+	,"RHS_M2StaticMG_D"
+	,"RHS_M2StaticMG_MiniTripod_D"];
+a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
+	"LOP_NAPA_Offroad_M2"
+	,"LOP_NAPA_Landrover_M2"
+	,"LOP_PMC_Offroad_M2"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
-a3e_arr_Escape_ReinforcementTruck_vehicleClasses = ["rhsusf_m998_w_2dr_halftop","rhsusf_rg33_wd","rhsusf_rg33_m2_wd","rhsusf_M1078A1P2_wd_fmtv_usarmy","rhsusf_M1078A1P2_wd_open_fmtv_usarmy","rhsusf_M1083A1P2_wd_fmtv_usarmy","rhsusf_M1083A1P2_wd_open_fmtv_usarmy","rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy"];
-a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = ["LOP_NAPA_Landrover","LOP_NAPA_Truck","LOP_PMC_Truck"];
+a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
+	"rhsusf_m998_w_2dr_halftop"
+	,"rhsusf_rg33_wd"
+	,"rhsusf_rg33_m2_wd"
+	,"rhsusf_M1078A1P2_wd_fmtv_usarmy"
+	,"rhsusf_M1078A1P2_wd_open_fmtv_usarmy"
+	,"rhsusf_M1083A1P2_wd_fmtv_usarmy"
+	,"rhsusf_M1083A1P2_wd_open_fmtv_usarmy"
+	,"rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy"];
+a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
+	"LOP_NAPA_Landrover"
+	,"LOP_NAPA_Truck"
+	,"LOP_PMC_Truck"];
 // Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
 a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [5, 7, 7, 12, 12, 14, 14, 13];
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
-a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = ["rhsusf_m1025_w","rhsusf_m1025_w_m2","rhsusf_m1025_w_mk19","rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy","rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy","rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy","rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy","rhsusf_m113_usarmy","RHS_M2A2_wd"];
+a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
+	"rhsusf_m1025_w"
+	,"rhsusf_m1025_w_m2"
+	,"rhsusf_m1025_w_mk19"
+	,"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy"
+	,"rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy"
+	,"rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy"
+	,"rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy"
+	,"rhsusf_m113_usarmy","RHS_M2A2_wd"];
 // Total cargo motorized search group vehicle. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses above.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [3, 3, 3, 11, 11, 13, 13, 8, 11, 6];
 
@@ -132,32 +329,100 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [3, 3, 3, 11, 11, 1
 // light *and* a random heavy armor.
 
 // Random array. Light armored vehicles guarding the communication centers.
-a3e_arr_ComCenDefence_lightArmorClasses = ["rhsusf_m113_usarmy","RHS_M6_wd","RHS_M6_wd","RHS_M2A2_wd","RHS_M2A2_BUSKI_WD","RHS_M2A3_wd","RHS_M2A3_BUSKI_wd","rhsusf_m1025_w_m2","rhsusf_m1025_w_mk19","rhsusf_rg33_m2_wd"];
+a3e_arr_ComCenDefence_lightArmorClasses = [
+	"rhsusf_m113_usarmy"
+	,"RHS_M6_wd"
+	,"RHS_M6_wd"
+	,"RHS_M2A2_wd"
+	,"RHS_M2A2_BUSKI_WD"
+	,"RHS_M2A3_wd"
+	,"RHS_M2A3_BUSKI_wd"
+	,"rhsusf_m1025_w_m2"
+	,"rhsusf_m1025_w_mk19"
+	,"rhsusf_rg33_m2_wd"];
 // Random array. Heavy armored vehicles guarding the communication centers.
-a3e_arr_ComCenDefence_heavyArmorClasses = ["rhsusf_m1a1aimwd_usarmy","rhsusf_m1a1aim_tuski_wd","rhsusf_m1a2sep1wd_usarmy","rhsusf_m1a2sep1tuskiwd_usarmy","rhsusf_m1a2sep1tuskiiwd_usarmy"];
+a3e_arr_ComCenDefence_heavyArmorClasses = [
+	"rhsusf_m1a1aimwd_usarmy"
+	,"rhsusf_m1a1aim_tuski_wd"
+	,"rhsusf_m1a2sep1wd_usarmy"
+	,"rhsusf_m1a2sep1tuskiwd_usarmy"
+	,"rhsusf_m1a2sep1tuskiiwd_usarmy"];
 
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
-a3e_arr_ComCenStaticWeapons = ["RHS_M2StaticMG_D"];
+a3e_arr_ComCenStaticWeapons = [
+	"RHS_M2StaticMG_D"];
 // A communication center have two parked and empty vehicles of the following possible types.
-a3e_arr_ComCenParkedVehicles = ["I_G_Offroad_01_repair_F","rhsusf_m113_usarmy","rhsusf_rg33_wd","rhsusf_M1078A1P2_wd_fmtv_usarmy","rhsusf_M1078A1P2_wd_open_fmtv_usarmy","rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy","rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy","rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy","rhsusf_M1078A1P2_B_M2_wd_flatbed_fmtv_usarmy","rhsusf_m1025_w","rhsusf_m1025_w_m2","rhsusf_m1025_w_mk19","B_Truck_01_medical_F","B_Truck_01_fuel_F","B_Truck_01_ammo_F","B_Truck_01_Repair_F","I_G_Offroad_01_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_armed_F"];
+a3e_arr_ComCenParkedVehicles = [
+	"I_G_Offroad_01_repair_F"
+	,"rhsusf_m113_usarmy"
+	,"rhsusf_rg33_wd"
+	,"rhsusf_M1078A1P2_wd_fmtv_usarmy"
+	,"rhsusf_M1078A1P2_wd_open_fmtv_usarmy"
+	,"rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy"
+	,"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy"
+	,"rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy"
+	,"rhsusf_M1078A1P2_B_M2_wd_flatbed_fmtv_usarmy"
+	,"rhsusf_m1025_w"
+	,"rhsusf_m1025_w_m2"
+	,"rhsusf_m1025_w_mk19"
+	,"B_Truck_01_medical_F"
+	,"B_Truck_01_fuel_F"
+	,"B_Truck_01_ammo_F"
+	,"B_Truck_01_Repair_F"
+	,"I_G_Offroad_01_F"
+	,"I_G_Offroad_01_armed_F"
+	,"I_G_Offroad_01_armed_F"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
-a3e_arr_Escape_EnemyCivilianCarTypes = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F"];
+a3e_arr_Escape_EnemyCivilianCarTypes = [
+	"C_Hatchback_01_F"
+	,"C_Hatchback_01_sport_F"
+	,"C_Offroad_01_F"
+	,"C_Quadbike_01_F"
+	,"C_SUV_01_F"
+	,"C_Van_01_box_F"
+	,"C_Van_01_transport_F"
+	,"C_Van_01_fuel_F"];
 
 // Vehicles, weapons and ammo at ammo depots
 
 // Random array. An ammo depot contains one static weapon of the followin types:
-a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = ["RHS_M2StaticMG_D", "RHS_M2StaticMG_MiniTripod_D","O_static_AT_F","O_static_AA_F"];
+a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
+	"RHS_M2StaticMG_D"
+	,"RHS_M2StaticMG_MiniTripod_D"
+	,"O_static_AT_F"
+	,"O_static_AA_F"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 
 //Random array. Types of helicopters to spawn
-a3e_arr_O_attack_heli = ["RHS_AH64D_wd","RHS_AH64D_wd_GS","RHS_AH64D_wd_CS","RHS_AH64D_wd_AA","RHS_AH1Z_wd","RHS_AH1Z_wd_GS","RHS_AH1Z_wd_CS"];
-a3e_arr_O_transport_heli = ["RHS_CH_47F","RHS_CH_47F_10","RHS_CH_47F_light","RHS_UH60M","RHS_UH60M_MEV","RHS_UH60M_MEV2","RHS_UH1Y","RHS_UH1Y_FFAR","RHS_UH1Y_UNARMED"];
-a3e_arr_O_pilots = ["rhsusf_army_ocp_helipilot"];
-a3e_arr_I_transport_heli = ["LOP_PMC_MH9","LOP_PMC_Mi8AMT","LOP_PMC_M900"];
-a3e_arr_I_pilots = ["LOP_PMC_Infantry_Pilot"];
+a3e_arr_O_attack_heli = [
+	"RHS_AH64D_wd"
+	,"RHS_AH64D_wd_GS"
+	,"RHS_AH64D_wd_CS"
+	,"RHS_AH64D_wd_AA"
+	,"RHS_AH1Z_wd"
+	,"RHS_AH1Z_wd_GS"
+	,"RHS_AH1Z_wd_CS"];
+a3e_arr_O_transport_heli = [
+	"RHS_CH_47F"
+	,"RHS_CH_47F_10"
+	,"RHS_CH_47F_light"
+	,"RHS_UH60M"
+	,"RHS_UH60M_MEV"
+	,"RHS_UH60M_MEV2"
+	,"RHS_UH1Y"
+	,"RHS_UH1Y_FFAR"
+	,"RHS_UH1Y_UNARMED"];
+a3e_arr_O_pilots = [
+	"rhsusf_army_ocp_helipilot"];
+a3e_arr_I_transport_heli = [
+	"LOP_PMC_MH9"
+	,"LOP_PMC_Mi8AMT"
+	,"LOP_PMC_M900"];
+a3e_arr_I_pilots = [
+	"LOP_PMC_Infantry_Pilot"];
 
 
 // The following arrays define weapons and ammo contained at the ammo depots
@@ -246,13 +511,13 @@ a3e_arr_AmmoDepotVehicleItems pushback ["ToolKit", 20, 1, 1, [], 0];
 a3e_arr_AmmoDepotVehicleItems pushback ["Medikit", 20, 1, 1, [], 0];
 a3e_arr_AmmoDepotVehicleItems pushback ["FirstAidKit", 100, 10, 50, [], 0];
 a3e_arr_AmmoDepotVehicleBackpacks = ["B_rhsusf_B_BACKPACK"];
+
 // Items
 
 // Index 0: Item classname.
 // Index 1: Item's probability of presence (in percent, 0-100)..
 // Index 2: Minimum amount.
 // Index 3: Maximum amount.
-
 a3e_arr_AmmoDepotItems = [];
 a3e_arr_AmmoDepotItems pushback ["Laserdesignator", 10, 1, 2];
 if(Param_NoNightvision==0) then {
@@ -318,13 +583,13 @@ a3e_arr_AmmoDepotItems pushback ["bipod_02_F_hex", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["bipod_03_F_oli", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_harris_bipod", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["rhs_bipod", 10, 1, 2];
+
+
 // Weapons that may show up in civilian cars
 
 // Index 0: Weapon classname.
 // Index 1: Magazine classname.
 // Index 2: Number of magazines.
-
-
 a3e_arr_CivilianCarWeapons = [];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_makarov_pmm", "rhs_mag_9x18_12_57N181S", 5];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_ak74m_2mag_camo_npz", "rhs_30Rnd_545x39_AK", 5];
@@ -349,37 +614,85 @@ a3e_arr_CivilianCarWeapons pushback [objNull, "SmokeShell", 5];
 
 
 // Here is a list of scopes:
-a3e_arr_Scopes = ["rhsusf_acc_compm4","rhsusf_acc_eotech_552","rhsusf_acc_LEUPOLDMK4","rhsusf_acc_ACOG","rhsusf_acc_ACOG2","rhsusf_acc_ACOG3","rhsusf_acc_ACOG_USMC","rhsusf_acc_ACOG2_USMC","rhsusf_acc_ACOG3_USMC","rhsusf_acc_LEUPOLDMK4_2","rhsusf_acc_EOTECH","rhsusf_acc_EOTECH","rhsusf_acc_eotech_552","rhsusf_acc_compm4","rhsusf_acc_EOTECH","rhsusf_acc_eotech_552","rhsusf_acc_compm4","rhsusf_acc_EOTECH","rhsusf_acc_eotech_552","rhsusf_acc_compm4"];
-a3e_arr_Scopes_SMG = ["rhsusf_acc_EOTECH","rhsusf_acc_eotech_552","rhs_m4_compm4"];
-a3e_arr_Scopes_Sniper = ["rhsusf_acc_LEUPOLDMK4","rhsusf_acc_LEUPOLDMK4_2"];
-a3e_arr_NightScopes = ["optic_NVS"];
-a3e_arr_TWSScopes = ["optic_Nightstalker","optic_tws","optic_tws_mg"];
+a3e_arr_Scopes = [
+	"rhsusf_acc_compm4"
+	,"rhsusf_acc_eotech_552"
+	,"rhsusf_acc_LEUPOLDMK4"
+	,"rhsusf_acc_ACOG"
+	,"rhsusf_acc_ACOG2"
+	,"rhsusf_acc_ACOG3"
+	,"rhsusf_acc_ACOG_USMC"
+	,"rhsusf_acc_ACOG2_USMC"
+	,"rhsusf_acc_ACOG3_USMC"
+	,"rhsusf_acc_LEUPOLDMK4_2"
+	,"rhsusf_acc_EOTECH"
+	,"rhsusf_acc_EOTECH"
+	,"rhsusf_acc_eotech_552"
+	,"rhsusf_acc_compm4"
+	,"rhsusf_acc_EOTECH"
+	,"rhsusf_acc_eotech_552"
+	,"rhsusf_acc_compm4"
+	,"rhsusf_acc_EOTECH"
+	,"rhsusf_acc_eotech_552"
+	,"rhsusf_acc_compm4"];
+a3e_arr_Scopes_SMG = [
+	"rhsusf_acc_EOTECH"
+	,"rhsusf_acc_eotech_552"
+	,"rhs_m4_compm4"];
+a3e_arr_Scopes_Sniper = [
+	"rhsusf_acc_LEUPOLDMK4"
+	,"rhsusf_acc_LEUPOLDMK4_2"];
+a3e_arr_NightScopes = [
+	"optic_NVS"];
+a3e_arr_TWSScopes = [
+	"optic_Nightstalker"
+	,"optic_tws"
+	,"optic_tws_mg"];
 
 // Here is a list of bipods, might get randomly added to enemy patrols:
-a3e_arr_Bipods = ["rhs_bipod","rhsusf_acc_harris_bipod","bipod_01_F_snd","bipod_01_F_blk","bipod_01_F_mtp","bipod_02_F_blk","bipod_02_F_tan","bipod_02_F_hex","bipod_03_F_blk","bipod_03_F_oli"];
+a3e_arr_Bipods = [
+	"rhs_bipod"
+	,"rhsusf_acc_harris_bipod"
+	,"bipod_01_F_snd"
+	,"bipod_01_F_blk"
+	,"bipod_01_F_mtp"
+	,"bipod_02_F_blk"
+	,"bipod_02_F_tan"
+	,"bipod_02_F_hex"
+	,"bipod_03_F_blk"
+	,"bipod_03_F_oli"];
 
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
-a3e_arr_extraction_chopper = ["rhs_ka60_c","RHS_Mi8mt_vvs"];
-a3e_arr_extraction_chopper_escort = ["RHS_Ka52_vvs"];
+a3e_arr_extraction_chopper = [
+	"rhs_ka60_c"
+	,"RHS_Mi8mt_vvs"];
+a3e_arr_extraction_chopper_escort = [
+	"RHS_Ka52_vvs"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
-a3e_arr_searchdrone = ["B_UAV_02_F","B_UAV_02_CAS_F"];
+a3e_arr_searchdrone = [
+	"B_UAV_02_F"
+	,"B_UAV_02_CAS_F"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
 // first chopper that's called when you escape
 // only chopper used right now
 //////////////////////////////////////////////////////////////////
-a3e_arr_searchChopper = ["LOP_PMC_Mi8AMT","LOP_PMC_MH9_armed"];
-a3e_arr_searchChopper_pilot = ["LOP_PMC_Infantry_Pilot"];
-a3e_arr_searchChopper_crew = ["LOP_PMC_Infantry_Pilot"];
+a3e_arr_searchChopper = [
+	"LOP_PMC_Mi8AMT"
+	,"LOP_PMC_MH9_armed"];
+a3e_arr_searchChopper_pilot = [
+	"LOP_PMC_Infantry_Pilot"];
+a3e_arr_searchChopper_crew = [
+	"LOP_PMC_Infantry_Pilot"];
 
 //////////////////////////////////////////////////////////////////
 // fn_AmbientInfantry
@@ -413,7 +726,8 @@ a3e_arr_roadblocks_Veh_GUE = a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
 // fn_PopulateAquaticPatrol
 // boats that are spawned
 //////////////////////////////////////////////////////////////////
-a3e_arr_AquaticPatrols = ["B_Boat_Armed_01_minigun_F"];
+a3e_arr_AquaticPatrols = [
+	"B_Boat_Armed_01_minigun_F"];
 
 //////////////////////////////////////////////////////////////////
 // fn_AmmoDepot
@@ -427,13 +741,15 @@ a3e_additional_weapon_box_2 = "rhsusf_ammo_crate";
 // fn_MortarSite
 // mortar spawned in the mortar camps
 //////////////////////////////////////////////////////////////////
-a3e_arr_MortarSite = ["O_Mortar_01_F"];
+a3e_arr_MortarSite = [
+	"O_Mortar_01_F"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CallCAS.sqf
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
-a3e_arr_CASplane = ["RHS_A10"];
+a3e_arr_CASplane = [
+	"RHS_A10"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
@@ -446,8 +762,10 @@ a3e_arr_CASplane = ["RHS_A10"];
 // Index 3: If weapon exists, crate contains at maximum this number of weapons of current class.
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
-a3e_arr_CrashSiteWrecks = ["Land_Wreck_Heli_Attack_02_F"];
-a3e_arr_CrashSiteCrew = ["rhs_pilot_combat_heli"];
+a3e_arr_CrashSiteWrecks = [
+	"Land_Wreck_Heli_Attack_02_F"];
+a3e_arr_CrashSiteCrew = [
+	"rhs_pilot_combat_heli"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["rhs_weap_ak74m_gp25_1p63", 50, 2, 5, ["rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK_green","rhs_VOG25"], 4];
