@@ -27,12 +27,14 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pya","rhs_mag_9x19_17"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pya","rhs_mag_9x19_17"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_makarov_pmm","rhs_mag_9x18_12_57N181S"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m1911a1","rhsusf_mag_7x45acp_MHP"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_ACPC2_F","9Rnd_45ACP_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_Rook40_F","16Rnd_9x21_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_glock17g4","rhsusf_mag_17Rnd_9x19_JHP"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_glock17g4","rhsusf_mag_17Rnd_9x19_FMJ"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_PDW2000_F","30Rnd_9x21_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_F","16Rnd_9x21_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_FMJ"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_snds_F","30Rnd_9x21_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_Rook40_snds_F","30Rnd_9x21_Mag"];
@@ -106,6 +108,8 @@ switch (_enemyFrequency) do {
 		,"rhs_bmp1k_msv"
 		,"rhs_bmp2_msv"
 		,"rhs_bmp2k_msv"
+		,"rhs_bmp3_msv"
+		,"rhs_bmp3m_msv"
 		,"rhs_btr60_msv"
 		,"rhs_btr70_msv"
 		,"rhs_btr80_msv"
@@ -213,6 +217,9 @@ switch (_enemyFrequency) do {
 		,"rhs_bmp2_msv"
 		,"rhs_bmp2k_msv"
 		,"rhs_bmp2d_msv"
+		,"rhs_bmp3_msv"
+		,"rhs_bmp3_late_msv"
+		,"rhs_bmp3m_msv"
 		,"rhs_btr60_msv"
 		,"rhs_btr70_msv"
 		,"rhs_btr80_msv"
@@ -224,6 +231,7 @@ switch (_enemyFrequency) do {
 		,"rhs_t80b"
 		,"rhs_t80u"
 		,"rhs_t90_tv"
+		,"rhs_t90a_tv"
 		,"rhs_sprut_vdv"
 		,"rhs_2s3_tv"
 		,"RHS_BM21_msv_01"
@@ -323,6 +331,10 @@ switch (_enemyFrequency) do {
 		,"rhs_bmp2_msv"
 		,"rhs_bmp2k_msv"
 		,"rhs_bmp2d_msv"
+		,"rhs_bmp3_msv"
+		,"rhs_bmp3_late_msv"
+		,"rhs_bmp3m_msv"
+		,"rhs_bmp3mera_msv"
 		,"rhs_btr60_msv"
 		,"rhs_btr70_msv"
 		,"rhs_btr80_msv"
@@ -334,6 +346,7 @@ switch (_enemyFrequency) do {
 		,"rhs_t80b"
 		,"rhs_t80u"
 		,"rhs_t90_tv"
+		,"rhs_t90a_tv"
 		,"rhs_sprut_vdv"
 		,"rhs_2s3_tv"
 		,"RHS_BM21_msv_01"
@@ -468,13 +481,16 @@ a3e_arr_recon_I_InfantryTypes = [
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"rhs_btr60_msv"
 	,"RHS_NSV_TriPod_VDV"
-	,"O_static_AT_F"];
+	,"rhs_KORD_MSV"
+	,"RHS_AGS30_TriPod_MSV"
+	,"rhs_Metis_9k115_2_msv"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"I_G_Offroad_01_armed_F"
 	,"I_G_Offroad_01_armed_F"
 	,"I_G_Offroad_01_armed_F"
 	,"rhs_btr70_chdkz"
-	,"I_static_AT_F"];
+	,"rhs_Metis_9k115_2_ins"
+	,"rhs_SPG9_INS"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
@@ -538,7 +554,8 @@ a3e_arr_ComCenDefence_heavyArmorClasses = [
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers. Should have a higher tripod to shoot over sandbags
 a3e_arr_ComCenStaticWeapons = [
-	"O_HMG_01_high_F"];
+	"rhs_KORD_high_MSV"
+	,"rhs_DSHKM_ins"];
 // A communication center has two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
 	"I_G_Offroad_01_repair_F"
@@ -575,10 +592,12 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 // Random array. An ammo depot contains one static weapon of the following types:
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	"RHS_NSV_TriPod_VDV"
-	,"O_GMG_01_high_F"
-	,"RHS_NSV_TriPod_VDV"
-	,"O_static_AT_F"
-	,"O_static_AA_F"];
+	,"RHS_AGS30_TriPod_MSV"
+	,"rhs_KORD_MSV"
+	,"rhs_KORD_high_MSV"
+	,"rhs_Metis_9k115_2_msv"
+	,"rhs_Igla_AA_pod_msv"
+	,"rhs_SPG9_INS"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	"I_G_Offroad_01_repair_F"
@@ -666,6 +685,7 @@ a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_svdp_wd_npz", 50, 2, 4, ["rhs_10Rnd_762x54mmR_7N1"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_svds", 50, 2, 4, ["rhs_10Rnd_762x54mmR_7N1"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_asval", 50, 2, 4, ["rhs_20rnd_9x39mm_SP5"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_XM2010_wd", 10, 2, 4, ["rhsusf_5Rnd_300winmag_xm2010"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_pkp", 50, 1, 3, ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_green"], 2];
 // non-CAST weapons
@@ -737,6 +757,7 @@ a3e_arr_AmmoDepotItems pushback ["ItemRadio", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["ItemWatch", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["acc_flashlight", 50, 1, 5];
 a3e_arr_AmmoDepotItems pushback ["acc_pointer_IR", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["rhs_acc_2dpZenit", 30, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_pbs1", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_tgpa", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_tgpv", 10, 1, 3];
@@ -873,9 +894,11 @@ a3e_arr_Bipods = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"rhs_uh60m"
-	,"rhs_ch_47f"];
+	,"rhs_ch_47f"
+	,"rhsusf_CH53E_USMC"];
 a3e_arr_extraction_chopper_escort = [
-	"RHS_AH64DGrey"];
+	"RHS_AH64DGrey"
+	,"RHS_AH1Z"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -954,14 +977,15 @@ a3e_additional_weapon_box_2 = "rhs_mags_crate";
 // mortar spawned in the mortar camps
 //////////////////////////////////////////////////////////////////
 a3e_arr_MortarSite = [
-	"O_Mortar_01_F"];
+	"rhs_2b14_82mm_ins"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CallCAS.sqf
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
-	"RHS_Su25SM_vvs"];
+	"RHS_Su25SM_vvs"
+	,"RHS_T50_vvs_generic"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite

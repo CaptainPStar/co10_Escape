@@ -32,12 +32,14 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pya","rhs_mag_9x19_17"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pya","rhs_mag_9x19_17"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_makarov_pmm","rhs_mag_9x18_12_57N181S"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m1911a1","rhsusf_mag_7x45acp_MHP"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_ACPC2_F","9Rnd_45ACP_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_Rook40_F","16Rnd_9x21_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_glock17g4","rhsusf_mag_17Rnd_9x19_JHP"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_glock17g4","rhsusf_mag_17Rnd_9x19_FMJ"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_PDW2000_F","30Rnd_9x21_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_F","16Rnd_9x21_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_FMJ"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_snds_F","30Rnd_9x21_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_Rook40_snds_F","30Rnd_9x21_Mag"];
@@ -92,6 +94,10 @@ switch (_enemyFrequency) do {
 		,"rhsusf_rg33_wd"
 		,"rhsusf_rg33_m2_wd"
 		,"rhsusf_m113_usarmy"
+		,"rhsusf_m113_usarmy_M240"
+		,"rhsusf_m113_usarmy_MK19"
+		,"rhsusf_m113_usarmy_supply"
+		,"rhsusf_m113_usarmy_MK19"
 		,"RHS_M6_wd","RHS_M6_wd"
 		,"RHS_M2A2_wd"
 		,"RHS_M2A2_BUSKI_WD"
@@ -143,6 +149,10 @@ switch (_enemyFrequency) do {
 		,"rhsusf_rg33_wd"
 		,"rhsusf_rg33_m2_wd"
 		,"rhsusf_m113_usarmy"
+		,"rhsusf_m113_usarmy_M240"
+		,"rhsusf_m113_usarmy_MK19"
+		,"rhsusf_m113_usarmy_supply"
+		,"rhsusf_m113_usarmy_MK19"
 		,"RHS_M6_wd"
 		,"RHS_M6_wd"
 		,"RHS_M2A2_wd"
@@ -195,6 +205,10 @@ switch (_enemyFrequency) do {
 		,"rhsusf_rg33_wd"
 		,"rhsusf_rg33_m2_wd"
 		,"rhsusf_m113_usarmy"
+		,"rhsusf_m113_usarmy_M240"
+		,"rhsusf_m113_usarmy_MK19"
+		,"rhsusf_m113_usarmy_supply"
+		,"rhsusf_m113_usarmy_MK19"
 		,"RHS_M6_wd"
 		,"RHS_M6_wd"
 		,"RHS_M2A2_wd"
@@ -288,7 +302,9 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"rhsusf_m1025_w_mk19"
 	,"rhsusf_m113_usarmy"
 	,"RHS_M2StaticMG_D"
-	,"RHS_M2StaticMG_MiniTripod_D"];
+	,"RHS_M2StaticMG_MiniTripod_D"
+	,"RHS_MK19_TriPod_WD"
+	,"RHS_TOW_TriPod_WD"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"LOP_NAPA_Offroad_M2"
 	,"LOP_NAPA_Landrover_M2"
@@ -391,8 +407,9 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	"RHS_M2StaticMG_D"
 	,"RHS_M2StaticMG_MiniTripod_D"
-	,"O_static_AT_F"
-	,"O_static_AA_F"];
+	,"RHS_MK19_TriPod_WD"
+	,"RHS_TOW_TriPod_WD"
+	,"RHS_Stinger_AA_pod_WD"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 
@@ -414,7 +431,8 @@ a3e_arr_O_transport_heli = [
 	,"RHS_UH60M_MEV2"
 	,"RHS_UH1Y"
 	,"RHS_UH1Y_FFAR"
-	,"RHS_UH1Y_UNARMED"];
+	,"RHS_UH1Y_UNARMED"
+	,"rhsusf_CH53E_USMC"];
 a3e_arr_O_pilots = [
 	"rhsusf_army_ocp_helipilot"];
 a3e_arr_I_transport_heli = [
@@ -464,6 +482,7 @@ a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_sr25", 50, 2, 4, ["rhsusf_20Rnd_762x51_m118_special_Mag"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_svds", 10, 2, 4, ["rhs_10Rnd_762x54mmR_7N1"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m27iar", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_XM2010_wd", 50, 2, 4, ["rhsusf_5Rnd_300winmag_xm2010"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m240B_CAP", 50, 1, 3, ["rhsusf_50Rnd_762x51_m80a1epr","rhsusf_100Rnd_762x51"], 3];
 // non-CAST weapons
@@ -480,6 +499,7 @@ a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_rshg2", 10, 1, 3, ["rhs_rshg2_mag
 a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_igla", 10, 1, 2, ["rhs_mag_9k38_rocket"], 3];
 // non-CSAT weapons
 a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_fgm148", 30, 1, 2, ["rhs_fgm148_magazine_AT"], 2];
+a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_smaw_green", 30, 1, 2, ["rhs_mag_smaw_HEAA","rhs_mag_smaw_HEDP"], 2];
 a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_M136", 50, 1, 3, ["rhs_m136_mag"], 1];
 a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_M136_hedp", 50, 1, 3, ["rhs_m136_hedp_mag"], 1];
 a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_M136_hp", 50, 1, 3, ["rhs_m136_hp_mag"], 1];
@@ -742,14 +762,16 @@ a3e_additional_weapon_box_2 = "rhsusf_ammo_crate";
 // mortar spawned in the mortar camps
 //////////////////////////////////////////////////////////////////
 a3e_arr_MortarSite = [
-	"O_Mortar_01_F"];
+	"RHS_M252_WD"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CallCAS.sqf
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
-	"RHS_A10"];
+	"RHS_A10"
+	,"RHS_A10"
+	,"rhsusf_f22"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite

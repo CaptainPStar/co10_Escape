@@ -40,10 +40,11 @@ a3e_arr_PrisonBackpackWeapons pushback ["RH_bullb","RH_6Rnd_454_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["RH_cz75","RH_16Rnd_9x19_cz"];
 a3e_arr_PrisonBackpackWeapons pushback ["RH_p226","RH_15Rnd_9x19_SIG"];
 a3e_arr_PrisonBackpackWeapons pushback ["RH_usp","RH_12Rnd_45cal_usp"];
-a3e_arr_PrisonBackpackWeapons pushback ["RH_m9","RH_15Rnd_9x19_M9"];
 a3e_arr_PrisonBackpackWeapons pushback ["RH_g18","RH_33Rnd_9x19_g18"];
 a3e_arr_PrisonBackpackWeapons pushback ["RH_fn57_g","RH_20Rnd_57x28_FN"];
 a3e_arr_PrisonBackpackWeapons pushback ["RH_vz61","RH_20Rnd_32cal_vz61"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_FMJ"];
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
@@ -142,6 +143,8 @@ switch (_enemyFrequency) do {
 		,"rhs_bmp1k_msv"
 		,"rhs_bmp2_msv"
 		,"rhs_bmp2k_msv"
+		,"rhs_bmp3_msv"
+		,"rhs_bmp3m_msv"
 		,"rhs_btr60_msv"
 		,"rhs_btr70_msv"
 		,"rhs_btr80_msv"
@@ -221,6 +224,9 @@ switch (_enemyFrequency) do {
 		,"rhs_bmp2_msv"
 		,"rhs_bmp2k_msv"
 		,"rhs_bmp2d_msv"
+		,"rhs_bmp3_msv"
+		,"rhs_bmp3_late_msv"
+		,"rhs_bmp3m_msv"
 		,"rhs_btr60_msv"
 		,"rhs_btr70_msv"
 		,"rhs_btr80_msv"
@@ -232,6 +238,7 @@ switch (_enemyFrequency) do {
 		,"rhs_t80b"
 		,"rhs_t80u"
 		,"rhs_t90_tv"
+		,"rhs_t90a_tv"
 		,"rhs_sprut_vdv"
 		,"rhs_2s3_tv"
 		,"RHS_BM21_msv_01"
@@ -303,6 +310,10 @@ switch (_enemyFrequency) do {
 		,"rhs_bmp2_msv"
 		,"rhs_bmp2k_msv"
 		,"rhs_bmp2d_msv"
+		,"rhs_bmp3_msv"
+		,"rhs_bmp3_late_msv"
+		,"rhs_bmp3m_msv"
+		,"rhs_bmp3mera_msv"
 		,"rhs_btr60_msv"
 		,"rhs_btr70_msv"
 		,"rhs_btr80_msv"
@@ -314,6 +325,7 @@ switch (_enemyFrequency) do {
 		,"rhs_t80b"
 		,"rhs_t80u"
 		,"rhs_t90_tv"
+		,"rhs_t90a_tv"
 		,"rhs_sprut_vdv"
 		,"rhs_2s3_tv"
 		,"RHS_BM21_msv_01"
@@ -428,13 +440,16 @@ a3e_arr_recon_I_InfantryTypes = [
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"rhs_btr60_msv"
 	,"RHS_NSV_TriPod_VDV"
-	,"O_static_AT_F"];
+	,"rhs_KORD_MSV"
+	,"RHS_AGS30_TriPod_MSV"
+	,"rhs_Metis_9k115_2_msv"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"CAF_AG_eeur_r_Offroad"
 	,"CAF_AG_eeur_r_Offroad_armed_01"
 	,"CAF_AG_eeur_r_Offroad_armed_01"
-	,"I_HMG_01_high_f"
-	,"I_static_AT_F"];
+	,"rhs_KORD_high_INS"
+	,"rhs_Metis_9k115_2_ins"
+	,"rhs_SPG9_INS"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
@@ -495,7 +510,8 @@ a3e_arr_ComCenDefence_heavyArmorClasses = [
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
 a3e_arr_ComCenStaticWeapons = [
-	"O_HMG_01_high_F"];
+	"rhs_KORD_high_MSV"
+	,"rhs_DSHKM_ins"];
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
 	"I_G_Offroad_01_repair_F"
@@ -555,10 +571,12 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 // Random array. An ammo depot contains one static weapon of the followin types:
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	"RHS_NSV_TriPod_VDV"
-	,"O_GMG_01_high_F"
-	,"RHS_NSV_TriPod_VDV"
-	,"O_static_AT_F"
-	,"O_static_AA_F"];
+	,"RHS_AGS30_TriPod_MSV"
+	,"rhs_KORD_MSV"
+	,"rhs_KORD_high_MSV"
+	,"rhs_Metis_9k115_2_msv"
+	,"rhs_Igla_AA_pod_msv"
+	,"rhs_SPG9_INS"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	"I_G_Offroad_01_repair_F"
@@ -648,6 +666,7 @@ a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_svdp_wd", 50, 2, 4, ["rhs_10Rnd_762x54mmR_7N1"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_svds", 50, 2, 4, ["rhs_10Rnd_762x54mmR_7N1"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_asval", 50, 2, 4, ["rhs_20rnd_9x39mm_SP5"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["srifle_GM6_F", 10, 1, 2, ["5Rnd_127x108_Mag"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_pkp", 50, 1, 4, ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_green"], 6];
 // non-CAST weapons
@@ -719,6 +738,7 @@ a3e_arr_AmmoDepotItems pushback ["ItemRadio", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["ItemWatch", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["acc_flashlight", 50, 1, 5];
 a3e_arr_AmmoDepotItems pushback ["acc_pointer_IR", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["rhs_acc_2dpZenit", 30, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["hlc_muzzle_snds_fal", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["hlc_muzzle_snds_g3", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_1p63", 10, 1, 3];
@@ -862,16 +882,20 @@ a3e_arr_Bipods = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"rhs_uh60m"
-	,"rhs_ch_47f"];
+	,"rhs_ch_47f"
+	,"rhsusf_CH53E_USMC"];
 a3e_arr_extraction_chopper_escort = [
-	"rhs_ah64d_wd"];
+	"rhs_ah64d_wd"
+	,"RHS_AH1Z"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
-	"rhs_pchela1t_vvs"];
+	"rhs_pchela1t_vvs"
+	,"RHS_Su25SM_vvs"
+	,"RHS_T50_vvs_generic"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
@@ -944,14 +968,15 @@ a3e_additional_weapon_box_2 = "CUP_RUSpecialWeaponsBox";
 // mortar spawned in the mortar camps
 //////////////////////////////////////////////////////////////////
 a3e_arr_MortarSite = [
-	"O_Mortar_01_F"];
+	"rhs_2b14_82mm_ins"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CallCAS.sqf
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
-	"RHS_Su25SM_vvs"];
+	"RHS_Su25SM_vvs"
+	,"RHS_T50_vvs_generic"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
