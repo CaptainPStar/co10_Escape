@@ -412,6 +412,26 @@
 				}
 		},
 		{
+			"name" : "CUP SLA",
+			"path" : "./Mods/CUP SLA/",
+			"require" : ["CUP_Creatures_Military_USMC","CUP_Creatures_Military_SLA","CUP_Creatures_Military_RACS"],
+			"replace" :
+				{
+					"MOD" : "CUP",
+					"PLAYERSIDE" : "WEST",
+					"PLAYERUNIT_1" : "CUP_B_USMC_Soldier_SL",
+					"PLAYERUNIT_2" : "CUP_B_USMC_Soldier_GL",
+					"PLAYERUNIT_3" : "CUP_B_USMC_Soldier_Marksman",
+					"PLAYERUNIT_4" : "CUP_B_USMC_Engineer",
+					"PLAYERUNIT_5" : "CUP_B_USMC_Soldier_AA",
+					"PLAYERUNIT_6" : "CUP_B_USMC_Soldier_MG",
+					"PLAYERUNIT_7" : "CUP_B_USMC_Soldier_AT",
+					"PLAYERUNIT_8" : "CUP_B_USMC_Soldier",
+					"PLAYERUNIT_9" : "CUP_B_USMC_Soldier_AR",
+					"PLAYERUNIT_10" : "CUP_B_USMC_Medic"
+				}
+		},
+		{
 			"name" : "CUP-US USMC",
 			"path" : "./Mods/CUP-US USMC/",
 			"require" : ["CUP_Creatures_Military_USMC","CUP_Creatures_Military_NAPA","CUP_Creatures_Military_SLA"],
@@ -484,16 +504,6 @@
 				}
 		},
 		{
-			"name" : "ChernarusPlus",
-			"class" : "ChernarusPlus",
-			"path" : "./Islands/ChernarusPlus/",
-			"replace" :
-				{
-				"ISLAND" : "ChernarusPlus",
-				"ISLANDNAME" : "ChernarusPlus"
-				}
-		},
-		{
 			"name" : "Podagorsk",
 			"class" : "FDF_Isle1_a",
 			"path" : "./Islands/FDF_Isle1_a/",
@@ -552,16 +562,6 @@
 				{
 				"ISLAND" : "United Sahrani",
 				"ISLANDNAME" : "United Sahrani"
-				}
-		},
-		{
-			"name" : "SMD Sahrani",
-			"class" : "smd_sahrani_a3",
-			"path" : "./Islands/smd_sahrani_a3/",
-			"replace" :
-				{
-				"ISLAND" : "SMD Sahrani",
-				"ISLANDNAME" : "SMD Sahrani"
 				}
 		},
 		{
@@ -700,15 +700,15 @@
 			"name" : "co10_Escape"
 		},
 		{
-			"island" : "United Sahrani",
-			"sqm": "Sara_dbe1",
+			"island" : "Sahrani",
+			"sqm": "Sara",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape"
 		},
 		{
-			"island" : "SMD Sahrani",
-			"sqm": "smd_sahrani_a3",
+			"island" : "United Sahrani",
+			"sqm": "Sara_dbe1",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape"
@@ -798,13 +798,6 @@
 			"name" : "co10_Escape_AT"
 		},
 		{
-			"island" : "ChernarusPlus",
-			"sqm": "ChernarusPlus",
-			"mod" : "AT woodland RHS CAF-EU",
-			"replace" : {},
-			"name" : "co10_Escape_AT"
-		},
-		{
 			"island" : "Podagorsk",
 			"sqm": "FDF_Isle1_a",
 			"mod" : "AT woodland RHS CAF-EU",
@@ -824,13 +817,6 @@
 			"mod" : "AT jungle RHS CAF-PI",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
-		},
-		{
-			"island" : "Isla Duala",
-			"sqm": "IslaDuala3",
-			"mod" : "CUP Taki",
-			"replace" : {},
-			"name" : "co10_Escape_CUP"
 		},
 		{
 			"island" : "Lingor",
@@ -861,13 +847,6 @@
 			"name" : "co10_Escape_AT"
 		},
 		{
-			"island" : "SMD Sahrani",
-			"sqm": "smd_sahrani_a3",
-			"mod" : "AT RHS CAF-EU",
-			"replace" : {},
-			"name" : "co10_Escape_AT"
-		},
-		{
 			"island" : "Celle",
 			"sqm": "mbg_celle2",
 			"mod" : "AT woodland RHS CAF-EU",
@@ -880,13 +859,6 @@
 			"mod" : "AT desert RHS CAF-ME",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
-		},
-		{
-			"island" : "Takistan",
-			"sqm": "Takistan",
-			"mod" : "CUP Taki",
-			"replace" : {},
-			"name" : "co10_Escape_CUP"
 		},
 		{
 			"island" : "Porto",
@@ -915,13 +887,6 @@
 			"mod" : "AT desert RHS CAF-ME",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
-		},
-		{
-			"island" : "Capraia",
-			"sqm": "IsolaDiCapraia",
-			"mod" : "CUP Taki",
-			"replace" : {},
-			"name" : "co10_Escape_CUP"
 		},
 		{
 			"island" : "Esseker",
@@ -1010,13 +975,6 @@
 		{
 			"island" : "United Sahrani",
 			"sqm": "Sara_dbe1",
-			"mod" : "RHS w",
-			"replace" : {},
-			"name" : "co10_Escape_RHS"
-		},
-		{
-			"island" : "SMD Sahrani",
-			"sqm": "smd_sahrani_a3",
 			"mod" : "RHS w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS"
@@ -1155,13 +1113,6 @@
 			"name" : "co10_Escape_RHS_CAF"
 		},
 		{
-			"island" : "SMD Sahrani",
-			"sqm": "smd_sahrani_a3",
-			"mod" : "RHS w CAF eu",
-			"replace" : {},
-			"name" : "co10_Escape_RHS_CAF"
-		},
-		{
 			"island" : "Celle",
 			"sqm": "mbg_celle2",
 			"mod" : "RHS w CAF eu",
@@ -1295,13 +1246,6 @@
 			"name" : "co10_Escape_RHS_LOP"
 		},
 		{
-			"island" : "SMD Sahrani",
-			"sqm": "smd_sahrani_a3",
-			"mod" : "RHS w LOP sla",
-			"replace" : {},
-			"name" : "co10_Escape_RHS_LOP"
-		},
-		{
 			"island" : "Celle",
 			"sqm": "mbg_celle2",
 			"mod" : "RHS w LOP ua",
@@ -1580,6 +1524,41 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP-US"
+		},
+		{
+			"island" : "Isla Duala",
+			"sqm": "IslaDuala3",
+			"mod" : "CUP Taki",
+			"replace" : {},
+			"name" : "co10_Escape_CUP"
+		},
+		{
+			"island" : "Takistan",
+			"sqm": "Takistan",
+			"mod" : "CUP Taki",
+			"replace" : {},
+			"name" : "co10_Escape_CUP"
+		},
+		{
+			"island" : "Capraia",
+			"sqm": "IsolaDiCapraia",
+			"mod" : "CUP Taki",
+			"replace" : {},
+			"name" : "co10_Escape_CUP"
+		},
+		{
+			"island" : "Sahrani",
+			"sqm": "Sara",
+			"mod" : "CUP SLA",
+			"replace" : {},
+			"name" : "co10_Escape_CUP"
+		},
+		{
+			"island" : "United Sahrani",
+			"sqm": "Sara_dbe1",
+			"mod" : "CUP SLA",
+			"replace" : {},
+			"name" : "co10_Escape_CUP"
 		}
 	]
 	
