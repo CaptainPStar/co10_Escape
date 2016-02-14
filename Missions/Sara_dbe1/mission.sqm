@@ -10,13 +10,17 @@ class Mission
 		"A3_Soft_F_Kart_Kart_01",
 		"A3_Characters_F_Kart",
 		"a3_weapons_f",
-		"A3_Modules_F"
+		"A3_Modules_F",
+		"A3_Boat_F_Boat_Transport_01",
+		"A3_Boat_F_Civilian_Boat"
 	};
 	addOnsAuto[]=
 	{
 		{* REQUIRE *}
 		"A3_Modules_F",
-		"A3_Static_F_Mortar_01"
+		"A3_Static_F_Mortar_01",
+		"A3_Boat_F_Boat_Transport_01",
+		"A3_Boat_F_Civilian_Boat"
 	};
 	randomSeed=16426086;
 	class Intel
@@ -267,38 +271,68 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=3;
+		items=7;
 		class Item0
 		{
-			position[]={11136.061,217.65022,9918.5752};
-			azimut=444.21585;
-			special="NONE";
-			id=30;
+			position[]={4961.6084,0,15859.828};
+			azimut=-61.868301;
+			id=1;
 			side="EMPTY";
-			vehicle="Land_fort_bagfence_round";
-			leader=1;
+			vehicle="C_Rubberboat";
 			skill=0.60000002;
 		};
 		class Item1
 		{
-			position[]={11132.73,217.43581,9915.3516};
-			azimut=355.29764;
-			special="NONE";
-			id=31;
+			position[]={12619.554,0,10739.678};
+			azimut=-157.83949;
+			id=2;
 			side="EMPTY";
-			vehicle="Land_fort_bagfence_long";
-			leader=1;
+			vehicle="C_Boat_Civil_01_F";
 			skill=0.60000002;
 		};
 		class Item2
 		{
-			position[]={11132.469,217.63861,9920.6914};
-			azimut=535.12286;
-			special="NONE";
-			id=32;
+			position[]={13195.021,-0.00027153536,9126.1406};
+			azimut=-91.329124;
+			id=3;
 			side="EMPTY";
-			vehicle="Land_fort_bagfence_long";
-			leader=1;
+			vehicle="C_Rubberboat";
+			skill=0.60000002;
+		};
+		class Item3
+		{
+			position[]={6809.5566,0,8153.5518};
+			azimut=1.7334689;
+			id=4;
+			side="EMPTY";
+			vehicle="C_Rubberboat";
+			skill=0.60000002;
+		};
+		class Item4
+		{
+			position[]={11610.645,0,5980.1074};
+			azimut=-91.329124;
+			id=5;
+			side="EMPTY";
+			vehicle="C_Rubberboat";
+			skill=0.60000002;
+		};
+		class Item5
+		{
+			position[]={19253.473,0,13615.909};
+			azimut=-0.99202764;
+			id=6;
+			side="EMPTY";
+			vehicle="C_Rubberboat";
+			skill=0.60000002;
+		};
+		class Item6
+		{
+			position[]={13531.997,0,8662.8809};
+			azimut=-91.329124;
+			id=7;
+			side="EMPTY";
+			vehicle="C_Rubberboat";
 			skill=0.60000002;
 		};
 	};
