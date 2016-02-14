@@ -214,10 +214,7 @@ a3e_arr_Escape_InfantryTypes_Ind =  [
 	,"CUP_I_RACS_Soldier_HAT"
 	,"CUP_I_RACS_Sniper"
 	,"CUP_I_RACS_Engineer"
-	,"CUP_I_RACS_Engineer"
-	,"CUP_O_TK_INS_Commander"
-	,"CUP_O_TK_INS_Mechanic"
-	,"CUP_O_TK_INS_Bomber"];
+	,"CUP_I_RACS_Engineer"];
 a3e_arr_recon_InfantryTypes = [
 	"CUP_O_SLA_SpecOps"
 	,"CUP_O_SLA_SpecOps"
