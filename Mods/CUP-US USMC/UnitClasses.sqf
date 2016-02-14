@@ -510,7 +510,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Sa58RIS2_gl", 10, 1, 2, ["CU
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Mk16_CQC_SFG", 10, 1, 2, ["CUP_30Rnd_556x45_Stanag"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Mk16_STD_FG", 10, 1, 2, ["CUP_30Rnd_556x45_Stanag"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Mk17_STD", 10, 1, 2, ["CUP_20Rnd_762x51_B_SCAR"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_lmg_M60A4", 10, 1, 2, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_lmg_M60E4", 10, 1, 2, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_sgun_M1014", 10, 1, 2, ["CUP_8Rnd_B_Beneli_74Slug","CUP_8Rnd_B_Beneli_74Pellets"], 10];
 
 
