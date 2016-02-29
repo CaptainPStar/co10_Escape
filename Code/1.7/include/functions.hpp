@@ -11,6 +11,7 @@ class CfgFunctions
 			class RandomPatrolPos {};
 			class WriteParamBriefing {};
             class findFlatArea{};
+            class findFlatAreaNear{};
 			class RotatePosition{};
 			class GetEnemyCount{};
 			class paramWeather{};
