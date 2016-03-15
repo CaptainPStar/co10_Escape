@@ -54,7 +54,7 @@ if(isserver) then {
 // Task escape the prison
 A3E_Task_Prison = player createSimpleTask ["Escape the prison"];
 A3E_Task_Prison setSimpleTaskDescription [
-   "Your squad is being held in an improvised prison waiting for OPFOR forces to pick you up for questioning. But the NATO loyal local resistance has hidden a backpack with pistols somewhere in the prison. Arm yourself and escape the prison!",
+   "Your squad is being held in an improvised prison waiting for enemy special forces to pick you up for questioning. Local resistance has hidden a backpack  with pistols somewhere in the prison. Arm yourself and escape the prison!",
    "Escape the prison",
    "Escape the prison"
 ];
@@ -129,7 +129,7 @@ if(isserver) then {
 // Task Hack Commcenter
 A3E_Task_ComCenter = player createSimpleTask ["Hack Communication Center"];
 A3E_Task_ComCenter setSimpleTaskDescription [
-   "Infiltrate a OPFOR communicationcenter, hack the comterminal (box in the middle of the comcenter) and request extraction from NATO HQ.",
+   "Infiltrate an enemy communication center, hack the com-terminal (box in the middle of the comcenter) and request extraction from our HQ.",
    "Hack Communication Center",
    "Hack Communication Center"
 ];
@@ -160,7 +160,7 @@ if(isNil("A3E_Task_ComCenter_Failed")) then {
 // Task Exfiltrate
 A3E_Task_Exfil = player createSimpleTask ["Exfiltrate"];
 A3E_Task_Exfil setSimpleTaskDescription [
-   "After you managed to contact NATO HQ reach the position marked on the map, wait for the helicopters to arrive and escape the enemy territory.",
+   "After you managed to contact our HQ reach the position marked on the map. When you have secured the landing zone, throw a smoke grenade or shoot a flare and wait for the helicopters to arrive. Board the choppers when landed and escape the enemy territory.",
    "Exfiltrate",
    "Exfiltrate"
 ];
@@ -207,7 +207,7 @@ if(isNil("A3E_WorldName")) then {
 };
 
 player createDiaryRecord ["Diary", ["Credits", "Original Mission (Arma2) by Engima.<br />Mission ported to Arma3 by Vormulac and HyperZ.<br />Continue devlopment by NeoArmageddon.<br />Island ports and unit configs by Scruffy.<br />Additional coding by abelian and FrozenLequidity.<br /><br />The official co10 Escape mission for Arma3 is currently developed and maintained by NeoArmageddon and Scruffy."]]; 
-player createDiaryRecord ["Diary", ["Hints (with spoilers)", "A local Nato-sympathiser has hidden a bag of pistols in the temporary prison just before your arrival.<br /><br />
+player createDiaryRecord ["Diary", ["Hints (with spoilers)", "A local resistance member has hidden a bag of pistols in the temporary prison just before your arrival.<br /><br />
 The guards will be alarmed, if you gear up or escape. Prepare for a fight!<br /><br />
 The start is difficulty! Even experienced squads often fail the initial escape. Just restart and try again. I believe in you!<br /><br />
 The prison is placed randomly. Search for the nearest settlement and have a look at the place-name sign.<br /><br />
@@ -222,6 +222,6 @@ player createDiaryRecord ["Diary", ["Mission *important*", "The guards took ever
 player createDiaryRecord ["Diary", ["Situation", "You are held prisoner in an outdoor temporary prison. Armed guards of the local milita are watching your every move while waiting for OPFOR soldiers to arrive for your questioning. Since the guards that captured you by now know too much of your intentions, you are already treated as a high priority target. At best you will be treated as a prisoner of war, but having heard of the OPFOR's interrogation methods, you suspect that the questioning will not follow conventional methods. Add the value of the intelligence you have, which will be of enormous importance for the upcoming invasion, and you surely want to keep your eyes open for a good occasion to escape. Maybe you will have your window of opportunity. Is that a backpack hidden under some moss?"]];
 player createDiaryRecord ["Diary", ["Intelligence Revealed", "OPFOR and the local military seem to know about the upcoming invasion, and are working hard on defensive preparations. They have stationed ammunition depots all over {* ISLANDNAME *}, as well as advanced communication centers guarded by heavy armor."]];
 player createDiaryRecord ["Diary", ["Background", "Before the invasion of {* ISLANDNAME *} a group of highly skilled army specialists were sent into the heart of the enemy's territory. The goal of their mission was to gather intelligence, classified as top priority information, of OPFOR defensive structures. While the mission in itself was very successful and revealed even more useful information than hoped for, the withdrawal from {* ISLANDNAME *} was not. On the small and snaky roads of {* ISLANDNAME *} they made one single mistake and suddenly found themselves lost. If even just for a minute, it was enough to shortly thereafter run straight into a heavily guarded road block. Without a chance to fight they were caught and taken prisoners to a temporary outdoor prison already holding an engineer thought to be killed in a helicopter crash."]];
-player createDiaryRecord ["Diary", ["Global Background", "NATO has secretly and for some time been planning the invasion and liberation of {* ISLANDNAME *} beginning in a couple of weeks."]];
+player createDiaryRecord ["Diary", ["Global Background", "BLUFOR has secretly and for some time been planning the invasion and liberation of {* ISLANDNAME *} beginning in a couple of weeks."]];
         
 
