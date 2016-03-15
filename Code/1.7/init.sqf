@@ -54,7 +54,7 @@ call compile preprocessFileLineNumbers "Scripts\Escape\AIskills.sqf";
 
 //[_isJipPlayer] call compile preprocessFileLineNumbers "Briefing.sqf";
 
-[] call a3e_fnc_briefing;
+//[] call a3e_fnc_briefing;
 
 setTerrainGrid (Param_Grass);
 

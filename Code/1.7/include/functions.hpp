@@ -23,7 +23,9 @@ class CfgFunctions
 			class HealAtBuilding {};
 			class GetPlayers {};
 			class GetPlayerGroup {};
-			class Briefing {};
+			class Briefing {
+				postInit = 1;
+			};
 			class cleanupTerrain {};
 			class handleRating {};
 			class handleScore {};
