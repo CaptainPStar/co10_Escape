@@ -14,14 +14,14 @@
 	_trigger setTriggerTimeout [5, 5, 5, false];
 	_trigger setTriggerStatements["a3e_var_Escape_MissionFailed_LeftBehind", "[""end3"",false,2] call BIS_fnc_endMission;", ""];
 
-	waituntil{sleep 0.1;!isNil("A3E_PrisonLoudspeakerObject")};
+	//waituntil{sleep 0.1;!isNil("A3E_PrisonLoudspeakerObject")};
 	private["_soundpos","_trigger"];
 	_soundpos = getpos A3E_PrisonLoudspeakerObject;
 	_soundpos set[2,3];
-	_trigger = createTrigger["EmptyDetector", _soundpos];
+	_trigger = createTrigger["EmptyDetector", [0,0,0]];
 	_trigger setTriggerArea[25, 25, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", true];
-	_trigger setTriggerStatements["A3E_SoundPrisonAlarm", "!A3E_SoundPrisonAlarm", ""];
+	_trigger setTriggerStatements["A3E_SoundPrisonAlarm", "thisTrigger setposASL ((getposASL A3E_PrisonLoudspeakerObject) vectorAdd [0,0,4]);", ""];
 	_trigger setSoundEffect ["$NONE$", "", "", "AlarmSfx"];
 	
 	//All players are unconscious
