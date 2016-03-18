@@ -36,15 +36,17 @@ switch (_paramLoading) do
   case 0: 
   {
     ["Saving parameters."] call a3e_fnc_rptLog;
-    uiNamespace setVariable ["A3E_SavedParams", paramsArray];    
+    //uiNamespace setVariable ["A3E_SavedParams", paramsArray]; 
+	profileNamespace setVariable ["A3E_SavedParams", paramsArray]; 
+	saveProfileNamespace;
   }; 
   case 1: 
   {
       //Load params if existing in UINamespace
-      _params = uiNamespace getVariable ["A3E_SavedParams",[]];
+      _params = profileNamespace getVariable ["A3E_SavedParams",[]];
       if(count(_params)==0 || count(_params)!=count(paramsArray)) then {
           ["No parameters found or params were updated, loading default."] call a3e_fnc_rptLog;
-          uiNamespace setVariable ["A3E_SavedParams", paramsArray];
+          //profileNamespace setVariable ["A3E_SavedParams", paramsArray];
       } else {
           ["Parameters loaded"] call a3e_fnc_rptLog;
           paramsArray = _params;
