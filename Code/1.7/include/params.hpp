@@ -4,7 +4,7 @@ class Params
     {
             title = "Parameter Loading";
             values[] = {0, 1, 2};
-            texts[] = {"Use below and save", "Load existing (Use below if not found)", "Use below without save"};
+            texts[] = {"Use settings below and save (settings will be restored on mission restart)", "Load previously saved settings (Use below if none found)", "Use settings below without saving"};
             default = 1;
 	};
     class Param_EnemySkill
