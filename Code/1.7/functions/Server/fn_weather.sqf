@@ -4,6 +4,7 @@ private _weatherTemplates = [];
 
 //Clear
 _weatherTemplates pushBack [0,0,0,0];
+
 //Overcast
 _weatherTemplates pushBack [0.6,0,0.2,0];
 //Rain
@@ -23,10 +24,23 @@ _weatherTemplates pushBack [0.6,0.1,0,0];
 //Nice
 _weatherTemplates pushBack [0.1,0,0,0];
 //Morningmood
-_weatherTemplates pushBack [0,0,[0.2+random 0.3,0.1,random 10 + 10],0];
+_weatherTemplates pushBack [0,0,[0.2+random 0.3,0.075,random 5 + 1],0];
 //Morningmood2
-_weatherTemplates pushBack [0,0,[0.1+random 0.3,0.075,random 25 + 10],0];
-
+_weatherTemplates pushBack [0,0,[0.1+random 0.3,0.05,random 15 + 5],0];
+//Clear
+_weatherTemplates pushBack [0,0,0,0];
+//Clear
+_weatherTemplates pushBack [0,0,0,0];
+//Clear
+_weatherTemplates pushBack [0,0,0,0];
+//Overcast
+_weatherTemplates pushBack [0.6,0,0.2,0];
+//Overcast
+_weatherTemplates pushBack [0.6,0,0.2,0];
+//Cloudy
+_weatherTemplates pushBack [0.4,0,0,0];
+//Cloudy
+_weatherTemplates pushBack [0.4,0,0,0];
 //Make sure all used vars are initialised
 if(isNil("Param_Weather")) then {
 	Param_Weather = -1;
