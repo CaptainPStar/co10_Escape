@@ -1,9 +1,3 @@
-A3E_fnc_GetPlayers = {
-	private["_players"];
-	_players = allPlayers;
-	_players;
-};
-
 drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	private["_nighttime"];
     _this setVehicleAmmo (0.2 + random 0.6);
