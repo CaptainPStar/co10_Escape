@@ -132,4 +132,11 @@ class Params
 		texts[]={"First-/Third-Person","Hindsight Cam"};
 		default = 1;
 	};
+	class Param_SearchChopper
+	{
+		title="Search Chopper Type";
+		values[]={0,1,2};
+		texts[]={"Standard","Easy","Hard"};
+		default = 1;
+	};
 };

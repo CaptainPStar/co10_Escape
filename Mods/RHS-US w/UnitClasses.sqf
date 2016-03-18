@@ -717,15 +717,28 @@ a3e_arr_searchdrone = [
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
 // first chopper that's called when you escape
-// only chopper used right now
+// Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
-a3e_arr_searchChopper = [
+a3e_arr_searchChopperEasy = [
+	"RHS_UH1Y"
+	,"RHS_UH1Y_FFAR"];
+a3e_arr_searchChopperHard = [
 	"RHS_UH1Y"
 	,"RHS_UH1Y_FFAR"];
 a3e_arr_searchChopper_pilot = [
 	"rhsusf_usmc_marpat_wd_helipilot"];
 a3e_arr_searchChopper_crew = [
 	"rhsusf_usmc_marpat_wd_helicrew"];
+
+if(Param_SearchChopper==0) then {
+	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
+};
+if(Param_SearchChopper==1) then {
+	a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
+};
+if(Param_SearchChopper==2) then {
+	a3e_arr_searchChopper = a3e_arr_searchChopperHard;
+};
 
 //////////////////////////////////////////////////////////////////
 // fn_AmbientInfantry
