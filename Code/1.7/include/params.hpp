@@ -137,6 +137,6 @@ class Params
 		title="Search Chopper Type";
 		values[]={0,1,2};
 		texts[]={"Standard","Easy","Hard"};
-		default = 1;
+		default = 0;
 	};
 };
