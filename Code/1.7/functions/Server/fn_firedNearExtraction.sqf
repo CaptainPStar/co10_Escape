@@ -11,4 +11,7 @@ private _parents = ([(configFile >> "CfgAmmo" >> _ammo),true] call BIS_fnc_retur
 private _allowed = ["SmokeShell","Chemlight_base","FlareBase","SmokeLauncherAmmo"];
 if(count(_allowed arrayIntersect _parents) > 0) then {
 	[_markerNo] spawn A3E_fnc_RunExtraction;
+	diag_log "Extraction triggered.";
+} else {
+	diag_log "Ammo not allowed to trigger extraction."
 };
