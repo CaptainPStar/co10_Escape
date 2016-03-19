@@ -8,7 +8,7 @@ _markerName = "drn_Escape_ExtractionPos" + str _markerNo;
 
 private _location = "HeliHEmpty" createvehicle (getMarkerPos _markerName);
 
-_location setvariable ["A3E_ExtractionOnStandby",true];
+//_location setvariable ["A3E_ExtractionOnStandby",true];
 
 private _code = compile format["[%1,_this] call A3E_fnc_firedNearExtraction;",_markerNo];
 
