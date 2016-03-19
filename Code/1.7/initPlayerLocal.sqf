@@ -14,7 +14,8 @@ AT_Revive_clearedDistance = 0;
 AT_Revive_Camera = 1;
 
 
-call compile preprocessFile "Revive\reviveInit.sqf";
+call ATR_FNC_ReviveInit;
+
 call compile preprocessFile "Scripts\AT\dronehack_init.sqf";
 [] call A3E_fnc_addUserActions;
   
@@ -91,4 +92,4 @@ sleep 2;
 
 waituntil{sleep 0.5;!isNil("A3E_EscapeHasStarted")};
 
-player setCaptive false;
+[player, false] remoteExec ["setCaptive", 0, false];

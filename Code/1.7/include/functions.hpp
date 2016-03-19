@@ -120,8 +120,19 @@ class CfgFunctions
 			class InitAquaticPatrolMarkers {};
 		};
 	};
-	class AT
+	class ATR
 	{
+		class Revive
+		{
+			#include "..\functions\revive\revive.hpp"
+		};
+	};
+	class ATHSC
+	{
+		class HSC
+		{
+			#include "..\functions\HSC\hsc.hpp"
+		};
 	};
 	
 	class MB
