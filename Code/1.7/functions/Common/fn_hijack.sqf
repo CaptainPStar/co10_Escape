@@ -98,8 +98,9 @@ if (_count == 0) then {
 	};
 	
     a3e_var_Escape_ExtractionMarker = createMarker [format["drn_visibleGoalMarker%1",a3e_var_Escape_ExtractionMarkerNo], a3e_var_Escape_ExtractionMarkerPos];
-    a3e_var_Escape_ExtractionMarker setMarkerType "Flag_NATO";
-	
+    a3e_var_Escape_ExtractionMarker setMarkerType "hd_pickup";
+	a3e_var_Escape_ExtractionMarker setMarkerColor "ColorGreen";
+	a3e_var_Escape_ExtractionMarker setMarkerText "Evac";
     [_extractionPointNo] remoteExec ["A3E_fnc_CreateExtractionPoint",2,false];
     
 	A3E_Task_ComCenter_Complete = true;

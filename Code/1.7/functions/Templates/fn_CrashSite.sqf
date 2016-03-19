@@ -11,6 +11,13 @@ _object = createVehicle [a3e_arr_CrashSiteWrecks select(floor(random(count(a3e_a
 _object setPos _position;
 _object setDir _dir;
 
+if(isNil("a3e_CrashSiteMarkerNo")) then {
+	a3e_CrashSiteMarkerNo = 0;
+} else {
+	a3e_CrashSiteMarkerNo = a3e_CrashSiteMarkerNo + 1;
+};
+["a3e_CrashSiteMarker" + str a3e_CrashSiteMarkerNo,_position,"hd_warning","ColorGreen",true] call A3E_fnc_createLocationMarker;
+
 _boxType = "Box_NATO_Wps_F";
 _boxpos = _position findEmptyPosition [3,15,_boxType];
  if(count _boxpos >0) then {
