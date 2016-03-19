@@ -10,3 +10,7 @@ class targetEnemysNear {};
 class keyDown {};
 class updateText {};
 class toggleNV {};
+class mouseMove {};
+class mouseZMove {};
+class rotateVector {};
+class updatePerspective {};

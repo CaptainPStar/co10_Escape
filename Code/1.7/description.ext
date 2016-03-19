@@ -64,3 +64,72 @@ wreckRemovalMaxTime = 1800; //seconds
 
 #include "include\params.hpp"
 #include "include\functions.hpp"
+
+class RscTitles {
+	titles[] = {HSC_View}; 
+	class HSC_View {
+			idd = 620000;
+			duration = 15000;
+			name = "Hindsight Cam";
+			onLoad = "uiNamespace setVariable ['ATHSC_View', _this select 0]";
+			onUnload = "uiNamespace setVariable ['ATHSC_View', displayNull]";
+
+		   class controlsBackground {
+				class Rsc_MouseArea {
+					idc = 170001;
+					style = ST_MULTI;
+					
+					type = CT_STATIC;
+				
+					shadow = 1;
+					colorShadow[] = {0,0,0,0.5};
+					font = "PuristaMedium";
+					SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+					colorText[] = {1,1,1,1.0};
+					colorBackground[] = {0,0,0,0};
+					linespacing = 1;
+					x = "safezoneX";
+					y = "safezoneY";
+					w = "safezoneW";
+					h = "safezoneH";
+
+					text = "";
+					onMouseMoving = "";
+					onMouseEnter = "";
+					onMouseExit = "";
+					onMouseZChanged = "";
+					onKeyDown = "systemchat str _this;";
+				};
+			};
+			
+			class controls {
+				class Rsc_TargetText {
+					idc = 170002;
+					text = "<t color='#ffffff' shadow='2'>You are unconscious!</t>";
+					type = 13;
+					style = 2;
+					  
+					x = "SafeZoneX + (SafeZoneW * 0.3)";
+					y = "SafeZoneY + (SafezoneH * 0.8)";
+					w = "(SafeZoneW) * 0.4";
+					h = "SafezoneH * 0.1";  
+					  
+					  class Attributes {
+						font = "TahomaB";
+						color = "#000000";
+						align = "center";
+						valign = "middle";
+						shadow = false;
+						shadowColor = "#ff0000";
+						size = "2";
+					};
+					shadow = 2;
+					font = "RobotoCondensedBold";
+					colorText[] = {1, 1, 1, 1};
+					Size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
+					SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
+					colorBackground[] = {0, 0, 0, 0};
+				};
+			};
+	};
+};

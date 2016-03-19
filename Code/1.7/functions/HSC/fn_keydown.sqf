@@ -1,3 +1,5 @@
+#include "\A3\UI_F\hpp\defineDIKCodes.inc"
+
 private["_handled", "_ctrl", "_dikCode", "_shift", "_ctrlKey", "_alt"];
 _ctrl = _this select 0;
 _dikCode = _this select 1;
@@ -5,22 +7,9 @@ _shift = _this select 2;
 _ctrlKey = _this select 3;
 _alt = _this select 4;
 
-_handled = false;
-
+_handled = true;
 if(_dikCode == DIK_A) then {
 	[true] call ATHSC_fnc_cycleEntity;
-};
-if(_dikCode == DIK_RIGHT) then {
-	ATHSC_CamDir = ATHSC_CamDir + 5;
-};
-if(_dikCode == DIK_LEFT) then {
-	ATHSC_CamDir = ATHSC_CamDir - 5;
-};
-if(_dikCode == DIK_DOWN) then {
-	ATHSC_CamHeight = ATHSC_CamHeight + 0.5;
-};
-if(_dikCode == DIK_UP) then {
-	ATHSC_CamHeight = ATHSC_CamHeight - 0.5;
 };
 if(_dikCode == DIK_D) then {
 	[false] call ATHSC_fnc_cycleEntity;
@@ -37,19 +26,16 @@ if(_dikCode == DIK_SPACE) then {
 if(_dikCode == DIK_N) then {
 	call ATHSC_fnc_toggleNV;
 };
+if(_dikCode == DIK_M) then {
+	//_handled = false;
+};
+     
+if(_dikCode == DIK_NUMPADENTER) then {
+	[] call ATHSC_fnc_updatePerspective;
+};
+
 if(_dikCode == DIK_ESCAPE) then {
-	call ATHSC_fnc_exit;
-};
-if(ATHSC_CamHeight<5) then {
-	ATHSC_CamHeight = 5;
-};
-if(ATHSC_CamHeight > 25) then {
-	ATHSC_CamHeight = 25;
-};
-if(ATHSC_CamDir>=360) then {
-	ATHSC_CamDir = ATHSC_CamDir %360;
-};
-if(ATHSC_CamDir<0) then {
-	ATHSC_CamDir = (360 - ATHSC_CamDir%360);
+	//[] spawn ATHSC_fnc_exit;
+	_handled = false;
 };
 _handled;  

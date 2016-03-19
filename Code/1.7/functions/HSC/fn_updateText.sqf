@@ -3,7 +3,11 @@ disableSerialization;
 _enemysNear = [_this,0,false] call bis_fnc_param;
 _targetUnconscious = [_this,1,false] call bis_fnc_param;
 _targetName = [_this,2,"Respawn"] call bis_fnc_param;
-_line1 = format["<t color='#ffffff' shadow='2'>You are watching</t> <t color='#e9630d' shadow='2'>%1</t>",_targetName];
+if(ATHSC_CamTarget == player) then {
+	_line1 = format["<t color='#ffffff' shadow='2'>You are unconscious!</t>",_targetName];
+} else {
+	_line1 = format["<t color='#ffffff' shadow='2'>You are watching</t> <t color='#e9630d' shadow='2'>%1</t>",_targetName];
+};
 _line2 = "";
 if(_enemysNear) then {
 	_line2 = "<t color='#ff0000' shadow='2'>" + format["Can't spawn. Enemys are near!"] + "</t>";
@@ -18,7 +22,7 @@ if(_enemysNear) then {
 		};
 	};
 };
-_control =  (uiNamespace getVariable 'ATHSC_Main_Dialog') displayCtrl 170002;
+_control =  (uiNamespace getVariable 'ATHSC_View') displayCtrl 170002;
 if(AT_Revive_enableRespawn) then {
 	_control ctrlSetStructuredText parseText (_line1 + "<br/>" + _line2);
 } else {
