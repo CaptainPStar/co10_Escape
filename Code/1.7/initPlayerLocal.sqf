@@ -92,4 +92,4 @@ sleep 2;
 
 waituntil{sleep 0.5;!isNil("A3E_EscapeHasStarted")};
 
-[player, false] remoteExec ["setCaptive", 0, false];
+player setCaptive false;

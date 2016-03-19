@@ -23,7 +23,7 @@ if(name _player == "HC") then {
 
 	_player addeventhandler["HandleScore","_this call A3E_FNC_handleScore;"];
 	
-	[_player, true] remoteExec ["setCaptive", 0, false];
+	[_player, true] remoteExec ["setCaptive", _player, false];
 	diag_log format["Escape debug: %1 is waiting for prison creation.", name _player];
     waituntil{sleep 0.5;(!isNil("A3E_FenceIsCreated") && !isNil("A3E_StartPos") && !isNil("A3E_ParamsParsed"))};
 	diag_log format["Escape debug: %1 is will be placed now.", name _player];
