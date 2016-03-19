@@ -23,8 +23,7 @@ if(name _player == "HC") then {
 
 	_player addeventhandler["HandleScore","_this call A3E_FNC_handleScore;"];
 	
-	
-	[[[_player], {(_this select 0) setCaptive true;}], "BIS_fnc_spawn", _player, false] call BIS_fnc_MP;
+	[_player, true] remoteExec ["setCaptive", 0, false];
 	diag_log format["Escape debug: %1 is waiting for prison creation.", name _player];
     waituntil{sleep 0.5;(!isNil("A3E_FenceIsCreated") && !isNil("A3E_StartPos") && !isNil("A3E_ParamsParsed"))};
 	diag_log format["Escape debug: %1 is will be placed now.", name _player];
@@ -33,9 +32,14 @@ if(name _player == "HC") then {
 		_players = [] call A3E_fnc_GetPlayers;
 		{
 			if(_x != _player) exitwith {
-				_player setpos [(getpos _x select 0) + (random 4) - 2, (getpos _x select 1) + (random 6) - 3, 0];
-				_placed = true;
-				diag_log format["Escape debug: %1 placed at %2.", name _player, name _x];
+				if(vehicle _x != _x && ((vehicle _x) emptyPositions "cargo")>0) then {
+					_player moveincargo (vehicle _x);
+					_placed = true;
+				} else {
+					_player setpos [(getpos _x select 0) + (random 4) - 2, (getpos _x select 1) + (random 6) - 3, 0];
+					_placed = true;
+					diag_log format["Escape debug: %1 placed at %2.", name _player, name _x];
+				};
 			};
 		} foreach _players;	
 	};
