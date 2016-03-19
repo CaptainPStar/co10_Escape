@@ -106,7 +106,7 @@ if (_count == 0) then {
 	A3E_Task_ComCenter_Complete = true;
 	publicvariable "A3E_Task_ComCenter_Complete";
 	
-    ["Task complete: Hack Communication Center (Rendezvous point marked on map)"] call drn_fnc_CL_ShowTitleTextAllClients;
+   [[West,"HQ"],"Glad you are still there! We prepared an evacuation point. You should have received the coordinates. Good luck!"] remoteExec ["sideChat",0,false];
     
    // _generatorTrailer removeAction _id;
 };
