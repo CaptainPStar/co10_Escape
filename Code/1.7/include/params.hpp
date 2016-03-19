@@ -2,10 +2,17 @@ class Params
 {
     class Param_Loadparams
     {
-            title = "Parameter Loading";
+            title = "Parameter Load & Save (save parameters between sessions)";
             values[] = {0, 1, 2};
             texts[] = {"Use settings below and save (settings will be restored on mission restart)", "Load previously saved settings (Use below if none found)", "Use settings below without saving"};
             default = 1;
+	};
+	class Param_Spacer1
+    {
+            title = "==================== Difficulty Settings ====================";
+            values[] = {0};
+            texts[] = {""};
+            default = 0;
 	};
     class Param_EnemySkill
 	{
@@ -16,10 +23,38 @@ class Params
 	};
 	class Param_EnemyFrequency
 	{
-		title="Enemy Frequency";
+		title="Enemy Groupsize";
 		values[]={1,2,3};
 		texts[]={"Few (suitable for 1-3 players)", "Some (suitable for 4-6 players)", "A lot (suitable for 7-8 players)"};
 		default = 1;
+	};
+	class Param_EnemySpawnDistance
+	{
+		title="Enemy Spawn Distance";
+		values[]={800,1050,1300};
+		texts[]={"Short (better performance)", "Medium", "Far (for good rigs)"};
+		default = 1300;
+	};
+	class Param_VillageSpawnCount
+	{
+		title="Village Patrol Spawns";
+		values[]={80000, 40000, 10000};
+		texts[]={"Low (better performance)", "Medium", "High (Very demanding)"};
+		default = 40000;
+	};
+	class Param_SearchChopper
+	{
+		title="Search Chopper Type";
+		values[]={0,1,2};
+		texts[]={"Standard","Easy","Hard"};
+		default = 0;
+	};
+	class Param_Spacer2
+    {
+            title = "==================== Environment Settings ====================";
+            values[] = {0};
+            texts[] = {""};
+            default = 0;
 	};
 	class Param_TimeOfDay	
 	{	
@@ -50,63 +85,21 @@ class Params
 	};
 	class Param_Grass
 	{	
-		title="Grass";
+		title="Grass Visibility";
 		values[]={50,25,12,6,2};
 		texts[]={"No Grass", "Proximity", "Normal", "Far", "Very Far"};
 		default = 12;
 	};
-	class Param_EnemySpawnDistance
-	{
-		title="Enemy Spawn Distance";
-		values[]={800,1050,1300};
-		texts[]={"Short (better performance)", "Medium", "Far (for good rigs)"};
-		default = 1300;
-	};
-	class Param_VillageSpawnCount
-	{
-		title="Village Patrol Spawns";
-		values[]={80000, 40000, 10000};
-		texts[]={"Low (better performance)", "Medium", "High (Very demanding)"};
-		default = 40000;
-	};
-	class Param_ExtractionSelection
-	{
-		title="Extraction Points";
-		values[]={0, 1, 2};
-		texts[]={"Random", "Close", "Far"};
-		default = 0;
-	};
-	class Param_Waffelbox
-	{
-		title="Additional Weaponbox at depot";
-		values[]={0,1};
-		texts[]={"Off", "On"};
-		default = 0;
-	};
-	class Param_RespawnButton
-	{
-		title="Reenable respawn button";
-		values[]={0,1};
-		texts[]={"Off", "On"};
-		default = 0;
-	};
-	class Param_NoNightvision
-	{
-		title="NVG-Goggles and TWS Scopes";
-		values[]={0,1};
-		texts[]={"All", "No Goggles and TWS"};
-		default = 0;
-	};
-	class Param_Debug
-	{
-		title="Debug";
-		values[]={0,1};
-		texts[]={"Off","On"};
-		default = 0;
+	class Param_Spacer3
+    {
+            title = "==================== Gameplay Settings ====================";
+            values[] = {0};
+            texts[] = {""};
+            default = 0;
 	};
 	class Param_RevealMarkers
 	{
-		title="Mapmarkers";
+		title="Display of markers on map";
 		values[]={0,1,2,3};
 		texts[]={"Always show (with type)","Always show marker but hide type (questionmark)","Show marker upon discovery","Never show markers"};
 		default = 1;
@@ -132,11 +125,39 @@ class Params
 		texts[]={"First-/Third-Person","Hindsight Cam"};
 		default = 1;
 	};
-	class Param_SearchChopper
+	class Param_ExtractionSelection
 	{
-		title="Search Chopper Type";
-		values[]={0,1,2};
-		texts[]={"Standard","Easy","Hard"};
+		title="Extraction Points";
+		values[]={0, 1, 2};
+		texts[]={"Random", "Close", "Far"};
+		default = 0;
+	};
+	class Param_Waffelbox
+	{
+		title="Additional Weaponbox (with less random content) at depots";
+		values[]={0,1};
+		texts[]={"Off", "On"};
+		default = 0;
+	};
+	class Param_NoNightvision
+	{
+		title="NVG-Goggles and TWS Scopes";
+		values[]={0,1};
+		texts[]={"All", "No Goggles and TWS"};
+		default = 0;
+	};
+	class Param_Spacer4
+    {
+            title = "==================== Debug Settings ====================";
+            values[] = {0};
+            texts[] = {""};
+            default = 0;
+	};
+	class Param_Debug
+	{
+		title="Debug";
+		values[]={0,1};
+		texts[]={"Off","On"};
 		default = 0;
 	};
 };

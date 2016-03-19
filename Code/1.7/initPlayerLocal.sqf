@@ -68,22 +68,6 @@ if (isMultiplayer) then {
 waituntil{sleep 0.1;!isNil("A3E_ParamsParsed")};
 AT_Revive_Camera = Param_ReviveView;
 
-  //Disable respawn Button
-[] spawn {
-	if((Param_RespawnButton)==0) then {
-		while{true} do {
-			while{isNull ((findDisplay 49) displayCtrl 1010)} do {
-				sleep 0.1;
-			};
-			((findDisplay 49) displayCtrl 1010) ctrlEnable false;
-			while{!isNull ((findDisplay 49) displayCtrl 1010)} do {
-				sleep 0.1;
-			};
-		};
-	};
-};
-
-
 
 [] spawn {
 	disableSerialization;
