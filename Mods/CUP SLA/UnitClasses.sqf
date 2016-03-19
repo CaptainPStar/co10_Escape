@@ -13,6 +13,9 @@ A3E_VAR_Side_Blufor = west;
 A3E_VAR_Side_Opfor = east;
 A3E_VAR_Side_Ind = resistance;
 
+A3E_VAR_Flag_Opfor = "\ca\misc\data\sever_vlajka.paa";
+A3E_VAR_Flag_Ind = "\ca\misc\data\jih_vlajka.paa";
+
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
 A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];

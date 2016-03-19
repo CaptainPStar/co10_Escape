@@ -260,7 +260,8 @@ _dir = 90;
 // Flag
 _pos = [0, 10];
 _dir = 0;
-["Flag_CSAT_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+_object = ["FlagPole_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+_object setflagtexture "A3E_VAR_Flag_Opfor";
 
 if (count _staticWeaponClasses > 0) then {
     // Statics

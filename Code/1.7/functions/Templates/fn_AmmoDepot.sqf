@@ -128,15 +128,17 @@
     
     _pos = [(_middlePos select 0) + 3.2, (_middlePos select 1) - 6.5, 0];
     //_object = "Flag_CSAT_F" createVehicle _pos;
-    _object = createVehicle ["Flag_CSAT_F", _pos, [], 0, "NONE"];
+    _object = createVehicle ["FlagPole_F", _pos, [], 0, "NONE"];
     _object setPos _pos;
     _object setDir 90;
+	_object setflagtexture "A3E_VAR_Flag_Opfor";
     
     _pos = [(_middlePos select 0) - 3, (_middlePos select 1) - 6.3, 0];
     //_object = "Flag_CSAT_F" createVehicle _pos;
-    _object = createVehicle ["Flag_CSAT_F", _pos, [], 0, "NONE"];
+    _object = createVehicle ["FlagPole_F", _pos, [], 0, "NONE"];
     _object setPos _pos;
     _object setDir 90;
+	_object setflagtexture "A3E_VAR_Flag_Opfor";
     
     // Skylt
     
