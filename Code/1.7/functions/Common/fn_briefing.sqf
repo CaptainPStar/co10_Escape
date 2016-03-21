@@ -37,7 +37,7 @@ if(isserver) then {
 	_trigger setTriggerArea[0, 0, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", false];
 	_trigger setTriggerTimeout [1, 1, 1, false];
-	_trigger setTriggerStatements["a3e_var_Escape_AllPlayersDead || a3e_var_Escape_MissionComplete", "[] call ATHSC_fnc_exit;", ""];
+	_trigger setTriggerStatements["a3e_var_Escape_AllPlayersDead || a3e_var_Escape_MissionComplete", "[] spawn ATHSC_fnc_exit;", ""];
 
 	//Skip date so the played hours match		
 	//expCond="a3e_var_Escape_AllPlayersDead || a3e_var_Escape_MissionComplete;";
