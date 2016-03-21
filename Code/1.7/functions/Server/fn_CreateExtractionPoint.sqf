@@ -6,7 +6,7 @@ _markerNo = _this select 0;
 _markerName = "drn_Escape_ExtractionPos" + str _markerNo;
 //private _pos = getMarkerPos _markerName;
 
-private _location = "HeliHEmpty" createvehicle (getMarkerPos _markerName);
+private _location = "Land_HelipadEmpty_F" createvehicle (getMarkerPos _markerName);
 
 //_location setvariable ["A3E_ExtractionOnStandby",true];
 
