@@ -748,7 +748,8 @@ a3e_arr_searchChopperEasy = [
 	,"CUP_O_UH1H_TKA"];
 a3e_arr_searchChopperHard = [
 	"CUP_I_UH1H_TK_GUE"
-	,"CUP_O_UH1H_TKA"];
+	,"CUP_O_UH1H_TKA"
+	,"CUP_O_Mi17_TK"];
 a3e_arr_searchChopper_pilot = [
 	"CUP_O_TK_Pilot"];
 a3e_arr_searchChopper_crew = [

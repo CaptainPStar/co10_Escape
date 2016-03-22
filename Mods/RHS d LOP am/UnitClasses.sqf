@@ -833,29 +833,17 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"RHS_Mi8MTV3_FAB_vvs"
-	,"RHS_Mi8AMTSh_vvs"
-	,"RHS_Mi8mt_vdv"
-	,"RHS_Mi8mt_vv"
-	,"RHS_Mi8mt_vvs"
-	,"RHS_Mi8MTV3_vvs"
-	,"RHS_Mi8mt_vvsc"
-	,"RHS_Mi8mt_vdv"
+	"RHS_Mi8mt_vdv"
 	,"RHS_Mi8mt_vv"
 	,"RHS_Mi8mt_vvs"
 	,"RHS_Mi8mt_vvsc"];
 a3e_arr_searchChopperHard = [
-	"RHS_Mi8MTV3_FAB_vvs"
+	"RHS_Mi8AMTSh_vvsc"
 	,"RHS_Mi8AMTSh_vvs"
-	,"RHS_Mi8mt_vdv"
-	,"RHS_Mi8mt_vv"
-	,"RHS_Mi8mt_vvs"
+	,"RHS_Mi8MTV3_vdv"
 	,"RHS_Mi8MTV3_vvs"
-	,"RHS_Mi8mt_vvsc"
-	,"RHS_Mi8mt_vdv"
-	,"RHS_Mi8mt_vv"
-	,"RHS_Mi8mt_vvs"
-	,"RHS_Mi8mt_vvsc"];
+	,"RHS_Mi8MTV3_FAB_vvs"
+	,"RHS_Mi8MTV3_vvsc"];
 a3e_arr_searchChopper_pilot = [
 	"rhs_pilot"];
 a3e_arr_searchChopper_crew = [

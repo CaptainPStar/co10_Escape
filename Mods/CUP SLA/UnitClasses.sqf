@@ -663,9 +663,7 @@ a3e_arr_searchChopperEasy = [
 	,"CUP_I_SA330_Puma_HC2_RACS"
 	,"CUP_I_UH60L_FFV_RACS"];
 a3e_arr_searchChopperHard = [
-	"CUP_I_SA330_Puma_HC1_RACS"
-	,"CUP_I_SA330_Puma_HC2_RACS"
-	,"CUP_I_UH60L_FFV_RACS"];
+	"CUP_O_Mi8_SLA_2"];
 a3e_arr_searchChopper_pilot = [
 	"CUP_I_RACS_Pilot"];
 a3e_arr_searchChopper_crew = [

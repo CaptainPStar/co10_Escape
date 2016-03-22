@@ -714,7 +714,9 @@ a3e_arr_searchChopperEasy = [
 	,"LOP_PMC_MH9_armed"];
 a3e_arr_searchChopperHard = [
 	"LOP_PMC_Mi8AMT"
-	,"LOP_PMC_MH9_armed"];
+	,"LOP_PMC_MH9_armed"
+	,"RHS_UH1Y"
+	,"RHS_UH1Y_FFAR"];
 a3e_arr_searchChopper_pilot = [
 	"LOP_PMC_Infantry_Pilot"];
 a3e_arr_searchChopper_crew = [
