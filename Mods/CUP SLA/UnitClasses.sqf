@@ -650,7 +650,9 @@ a3e_arr_extraction_chopper_escort = [
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
-	"CUP_O_Su25_SLA"
+	"CUP_USMC_MQ9"
+	,"CUP_USMC_MQ9"
+	,"CUP_USMC_MQ9"
 	,"CUP_I_C130J_RACS"];
 
 //////////////////////////////////////////////////////////////////

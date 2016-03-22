@@ -686,7 +686,10 @@ a3e_arr_extraction_chopper_escort = [
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
-	"I_UAV_02_F"];
+	"O_UAV_01_F"
+	,"O_UAV_02_CAS_F"
+	,"O_UAV_02_F"
+	,"O_UAV_02_F"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
