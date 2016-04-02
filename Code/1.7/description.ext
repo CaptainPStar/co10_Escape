@@ -130,6 +130,33 @@ class RscTitles {
 					SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
 					colorBackground[] = {0, 0, 0, 0};
 				};
+			class Rsc_HelpText {
+					idc = -1;
+					text = "<t color='#cdcdcd' shadow='2'><u>Controls</u><br/>Cycle entities: A or D<br/>1st/3rd Person: Enter<br/>Rotate: Mouse<br/>Nightvision: N</t>";
+					type = 13;
+					style = 0;
+					  
+					x = "SafeZoneX + (SafeZoneW * 0.02)";
+					y = "SafeZoneY + (SafezoneH * 0.85)";
+					w = "(SafeZoneW) * 0.2";
+					h = "SafezoneH * 0.15";  
+					  
+					class Attributes {
+						font = "TahomaB";
+						color = "#000000";
+						align = "center";
+						valign = "middle";
+						shadow = false;
+						shadowColor = "#ff0000";
+						size = "2";
+					};
+					shadow = 2;
+					font = "RobotoCondensedBold";
+					colorText[] = {1, 1, 1, 1};
+					Size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.4)";
+					SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.4)";
+					colorBackground[] = {0, 0, 0, 0};
+				};
 			};
 	};
 };

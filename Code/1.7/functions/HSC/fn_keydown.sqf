@@ -23,14 +23,46 @@ if(_dikCode == DIK_SPACE) then {
 		};
 	};
 };
+
+if(_dikCode == DIK_LEFT) then {
+	ATHSC_CamDir = ATHSC_CamDir + 1.5;
+};
+if(_dikCode == DIK_RIGHT) then {
+	ATHSC_CamDir = ATHSC_CamDir - 1.5;
+};
+if(_dikCode == DIK_UP) then {
+	ATHSC_CamAngle = ATHSC_CamAngle + 1.5;
+};
+if(_dikCode == DIK_DOWN) then {
+	ATHSC_CamAngle = ATHSC_CamAngle - 1.5;
+
+};
+
+if(ATHSC_CamAngle<5) then {
+	ATHSC_CamAngle = 5;
+};
+if(ATHSC_CamAngle > 85) then {
+	ATHSC_CamAngle = 85;
+};
+if(ATHSC_CamDir>=360) then {
+	ATHSC_CamDir = ATHSC_CamDir%360;
+};
+if(ATHSC_CamDir<-360) then {
+	ATHSC_CamDir = ATHSC_CamDir%360;
+};
+
+
 if(_dikCode == DIK_N) then {
 	call ATHSC_fnc_toggleNV;
 };
 if(_dikCode == DIK_M) then {
 	//_handled = false;
 };
+if(_dikCode == DIK_P || _dikCode == DIK_I ) then {
+	_handled = false;
+};
      
-if(_dikCode == DIK_NUMPADENTER) then {
+if(_dikCode == DIK_NUMPADENTER || _dikCode == DIK_RETURN) then {
 	[] call ATHSC_fnc_updatePerspective;
 };
 
