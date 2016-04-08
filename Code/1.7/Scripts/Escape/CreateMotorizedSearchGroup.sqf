@@ -11,10 +11,13 @@ if (count _this > 4) then {_maxSkill = _this select 4;} else {_maxSkill = 0.6;};
 if (count _this > 5) then {_debug = _this select 5;} else {_debug = false;};
 
 // Vehicle classes have following cargo capacity [7, 5, 7, 10]
-_index = floor random count a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses;
-_vehicleClass = a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses select _index;
+_vehicleClass = selectRandom a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses;
 
-_vehicleMaxCargo = a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo select _index;
+_vehicleMaxCargo = (configfile >> "CfgVehicles" >> _vehicleClass >>  "transportSoldier") call BIS_fnc_getCfgData;
+
+if(typename _vehicleMaxCargo != (typename 0)) then {
+	_vehicleMaxCargo = 4;
+};
 
 _result = [_spawnPos, 0, _vehicleClass, A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
 _vehicle = _result select 0;

@@ -10,10 +10,13 @@ if (count _this > 2) then {_maxSkill = _this select 2;} else {_maxSkill = 0.6;};
 if (count _this > 3) then {_enemyFrequency = _this select 3;} else {_enemyFrequency = 3;};
 if (count _this > 4) then {_debug = _this select 4;} else {_debug = false;};
 
-_index = floor random count a3e_arr_Escape_ReinforcementTruck_vehicleClasses;
-_vehicleClass = a3e_arr_Escape_ReinforcementTruck_vehicleClasses select _index;
+_vehicleClass = selectRandom a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses;
 
-_vehicleMaxCargo = a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo select _index;
+_vehicleMaxCargo = (configfile >> "CfgVehicles" >> _vehicleClass >>  "transportSoldier") call BIS_fnc_getCfgData;
+
+if(typename _vehicleMaxCargo != (typename 0)) then {
+	_vehicleMaxCargo = 4;
+};
 
 _result = [_spawnPos, 0, _vehicleClass, A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
 _vehicle = _result select 0;
