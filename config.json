@@ -357,7 +357,7 @@
 			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
-					"MOD" : "RHS-US",
+					"MOD" : "RHS RU vs US",
 					"PLAYERSIDE" : "EAST",
 					"PLAYERUNIT_1" : "rhs_vdv_flora_sergeant",
 					"PLAYERUNIT_2" : "rhs_vdv_flora_junior_sergeant",
@@ -397,7 +397,7 @@
 			"require" : ["CUP_Creatures_Military_Germany","CUP_Creatures_Military_Taki","CUP_Creatures_Military_TakiInsurgents"],
 			"replace" :
 				{
-					"MOD" : "CUP",
+					"MOD" : "CUP GER vs Taki",
 					"PLAYERSIDE" : "WEST",
 					"PLAYERUNIT_1" : "CUP_B_GER_Soldier_TL",
 					"PLAYERUNIT_2" : "CUP_B_GER_Soldier_Scout",
@@ -417,7 +417,27 @@
 			"require" : ["CUP_Creatures_Military_USMC","CUP_Creatures_Military_SLA","CUP_Creatures_Military_RACS"],
 			"replace" :
 				{
-					"MOD" : "CUP",
+					"MOD" : "CUP USMC vs SLA",
+					"PLAYERSIDE" : "WEST",
+					"PLAYERUNIT_1" : "CUP_B_USMC_Soldier_SL",
+					"PLAYERUNIT_2" : "CUP_B_USMC_Soldier_GL",
+					"PLAYERUNIT_3" : "CUP_B_USMC_Soldier_Marksman",
+					"PLAYERUNIT_4" : "CUP_B_USMC_Engineer",
+					"PLAYERUNIT_5" : "CUP_B_USMC_Soldier_AA",
+					"PLAYERUNIT_6" : "CUP_B_USMC_Soldier_MG",
+					"PLAYERUNIT_7" : "CUP_B_USMC_Soldier_AT",
+					"PLAYERUNIT_8" : "CUP_B_USMC_Soldier",
+					"PLAYERUNIT_9" : "CUP_B_USMC_Soldier_AR",
+					"PLAYERUNIT_10" : "CUP_B_USMC_Medic"
+				}
+		},
+		{
+			"name" : "CUP RU",
+			"path" : "./Mods/CUP RU/",
+			"require" : ["CUP_Creatures_Military_USMC","CUP_Creatures_Military_NAPA"],
+			"replace" :
+				{
+					"MOD" : "CUP USMC vs RU",
 					"PLAYERSIDE" : "WEST",
 					"PLAYERUNIT_1" : "CUP_B_USMC_Soldier_SL",
 					"PLAYERUNIT_2" : "CUP_B_USMC_Soldier_GL",
@@ -437,7 +457,7 @@
 			"require" : ["CUP_Creatures_Military_USMC","CUP_Creatures_Military_NAPA","CUP_Creatures_Military_SLA"],
 			"replace" :
 				{
-					"MOD" : "CUP-US",
+					"MOD" : "CUP SLA vs USMC",
 					"PLAYERSIDE" : "EAST",
 					"PLAYERUNIT_1" : "CUP_O_sla_Soldier_SL",
 					"PLAYERUNIT_2" : "CUP_O_sla_Soldier_GL",
@@ -1351,6 +1371,20 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP-US"
+		},
+		{
+			"island" : "Chernarus",
+			"sqm": "Chernarus",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_VS_RU"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"sqm": "Chernarus_Summer",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_VS_RU"
 		},
 		{
 			"island" : "Isla Duala",
