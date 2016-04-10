@@ -6,8 +6,6 @@ import argparse
 
 # Parse incoming arguments
 parser = argparse.ArgumentParser(description = 'Preprocess code against config file')
-parser.add_argument('-d', '--debug',
-    help='Output code will have debug flag turned on', action='store_true')
 parser.add_argument('-s', '--smart',
     help='Use smart-update to only copy new files', action='store_true')
 parser.add_argument('-p', '--prefix', default="",
@@ -119,7 +117,6 @@ for mission in missions:
     # Create replace dict
     replace = dict(list(data['replace'].items()) + list(missionMod['replace'].items()) + list(missionIsland['replace'].items()));
     replace['REQUIRE'] = required
-    replace['DEBUG'] = "true" if args.debug else "false"
 
     # Pre-process code
     for rfile in data['ParsedFiles']:
