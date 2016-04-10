@@ -18,6 +18,8 @@ parser.add_argument('--mod', help='Only build missions for certain set of mod(s)
 
 parser.add_argument('--pbo', help='Build pbos', action='store_true')
 
+parser.add_argument('-o', help='Override the output directory')
+
 parser.add_argument('--verbose', '-v', help='Output additional log messages', action='store_true')
 
 args = parser.parse_args(sys.argv[1:])
@@ -30,14 +32,17 @@ mods = data['Mods'];
 islands = data['Islands'];
 missions = data['Missions'];
 cpbo = data['cpbo'];
+builddir = args.o or data['BuildDir']
 
 if args.clean:
+    # Left the default BuildDir to not clobber any output path
     shutil.rmtree(data['BuildDir'])
 
-if not os.path.isdir(data['BuildDir']):
-    os.mkdir(data['BuildDir'])
+if not os.path.isdir(builddir):
+    os.mkdir(builddir)
 
 # Delete all base-files in the builddir, mainly, the pbo's
+# Left data["BuildDir"] to not clobber overriden output path
 for the_file in os.listdir(data['BuildDir']):
     file_path = os.path.join(data['BuildDir'], the_file)
     if os.path.isfile(file_path):
@@ -76,7 +81,7 @@ for mission in missions:
     if not 'name' in mission:
         mission['name'] = data['Missionname']+'_'+missionMod['name']
 
-    missiondir = data['BuildDir'] + '/' + args.prefix + mission['name']+'.'+ missionIsland['class']
+    missiondir = builddir + '/' + args.prefix + mission['name']+'.'+ missionIsland['class']
 
     # Clean up old files
     if not args.smart:
