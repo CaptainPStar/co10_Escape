@@ -50,12 +50,12 @@ if (A3E_Debug) then {
 
 _trigger = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
 _trigger setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
-_trigger setTriggerActivation[A3E_VAR_Side_Blufor_Str, format["%1 D",A3E_VAR_Side_Opfor], false];
+_trigger setTriggerActivation[A3E_VAR_Side_Blufor_Str, A3E_VAR_Side_Opfor_Str+" D", false];
 _trigger setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 
 _trigger2 = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
 _trigger2 setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
-_trigger2 setTriggerActivation[A3E_VAR_Side_Blufor,  format["%1 D",A3E_VAR_Side_Ind], false];
+_trigger2 setTriggerActivation[A3E_VAR_Side_Blufor_Str, A3E_VAR_Side_Ind_Str+" D", false];
 _trigger2 setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 
 // Start thread that sets detected by civilian
@@ -63,9 +63,9 @@ _trigger2 setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", 
     while {true} do {
         if (a3e_var_Escape_SearchLeader_civilianReporting) then {
             {
-                if (side _x == civilian && _x distance ((call A3E_fnc_GetPlayers) select 0) <300) exitWith {
-                    a3e_var_SearchLeader_Detected = true;
+                if (side _x == civilian && {_x distance ((call A3E_fnc_GetPlayers) select 0) <300}) exitWith {
                     a3e_var_Escape_SearchLeader_ReportingCivilian = _x;
+                    a3e_var_SearchLeader_Detected = true;
                 };
             } foreach allUnits;
         };
@@ -78,7 +78,7 @@ _trigger2 setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", 
 
 _detectedUnitsPosition = [0, 0, 0];
 
-while {1 == 1} do {
+while {true} do {
 	if (a3e_var_SearchLeader_Detected) then {
 
 		deleteVehicle _trigger;
@@ -105,7 +105,7 @@ while {1 == 1} do {
 				_leader = _x;
 			} foreach units _x;
 
-            if (alive _leader && (side _x == A3E_VAR_Side_Opfor || side _x == A3E_VAR_Side_Ind)) then {
+            if (alive _leader && {side _x == A3E_VAR_Side_Opfor || {side _x == A3E_VAR_Side_Ind}}) then {
 				_nearestEnemy = _leader findNearestEnemy position _leader;
 				
                 if (!isNull _nearestEnemy) then {
@@ -140,11 +140,12 @@ while {1 == 1} do {
         } foreach allGroups;
         
         // Check if detected by civilian
-        if (a3e_var_Escape_SearchLeader_civilianReporting && !_unitIsDetected) then {
+        if (a3e_var_Escape_SearchLeader_civilianReporting && {!_unitIsDetected} && {!isNil "a3e_var_Escape_SearchLeader_ReportingCivilian"}) then {
 			//We need to check if civilian knows about player atm this is cheating for AI
             _unitIsDetected = true;
             _detectedUnit = (call A3E_fnc_GetPlayers) select 0;
             _unitThatDetected = a3e_var_Escape_SearchLeader_ReportingCivilian;
+            a3e_var_Escape_SearchLeader_ReportingCivilian = nil;
             _reportingUnit = _unitThatDetected;
             _unitThatDetectedPositionAccuracy = 0;
             _maxKnowledge = 4;
