@@ -2,7 +2,7 @@
 if (!isServer) exitWith {};
 
 private ["_referenceUnit", "_side", "_infantryClasses", "_minSkill", "_maxSkill", "_debug", "_spawnRadius", "_aquaticPatrolZonePos", "_minSoldiersPerGroup", "_maxSoldiersPerGroup", "_areaPerGroup"];
-private ["_village", "_possibleInfantryTypes", "_soldierType", "_soldierCount", "_soldier", "_soldiers", "_i", "_isFaction", "_factionsArray"];
+private ["_village", "_possibleInfantryTypes", "_soldierType", "_soldierCount", "_soldier", "_soldiers", "_i", "_isFaction"];
 private ["_aquaticPatrolZoneNo", "_aquaticPatrolZoneSize", "_maxGroupsCount", "_groupsCount", "_groups", "_groupIndex", "_damage", "_spawned", "_soldierObj"];
 private ["_script", "_skill", "_ammo", "_trigger", "_soldierPos", "_rank", "_hasScript", "_groupPos", "_roadSegments", "_roadSegment"];
 private ["_message", "_aquaticPatrolZoneName", "_fnc_onSpawnGroup"];
@@ -28,7 +28,6 @@ if (count _this > 7) then {_maxSkill = _this select 7;} else {_maxSkill = 0.6;};
 if (count _this > 8) then {_spawnRadius = _this select 8;} else {_spawnRadius = 750;};
 if (count _this > 9) then {_fnc_onSpawnGroup = _this select 9;} else {_fnc_onSpawnGroup = {};};
 if (count _this > 10) then {_debug = _this select 10;} else {_debug = false;};
-_factionsArray = [A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Ind , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor , A3E_VAR_Side_Opfor ,A3E_VAR_Side_Opfor];
 if (_debug) then {
 	_message = "Initializing aquatic patrols.";
 	diag_log _message;

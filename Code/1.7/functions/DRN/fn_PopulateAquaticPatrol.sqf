@@ -25,7 +25,7 @@ for [{_i=0},{_i<=_groups},{_i=_i+1}] do {
 		_spawnPos = [_markerName] call a3e_fnc_RandomMarkerPos;
 	};
 	
-	_boat = [_spawnPos, random 360, (a3e_arr_AquaticPatrols select floor (random count a3e_arr_AquaticPatrols)), EAST] call BIS_fnc_spawnVehicle;
+	_boat = [_spawnPos, random 360, (a3e_arr_AquaticPatrols select floor (random count a3e_arr_AquaticPatrols)), A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
 	_arrBoats set [count _arrBoats, _boat];
 	_crew = _boat select 1;
 	_group = _boat select 2;

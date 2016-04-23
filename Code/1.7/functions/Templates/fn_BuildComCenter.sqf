@@ -1,5 +1,5 @@
 private ["_centerPos", "_rotateDir", "_staticWeaponClasses", "_parkedVehicleClasses", "_index"];
-private ["_pos", "_dir", "_posX", "_posY", "_sectionDir", "_guns", "_gun", "_vehicle", "_powerGenerator","_static"];
+private ["_pos", "_dir", "_posX", "_posY", "_sectionDir", "_gun", "_vehicle", "_powerGenerator","_static"];
 private ["_fnc_CreateObject"];
 private ["_obj"];
 
@@ -268,16 +268,14 @@ if (count _staticWeaponClasses > 0) then {
     _pos = [-17, 13.5];
     _dir = 0;
     
-    _gun = _staticWeaponClasses select floor random count _staticWeaponClasses;
+    _gun = selectRandom _staticWeaponClasses;
     _static = [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 	[_static,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
     
     _pos = [17, -9.5];
     _dir = 135;
     
-    //_guns = ["DSHkM_Mini_TriPod", "AGS_Ins", "DSHKM_Ins"];
-    _guns = ["O_HMG_01_high_F"];
-    _gun = _guns select floor random count _guns;
+    _gun = selectRandom _staticWeaponClasses;
     _static = [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 	[_static,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
 };
@@ -287,13 +285,13 @@ if (count _parkedVehicleClasses > 0) then {
     _pos = [11.5, 12];
     _dir = 270;
     
-    _vehicle = _parkedVehicleClasses select floor random count _parkedVehicleClasses;
+    _vehicle = selectRandom _parkedVehicleClasses;
     [_vehicle, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateVehicle;
     //_object = _vehicle createVehicle [_realPos, [], 0, "CAN_COLLIDE"];
 	
     _pos = [11.5, 6.5];
     _dir = 270;
     
-    _vehicle = _parkedVehicleClasses select floor random count _parkedVehicleClasses;
+    _vehicle = selectRandom _parkedVehicleClasses;
     [_vehicle, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 };
