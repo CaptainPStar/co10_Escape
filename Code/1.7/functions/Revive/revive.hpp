@@ -19,7 +19,7 @@ class Check_Putin {};
 class Check_Pullout {};
 class PutInVehicle {};
 class MoveInjuredInVehicle {};
-class PullPutVehicle {};
+class PullOutVehicle {};
 class Ragdoll {};
 class CopyGear {};
 class WashAshore {};
