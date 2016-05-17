@@ -1,7 +1,7 @@
 private _params = param [3];
 private _target = cursortarget;
 	
-if(call ATR_FNC_Check_Dragging) then {
+if(call ATR_FNC_Check_Revive) then {
 	player setVariable ["AT_Revive_isDragging",_target,true];
 	_target setVariable ["AT_Revive_isDragged",player,true];
 
@@ -22,7 +22,7 @@ if(call ATR_FNC_Check_Dragging) then {
 	
 	waitUntil 
 	{ 
-		!alive player || (player getVariable "AT_Revive_isUnconscious") || !alive _target || !(_target getVariable "AT_Revive_isUnconscious") || isNull((player getVariable "AT_Revive_isDragging")) || isNull((_target getVariable "AT_Revive_isDragged")) 
+		!alive player || (player getVariable "AT_Revive_isUnconscious") || !alive _target || !(_target getVariable "AT_Revive_isUnconscious") || isNull((player getVariable ["AT_Revive_isDragging",objNull])) || isNull((_target getVariable ["AT_Revive_isDragged",objNull])) 
 	};
 
 	player setVariable ["AT_Revive_isDragging",objNull,true];

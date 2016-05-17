@@ -1,8 +1,12 @@
-private _vehicle = cursortarget;
-private _return = false;
-{
-	if((_x getVariable ["AT_Revive_isUnconscious",false]) && (_x != _vehicle)) exitwith {
-		_return = true;
-	};
-} foreach (crew _vehicle);
-_return;
+!isNull cursorTarget
+	&& {(cursorTarget distance player) <= 8}
+	&& {
+		private _return = false;
+		{
+			if(_x != cursorTarget && {_x getVariable ["AT_Revive_isUnconscious",false]}) exitwith {
+				_return = true;
+			};
+		} foreach (crew cursorTarget);
+		_return;
+	}
+;

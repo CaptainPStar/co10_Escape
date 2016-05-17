@@ -14,7 +14,6 @@ class Release {};
 class AddVehicleWatchdog {};
 class Check_Revive {};
 class Check_Revive_FAK {};
-class Check_Dragging {};
 class Check_Putin {};
 class Check_Pullout {};
 class PutInVehicle {};

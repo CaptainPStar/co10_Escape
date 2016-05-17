@@ -4,15 +4,15 @@ private _fakUsed = _params param [1,false];
 if(!isnull _target) then {
 	if (alive _target) then
 	{
+		_target setVariable ["AT_Revive_isDragged", player, true];
 		if(primaryWeapon player != "") then {
 			player playMove "AinvPknlMstpSlayWrflDnon_medic";
 		} else {
 			player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
 		};
 
-		_target setVariable ["AT_Revive_isDragged", objNull, true];
-		
 		sleep 6;
+		_target setVariable ["AT_Revive_isDragged", objNull, true];
 		
 		if(!(player getVariable ["AT_Revive_isUnconscious",false])) then {
 			_target setVariable ["AT_Revive_isUnconscious", false, true];

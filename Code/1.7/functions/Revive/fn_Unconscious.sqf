@@ -9,7 +9,7 @@ if(vehicle _unit == _unit) then {
 	_ragdoll = [_unit] spawn ATR_FNC_ragdoll;
 	waituntil{scriptDone _ragdoll};
 } else {
-	private["_vehicle","_EH"];
+	private["_vehicle"];
 	_vehicle = vehicle _unit;
 	if(getdammage _vehicle < 1) then {
 		_inVehicle = true;
