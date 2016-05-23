@@ -7,7 +7,8 @@
 		{
 			"VERSION" : "1.7.5",
 			"MISSION" : "Escape",
-			"MISSION_FULL": "co10 Escape"
+			"MISSION_FULL": "co10 Escape",
+			"PLAYER_INIT" : "this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};"
 		},
 	"ParsedFiles" : ["mission.sqm","defines.hpp","fn_briefing.sqf"],
 	"Mods" : [
