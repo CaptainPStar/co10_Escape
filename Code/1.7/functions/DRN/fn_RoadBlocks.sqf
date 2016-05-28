@@ -128,7 +128,7 @@ _fnc_CreateRoadBlock = {
     };
     
 	private _marker = createMarkerLocal [format["a3e_roadBlockArea%1",_instanceNo], _pos];
-    _marker setMarkerAlpha 0;
+    _marker setMarkerAlphaLocal 0;
     _marker setMarkerShapeLocal "ELLIPSE";
     _marker setMarkerSizeLocal [15, 15];
 	

@@ -63,5 +63,5 @@ _obj setpos _objpos;
 
 _marker = createMarkerLocal ["A3E_MortarSitePatrolMarker" + str _number, _position];
 _marker setMarkerShapeLocal "ELLIPSE";
-_marker setMarkerAlpha 0;
+_marker setMarkerAlphaLocal 0;
 _marker setMarkerSizeLocal [50, 50];

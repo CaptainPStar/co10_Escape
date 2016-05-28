@@ -535,7 +535,7 @@ waitUntil {scriptDone _scriptHandle};
 	
     // Spawn more guards
     _marker = createMarkerLocal ["drn_guardAreaMarker", _startPos];
-    _marker setMarkerAlpha 0;
+    _marker setMarkerAlphaLocal 0;
     _marker setMarkerShapeLocal "ELLIPSE";
     _marker setMarkerSizeLocal [50, 50];
     

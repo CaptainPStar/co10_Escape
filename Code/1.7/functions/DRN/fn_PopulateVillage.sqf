@@ -36,7 +36,7 @@ if (count _groups == 0) exitWith {};
 		_rank = _soldier select 8;
 
 		if ((!_spawned) && _damage < 0.75) then {
-			_markerName setMarkerPos _villagePos;
+			_markerName setMarkerPosLocal _villagePos;
 
 		 	_soldierObj = _newGroup createUnit [_soldierType, _soldierPos, [], 0, "FORM"];
 			//_soldierObj setSkill _skill;

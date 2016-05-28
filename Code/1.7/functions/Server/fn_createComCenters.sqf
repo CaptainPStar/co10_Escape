@@ -51,7 +51,7 @@ for [{_i=0},{_i<_totalMarkerCount},{_i=_i+1}] do {
 
 		_marker = createMarkerLocal ["drn_CommunicationCenterPatrolMarker" + str _instanceNo, _pos];
 		_marker setMarkerShapeLocal "ELLIPSE";
-		_marker setMarkerAlpha 0;
+		_marker setMarkerAlphaLocal 0;
 		_marker setMarkerSizeLocal [75, 75];
 
 		_instanceNo = _instanceNo + 1;
