@@ -47,7 +47,7 @@ _firstGroup = true;
             _spawnPos = [_markerName] call drn_fnc_CL_GetRandomMarkerPos;
         };
         
-        _markerName setMarkerPos _locationPos; // upsmon moves this away for some reason, so we need to reset it
+        _markerName setMarkerPosLocal _locationPos; // upsmon moves this away for some reason, so we need to reset it
         
         _soldier = _group createUnit [_soldierType, _spawnPos, [], 0, "FORM"];
         //_soldier setSkill _skill;

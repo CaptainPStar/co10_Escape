@@ -198,7 +198,7 @@ while {true} do {
 			if (_searchAreaMarkerCreated) then {
 
 				_markerState = "MEDIUM";
-				_marker setMarkerSize [_searchAreaDiamMedium / 2, _searchAreaDiamMedium / 2];
+				_marker setMarkerSizeLocal [_searchAreaDiamMedium / 2, _searchAreaDiamMedium / 2];
 
 				if (A3E_Debug) then {
 					_DebugMsg = "Search area has expanded to size MEDIUM.";
@@ -214,7 +214,7 @@ while {true} do {
 		if (diag_tickTime > _lostContactTimeSek + _timeUntilMarkerSizeLargeMin * 60 && _markerState == "MEDIUM") then {
             if (_searchAreaMarkerCreated) then {
                 _markerState = "LARGE";
-                _marker setMarkerSize [_searchAreaDiamLarge / 2, _searchAreaDiamLarge / 2];
+                _marker setMarkerSizeLocal [_searchAreaDiamLarge / 2, _searchAreaDiamLarge / 2];
                 
                 if (A3E_Debug) then {
                     _DebugMsg = "Search area has expanded to size LARGE.";
@@ -310,7 +310,7 @@ while {true} do {
 				};
 				_marker setMarkerPosLocal _detectedUnitsPosition;
 				_markerState = "SMALL";
-				_marker setMarkerSize [_searchAreaDiamSmall / 2, _searchAreaDiamSmall / 2];
+				_marker setMarkerSizeLocal [_searchAreaDiamSmall / 2, _searchAreaDiamSmall / 2];
 
 				if (A3E_Debug) then {
 					_DebugMsg = name _reportingUnit + " has reported in to HQ.";

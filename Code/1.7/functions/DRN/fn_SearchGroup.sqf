@@ -228,8 +228,8 @@ while {!_exitScript} do {
                     _subAreaCreatedTime = diag_tickTime;
                     _subSearchAreaMarker = createMarkerLocal [_subSearchAreaMarkerName, _enemyPos];
                     _subSearchAreaMarker setMarkerAlphaLocal 0;
-                    _subSearchAreaMarker setMarkerShape "RECTANGLE";
-                    _subSearchAreaMarker setMarkerSize [_subAreaSize, _subAreaSize];
+                    _subSearchAreaMarker setMarkerShapeLocal "RECTANGLE";
+                    _subSearchAreaMarker setMarkerSizeLocal [_subAreaSize, _subAreaSize];
                     _searchAreaMarkerName = _subSearchAreaMarkerName;
                     
                     if (_debug) then {

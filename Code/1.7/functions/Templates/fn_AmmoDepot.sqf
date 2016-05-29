@@ -503,5 +503,5 @@
 
     _marker = createMarkerLocal ["drn_AmmoDepotPatrolMarker" + str _instanceNo, _middlePos];
     _marker setMarkerShapeLocal "ELLIPSE";
-    _marker setMarkerAlpha 0;
+    _marker setMarkerAlphaLocal 0;
     _marker setMarkerSizeLocal [50, 50];
