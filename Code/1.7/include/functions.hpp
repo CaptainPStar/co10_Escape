@@ -67,6 +67,7 @@ class CfgFunctions
             };
 			class parameterInit {}; 
             class createComCenters {};
+            class createMotorPool {};
             class createAmmoDepots {};
 			class createMortarSites {};
 			class createLocationMarker {};
@@ -79,6 +80,7 @@ class CfgFunctions
 		{
             class BuildPrison {};
             class BuildComCenter {};
+            class BuildMotorPool {};
             class AmmoDepot {};
 			class CrashSite {};
 			class MortarSite {};
