@@ -569,7 +569,7 @@ if (count _staticWeaponClasses > 0) then {
     _guns = _staticWeaponClasses;
     _gun = _guns select floor random count _guns;
     _static = [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
-	[_static,east] spawn A3E_fnc_AddStaticGunner; 
+	[_static,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
 };
 
 // Armor
@@ -621,7 +621,7 @@ if (_random > .9) then {
 
 _marker = createMarkerLocal ["A3E_MotorPoolPatrolMarker" + str _mNumber, _centerPos];
 _marker setMarkerShapeLocal "RECTANGLE";
-_marker setMarkerAlpha 0;
+_marker setMarkerAlphaLocal 0;
 _marker setMarkerSizeLocal [40, 38];
 
 
