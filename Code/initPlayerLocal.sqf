@@ -80,10 +80,6 @@ waituntil{sleep 0.1;(!isNil("A3E_FenceIsCreated") && !isNil("A3E_StartPos") && !
 
 sleep 2.0;
 
-if(!isNil("paramsArray")) then {
-	paramsArray call A3E_fnc_WriteParamBriefing;
-};
-
 diag_log format["Escape debug: %1 is now ready (clientside).", name player];
 
 titleFadeOut 1;
