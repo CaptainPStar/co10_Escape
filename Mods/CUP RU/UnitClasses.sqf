@@ -67,7 +67,6 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 		,"CUP_C_Datsun_Plain"
 		,"CUP_C_Datsun_Covered"
 		,"CUP_C_Datsun_Tubeframe"
-		,"CUP_C_Octavia_CIV"
 		,"CUP_C_Skoda_White_CIV"
 		,"CUP_C_Skoda_Red_CIV"
 		,"CUP_C_Skoda_Blue_CIV"
@@ -104,7 +103,9 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_O_Vodnik_MedEvac_RU"
 	,"CUP_O_UAZ_AMB_RU"
 	,"CUP_O_Ural_Reammo_RU"
-	,"CUP_O_Ural_Refuel_RU"];
+	,"CUP_O_Ural_Refuel_RU"
+	,"CUP_O_BRDM2_ATGM_RUS"
+	,"CUP_O_BRDM2_HQ_RUS"];
 	a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 	"CUP_I_BMP2_NAPA"
 	,"CUP_I_BMP_HQ_NAPA"
@@ -116,7 +117,15 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_I_BMP2_AMB_NAPA"
 	,"CUP_I_Datsun_PK"
 	,"CUP_I_Datsun_PK_Random"
-	,"CUP_I_Ural_ZU23_NAPA"];
+	,"CUP_I_Ural_ZU23_NAPA"
+	,"CUP_I_V3S_Open_TKG"
+	,"CUP_I_V3S_Covered_TKG"
+	,"CUP_I_V3S_Refuel_TKG"
+	,"CUP_I_V3S_Repair_TKG"
+	,"CUP_V3S_Open_NAPA"
+	
+	
+	];
 
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
@@ -194,9 +203,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"CUP_O_D30_AT_RU"
 	,"CUP_O_KORD_high_RU"
 	,"CUP_O_KORD_RU"
-	,"CUP_O_Metis_RU"
-	,"CUP_O_2b14_82mm_RU"
-	,"CUP_O_ZU23_RU"];
+	,"CUP_O_Metis_RU"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"CUP_I_BMP2_NAPA"
 	,"CUP_I_BRDM2_NAPA"
@@ -205,7 +212,6 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	,"CUP_I_BMP2_AMB_NAPA"
 	,"CUP_I_Datsun_PK"
 	,"CUP_I_Datsun_PK_Random"
-	,"CUP_I_ZU23_NAPA"
 	,"CUP_I_SPG9_NAPA"
 	,"CUP_I_DSHKM_NAPA"];
 
@@ -215,9 +221,9 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	,"CUP_O_Ural_RU"	//12
 	,"CUP_O_Ural_Open_RU"];	//12
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
-	"CUP_I_BMP2_NAPA"];	
+	"CUP_V3S_Open_NAPA"];	
 // Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
-a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [3, 5, 11, 12];
+a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [3, 12, 12, 12];
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
@@ -225,7 +231,8 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	"CUP_O_BTR90_RU"
 	,"CUP_O_Ural_RU"
 	,"CUP_O_Ural_Open_RU"
-	,"CUP_I_BMP2_NAPA"];
+	,"CUP_I_BMP2_NAPA",
+	"CUP_V3S_Open_NAPA"];
 // Total cargo motorized search group vehicle. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses above.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [5, 5, 5, 2, 12, 8, 3, 11];
 
@@ -263,7 +270,8 @@ a3e_arr_ComCenParkedVehicles = [
 	,"CUP_O_Ural_Reammo_RU"
 	,"CUP_O_Ural_Refuel_RU"
 	,"CUP_O_Ural_Repair_RU"
-	,"CUP_O_UAZ_AMB_RU"];
+	,"CUP_O_UAZ_AMB_RU"
+	,"CUP_V3S_Open_NAPA"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
@@ -280,7 +288,6 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 		,"CUP_C_Datsun_Plain"
 		,"CUP_C_Datsun_Covered"
 		,"CUP_C_Datsun_Tubeframe"
-		,"CUP_C_Octavia_CIV"
 		,"CUP_C_Skoda_White_CIV"
 		,"CUP_C_Skoda_Red_CIV"
 		,"CUP_C_Skoda_Blue_CIV"
@@ -314,7 +321,8 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"CUP_O_Ural_Reammo_RU"
 	,"CUP_O_Ural_Refuel_RU"
 	,"CUP_O_Ural_Repair_RU"
-	,"CUP_O_UAZ_AMB_RU"];
+	,"CUP_O_UAZ_AMB_RU"
+	,"CUP_V3S_Open_NAPA"];
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
@@ -323,10 +331,18 @@ a3e_arr_O_attack_heli = [
 	,"CUP_O_Ka52_RU"
 	,"CUP_O_Ka52_Blk_RU"
 	,"CUP_O_Mi24_P_RU"
-	,"CUP_O_Mi24_V_RU"];
+	,"CUP_O_Mi24_V_RU"
+	,"CUP_O_Ka60_Grey_RU"
+	,"CUP_O_Ka52_RU"
+	,"CUP_O_Ka52_Blk_RU"
+	,"CUP_O_Ka52_GreyCamo_RU"
+	,"CUP_O_Ka52_Grey_RU"];
 a3e_arr_O_transport_heli = [
 	"CUP_O_MI6A_RU"
 	,"CUP_O_MI6T_RU"
+	,"CUP_O_Mi8_RU"
+	,"CUP_O_Mi8_medevac_RU"
+	,"CUP_O_Mi8_VIV_RU"
 	,"CUP_O_Mi8_RU"];
 a3e_arr_O_pilots = [
 	"CUP_O_RU_Pilot_VDV"];
@@ -595,7 +611,7 @@ a3e_arr_extraction_chopper_escort = [
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
-	"CUP_O_SU34_AGM_RU"];
+	"CUP_O_Pchela1T_RU"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
@@ -603,7 +619,7 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"CUP_O_Mi8_RU"];
+	"CUP_O_Mi8_RU","CUP_O_Mi8_VIV_RU"];
 a3e_arr_searchChopperHard = [
 	"CUP_O_Mi24_P_RU","CUP_O_Mi24_V_RU","CUP_O_Ka52_RU","CUP_O_Ka50_RU"];
 a3e_arr_searchChopper_pilot = [
@@ -654,8 +670,7 @@ a3e_arr_roadblocks_Veh_GUE = a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
 // boats that are spawned
 //////////////////////////////////////////////////////////////////
 a3e_arr_AquaticPatrols = [
-	"CUP_I_RHIB_RACS"
-	,"CUP_I_RHIB2Turret_RACS"];
+	"CUP_O_PBX_RU"];
 
 //////////////////////////////////////////////////////////////////
 // fn_AmmoDepot
