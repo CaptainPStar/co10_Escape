@@ -200,7 +200,6 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"CUP_O_UAZ_SPG9_RU"
 	,"CUP_O_Vodnik_AGS_RU"
 	,"CUP_O_AGS_RU"
-	,"CUP_O_D30_AT_RU"
 	,"CUP_O_KORD_high_RU"
 	,"CUP_O_KORD_RU"
 	,"CUP_O_Metis_RU"];
@@ -301,9 +300,7 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 
 // Random array. An ammo depot contains one static weapon of the followin types:
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
-	"CUP_O_ZU23_RU"
-	,"CUP_O_AGS_RU"
-	,"CUP_O_D30_RU"
+	"CUP_O_AGS_RU"
 	,"CUP_O_KORD_high_RU"
 	,"CUP_O_KORD_RU"
 	,"CUP_O_Metis_RU"];
