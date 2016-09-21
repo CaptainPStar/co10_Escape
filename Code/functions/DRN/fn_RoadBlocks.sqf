@@ -178,7 +178,7 @@ _fnc_CreateRoadBlock = {
     _group createUnit [(_guardTypes select floor random count _guardTypes), _pos, [], 0, "FORM"];
     
     {
-        _x setUnitRank "LIEUTNANT";
+        _x setUnitRank "LIEUTENANT";
     } foreach units _group;
     
     _units append (units _group);

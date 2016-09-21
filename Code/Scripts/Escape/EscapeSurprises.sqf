@@ -237,7 +237,7 @@ while {true} do {
                     ((units _group) select 1) moveInGunner _chopper;
                     
                     {
-                        _x setUnitRank "LIEUTNANT";
+                        _x setUnitRank "LIEUTENANT";
                         _x call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
                     } foreach units _group;
                     

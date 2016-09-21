@@ -57,7 +57,7 @@ _firstGroup = true;
 		_soldier call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
 		
         if (_groupMemberCount == 0) then {
-			_soldier setUnitRank "SEARGENT";
+			_soldier setUnitRank "SERGEANT";
 			//No UPSMON anymore!
             //_script = [_soldier, _markerName,false] spawn A3E_fnc_RandomPatrolRoute;
             //_soldierObject set [5, _script];

@@ -56,7 +56,7 @@ _gunner1 moveInTurret [_chopper, [0]];
 // _gunner2 moveInTurret [_chopper, [1]];
 
 {
-    _x setUnitRank "LIEUTNANT";
+    _x setUnitRank "LIEUTENANT";
     _x call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
 } foreach units _group;
 

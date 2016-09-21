@@ -84,7 +84,7 @@ _gunner3 moveInTurret [_chopper, [3]];*/
 _chopper action ["lightOn", _chopper];
 
 /*{
-	_x setUnitRank "LIEUTNANT";
+	_x setUnitRank "LIEUTENANT";
     _x call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
 } foreach units _group;*/
 
