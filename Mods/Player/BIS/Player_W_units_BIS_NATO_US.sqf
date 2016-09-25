@@ -14,8 +14,12 @@ A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 // RunExtraction.sqf
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
-a3e_arr_extraction_chopper pushback "B_Heli_Transport_03_F";
-a3e_arr_extraction_chopper_escort pushback "B_Heli_Attack_01_F";
+a3e_arr_extraction_chopper append [
+	"B_Heli_Transport_01_F"
+	];
+a3e_arr_extraction_chopper_escort append [
+	"B_Heli_Attack_01_F"
+	];
 
 
 //////////////////////////////////////////////////////////////////
@@ -29,8 +33,13 @@ a3e_arr_extraction_chopper_escort pushback "B_Heli_Attack_01_F";
 // Index 3: If weapon exists, crate contains at maximum this number of weapons of current class.
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
-a3e_arr_CrashSiteWrecks pushback "Land_UWreck_MV22_F";
-	a3e_arr_CrashSiteWrecks pushback "Land_Wreck_Plane_Transport_01_F";
-	a3e_arr_CrashSiteWrecks pushback "Land_Wreck_Heli_Attack_01_F";
-a3e_arr_CrashSiteCrew pushback "B_T_Helipilot_F";
-	a3e_arr_CrashSiteCrew pushback "B_T_Helicrew_F";
+a3e_arr_CrashSiteWrecks append [
+	"Land_UWreck_MV22_F"
+	,"Land_Wreck_Plane_Transport_01_F"
+	,"Land_Wreck_Heli_Attack_01_F"
+	];
+
+a3e_arr_CrashSiteCrew append [
+	"B_Pilot_F"
+	,"B_helicrew_F"
+	];

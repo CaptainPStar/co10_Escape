@@ -6,10 +6,14 @@
  */
 
 // Random array. Civilian vehicle classes for ambient traffic.
-a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses append [
+	"C_Offroad_02_unarmed_F"
+	];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
-a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
+a3e_arr_Escape_EnemyCivilianCarTypes append [
+	"C_Offroad_02_unarmed_F"
+	];
 
 // Weapons that may show up in civilian cars
 

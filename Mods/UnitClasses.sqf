@@ -16,20 +16,9 @@ a3e_arr_PrisonBackpackWeapons = [];
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [];
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
-switch (_enemyFrequency) do {
-    case 1: {//Few (1-3)
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [];
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [];
-    };
-    case 2: {//Some (4-6)
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [];
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [];
-    };
-    default {//A lot (7-8)
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [];
-        a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [];
-    };
-};
+a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [];
+a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [];
+
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, etc. (for ammo depot guards and communication center guards see further down in this file at fn_InitGuardedLocations)
 a3e_arr_Escape_InfantryTypes = [];
