@@ -22,7 +22,7 @@ _returnValues append [["Indep"]];
 
 // Texture for flags used on camps of this faction
 _returnNames append ["FlagTexture"];
-_returnValues append ["\A3\Data_F\Flags\flag_fd_green_CO.paa"];
+_returnValues append ["\A3\Data_F\Flags\flag_green_CO.paa"];
 
 
 /////////////////////////////////////////////////////////////////////
