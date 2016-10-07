@@ -309,45 +309,56 @@ _returnValues append [
 // Prison backpack secondary weapons (and corresponding magazine type).
 _returnNames append ["PrisonBackpackWeapons"];
 _returnValues append [
+	[
 	["hgun_P07_F","16Rnd_9x21_Mag"]
 	,["hgun_P07_snds_F","30Rnd_9x21_Mag"]
+	]
 ];
 
 // Weapons and ammo in the basic weapons box
 _returnNames append ["BasicWeapons"];
 _returnValues append [
+	[
 	["pistol", "hgun_P07_khk_F", 50, 4, 8, ["16Rnd_9x21_Mag"], 6]
+	]
 ];
 
 // Weapons and ammo in the special weapons box
 _returnNames append ["SpecialWeapons"];
 _returnValues append [
+	[
 	["rifle", "arifle_SPAR_01_khk_F", 20, 2, 4, ["30Rnd_556x45_Stanag"], 6]
 	,["rifle", "arifle_SPAR_01_GL_khk_F", 20, 2, 4, ["30Rnd_556x45_Stanag"], 6]
 	,["lmg", "arifle_SPAR_02_khk_F", 20, 2, 4, ["150Rnd_556x45_Drum_Mag_F"], 4]
 	,["dmr", "arifle_SPAR_03_khk_F", 20, 2, 4, ["20Rnd_762x51_Mag"], 5]
+	]
 ];
 
 // Weapons and ammo in the launchers box
 _returnNames append ["Launchers"];
 _returnValues append [
+	[
 	["launcher", "launch_RPG32_ghex_F", 50, 3, 5, ["RPG32_F", "RPG32_HE_F"], 6]
 	,["launcher", "launch_O_Titan_ghex_F", 50, 1, 2, ["Titan_AA"], 3]
 	,["launcher", "launch_B_Titan_short_tna_F", 50, 1, 2, ["Titan_AP", "Titan_AT"], 3]
+	]
 ];
 
 // Weapons and ammo in the ordnance box
 _returnNames append ["Explosives"];
 _returnValues append [
+	[
 	["explosive", objNull, 30, 1, 1, ["DemoCharge_Remote_Mag", "SatchelCharge_Remote_Mag"], 5]
 	,["explosive", objNull, 30, 1, 1, ["APERSMine_Range_Mag", "APERSBoundingMine_Range_Mag", "APERSTripMine_Wire_Mag"], 5]
 	,["explosive", objNull, 30, 1, 1, ["ClaymoreDirectionalMine_Remote_Mag", "SLAMDirectionalMine_Wire_Mag"], 5]
+	]
 ];
 
 // Weapons and ammo in the vehicle box (the big one)
 // Some high volumes (mostly for immersion)
 _returnNames append ["Grenades"];
 _returnValues append [
+	[
 	["grenade", objNull, 50, 1, 1, ["HandGrenade", "MiniGrenade", "HandGrenade_Stone"], 50]
 	,["grenade", objNull, 50, 1, 1, ["SmokeShell", "SmokeShellYellow", "SmokeShellRed", "SmokeShellGreen", "SmokeShellPurple", "SmokeShellBlue", "SmokeShellOrange"], 50]
 	,["grenade", objNull, 50, 1, 1, ["Chemlight_blue", "Chemlight_green", "Chemlight_red", "Chemlight_yellow"], 50]
@@ -357,15 +368,19 @@ _returnValues append [
 	,["grenade", objNull, 10, 1, 1, ["UGL_FlareWhite_F", "UGL_FlareGreen_F", "UGL_FlareRed_F", "UGL_FlareYellow_F", "UGL_FlareCIR_F"], 5]
 	,["grenade", objNull, 10, 1, 1, ["3Rnd_UGL_FlareWhite_F", "3Rnd_UGL_FlareGreen_F", "3Rnd_UGL_FlareRed_F", "3Rnd_UGL_FlareYellow_F", "3Rnd_UGL_FlareCIR_F"], 5]
 	,["grenade", objNull, 10, 1, 1, ["1Rnd_HE_Grenade_shell", "3Rnd_HE_Grenade_shell"], 5]
+	]
 ];
 // Backpacks
 _returnNames append ["Backpacks"];
 _returnValues append [
+	[
 	["backpack", "B_UAV_01_backpack_F"]
+	]
 ];
 // Items
 _returnNames append ["Items"];
 _returnValues append [
+	[
 	["item", "Laserdesignator_01_khk_F", 10, 1, 2, ["Laserbatteries"], 1]
 	,["item", "Binocular", 50, 2, 3, ]
 	,["item", "Rangefinder", 10, 1, 2]
@@ -380,65 +395,84 @@ _returnValues append [
 	,["item", "Medikit", 20, 1, 1, [], 0]
 	,["item", "FirstAidKit", 100, 10, 50, [], 0]
 	,["item", "B_UavTerminal", 10, 1, 2]
-	];
+	]
+];
 // Nightvision Goggles
 _returnNames append ["NVGs"];
 _returnValues append [
+	[
 	["item", "NVGoggles_tna_F", 10, 1, 3]
+	]
 ];
 // Suppressors
 _returnNames append ["Suppressors"];
 _returnValues append [
+	[
 	["muzzle", "muzzle_snds_B_khk_F", 10, 1, 3]//7.62, SPAR
 	,["muzzle", "muzzle_snds_H_khk_F", 10, 1, 3]//6.5, CSAT Katiba, NATO MX
 	,["muzzle", "muzzle_snds_L", 10, 1, 3]//9mm, P07, Rook, PDW2000
 	,["muzzle", "muzzle_snds_m_khk_F", 10, 1, 3]//5.56, SPAR
+	]
 ];
 
 // Here is a list of scopes, might also get randomly added to enemy patrols:
 _returnNames append ["ScopesBasic"];
 _returnValues append [
+	[]
 	["scope", "optic_Aco", 20, 1, 3]
 	,["scope", "optic_Holosight_khk_F", 10, 1, 2]
 	,["scope", "optic_ERCO_khk_F", 10, 1, 2]
+	]
 ];
 // SMG scopes
 _returnNames append ["ScopesSMG"];
 _returnValues append [
+	[
 	["scope", "optic_Aco_smg", 20, 1, 3]//CSAT
-	];
+	]
+];
 // Sniper rifle scopes
 _returnNames append ["ScopesSniper"];
 _returnValues append [
+	[
 	["scope", "optic_SOS_khk_F", 10, 1, 2]//All
+	]
 ];
 // Nightvision scopes
 _returnNames append ["ScopesNV"];
 _returnValues append [
+	[
 	["scope", "optic_nvs", 10, 1, 1]//
-	];
+	]
+];
 // TWS scopes
 _returnNames append ["ScopesTWS"];
 _returnValues append [
+	[
 	["scope", "optic_tws", 10, 1, 1]//
 	,["scope", "optic_tws_mg", 10, 1, 1]//
+	]
 ];
 
 // Here is a list of bipods, might also get randomly added to enemy patrols:
 _returnNames append ["Bipods"];
 _returnValues append [
+	[
 	["bipod", "bipod_01_F_khk", 10, 1, 2]
 	,["bipod", "bipod_01_F_blk", 10, 1, 2]
 	,["bipod", "bipod_01_F_mtp", 10, 1, 2]
+	]
 ];
 
 
 // Classnames of uniforms for the players
 _returnNames append ["Uniforms"];
 _returnValues append [
+	[
 	"U_B_T_Soldier_F"//Combat Fatigues (Tropic)
 	,"U_B_T_Soldier_AR_F"//Combat Fatigues (Tropic, Tee)
 	,"U_B_T_Soldier_SL_F"//Recon Fatigues (Tropic)
+	]
 ];
 
 /////////////////////////////////////////////////////////////////////

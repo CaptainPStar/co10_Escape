@@ -307,24 +307,29 @@ _returnValues append [
 // Prison backpack secondary weapons (and corresponding magazine type).
 _returnNames append ["PrisonBackpackWeapons"];
 _returnValues append [
+	[
 	["hgun_Rook40_F","16Rnd_9x21_Mag"]
 	,["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"]
 	,["hgun_Rook40_snds_F","30Rnd_9x21_Mag"]
+	]
 ];
 
 // Weapons and ammo in the basic weapons box
 _returnNames append ["BasicWeapons"];
 _returnValues append [
+	[
 	["pistol", "hgun_Rook40_F", 50, 4, 8, ["16Rnd_9x21_Mag"], 6]
 	,["smg", "SMG_02_F", 50, 4, 8, ["30Rnd_9x21_Mag"], 6]
 	,["rifle", "arifle_CTAR_blk_F", 100, 2, 4, ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], 6]
 	,["rifle", "arifle_CTAR_GL_blk_F", 75, 2, 4, ["30Rnd_65x39_caseless_green", "30Rnd_65x39_caseless_green_mag_Tracer", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "UGL_FlareWhite_F"], 4]
 	,["rifle", "arifle_CTARS_blk_F", 50, 2, 4, ["100Rnd_580x42_Mag_F", "100Rnd_580x42_Mag_Tracer_F"], 3]
+	]
 ];
 
 // Weapons and ammo in the special weapons box
 _returnNames append ["SpecialWeapons"];
 _returnValues append [
+	[
 	["dmr", "srifle_DMR_07_blk_F", 50, 2, 4, ["20Rnd_650x39_Cased_Mag_F"], 5]
 	,["dmr", "srifle_DMR_04_F", 50, 2, 4, ["10Rnd_127x54_Mag"], 5]
 	,["rifle", "arifle_ARX_ghex_F", 50, 2, 4, ["30Rnd_65x39_caseless_green_mag_Tracer", "10Rnd_50BW_Mag_F"], 5]
@@ -332,28 +337,34 @@ _returnValues append [
 	,["mg", "LMG_Zafir_F", 50, 2, 4, ["150Rnd_762x54_Box_Tracer"], 3]
 	,["mg", "MMG_01_tan_F", 50, 2, 4, ["150Rnd_93x64_Mag"], 3]
 	,["smg", "arifle_SDAR_F", 10, 2, 4, ["20Rnd_556x45_UW_mag", "30Rnd_556x45_Stanag"], 6]
+	]
 ];
 
 // Weapons and ammo in the launchers box
 _returnNames append ["Launchers"];
 _returnValues append [
+	[
 	["launcher", "launch_RPG32_ghex_F", 50, 3, 5, ["RPG32_F", "RPG32_HE_F"], 6]
 	,["launcher", "launch_O_Titan_ghex_F", 50, 1, 2, ["Titan_AA"], 3]
 	,["launcher", "launch_B_Titan_short_tna_F", 50, 1, 2, ["Titan_AP", "Titan_AT"], 3]
+	]
 ];
 
 // Weapons and ammo in the ordnance box
 _returnNames append ["Explosives"];
 _returnValues append [
+	[
 	["explosive", objNull, 30, 1, 1, ["DemoCharge_Remote_Mag", "SatchelCharge_Remote_Mag"], 5]
 	,["explosive", objNull, 30, 1, 1, ["APERSMine_Range_Mag", "APERSBoundingMine_Range_Mag", "APERSTripMine_Wire_Mag"], 5]
 	,["explosive", objNull, 30, 1, 1, ["ClaymoreDirectionalMine_Remote_Mag", "SLAMDirectionalMine_Wire_Mag"], 5]
+	]
 ];
 
 // Weapons and ammo in the vehicle box (the big one)
 // Some high volumes (mostly for immersion)
 _returnNames append ["Grenades"];
 _returnValues append [
+	[
 	["grenade", objNull, 50, 1, 1, ["HandGrenade", "MiniGrenade", "HandGrenade_Stone"], 50]
 	,["grenade", objNull, 50, 1, 1, ["SmokeShell", "SmokeShellYellow", "SmokeShellRed", "SmokeShellGreen", "SmokeShellPurple", "SmokeShellBlue", "SmokeShellOrange"], 50]
 	,["grenade", objNull, 50, 1, 1, ["Chemlight_blue", "Chemlight_green", "Chemlight_red", "Chemlight_yellow"], 50]
@@ -363,15 +374,19 @@ _returnValues append [
 	,["grenade", objNull, 10, 1, 1, ["UGL_FlareWhite_F", "UGL_FlareGreen_F", "UGL_FlareRed_F", "UGL_FlareYellow_F", "UGL_FlareCIR_F"], 5]
 	,["grenade", objNull, 10, 1, 1, ["3Rnd_UGL_FlareWhite_F", "3Rnd_UGL_FlareGreen_F", "3Rnd_UGL_FlareRed_F", "3Rnd_UGL_FlareYellow_F", "3Rnd_UGL_FlareCIR_F"], 5]
 	,["grenade", objNull, 10, 1, 1, ["1Rnd_HE_Grenade_shell", "3Rnd_HE_Grenade_shell"], 5]
+	]
 ];
 // Backpacks
 _returnNames append ["Backpacks"];
 _returnValues append [
+	[
 	["backpack", "O_UAV_01_backpack_F"]
+	]
 ];
 // Items
 _returnNames append ["Items"];
 _returnValues append [
+	[
 	["item", "Laserdesignator_02_ghex_F", 10, 1, 2, ["Laserbatteries"], 1]
 	,["item", "Binocular", 50, 2, 3]
 	,["item", "Rangefinder", 10, 1, 2]
@@ -387,15 +402,19 @@ _returnValues append [
 	,["item", "FirstAidKit", 100, 10, 50, [], 0]
 	,["item", "O_UavTerminal", 10, 1, 2]
 	,["scope", "optic_Yorris", 10, 1, 2]//Zubr, CSAT
-	];
+	]
+];
 // Nightvision Goggles
 _returnNames append ["NVGs"];
 _returnValues append [
+	[
 	["item", "O_NVGoggles_ghex_F", 10, 1, 3]
+	]
 ];
 // Suppressors
 _returnNames append ["Suppressors"];
 _returnValues append [
+	[
 	["muzzle", "muzzle_snds_B", 10, 1, 3]//7.62, CSAT Rahim, AAF Mk18
 	,["muzzle", "muzzle_snds_H", 10, 1, 3]//6.5, CSAT Katiba, NATO MX
 	,["muzzle", "muzzle_snds_L", 10, 1, 3]//9mm, P07, Rook, PDW2000
@@ -404,56 +423,71 @@ _returnValues append [
 	,["muzzle", "muzzle_snds_65_TI_blk_F", 10, 1, 3]//6.5, DMR_07 and ARX
 	,["muzzle", "muzzle_snds_65_TI_hex_F", 10, 1, 3]//6.5, DMR_07 and ARX
 	,["muzzle", "muzzle_snds_65_TI_ghex_F", 10, 1, 3]//6.5, DMR_07 and ARX
+	]
 ];
 
 // Here is a list of scopes, might also get randomly added to enemy patrols:
 _returnNames append ["ScopesBasic"];
 _returnValues append [
+	[
 	["scope", "optic_ACO_grn", 20, 1, 3]//CSAT, AAF, FIA
 	,["scope", "optic_Arco_ghex_F", 10, 1, 2]//CSAT
+	]
 ];
 // SMG scopes
 _returnNames append ["ScopesSMG"];
 _returnValues append [
+	[
 	["scope", "optic_ACO_grn_smg", 20, 1, 3]//CSAT
-	];
+	]
+];
 // Sniper rifle scopes
 _returnNames append ["ScopesSniper"];
 _returnValues append [
+	[
 	["scope", "optic_SOS", 10, 1, 2]//All
 	,["scope", "optic_DMS", 10, 1, 2]//
 	,["scope", "optic_LRPS_ghex_F", 10, 1, 2]//All
 	,["scope", "optic_KHS_blk", 10, 1, 2]//CSAT, FIA
 	,["scope", "optic_KHS_hex", 10, 1, 2]//CSAT, FIA
 	,["scope", "optic_KHS_tan", 10, 1, 2]//CSAT, FIA
+	]
 ];
 // Nightvision scopes
 _returnNames append ["ScopesNV"];
 _returnValues append [
+	[
 	["scope", "optic_nvs", 10, 1, 1]//
-	];
+	]
+];
 // TWS scopes
 _returnNames append ["ScopesTWS"];
 _returnValues append [
+	[
 	["scope", "optic_tws", 10, 1, 1]//
 	,["scope", "optic_tws_mg", 10, 1, 1]//
 	,["scope", "optic_Nightstalker", 10, 1, 1]//CSAT
+	]
 ];
 
 // Here is a list of bipods, might also get randomly added to enemy patrols:
 _returnNames append ["Bipods"];
 _returnValues append [
+	[
 	["bipod", "bipod_02_F_tan", 10, 1, 2]//CSAT
 	,["bipod", "bipod_02_F_blk", 10, 1, 2]//CSAT
 	,["bipod", "bipod_02_F_hex", 10, 1, 2]//CSAT
+	]
 ];
 
 
 // Classnames of uniforms for the players
 _returnNames append ["Uniforms"];
 _returnValues append [
+	[
 	"U_O_T_Soldier_F"//Fatigues Green Hex (CSAT)
 	,"U_O_V_Soldier_Viper_F"//Special Purpose Suit (Green)
+	]
 ];
 
 /////////////////////////////////////////////////////////////////////
