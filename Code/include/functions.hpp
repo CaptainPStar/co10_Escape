@@ -75,6 +75,9 @@ class CfgFunctions
 			class runExtraction {};
 			class firedNearExtraction {};
 			class weather {};
+			class selectFaction {};
+			class loadFaction {};
+			class getRndEntryFromFaction {};
 		};
 		class Templates
 		{

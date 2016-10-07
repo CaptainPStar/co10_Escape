@@ -138,7 +138,12 @@ if(isNil("A3E_ClearedPositionDistance")) then {
 
 // Build start position
 _fenceRotateDir = random 360;
-private _backPack = [A3E_StartPos, _fenceRotateDir] call a3e_fnc_BuildPrison;
+private _prisonObjects = [A3E_StartPos, _fenceRotateDir] call a3e_fnc_BuildPrison;
+
+private _prisonFaction = ["Indep",[]] call A3E_fnc_selectFaction;
+{
+	_x setObjectTextureGlobal [0,[_prisonFaction,"FlagTexture"] call A3E_fnc_getAssocArrayEntry];
+} foreach _prisonObjects select 1;
 
 A3E_FenceIsCreated = true;
 publicVariable "A3E_FenceIsCreated";
@@ -521,22 +526,24 @@ private ["_scriptHandle"];
 _scriptHandle = [getMarkerPos "drn_searchChopperStartPosMarker", A3E_VAR_Side_Opfor, drn_searchAreaMarkerName, _searchChopperSearchTimeMin, _searchChopperRefuelTimeMin, _enemyMinSkill, _enemyMaxSkill, [], A3E_Debug] execVM "Scripts\Escape\CreateSearchChopper.sqf";
 waitUntil {scriptDone _scriptHandle};
 
+//[["All",[],true] call A3E_fnc_selectFaction,"PrisonBackpackWeapons"] call a3e_fnc_getAssocArrayEntry;
 
 // Spawn creation of start position settings
-[A3E_StartPos, _backPack, _enemyFrequency, _fenceRotateDir] spawn {
+[A3E_StartPos,_prisonFaction, _prisonObjects select 0, _enemyFrequency, _fenceRotateDir] spawn {
     private ["_startPos", "_guardsAreArmed", "_guardsExist", "_guardLivesLong", "_enemyFrequency", "_fenceRotateDir"];
     private ["_backpack","_debugAllUnits","_i", "_guard", "_guardGroup", "_marker", "_guardCount", "_guardGroups", "_unit", "_createNewGroup"];
     
     _startPos = _this select 0;
-    _backPack = _this select 1;
-    _enemyFrequency = _this select 2;
-    _fenceRotateDir = _this select 3;
+	_prisonFaction = _this select 1;
+    _backPack = _this select 2;
+    _enemyFrequency = _this select 3;
+    _fenceRotateDir = _this select 4;
 	 
     // Spawn guard
 
 	
 	for [{_i = 0}, {_i < (Param_EnemyFrequency*2)}, {_i = _i + 1}] do {
-		_weapon = a3e_arr_PrisonBackpackWeapons select floor(random(count(a3e_arr_PrisonBackpackWeapons)));
+		_weapon = [_prisonFaction,"PrisonBackpackWeapons"] call a3e_fnc_getRndEntryFromFaction;
 		_backpack addWeaponCargoGlobal[(_weapon select 0),1];
 		_backpack addMagazineCargoGlobal[(_weapon select 1),3];
 	};
@@ -567,7 +574,7 @@ waitUntil {scriptDone _scriptHandle};
         };
         
         //(a3e_arr_Escape_StartPositionGuardTypes select floor (random count a3e_arr_Escape_StartPositionGuardTypes)) createUnit [_pos, _guardGroup, "", (0.5), "CAPTAIN"];
-        _guardGroup createUnit [(a3e_arr_Escape_StartPositionGuardTypes select floor (random count a3e_arr_Escape_StartPositionGuardTypes)), _pos, [], 0, "FORM"];
+        _guardGroup createUnit [ [_prisonFaction,"PrisonGuardTypes"] call a3e_fnc_getRndEntryFromFaction, _pos, [], 0, "FORM"];
         
         if (count units _guardGroup >= 2) then {
             _createNewGroup = true;

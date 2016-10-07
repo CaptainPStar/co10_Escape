@@ -85,16 +85,20 @@ _obj = "Land_Loudspeakers_F" createvehicle _pos;
 _obj setVectorDirAndUp [[1,-4.37114e-008,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
+private _alarm = _obj;
 
+//depreciated
 A3E_PrisonLoudspeakerObject = _obj;
 publicvariable "A3E_PrisonLoudspeakerObject";
+//###
 
 _pos = [_center,_center vectorAdd [6.57373,8.39502,0],_rotation] call _fnc_rotatePos;
 _obj = "FlagPole_F" createvehicle _pos;
 _obj setVectorDirAndUp [[1,-4.37114e-008,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-_obj setflagtexture A3E_VAR_Flag_Ind;
+private _flag = _obj;
+
 
 _pos = [_center,_center vectorAdd [3.08691,7.09082,0],_rotation] call _fnc_rotatePos;
 _obj = "Land_City_Gate_F" createvehicle _pos;
@@ -102,8 +106,10 @@ _obj setVectorDirAndUp [[0,1,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
+private _gate = _obj;
+//depreciated
 A3E_PrisonGateObject = _obj;
-
+//###
 _pos = [_center,_center vectorAdd [-6.74756,2.68604,1.33838],_rotation] call _fnc_rotatePos;
 _obj = "Land_HBarrier_3_F" createvehicle _pos;
 _obj setVectorDirAndUp [[-1,4.88762e-007,0],[0,0,1]];
@@ -312,5 +318,6 @@ _obj setVectorDirAndUp [[0.667424,-0.744678,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
-_backpack;
+private _return = [_backpack,[_flag],_gate,_alarm];
+_return;
 
