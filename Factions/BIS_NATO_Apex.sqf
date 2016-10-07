@@ -382,7 +382,7 @@ _returnNames append ["Items"];
 _returnValues append [
 	[
 	["item", "Laserdesignator_01_khk_F", 10, 1, 2, ["Laserbatteries"], 1]
-	,["item", "Binocular", 50, 2, 3, ]
+	,["item", "Binocular", 50, 2, 3]
 	,["item", "Rangefinder", 10, 1, 2]
 	,["item", "ItemCompass", 50, 1, 3]
 	,["item", "ItemGPS", 10, 1, 2]
