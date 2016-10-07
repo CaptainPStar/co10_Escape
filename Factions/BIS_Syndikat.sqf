@@ -13,16 +13,16 @@ private _returnValues = [];
 
 // Name of the faction
 _returnNames append ["FactionName"];
-_returnValues append ["BIS_CSAT_Apex"];
+_returnValues append ["BIS_Syndikat"];
 
 // For which side can this file be used?
 // Can only be one or more of: "Player", "Enemy", "Indep", "Civilian"
 _returnNames append ["UsableSides"];
-_returnValues append [["Player","Enemy"]];
+_returnValues append [["Indep"]];
 
 // Texture for flags used on camps of this faction
 _returnNames append ["FlagTexture"];
-_returnValues append ["\A3\Data_F\Flags\Flag_CSAT_CO.paa"];
+_returnValues append ["\A3\Data_F\Flags\flag_fd_green_CO.paa"];
 
 
 /////////////////////////////////////////////////////////////////////
@@ -38,72 +38,57 @@ _returnValues append ["\A3\Data_F\Flags\Flag_CSAT_CO.paa"];
 _returnNames append ["InfantryLeaderTypes"];
 _returnValues append [
 	[
-	"O_T_Officer_F"
+	"I_C_Soldier_Bandit_6_F"
 	] call a3e_fnc_expandProbabilities
 ];
 // normal Infantry units for squads, patrols, guards
 _returnNames append ["InfantryTypes"];
 _returnValues append [
 	[
-	"O_T_Engineer_F",3
-	,"O_T_Medic_F",3
-	,"O_T_Soldier_A_F",3
-	,"O_T_Soldier_AA_F",2
-	,"O_T_Soldier_AR_F",3
-	,"O_T_Soldier_AT_F",2
-	,"O_T_Soldier_exp_F",2
-	,"O_T_Soldier_F",3
-	,"O_T_Soldier_GL_F",3
-	,"O_T_Soldier_LAT_F",2
-	,"O_T_Soldier_M_F",3
-	,"O_T_Soldier_Repair_F",2
-	,"O_T_Officer_F",2
-	,"O_T_Soldier_UAV_F",2
-	,"O_T_Soldier_AAR_F"
-	,"O_T_Support_AMG_F"
-	,"O_T_Support_AMort_F"
-	,"O_T_Soldier_AAA_F"
-	,"O_T_Soldier_AAT_F"
-	,"O_T_Support_GMG_F"
-	,"O_T_Support_MG_F"
-	,"O_T_Support_Mort_F"
-	,"O_T_Soldier_M_F",2
-	,"O_T_Recon_F"
+	"I_C_Soldier_Bandit_1_F",3//Medic
+	,"I_C_Soldier_Bandit_2_F",3//RPG
+	,"I_C_Soldier_Bandit_3_F",3//MG
+	,"I_C_Soldier_Bandit_4_F",2//Mines
+	,"I_C_Soldier_Bandit_5_F",3//Scout (Rifle)
+	,"I_C_Soldier_Bandit_6_F",2//UGL
+	,"I_C_Soldier_Bandit_7_F",2//Dealer (Rifle)
+	,"I_C_Soldier_Bandit_8_F",3//Watcher (Rifle)
 	] call a3e_fnc_expandProbabilities
 ];
 // Special Forces for paradrops
 _returnNames append ["InfantrySFTypes"];
 _returnValues append [
 	[
-	"O_V_Soldier_Exp_ghex_F"
-	,"O_V_Soldier_JTAC_ghex_F"
-	,"O_V_Soldier_M_ghex_F"
-	,"O_V_Soldier_ghex_F"
-	,"O_V_Soldier_Medic_ghex_F"
-	,"O_V_Soldier_LAT_ghex_F"
-	,"O_V_Soldier_TL_ghex_F"
+	"I_C_Soldier_Para_1_F"//Soldier (Rifle)
+	,"I_C_Soldier_Para_2_F"//Enforcer (Rifle)
+	,"I_C_Soldier_Para_3_F"//Medic
+	,"I_C_Soldier_Para_4_F"//MG
+	,"I_C_Soldier_Para_5_F"//RPG
+	,"I_C_Soldier_Para_6_F"//UGL
+	,"I_C_Soldier_Para_7_F"//Deserter (Rifle)
+	,"I_C_Soldier_Para_8_F"//Saboteur
 	] call a3e_fnc_expandProbabilities
 ];
 // Pilot types for helicopters
 _returnNames append ["PilotTypes"];
 _returnValues append [
 	[
-	"O_T_Helipilot_F"
-	,"O_T_Helicrew_F"
+	"I_C_Helipilot_F"//Paramilitary
+	,"I_C_Pilot_F"//Bandits
 	] call a3e_fnc_expandProbabilities
 ];
 // Units put into normal vehicles: cars, trucks, etc.
 _returnNames append ["DriverTypes"];
 _returnValues append [
 	[
-	"O_T_Soldier_F"
+	"I_C_Soldier_Bandit_5_F"
 	] call a3e_fnc_expandProbabilities
 ];
 // crews for APCs or tanks
 _returnNames append ["CrewTypes"];
 _returnValues append [
 	[
-	"O_T_Crew_F"
+	"I_C_Helipilot_F"
 	] call a3e_fnc_expandProbabilities
 ];
 
@@ -111,9 +96,10 @@ _returnValues append [
 _returnNames append ["PrisonGuardTypes"];
 _returnValues append [
 	[
-	"O_T_Soldier_F",3
-	,"O_T_Soldier_AR_F"
-	,"O_T_Soldier_GL_F"
+	"I_C_Soldier_Bandit_8_F",2
+	,"I_C_Soldier_Bandit_7_F"
+	,"I_C_Soldier_Para_4_F"
+	,"I_C_Soldier_Bandit_5_F"
 	] call a3e_fnc_expandProbabilities
 ];
 
@@ -131,13 +117,11 @@ _returnValues append [
 _returnNames append ["MilitaryVehiclesLight"];
 _returnValues append [
 	[
-	"O_T_MRAP_02_ghex_F",4
-	,"O_T_Quadbike_01_ghex_F",4
-	,"O_T_LSV_02_unarmed_F",4
-	,"O_T_LSV_02_armed_F",2
-	,"O_T_Truck_03_device_ghex_F"
-	,"O_T_Truck_03_transport_ghex_F"
-	,"O_T_Truck_03_covered_ghex_F"
+	"I_C_Offroad_02_unarmed_F",4
+	,"I_C_Van_01_transport_F",4
+	,"I_G_Offroad_01_F",4
+	,"I_G_Offroad_01_armed_F",2
+	,"I_G_Quadbike_01_F"
 	] call a3e_fnc_expandProbabilities
 ];
 
@@ -145,8 +129,7 @@ _returnValues append [
 _returnNames append ["MilitaryVehiclesMedium"];
 _returnValues append [
 	[
-	"O_T_MRAP_02_hmg_ghex_F",2
-	,"O_T_APC_Wheeled_02_rcws_ghex_F"
+	
 	] call a3e_fnc_expandProbabilities
 ];
 
@@ -154,12 +137,7 @@ _returnValues append [
 _returnNames append ["MilitaryVehiclesHeavy"];
 _returnValues append [
 	[
-	[
-		"O_T_APC_Tracked_02_AA_ghex_F"
-		,"O_T_APC_Tracked_02_cannon_ghex_F",2
-	],2
-	,"O_T_MBT_02_arty_ghex_F"
-	,"O_T_MBT_02_cannon_ghex_F"
+	
 	] call a3e_fnc_expandProbabilities
 ];
 
@@ -167,10 +145,8 @@ _returnValues append [
 _returnNames append ["MilitaryVehiclesSupport"];
 _returnValues append [
 	[
-	"O_T_Truck_03_ammo_ghex_F"
-	,"O_T_Truck_03_fuel_ghex_F"
-	,"O_T_Truck_03_medical_ghex_F"
-	,"O_T_Truck_03_repair_ghex_F"
+	"I_G_Van_01_fuel_F"
+	,"I_G_Offroad_01_repair_F"
 	] call a3e_fnc_expandProbabilities
 ];
 
@@ -209,7 +185,7 @@ _returnValues append [
 _returnNames append ["Mortars"];
 _returnValues append [
 	[
-	"O_Mortar_01_F"
+	"I_G_Mortar_01_F"
 	] call a3e_fnc_expandProbabilities
 ];
 
@@ -220,9 +196,7 @@ _returnValues append [
 _returnNames append ["HelicopterLight"];
 _returnValues append [
 	[
-	"O_Heli_Light_02_unarmed_F"
-	,"O_Heli_Transport_04_bench_black_F"
-	,"O_Heli_Transport_04_covered_black_F"
+	"I_C_Heli_Light_01_civil_F"
 	] call a3e_fnc_expandProbabilities
 ];
 // heavily armed helicopters (miniguns and/or rocket pods, but no gunships)
@@ -236,9 +210,7 @@ _returnValues append [
 _returnNames append ["HelicopterHeavy"];
 _returnValues append [
 	[
-	"O_Heli_Attack_02_black_F"
-	,"O_Heli_Light_02_F"
-	,"O_T_VTOL_02_infantry_F"
+	
 	] call a3e_fnc_expandProbabilities
 ];
 
@@ -246,16 +218,14 @@ _returnValues append [
 _returnNames append ["SearchDrone"];
 _returnValues append [
 	[
-	"O_UAV_01_F"
-	,"O_T_UAV_04_CAS_F"
+	"I_C_Plane_Civil_01_F"
 	] call a3e_fnc_expandProbabilities
 ];
 // Planes for CAS module strikes
 _returnNames append ["PlanesCAS"];
 _returnValues append [
 	[
-	"O_T_VTOL_02_infantry_F"
-	,"O_T_VTOL_02_infantry_F"
+	
 	] call a3e_fnc_expandProbabilities
 ];
 
@@ -266,14 +236,15 @@ _returnValues append [
 _returnNames append ["BoatsUnarmed"];
 _returnValues append [
 	[
-	
+	"I_C_Boat_Transport_01_F"
+	,"I_C_Boat_Transport_02_F"
 	] call a3e_fnc_expandProbabilities
 ];
 // armed boats
 _returnNames append ["BoatsArmed"];
 _returnValues append [
 	[
-	"O_T_Boat_Armed_01_hmg_F"
+	
 	] call a3e_fnc_expandProbabilities
 ];
 
@@ -284,9 +255,7 @@ _returnValues append [
 _returnNames append ["CrashSiteWrecks"];
 _returnValues append [
 	[
-	"Land_UWreck_MV22_F"
-	,"Land_Wreck_Plane_Transport_01_F"
-	,"Land_Wreck_Heli_Attack_01_F"
+	
 	] call a3e_fnc_expandProbabilities
 ];
 
@@ -307,39 +276,34 @@ _returnValues append [
 // Prison backpack secondary weapons (and corresponding magazine type).
 _returnNames append ["PrisonBackpackWeapons"];
 _returnValues append [
-	["hgun_Rook40_F","16Rnd_9x21_Mag"]
-	,["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"]
-	,["hgun_Rook40_snds_F","30Rnd_9x21_Mag"]
+	["hgun_ACPC2_F","9Rnd_45ACP_Mag"]
+	,["hgun_PDW2000_F","30Rnd_9x21_Mag"]
+	,["SMG_05_F", "30Rnd_9x21_Mag_SMG_02"]//Protector MP5
 ];
 
 // Weapons and ammo in the basic weapons box
 _returnNames append ["BasicWeapons"];
 _returnValues append [
-	["pistol", "hgun_Rook40_F", 50, 4, 8, ["16Rnd_9x21_Mag"], 6]
-	,["smg", "SMG_02_F", 50, 4, 8, ["30Rnd_9x21_Mag"], 6]
-	,["rifle", "arifle_CTAR_blk_F", 100, 2, 4, ["30Rnd_580x42_Mag_F", "30Rnd_580x42_Mag_Tracer_F"], 6]
-	,["rifle", "arifle_CTAR_GL_blk_F", 75, 2, 4, ["30Rnd_65x39_caseless_green", "30Rnd_65x39_caseless_green_mag_Tracer", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "UGL_FlareWhite_F"], 4]
-	,["rifle", "arifle_CTARS_blk_F", 50, 2, 4, ["100Rnd_580x42_Mag_F", "100Rnd_580x42_Mag_Tracer_F"], 3]
+	["rifle", "arifle_AK12_F", 80, 2, 4, ["30Rnd_762x39_Mag_F"], 6]
+	,["rifle", "arifle_AK12_GL_F", 50, 2, 4, ["30Rnd_762x39_Mag_F", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "UGL_FlareWhite_F"], 4]
+	,["smg", "SMG_05_F", 20, 4, 8, ["30Rnd_9x21_Mag_SMG_02"], 6]
+	,["pistol", "hgun_ACPC2_F", 20, 4, 8, ["9Rnd_45ACP_Mag"], 6]
+	,["pistol", "hgun_Pistol_01_F", 20, 4, 8, ["16Rnd_9x21_Mag"], 6]
+	,["rifle", "arifle_AKM_F", 80, 2, 4, ["30Rnd_762x39_Mag_F"], 6]
+	,["rifle", "arifle_AKS_F", 50, 2, 4, ["30Rnd_545x39_Mag_F"], 6]
 ];
 
 // Weapons and ammo in the special weapons box
 _returnNames append ["SpecialWeapons"];
 _returnValues append [
-	["dmr", "srifle_DMR_07_blk_F", 50, 2, 4, ["20Rnd_650x39_Cased_Mag_F"], 5]
-	,["dmr", "srifle_DMR_04_F", 50, 2, 4, ["10Rnd_127x54_Mag"], 5]
-	,["rifle", "arifle_ARX_ghex_F", 50, 2, 4, ["30Rnd_65x39_caseless_green_mag_Tracer", "10Rnd_50BW_Mag_F"], 5]
-	,["sniper", "srifle_GM6_ghex_F", 50, 2, 4, ["5Rnd_127x108_Mag", "5Rnd_127x108_APDS_Mag"], 5]
-	,["mg", "LMG_Zafir_F", 50, 2, 4, ["150Rnd_762x54_Box_Tracer"], 3]
-	,["mg", "MMG_01_tan_F", 50, 2, 4, ["150Rnd_93x64_Mag"], 3]
-	,["smg", "arifle_SDAR_F", 10, 2, 4, ["20Rnd_556x45_UW_mag", "30Rnd_556x45_Stanag"], 6]
+	["lmg", "LMG_03_F", 60, 2, 4, ["200Rnd_556x45_Box_Tracer_Red_F"], 6]
+	,["dmr", "srifle_DMR_06_olive_F", 40, 2, 4, ["20Rnd_762x51_Mag"], 5]
 ];
 
 // Weapons and ammo in the launchers box
 _returnNames append ["Launchers"];
 _returnValues append [
-	["launcher", "launch_RPG32_ghex_F", 50, 3, 5, ["RPG32_F", "RPG32_HE_F"], 6]
-	,["launcher", "launch_O_Titan_ghex_F", 50, 1, 2, ["Titan_AA"], 3]
-	,["launcher", "launch_B_Titan_short_tna_F", 50, 1, 2, ["Titan_AP", "Titan_AT"], 3]
+	["launcher", "launch_RPG7_F", 85, 1, 3, ["RPG7_F"], 3]
 ];
 
 // Weapons and ammo in the ordnance box
@@ -372,7 +336,7 @@ _returnValues append [
 // Items
 _returnNames append ["Items"];
 _returnValues append [
-	["item", "Laserdesignator_02_ghex_F", 10, 1, 2, ["Laserbatteries"], 1]
+	["item", "Laserdesignator_03", 10, 1, 2, ["Laserbatteries"], 1]
 	,["item", "Binocular", 50, 2, 3, ]
 	,["item", "Rangefinder", 10, 1, 2]
 	,["item", "ItemCompass", 50, 1, 3]
@@ -386,74 +350,59 @@ _returnValues append [
 	,["item", "Medikit", 20, 1, 1, [], 0]
 	,["item", "FirstAidKit", 100, 10, 50, [], 0]
 	,["item", "O_UavTerminal", 10, 1, 2]
-	,["scope", "optic_Yorris", 10, 1, 2]//Zubr, CSAT
 	];
 // Nightvision Goggles
 _returnNames append ["NVGs"];
 _returnValues append [
-	["item", "O_NVGoggles_ghex_F", 10, 1, 3]
+	["item", "NVGoggles_INDEP", 10, 1, 3]
 ];
 // Suppressors
 _returnNames append ["Suppressors"];
 _returnValues append [
-	["muzzle", "muzzle_snds_B", 10, 1, 3]//7.62, CSAT Rahim, AAF Mk18
-	,["muzzle", "muzzle_snds_H", 10, 1, 3]//6.5, CSAT Katiba, NATO MX
-	,["muzzle", "muzzle_snds_L", 10, 1, 3]//9mm, P07, Rook, PDW2000
-	,["muzzle", "muzzle_snds_58_blk_F", 10, 1, 3]//5.8, CSAT CTAR
-	,["muzzle", "muzzle_snds_58_wdm_F", 10, 1, 3]//5.8, CSAT CTAR
-	,["muzzle", "muzzle_snds_65_TI_blk_F", 10, 1, 3]//6.5, DMR_07 and ARX
-	,["muzzle", "muzzle_snds_65_TI_hex_F", 10, 1, 3]//6.5, DMR_07 and ARX
-	,["muzzle", "muzzle_snds_65_TI_ghex_F", 10, 1, 3]//6.5, DMR_07 and ARX
+	
 ];
 
 // Here is a list of scopes, might also get randomly added to enemy patrols:
 _returnNames append ["ScopesBasic"];
 _returnValues append [
 	["scope", "optic_ACO_grn", 20, 1, 3]//CSAT, AAF, FIA
-	,["scope", "optic_Arco_ghex_F", 10, 1, 2]//CSAT
 ];
 // SMG scopes
 _returnNames append ["ScopesSMG"];
 _returnValues append [
-	["scope", "optic_ACO_grn_smg", 20, 1, 3]//CSAT
+
 	];
 // Sniper rifle scopes
 _returnNames append ["ScopesSniper"];
 _returnValues append [
-	["scope", "optic_SOS", 10, 1, 2]//All
-	,["scope", "optic_DMS", 10, 1, 2]//
-	,["scope", "optic_LRPS_ghex_F", 10, 1, 2]//All
-	,["scope", "optic_KHS_blk", 10, 1, 2]//CSAT, FIA
-	,["scope", "optic_KHS_hex", 10, 1, 2]//CSAT, FIA
-	,["scope", "optic_KHS_tan", 10, 1, 2]//CSAT, FIA
+	
 ];
 // Nightvision scopes
 _returnNames append ["ScopesNV"];
 _returnValues append [
-	["scope", "optic_nvs", 10, 1, 1]//
+	
 	];
 // TWS scopes
 _returnNames append ["ScopesTWS"];
 _returnValues append [
-	["scope", "optic_tws", 10, 1, 1]//
-	,["scope", "optic_tws_mg", 10, 1, 1]//
-	,["scope", "optic_Nightstalker", 10, 1, 1]//CSAT
+	
 ];
 
 // Here is a list of bipods, might also get randomly added to enemy patrols:
 _returnNames append ["Bipods"];
 _returnValues append [
-	["bipod", "bipod_02_F_tan", 10, 1, 2]//CSAT
-	,["bipod", "bipod_02_F_blk", 10, 1, 2]//CSAT
-	,["bipod", "bipod_02_F_hex", 10, 1, 2]//CSAT
+	
 ];
 
 
 // Classnames of uniforms for the players
 _returnNames append ["Uniforms"];
 _returnValues append [
-	"U_O_T_Soldier_F"//Fatigues Green Hex (CSAT)
-	,"U_O_V_Soldier_Viper_F"//Special Purpose Suit (Green)
+	"U_I_C_Soldier_Para_2_F"//Paramilitary Garb (Jacket)
+	,"U_I_C_Soldier_Para_3_F"//Paramilitary Garb (Shirt)
+	,"U_I_C_Soldier_Para_5_F"//Paramilitary Garb (Shorts)
+	,"U_I_C_Soldier_Para_4_F"//Paramilitary Garb (Tank Top)
+	,"U_I_C_Soldier_Para_1_F"//Paramilitary Garb (Tee)
 ];
 
 /////////////////////////////////////////////////////////////////////
