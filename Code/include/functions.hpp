@@ -29,6 +29,8 @@ class CfgFunctions
 			class cleanupTerrain {};
 			class handleRating {};
 			class handleScore {};
+			class expandProbabilities {};
+			class getAssocArrayEntry {};
 		};
 		class AI
 		{
@@ -56,6 +58,10 @@ class CfgFunctions
             class debugMsg {};
 			class rptLog {};
 			class systemChat {};
+			class startDebugView {};
+			class log {};
+			class logMessage {};
+			class getDebugMessages {};
 		};
 		class Server
 		{
@@ -76,8 +82,8 @@ class CfgFunctions
 			class firedNearExtraction {};
 			class weather {};
 			class selectFaction {};
-			class loadFaction {};
 			class getRndEntryFromFaction {};
+			class loadFaction {};
 		};
 		class Templates
 		{

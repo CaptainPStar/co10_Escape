@@ -27,13 +27,20 @@ respawnButton = 0;
 disabledAI = 1;
 enableDebugConsole = 1;
 
+corpseManagerMode = 3;
+
 corpseLimit = 30;
 corpseRemovalMinTime = 600;
 corpseRemovalMaxTime = 1800; //seconds
 
+wreckManagerMode = 1;
 wreckLimit = 10;
 wreckRemovalMinTime = 600; //seconds
 wreckRemovalMaxTime = 1800; //seconds
+
+minPlayerDistance = 200;
+
+allowFunctionsRecompile = 1;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
  class CfgDebriefing
@@ -68,95 +75,140 @@ wreckRemovalMaxTime = 1800; //seconds
 class RscTitles {
 	titles[] = {HSC_View}; 
 	class HSC_View {
-			idd = 620000;
-			duration = 15000;
-			name = "Hindsight Cam";
-			onLoad = "uiNamespace setVariable ['ATHSC_View', _this select 0]";
-			onUnload = "uiNamespace setVariable ['ATHSC_View', displayNull]";
-
-		   class controlsBackground {
-				class Rsc_MouseArea {
-					idc = 170001;
-					style = ST_MULTI;
-					
-					type = CT_STATIC;
+		idd = 620000;
+		duration = 15000;
+		name = "Hindsight Cam";
+		onLoad = "uiNamespace setVariable ['ATHSC_View', _this select 0]";
+		onUnload = "uiNamespace setVariable ['ATHSC_View', displayNull]";
+		class controlsBackground {
+			class Rsc_MouseArea {
+				idc = 170001;
+				style = ST_MULTI;
 				
-					shadow = 1;
-					colorShadow[] = {0,0,0,0.5};
-					font = "PuristaMedium";
-					SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-					colorText[] = {1,1,1,1.0};
-					colorBackground[] = {0,0,0,0};
-					linespacing = 1;
-					x = "safezoneX";
-					y = "safezoneY";
-					w = "safezoneW";
-					h = "safezoneH";
-
-					text = "";
-					onMouseMoving = "";
-					onMouseEnter = "";
-					onMouseExit = "";
-					onMouseZChanged = "";
-					onKeyDown = "systemchat str _this;";
-				};
-			};
+				type = CT_STATIC;
 			
-			class controls {
-				class Rsc_TargetText {
-					idc = 170002;
-					text = "<t color='#ffffff' shadow='2'>You are unconscious!</t>";
-					type = 13;
-					style = 2;
-					  
-					x = "SafeZoneX + (SafeZoneW * 0.3)";
-					y = "SafeZoneY + (SafezoneH * 0.8)";
-					w = "(SafeZoneW) * 0.4";
-					h = "SafezoneH * 0.1";  
-					  
-					  class Attributes {
-						font = "TahomaB";
-						color = "#000000";
-						align = "center";
-						valign = "middle";
-						shadow = false;
-						shadowColor = "#ff0000";
-						size = "2";
-					};
-					shadow = 2;
-					font = "RobotoCondensedBold";
-					colorText[] = {1, 1, 1, 1};
-					Size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
-					SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
-					colorBackground[] = {0, 0, 0, 0};
-				};
-			class Rsc_HelpText {
-					idc = -1;
-					text = "<t color='#cdcdcd' shadow='2'><u>Controls</u><br/>Cycle entities: A or D<br/>1st/3rd Person: Enter<br/>Rotate: Mouse<br/>Nightvision: N</t>";
-					type = 13;
-					style = 0;
-					  
-					x = "SafeZoneX + (SafeZoneW * 0.02)";
-					y = "SafeZoneY + (SafezoneH * 0.85)";
-					w = "(SafeZoneW) * 0.2";
-					h = "SafezoneH * 0.15";  
-					  
-					class Attributes {
-						font = "TahomaB";
-						color = "#000000";
-						align = "center";
-						valign = "middle";
-						shadow = false;
-						shadowColor = "#ff0000";
-						size = "2";
-					};
-					shadow = 2;
-					font = "RobotoCondensedBold";
-					colorText[] = {1, 1, 1, 1};
-					Size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.4)";
-					SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.4)";
-					colorBackground[] = {0, 0, 0, 0};
-				};
+				shadow = 1;
+				colorShadow[] = {0,0,0,0.5};
+				font = "PuristaMedium";
+				SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+				colorText[] = {1,1,1,1.0};
+				colorBackground[] = {0,0,0,0};
+				linespacing = 1;
+				x = "safezoneX";
+				y = "safezoneY";
+				w = "safezoneW";
+				h = "safezoneH";
+
+				text = "";
+				onMouseMoving = "";
+				onMouseEnter = "";
+				onMouseExit = "";
+				onMouseZChanged = "";
+				onKeyDown = "systemchat str _this;";
 			};
+		};
+		
+		class controls {
+			class Rsc_TargetText {
+				idc = 170002;
+				text = "<t color='#ffffff' shadow='2'>You are unconscious!</t>";
+				type = 13;
+				style = 2;
+				  
+				x = "SafeZoneX + (SafeZoneW * 0.3)";
+				y = "SafeZoneY + (SafezoneH * 0.8)";
+				w = "(SafeZoneW) * 0.4";
+				h = "SafezoneH * 0.1";  
+				  
+				  class Attributes {
+					font = "TahomaB";
+					color = "#000000";
+					align = "center";
+					valign = "middle";
+					shadow = false;
+					shadowColor = "#ff0000";
+					size = "2";
+				};
+				shadow = 2;
+				font = "RobotoCondensedBold";
+				colorText[] = {1, 1, 1, 1};
+				Size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
+				SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
+				colorBackground[] = {0, 0, 0, 0};
+			};
+		class Rsc_HelpText {
+				idc = -1;
+				text = "<t color='#cdcdcd' shadow='2'><u>Controls</u><br/>Cycle entities: A or D<br/>1st/3rd Person: Enter<br/>Rotate: Mouse<br/>Nightvision: N</t>";
+				type = 13;
+				style = 0;
+				  
+				x = "SafeZoneX + (SafeZoneW * 0.02)";
+				y = "SafeZoneY + (SafezoneH * 0.85)";
+				w = "(SafeZoneW) * 0.2";
+				h = "SafezoneH * 0.15";  
+				  
+				class Attributes {
+					font = "TahomaB";
+					color = "#000000";
+					align = "center";
+					valign = "middle";
+					shadow = false;
+					shadowColor = "#ff0000";
+					size = "2";
+				};
+				shadow = 2;
+				font = "RobotoCondensedBold";
+				colorText[] = {1, 1, 1, 1};
+				Size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.4)";
+				SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.4)";
+				colorBackground[] = {0, 0, 0, 0};
+			};
+		};
 	};
 };
+
+class A3E_DebugView {
+		idd = 630000;
+		duration = 15000;
+		name = "Escape Debug";
+		onLoad = "uiNamespace setVariable ['A3E_DebugView', _this select 0]";
+		onUnload = "uiNamespace setVariable ['A3E_DebugView', displayNull]";
+		class controlsBackground {
+			class Background {
+				idc = 630001;
+				style = ST_MULTI;
+				type = CT_STATIC;
+			
+				shadow = 1;
+				colorShadow[] = {0,0,0,0.5};
+				font = "PuristaMedium";
+				SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+				colorText[] = {1,1,1,1.0};
+				colorBackground[] = {0,0,0,0.5};
+				linespacing = 1;
+				x = "safezoneX + safezoneW * 0.25";
+				y = "safezoneY + safezoneH * 0.25";
+				w = "safezoneW * 0.5";
+				h = "safezoneH * 0.5";
+
+				text = "";
+				onMouseMoving = "";
+				onMouseEnter = "";
+				onMouseExit = "";
+				onMouseZChanged = "";
+				onKeyDown = "";
+			};
+		};
+		class controls {
+			class MessageLog : RscListBox 
+			{
+				idc = 630002;
+				x = "safezoneX + safezoneW * 0.26";
+				y = "safezoneY + safezoneH * 0.3";
+				w = "safezoneW * 0.3";
+				h = "safezoneH * 0.44";
+				
+				onLBSelChanged = "hint ""blah"";";
+			}
+		};
+	};
