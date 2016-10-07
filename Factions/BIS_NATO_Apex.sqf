@@ -418,7 +418,7 @@ _returnValues append [
 // Here is a list of scopes, might also get randomly added to enemy patrols:
 _returnNames append ["ScopesBasic"];
 _returnValues append [
-	[]
+	[
 	["scope", "optic_Aco", 20, 1, 3]
 	,["scope", "optic_Holosight_khk_F", 10, 1, 2]
 	,["scope", "optic_ERCO_khk_F", 10, 1, 2]
