@@ -16,7 +16,7 @@ if(!isnull _target) then {
 		
 		if(!(player getVariable ["AT_Revive_isUnconscious",false])) then {
 			_target setVariable ["AT_Revive_isUnconscious", false, true];
-			[_target,"amovppnemstpsraswrfldnon"] remoteExec ["playmove", 0, false];
+			//[_target,"amovppnemstpsraswrfldnon"] remoteExec ["playmove", 0, false];
 			
 			if(AT_Revive_Camera==1) then {
 				[] remoteExec ["ATHSC_fnc_exit", _target, false];
@@ -26,7 +26,7 @@ if(!isnull _target) then {
 		
 		if (!isPlayer _target) then
 		{
-			_target enableSimulation true;
+			//_target enableSimulation true;
 			_target allowDamage true;
 			_target setCaptive false;
 			[_target,"amovppnemstpsraswrfldnon"] remoteExec ["playmove", 0, false];
