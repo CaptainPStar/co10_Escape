@@ -1,5 +1,5 @@
 !isNull cursorTarget
-	&& {(cursorTarget distance player) <= 8}
+	&& {(cursorTarget distance player) <= 2}
 	&& {
 		private _return = false;
 		{
