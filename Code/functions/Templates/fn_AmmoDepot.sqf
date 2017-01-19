@@ -157,7 +157,7 @@
     // Statics
     
     if (count _staticWeaponClasses > 0) then {
-        _gun = _staticWeaponClasses select floor random count _staticWeaponClasses;
+        _gun = selectRandom _staticWeaponClasses;
         
         _randomNo = random 100;
         _pos = [(_middlePos select 0) + 10, (_middlePos select 1) + 10, 0];
@@ -186,7 +186,7 @@
     // Cars
     
     if (random 10 > 1 && count _parkedVehicleClasses > 0) then {
-        _car = _parkedVehicleClasses select floor random count _parkedVehicleClasses;
+        _car = selectRandom _parkedVehicleClasses;
     }
     else {
         _car = "";

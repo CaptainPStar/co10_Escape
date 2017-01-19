@@ -567,13 +567,13 @@ if (count _staticWeaponClasses > 0) then {
     _dir = 173;
     
     _guns = _staticWeaponClasses;
-    _gun = _guns select floor random count _guns;
+    _gun = selectRandom _guns;
     _static = [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 	[_static,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
 };
 
 // Armor
-_armor = _parkedArmorClasses select floor random count _parkedArmorClasses;
+_armor = selectRandom _parkedArmorClasses;
 
 if (count _parkedArmorClasses > 0) then {
 
@@ -597,7 +597,7 @@ if (count _parkedVehicleClasses > 0) then {
     _pos = [11.136, 7.155];
     _dir = 180;
     
-    _vehicle = _parkedVehicleClasses select floor random count _parkedVehicleClasses;
+    _vehicle = selectRandom _parkedVehicleClasses;
     [_vehicle, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateVehicle;
         
 };
@@ -607,7 +607,7 @@ if (_random < .3 ) then {
     _pos = [-20.35, -1.202];
     _dir = 100;
     
-    _vehicle = _parkedVehicleClasses select floor random count _parkedVehicleClasses;
+    _vehicle = selectRandom _parkedVehicleClasses;
     [_vehicle, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 };
 if (_random > .9) then {

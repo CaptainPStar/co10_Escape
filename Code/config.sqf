@@ -33,3 +33,7 @@ a3e_var_artillery_chance = 10;
 a3e_var_artillery_chance_cooldown = 60;
 a3e_var_artillery_fleeingDistance = 400;
 
+//Default mission values
+
+missionNamespace setvariable["MinSpawnDistance",1500];
+missionNamespace setvariable["MaxSpawnDistance",2000];

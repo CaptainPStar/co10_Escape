@@ -33,7 +33,7 @@ _fnc_FindRoadBlockSegment = {
     
     _spawnDistanceDiff = _maxSpawnDistance - _minSpawnDistance;//Half?
     _roadSegment = _result;
-    _refUnit = vehicle ((units _referenceGroup) select floor random count units _referenceGroup);
+    _refUnit = vehicle (selectRandom (units _referenceGroup));
     
     _isOk = false;
     _tries = 0;
@@ -47,7 +47,7 @@ _fnc_FindRoadBlockSegment = {
         private _roadSegments = [_refPosX, _refPosY] nearRoads (_spawnDistanceDiff);
 		_roadSegment = objNull;
 		if(count _roadSegments > 0) then {
-			_roadSegment = _roadSegments select floor random count _roadSegments;
+			_roadSegment = selectRandom _roadSegments;
             _isOk = true;
 		}
         else {
@@ -141,7 +141,7 @@ _fnc_CreateRoadBlock = {
     };
 		
 	
-    _result = [_pos, _dir, _possibleVehicles select floor random count _possibleVehicles, _side] call BIS_fnc_spawnVehicle;
+    _result = [_pos, _dir, selectRandom _possibleVehicles, _side] call BIS_fnc_spawnVehicle;
     _vehicle = _result select 0;
     _crew = _result select 1;
     _group = _result select 2;
@@ -151,7 +151,7 @@ _fnc_CreateRoadBlock = {
 	
 	_result spawn _fnc_OnSpawnMannedVehicle;
 	
-    _gun = a3e_arr_ComCenStaticWeapons select floor random count a3e_arr_ComCenStaticWeapons;
+    _gun = selectRandom a3e_arr_ComCenStaticWeapons;
    // private _static = [_gun, (_pos vectoradd [10,0,0]), _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 	private _static = createVehicle [_gun, (_pos vectoradd [10,0,0]), [], 0, "NONE"];
 	_vehicles pushBack _static;
@@ -168,14 +168,10 @@ _fnc_CreateRoadBlock = {
         _guardTypes = a3e_arr_Escape_InfantryTypes_Ind;
     };
     
-    //(_guardTypes select floor random count _guardTypes) createUnit [_pos, _group, "", 0.5, "LIEUTNANT"];
-    //(_guardTypes select floor random count _guardTypes) createUnit [_pos, _group, "", 0.5, "LIEUTNANT"];
-    //(_guardTypes select floor random count _guardTypes) createUnit [_pos, _group, "", 0.5, "LIEUTNANT"];
-    //(_guardTypes select floor random count _guardTypes) createUnit [_pos, _group, "", 0.5, "LIEUTNANT"];
-    _group createUnit [(_guardTypes select floor random count _guardTypes), _pos, [], 0, "FORM"];
-    _group createUnit [(_guardTypes select floor random count _guardTypes), _pos, [], 0, "FORM"];
-    _group createUnit [(_guardTypes select floor random count _guardTypes), _pos, [], 0, "FORM"];
-    _group createUnit [(_guardTypes select floor random count _guardTypes), _pos, [], 0, "FORM"];
+    _group createUnit [selectRandom _guardTypes, _pos, [], 0, "FORM"];
+    _group createUnit [selectRandom _guardTypes, _pos, [], 0, "FORM"];
+    _group createUnit [selectRandom _guardTypes, _pos, [], 0, "FORM"];
+    _group createUnit [selectRandom _guardTypes, _pos, [], 0, "FORM"];
     
     {
         _x setUnitRank "LIEUTENANT";

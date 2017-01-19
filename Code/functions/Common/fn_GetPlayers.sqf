@@ -5,5 +5,6 @@ _list = [];
 	if(alive _x) then {
 		_list pushBack _x;
 	};
-} foreach allPlayers;
+//} foreach allPlayers;
+} foreach ([] call BIS_fnc_listPlayers);
 _list;

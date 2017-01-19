@@ -7,7 +7,7 @@
     if(isNil("_referenceUnits")) exitwith {diag_log format ["%1 : Error: fn_RandomPatrolPos was unable to find the referenceUnit.", time];};
 	
 	if(count(_referenceUnits)>0) then {
-		_referenceUnit = _referenceUnits select floor random count _referenceUnits;
+		_referenceUnit = selectRandom _referenceUnits;
 		_posOk = false;
 		while {!_posOk} do {
 			_direction = random 360;

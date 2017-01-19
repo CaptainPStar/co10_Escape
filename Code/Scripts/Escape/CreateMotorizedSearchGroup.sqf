@@ -45,7 +45,7 @@ if (_enemyFrequency == 2) then {
 
 _infantryTypes = a3e_arr_Escape_InfantryTypes;
 for "_i" from 1 to _soldiersCount do {
-    _infantryType = _infantryTypes select floor random count _infantryTypes;
+    _infantryType = selectRandom _infantryTypes;
     _insurgentSoldier = _group createUnit [_infantryType, [0,0,30], [], 0, "FORM"];
     //_insurgentSoldier setSkill (_minSkill + random (_maxSkill - _minSkill));
 //	[_insurgentsoldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;

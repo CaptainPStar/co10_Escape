@@ -5,7 +5,7 @@
     _minSpawnDistance = _this select 1;
     _maxSpawnDistance = _this select 2;
     
-    _referenceUnit = _referenceUnits select floor random count _referenceUnits;
+    _referenceUnit = selectRandom _referenceUnits;
     
     _posOk = false;
     while {!_posOk} do {

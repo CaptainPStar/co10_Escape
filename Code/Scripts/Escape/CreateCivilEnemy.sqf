@@ -12,8 +12,7 @@ _unitTypes = _this select 4;
 _enemyFrequency = _this select 5;
 if (count _this > 6) then {_debug = _this select 6;} else {_debug = false;};
 
-_vehicleClass = _vehicleTypes select floor random count _vehicleTypes;
-//_vehicle = _vehicleClass createVehicle _spawnPos;
+_vehicleClass = selectRandom _vehicleTypes;
 _vehicle = createVehicle [_vehicleClass, _spawnPos, [], 0, "NONE"];
 
 // Find a free vehicle variable name

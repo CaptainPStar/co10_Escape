@@ -22,6 +22,7 @@ class CfgFunctions
 			class Hijack {};
 			class HealAtBuilding {};
 			class GetPlayers {};
+			class GetRandomPlayer {};
 			class GetPlayerGroup {};
 			class Briefing {
 				postInit = 1;
@@ -75,6 +76,7 @@ class CfgFunctions
 			class runExtraction {};
 			class firedNearExtraction {};
 			class weather {};
+			class FindSpawnRoad {};
 		};
 		class Templates
 		{

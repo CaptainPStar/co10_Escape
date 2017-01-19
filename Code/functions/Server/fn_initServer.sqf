@@ -59,13 +59,6 @@ if(Param_War_Torn == 0) then {
 
 
 
-//[] spawn MB_fnc_randomWeather2;
-private["_weather","_weatherTrend"];
-//_weather = ["clear","sunny","cloudy","foggy","bad","random"] select Param_Weather;
-//_weatherTrend = ["constant","worse","pWorse","better","pBetter","freeCycle","random"] select Param_WeatherTrend;
-
-//0 = [_weather, _weatherTrend, 0, [0, 0.2], 0, [0, 1, 0, 0.4, 0, 1]] execVM "Scripts\tort\tort_DynamicWeather.sqf";
-//[] spawn MB_fnc_randomWeather2;
 [] spawn A3E_fnc_weather;
 
 private ["_hour","_date"];
@@ -216,9 +209,9 @@ private _UseMotorPools = Param_MotorPools;
 	_enemyMinSkill = _this select 1;
 	_enemyMaxSkill = _this select 2;
 	
-	_spawnSegment = [(call drn_fnc_Escape_GetPlayerGroup), 1500, 2000] call drn_fnc_Escape_FindSpawnSegment;
+	_spawnSegment = [] call A3E_fnc_FindSpawnRoad;
 	while {(str _spawnSegment) == """NULL"""} do {
-		_spawnSegment = [(call drn_fnc_Escape_GetPlayerGroup), 1500, 2000] call drn_fnc_Escape_FindSpawnSegment;
+		_spawnSegment = [] call A3E_fnc_FindSpawnRoad;
 		sleep 1;
 	};
 	

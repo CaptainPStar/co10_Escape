@@ -108,9 +108,9 @@ while {true} do {
                     _enemyMinSkill = _surpriseArgs select 0;
                     _enemyMaxSkill = _surpriseArgs select 1;
                     
-                    _spawnSegment = [(call drn_fnc_Escape_GetPlayerGroup), 1500, 2000] call drn_fnc_Escape_FindSpawnSegment;
+                    _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
                     while {(str _spawnSegment) == """NULL"""} do {
-                        _spawnSegment = [(call drn_fnc_Escape_GetPlayerGroup), 1500, 2000] call drn_fnc_Escape_FindSpawnSegment;
+                        _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
                         sleep 1;
                     };
                     
@@ -283,9 +283,9 @@ while {true} do {
                     _enemyMinSkill = _surpriseArgs select 0;
                     _enemyMaxSkill = _surpriseArgs select 1;
 
-                    _spawnSegment = [(call drn_fnc_Escape_GetPlayerGroup), 1500, 2000] call drn_fnc_Escape_FindSpawnSegment;
+                    _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
                     while {(str _spawnSegment) == """NULL"""} do {
-                        _spawnSegment = [(call drn_fnc_Escape_GetPlayerGroup), 1500, 2000] call drn_fnc_Escape_FindSpawnSegment;
+                        _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
                         sleep 1;
                     };
                     
@@ -301,13 +301,13 @@ while {true} do {
                 
                 if (_surpriseID == "CIVILIANENEMY") then {
                     
-                    _spawnSegment = [(call drn_fnc_Escape_GetPlayerGroup), 1500, 2000] call drn_fnc_Escape_FindSpawnSegment;
+                    _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
                     while {(str _spawnSegment) == """NULL"""} do {
-                        _spawnSegment = [(call drn_fnc_Escape_GetPlayerGroup), 1500, 2000] call drn_fnc_Escape_FindSpawnSegment;
+                        _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
                         sleep 1;
                     };
                     
-                    [call drn_fnc_Escape_GetPlayerGroup, getPos _spawnSegment, A3E_VAR_Side_Opfor, a3e_arr_Escape_EnemyCivilianCarTypes, A3E_arr_recon_InfantryTypes, _enemyFrequency] execVM "Scripts\Escape\CreateCivilEnemy.sqf";
+                    [call A3E_fnc_GetPlayerGroup, getPos _spawnSegment, A3E_VAR_Side_Opfor, a3e_arr_Escape_EnemyCivilianCarTypes, A3E_arr_recon_InfantryTypes, _enemyFrequency] execVM "Scripts\Escape\CreateCivilEnemy.sqf";
                     
                     _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
                     _timeInSek = 15 * 60 + random (45 * 60);

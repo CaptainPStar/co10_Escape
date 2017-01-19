@@ -24,11 +24,10 @@ if (count _firstDestinationPos > 0) then {
 }
 else {
 	_roadSegments = [];
-	//#### What is petPos? Does we have pets now in Escape? Should be getPos... but Pets are a nice idea indeed :D
-	//_refPos = petPos _vehicle;
 	_refPos = getPos _vehicle;
     while {count _roadSegments == 0} do {
     	_trafficLocation = floor random 8;
+		//This needs to be adapted to terrains < 5000-1500m
         switch (_trafficLocation) do {
 			case 0: { _roadSegments = ([(_refPos select 0) + 5000, (_refPos select 1) + 5000]  ) nearRoads 1500; };
 			case 1: { _roadSegments = ([(_refPos select 0) - 5000, (_refPos select 1) + 5000] ) nearRoads 1500; };
@@ -40,7 +39,7 @@ else {
 			case 7: { _roadSegments = ([(_refPos select 0) - 7071, (_refPos select 1)] ) nearRoads 1500; };
 		};
 	};
-    _destinationSegment = _roadSegments select floor random count _roadSegments;
+    _destinationSegment = selectRandom _roadSegments;
     _destinationPos = getPos _destinationSegment;
 };
 

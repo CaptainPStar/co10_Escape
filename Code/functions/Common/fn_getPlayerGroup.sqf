@@ -7,7 +7,7 @@ if(isMultiplayer) then {
 		if((isPlayer _x)) exitwith {
 			_group = group _x;
 		};
-	} foreach playableUnits;
+	} foreach (call A3E_fnc_GetPlayers);
 } else {
 	_group = group player;
 };

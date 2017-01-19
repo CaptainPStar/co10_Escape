@@ -262,15 +262,17 @@ drn_fnc_Escape_AllPlayersOnStartPos = {
     _allPlayersAtStartPos
 };
 
-drn_fnc_Escape_GetPlayerGroup = {
+A3E_fnc_GetPlayerGroup = {
     private ["_units", "_unit", "_group"];
     
     _units = call A3E_fnc_GetPlayers;
-    
+    if(count _units == 0) exitwith {
+		_group = grpNull;
+		_group;
+	};
     _unit = _units select 0;
-    _group = group _unit;
-    
-    _group
+    _group = group _unit;   
+    _group;
 };
 
 drn_fnc_Escape_CreateExtractionPointServer = {
@@ -392,7 +394,7 @@ drn_fnc_Escape_TrafficSearch = {
         if (_makeSearchStop) then {
             _startSearchTime = time;
             _searchTime = 15 + random 30;
-            _turnDir = [1, -1] select floor random 2;
+            _turnDir = selectRandom [1, -1];
             _angle = getDir _vehicle;
             while {time < _startSearchTime + _searchTime} do {
                 _glanceTime = 1 + random 6;
@@ -523,7 +525,7 @@ drn_fnc_Escape_AddRemoveComCenArmor = {
 			if (count _roadSegments == 0) then {
 				_roadSegments = (_pos nearRoads 1000);
 			};
-            _spawnPos = getPos (_roadSegments select floor random count _roadSegments);
+            _spawnPos = getPos (selectRandom _roadSegments);
             _result = [_spawnPos, 0, _x, A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
             _vehicle = _result select 0;
             _crew = _result select 1;
@@ -592,15 +594,15 @@ drn_fnc_Escape_InitializeComCenArmor = {
         {
             case 1:
             {
-                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [a3e_arr_ComCenDefence_lightArmorClasses select floor random count a3e_arr_ComCenDefence_lightArmorClasses], []]];
+                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [selectRandom a3e_arr_ComCenDefence_lightArmorClasses], []]];
             };
             case 2:
             {
-                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [a3e_arr_ComCenDefence_heavyArmorClasses select floor random count a3e_arr_ComCenDefence_heavyArmorClasses], []]];
+                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [selectRandom a3e_arr_ComCenDefence_heavyArmorClasses], []]];
             };
             default
             {
-                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [a3e_arr_ComCenDefence_lightArmorClasses select floor random count a3e_arr_ComCenDefence_lightArmorClasses, a3e_arr_ComCenDefence_heavyArmorClasses select floor random count a3e_arr_ComCenDefence_heavyArmorClasses], []]];
+                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [selectRandom a3e_arr_ComCenDefence_lightArmorClasses, selectRandom a3e_arr_ComCenDefence_heavyArmorClasses], []]];
             };
         };
         
@@ -613,74 +615,6 @@ drn_fnc_Escape_InitializeComCenArmor = {
         
         _index = _index + 1;
     } foreach _comCenPositions;
-};
-
-drn_fnc_Escape_FindSpawnSegment = {
-    private ["_referenceGroup", "_minSpawnDistance", "_maxSpawnDistance"];
-    private ["_refUnit", "_roadSegments", "_roadSegment", "_isOk", "_tries", "_result", "_spawnDistanceDiff", "_refPosX", "_refPosY", "_dir", "_tooFarAwayFromAll", "_tooClose"];
-
-    _referenceGroup = _this select 0;
-    _minSpawnDistance = _this select 1;
-    _maxSpawnDistance = _this select 2;
-    
-    _spawnDistanceDiff = _maxSpawnDistance - _minSpawnDistance;
-    _roadSegment = "NULL";
-    _refUnit = vehicle ((units _referenceGroup) select floor random count units _referenceGroup);
-
-    _isOk = false;
-    _tries = 0;
-    while {!_isOk && _tries < 25} do {
-        _isOk = true;
-        
-        _dir = random 360;
-        _refPosX = ((getPos _refUnit) select 0) + (_minSpawnDistance + _spawnDistanceDiff) * sin _dir;
-        _refPosY = ((getPos _refUnit) select 1) + (_minSpawnDistance + _spawnDistanceDiff) * cos _dir;
-        
-        _roadSegments = [_refPosX, _refPosY] nearRoads (_spawnDistanceDiff);
-        
-        if (count _roadSegments > 0) then {
-            _roadSegment = _roadSegments select floor random count _roadSegments;
-            
-            // Check if road segment is at spawn distance
-            _tooFarAwayFromAll = true;
-            _tooClose = false;
-            {
-                private ["_tooFarAway"];
-                
-                _tooFarAway = false;
-                
-                if ((vehicle _x) distance (getPos _roadSegment) < _minSpawnDistance) then {
-                    _tooClose = true;
-                };
-                if ((vehicle _x) distance (getPos _roadSegment) > _maxSpawnDistance) then {
-                    _tooFarAway = true;
-                };
-                if (!_tooFarAway) then {
-                    _tooFarAwayFromAll = false;
-                };
-                
-            } foreach units _referenceGroup;
-            
-            _isOk = true;
-            if (_tooClose || _tooFarAwayFromAll) then {
-                _isOk = false;
-                _tries = _tries + 1;
-            };
-        }
-        else {
-            _isOk = false;
-            _tries = _tries + 1;
-        };
-    };
-
-    if (!_isOk) then {
-        _result = "NULL";
-    }
-    else {
-        _result = _roadSegment;
-    };
-
-    _result
 };
 
 drn_fnc_Escape_PopulateVehicle = {
@@ -700,7 +634,7 @@ drn_fnc_Escape_PopulateVehicle = {
     // Driver
     _continue = true;
     while {_continue && (_soldierCount <= _maxSoldiersCount)} do {
-        _unitType = _unitTypes select floor random count _unitTypes;
+        _unitType = selectRandom _unitTypes;
         _insurgentSoldier = _group createUnit [_unitType, [0,0,0], [], 0, "FORM"];
         
         _insurgentSoldier setRank "LIEUTENANT";
@@ -719,7 +653,7 @@ drn_fnc_Escape_PopulateVehicle = {
     // Gunner
     _continue = true;
     while {_continue && _soldierCount <= _maxSoldiersCount} do {
-        _unitType = _unitTypes select floor random count _unitTypes;
+        _unitType = selectRandom _unitTypes;
         _insurgentSoldier = _group createUnit [_unitType, [0,0,0], [], 0, "FORM"];
         
         _insurgentSoldier setRank "LIEUTENANT";
@@ -738,7 +672,7 @@ drn_fnc_Escape_PopulateVehicle = {
     // Commander
     _continue = true;
     while {_continue && _soldierCount <= _maxSoldiersCount} do {
-        _unitType = _unitTypes select floor random count _unitTypes;
+        _unitType = selectRandom _unitTypes;
         _insurgentSoldier = _group createUnit [_unitType, [0,0,0], [], 0, "FORM"];
         
         _insurgentSoldier setRank "LIEUTENANT";
@@ -757,7 +691,7 @@ drn_fnc_Escape_PopulateVehicle = {
     // Cargo
     _continue = true;
     while {_continue && _soldierCount <= _maxSoldiersCount} do {
-        _unitType = _unitTypes select floor random count _unitTypes;
+        _unitType = selectRandom _unitTypes;
         _insurgentSoldier = _group createUnit [_unitType, [0,0,0], [], 0, "FORM"];
         
         _insurgentSoldier setRank "LIEUTENANT";

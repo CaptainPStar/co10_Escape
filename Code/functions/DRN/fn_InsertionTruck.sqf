@@ -65,7 +65,7 @@ _fnc_GetDropPosition = {
         _attempts = 0;
         
         while {(!_isOk) && _attempts < 5} do {
-            _roadSegment = _roadSegments select floor random count _roadSegments;
+            _roadSegment = selectRandom _roadSegments;
             
             if ([getPos _roadSegment, _destinationMarker] call drn_fnc_CL_PositionIsInsideMarker) then {
                 _dropPosition = + getPos _roadSegment;

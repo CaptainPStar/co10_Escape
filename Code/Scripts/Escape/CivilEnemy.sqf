@@ -29,7 +29,7 @@ _fnc_GetDestinationPos = {
     _roadSegments = _referenceUnit nearRoads 1250;
     
     if (count _roadSegments > 0) then {
-        _destinationPos = getPos (_roadSegments select floor random count _roadSegments);
+        _destinationPos = getPos (selectRandom _roadSegments);
     };
     
     _destinationPos

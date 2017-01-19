@@ -56,7 +56,7 @@ if (_soldiersCount > _vehicleMaxCargo) then {
 };
 
 for "_i" from 1 to _soldiersCount do {
-    _infantryType = a3e_arr_Escape_InfantryTypes select floor random count a3e_arr_Escape_InfantryTypes;
+    _infantryType = selectRandom a3e_arr_Escape_InfantryTypes;
     _insurgentSoldier = _cargoGroup createUnit [_infantryType, [0,0,30], [], 0, "FORM"];
     //_insurgentSoldier setSkill (_minSkill + random (_maxSkill - _minSkill));
 	//[_insurgentSoldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;

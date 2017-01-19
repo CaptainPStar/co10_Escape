@@ -69,7 +69,7 @@ if (isNil "drn_fnc_MilitaryTraffic_MoveVehicle") then {
         }
         else {
             _roadSegments = _vehicle nearroads 2000;
-            _destinationSegment = _roadSegments select floor random count _roadSegments;
+            _destinationSegment = selectRandom _roadSegments;
             _destinationPos = getPos _destinationSegment;
         };
         
@@ -106,7 +106,7 @@ _fnc_FindSpawnSegment = {
     
     _spawnDistanceDiff = _maxSpawnDistance - _minSpawnDistance;
     _roadSegment = "NULL";
-    _refUnit = vehicle ((units _referenceGroup) select floor random count units _referenceGroup);
+    _refUnit = vehicle (selectRandom (units _referenceGroup));
 
     _isOk = false;
     _tries = 0;
@@ -120,7 +120,7 @@ _fnc_FindSpawnSegment = {
         _roadSegments = [_refPosX, _refPosY] nearRoads (_spawnDistanceDiff);
         
         if (count _roadSegments > 0) then {
-            _roadSegment = _roadSegments select floor random count _roadSegments;
+            _roadSegment = selectRandom _roadSegments;
             
             // Check if road segment is at spawn distance
             _tooFarAwayFromAll = true;
@@ -197,7 +197,7 @@ while {true} do {
         else {
             _minDistance = _minSpawnDistance;
         };
-        _refUnit = vehicle ((units _referenceGroup) select floor random count units _referenceGroup);
+        _refUnit = vehicle (selectRandom (units _referenceGroup));
         _spawnSegment = [_referenceGroup, _minDistance, _maxSpawnDistance, _activeVehiclesAndGroup] call _fnc_FindSpawnSegment;
         
         // If there were spawn positions
@@ -221,7 +221,7 @@ while {true} do {
                 };
             };
             
-            _destinationSegment = _roadSegments select floor random count _roadSegments;
+            _destinationSegment = selectRandom _roadSegments;
             _destinationPos = getPos _destinationSegment;
             
             _direction = ((_destinationPos select 0) - (getPos _spawnSegment select 0)) atan2 ((_destinationPos select 1) - (getpos _spawnSegment select 1));

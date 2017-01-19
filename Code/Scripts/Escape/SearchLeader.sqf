@@ -111,7 +111,7 @@ while {true} do {
                 if (!isNull _nearestEnemy) then {
                     {
                         _enemyUnit = (_x select 4);
-                        if (_enemyUnit == _nearestEnemy && _enemyUnit in (units (call drn_fnc_Escape_GetPlayerGroup))) then {
+                        if (_enemyUnit == _nearestEnemy && _enemyUnit in (units (call A3E_fnc_GetPlayerGroup))) then {
                             private ["_enemysSupposedPos"];
                             
                             _enemysSupposedPos = (_x select 0);
@@ -125,7 +125,7 @@ while {true} do {
                                     _detectedUnit = _x;
                                     _detectedUnitsPosition = _enemysSupposedPos;
                                     _unitThatDetected = _leader;
-                                    _reportingUnit = (units group _unitThatDetected) select floor random count (units group _unitThatDetected);
+                                    _reportingUnit = selectRandom (units group _unitThatDetected);
                                     _unitThatDetectedPositionAccuracy = _positionAccuracy;
                                     
                                     //"SmokeShellGreen" createVehicle _enemysSupposedPos;
