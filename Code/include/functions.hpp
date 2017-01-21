@@ -31,6 +31,7 @@ class CfgFunctions
 			class handleScore {};
 			class expandProbabilities {};
 			class getAssocArrayEntry {};
+			class CheckCampDistance {};
 		};
 		class AI
 		{
