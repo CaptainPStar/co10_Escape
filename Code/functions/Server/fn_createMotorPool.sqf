@@ -1,12 +1,50 @@
 if(!isserver) exitwith {};
 
-private ["_mpPosition", "_createMPcount", "_newPosition"];
+private ["_mpPosition", "_createMPcount", "_newPosition", "_mapsize", "_mpc"];
 
 _mpPosition = [];
 _createMPcount = 0;
 
+private _mapsize = (getPos NorthEast) distance (getPos SouthWest);
+if (_mapsize < 5000) then 
+	{
+		_mpc = 0;
+	}
+	else
+	{
+		if (_mapsize < 10000) then
+		{
+			_mpc = 1;
+		}
+		else
+		{
+			if (_mapsize < 15000) then
+			{
+				_mpc = 2;
+			}
+			else
+			{
+				if (_mapsize < 20000) then
+				{
+					_mpc = 3;
+				}
+				else
+				{
+					if (_mapsize < 25000) then
+					{
+						_mpc = 4;
+					}
+					else
+					{
+						_mpc = 5;
+					};
+				};
+			};
+		};
+	};
+
 if(isNil("A3E_MotorPoolCount")) then {
-        A3E_MotorPoolCount = ((floor random 3)+(Param_EnemyFrequency));
+        A3E_MotorPoolCount = ((floor random _mpc)+(Param_EnemyFrequency));
     };
 
 while {_createMPcount < A3E_MotorPoolCount} do
