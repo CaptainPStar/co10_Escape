@@ -587,6 +587,8 @@ if (count _parkedArmorClasses > 0) then {
     } else {
         _sarmor setFuel 0.01;
     };
+	
+	_sarmor setdamage random [0, 0.2, 0.5];
 };
 // setVehicleAmmo cannot be used until Ammo Depots rearm all vehicles
 
@@ -599,7 +601,9 @@ if (count _parkedVehicleClasses > 0) then {
     
     _vehicle = _parkedVehicleClasses select floor random count _parkedVehicleClasses;
     [_vehicle, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateVehicle;
-        
+	
+	_vehicle setfuel random 1;
+	_vehicle setdamage random [0, 0.2, 0.5];
 };
 
 _random = random 1;
@@ -609,12 +613,18 @@ if (_random < .3 ) then {
     
     _vehicle = _parkedVehicleClasses select floor random count _parkedVehicleClasses;
     [_vehicle, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+	
+	_vehicle setfuel random 1;
+	_vehicle setdamage random [0, 0.2, 0.5];
 };
 if (_random > .9) then {
     _pos = [-15.247, 12.6];
     _dir = 144;
    
     ["B_G_Offroad_01_armed_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+	
+	_vehicle setfuel random 1;
+	_vehicle setdamage random [0, 0.2, 0.5];
 };
 
 ["A3E_MotorPoolMapMarker" + str _mNumber,_centerPos,"o_service"] call A3E_fnc_createLocationMarker;
