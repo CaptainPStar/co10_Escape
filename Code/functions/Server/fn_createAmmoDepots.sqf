@@ -87,3 +87,6 @@ while {count _positions < A3E_AmmoDepotCount} do {
 {
     [_x,a3e_arr_Escape_AmmoDepot_StaticWeaponClasses,a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses] call A3E_fnc_AmmoDepot;
 } foreach _positions;
+
+a3e_var_Escape_AmmoDepotPositions = _positions;
+publicVariable "a3e_var_Escape_AmmoDepotPositions";

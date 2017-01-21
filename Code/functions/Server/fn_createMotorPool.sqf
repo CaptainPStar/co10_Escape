@@ -51,6 +51,21 @@ while {_createMPcount < A3E_MotorPoolCount} do
     {
     _createMPcount = (_createMPcount + 1);
     _newPosition = [50, 1000, 0.1] call A3E_fnc_findFlatArea;
+	
+	_tooCloseAnotherPos = false;
+	//Check if too close to another depot, comcenter or start
+	{
+        if (_newPosition distance _x < A3E_ClearedPositionDistance) then {
+            _tooCloseAnotherPos = true;
+        };
+    } foreach A3E_Var_ClearedPositions;
+
+
+    if (!_tooCloseAnotherPos) then {
+        _mpPosition pushBack  _newPosition;
+		A3E_Var_ClearedPositions pushBack _newPosition;
+    };
+
     _mpPosition pushBack _newPosition;
     };
 
@@ -66,3 +81,5 @@ _playergroup = [] call A3E_fnc_getPlayerGroup;
      Param_EnemySkill, Param_EnemySkill, Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
 } foreach _mpPosition;
 
+a3e_var_Escape_MotorPoolPositions = _mpPosition;
+publicVariable "a3e_var_Escape_MotorPoolPositions";

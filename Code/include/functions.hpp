@@ -30,6 +30,8 @@ class CfgFunctions
 			class cleanupTerrain {};
 			class handleRating {};
 			class handleScore {};
+			class CheckCampDistance {};
+
 		};
 		class AI
 		{
