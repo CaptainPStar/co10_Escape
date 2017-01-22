@@ -12,7 +12,7 @@
 // Returns:
 //   false if position is to close to a spawned camp, true when position is ok
 ///////////////////////////////////////////////////////////
-private ["_pos", "_dis", "_checkAgainst"];
+private ["_check", "_pos", "_dis", "_checkAgainst"];
 
 _pos = _this select 0;
 _dis = _this select 1;
@@ -30,8 +30,8 @@ switch (_checkAgainst) do
 	case "ammo": {a3e_var_Escape_AmmoDepotPositions};
 };
 
-_result = {
-		if ((_pos distance _x) < _dis) exitWith {}
+_check = true;
+if ((_pos distance _x) < _dis) exitWith {_check=false}
 	} foreach _checkAgainst;
 	
-true
+_check
