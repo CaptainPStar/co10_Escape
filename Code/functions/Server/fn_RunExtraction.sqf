@@ -76,6 +76,15 @@ _heloGuard = {
 	if(!(isNull _heli)) then {
 		[[A3E_VAR_Side_Blufor,"HQ"],format["%1 is going down!",groupId (group (driver _heli))]] remoteExec ["sideChat",0,false];
 	};
+	waituntil{sleep 0.5;!(alive _boat1) and !(alive _boat2)};
+	if(!(isNull _heli)) then {
+		[[A3E_VAR_Side_Blufor,"HQ"],format["Both birds are down!",groupId (group (driver _heli))]] remoteExec ["sideChat",0,false];
+		_failed_extraction_marker = createmarker ["failedExtraction", (getmarkerpos a3e_var_Escape_ExtractionMarker)];
+		_failed_extraction_marker setMarkerType "hd_dot";
+		_failed_extraction_marker setMarkerColor "ColorRed";
+		_failed_extraction_marker setMarkerText "failed Evac";
+		deletemarker a3e_var_Escape_ExtractionMarker;
+	};
 };
 
 [_boat1] spawn _heloGuard;
