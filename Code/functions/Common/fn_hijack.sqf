@@ -62,24 +62,45 @@ _mode = Param_ExtractionSelection;
 
 if (_count == 0) then {
 
+
+//check for number of extraction markers
+_markerBaseName = "drn_Escape_ExtractionPos";
+_arrayName = "drn_arr_ExtractionPosMarkerNumbers";
+_markerStartNo = 1;
+
+_markerNo = _markerStartNo;
+_markerName = _markerBaseName + str _markerNo;
+
+drn_arr_ExtractionPosMarkerNumbers = [];
+	_j = 0;
+	while {[_markerName] call drn_fnc_CL_MarkerExists} do {
+	_arrayname append _markerNo;
+	
+	_markerNo = _markerNo + 1;
+	_markerName = _markerBaseName + str _markerNo;
+	_j = _j + 1;
+};
+
+
+
 	_flag = false;
 	//If selection fails ten times, a random point is selected-
 	
 	if(_mode == 0) then {
-		_extractionPointNo = floor(random 8) + 1;
+		_extractionPointNo = (selectRandom drn_arr_ExtractionPosMarkerNumbers);
 		a3e_var_Escape_ExtractionMarkerPos =  getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
 	} else {
 		_selectedPos = getMarkerPos ("drn_Escape_ExtractionPos1");
-		_extractionPointNo = 1;
-		for[{_i = 1},{_i<=8},{_i = _i +1}] do {
+		_extractionPointNo = (selectRandom drn_arr_ExtractionPosMarkerNumbers);
+		for[{_i = 1},{_i<=_markerNo},{_i = _i +1}] do {
 
-			_pos = getMarkerPos ("drn_Escape_ExtractionPos" + str _i);
+			_pos = getMarkerPos ("drn_Escape_ExtractionPos" + str (selectRandom drn_arr_ExtractionPosMarkerNumbers));
 			
-			if((getpos _generatorTrailer distance _pos)<(getpos _generatorTrailer distance _selectedPos) AND (_mode == 1)) then {
+			if((getpos _generatorTrailer distance _pos)<(A3E_MinComCenterDistance*3) AND (_mode == 1)) then {
 				_selectedPos = _pos;
 				_extractionPointNo = _i;
 			};
-			if((getpos _generatorTrailer distance _pos)>(getpos _generatorTrailer distance _selectedPos) AND (_mode == 2)) then {
+			if((getpos _generatorTrailer distance _pos)>(A3E_MinComCenterDistance*3) AND (_mode == 2)) then {
 				_selectedPos = _pos;
 				_extractionPointNo = _i;
 			};
