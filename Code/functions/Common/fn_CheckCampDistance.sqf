@@ -31,7 +31,7 @@ switch (_checkAgainst) do
 };
 
 _check = true;
-if ((_pos distance _x) < _dis) exitWith {_check=false}
+{if ((_pos distance _x) < _dis) exitWith {_check=false}
 	} foreach _checkAgainst;
 	
 _check
