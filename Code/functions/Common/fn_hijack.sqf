@@ -74,7 +74,7 @@ _markerName = _markerBaseName + str _markerNo;
 drn_arr_ExtractionPosMarkerNumbers = [];
 	_j = 0;
 	while {[_markerName] call drn_fnc_CL_MarkerExists} do {
-	_arrayname append _markerNo;
+	_arrayname pushback _markerNo;
 	
 	_markerNo = _markerNo + 1;
 	_markerName = _markerBaseName + str _markerNo;
