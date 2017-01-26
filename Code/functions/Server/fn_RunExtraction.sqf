@@ -76,7 +76,12 @@ _heloGuard = {
 	if(!(isNull _heli)) then {
 		[[A3E_VAR_Side_Blufor,"HQ"],format["%1 is going down!",groupId (group (driver _heli))]] remoteExec ["sideChat",0,false];
 	};
-	waituntil{sleep 0.5;!(alive _boat1) and !(alive _boat2)};
+};
+
+_extractionGuard = {
+	params["_heli1","_heli2"]
+	sleep 6;
+	waituntil{sleep 0.5;!(alive _heli1) and !(alive _heli2)};
 	if(!(isNull _heli)) then {
 		[[A3E_VAR_Side_Blufor,"HQ"],format["Both birds are down!",groupId (group (driver _heli))]] remoteExec ["sideChat",0,false];
 		_failed_extraction_marker = createmarker ["failedExtraction", (getmarkerpos a3e_var_Escape_ExtractionMarker)];
@@ -90,6 +95,7 @@ _heloGuard = {
 [_boat1] spawn _heloGuard;
 [_boat2] spawn _heloGuard;
 [_boat3] spawn _heloGuard;
+[_boat1,_boat2] spawn _extractionGuard;
 
 sleep 1;
 
