@@ -65,16 +65,15 @@ if (_count == 0) then {
 
 //check for number of extraction markers
 _markerBaseName = "drn_Escape_ExtractionPos";
-_arrayName = "drn_arr_ExtractionPosMarkerNumbers";
+drn_arr_ExtractionPosMarkerNumbers = [];
 _markerStartNo = 1;
 
 _markerNo = _markerStartNo;
 _markerName = _markerBaseName + str _markerNo;
 
-drn_arr_ExtractionPosMarkerNumbers = [];
 	_j = 0;
 	while {[_markerName] call drn_fnc_CL_MarkerExists} do {
-	_arrayname pushback _markerNo;
+	drn_arr_ExtractionPosMarkerNumbers pushback _markerNo;
 	
 	_markerNo = _markerNo + 1;
 	_markerName = _markerBaseName + str _markerNo;
