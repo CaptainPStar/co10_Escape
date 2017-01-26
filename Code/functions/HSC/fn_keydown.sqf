@@ -61,8 +61,16 @@ if(_dikCode == DIK_M) then {
 if(_dikCode == DIK_P || _dikCode == DIK_I ) then {
 	_handled = false;
 };
-     
-if(_dikCode == DIK_NUMPADENTER || _dikCode == DIK_RETURN) then {
+if(_dikCode in (actionKeys "Watch")) then {
+	_handled = false;
+};
+if(_dikCode in (actionKeys "Chat")) then {
+	_handled = false;
+};     
+if(_dikCode == DIK_RETURN) then {
+	_handled = false;
+};    
+if(_dikCode == DIK_NUMPADENTER || _dikCode == DIK_V) then {
 	[] call ATHSC_fnc_updatePerspective;
 };
 
