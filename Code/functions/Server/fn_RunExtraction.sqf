@@ -82,7 +82,7 @@ _extractionGuard = {
 	params["_heli1","_heli2"]
 	sleep 6;
 	waituntil{sleep 0.5;!(alive _heli1) and !(alive _heli2)};
-	if(!(isNull _heli)) then {
+	if(!(isNull _heli1 or isNull _heli2)) then {
 		[[A3E_VAR_Side_Blufor,"HQ"],format["Both birds are down!",groupId (group (driver _heli))]] remoteExec ["sideChat",0,false];
 		_failed_extraction_marker = createmarker ["failedExtraction", (getmarkerpos a3e_var_Escape_ExtractionMarker)];
 		_failed_extraction_marker setMarkerType "hd_dot";
