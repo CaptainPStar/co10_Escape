@@ -76,6 +76,7 @@ class CfgFunctions
 			class createLocationMarker {};
 			class createExtractionPoint {};
 			class runExtraction {};
+			class runExtractionBoat {};
 			class firedNearExtraction {};
 			class weather {};
 			class FindSpawnRoad {};

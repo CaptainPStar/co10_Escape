@@ -9,7 +9,7 @@ _extractionMarkerName = "drn_Escape_ExtractionPos" + str _extractionPointNo;
 _extractionMarkerName2 = "drn_Escape_ExtractionPos" + str _extractionPointNo + "_1";
 
 private _dir = (getMarkerPos _spawnMarkerName) getDir (getMarkerPos _extractionMarkerName);
-_result = [[((getMarkerPos _spawnMarkerName) select 0) + 80, ((getMarkerPos _spawnMarkerName) select 1), 50],_dir, (a3e_arr_extraction_chopper select floor (random count a3e_arr_extraction_chopper)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+_result = [[((getMarkerPos _spawnMarkerName) select 0) + 80, ((getMarkerPos _spawnMarkerName) select 1), 0],_dir, (a3e_arr_extraction_boat select floor (random count a3e_arr_extraction_boat)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 _boat1 = _result select 0;
 _group1 = _result select 2;
 
@@ -19,9 +19,9 @@ _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointFormation "WEDGE";
 _waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
 
-sleep 5;
+sleep 1;
 
-_result = [[((getMarkerPos _spawnMarkerName) select 0), ((getMarkerPos _spawnMarkerName) select 1) + 80, 200], _dir, (a3e_arr_extraction_chopper_escort select floor (random count a3e_arr_extraction_chopper_escort)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+_result = [[((getMarkerPos _spawnMarkerName) select 0), ((getMarkerPos _spawnMarkerName) select 1) + 80, 0], _dir, (a3e_arr_extraction_boat_escort select floor (random count a3e_arr_extraction_boat_escort)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 _boat3 = _result select 0;
 _group3 = _result select 2;
 
@@ -29,12 +29,12 @@ _waypoint = _group3 addWaypoint [getMarkerPos _extractionMarkerName, 0];
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "COMBAT";
 _waypoint setWaypointFormation "WEDGE";
-_waypoint setWaypointType "LOITER";
-_waypoint setWaypointLoiterRadius 100;
+//_waypoint setWaypointType "LOITER";
+//_waypoint setWaypointLoiterRadius 100;
 
-sleep 5;
+sleep 1;
 
-_result = [[((getMarkerPos _spawnMarkerName) select 0) - 80, ((getMarkerPos _spawnMarkerName) select 1), 100], _dir, (a3e_arr_extraction_chopper select floor (random count a3e_arr_extraction_chopper)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+_result = [[((getMarkerPos _spawnMarkerName) select 0) - 80, ((getMarkerPos _spawnMarkerName) select 1), 0], _dir, (a3e_arr_extraction_boat select floor (random count a3e_arr_extraction_boat)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 _boat2 = _result select 0;
 _group2 = _result select 2;
 
@@ -50,41 +50,36 @@ A3E_EvacHeli1 = _boat1;
 A3E_EvacHeli2 = _boat2;
 A3E_EvacHeli3 = _boat3;
 
-_group1 setGroupIdGlobal ["Angel One"];
-_group2 setGroupIdGlobal ["Angel Two"];
-_group3 setGroupIdGlobal ["Archangel"];
+_group1 setGroupIdGlobal ["Dolphin One"];
+_group2 setGroupIdGlobal ["Dolphin Two"];
+_group3 setGroupIdGlobal ["Hammerhead"];
 
-
-
-_boat1 flyinheight 30;
-_boat2 flyinheight 50;
-_boat3 flyinheight 100;
 
 [_boat1] spawn {
-	params["_heli"];
+	params["_boat"];
 	sleep 5;
-	[driver _heli,"We are here to get you out. Archangel is providing cover."] remoteExec ["sideChat",0,false];
+	[driver _boat,"We are here to get you out. Hammerhead is providing cover."] remoteExec ["sideChat",0,false];
 };
-_heloGuard = {
-	params["_heli"];
+_boatGuard = {
+	params["_boat"];
 	sleep 6;
-	private _msg = ["We are taking damage!","Under fire!","We are under fire!","Taking damage!","I thought the landing zone was save!"];
-	waituntil{sleep 0.5;((getDammage _heli)>0.1)};
-	if(alive (driver _heli)) then {
-		[driver _heli,selectRandom _msg] remoteExec ["sideChat",0,false];
+	private _msg = ["We are taking damage!","Under fire!","We are under fire!","Taking damage!","I thought the extraction zone was save!"];
+	waituntil{sleep 0.5;((getDammage _boat)>0.1)};
+	if(alive (driver _boat)) then {
+		[driver _boat,selectRandom _msg] remoteExec ["sideChat",0,false];
 	};
-	waituntil{sleep 0.5;!(alive _heli)};
-	if(!(isNull _heli)) then {
-		[[A3E_VAR_Side_Blufor,"HQ"],format["%1 is going down!",groupId (group (driver _heli))]] remoteExec ["sideChat",0,false];
+	waituntil{sleep 0.5;!(alive _boat)};
+	if(!(isNull _boat)) then {
+		[[A3E_VAR_Side_Blufor,"HQ"],format["%1 is sinking!",groupId (group (driver _boat))]] remoteExec ["sideChat",0,false];
 	};
 };
 
 _extractionGuard = {
-	params["_heli1","_heli2"];
+	params["_boat1","_boat2","_boat3"];
 	sleep 6;
-	waituntil{sleep 0.5;!(alive _heli1) and !(alive _heli2)};
-	if(!(isNull _heli1 or isNull _heli2)) then {
-		[[A3E_VAR_Side_Blufor,"HQ"],format["Both birds are down!",groupId (group (driver _heli))]] remoteExec ["sideChat",0,false];
+	waituntil{sleep 0.5;!(alive _boat1) and !(alive _boat2) and !(alive _boat3)};
+	if(!(isNull _boat1 or isNull _boat2 or isNull _boat3)) then {
+		[[A3E_VAR_Side_Blufor,"HQ"],format["Both boats are down!",groupId (group (driver _boat))]] remoteExec ["sideChat",0,false];
 		_failed_extraction_marker = createmarker ["failedExtraction", (getmarkerpos a3e_var_Escape_ExtractionMarker)];
 		_failed_extraction_marker setMarkerType "hd_dot";
 		_failed_extraction_marker setMarkerColor "ColorRed";
@@ -93,10 +88,10 @@ _extractionGuard = {
 	};
 };
 
-[_boat1] spawn _heloGuard;
-[_boat2] spawn _heloGuard;
-[_boat3] spawn _heloGuard;
-[_boat1,_boat2] spawn _extractionGuard;
+[_boat1] spawn _boatGuard;
+[_boat2] spawn _boatGuard;
+[_boat3] spawn _boatGuard;
+[_boat1,_boat2,_boat3] spawn _extractionGuard;
 
 sleep 1;
 
@@ -106,7 +101,7 @@ sleep 1;
 (driver _boat2) action ["LightOff", _boat2];
 
 
-waitUntil {{vehicle _x == _boat1 || vehicle _x == _boat2} count (call A3E_fnc_GetPlayers) == count (call A3E_fnc_GetPlayers)};
+waitUntil {{vehicle _x == A3E_EvacHeli1 || vehicle _x == A3E_EvacHeli2 || vehicle _x == A3E_EvacHeli3} count (call A3E_fnc_GetPlayers) == count (call A3E_fnc_GetPlayers)};
 
 sleep 1;
 
@@ -119,6 +114,10 @@ if(alive (driver _boat1)) then {
 } else {
 	if(alive (driver _boat2)) then {
 		[driver _boat2,"Everybody on bord? Okay, let's get the hell out of here!"] remoteExec ["sideChat",0,false];
+	}
+	else {
+	if(alive (driver _boat3)) then {
+		[driver _boat3,"Everybody on bord? Okay, let's get the hell out of here!"] remoteExec ["sideChat",0,false];
 	};
 };
 
@@ -144,7 +143,7 @@ A3E_Task_Exfil_Complete = true;
 publicvariable "A3E_Task_Exfil_Complete";
 sleep 35;
 
-if({vehicle _x == _boat1 || vehicle _x == _boat2} count (call A3E_fnc_GetPlayers) == count (call A3E_fnc_GetPlayers)) then {
+if({vehicle _x == _boat1 || vehicle _x == _boat2 || vehicle _x == _boat3} count (call A3E_fnc_GetPlayers) == count (call A3E_fnc_GetPlayers)) then {
 	a3e_var_Escape_MissionComplete = true;
 	publicVariable "a3e_var_Escape_MissionComplete";
 } else {

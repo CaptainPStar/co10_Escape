@@ -1,5 +1,5 @@
 diag_log ("Extraction smoke handler: " + str _this);
-params ["_markerNo","_handler"];
+params ["_markerNo","_isWater","_handler"];
 diag_log ("Extraction Markernr: " + str _markerNo);
 _handler params ["_unit","_firer","_distance","_weapon","_muzzle","_mode","_ammo"];
 
@@ -9,8 +9,13 @@ _handler params ["_unit","_firer","_distance","_weapon","_muzzle","_mode","_ammo
 
 private _parents = ([(configFile >> "CfgAmmo" >> _ammo),true] call BIS_fnc_returnParents);
 private _allowed = ["SmokeShell","Chemlight_base","FlareBase","SmokeLauncherAmmo"];
-if(count(_allowed arrayIntersect _parents) > 0) then {
-	[_markerNo] spawn A3E_fnc_RunExtraction;
+if(count(_allowed arrayIntersect _parents) > 0 ) then {
+	if (_isWater) then {
+		[_markerNo] spawn A3E_fnc_RunExtractionBoat;
+	} else {
+		[_markerNo] spawn A3E_fnc_RunExtraction;
+		};
+
 	deletevehicle _unit;
 	diag_log "Extraction triggered.";
 } else {

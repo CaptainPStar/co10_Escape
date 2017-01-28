@@ -12,7 +12,9 @@ private _location = "Land_HelipadEmpty_F" createvehicle (getMarkerPos _markerNam
 
 //_location setvariable ["A3E_ExtractionOnStandby",true];
 
-private _code = compile format["[%1,_this] call A3E_fnc_firedNearExtraction;",_markerNo];
+_isWater = surfaceIsWater (getMarkerPos _markerName);
+
+private _code = compile format["[%1,%2,_this] call A3E_fnc_firedNearExtraction;",_markerNo,_isWater];
 
 _location addeventhandler["firedNear",_code];
 
