@@ -119,10 +119,10 @@ _boat2 land "NONE";
 
 
 if(alive (driver _boat1)) then {
-[driver _boat1,"Everybody on bord? Okay, let's get the hell out of here!"] remoteExec ["sideChat",0,false];
+[driver _boat1,"Everybody on board? Okay, let's get the hell out of here!"] remoteExec ["sideChat",0,false];
 } else {
 	if(alive (driver _boat2)) then {
-		[driver _boat2,"Everybody on bord? Okay, let's get the hell out of here!"] remoteExec ["sideChat",0,false];
+		[driver _boat2,"Everybody on board? Okay, let's get the hell out of here!"] remoteExec ["sideChat",0,false];
 	};
 };
 
