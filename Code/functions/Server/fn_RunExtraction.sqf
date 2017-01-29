@@ -47,8 +47,11 @@ _waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
 
 
 A3E_EvacHeli1 = _boat1;
+publicvariable "A3E_EvacHeli1";
 A3E_EvacHeli2 = _boat2;
+publicvariable "A3E_EvacHeli2";
 A3E_EvacHeli3 = _boat3;
+publicvariable "A3E_EvacHeli3";
 
 _group1 setGroupIdGlobal ["Angel One"];
 _group2 setGroupIdGlobal ["Angel Two"];
@@ -84,7 +87,7 @@ _extractionGuard = {
 	sleep 6;
 	waituntil{sleep 0.5;!(alive _heli1) and !(alive _heli2)};
 	if(!(isNull _heli1 or isNull _heli2)) then {
-		[[A3E_VAR_Side_Blufor,"HQ"],format["Both birds are down!",groupId (group (driver _heli))]] remoteExec ["sideChat",0,false];
+		[[A3E_VAR_Side_Blufor,"HQ"],"Both birds are down!"] remoteExec ["sideChat",0,false];
 		_failed_extraction_marker = createmarker ["failedExtraction", (getmarkerpos a3e_var_Escape_ExtractionMarker)];
 		_failed_extraction_marker setMarkerType "hd_dot";
 		_failed_extraction_marker setMarkerColor "ColorRed";
@@ -106,9 +109,10 @@ sleep 1;
 (driver _boat2) action ["LightOff", _boat2];
 
 
-waitUntil {{vehicle _x == _boat1 || vehicle _x == _boat2} count (call A3E_fnc_GetPlayers) == count (call A3E_fnc_GetPlayers)};
+while {{(_x in  _boat1) || (_x in _boat2)} count (call A3E_fnc_GetPlayers) != count(call A3E_fnc_GetPlayers)} do {
+	sleep 1;
+};
 
-sleep 1;
 
 _boat1 land "NONE";
 _boat2 land "NONE";
