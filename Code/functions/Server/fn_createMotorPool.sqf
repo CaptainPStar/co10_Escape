@@ -66,7 +66,6 @@ while {_createMPcount < A3E_MotorPoolCount} do
 		A3E_Var_ClearedPositions pushBack _newPosition;
     };
 
-    _mpPosition pushBack _newPosition;
     };
 
 _playergroup = [] call A3E_fnc_getPlayerGroup;
