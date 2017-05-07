@@ -32,7 +32,7 @@ if(name _player == "HC") then {
 	diag_log format["Escape debug: %1 is waiting for prison creation.", name _player];
 
 	//Wait until most of the mission is loaded and the player is locally ready (means no weapons etc)
-    waituntil{sleep 0.5;(!isNil("A3E_FenceIsCreated") && !isNil("A3E_StartPos") && !isNil("A3E_ParamsParsed")) && (player getvariable["A3E_PlayerInitializedLocal",false])};
+    waituntil{sleep 0.5;(!isNil("A3E_FenceIsCreated") && !isNil("A3E_StartPos") && !isNil("A3E_ParamsParsed")) && (_player getvariable["A3E_PlayerInitializedLocal",false])};
 	diag_log format["Escape debug: Player %1 is ready and will be placed by the server.", name _player];
 	_placed = false;
 	if(time>60) then {
