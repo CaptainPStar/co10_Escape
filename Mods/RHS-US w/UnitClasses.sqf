@@ -723,10 +723,15 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"RHS_UH60M"];
+	"rhsusf_CH53E_USMC"
+	,"RHS_UH1Y_UNARMED"
+	,"RHS_UH60M_MEV2"
+	,"RHS_UH60M_MEV"];
 a3e_arr_searchChopperHard = [
 	"RHS_UH1Y"
-	,"RHS_UH1Y_FFAR"];
+	,"RHS_UH1Y_FFAR"
+	,"RHS_UH1Y_GS"
+	,"RHS_UH60M"];
 a3e_arr_searchChopper_pilot = [
 	"rhsusf_usmc_marpat_wd_helipilot"];
 a3e_arr_searchChopper_crew = [

@@ -720,16 +720,19 @@ a3e_arr_Bipods = [
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"CUP_B_UH60M_FFV_US"
+	"CUP_B_MH6J_USA"
 	,"CUP_B_MH60S_FFV_USMC"
+	,"CUP_B_CH47F_USA"
+	,"CUP_B_CH47F_VIV_USA"
+	,"CUP_B_UH60M_FFV_US"
+	,"CUP_B_UH60M_Unarmed_FFV_US"
 	,"CUP_B_UH60M_Unarmed_FFV_MEV_US"
-	,"CUP_B_UH1Y_UNA_F","CUP_B_MV22_USMC"
-	,"CUP_B_CH53E_USMC","CUP_B_CH47F_USA"
-	,"CUP_Merlin_HC3_Ramp_Gun"
-	,"CUP_B_UH1D_GER_KSK_Des"];
+	,"CUP_B_CH53E_USMC"
+	,"CUP_B_UH1Y_MEV_USMC",
+	"CUP_B_UH1Y_UNA_USMC"];
 a3e_arr_extraction_chopper_escort = [
-	"CUP_B_AH64D_ES_USA"
-	,"CUP_B_AH1Z_Escort"];
+	"CUP_B_AH1Z_USMC"
+	,"CUP_B_AH64D_MR_USA"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -747,11 +750,10 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"CUP_I_UH1H_TK_GUE"
-	,"CUP_O_UH1H_TKA"];
+	"CUP_O_Mi17_VIV_TK"];
 a3e_arr_searchChopperHard = [
-	"CUP_I_UH1H_TK_GUE"
-	,"CUP_O_UH1H_TKA"
+	"CUP_O_UH1H_TKA"
+	,"CUP_O_UH1H_slick_TKA"
 	,"CUP_O_Mi17_TK"];
 a3e_arr_searchChopper_pilot = [
 	"CUP_O_TK_Pilot"];

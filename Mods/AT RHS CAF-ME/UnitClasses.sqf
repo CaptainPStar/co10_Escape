@@ -775,8 +775,6 @@ a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_LEUPOLDMK4", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_ELCAN", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_ACOG", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_ACOG2", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["SMA_Silencer_556", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["SMA_AIMPOINT", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["iansky_deltapoint", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["iansky_t1", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["iansky_rx01", 10, 1, 3];
@@ -813,20 +811,20 @@ a3e_arr_CivilianCarWeapons pushback ["RH_Deagleg", "RH_7Rnd_50_AE", 5];
 a3e_arr_CivilianCarWeapons pushback ["AG_MP9_sidearm", "30Rnd_45ACP_Mag_SMG_01", 5];
 a3e_arr_CivilianCarWeapons pushback ["sgun_AA12_F", "20Rnd_B_AA12_Pellets", 11];
 a3e_arr_CivilianCarWeapons pushback ["sgun_AA12_F", "20Rnd_B_AA12_HE", 9];
-a3e_arr_CivilianCarWeapons pushback ["RHARD_MK18AFG_F", "30Rnd_556x45_Stanag", 9];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_mk18_KAC_d", "30Rnd_556x45_Stanag", 9];
 a3e_arr_CivilianCarWeapons pushback ["hlc_rifle_RU5562", "30Rnd_556x45_Stanag", 8];
 a3e_arr_CivilianCarWeapons pushback ["hlc_rifle_Bushmaster300", "29rnd_300BLK_STANAG", 6];
 a3e_arr_CivilianCarWeapons pushback ["hlc_smg_mp5k_PDW", "hlc_30Rnd_9x19_GD_MP5", 7];
 a3e_arr_CivilianCarWeapons pushback ["hlc_smg_mp510", "hlc_30Rnd_10mm_JHP_MP5", 5];
 a3e_arr_CivilianCarWeapons pushback ["hlc_rifle_aks74u", "rhs_30Rnd_545x39_7N10_AK", 8];
 a3e_arr_CivilianCarWeapons pushback ["hlc_rifle_saiga12k", "hlc_10rnd_12g_buck_S12", 10];
-a3e_arr_CivilianCarWeapons pushback ["Trixie_M24_Clean", "Trixie_5x762_Mag", 12];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_m24sws", "rhsusf_5Rnd_762x51_m118_special_Mag", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_rshg2","rhs_rshg2_mag", 2];
 a3e_arr_CivilianCarWeapons pushback ["CUP_smg_bizon","CUP_64Rnd_9x19_Bizon_M", 6];
 a3e_arr_CivilianCarWeapons pushback ["CUP_smg_bizon_snds","CUP_64Rnd_9x19_Bizon_M", 6];
 a3e_arr_CivilianCarWeapons pushback ["arifle_M134_F","200Rnd_762x51_Belt", 6];
 a3e_arr_CivilianCarWeapons pushback ["Sawed_Off_Shotgun","2Rnd_Sawed_Off_Shotgun_Pellets", 8];
-a3e_arr_CivilianCarWeapons pushback ["arifle_MRC_GL_F","MRC_492x34_B_skin1", 8];
+a3e_arr_CivilianCarWeapons pushback ["HLC_Rifle_G36KSKAG36","hlc_30rnd_556x45_EPR_G36", 8];
 a3e_arr_CivilianCarWeapons pushback ["MineDetector", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Medikit", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Toolkit", objNull, 0];
@@ -916,15 +914,14 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"RHS_Mi8mt_vdv"
-	,"RHS_Mi8mt_vv"
-	,"RHS_Mi8mt_vvs"
-	,"RHS_Mi8mt_vvsc"];
+	"RHS_Mi8AMT_vdv"
+	,"RHS_Mi8mt_Cargo_vdv"
+	,"RHS_Mi8mtv3_Cargo_vdv"];
 a3e_arr_searchChopperHard = [
-	"RHS_Mi8AMTSh_vvsc"
-	,"RHS_Mi8AMTSh_vvs"
+	"RHS_Mi8mt_vdv"
 	,"RHS_Mi8MTV3_vdv"
-	,"RHS_Mi8MTV3_vvs"
+	,"RHS_Mi8MTV3_FAB_vdv"
+	,"RHS_Mi8MTV3_UPK23_vdv"
 	,"RHS_Mi8MTV3_FAB_vvs"
 	,"RHS_Mi8MTV3_vvsc"];
 a3e_arr_searchChopper_pilot = [
@@ -1020,12 +1017,12 @@ a3e_arr_CrashSiteCrew = [
 	"rhsusf_airforce_pilot"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
-a3e_arr_CrashSiteWeapons pushback ["SMA_AUG_A3_F", 50, 2, 5, ["SMA_30Rnd_556x45_M855A1","SMA_30Rnd_556x45_M855A1_Tracer"], 6];
-a3e_arr_CrashSiteWeapons pushback ["SMA_SKS_F", 10, 1, 2, ["SMA_30Rnd_762x39_SKS","SMA_30Rnd_762x39_SKS_Red"], 6];
+a3e_arr_CrashSiteWeapons pushback ["hlc_rifle_auga3_b", 50, 2, 5, ["hlc_30Rnd_556x45_B_AUG"], 12];
+a3e_arr_CrashSiteWeapons pushback ["hlc_rifle_ACR_Carb_tan", 10, 1, 2, ["30Rnd_556x45_Stanag"], 10];
 a3e_arr_CrashSiteWeapons pushback ["hlc_lmg_M60E4", 100, 3, 5, ["hlc_100Rnd_762x51_M_M60E4"], 6];
-a3e_arr_CrashSiteWeapons pushback ["STI_M32", 50, 2, 4, ["STI_6Rnd_HE_Grenade_shell"], 6];
-a3e_arr_CrashSiteWeapons pushback ["SMA_HK417_16in_afg", 75, 2, 4, ["20Rnd_762x51_Mag", "SMA_20Rnd_762x51mm_M80A1_EPR_Tracer"], 6];
-a3e_arr_CrashSiteWeapons pushback ["Trixie_M107_Green", 10, 1, 2, ["Trixie_10x127_Mag", "Trixie_10x127_HE_Mag", "Trixie_10x127_HEIAP_Mag"], 6];
+a3e_arr_CrashSiteWeapons pushback ["rhs_weap_m32", 50, 2, 4, ["rhsusf_mag_6Rnd_M441_HE"], 6];
+a3e_arr_CrashSiteWeapons pushback ["rhs_weap_hk416d10_LMT_d", 75, 2, 4, ["30Rnd_556x45_Stanag"], 10];
+a3e_arr_CrashSiteWeapons pushback ["rhs_weap_M107_d", 10, 1, 2, ["rhsusf_mag_10Rnd_STD_50BMG_M33", "rhsusf_mag_10Rnd_STD_50BMG_mk211", "rhsusf_mag_10Rnd_STD_50BMG_M33"], 6];
 a3e_arr_CrashSiteWeapons pushback ["hlc_rifle_vendimus", 10, 1, 2, ["29rnd_300BLK_STANAG","29rnd_300BLK_STANAG_T"], 8];
 a3e_arr_CrashSiteWeapons pushback ["hlc_rifle_g3ka4", 10, 1, 2, ["hlc_20rnd_762x51_T_G3", "hlc_20rnd_762x51_b_G3"], 6];
 // Attachments and other items in crash site box
@@ -1035,5 +1032,5 @@ a3e_arr_CrashSiteItems pushback ["FHQ_optic_HWS_G33", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["iansky_deltapoint", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["iansky_t1", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["hlc_muzzle_snds_g3", 10, 1, 3];
-a3e_arr_CrashSiteItems pushback ["SMA_ELCAN_SPECTER", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["iansky_specterdrkf_d", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["rhsusf_acc_harris_bipod", 10, 1, 3];

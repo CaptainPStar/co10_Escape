@@ -753,9 +753,16 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"CUP_B_Mi17_CDF"];
+	"CUP_B_UH1Y_UNA_USMC"
+	,"CUP_B_UH1Y_MEV_USMC"
+	,"CUP_B_CH53E_USMC"];
 a3e_arr_searchChopperHard = [
-	"CUP_B_Mi17_CDF"];
+	"CUP_B_MH60S_FFV_USMC"
+	,"CUP_B_UH1Y_GUNSHIP_USMC"
+	,"CUP_B_MH60L_DAP_2x_Multi_USN"
+	,"CUP_B_MH60L_DAP_2x_Escort_USN"
+	,"CUP_B_MH60L_DAP_4x_Multi_USN"
+	,"CUP_B_MH60L_DAP_4x_Escort_USN"];
 a3e_arr_searchChopper_pilot = [
 	"CUP_I_GUE_Pilot"];
 a3e_arr_searchChopper_crew = [

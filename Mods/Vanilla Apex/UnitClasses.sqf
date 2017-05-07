@@ -673,8 +673,7 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"O_Heli_Light_02_v2_F"
-	,"O_Heli_Light_02_v2_F"];
+	"I_C_Heli_Light_01_civil_F"];
 a3e_arr_searchChopperHard = [
 	"O_Heli_Light_02_v2_F"
 	,"O_Heli_Light_02_v2_F"];

@@ -633,17 +633,19 @@ a3e_arr_Bipods = [
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"CUP_B_UH60M_FFV_US"
+	"CUP_B_MH6J_USA"
 	,"CUP_B_MH60S_FFV_USMC"
-	,"CUP_B_UH60M_Unarmed_FFV_MEV_US"
-	,"CUP_B_UH1Y_UNA_F"
-	,"CUP_B_MV22_USMC"
-	,"CUP_B_CH53E_USMC"
 	,"CUP_B_CH47F_USA"
-	,"CUP_Merlin_HC3_Ramp_Gun"];
+	,"CUP_B_CH47F_VIV_USA"
+	,"CUP_B_UH60M_FFV_US"
+	,"CUP_B_UH60M_Unarmed_FFV_US"
+	,"CUP_B_UH60M_Unarmed_FFV_MEV_US"
+	,"CUP_B_CH53E_USMC"
+	,"CUP_B_UH1Y_MEV_USMC",
+	"CUP_B_UH1Y_UNA_USMC"];
 a3e_arr_extraction_chopper_escort = [
-	"CUP_B_AH64D_ES_USA"
-	,"CUP_B_AH1Z_Escort"];
+	"CUP_B_AH1Z_USMC"
+	,"CUP_B_AH64D_MR_USA"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -663,9 +665,14 @@ a3e_arr_searchdrone = [
 a3e_arr_searchChopperEasy = [
 	"CUP_I_SA330_Puma_HC1_RACS"
 	,"CUP_I_SA330_Puma_HC2_RACS"
-	,"CUP_I_UH60L_FFV_RACS"];
+	,"CUP_I_MH6J_RACS"
+	,"CUP_I_UH60L_Unarmed_FFV_Racs"];
 a3e_arr_searchChopperHard = [
-	"CUP_O_Mi8_SLA_2"];
+	"CUP_I_UH60L_FFV_RACS"
+	,"CUP_I_AH6J_Escort19_RACS"
+	,"CUP_I_AH6J_Escort_RACS"
+	,"CUP_I_AH6J_MP_RACS"
+	,"CUP_I_CH47F_RACS"];
 a3e_arr_searchChopper_pilot = [
 	"CUP_I_RACS_Pilot"];
 a3e_arr_searchChopper_crew = [
