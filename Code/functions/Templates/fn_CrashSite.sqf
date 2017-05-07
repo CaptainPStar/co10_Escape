@@ -16,7 +16,7 @@ if(isNil("a3e_CrashSiteMarkerNo")) then {
 } else {
 	a3e_CrashSiteMarkerNo = a3e_CrashSiteMarkerNo + 1;
 };
-["a3e_CrashSiteMarker" + str a3e_CrashSiteMarkerNo,_position,"hd_warning","ColorGreen",false] call A3E_fnc_createLocationMarker;
+["a3e_CrashSiteMarker" + str a3e_CrashSiteMarkerNo,_position,"hd_warning","ColorGreen",true] call A3E_fnc_createLocationMarker;
 
 
 //Create Smoke
