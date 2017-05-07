@@ -1,6 +1,11 @@
+diag_log format["initPlayerLocal run for %1 (prewaituntil)", name player];
+
 waituntil{!isNull(player)};
 //Clientside Stuff
 //call compile preprocessFile "Revive\reviveInit.sqf";
+
+diag_log format["initPlayerLocal run for %1", name player];
+
 [] spawn {
 	disableSerialization;
 	waitUntil {!isNull(findDisplay 46)};
@@ -98,10 +103,10 @@ AT_Revive_Camera = Param_ReviveView;
 	waitUntil {!isNull(findDisplay 46)};
 	(findDisplay 46) displayAddEventHandler ["keyDown", "_this call a3e_fnc_KeyDown"];
 };
+player setvariable["A3E_PlayerInitializedLocal",true,true];
+waituntil{sleep 0.1;(!isNil("A3E_FenceIsCreated") && !isNil("A3E_StartPos") && (player getvariable["A3E_PlayerInitializedServer",false]))};
 
-waituntil{sleep 0.1;(!isNil("A3E_FenceIsCreated") && !isNil("A3E_StartPos") && !isNil("A3E_ParamsParsed") && (player getvariable["A3E_PlayerInitialized",false]))};
-
-sleep 2.0;
+sleep 1.0;
 
 diag_log format["Escape debug: %1 is now ready (clientside).", name player];
 

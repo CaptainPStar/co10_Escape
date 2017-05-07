@@ -2,6 +2,8 @@ private ["_useRevive"];
 private ["_volume", "_dynamicWeather", "_isJipPlayer"];
 private ["_showIntro", "_showPlayerMapAndCompass", "_fog", "_playerIsImmortal", "_playersEnteredWorld"];
 
+diag_log format["init run for %1", name player];
+
 _isJipPlayer = false;
 if (!isServer && isNull player) then
 {
