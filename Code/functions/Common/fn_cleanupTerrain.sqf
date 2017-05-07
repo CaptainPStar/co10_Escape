@@ -5,5 +5,5 @@ _list = [];
 _list = nearestTerrainObjects [_position, [], _radius];
 
 {
-	[_x,true] remoteExec ["hideObject",0]; 
+	[_x,true] remoteExec ["hideObject",0,true]; 
 } foreach _list;
