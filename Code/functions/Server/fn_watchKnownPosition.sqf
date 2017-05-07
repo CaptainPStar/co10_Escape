@@ -1,4 +1,4 @@
-private["_marker","_knownPosition","_lastTime","_acc"];
+private["_marker","_knownPosition"];
 
 _knownPosition = _this select 0;
 if(a3e_debug_lastKnownPosition) then {
@@ -9,8 +9,8 @@ if(a3e_debug_lastKnownPosition) then {
 	_marker setMarkerColor "ColorYellow";
 };
 while{true} do {
-	_lastTime = _knownPosition getvariable "A3E_LastUpdated";
-	_acc = _knownPosition getvariable "A3E_Accuracy";
+	private _lastTime = _knownPosition getvariable ["A3E_LastUpdated",0];
+	private _acc = _knownPosition getvariable ["A3E_Accuracy",0];
 	if(a3e_debug_lastKnownPosition) then {
 	_marker setmarkerpos getpos _knownPosition;
 	_marker setmarkertext format["Seen %1 sec ago (Acc: %2)",(diag_tickTime-_lastTime),_acc];
