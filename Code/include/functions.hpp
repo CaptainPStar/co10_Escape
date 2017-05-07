@@ -1,16 +1,16 @@
 class CfgFunctions
 {
-	class A3E
-	{
-		class Common
-		{
-			class RandomMarkerPos {};
-			class GetSideColor {};
-			class RandomSpawnPos {};
-			class KeyDown {};
-			class RandomPatrolPos {};
-			class WriteParamBriefing {};
-            class findFlatArea{};
+  class A3E
+  {
+    class Common
+    {
+      class RandomMarkerPos {};
+      class GetSideColor {};
+      class RandomSpawnPos {};
+      class KeyDown {};
+      class RandomPatrolPos {};
+      class WriteParamBriefing {};
+      class findFlatArea{};
             class findFlatAreaNear{};
 			class RotatePosition{};
 			class GetEnemyCount{};
@@ -83,6 +83,7 @@ class CfgFunctions
 			class firedNearExtraction {};
 			class weather {};
 			class FindSpawnRoad {};
+			class FireSmokeFX {};
 		};
 		class Templates
 		{

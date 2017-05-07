@@ -18,6 +18,13 @@ if(isNil("a3e_CrashSiteMarkerNo")) then {
 };
 ["a3e_CrashSiteMarker" + str a3e_CrashSiteMarkerNo,_position,"hd_warning","ColorGreen",true] call A3E_fnc_createLocationMarker;
 
+
+//Create Smoke
+private _effect = selectRandom ["SMOKE_BIG", "SMOKE_MEDIUM"];
+_fx = [_position, _effect];
+_fx call A3E_fnc_FireSmokeFX;
+
+
 _boxType = "Box_NATO_Wps_F";
 _boxpos = _position findEmptyPosition [3,15,_boxType];
  if(count _boxpos >0) then {
@@ -29,7 +36,6 @@ _boxpos = _position findEmptyPosition [3,15,_boxType];
     clearMagazineCargoGlobal _box;
      clearItemCargoGlobal _box;
     // Basic Weapon Box
-    
     _weapons = [];
     _weaponMagazines = [];
     _items = [];
