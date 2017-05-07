@@ -26,6 +26,10 @@ if(((eyepos _unit) select 2)>0.4) then {
 		[_unit, false] remoteExec ["hideObject", 0, false];
 		[_unit, "AinjPpneMstpSnonWrflDnon"] remoteExec ["switchMove", 0, false];
 		
+		//If player is floating in the air, ground him
+		if((getpos _unit select 2) > 5) then {
+			_unit setpos ((getpos _unit) set [2,0]);
+		};
 		player switchCamera "Internal";
 		_dummy setpos [0,0,0];
 		deletevehicle _dummy;
