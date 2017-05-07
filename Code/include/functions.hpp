@@ -27,6 +27,9 @@ class CfgFunctions
 			class Briefing {
 				postInit = 1;
 			};
+			class Bootstrap {
+				postInit = 1;
+			};
 			class cleanupTerrain {};
 			class handleRating {};
 			class handleScore {};
