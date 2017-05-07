@@ -1,4 +1,3 @@
-if(!isServer) exitwith {};
 private["_brightness","_intensity","_attenuation"];
 
 params ["_pos","_effect"];

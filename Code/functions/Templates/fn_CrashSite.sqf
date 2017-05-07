@@ -16,13 +16,13 @@ if(isNil("a3e_CrashSiteMarkerNo")) then {
 } else {
 	a3e_CrashSiteMarkerNo = a3e_CrashSiteMarkerNo + 1;
 };
-["a3e_CrashSiteMarker" + str a3e_CrashSiteMarkerNo,_position,"hd_warning","ColorGreen",true] call A3E_fnc_createLocationMarker;
+["a3e_CrashSiteMarker" + str a3e_CrashSiteMarkerNo,_position,"hd_warning","ColorGreen",false] call A3E_fnc_createLocationMarker;
 
 
 //Create Smoke
-private _effect = selectRandom ["SMOKE_BIG", "SMOKE_MEDIUM"];
+private _effect = selectRandom ["SMOKE_SMALL", "SMOKE_MEDIUM", "SMOKE_BIG"];
 _fx = [_position, _effect];
-_fx call A3E_fnc_FireSmokeFX;
+_fx remoteExec ["A3E_fnc_FireSmokeFX",0,true];
 
 
 _boxType = "Box_NATO_Wps_F";

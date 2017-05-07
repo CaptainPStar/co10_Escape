@@ -4,36 +4,37 @@ class CfgFunctions
   {
     class Common
     {
-      class RandomMarkerPos {};
-      class GetSideColor {};
-      class RandomSpawnPos {};
-      class KeyDown {};
-      class RandomPatrolPos {};
-      class WriteParamBriefing {};
-      class findFlatArea{};
-            class findFlatAreaNear{};
-			class RotatePosition{};
-			class GetEnemyCount{};
-			class paramWeather{};
-			class paramDaytime{};
-			class systemChat {};
-			class groupChat {};
-			class addUserActions {};
-			class Hijack {};
-			class HealAtBuilding {};
-			class GetPlayers {};
-			class GetRandomPlayer {};
-			class GetPlayerGroup {};
-			class Briefing {
-				postInit = 1;
-			};
-			class Bootstrap {
-				postInit = 1;
-			};
-			class cleanupTerrain {};
-			class handleRating {};
-			class handleScore {};
-			class CheckCampDistance {};
+		class RandomMarkerPos {};
+		class GetSideColor {};
+		class RandomSpawnPos {};
+		class KeyDown {};
+		class RandomPatrolPos {};
+		class WriteParamBriefing {};
+		class findFlatArea{};
+		class findFlatAreaNear{};
+		class RotatePosition{};
+		class GetEnemyCount{};
+		class paramWeather{};
+		class paramDaytime{};
+		class systemChat {};
+		class groupChat {};
+		class addUserActions {};
+		class Hijack {};
+		class HealAtBuilding {};
+		class GetPlayers {};
+		class GetRandomPlayer {};
+		class GetPlayerGroup {};
+		class Briefing {
+			postInit = 1;
+		};
+		class Bootstrap {
+			postInit = 1;
+		};
+		class cleanupTerrain {};
+		class handleRating {};
+		class handleScore {};
+		class CheckCampDistance {};
+		class FireSmokeFX {};
 
 		};
 		class AI
@@ -83,7 +84,6 @@ class CfgFunctions
 			class firedNearExtraction {};
 			class weather {};
 			class FindSpawnRoad {};
-			class FireSmokeFX {};
 		};
 		class Templates
 		{
