@@ -23,8 +23,10 @@ if(_enemysNear) then {
 	};
 };
 _control =  (uiNamespace getVariable 'ATHSC_View') displayCtrl 170002;
-if(AT_Revive_enableRespawn) then {
-	_control ctrlSetStructuredText parseText (_line1 + "<br/>" + _line2);
-} else {
-	_control ctrlSetStructuredText parseText (_line1);
+if(!isNull _control) then {
+	if(AT_Revive_enableRespawn) then {
+		_control ctrlSetStructuredText parseText (_line1 + "<br/>" + _line2);
+	} else {
+		_control ctrlSetStructuredText parseText (_line1);
+	};
 };
