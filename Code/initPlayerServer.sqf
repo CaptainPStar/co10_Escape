@@ -42,7 +42,7 @@ if(name _player == "HC") then {
 		while{(count _players) > 0 && !_placed} do {
 			private _refPlayer = selectRandom _players;
 			private _refVehicle = vehicle _refPlayer;
-			if((_refVehicle != _refPlayer) && ((_refVehicle) emptyPositions "Commander">0 || (_refVehicle) emptyPositions "Driver">0 || (_refVehicle) emptyPositions "Gunner">0 || (_refVehicle) emptyPositions "Cargo">0) then {
+			if((_refVehicle != _refPlayer) && ((_refVehicle) emptyPositions "Commander">0 || (_refVehicle) emptyPositions "Driver">0 || (_refVehicle) emptyPositions "Gunner">0 || (_refVehicle) emptyPositions "Cargo">0)) then {
 					//_player moveInAny _refVehicle;
 					//Teleports the player remotely into the Vehicle, needs to be called local at player
 					[_player,_refVehicle] remoteExec ["moveInAny", _player]; 
