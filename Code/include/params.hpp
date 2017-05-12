@@ -109,7 +109,7 @@ class Params
         title="Enable Motor Pools";
         values[]={0,1};
         texts[]={"Disabled - No motor pools","Random - Spawns motor pools, works for all maps"};
-        default = 0;
+        default = 1;
 	};   
 	class Param_Artillery
 	{
