@@ -72,7 +72,7 @@ diag_log ("ESCAPE SURPRISE: " + str _surprise);
 // Enemies in a civilian car
 
 _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
-_timeInSek = 0 * 60 + random (60 * 60);
+_timeInSek = 60 + random (60);
 _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
 _surprise = ["CIVILIANENEMY", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
 _surprises set [count _surprises, _surprise];
@@ -109,11 +109,11 @@ while {true} do {
                     _enemyMaxSkill = _surpriseArgs select 1;
                     
                     _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
-                    while {(str _spawnSegment) == """NULL"""} do {
-                        _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
-                        sleep 1;
+                    if(!isNull _spawnSegment) then {
+                        [getPos _spawnSegment, drn_searchAreaMarkerName, _enemyFrequency, _enemyMinSkill, _enemyMaxSkill, A3E_Debug] execVM "Scripts\Escape\CreateMotorizedSearchGroup.sqf";
+                    } else {
+                        diag_log "ESCAPE SURPRISE: Unable to find spawn road for Motorized Searchgroup";
                     };
-                    
                     [getPos _spawnSegment, drn_searchAreaMarkerName, _enemyFrequency, _enemyMinSkill, _enemyMaxSkill, A3E_Debug] execVM "Scripts\Escape\CreateMotorizedSearchGroup.sqf";
                     
                     _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
@@ -284,13 +284,12 @@ while {true} do {
                     _enemyMaxSkill = _surpriseArgs select 1;
 
                     _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
-                    while {(str _spawnSegment) == """NULL"""} do {
-                        _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
-                        sleep 1;
+
+                    if(!isNull _spawnSegment) then {
+                        [getPos _spawnSegment, _enemyMinSkill, _enemyMaxSkill,_enemyFrequency,  A3E_Debug] execVM "Scripts\Escape\CreateReinforcementTruck.sqf";
+                    } else {
+                        diag_log ("ESCAPE SURPRISE: Unable to find road segment for Reinforcement truck");
                     };
-                    
-                    [getPos _spawnSegment, _enemyMinSkill, _enemyMaxSkill,_enemyFrequency,  A3E_Debug] execVM "Scripts\Escape\CreateReinforcementTruck.sqf";
-                    
                     _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
                     _timeInSek = random (45 * 60);
                     _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
@@ -302,12 +301,12 @@ while {true} do {
                 if (_surpriseID == "CIVILIANENEMY") then {
                     
                     _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
-                    while {(str _spawnSegment) == """NULL"""} do {
-                        _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
-                        sleep 1;
+                    if(!isNull _spawnSegment) then {
+                         [call A3E_fnc_GetPlayerGroup, getPos _spawnSegment, A3E_VAR_Side_Opfor, a3e_arr_Escape_EnemyCivilianCarTypes, A3E_arr_recon_InfantryTypes, _enemyFrequency] execVM "Scripts\Escape\CreateCivilEnemy.sqf";
+                    } else {
+                        diag_log ("ESCAPE SURPRISE: Unable to find road segment for Civil Enemy");
                     };
-                    
-                    [call A3E_fnc_GetPlayerGroup, getPos _spawnSegment, A3E_VAR_Side_Opfor, a3e_arr_Escape_EnemyCivilianCarTypes, A3E_arr_recon_InfantryTypes, _enemyFrequency] execVM "Scripts\Escape\CreateCivilEnemy.sqf";
+
                     
                     _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
                     _timeInSek = 15 * 60 + random (45 * 60);

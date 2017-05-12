@@ -1,9 +1,9 @@
 private _referenceGroup = call A3E_fnc_getPlayerGroup;
 private _minSpawnDistance = missionNamespace getvariable ["MinSpawnDistance",1500];
-private _maxSpawnDistance =  missionNamespace getvariable ["MinSpawnDistance",2000];
+private _maxSpawnDistance =  missionNamespace getvariable ["MaxSpawnDistance",2000];
 
 private _spawnDistanceDiff = _maxSpawnDistance - _minSpawnDistance;
-private _roadSegment = "NULL";
+private _roadSegment = objNull;
 private _refUnit = vehicle (call A3E_fnc_getRandomPlayer);
 
 private _isOk = false;
@@ -16,11 +16,13 @@ while {!_isOk && _tries < 25} do {
 	private _refPosY = ((getPos _refUnit) select 1) + (_minSpawnDistance + _spawnDistanceDiff) * cos _dir;
 	
 	private _roadSegments = [_refPosX, _refPosY] nearRoads (_spawnDistanceDiff);
-	
+
+
+
+
 	if (count _roadSegments > 0) then {
 		_roadSegment = selectRandom _roadSegments;
 		
-		// Check if road segment is at spawn distance
 		private _tooFarAwayFromAll = true;
 		private _tooClose = false;
 		{
@@ -49,7 +51,7 @@ while {!_isOk && _tries < 25} do {
 		_tries = _tries + 1;
 	};
 };
-private _result = "NULL";
+private _result = objNull;
 if (_isOk) then {
 	_result = _roadSegment;
 };

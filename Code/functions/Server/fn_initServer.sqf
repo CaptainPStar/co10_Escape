@@ -210,12 +210,12 @@ private _UseMotorPools = Param_MotorPools;
 	_enemyMaxSkill = _this select 2;
 	
 	_spawnSegment = [] call A3E_fnc_FindSpawnRoad;
-	while {(str _spawnSegment) == """NULL"""} do {
-		_spawnSegment = [] call A3E_fnc_FindSpawnRoad;
-		sleep 1;
-	};
 	
-	[getPos _spawnSegment, drn_searchAreaMarkerName, _enemyFrequency, _enemyMinSkill, _enemyMaxSkill, A3E_Debug] execVM "Scripts\Escape\CreateMotorizedSearchGroup.sqf";
+	if(!isNull _spawnSegment) then {
+		[getPos _spawnSegment, drn_searchAreaMarkerName, _enemyFrequency, _enemyMinSkill, _enemyMaxSkill, A3E_Debug] execVM "Scripts\Escape\CreateMotorizedSearchGroup.sqf";
+	} else {
+		diag_log "Unable to find spawn road for initial Motorized Searchgroup";
+	};
 };
 
 
