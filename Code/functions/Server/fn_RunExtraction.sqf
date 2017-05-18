@@ -71,7 +71,7 @@ _boat3 flyinheight 100;
 _heloGuard = {
 	params["_heli"];
 	sleep 6;
-	private _msg = ["We are taking damage!","Under fire!","We are under fire!","Taking damage!","I thought the landing zone was save!"];
+	private _msg = ["We are taking damage!","Under fire!","We are under fire!","Taking damage!","I thought the landing zone was safe!"];
 	waituntil{sleep 0.5;((getDammage _heli)>0.1)};
 	if(alive (driver _heli)) then {
 		[driver _heli,selectRandom _msg] remoteExec ["sideChat",0,false];
