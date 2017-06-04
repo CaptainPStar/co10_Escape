@@ -17,7 +17,9 @@ if(count(_allowed arrayIntersect _parents) > 0 ) then {
 		};
 
 	deletevehicle _unit;
-	diag_log "Extraction triggered.";
+	diag_log format["Extraction triggered at %1",_markerNo];
+	private _pgrp = [] call A3E_fnc_getPlayerGroup;
+	[leader _pgrp,"Stay sharp! Extraction should be on its way."] remoteExec ["groupChat",0,false];
 } else {
 	diag_log "Ammo not allowed to trigger extraction."
 };
