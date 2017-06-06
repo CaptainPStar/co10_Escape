@@ -2,28 +2,24 @@ version=53;
 class EditorData
 {
 	moveGridStep=1;
-	angleGridStep=0.017453292;
+	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=33;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1939;
+		nextID=199;
 	};
 	class MarkerIDProvider
 	{
-		nextID=44;
-	};
-	class LayerIndexProvider
-	{
-		nextID=40;
+		nextID=32;
 	};
 	class Camera
 	{
-		pos[]={7970.6631,135.9778,10177.002};
-		dir[]={-0.2482591,-0.42834735,-0.86889613};
-		up[]={-0.1176837,0.90360701,-0.41188261};
-		aside[]={-0.96156788,-4.1397288e-007,0.274737};
+		pos[]={1752.6633,13.853173,12223.783};
+		dir[]={-0.63692939,-0.40768486,-0.6544925};
+		up[]={-0.28436166,0.91310918,-0.29219738};
+		aside[]={-0.71673322,1.7626444e-006,0.69750172};
 	};
 };
 binarizationWanted=0;
@@ -31,7 +27,6 @@ addons[]=
 {
 	{* REQUIRE *}
 	"A3_Ui_F",
-	"A3_Characters_F_Exp",
 	"A3_Characters_F",
 	"A3_Modules_F",
 	"A3_Boat_F_Exp_Boat_Transport_02",
@@ -43,7 +38,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=6;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -53,40 +48,33 @@ class AddonsMetaData
 		};
 		class Item1
 		{
-			className="A3_Characters_F_Exp";
-			name="Arma 3 Apex - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item2
-		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item3
+		class Item2
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item4
+		class Item3
 		{
 			className="A3_Boat_F_Exp";
 			name="Arma 3 Apex - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item5
+		class Item4
 		{
 			className="A3_Boat_F_Gamma";
 			name="Arma 3 - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item5
 		{
 			className="A3_Boat_F";
 			name="Arma 3 Alpha - Boats and Submersibles";
@@ -96,6 +84,17 @@ class AddonsMetaData
 	};
 };
 randomSeed=13122150;
+class ScenarioData
+{
+	author="NeoArmageddon and Scruffy";
+	disabledAI=1;
+	class Header
+	{
+		gameType="Coop";
+		minPlayers=1;
+		maxPlayers=10;
+	};
+};
 class Mission
 {
 	class Intel
@@ -142,8 +141,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1742.9238,3.7032602,12206.05};
-						angles[]={6.2727871,0,0.012798273};
+						position[]={1742.8456,3.6084223,12209.068};
+						angles[]={0.056739714,0,6.2288389};
 					};
 					side="{* PLAYERSIDE *}";
 					flags=6;
@@ -156,7 +155,7 @@ class Mission
 						isPlayer=1;
 						isPlayable=1;
 					};
-					id=1640;
+					id=1;
 					type="{* PLAYERUNIT_1 *}";
 				};
 				class Item1
@@ -164,7 +163,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1739.8115,3.6650584,12206.207};
+						position[]={1739.7333,3.6954544,12209.226};
 						angles[]={6.2727871,0,0.012798273};
 					};
 					side="{* PLAYERSIDE *}";
@@ -177,7 +176,7 @@ class Mission
 						name="p2";
 						isPlayable=1;
 					};
-					id=1641;
+					id=2;
 					type="{* PLAYERUNIT_2 *}";
 				};
 				class Item2
@@ -185,7 +184,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1739.7256,3.6497383,12204.84};
+						position[]={1739.6473,3.6801345,12207.858};
 						angles[]={6.2727871,0,0.012798273};
 					};
 					side="{* PLAYERSIDE *}";
@@ -198,7 +197,7 @@ class Mission
 						name="p3";
 						isPlayable=1;
 					};
-					id=1642;
+					id=3;
 					type="{* PLAYERUNIT_3 *}";
 				};
 				class Item3
@@ -206,7 +205,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1740.5186,3.6476228,12203.66};
+						position[]={1740.4403,3.6780088,12206.679};
 						angles[]={6.2727871,0,0.012798273};
 					};
 					side="{* PLAYERSIDE *}";
@@ -219,7 +218,7 @@ class Mission
 						name="p4";
 						isPlayable=1;
 					};
-					id=1643;
+					id=4;
 					type="{* PLAYERUNIT_4 *}";
 				};
 				class Item4
@@ -227,7 +226,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1741.6367,3.6540236,12202.899};
+						position[]={1741.5585,3.684412,12205.918};
 						angles[]={6.2727871,0,0.012798273};
 					};
 					side="{* PLAYERSIDE *}";
@@ -240,7 +239,7 @@ class Mission
 						name="p5";
 						isPlayable=1;
 					};
-					id=1644;
+					id=5;
 					type="{* PLAYERUNIT_5 *}";
 				};
 				class Item5
@@ -248,7 +247,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1743.0928,3.6731532,12202.947};
+						position[]={1743.0145,3.7035494,12205.966};
 						angles[]={6.2727871,0,0.012798273};
 					};
 					side="{* PLAYERSIDE *}";
@@ -261,7 +260,7 @@ class Mission
 						name="p6";
 						isPlayable=1;
 					};
-					id=1649;
+					id=6;
 					type="{* PLAYERUNIT_6 *}";
 				};
 				class Item6
@@ -269,8 +268,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1744.5801,3.6959128,12203.305};
-						angles[]={6.2727871,0,0.012798273};
+						position[]={1744.5018,3.6742368,12206.323};
+						angles[]={0.056739714,0,6.2288389};
 					};
 					side="{* PLAYERSIDE *}";
 					flags=4;
@@ -282,16 +281,17 @@ class Mission
 						name="p7";
 						isPlayable=1;
 					};
-					id=1665;
+					id=7;
 					type="{* PLAYERUNIT_7 *}";
+					atlOffset=4.7683716e-007;
 				};
 				class Item7
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1745.624,3.7180107,12204.145};
-						angles[]={6.2727871,0,0.012798273};
+						position[]={1745.5458,3.5697374,12207.163};
+						angles[]={0.056739714,0,6.2288389};
 					};
 					side="{* PLAYERSIDE *}";
 					flags=4;
@@ -303,15 +303,16 @@ class Mission
 						name="p8";
 						isPlayable=1;
 					};
-					id=1666;
+					id=8;
 					type="{* PLAYERUNIT_8 *}";
+					atlOffset=4.7683716e-007;
 				};
 				class Item8
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1746.1924,3.6389568,12205.325};
+						position[]={1746.1141,3.4717345,12208.344};
 						angles[]={0.056739714,0,6.2288389};
 					};
 					side="{* PLAYERSIDE *}";
@@ -324,7 +325,7 @@ class Mission
 						name="p9";
 						isPlayable=1;
 					};
-					id=1669;
+					id=9;
 					type="{* PLAYERUNIT_9 *}";
 					atlOffset=4.7683716e-007;
 				};
@@ -333,7 +334,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1746.0107,3.5699651,12206.714};
+						position[]={1745.9325,3.4027534,12209.732};
 						angles[]={0.056739714,0,6.2288389};
 					};
 					side="{* PLAYERSIDE *}";
@@ -346,12 +347,15 @@ class Mission
 						name="p10";
 						isPlayable=1;
 					};
-					id=1671;
+					id=10;
 					type="{* PLAYERUNIT_10 *}";
 					atlOffset=4.7683716e-007;
 				};
 			};
-			id=1612;
+			class Attributes
+			{
+			};
+			id=0;
 		};
 		class Item2
 		{
@@ -568,7 +572,7 @@ class Mission
 			position[]={7786.0078,138.96805,4642.6909};
 			name="drn_Escape_ExtractionPos4_1";
 			type="Empty";
-			angle=117.87276;
+			angle=117.87275;
 			id=1784;
 			atlOffset=105.46545;
 		};
@@ -2750,7 +2754,7 @@ class Mission
 			};
 			id=1910;
 			type="C_Rubberboat";
-			atlOffset=1.842;
+			atlOffset=1.8420001;
 			class CustomAttributes
 			{
 				class Attribute0
