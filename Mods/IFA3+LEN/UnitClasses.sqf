@@ -22,10 +22,11 @@ A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
 // Random array. Start position guard types around the prison
 a3e_arr_Escape_StartPositionGuardTypes = [
-	"LEN_SS_rifleman2",
-	"LEN_SS_rifleman",
-	"LEN_SS_soldier_camo_MP40",
-	"LEN_SS_stggunner"];
+	"LIB_GER_unequip",
+	"LIB_GER_rifleman",
+	"LIB_GER_gun_crew",
+	"LIB_GER_gun_unterofficer",
+	"LIB_GER_ober_rifleman"];
 
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
@@ -33,18 +34,18 @@ a3e_arr_PrisonBackpackWeapons pushback ["LIB_Colt_M1911","LIB_7Rnd_45ACP"];
 a3e_arr_PrisonBackpackWeapons pushback ["LEN_Welrod","LEN_7Rnd_765x17"];
 a3e_arr_PrisonBackpackWeapons pushback ["LEN_P640b","LEN_13Rnd_9x19"];
 a3e_arr_PrisonBackpackWeapons pushback ["LEN_P35","lib_8Rnd_9x19"];
-a3e_arr_PrisonBackpackWeapons pushback ["LIB_TT33","LIB_8Rnd_762x25"];
 a3e_arr_PrisonBackpackWeapons pushback ["LIB_M1895","LIB_7Rnd_762x38"];
+a3e_arr_PrisonBackpackWeapons pushback ["LIB_P08","LIB_8Rnd_9x19_P08"];
+a3e_arr_PrisonBackpackWeapons pushback ["LIB_P38","LIB_8Rnd_9x19"];
+a3e_arr_PrisonBackpackWeapons pushback ["LIB_TT33","LIB_8Rnd_762x25"];
 
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
-	"LIB_Kfz1"
+	"LIB_GazM1"
 	,"LIB_CIV_FFI_CitC4"
-	,"LIB_CIV_FFI_CitC4_4"
 	,"LIB_CIV_FFI_CitC4_2"
-	,"LIB_CIV_FFI_CitC4_3"
-	,"LIB_CIV_FFI_CitC4_5"];
+	,"LIB_CIV_FFI_CitC4_3"];
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -52,182 +53,127 @@ switch (_enemyFrequency) do {
     case 1: {//Few (1-3)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
 		"LIB_Kfz1"
+		,"LIB_Kfz1_Hood"
 		,"LIB_Kfz1_MG42"
+		,"LIB_opelblitz_open_y_camo"
+		,"LIB_opelblitz_tent_y_camo"
+		,"LIB_opelblitz_parm"
 		,"LIB_opelblitz_ambulance"
 		,"LIB_opelblitz_ammo"
 		,"LIB_opelblitz_fuel"
-		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_parm"
-		,"LIB_opelblitz_tent_y_camo"
 		,"LIB_SdKfz251"
 		,"LIB_SdKfz_7"
 		,"LIB_SdKfz_7_AA"
 		,"LIB_SdKfz251_FFV"
-		,"LIB_PzKpfwIV_H"
-		,"LIB_PzKpfwV"
-		,"LIB_PzKpfwVI_B"
-		,"LIB_PzKpfwVI_E"
-		,"LIB_PzKpfwVI_E_2"
-		,"LIB_PzKpfwVI_E_1"
-		,"LIB_StuG_III_G"];
-		
+		,"LIB_FlakPanzerIV_Wirbelwind"
+		,"LIB_StuG_III_G"
+		,"LIB_PzKpfwIV_H"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"LIB_Kfz1"
+		,"LIB_Kfz1_Hood"
 		,"LIB_Kfz1_MG42"
-		,"LIB_opelblitz_ambulance"
-		,"LIB_opelblitz_ammo"
-		,"LIB_opelblitz_fuel"
 		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_parm"
 		,"LIB_opelblitz_tent_y_camo"
+		,"LIB_opelblitz_parm"
 		,"LIB_SdKfz251"
 		,"LIB_SdKfz_7"
 		,"LIB_SdKfz_7_AA"
 		,"LIB_SdKfz251_FFV"
-		,"LIB_PzKpfwIV_H"
-		,"LIB_PzKpfwV"
-		,"LIB_PzKpfwVI_B"
-		,"LIB_PzKpfwVI_E"
-		,"LIB_PzKpfwVI_E_2"
-		,"LIB_PzKpfwVI_E_1"
-		,"LIB_StuG_III_G"];
+		,"LIB_FlakPanzerIV_Wirbelwind"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
 		"LIB_Kfz1"
+		,"LIB_Kfz1_Hood"
 		,"LIB_Kfz1_MG42"
+		,"LIB_opelblitz_open_y_camo"
+		,"LIB_opelblitz_tent_y_camo"
+		,"LIB_opelblitz_parm"
 		,"LIB_opelblitz_ambulance"
 		,"LIB_opelblitz_ammo"
 		,"LIB_opelblitz_fuel"
-		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_parm"
-		,"LIB_opelblitz_tent_y_camo"
 		,"LIB_SdKfz251"
 		,"LIB_SdKfz_7"
 		,"LIB_SdKfz_7_AA"
 		,"LIB_SdKfz251_FFV"
+		,"LIB_FlakPanzerIV_Wirbelwind"
+		,"LIB_StuG_III_G"
 		,"LIB_PzKpfwIV_H"
 		,"LIB_PzKpfwV"
-		,"LIB_PzKpfwVI_B"
-		,"LIB_PzKpfwVI_E"
-		,"LIB_PzKpfwVI_E_2"
-		,"LIB_PzKpfwVI_E_1"
-		,"LIB_StuG_III_G"];
-
+		,"LIB_PzKpfwVI_B"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"LIB_Kfz1"
+		,"LIB_Kfz1_Hood"
 		,"LIB_Kfz1_MG42"
-		,"LIB_opelblitz_ambulance"
-		,"LIB_opelblitz_ammo"
-		,"LIB_opelblitz_fuel"
 		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_parm"
 		,"LIB_opelblitz_tent_y_camo"
+		,"LIB_opelblitz_parm"
 		,"LIB_SdKfz251"
 		,"LIB_SdKfz_7"
 		,"LIB_SdKfz_7_AA"
 		,"LIB_SdKfz251_FFV"
-		,"LIB_PzKpfwIV_H"
-		,"LIB_PzKpfwV"
-		,"LIB_PzKpfwVI_B"
-		,"LIB_PzKpfwVI_E"
-		,"LIB_PzKpfwVI_E_2"
-		,"LIB_PzKpfwVI_E_1"
+		,"LIB_FlakPanzerIV_Wirbelwind"
 		,"LIB_StuG_III_G"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
 		"LIB_Kfz1"
+		,"LIB_Kfz1_Hood"
 		,"LIB_Kfz1_MG42"
+		,"LIB_opelblitz_open_y_camo"
+		,"LIB_opelblitz_tent_y_camo"
+		,"LIB_opelblitz_parm"
 		,"LIB_opelblitz_ambulance"
 		,"LIB_opelblitz_ammo"
 		,"LIB_opelblitz_fuel"
-		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_parm"
-		,"LIB_opelblitz_tent_y_camo"
 		,"LIB_SdKfz251"
 		,"LIB_SdKfz_7"
 		,"LIB_SdKfz_7_AA"
 		,"LIB_SdKfz251_FFV"
+		,"LIB_FlakPanzerIV_Wirbelwind"
+		,"LIB_StuG_III_G"
 		,"LIB_PzKpfwIV_H"
 		,"LIB_PzKpfwV"
 		,"LIB_PzKpfwVI_B"
 		,"LIB_PzKpfwVI_E"
-		,"LIB_PzKpfwVI_E_2"
 		,"LIB_PzKpfwVI_E_1"
-		,"LIB_StuG_III_G"];
-
+		,"LIB_PzKpfwVI_E_2"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"LIB_Kfz1"
+		,"LIB_Kfz1_Hood"
 		,"LIB_Kfz1_MG42"
-		,"LIB_opelblitz_ambulance"
-		,"LIB_opelblitz_ammo"
-		,"LIB_opelblitz_fuel"
 		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_parm"
 		,"LIB_opelblitz_tent_y_camo"
+		,"LIB_opelblitz_parm"
 		,"LIB_SdKfz251"
 		,"LIB_SdKfz_7"
 		,"LIB_SdKfz_7_AA"
 		,"LIB_SdKfz251_FFV"
-		,"LIB_PzKpfwIV_H"
-		,"LIB_PzKpfwV"
-		,"LIB_PzKpfwVI_B"
-		,"LIB_PzKpfwVI_E"
-		,"LIB_PzKpfwVI_E_2"
-		,"LIB_PzKpfwVI_E_1"
-		,"LIB_StuG_III_G"];
-
+		,"LIB_FlakPanzerIV_Wirbelwind"
+		,"LIB_StuG_III_G"
+		,"LIB_PzKpfwIV_H"];
     };
 };
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, etc. (for ammo depot guards and communication center guards see further down in this file at fn_InitGuardedLocations)
 a3e_arr_Escape_InfantryTypes = [
-	"LIB_GER_unterofficer"
+	"LIB_GER_AT_soldier"
+	,"LIB_GER_AT_grenadier"
+	,"LIB_GER_hauptmann"
+	,"LIB_GER_smgunner"
+	,"LIB_GER_ober_lieutenant"
+	,"LIB_GER_gun_crew"
+	,"LIB_GER_unterofficer"
 	,"LIB_GER_mgunner"
 	,"LIB_GER_medic"
-	,"LIB_GER_scout_ober_rifleman"
 	,"LIB_GER_ober_rifleman"
-	,"LIB_GER_rifleman"
-	,"LIB_GER_AT_grenadier"
-	,"LIB_GER_scout_rifleman"
-	,"LIB_GER_AT_soldier"
-	,"LEN_SS_PlatLeader_camo"
-	,"LEN_SS_mgunner_camo"
-	,"LEN_SS_sniper_camo"
-	,"LEN_SS_rifleman_camo"
-	,"LEN_SS_soldier_camo_MP40"
-	,"LEN_SS_rifleman3"
-	,"LEN_SS_stggunner_camo"
-	,"LEN_SS_stggunner"
-	,"LEN_SS_rifleman2_camo"
-	,"LEN_SS_medic_camo"
-	,"LEN_SS_SecLeader"
-	,"LEN_SS_Sapper_Gefr"
-	,"LEN_SS_Sapper"
-	,"LEN_SS_mgunner"
-	,"LEN_SS_medic"
-	,"LEN_SS_ober_rifleman"
-	,"LEN_SS_rifleman"
-	,"LEN_SS_rifleman2_camo"
-	,"LEN_SS_rifleman2"
-	,"LEN_SS_rifleman"
-	,"LEN_SS_rifleman_camo"
-	,"LEN_SS_SecLeader_camo"
-	,"LEN_SS_rifleman_AT_RPzB"
-	,"LEN_SS_rifleman_AT_RPzB_Support"
-	,"LIB_GER_scout_sniper"];
+	,"LIB_GER_Soldier2_base"
+	,"LIB_GER_Soldier3_base"
+	,"LIB_GER_unterofficer"
+	,"LIB_GER_stggunner"
+	,"LIB_GER_unequip"];
 a3e_arr_Escape_InfantryTypes_Ind = [
-	"LIB_GER_unterofficer"
-	,"LIB_GER_mgunner"
-	,"LIB_GER_medic"
-	,"LIB_GER_scout_ober_rifleman"
-	,"LIB_GER_ober_rifleman"
-	,"LIB_GER_rifleman"
-	,"LIB_GER_AT_grenadier"
-	,"LIB_GER_scout_rifleman"
-	,"LIB_GER_AT_soldier"
-	,"LEN_SS_PlatLeader_camo"
+	"LEN_SS_PlatLeader_camo"
 	,"LEN_SS_mgunner_camo"
 	,"LEN_SS_sniper_camo"
 	,"LEN_SS_rifleman_camo"
@@ -250,16 +196,22 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"LEN_SS_rifleman_camo"
 	,"LEN_SS_SecLeader_camo"
 	,"LEN_SS_rifleman_AT_RPzB"
-	,"LEN_SS_rifleman_AT_RPzB_Support"
-	,"I_G_Sharpshooter_F"];
+	,"LEN_SS_rifleman_AT_RPzB_Support"];
 a3e_arr_recon_InfantryTypes = [
-	"LEN_SS_soldier_camo_MP40"
-	,"LEN_SS_rifleman3"
-	,"LEN_SS_stggunner_camo"
-	,"LEN_SS_stggunner"
-	,"LEN_SS_rifleman2_camo"
-	,"LEN_SS_medic_camo"
+	"LIB_GER_scout_smgunner"
+	,"LIB_GER_scout_lieutenant"
+	,"LIB_GER_scout_mgunner"
+	,"LIB_GER_radioman"
 	,"LIB_GER_scout_ober_rifleman"
+	,"LIB_GER_soldier_camo_base"
+	,"LIB_GER_soldier_camo2_base"
+	,"LIB_GER_soldier_camo3_base"
+	,"LIB_GER_soldier_camo4_base"
+	,"LIB_GER_soldier_camo5_base"
+	,"LIB_GER_scout_rifleman"
+	,"LIB_GER_sapper"
+	,"LIB_GER_sapper_gefr"
+	,"LIB_GER_scout_unterofficer"
 	,"LIB_GER_scout_sniper"];
 a3e_arr_recon_I_InfantryTypes = [
 	"LEN_SS_soldier_camo_MP40"
@@ -273,66 +225,57 @@ a3e_arr_recon_I_InfantryTypes = [
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
-	"LIB_FlaK_30"
-	,"LIB_FlaK_38"
-	,"LIB_Flakvierling_38"
-	,"LIB_GrWr34"
-	,"LIB_MG42_Lafette"
-	,"LIB_MG42_Lafette_low"
-	,"LIB_Pak40"
+	"LIB_SdKfz251"
+	,"LIB_SdKfz251_FFV"
 	,"LIB_Kfz1_MG42"
-	,"LIB_GER_SearchLight"];
+	,"LIB_Pak40"
+	,"LIB_MG34_Lafette_Deployed"
+	,"LIB_FlaK_30"
+	,"LIB_GER_SearchLight"
+	,"LIB_MG42_Lafette_Deployed"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
-	"LIB_FlaK_30"
-	,"LIB_FlaK_38"
-	,"LIB_Flakvierling_38"
-	,"LIB_GrWr34"
-	,"LIB_MG42_Lafette"
-	,"LIB_MG42_Lafette_low"
-	,"LIB_Pak40"
-	,"LIB_Kfz1_MG42"
-	,"LIB_GER_SearchLight"];
+	"LIB_SdKfz251"
+	,"LIB_SdKfz251_FFV"
+	,"LIB_Kfz1_MG42"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
-	"LIB_opelblitz_open_y_camo"
-	,"LIB_opelblitz_tent_y_camo"
-	,"LIB_opelblitz_ambulance"
-	,"LIB_SdKfz_7"
+	"LIB_Kfz1"
+	,"LIB_Kfz1_hood"
 	,"LIB_SdKfz251_FFV"
-	,"LIB_Kfz1"];
+	,"LIB_SdKfz251"
+	,"LIB_opelblitz_tent_y_camo"
+	,"LIB_opelblitz_open_y_camo"];
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
-	"LIB_opelblitz_open_y_camo"
-	,"LIB_opelblitz_tent_y_camo"
-	,"LIB_opelblitz_ambulance"
-	,"LIB_SdKfz_7"
+	"LIB_Kfz1"
+	,"LIB_Kfz1_hood"
 	,"LIB_SdKfz251_FFV"
-	,"LIB_Kfz1"];
+	,"LIB_SdKfz251"
+	,"LIB_opelblitz_tent_y_camo"
+	,"LIB_opelblitz_open_y_camo"];
 // Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
-a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [16, 16, 16, 16];
+a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [3, 3, 8, 10, 12, 12];
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	"LIB_Kfz1"
-	,"LIB_Kfz1_MG42"
+	,"LIB_Kfz1_hood"
+	,"LIB_SdKfz251_FFV"
 	,"LIB_SdKfz251"
-	,"LIB_SdKfz_7"
-	,"LIB_SdKfz_7_AA"
-	,"LIB_SdKfz251_FFV"];
+	,"LIB_opelblitz_tent_y_camo"
+	,"LIB_opelblitz_open_y_camo"];
 // Total cargo motorized search group vehicle. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses above.
-a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [8, 8, 8];
+a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [3, 3, 8, 10, 12, 12];
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
 // light *and* a random heavy armor.
 
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
-	"LIB_Kfz1_MG42"
-	,"LIB_SdKfz251"
-	,"LIB_SdKfz_7"
-	,"LIB_SdKfz_7_AA"
-	,"LIB_SdKfz251_FFV"];
+	"LIB_SdKfz251"
+	,"LIB_SdKfz251_FFV"
+	,"LIB_SdKfz_7_AA"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"LIB_PzKpfwIV_H"
@@ -342,41 +285,42 @@ a3e_arr_ComCenDefence_heavyArmorClasses = [
 	,"LIB_PzKpfwVI_E_2"
 	,"LIB_PzKpfwVI_E_1"
 	,"LIB_StuG_III_G"];
+
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
 a3e_arr_ComCenStaticWeapons = [
-	"LIB_MG42_Lafette"];
+	"LIB_MG42_Lafette_Deployed"];
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
-	"LIB_Kfz1"
-	,"LIB_Kfz1_MG42"
-	,"LIB_opelblitz_ambulance"
-	,"LIB_opelblitz_ammo"
+	"LIB_opelblitz_ambulance"
 	,"LIB_opelblitz_fuel"
-	,"LIB_opelblitz_open_y_camo"
-	,"LIB_opelblitz_parm"
-	,"LIB_opelblitz_tent_y_camo"
+	,"LIB_opelblitz_ammo"
 	,"LIB_SdKfz251"
-	,"LIB_SdKfz_7"
-	,"LIB_SdKfz_7_AA"
-	,"LIB_SdKfz251_FFV"];
+	,"LIB_opelblitz_parm"
+	,"LIB_Kfz1"
+	,"LIB_Kfz1_hood"
+	,"LIB_SdKfz251_FFV"
+	,"LIB_SdKfz251"
+	,"LIB_opelblitz_tent_y_camo"
+	,"LIB_opelblitz_open_y_camo"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
-	"LIB_CIV_FFI_CitC4"
-	,"LIB_CIV_FFI_CitC4_4"
+	"LIB_GazM1"
+	,"LIB_CIV_FFI_CitC4"
 	,"LIB_CIV_FFI_CitC4_2"
-	,"LIB_CIV_FFI_CitC4_3"
-	,"LIB_CIV_FFI_CitC4_5"];
+	,"LIB_CIV_FFI_CitC4_3"];
 
 // Vehicles, weapons and ammo at ammo depots
 
 // Random array. An ammo depot contains one static weapon of the following types:
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
-	"LIB_MG42_Lafette_low"
+	"LIB_Kfz1_MG42"
 	,"LIB_Pak40"
+	,"LIB_MG34_Lafette_Deployed"
 	,"LIB_FlaK_30"
-	,"LIB_GER_SearchLight"];
+	,"LIB_GER_SearchLight"
+	,"LIB_MG42_Lafette_Deployed"];
 
 // An ammo depot have one parked and empty vehicle of the following possible types.
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
@@ -398,15 +342,17 @@ a3e_arr_O_attack_heli = [
 	"LEN_FW190F8_DAK3"
 	,"LEN_FW190F8_DAK2"
 	,"LEN_FW190F8_DAK"];
+a3e_arr_O_transport_heli = [
+	"LIB_FW190F8_Italy"
+	,"LIB_Ju87_Italy"
+	,"LIB_Ju87_Italy2"];
 a3e_arr_O_pilots = [
 	"LIB_GER_pilot"];
 a3e_arr_I_transport_heli = [
-	"I_Heli_Transport_02_F"
-	,"I_Heli_light_03_F"
-	,"I_Heli_light_03_unarmed_F"];
+	"LIB_Ju87_Italy"
+	,"LIB_Ju87_Italy2"];
 a3e_arr_I_pilots = [
-	"I_helipilot_F"
-	,"I_helicrew_F"];
+	"LIB_GER_pilot"];
 
 
 // The following arrays define weapons and ammo contained at the ammo depots
@@ -420,59 +366,59 @@ a3e_arr_I_pilots = [
 // Weapons and ammo in the basic weapons box
 a3e_arr_AmmoDepotBasicWeapons = [];
 // CSAT weapons
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_P38", 50, 4, 8, ["lib_8Rnd_9x19"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_MP40", 50, 4, 8, ["lib_32Rnd_9x19"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_P08", 50, 2, 5, ["LIB_8Rnd_9x19_P08"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_MP40", 10, 1, 2, ["LIB_32Rnd_9x19"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_K98", 100, 3, 5, ["LIB_5Rnd_792x57"], 10];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_G3340", 50, 2, 4, ["LIB_5Rnd_792x57"], 8];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_G43", 75, 2, 4, ["LIB_10Rnd_792x57","LIB_5Rnd_792x57","LIB_5Rnd_792x57"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_MG42", 20, 1, 2, ["LIB_50Rnd_792x57"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_K98ZF39", 10, 1, 2, ["LIB_5Rnd_792x57_sS"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_MP44", 10, 2, 4, ["LIB_30Rnd_792x33"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["LEN_FG42", 100, 2, 4, ["LEN_20Rnd_792x57"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_MP44", 50, 2, 4, ["LIB_30Rnd_792x33", "LIB_30Rnd_792x33"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_K98ZF39", 75, 2, 4, ["lib_5Rnd_792x57", "lib_10Rnd_792x57"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_G43", 50, 2, 4, ["30Rnd_556x45_Stanag"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_MG42", 50, 2, 4, ["LIB_50Rnd_792x57", "LIB_250Rnd_792x57_sS", "LIB_250Rnd_792x57_SMK", "LIB_50Rnd_792x57_sS"], 4];
-// non-CSAT weapons
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1_Garand", 100, 2, 4, ["LIB_8Rnd_762x63"], 9];
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1_Carbine", 20, 2, 4, ["LIB_15Rnd_762x33"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1903A3_Springfield", 20, 2, 4, ["LIB_5Rnd_762x63"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1903A4_Springfield", 20, 2, 4, ["LIB_5Rnd_762x63"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1A1_Thompson", 20, 2, 4, ["LIB_30Rnd_45ACP"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1_Carbine", 20, 2, 4, ["LEN_10Rnd_303"], 6];
 
+// non-CSAT weapons
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1919A4", 10, 2, 4, ["LIB_50Rnd_762x63"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1919A6", 10, 1, 3, ["LIB_50Rnd_762x63"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1928A1_Thompson", 10, 1, 2, ["LIB_30Rnd_45ACP"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1903A3_Springfield", 10, 3, 5, ["LIB_5Rnd_762x63","LIB_5Rnd_762x63"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1_Carbine", 20, 2, 4, ["LIB_15Rnd_762x33"], 8];
+a3e_arr_AmmoDepotBasicWeapons pushback ["LIB_M1_Garand", 20, 2, 4, ["LIB_8Rnd_762x63"], 8];
 
 
 // Weapons and ammo in the special weapons box
 a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_P38", 50, 4, 8, ["lib_8Rnd_9x19"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_MP40", 50, 4, 8, ["lib_32Rnd_9x19"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_MG34", 50, 2, 4, ["LIB_50Rnd_792x57"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_MG34_PT", 50, 1, 3, ["LIB_75Rnd_792x57"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_MP40", 10, 1, 2, ["LIB_32Rnd_9x19"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_K98", 100, 3, 5, ["LIB_5Rnd_792x57"], 8];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_G3340", 50, 2, 4, ["LIB_5Rnd_792x57"], 8];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_G43", 75, 2, 4, ["LIB_10Rnd_792x57","LIB_5Rnd_792x57","LIB_5Rnd_792x57"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["LEN_FG42", 100, 2, 4, ["LEN_20Rnd_792x57"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_MP44", 50, 2, 4, ["LIB_30Rnd_792x33", "LIB_30Rnd_792x33"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_K98ZF39", 75, 2, 4, ["lib_5Rnd_792x57", "lib_10Rnd_792x57"], 4];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_G43", 50, 2, 4, ["30Rnd_556x45_Stanag"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_MG42", 50, 2, 4, ["LIB_50Rnd_792x57", "LIB_250Rnd_792x57_sS", "LIB_250Rnd_792x57_SMK", "LIB_50Rnd_792x57_sS"], 4];
 // non-CAST weapons
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_M1_Garand", 100, 2, 4, ["LIB_8Rnd_762x63"], 9];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_M1_Carbine", 20, 2, 4, ["LIB_15Rnd_762x33"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_M1903A3_Springfield", 20, 2, 4, ["LIB_5Rnd_762x63"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_M1903A4_Springfield", 20, 2, 4, ["LIB_5Rnd_762x63"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_M1A1_Thompson", 20, 2, 4, ["LIB_30Rnd_45ACP"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_M1_Carbine", 20, 2, 4, ["LEN_10Rnd_303"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_M1918A2_BAR", 10, 2, 4, ["LIB_20Rnd_762x63"], 8];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["LIB_M1903A4_Springfield", 10, 1, 2, ["LIB_5Rnd_762x63"], 8];
 
 
 // Weapons and ammo in the launchers box
 a3e_arr_AmmoDepotLaunchers = [];
 // CSAT weapons
-a3e_arr_AmmoDepotLaunchers pushback ["LIB_RPzB", 50, 3, 5, ["LIB_1Rnd_RPzB"], 6];
-a3e_arr_AmmoDepotLaunchers pushback ["LIB_M1A1_Bazooka", 50, 1, 1, ["LIB_1Rnd_60mm_M6"], 3];
-a3e_arr_AmmoDepotLaunchers pushback ["LIB_PzFaust_30m", 50, 1, 1, ["LIB_1Rnd_PzFaust_30m"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["LIB_PzFaust_30m", 10, 1, 2, ["LIB_1Rnd_PzFaust_30m"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["LIB_RPzB", 10, 1, 3, ["LIB_1Rnd_RPzB"], 3];
+
 // non-CSAT weapons
-a3e_arr_AmmoDepotLaunchers pushback ["LIB_RPzB", 50, 3, 5, ["LIB_1Rnd_RPzB"], 6];
-a3e_arr_AmmoDepotLaunchers pushback ["LIB_M1A1_Bazooka", 50, 1, 1, ["LIB_1Rnd_60mm_M6"], 3];
-a3e_arr_AmmoDepotLaunchers pushback ["LIB_PzFaust_30m", 50, 1, 1, ["LIB_1Rnd_PzFaust_30m"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["LIB_M1A1_Bazooka", 30, 1, 2, ["LIB_1Rnd_60mm_M6"], 2];
 
 
 // Weapons and ammo in the ordnance box
 a3e_arr_AmmoDepotOrdnance = [];
 // General weapons
-a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 5, ["LIB_TM44_MINE_mag", "LIB_US_TNT_4pound_mag"], 5];
-a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 5, ["LIB_Ladung_Big_MINE_mag", "LIB_Ladung_Small_MINE_mag", "LIB_US_M1A1_ATMINE_mag"], 5];
+a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["LIB_SMI_35_MINE_mag"], 5];
+a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["LIB_shumine_42_MINE_mag"], 5];
+a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["LIB_Ladung_Big_MINE_mag"], 5];
+a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["LIB_Ladung_Small_MINE_mag"], 5];
+a3e_arr_AmmoDepotOrdnance pushback [objNull, 10, 1, 5, ["LIB_TM44_MINE_mag", "LIB_US_TNT_4pound_mag"], 1];
+a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 5, ["LIB_US_M1A1_ATMINE_mag"], 2];
 a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 5, ["LIB_M3_MINE_mag", "LIB_US_M3_MINE_mag"], 5];
 a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 5, ["LIB_PMD6_MINE_mag"], 5];
 a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 5, ["LIB_pomzec_MINE_mag"], 5];
@@ -481,11 +427,17 @@ a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 5, ["LIB_shumine_42_MINE_mag
 // Weapons and ammo in the vehicle box (the big one)
 // Some high volumes (mostly for immersion)
 a3e_arr_AmmoDepotVehicle = [];
+a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["LIB_shg24"], 50];
+a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["LIB_shg24x7"], 50];
+a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["LIB_m39"], 50];
+a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["LIB_nb39"], 25];
+a3e_arr_AmmoDepotVehicle pushback [objNull, 10, 1, 1, ["LIB_pwm"], 5];
+
 a3e_arr_AmmoDepotVehicleItems = [];
 a3e_arr_AmmoDepotVehicleItems pushback ["ToolKit", 20, 1, 1, [], 0];
 a3e_arr_AmmoDepotVehicleItems pushback ["Medikit", 20, 1, 1, [], 0];
 a3e_arr_AmmoDepotVehicleItems pushback ["FirstAidKit", 100, 10, 50, [], 0];
-a3e_arr_AmmoDepotVehicleBackpacks = [];
+a3e_arr_AmmoDepotVehicleBackpacks = ["B_LIB_GER_Backpack"];
 
 // Items
 
@@ -495,21 +447,24 @@ a3e_arr_AmmoDepotVehicleBackpacks = [];
 // Index 3: Maximum amount.
 
 a3e_arr_AmmoDepotItems = [];
-a3e_arr_AmmoDepotItems pushback ["LIB_Binocular_GER", 60, 2, 8];
-if(Param_NoNightvision==0) then {
-	a3e_arr_AmmoDepotItems pushback ["NVGoggles", 10, 1, 3];
-};
-a3e_arr_AmmoDepotItems pushback ["Binocular", 60, 2, 3, [], 0];
-a3e_arr_AmmoDepotItems pushback ["LIB_Binocular_SU", 60, 2, 3, 0];
-a3e_arr_AmmoDepotItems pushback ["ItemCompass", 50, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["LIB_GER_Gloves2", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["G_LIB_Binoculars", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["LIB_Binocular_GER", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["G_LIB_Scarf2_B", 50, 2, 3, [], 0];
+a3e_arr_AmmoDepotItems pushback ["G_LIB_Scarf2_G", 50, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["G_LIB_Scarf_G", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["ItemMap", 50, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["ItemRadio", 50, 1, 10];
+a3e_arr_AmmoDepotItems pushback ["G_LIB_Scarf_B", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["ItemWatch", 50, 1, 10];
-if(Param_NoNightvision==0) then {
-	a3e_arr_AmmoDepotItems pushback ["optic_tws", 10, 1, 1];
-	a3e_arr_AmmoDepotItems pushback ["optic_tws_mg", 10, 1, 1];
-	a3e_arr_AmmoDepotItems pushback ["optic_Nightstalker", 10, 1, 1];
-};
+a3e_arr_AmmoDepotItems pushback ["LIB_GER_Gloves2", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["G_LIB_Binoculars", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["LIB_Binocular_GER", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["G_LIB_Scarf2_B", 50, 2, 3, [], 0];
+a3e_arr_AmmoDepotItems pushback ["G_LIB_Scarf2_G", 50, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["G_LIB_Scarf_G", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["ItemMap", 50, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["G_LIB_Scarf_B", 50, 1, 10];
+a3e_arr_AmmoDepotItems pushback ["ItemWatch", 50, 1, 10];
 
 // Weapons that may show up in civilian cars
 
@@ -527,14 +482,14 @@ a3e_arr_CivilianCarWeapons pushback ["LIB_M1A1_Thompson", ["LIB_30Rnd_45ACP"], 6
 a3e_arr_CivilianCarWeapons pushback ["LIB_M1_Carbine", ["LEN_10Rnd_303"], 6];
 
 // Here is a list of scopes:
-a3e_arr_Scopes = [];
-a3e_arr_Scopes_SMG = [];
-a3e_arr_Scopes_Sniper = [];
-a3e_arr_NightScopes = [];
-a3e_arr_TWSScopes = [];
+a3e_arr_Scopes = [""];
+a3e_arr_Scopes_SMG = [""];
+a3e_arr_Scopes_Sniper = [""];
+a3e_arr_NightScopes = [""];
+a3e_arr_TWSScopes = [""];
 
 // Here is a list of bipods, might get randomly added to enemy patrols:
-a3e_arr_Bipods = [];
+a3e_arr_Bipods = [""];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
@@ -543,7 +498,7 @@ a3e_arr_Bipods = [];
 a3e_arr_extraction_chopper = [
 	"B_Heli_Transport_01_F"];
 a3e_arr_extraction_chopper_escort = [
-	"B_Heli_Attack_01_F"];
+	"LIB_P47"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -658,15 +613,23 @@ a3e_arr_CrashSiteCrew = [
 	,"LIB_US_pilot"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
-a3e_arr_CrashSiteWeapons pushback ["LIB_P38", 50, 4, 8, ["lib_8Rnd_9x19"], 6];
-a3e_arr_CrashSiteWeapons pushback ["LIB_MP40", 50, 4, 8, ["lib_32Rnd_9x19"], 6];
-a3e_arr_CrashSiteWeapons pushback ["LEN_FG42", 100, 2, 4, ["LEN_20Rnd_792x57"], 6];
-a3e_arr_CrashSiteWeapons pushback ["LIB_MP44", 50, 2, 4, ["LIB_30Rnd_792x33", "LIB_30Rnd_792x33"], 6];
-a3e_arr_CrashSiteWeapons pushback ["LIB_K98ZF39", 75, 2, 4, ["lib_5Rnd_792x57", "lib_10Rnd_792x57"], 4];
-a3e_arr_CrashSiteWeapons pushback ["LIB_G43", 50, 2, 4, ["30Rnd_556x45_Stanag"], 6];
-a3e_arr_CrashSiteWeapons pushback ["LIB_MG42", 50, 2, 4, ["LIB_50Rnd_792x57", "LIB_250Rnd_792x57_sS", "LIB_250Rnd_792x57_SMK", "LIB_50Rnd_792x57_sS"], 4];
+a3e_arr_CrashSiteWeapons pushback ["LIB_M1918A2_BAR", 10, 2, 4, ["LIB_20Rnd_762x63","LIB_20Rnd_762x63"], 3];
+a3e_arr_CrashSiteWeapons pushback ["LIB_M1903A4_Springfield", 50, 1, 2, ["LIB_5Rnd_762x63"], 4];
+a3e_arr_CrashSiteWeapons pushback ["LIB_M1A1_Bazooka", 30, 1, 2, ["LIB_1Rnd_60mm_M6"], 2];
+a3e_arr_CrashSiteWeapons pushback ["LIB_M1919A4", 50, 2, 4, ["LIB_50Rnd_762x63"], 4];
+a3e_arr_CrashSiteWeapons pushback ["LIB_M1919A6", 50, 1, 3, ["LIB_50Rnd_762x63"], 6];
+a3e_arr_CrashSiteWeapons pushback ["LIB_M1928A1_Thompson", 10, 1, 2, ["LIB_30Rnd_45ACP"], 6];
+a3e_arr_CrashSiteWeapons pushback ["LIB_M1903A3_Springfield", 100, 3, 5, ["LIB_5Rnd_762x63","LIB_5Rnd_762x63"], 6];
+a3e_arr_CrashSiteWeapons pushback ["LIB_M1_Carbine", 50, 2, 4, ["LIB_15Rnd_762x33","LIB_15Rnd_762x33"], 4];
+a3e_arr_CrashSiteWeapons pushback ["LIB_M1_Garand", 75, 2, 4, ["LIB_8Rnd_762x63","LIB_8Rnd_762x63","LIB_8Rnd_762x63"], 4];
 // Attachments and other items in crash site box
 a3e_arr_CrashSiteItems = [];
-a3e_arr_CrashSiteItems pushback ["LIB_Binocular_GER", 10, 1, 3];
-a3e_arr_CrashSiteItems pushback ["Binocular", 10, 1, 3];
-a3e_arr_CrashSiteItems pushback ["LIB_Binocular_SU", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["G_LIB_Scarf2_B", 50, 2, 3, [], 0];
+a3e_arr_CrashSiteItems pushback ["G_LIB_Scarf2_G", 50, 1, 3];
+a3e_arr_CrashSiteItems pushback ["G_LIB_Scarf_G", 10, 1, 2];
+a3e_arr_CrashSiteItems pushback ["ItemMap", 50, 1, 3];
+a3e_arr_CrashSiteItems pushback ["G_LIB_Scarf_B", 50, 1, 10];
+a3e_arr_CrashSiteItems pushback ["LIB_Binocular_SU", 50, 1, 10];
+a3e_arr_CrashSiteItems pushback ["LIB_US_M36_Rope", 50, 1, 3];
+a3e_arr_CrashSiteItems pushback ["LIB_US_M36", 50, 1, 10];
+a3e_arr_CrashSiteItems pushback ["LIB_US_Backpack", 50, 1, 10];
