@@ -16,8 +16,8 @@ a3e_debug_EnemyPosition = false;
 a3e_debug_Waypoints = false;
 a3e_debug_MapAndCompass = false;
 a3e_debug_immortal = false;
-a3e_debug_lastKnownPosition = true;
-a3e_debug_artillery = true;
+a3e_debug_lastKnownPosition = false;
+a3e_debug_artillery = false;
 a3e_debug_aistate = false;
 
 A3E_SystemLog = true;
