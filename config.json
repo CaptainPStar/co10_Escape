@@ -493,6 +493,26 @@
 				}
 		},
 		{
+			"name" : "CUP-US Army d",
+			"path" : "./Mods/CUP-US Army d/",
+			"require" : ["CUP_Creatures_Military_USArmy","CUP_Creatures_Military_PMC","CUP_Creatures_Military_Russia"],
+			"replace" :
+				{
+					"MOD" : "CUP RU vs US Army",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "CUP_O_RU_Officer",
+					"PLAYERUNIT_2" : "CUP_O_RU_Soldier_GL",
+					"PLAYERUNIT_3" : "CUP_O_RU_Soldier_Marksman",
+					"PLAYERUNIT_4" : "CUP_O_RU_Engineer",
+					"PLAYERUNIT_5" : "CUP_O_RU_Soldier_AA",
+					"PLAYERUNIT_6" : "CUP_O_RU_Soldier_AR",
+					"PLAYERUNIT_7" : "CUP_O_RU_Soldier_AT",
+					"PLAYERUNIT_8" : "CUP_O_RU_Soldier_MG",
+					"PLAYERUNIT_9" : "CUP_O_RU_Soldier",
+					"PLAYERUNIT_10" : "CUP_O_RU_Medic"
+				}
+		},
+		{
 			"name" : "Massi AFR",
 			"path" : "./Mods/Massi AFR/",
 			"require" : ["mas_afr_rebl_b"],
@@ -1649,11 +1669,25 @@
 			"name" : "co10_Escape_CUP-US"
 		},
 		{
+			"island" : "Altis",
+			"sqm": "Altis",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_VS_RU"
+		},
+		{
 			"island" : "Stratis",
 			"sqm": "Stratis",
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP-US"
+		},
+		{
+			"island" : "Stratis",
+			"sqm": "Stratis",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_VS_RU"
 		},
 		{
 			"island" : "Tanoa",
@@ -1698,6 +1732,13 @@
 			"name" : "co10_Escape_CUP-US"
 		},
 		{
+			"island" : "Chernarus",
+			"sqm": "Chernarus",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_VS_RU"
+		},
+		{
 			"island" : "Chernarus_Summer",
 			"sqm": "Chernarus_Summer",
 			"mod" : "CUP-US USMC",
@@ -1705,6 +1746,13 @@
 			"name" : "co10_Escape_CUP-US"
 		},
 		{
+			"island" : "Chernarus_Summer",
+			"sqm": "Chernarus_Summer",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_VS_RU"
+		},
+		{
 			"island" : "Podagorsk",
 			"sqm": "FDF_Isle1_a",
 			"mod" : "CUP-US USMC",
@@ -1763,16 +1811,9 @@
 		{
 			"island" : "Dingor",
 			"sqm": "Dingor",
-			"mod" : "CUP-US USMC",
+			"mod" : "CUP-US Army d",
 			"replace" : {},
-			"name" : "co10_Escape_CUP-US"
-		},
-		{
-			"island" : "Dingor",
-			"sqm": "Dingor",
-			"mod" : "CUP RU",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_USMC_VS_RU"
+			"name" : "co10_Escape_CUP_RU_vs_US_ARMY"
 		},
 		{
 			"island" : "Dingor",
@@ -1840,9 +1881,9 @@
 		{
 			"island" : "Australia",
 			"sqm": "Australia",
-			"mod" : "CUP-US USMC",
+			"mod" : "CUP-US Army d",
 			"replace" : {},
-			"name" : "co10_Escape_CUP-US"
+			"name" : "co10_Escape_CUP_RU_vs_US_ARMY"
 		},
 		{
 			"island" : "Australia",
@@ -1861,20 +1902,6 @@
 		{
 			"island" : "Thirsk Winter",
 			"sqm": "ThirskW",
-			"mod" : "CUP RU",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_USMC_VS_RU"
-		},
-		{
-			"island" : "Chernarus",
-			"sqm": "Chernarus",
-			"mod" : "CUP RU",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_USMC_VS_RU"
-		},
-		{
-			"island" : "Chernarus_Summer",
-			"sqm": "Chernarus_Summer",
 			"mod" : "CUP RU",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_USMC_VS_RU"
@@ -1885,6 +1912,13 @@
 			"mod" : "CUP Taki",
 			"replace" : {},
 			"name" : "co10_Escape_CUP"
+		},
+		{
+			"island" : "Isla Duala",
+			"sqm": "IslaDuala3",
+			"mod" : "CUP-US Army d",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_ARMY"
 		},
 		{
 			"island" : "Isla Duala",
@@ -1901,11 +1935,25 @@
 			"name" : "co10_Escape_CUP"
 		},
 		{
+			"island" : "Takistan",
+			"sqm": "Takistan",
+			"mod" : "CUP-US Army d",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_ARMY"
+		},
+		{
 			"island" : "Capraia",
 			"sqm": "IsolaDiCapraia",
 			"mod" : "CUP Taki",
 			"replace" : {},
 			"name" : "co10_Escape_CUP"
+		},
+		{
+			"island" : "Capraia",
+			"sqm": "IsolaDiCapraia",
+			"mod" : "CUP-US Army d",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_ARMY"
 		},
 		{
 			"island" : "Capraia",
@@ -1978,11 +2026,25 @@
 			"name" : "co10_Escape_CUP"
 		},
 		{
+			"island" : "Clafghan",
+			"sqm": "Clafghan",
+			"mod" : "CUP-US Army d",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_ARMY"
+		},
+		{
 			"island" : "Al Rayak",
 			"sqm": "pja310",
 			"mod" : "CUP Taki",
 			"replace" : {},
 			"name" : "co10_Escape_CUP"
+		},
+		{
+			"island" : "Al Rayak",
+			"sqm": "pja310",
+			"mod" : "CUP-US Army d",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_ARMY"
 		},
 		{
 			"island" : "Al Rayak",
