@@ -66,6 +66,8 @@ if (_count == 0) then {
 //check for number of extraction markers and sort them
 _markerBaseName = "drn_Escape_ExtractionPos";
 drn_arr_ExtractionPosMarkerNumbers = [];
+drn_arr_ExtractionPosMarkerNumbersClose = [];
+drn_arr_ExtractionPosMarkerNumbersFar = [];
 
 _markerNo = 1;
 _markerName = _markerBaseName + str _markerNo;
