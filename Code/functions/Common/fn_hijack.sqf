@@ -101,7 +101,7 @@ _markerName = _markerBaseName + str _markerNo;
 		} else {
 			_extractionPointNo = (selectRandom drn_arr_ExtractionPosMarkerNumbers);
 			diag_log format["fn_hijack: no close Extraction marker available, using all markers"];
-		}
+		};
 		a3e_var_Escape_ExtractionMarkerPos =  getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
 		diag_log format["fn_hijack: Extraction marker number %1 selected, at position %2",_extractionPointNo,a3e_var_Escape_ExtractionMarkerPos];
 	} else {
@@ -112,12 +112,12 @@ _markerName = _markerBaseName + str _markerNo;
 			} else {
 				_extractionPointNo = (selectRandom drn_arr_ExtractionPosMarkerNumbers);
 				diag_log format["fn_hijack: no far Extraction marker available, using all markers"];
-			}
+			};
 			a3e_var_Escape_ExtractionMarkerPos =  getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
 			diag_log format["fn_hijack: Extraction marker number %1 selected, at position %2",_extractionPointNo,a3e_var_Escape_ExtractionMarkerPos];
-		}
+		};
 		
-		}
+		};
 	};
     publicVariable "a3e_var_Escape_ExtractionMarkerPos";
     _generatorTrailer setvariable ["A3E_Terminal_Hacked",true,true];
