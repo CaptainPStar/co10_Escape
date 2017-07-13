@@ -76,10 +76,10 @@ _markerName = _markerBaseName + str _markerNo;
 	
 	//sorting
 	_pos = getMarkerPos ("drn_Escape_ExtractionPos" + str _markerNo);
-	if((getpos _generatorTrailer distance _pos)<(A3E_MinComCenterDistance*2) then {
+	if((getpos _generatorTrailer distance _pos)<(A3E_MinComCenterDistance*2)) then {
 				drn_arr_ExtractionPosMarkerNumbersClose pushback _markerNo;
 			};
-	if((getpos _generatorTrailer distance _pos)>(A3E_MinComCenterDistance*2) then {
+	if((getpos _generatorTrailer distance _pos)>(A3E_MinComCenterDistance*2)) then {
 				drn_arr_ExtractionPosMarkerNumbersFar pushback _markerNo;
 			};
 	
