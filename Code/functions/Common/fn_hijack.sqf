@@ -63,64 +63,74 @@ _mode = Param_ExtractionSelection;
 if (_count == 0) then {
 
 
-//check for number of extraction markers
+//check for number of extraction markers and sort them
 _markerBaseName = "drn_Escape_ExtractionPos";
 drn_arr_ExtractionPosMarkerNumbers = [];
-_markerStartNo = 1;
 
-_markerNo = _markerStartNo;
+_markerNo = 1;
 _markerName = _markerBaseName + str _markerNo;
 
 	_j = 0;
 	while {[_markerName] call drn_fnc_CL_MarkerExists} do {
 	drn_arr_ExtractionPosMarkerNumbers pushback _markerNo;
 	
+	//sorting
+	_pos = getMarkerPos ("drn_Escape_ExtractionPos" + str _markerNo);
+	if((getpos _generatorTrailer distance _pos)<(A3E_MinComCenterDistance*2) then {
+				drn_arr_ExtractionPosMarkerNumbersClose pushback _markerNo;
+			};
+	if((getpos _generatorTrailer distance _pos)>(A3E_MinComCenterDistance*2) then {
+				drn_arr_ExtractionPosMarkerNumbersFar pushback _markerNo;
+			};
+	
 	_markerNo = _markerNo + 1;
 	_markerName = _markerBaseName + str _markerNo;
 	_j = _j + 1;
 };
+//_numberOfMarkers = (count drn_arr_ExtractionPosMarkerNumbers);
 
-
-
-	_flag = false;
-	//If selection fails ten times, a random point is selected-
-	
 	if(_mode == 0) then {
 		_extractionPointNo = (selectRandom drn_arr_ExtractionPosMarkerNumbers);
 		a3e_var_Escape_ExtractionMarkerPos =  getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
+		diag_log format["fn_hijack: Extraction marker number %1 selected, at position %2",_extractionPointNo,a3e_var_Escape_ExtractionMarkerPos];
 	} else {
-		_selectedPos = getMarkerPos ("drn_Escape_ExtractionPos1");
-		_extractionPointNo = (selectRandom drn_arr_ExtractionPosMarkerNumbers);
-		for[{_i = 1},{_i<=_markerNo},{_i = _i +1}] do {
-
-			_pos = getMarkerPos ("drn_Escape_ExtractionPos" + str (selectRandom drn_arr_ExtractionPosMarkerNumbers));
-			
-			if((getpos _generatorTrailer distance _pos)<(A3E_MinComCenterDistance*3) AND (_mode == 1)) then {
-				_selectedPos = _pos;
-				_extractionPointNo = _i;
-			};
-			if((getpos _generatorTrailer distance _pos)>(A3E_MinComCenterDistance*3) AND (_mode == 2)) then {
-				_selectedPos = _pos;
-				_extractionPointNo = _i;
-			};
-		};
-		a3e_var_Escape_ExtractionMarkerPos = getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
+		
+	if(_mode == 1) then {
+		if ((count drn_arr_ExtractionPosMarkerNumbersClose)>0) then {
+		_extractionPointNo = (selectRandom drn_arr_ExtractionPosMarkerNumbersClose);
+		} else {
+			_extractionPointNo = (selectRandom drn_arr_ExtractionPosMarkerNumbers);
+			diag_log format["fn_hijack: no close Extraction marker available, using all markers"];
+		}
+		a3e_var_Escape_ExtractionMarkerPos =  getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
+		diag_log format["fn_hijack: Extraction marker number %1 selected, at position %2",_extractionPointNo,a3e_var_Escape_ExtractionMarkerPos];
+	} else {
+		
+		if(_mode == 2) then {
+			if ((count drn_arr_ExtractionPosMarkerNumbersFar)>0) then {
+			_extractionPointNo = (selectRandom drn_arr_ExtractionPosMarkerNumbersFar);
+			} else {
+				_extractionPointNo = (selectRandom drn_arr_ExtractionPosMarkerNumbers);
+				diag_log format["fn_hijack: no far Extraction marker available, using all markers"];
+			}
+			a3e_var_Escape_ExtractionMarkerPos =  getMarkerPos ("drn_Escape_ExtractionPos" + str _extractionPointNo);
+			diag_log format["fn_hijack: Extraction marker number %1 selected, at position %2",_extractionPointNo,a3e_var_Escape_ExtractionMarkerPos];
+		}
+		
+		}
 	};
     publicVariable "a3e_var_Escape_ExtractionMarkerPos";
     _generatorTrailer setvariable ["A3E_Terminal_Hacked",true,true];
+	//make old marker invisible if hacking again
     if (!isNil "a3e_var_Escape_ExtractionMarker") then {
 		a3e_var_Escape_ExtractionMarker setMarkerType "Empty";
     };
-	if (isNil "a3e_var_Escape_ExtractionMarkerNo") then {
-        a3e_var_Escape_ExtractionMarkerNo = 0;
-    } else {
-		a3e_var_Escape_ExtractionMarkerNo = a3e_var_Escape_ExtractionMarkerNo + 1;
-	};
 	
-    a3e_var_Escape_ExtractionMarker = createMarker [format["drn_visibleGoalMarker%1",a3e_var_Escape_ExtractionMarkerNo], a3e_var_Escape_ExtractionMarkerPos];
+    a3e_var_Escape_ExtractionMarker = createMarker [format["drn_visibleGoalMarker%1",_extractionPointNo], a3e_var_Escape_ExtractionMarkerPos];
     a3e_var_Escape_ExtractionMarker setMarkerType "hd_pickup";
 	a3e_var_Escape_ExtractionMarker setMarkerColor "ColorGreen";
 	a3e_var_Escape_ExtractionMarker setMarkerText "Evac";
+	diag_log format["fn_hijack: Extraction marker created %1",a3e_var_Escape_ExtractionMarker];
     [_extractionPointNo] remoteExec ["A3E_fnc_CreateExtractionPoint",2,false];
     
 	A3E_Task_ComCenter_Complete = true;

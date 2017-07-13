@@ -17,6 +17,4 @@ _isWater = surfaceIsWater (getMarkerPos _markerName);
 private _code = compile format["[%1,%2,_this] call A3E_fnc_firedNearExtraction;",_markerNo,_isWater];
 
 _location addeventhandler["firedNear",_code];
-
-a3e_var_Escape_ExtractionMarkerNo = _markerNo;
-publicVariable "a3e_var_Escape_ExtractionMarkerNo";
+diag_log format["fn_CreateExtractionPoint: eventhandler added at %1",_location];
