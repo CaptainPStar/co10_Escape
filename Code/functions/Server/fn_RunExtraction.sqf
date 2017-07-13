@@ -44,7 +44,7 @@ _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointFormation "WEDGE";
 _waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
 
-diag_log format["Extraction choppers spawned: %1, %2 and %3",_boat1,_boat2,_boat3];
+diag_log format["fn_RunExtraction: Extraction choppers spawned: %1, %2 and %3",_boat1,_boat2,_boat3];
 
 A3E_EvacHeli1 = _boat1;
 publicvariable "A3E_EvacHeli1";
