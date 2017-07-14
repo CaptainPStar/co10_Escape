@@ -1015,6 +1015,15 @@ a3e_arr_CrashSiteWrecks = [
 	,"Land_Wreck_Heli_Attack_01_F"];
 a3e_arr_CrashSiteCrew = [
 	"rhsusf_airforce_pilot"];
+a3e_arr_CrashSiteWrecksCar = [
+	"Land_Wreck_HMMWV_F"
+	,"Land_Wreck_Hunter_F"
+	,"Land_Wreck_Slammer_F"
+	,"M113Wreck"];
+a3e_arr_CrashSiteCrewCar = [
+	"rhsusf_usmc_marpat_d_driver"
+	,"rhsusf_usmc_marpat_d_crewman"
+	,"rhsusf_usmc_marpat_d_combatcrewman"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["hlc_rifle_auga3_b", 50, 2, 5, ["hlc_30Rnd_556x45_B_AUG"], 12];

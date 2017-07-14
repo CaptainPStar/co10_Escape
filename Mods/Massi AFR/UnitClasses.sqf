@@ -761,6 +761,12 @@ a3e_arr_CrashSiteWrecks = [
 a3e_arr_CrashSiteCrew = [
 	"B_mas_afr_Helipilot_F"
 	,"B_mas_afr_Helicrew_F"];
+a3e_arr_CrashSiteWrecksCar = [
+	"Land_Wreck_HMMWV_F"
+	,"Land_Wreck_Hunter_F"
+	,"Land_Wreck_Slammer_F"];
+a3e_arr_CrashSiteCrewCar = [
+	"B_mas_afr_soldier_M_F"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["mas_launch_M136_F", 10, 1, 2, ["mas_M136"], 3];

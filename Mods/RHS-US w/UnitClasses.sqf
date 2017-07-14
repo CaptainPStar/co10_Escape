@@ -818,9 +818,20 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"Land_Wreck_Heli_Attack_02_F"];
+	"Land_Wreck_Heli_Attack_02_F"
+	,"Land_rhs_mi28_wreck"
+	,"Land_rhs_mi28_wreck2"
+	,"Land_rhs_tu95_wreck"
+	,"Mi8Wreck"];
 a3e_arr_CrashSiteCrew = [
 	"rhs_pilot_combat_heli"];
+a3e_arr_CrashSiteWrecksCar = [
+	"Land_Wreck_BMP2_F"
+	,"Land_Wreck_BRDM2_F"
+	,"Land_Wreck_T72_hull_F"];
+a3e_arr_CrashSiteCrewCar = [
+	"rhs_vdv_flora_driver"
+	,"rhs_vdv_flora_driver_armored"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["rhs_weap_ak74m_gp25_1p63", 50, 2, 5, ["rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK_green","rhs_VOG25"], 4];

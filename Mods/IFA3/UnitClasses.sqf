@@ -579,12 +579,19 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"Land_HistoricalPlaneWreck_03_F"
-	,"LIB_Pe2_MRWreck"
-	,"LIB_P47_MRWreck"
-	,"LIB_CG4_WACO_Wreck2"];
+	"LIB_HORSA_Wreck"
+	,"LIB_CG4_WACO_Wreck2"
+	,"LIB_CG4_WACO_Wreck"
+	,"LIB_P47_MRWreck"];
 a3e_arr_CrashSiteCrew = [
-	"LIB_US_pilot"];
+	"LIB_US_pilot"
+	,"LIB_US_rifleman"];
+a3e_arr_CrashSiteWrecksCar = [
+	"LIB_M4A3_75_wreck"];
+a3e_arr_CrashSiteCrewCar = [
+	"LIB_US_tank_crew"
+	,"LIB_US_tank_second_lieutenant"
+	,"LIB_US_tank_sergeant"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["LIB_M1918A2_BAR", 10, 2, 4, ["LIB_20Rnd_762x63","LIB_20Rnd_762x63"], 3];
