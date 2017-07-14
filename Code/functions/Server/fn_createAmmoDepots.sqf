@@ -85,7 +85,13 @@ while {count _positions < A3E_AmmoDepotCount} do {
 
 
 {
-    [_x,a3e_arr_Escape_AmmoDepot_StaticWeaponClasses,a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses] call A3E_fnc_AmmoDepot;
+	_blah=floor(random 2);//returns 0 or 1
+	if (_blah == 0) then {
+	[_x,a3e_arr_Escape_AmmoDepot_StaticWeaponClasses,a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses] call A3E_fnc_AmmoDepot;
+	};
+	if (_blah == 1) then {
+	[_x,a3e_arr_Escape_AmmoDepot_StaticWeaponClasses,a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses] call A3E_fnc_AmmoDepot2;
+	};
 } foreach _positions;
 
 a3e_var_Escape_AmmoDepotPositions = _positions;

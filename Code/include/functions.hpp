@@ -88,12 +88,18 @@ class CfgFunctions
 		class Templates
 		{
             class BuildPrison {};
+			class BuildPrison2 {};
             class BuildComCenter {};
+			class BuildComCenter2 {};
             class BuildMotorPool {};
             class AmmoDepot {};
+			class AmmoDepot2 {};
 			class CrashSite {};
 			class MortarSite {};
+			class MortarSite2 {};
 			class Roadblock {};
+			class Roadblock2 {};
+			class Roadblock3 {};
 		};
 		class Chronos
 		{

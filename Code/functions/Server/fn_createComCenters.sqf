@@ -45,7 +45,12 @@ for [{_i=0},{_i<_totalMarkerCount},{_i=_i+1}] do {
 			_ok = false;
 	};
 	if(_ok) then {
+		if (_blah == 0) then {
 		[_pos, _dir,a3e_arr_ComCenStaticWeapons,a3e_arr_ComCenParkedVehicles] call a3e_fnc_BuildComCenter;
+		};
+		if (_blah == 1) then {
+		[_pos, _dir,a3e_arr_ComCenStaticWeapons,a3e_arr_ComCenParkedVehicles] call a3e_fnc_BuildComCenter2;
+		};
 		A3E_Var_ClearedPositions pushBack _pos;
 		["drn_CommunicationCenterMapMarker" + str _instanceNo,_pos,"o_hq"] call A3E_fnc_createLocationMarker;
 
