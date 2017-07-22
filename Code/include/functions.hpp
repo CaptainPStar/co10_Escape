@@ -135,6 +135,7 @@ class CfgFunctions
 			class PopulateAquaticPatrol {};
 			class DepopulateAquaticPatrol {};
 			class InitAquaticPatrolMarkers {};
+			class GarrisonUnits {};
 		};
 	};
 	class ATR
