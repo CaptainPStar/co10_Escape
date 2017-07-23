@@ -132,11 +132,12 @@ if(isNil("A3E_ClearedPositionDistance")) then {
 // Build start position
 _fenceRotateDir = random 360;
 _blah=floor(random 2);//returns 0 or 1
+private _backback = objNull;
 if (_blah == 0) then {
-private _backPack = [A3E_StartPos, _fenceRotateDir] call a3e_fnc_BuildPrison;
+_backPack = [A3E_StartPos, _fenceRotateDir] call a3e_fnc_BuildPrison;
 };
 if (_blah == 1) then {
-private _backPack = [A3E_StartPos, _fenceRotateDir] call a3e_fnc_BuildPrison2;
+_backPack = [A3E_StartPos, _fenceRotateDir] call a3e_fnc_BuildPrison2;
 };
 A3E_FenceIsCreated = true;
 publicVariable "A3E_FenceIsCreated";
