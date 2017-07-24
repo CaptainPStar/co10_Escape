@@ -2,11 +2,9 @@
 // See www.map-builder.info - Map Builder by NeoArmageddon
 // Call this script by [Position,Rotation] execVM "filename.sqf"
 
-private["_obj","_pos"];
-params["_center","_rotation","_static","_vehicle"];
-
-[_center,25] call a3e_fnc_cleanupTerrain;
-
+private["_center","_rotation","_obj","_pos"];
+_center = param[0];
+_rotation = param[1];
 
 _fnc_rotatePos = {
 private ["_centerPos", "_pos", "_dir"];
@@ -24,88 +22,69 @@ _dir = _this select 2;
 [_rpx, _rpy, (_pos select 2)];
 };
 
-private _objects = [];
-
-if(!(isNull _vehicle)) then {
-	_pos = [_center,_center vectorAdd [-8.98853,0.582275,0.03473],_rotation] call _fnc_rotatePos;
-	_vehicle setVectorDirAndUp [[-0.999602,0.0282026,0],[0,0,1]];
-	_vehicle setdir ((getdir _vehicle) + _rotation);
-	_vehicle setPosATL _pos;
-};
-
-
-_pos = [_center,_center vectorAdd [-3.21863,0.61731,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_BarGate_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.00573361,-0.999984,0],[0,-0,1]];
+_pos = [_center,_center vectorAdd [-10.5365,-1.88892,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_CncBarrier_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.998298,0.0583221,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-_objects pushback _obj;
 
-
-if(!(isNull _static)) then {
-	_pos = [_center,_center vectorAdd [6.76208,0.251953,0],_rotation] call _fnc_rotatePos;
-	_static setVectorDirAndUp [[0.0308489,0.999524,0],[0,0,1]];
-	_static setdir ((getdir _static) + _rotation);
-	_static setPosATL _pos;
-};
-
-
-_pos = [_center,_center vectorAdd [-4.06677,-1.17126,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_BagFence_Round_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.999918,0.0127849,0],[0,0,1]];
+_pos = [_center,_center vectorAdd [-9.54016,-4.48584,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_CncBarrier_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.769706,0.638399,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-_objects pushback _obj;
 
-_pos = [_center,_center vectorAdd [-3.97546,1.92419,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_BagFence_Round_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.999918,0.0127849,0],[0,0,1]];
+_pos = [_center,_center vectorAdd [-4.61743,-5.52637,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_CncBarrier_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.0193368,-0.999813,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-_objects pushback _obj;
 
-_pos = [_center,_center vectorAdd [4.46057,-1.41321,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_BagFence_Round_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.999918,0.0127849,0],[0,0,1]];
+_pos = [_center,_center vectorAdd [-7.25806,-5.48535,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_CncBarrier_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.0231416,-0.999732,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-_objects pushback _obj;
 
-_pos = [_center,_center vectorAdd [4.79553,1.97058,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_BagFence_Round_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.999918,0.0127849,0],[0,0,1]];
+_pos = [_center,_center vectorAdd [-6.74536,-1.16248,0.019196],_rotation] call _fnc_rotatePos;
+_obj = "Land_Locomotive_01_v1_F" createvehicle _pos;
+_obj setVectorDirAndUp [[-0.00749208,-0.999972,0],[-0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-_objects pushback _obj;
 
-_pos = [_center,_center vectorAdd [-6.41394,-1.54944,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_BagFence_End_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.999918,0.0127849,0],[0,0,1]];
+_pos = [_center,_center vectorAdd [10.5684,-2.94543,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_CncBarrier_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.999894,-0.0145383,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-_objects pushback _obj;
 
-
-_pos = [_center,_center vectorAdd [-6.29773,2.72253,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_BagFence_End_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.999918,0.0127849,0],[0,0,1]];
+_pos = [_center,_center vectorAdd [4.59009,-6.02368,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_CncBarrier_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.0245898,-0.999698,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-_objects pushback _obj;
 
-_pos = [_center,_center vectorAdd [6.71497,-2.26184,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_BagFence_End_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.999918,0.0127849,0],[0,0,1]];
+_pos = [_center,_center vectorAdd [8.07642,0.18457,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_BagBunker_Tower_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.0442845,0.999019,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-_objects pushback _obj;
 
-
-_pos = [_center,_center vectorAdd [7.21838,2.25183,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_BagFence_End_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.999918,0.0127849,0],[0,0,1]];
+_pos = [_center,_center vectorAdd [7.43286,-1.5929,2.81069],_rotation] call _fnc_rotatePos;
+_obj = "B_T_Static_AA_F" createvehicle _pos;
+_obj setVectorDirAndUp [[-0.126156,-0.99201,0],[-0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-_objects pushback _obj;
 
-_objects;
+_pos = [_center,_center vectorAdd [9.55457,-5.21326,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_CncBarrier_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.657954,-0.753058,0],[0,-0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [7.23071,-6.06079,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_CncBarrier_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.0206801,-0.999786,0],[0,-0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+

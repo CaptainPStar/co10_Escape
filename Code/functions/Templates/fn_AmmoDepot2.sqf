@@ -1,188 +1,82 @@
-	if(!isserver) exitwith {};
-	
-	private ["_middlePos", "_staticWeaponClasses", "_parkedVehicleClasses"];
-    private ["_object", "_pos", "_marker", "_instanceNo", "_randomNo", "_gun", "_angle", "_car"];
-    
-    _middlePos = _this select 0;
-    _staticWeaponClasses = _this select 1;
-    _parkedVehicleClasses = _this select 2;
-    
-    if (isNil "drn_BuildAmmoDepot_MarkerInstanceNo") then {
-        drn_BuildAmmoDepot_MarkerInstanceNo = 0;
-    }
-    else {
-        drn_BuildAmmoDepot_MarkerInstanceNo = drn_BuildAmmoDepot_MarkerInstanceNo + 1;
-    };
-    _instanceNo = drn_BuildAmmoDepot_MarkerInstanceNo;
-    
-    _pos = [(_middlePos select 0) - 4.5, (_middlePos select 1) + 6, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 0;
-    
-    _pos = [(_middlePos select 0) - 1.5, (_middlePos select 1) + 6, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 0;
-    
-    _pos = [(_middlePos select 0) + 1.5, (_middlePos select 1) + 6, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 0;
-    
-    _pos = [(_middlePos select 0) + 4.5, (_middlePos select 1) + 6, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 0;
-    
-    _pos = [(_middlePos select 0) - 6, (_middlePos select 1) - 4.5, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 270;
-    
-    _pos = [(_middlePos select 0) - 6, (_middlePos select 1) - 1.5, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 270;
-    
-    _pos = [(_middlePos select 0) - 6, (_middlePos select 1) + 1.5, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 270;
-    
-    _pos = [(_middlePos select 0) - 6, (_middlePos select 1) + 4.5, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 270;
-    
-    _pos = [(_middlePos select 0) - 4.5, (_middlePos select 1) - 6, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 180;
-    
-    /*
-    _pos = [(_middlePos select 0) - 1.5, (_middlePos select 1) - 6, 0];
-    _object = "Fence_Ind" createVehicle _pos;
-    _object setPos _pos;
-    _object setDir 180;
-    
-    _pos = [(_middlePos select 0) + 1.5, (_middlePos select 1) - 6, 0];
-    _object = "Fence_Ind" createVehicle _pos;
-    _object setPos _pos;
-    _object setDir 180;
-    */
-    
-    _pos = [(_middlePos select 0) + 4.5, (_middlePos select 1) - 6, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 180;
-    
-    _pos = [(_middlePos select 0) + 6, (_middlePos select 1) - 4.5, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 90;
-    
-    _pos = [(_middlePos select 0) + 6, (_middlePos select 1) - 1.5, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 90;
-    
-    _pos = [(_middlePos select 0) + 6, (_middlePos select 1) + 1.5, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 90;
-    
-    _pos = [(_middlePos select 0) + 6, (_middlePos select 1) + 4.5, 0];
-    //_object = "Land_IndFnc_3_F" createVehicle _pos;
-    _object = createVehicle ["Land_IndFnc_3_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 90;
-    
-    // Tunnor
-    _pos = [(_middlePos select 0) + 7, (_middlePos select 1) - 5, 0];
-    //_object = "MetalBarrel_burning_F" createVehicle _pos;
-    _object = createVehicle ["MetalBarrel_burning_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 90;
-    
-    _pos = [(_middlePos select 0) - 5, (_middlePos select 1) + 7, 0];
-    //_object = "MetalBarrel_burning_F" createVehicle _pos;
-    _object = createVehicle ["MetalBarrel_burning_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 90;
-    
-    // Flagga
-    
-    _pos = [(_middlePos select 0) + 3.2, (_middlePos select 1) - 6.5, 0];
-    //_object = "Flag_CSAT_F" createVehicle _pos;
-    _object = createVehicle ["FlagPole_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 90;
-	_object setflagtexture A3E_VAR_Flag_Opfor;
-    
-    _pos = [(_middlePos select 0) - 3, (_middlePos select 1) - 6.3, 0];
-    //_object = "Flag_CSAT_F" createVehicle _pos;
-    _object = createVehicle ["FlagPole_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 90;
-	_object setflagtexture A3E_VAR_Flag_Opfor;
-    
-    // Skylt
-    
-    _pos = [(_middlePos select 0) + 3, (_middlePos select 1) - 7, 0];
-    //_object = "Land_Sign_WarningMilAreaSmall_F" createVehicle _pos;
-    _object = createVehicle ["Land_Sign_WarningMilAreaSmall_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 340;
-    
-    _pos = [(_middlePos select 0) - 3, (_middlePos select 1) - 7, 0];
-    //_object = "Land_Sign_WarningMilAreaSmall_F" createVehicle _pos;
-    _object = createVehicle ["Land_Sign_WarningMilAreaSmall_F", _pos, [], 0, "NONE"];
-    _object setPos _pos;
-    _object setDir 20;
-    
-    // Statics
-    
-    if (count _staticWeaponClasses > 0) then {
-        _gun = selectRandom _staticWeaponClasses;
-        
-        _randomNo = random 100;
-        _pos = [(_middlePos select 0) + 10, (_middlePos select 1) + 10, 0];
-        _angle = 45;
-        
-        if (_randomNo > 25) then {
-            _pos = [(_middlePos select 0) + 10, (_middlePos select 1) - 10, 0];
-            _angle = 135
-        };
-        if (_randomNo > 50) then {
-            _pos = [(_middlePos select 0) - 10, (_middlePos select 1) - 10, 0];
-            _angle = 225
-        };
-        if (_randomNo > 75) then {
-            _pos = [(_middlePos select 0) - 10, (_middlePos select 1) + 10, 0];
-            _angle = 315
-        };
-        
-        //_object = _gun createVehicle _pos;
-        _object = createVehicle [_gun, _pos, [], 0, "NONE"];
-        _object setPos _pos;
-        _object setDir _angle;
-		[_object,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
-    };
-    
+// Object composition created and exported with Map Builder
+// See www.map-builder.info - Map Builder by NeoArmageddon
+// Call this script by [Position,Rotation] execVM "filename.sqf"
+
+if(!isserver) exitwith {};
+
+private ["_center", "_staticWeaponClasses", "_parkedVehicleClasses"];
+private ["_object", "_pos", "_marker", "_instanceNo", "_randomNo", "_gun", "_angle", "_car"];
+_center = _this select 0;
+
+
+_staticWeaponClasses = _this select 1;
+_parkedVehicleClasses = _this select 2;
+private _rotation = random 360;
+
+[_center,25] call a3e_fnc_cleanupTerrain;
+
+if (isNil "drn_BuildAmmoDepot_MarkerInstanceNo") then {
+	drn_BuildAmmoDepot_MarkerInstanceNo = 0;
+}
+else {
+	drn_BuildAmmoDepot_MarkerInstanceNo = drn_BuildAmmoDepot_MarkerInstanceNo + 1;
+};
+_instanceNo = drn_BuildAmmoDepot_MarkerInstanceNo;
+
+_fnc_rotatePos = {
+private ["_centerPos", "_pos", "_dir"];
+private ["_px", "_py", "_mpx", "_mpy", "_ma", "_rpx", "_rpy"];
+_centerPos = _this select 0;
+_pos = _this select 1;
+_dir = _this select 2;
+    _px = _pos select 0;
+    _py = _pos select 1;
+    _mpx = _centerPos select 0;
+    _mpy = _centerPos select 1;
+    _ma = _dir;
+    _rpx = ( (_px - _mpx) * cos(_ma) ) + ( (_py - _mpy) * sin(_ma) ) + _mpx;
+    _rpy = (-(_px - _mpx) * sin(_ma) ) + ( (_py - _mpy) * cos(_ma) ) + _mpy;
+[_rpx, _rpy, (_pos select 2)];
+};
+
+_pos = [_center,_center vectorAdd [-10.2106,4.54272,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_New_WiredFence_5m_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.999996,0.00287123,0],[0,0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [-9.78967,6.03186,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_LampShabby_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.739872,-0.672748,0],[0,-0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [-5.52759,6.67126,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_New_WiredFence_10m_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.00534881,-0.999986,0],[0,-0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [4.57214,6.7522,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_New_WiredFence_10m_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.00534881,-0.999986,0],[0,-0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [-10.314,-6.51233,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_New_WiredFence_5m_F" createvehicle _pos;
+_obj setVectorDirAndUp [[1,-2.44816e-005,0],[0,-0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [-10.6722,-1.05103,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_Net_Fence_Gate_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.999996,0.00287123,0],[0,0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+
+
     // Cars
     
     if (random 10 > 1 && count _parkedVehicleClasses > 0) then {
@@ -193,28 +87,107 @@
     };
     
     if (_car != "") then {
-        _randomNo = random 4;
-        _pos = [(_middlePos select 0) + 8, (_middlePos select 1), 0];
-        _angle = 45;
-        if ((random 100) > 50) then {_angle = 0;} else {_angle = 180;};
-        
-        if (_randomNo > 2) then {
-            _pos = [(_middlePos select 0) - 8, (_middlePos select 1), 0];
-            if ((random 100) > 50) then {_angle = 0;} else {_angle = 180;};
-        };
-        if (_randomNo > 3) then {
-            _pos = [(_middlePos select 0), (_middlePos select 1) + 8, 0];
-            if ((random 100) > 50) then {_angle = 90;} else {_angle = 270;};
-        };
-        
         //_object = _car createVehicle _pos;
-        _object = createVehicle [_car, _pos, [], 0, "NONE"];
-        _object setPos _pos;
-        _object setDir _angle;
-		[_object,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
+        //_object = createVehicle [_car, _pos, [], 0, "NONE"];
+		
+		_pos = [_center,_center vectorAdd [-2.90967,3.92102,0.000301838],_rotation] call _fnc_rotatePos;
+		_obj = createvehicle [_car, _pos, [], 0, "NONE"];
+		_obj setVectorDirAndUp [[1,-0.000440045,0],[0,-0,1]];
+		_obj setdir ((getdir _obj) + _rotation);
+		_obj setPosATL _pos;
+
+		[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
     };
+
+_pos = [_center,_center vectorAdd [-11.0073,-8.27209,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_BagFence_End_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.000345146,1,0],[0,0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [-12.5851,-5.17175,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_BagFence_Round_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.788684,-0.614799,0],[0,-0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [-11.0167,-4.33191,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_BagFence_End_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.000345146,1,0],[0,0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+
+
+_pos = [_center,_center vectorAdd [-12.5383,-7.54541,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_BagFence_Round_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.713115,0.701047,0],[0,0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+
+ // Statics
     
+    if (count _staticWeaponClasses > 0) then {
+        _gun = selectRandom _staticWeaponClasses;
+        
+		_pos = [_center,_center vectorAdd [-11.7528,-6.52271,0.0750003],_rotation] call _fnc_rotatePos;
+		_obj = createVehicle [_gun, _pos, [], 0, "NONE"];
+		_obj setVectorDirAndUp [[-0.999998,0.00176479,0],[0,0,1]];
+		_obj setdir ((getdir _obj) + _rotation);
+		_obj setPosATL _pos;
+		[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
+    };
+
+
+
+_pos = [_center,_center vectorAdd [-5.54004,-9.3822,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_New_WiredFence_10m_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.00534881,-0.999986,0],[0,-0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+
+
+_pos = [_center,_center vectorAdd [7.77478,-2.05566,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_LampShabby_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.0544991,0.998514,0],[0,0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [9.48694,4.03503,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_Net_Fence_Gate_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.999999,0.00140818,0],[0,0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [9.79907,-3.88293,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_New_WiredFence_10m_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.999996,0.00287123,0],[0,0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [3.01978,-8.02002,0],_rotation] call _fnc_rotatePos;
+_obj = "Flag_CSAT_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.0760487,-0.997104,0],[0,-0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+_pos = [_center,_center vectorAdd [4.15967,-5.37695,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_Cargo_House_V2_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.999996,0.00287123,0],[0,0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
+
+
     // Weapons
+	
+
+//_pos = [_center,_center vectorAdd [-0.278687,-7.39478,0],_rotation] call _fnc_rotatePos;
+//_obj = "Box_Ammo_F" createvehicle _pos;
+//_obj setVectorDirAndUp [[-0.999874,-0.0158694,0],[-0,0,1]];
+
     
     private ["_weapons", "_weaponMagazines", "_box", "_weaponCount"];
 
@@ -247,7 +220,14 @@
     
     if (count _weapons > 0 || count _weaponMagazines > 0) then {
         //_box = "Box_East_Wps_F" createVehicle [(_middlePos select 0) - 3, (_middlePos select 1) + 0, 0];
-        _box = createVehicle ["Box_East_Wps_F", [(_middlePos select 0) - 3, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
+        //_box = createVehicle ["Box_East_Wps_F", [(_middlePos select 0) - 3, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
+		
+		_pos = [_center,_center vectorAdd [-4.62939,-4.94458,0],_rotation] call _fnc_rotatePos;
+		_box = "Box_East_Wps_F" createvehicle _pos;
+		_box setVectorDirAndUp [[-0.999965,0.00837127,0],[0,0,1]];
+		_box setdir ((getdir _box) + _rotation);
+		_box setPosATL _pos;
+		
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
@@ -290,7 +270,12 @@
     
     if (count _weapons > 0 || count _weaponMagazines > 0) then {
         //_box = "Box_East_WpsLaunch_F" createVehicle [(_middlePos select 0) + 3, (_middlePos select 1) + 0, 0];
-        _box = createVehicle ["Box_East_WpsLaunch_F", [(_middlePos select 0) + 3, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
+		_pos = [_center,_center vectorAdd [-1.5481,-4.83618,0],_rotation] call _fnc_rotatePos;
+		_box = "Box_East_WpsLaunch_F" createvehicle _pos;
+		_box setVectorDirAndUp [[-0.999231,0.0392098,0],[0,0,1]];
+		_box setdir ((getdir _box) + _rotation);
+		_box setPosATL _pos;
+		
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
@@ -337,7 +322,14 @@
     
     if (count _weapons > 0 || count _weaponMagazines > 0) then {
         //_box = "Box_East_WpsSpecial_F" createVehicle [(_middlePos select 0) + 0, (_middlePos select 1) - 3, 0];
-        _box = createVehicle ["Box_East_WpsSpecial_F", [(_middlePos select 0) + 0, (_middlePos select 1) - 3, 0], [], 0, "CAN_COLLIDE"];
+        //_box = createVehicle ["Box_East_WpsSpecial_F", [(_middlePos select 0) + 0, (_middlePos select 1) - 3, 0], [], 0, "CAN_COLLIDE"];
+		
+		_pos = [_center,_center vectorAdd [-8.66211,-7.44202,0],_rotation] call _fnc_rotatePos;
+		_box = "Box_East_WpsSpecial_F" createvehicle _pos;
+		_box setVectorDirAndUp [[-0.999874,-0.0158694,0],[-0,0,1]];
+		_box setdir ((getdir _box) + _rotation);
+		_box setPosATL _pos;
+		
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
@@ -398,7 +390,14 @@
 	
     if (count _weapons > 0 || count _weaponMagazines > 0 || count _items > 0) then {
         //_box = "Box_NATO_AmmoVeh_F" createVehicle [(_middlePos select 0) + 0, (_middlePos select 1) + 0, 0];
-        _box = createVehicle ["Box_NATO_AmmoVeh_F", [(_middlePos select 0) + 0, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
+        //_box = createVehicle ["Box_NATO_AmmoVeh_F", [(_middlePos select 0) + 0, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
+		
+		_pos = [_center,_center vectorAdd [-7.50476,-5.06494,0],_rotation] call _fnc_rotatePos;
+		_box = "Box_NATO_AmmoVeh_F" createvehicle _pos;
+		_box setVectorDirAndUp [[-0.999874,-0.0158694,0],[-0,0,1]];
+		_box setdir ((getdir _box) + _rotation);
+		_box setPosATL _pos;
+
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
@@ -440,7 +439,14 @@
     
     if (count _weapons > 0) then {
         //_box = "Box_East_Wps_F" createVehicle [(_middlePos select 0) + 0, (_middlePos select 1) + 3, 0];
-        _box = createVehicle ["Box_East_Wps_F", [(_middlePos select 0) + 3, (_middlePos select 1) - 3, 0], [], 0, "CAN_COLLIDE"];
+        //_box = createVehicle ["Box_East_Wps_F", [(_middlePos select 0) + 3, (_middlePos select 1) - 3, 0], [], 0, "CAN_COLLIDE"];
+
+		_pos = [_center,_center vectorAdd [-5.63904,-7.51245,0],_rotation] call _fnc_rotatePos;
+		_box = "Box_East_Wps_F" createvehicle _pos;
+		_box setVectorDirAndUp [[-0.0739712,-0.99726,0],[0,0,1]];
+		_box setdir ((getdir _box) + _rotation);
+		_box setPosATL _pos;
+
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
@@ -479,7 +485,15 @@
     
     if (count _weapons > 0 || count _weaponMagazines > 0) then {
         //_box = "Box_East_WpsLaunch_F" createVehicle [(_middlePos select 0) - 3, (_middlePos select 1) - 3, 0];
-        _box = createVehicle ["Box_East_WpsLaunch_F", [(_middlePos select 0) - 3, (_middlePos select 1) - 3, 0], [], 0, "CAN_COLLIDE"];
+        //_box = createVehicle ["Box_East_WpsLaunch_F", [(_middlePos select 0) - 3, (_middlePos select 1) - 3, 0], [], 0, "CAN_COLLIDE"];
+		
+		_pos = [_center,_center vectorAdd [-2.97229,-7.60938,0],_rotation] call _fnc_rotatePos;
+		_box = "Box_East_WpsLaunch_F" createvehicle _pos;
+		_box setVectorDirAndUp [[-0.999602,0.0282007,0],[0,0,1]];
+		_box setdir ((getdir _box) + _rotation);
+		_box setPosATL _pos;
+
+
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
@@ -493,15 +507,21 @@
         } foreach _weaponMagazines;
     };
 
+_pos = [_center,_center vectorAdd [4.53369,-9.31958,0],_rotation] call _fnc_rotatePos;
+_obj = "Land_New_WiredFence_10m_F" createvehicle _pos;
+_obj setVectorDirAndUp [[0.00534881,-0.999986,0],[0,-0,1]];
+_obj setdir ((getdir _obj) + _rotation);
+_obj setPosATL _pos;
+
     // Set markers
     
     //_marker = createMarker ["drn_AmmoDepotMapMarker" + str _instanceNo, _middlePos];
     //_marker setMarkerType "o_installation";
       //_marker setMarkerType "o_installation";
 	  
-    ["drn_AmmoDepotMapMarker" + str _instanceNo,_middlePos,"o_installation"] call A3E_fnc_createLocationMarker;
+    ["drn_AmmoDepotMapMarker" + str _instanceNo,_center,"o_installation"] call A3E_fnc_createLocationMarker;
 
-    _marker = createMarkerLocal ["drn_AmmoDepotPatrolMarker" + str _instanceNo, _middlePos];
+    _marker = createMarkerLocal ["drn_AmmoDepotPatrolMarker" + str _instanceNo, _center];
     _marker setMarkerShapeLocal "ELLIPSE";
     _marker setMarkerAlphaLocal 0;
     _marker setMarkerSizeLocal [50, 50];
