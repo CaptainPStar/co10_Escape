@@ -64,7 +64,7 @@ if(name _player == "HC") then {
 		};
 	};
 	if(!_placed) then {
-		_player setpos [(A3E_StartPos select 0)+random 5.0-2.5,(A3E_StartPos select 1)+random 5.0-2.5,0];
+		_player setpos [(A3E_StartPos select 0)+random 3.0-1.5,(A3E_StartPos select 1)+random 3.0-1.5,0];
 		_player setdir (random 360);
 		diag_log format["Escape debug: %1 placed at prison.", name _player];
 	};
