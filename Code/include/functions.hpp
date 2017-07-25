@@ -89,6 +89,7 @@ class CfgFunctions
 		{
             class BuildPrison {};
 			class BuildPrison2 {};
+			class BuildPrison3 {};
             class BuildComCenter {};
 			class BuildComCenter2 {};
             class BuildMotorPool {};

@@ -1,90 +1,63 @@
-// Object composition created and exported with Map Builder
-// See www.map-builder.info - Map Builder by NeoArmageddon
+// Eden Object composition to SQF
+// Export file
+// Script by NeoArmageddon
 // Call this script by [Position,Rotation] execVM "filename.sqf"
 
-private["_center","_rotation","_obj","_pos"];
-_center = param[0];
-_rotation = param[1];
 
-_fnc_rotatePos = {
-private ["_centerPos", "_pos", "_dir"];
-private ["_px", "_py", "_mpx", "_mpy", "_ma", "_rpx", "_rpy"];
-_centerPos = _this select 0;
-_pos = _this select 1;
-_dir = _this select 2;
-    _px = _pos select 0;
-    _py = _pos select 1;
-    _mpx = _centerPos select 0;
-    _mpy = _centerPos select 1;
-    _ma = _dir;
-    _rpx = ( (_px - _mpx) * cos(_ma) ) + ( (_py - _mpy) * sin(_ma) ) + _mpx;
-    _rpy = (-(_px - _mpx) * sin(_ma) ) + ( (_py - _mpy) * cos(_ma) ) + _mpy;
-[_rpx, _rpy, (_pos select 2)];
+private _center = param[0];
+private _rotation = param[1];
+private _static = param[2];
+private _vehicle = param[3];
+
+[_center,25] call a3e_fnc_cleanupTerrain;
+_rotation = _rotation;
+
+
+_fnc_createObject = {
+    params["_className","_centerPos","_relativePos","_rotateDir","_relativeDir"];
+    private["_object", "_realPos", "_realDir"];
+
+    _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1),(_relativePos select 2)], _rotateDir] call A3E_fnc_RotatePosition);
+    _object = createVehicle [_className, _realPos, [], 0, "CAN_COLLIDE"];
+    _object setdir (_relativeDir + _rotateDir);
+    _object setPosATL _realPos;
+    _object;
 };
 
-_pos = [_center,_center vectorAdd [-10.5365,-1.88892,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_CncBarrier_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.998298,0.0583221,0],[0,0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
+private _objects = [];
+private _obj = objNull;
 
-_pos = [_center,_center vectorAdd [-9.54016,-4.48584,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_CncBarrier_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.769706,0.638399,0],[0,0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
+_obj = ["Land_BarGate_F",_center,[-0.390747,0.391357,0],_rotation,179.988] call _fnc_createObject;
+_objects pushBack _obj;
+_obj = ["Land_BagFence_Round_F",_center,[4.34167,1.79785,0],_rotation,133.29] call _fnc_createObject;
+_objects pushBack _obj;
+_obj = ["Land_BagFence_Round_F",_center,[4.18945,-1.17517,0],_rotation,50.8415] call _fnc_createObject;
+_objects pushBack _obj;
+_obj = ["Land_BagFence_Round_F",_center,[-4.90186,1.49036,0],_rotation,230.789] call _fnc_createObject;
+_objects pushBack _obj;
+_obj = ["Land_BagFence_Round_F",_center,[-4.83887,-1.20178,0],_rotation,309.005] call _fnc_createObject;
+_objects pushBack _obj;
+_obj = ["Land_BagFence_End_F",_center,[5.64612,-2.0415,0],_rotation,5.37634] call _fnc_createObject;
+_objects pushBack _obj;
+_obj = ["Land_BagFence_End_F",_center,[-6.37781,-1.92725,0],_rotation,181.092] call _fnc_createObject;
+_objects pushBack _obj;
+_obj = ["Land_BagFence_End_F",_center,[5.98145,2.48779,0],_rotation,5.37634] call _fnc_createObject;
+_objects pushBack _obj;
+_obj = ["Land_BagFence_End_F",_center,[-6.42041,2.34607,0],_rotation,181.092] call _fnc_createObject;
+_objects pushBack _obj;
 
-_pos = [_center,_center vectorAdd [-4.61743,-5.52637,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_CncBarrier_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.0193368,-0.999813,0],[0,-0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
 
-_pos = [_center,_center vectorAdd [-7.25806,-5.48535,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_CncBarrier_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.0231416,-0.999732,0],[0,-0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
+if(!(isNull _static)) then {
+	_pos = [_center,_center vectorAdd [6.15918,0.396851,-0.0121169],_rotation] call A3E_FNC_RotatePosition;
+	_static setdir (269.87 + _rotation);
+    _static setPosATL _pos;
+};
+if(!(isNull _vehicle)) then {
+	_pos = [_center,_center vectorAdd [-9.58679,0.108887,0.0323153],_rotation] call A3E_FNC_RotatePosition;
+	_vehicle setdir (89.8637 + _rotation);
+	_vehicle setPosATL _pos;
+};
 
-_pos = [_center,_center vectorAdd [-6.74536,-1.16248,0.019196],_rotation] call _fnc_rotatePos;
-_obj = "Land_Locomotive_01_v1_F" createvehicle _pos;
-_obj setVectorDirAndUp [[-0.00749208,-0.999972,0],[-0,0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
 
-_pos = [_center,_center vectorAdd [10.5684,-2.94543,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_CncBarrier_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.999894,-0.0145383,0],[0,-0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
-
-_pos = [_center,_center vectorAdd [4.59009,-6.02368,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_CncBarrier_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.0245898,-0.999698,0],[0,-0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
-
-_pos = [_center,_center vectorAdd [8.07642,0.18457,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_BagBunker_Tower_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.0442845,0.999019,0],[0,0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
-
-_pos = [_center,_center vectorAdd [7.43286,-1.5929,2.81069],_rotation] call _fnc_rotatePos;
-_obj = "B_T_Static_AA_F" createvehicle _pos;
-_obj setVectorDirAndUp [[-0.126156,-0.99201,0],[-0,0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
-
-_pos = [_center,_center vectorAdd [9.55457,-5.21326,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_CncBarrier_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.657954,-0.753058,0],[0,-0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
-
-_pos = [_center,_center vectorAdd [7.23071,-6.06079,0],_rotation] call _fnc_rotatePos;
-_obj = "Land_CncBarrier_F" createvehicle _pos;
-_obj setVectorDirAndUp [[0.0206801,-0.999786,0],[0,-0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
+_objects;
 

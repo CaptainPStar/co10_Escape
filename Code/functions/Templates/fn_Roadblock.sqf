@@ -2,11 +2,14 @@
 // See www.map-builder.info - Map Builder by NeoArmageddon
 // Call this script by [Position,Rotation] execVM "filename.sqf"
 
-private["_obj","_pos"];
-params["_center","_rotation","_static","_vehicle"];
+
+private _center = param[0];
+private _rotation = param[1];
+private _static = param[2];
+private _vehicle = param[3];
 
 [_center,25] call a3e_fnc_cleanupTerrain;
-
+_rotation = _rotation;
 
 _fnc_rotatePos = {
 private ["_centerPos", "_pos", "_dir"];

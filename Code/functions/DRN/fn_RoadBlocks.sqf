@@ -157,16 +157,9 @@ _fnc_CreateRoadBlock = {
 	_vehicles pushBack _static;
 	_units pushback ([_static,_side] call A3E_fnc_AddStaticGunner); 
 	// A3E_fnc_Roadblock ["_center","_rotation","_static","_vehicle"];
-	_blah=floor(random 3);//returns 0,1 or 2
-	if (_blah == 0) then {
-	_units append ([_pos,(_dir + _angle),_static,_vehicle] call A3E_fnc_Roadblock);
-	};
-	if (_blah == 1) then {
-	_units append ([_pos,(_dir + _angle),_static,_vehicle] call A3E_fnc_Roadblock2);
-	};
-	if (_blah == 2) then {
-	_units append ([_pos,(_dir + _angle),_static,_vehicle] call A3E_fnc_Roadblock3);
-	};
+
+	_units append (call compile ("["+str _pos+","+str(_dir + _angle)+",_static,_vehicle] call "+ selectRandom ["A3E_fnc_Roadblock","A3E_fnc_Roadblock2","A3E_fnc_Roadblock3"]));
+	
 	//_units append ([_pos,(_dir + _angle),_static,_vehicle] call A3E_fnc_Roadblock);
     
     _group = createGroup _side;
