@@ -45,7 +45,7 @@ for [{_i=0},{_i<_totalMarkerCount},{_i=_i+1}] do {
 			_ok = false;
 	};
 	if(_ok) then {
-		call compile format["[%1, %2 ,a3e_arr_ComCenStaticWeapons,a3e_arr_ComCenParkedVehicles] call %3;",str _pos, _dir,selectRandom["a3e_fnc_BuildComCenter","a3e_fnc_BuildComCenter2"]];
+		call compile format["[%1, %2 ,a3e_arr_ComCenStaticWeapons,a3e_arr_ComCenParkedVehicles] call %3;",str _pos, _dir,selectRandom["a3e_fnc_BuildComCenter","a3e_fnc_BuildComCenter2","a3e_fnc_BuildComCenter3"]];
 		A3E_Var_ClearedPositions pushBack _pos;
 		["drn_CommunicationCenterMapMarker" + str _instanceNo,_pos,"o_hq"] call A3E_fnc_createLocationMarker;
 
