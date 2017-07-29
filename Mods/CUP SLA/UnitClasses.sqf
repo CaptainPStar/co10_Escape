@@ -636,7 +636,6 @@ a3e_arr_extraction_chopper = [
 	"CUP_B_MH6J_USA"
 	,"CUP_B_MH60S_FFV_USMC"
 	,"CUP_B_CH47F_USA"
-	,"CUP_B_CH47F_VIV_USA"
 	,"CUP_B_UH60M_FFV_US"
 	,"CUP_B_UH60M_Unarmed_FFV_US"
 	,"CUP_B_UH60M_Unarmed_FFV_MEV_US"
