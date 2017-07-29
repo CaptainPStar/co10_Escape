@@ -40,8 +40,6 @@ class Mission
 	class Intel
 	{
 		briefingName="{* MISSION *} {* ISLANDNAME *} {* MOD *} {* VERSION *}";
-		resistanceWest=0;
-		resistanceEast=1;
 		startWeather=0.099999994;
 		startWind=0.099999994;
 		startWaves=0.099999994;
@@ -471,7 +469,7 @@ class Mission
 		class Item46
 		{
 			dataType="Group";
-			side="West";
+			side="{* PLAYERSIDE *}";
 			class Entities
 			{
 				items=10;
