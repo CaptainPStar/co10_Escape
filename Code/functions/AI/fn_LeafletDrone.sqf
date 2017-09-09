@@ -57,8 +57,8 @@ while {!_exitScript} do {
 			while {(position _chopper) select 2 < 75} do {
 				sleep 1;
 			};
-
-			_position = getpos player;
+			
+			_position = [_searchAreaMarker] call drn_fnc_CL_GetRandomMarkerPos;
 
 			_waypoint = _group addWaypoint [_position, 0];
 			_waypoint setWaypointType "MOVE";
@@ -77,10 +77,15 @@ while {!_exitScript} do {
 			};
 
 			_chopper setVariable ["waypointFulfilled", false];
-
-			if ( ((getpos _chopper) distance (getpos player))>100) then {
+			
+			if ({(_x distance _chopper)<100;} count call A3E_fnc_GetPlayers;) then {
 			_chopper fire "Bomb_Leaflets";
 			_chopper setVariable ["waypointFulfilled", true];
+			
+			diag_log format["fn_LeafletDrone: Leaflets dropped at %1",(getpos _chopper)];
+			if (A3E_Debug) then {
+				player sideChat "Search chopper state: DEAD.";
+				};
 			};
 			_position = getpos player;
 			_waypoint = _group addWaypoint [_position, 0];

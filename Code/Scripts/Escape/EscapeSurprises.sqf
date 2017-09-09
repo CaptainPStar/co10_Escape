@@ -55,7 +55,9 @@ diag_log ("ESCAPE SURPRISE: " + str _surprise);
 //Leaflet Drone
 
 _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
-_timeInSek = 5 * 60 + random (30 * 60);
+//_timeInSek = 5 * 60 + random (30 * 60);
+//_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
+_timeInSek = 10;
 _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
 _surprise = ["LEAFLETDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
 _surprises set [count _surprises, _surprise];
@@ -302,7 +304,7 @@ while {true} do {
 
                     
                     //[_chopper, drn_searchAreaMarkerName, (5 + random 15), (5 + random 15), a3e_var_Escape_debugSearchChopper] execVM "Scripts\DRN\SearchChopper\SearchChopper.sqf";
-                    [_chopper, drn_searchAreaMarkerName, (5 + random 15), (5 + random 15), A3E_Debug] spawn A3E_fnc_SearchDrone;
+                    [_chopper, drn_searchAreaMarkerName, (5 + random 15), (5 + random 15), A3E_Debug] spawn A3E_fnc_LeafletDrone;
                   
                     // Create new russian search chopper
                     _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
