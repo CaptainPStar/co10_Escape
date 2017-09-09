@@ -1005,8 +1005,14 @@ a3e_arr_MortarSite = [
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
-	"RHS_Su25SM_vvs"
-	,"RHS_T50_vvs_generic"];
+	"O_Plane_CAS_02_Cluster_F"
+	,"O_Plane_Fighter_02_Cluster_F"
+	,"I_Plane_Fighter_03_Cluster_F"
+	,"I_Plane_Fighter_04_Cluster_F"];
+	
+	
+	//"RHS_Su25SM_vvs"
+	//,"RHS_T50_vvs_generic"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
