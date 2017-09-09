@@ -787,8 +787,8 @@ a3e_arr_AquaticPatrols = [
 // What kind of weapon boxes are spawned when the parameter "additional weapons" is activated
 // use to add boxes from mods to the ammo depots
 //////////////////////////////////////////////////////////////////
-a3e_additional_weapon_box_1 = "rhsusf_weapons_crate";
-a3e_additional_weapon_box_2 = "rhsusf_ammo_crate";
+a3e_additional_weapon_box_1 = "rhsusf_weapon_crate";
+a3e_additional_weapon_box_2 = "rhsusf_mags_crate";
 
 //////////////////////////////////////////////////////////////////
 // fn_MortarSite
