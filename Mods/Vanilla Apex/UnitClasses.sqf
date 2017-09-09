@@ -58,14 +58,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"C_Truck_02_fuel_F"
 	,"C_Truck_02_box_F"
 	,"C_Truck_02_transport_F"
-	,"C_Truck_02_covered_F"
-	,"C_Van_02_medevac_F"
-	,"C_Van_02_vehicle_F"
-	,"C_Van_02_service_F"
-	,"C_Van_02_transport_F"
-	,"C_IDAP_Truck_02_water_F"
-	,"C_IDAP_Offroad_02_unarmed_F"
-	,"C_IDAP_Offroad_01_F"];
+	,"C_Truck_02_covered_F"];
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
