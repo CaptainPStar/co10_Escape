@@ -67,6 +67,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 		,"CUP_C_Datsun_Plain"
 		,"CUP_C_Datsun_Covered"
 		,"CUP_C_Datsun_Tubeframe"
+		,"CUP_C_Octavia_CIV"
 		,"CUP_C_Skoda_White_CIV"
 		,"CUP_C_Skoda_Red_CIV"
 		,"CUP_C_Skoda_Blue_CIV"
@@ -74,7 +75,26 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 		,"CUP_C_Golf4_red_Civ"
 		,"CUP_C_Golf4_random_Civ"
 		,"CUP_C_Golf4_random_Civ"
-		,"CUP_C_SUV_CIV"];
+		,"C_Hatchback_01_F"
+		,"C_Hatchback_01_sport_F"
+		,"C_Offroad_01_F"
+		,"C_Quadbike_01_F"
+		,"C_SUV_01_F"
+		,"C_Hatchback_01_F"
+		,"C_Hatchback_01_sport_F"
+		,"C_Offroad_01_F"
+		,"C_Quadbike_01_F"
+		,"C_SUV_01_F"
+		,"C_Van_01_box_F"
+		,"C_Van_01_transport_F"
+		,"C_Van_01_fuel_F"
+		,"C_Van_02_medevac_F"
+		,"C_Van_02_vehicle_F"
+		,"C_Van_02_service_F"
+		,"C_Van_02_transport_F"
+		,"C_IDAP_Truck_02_water_F"
+		,"C_IDAP_Offroad_02_unarmed_F"
+		,"C_IDAP_Offroad_01_F"];
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -122,10 +142,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_I_V3S_Covered_TKG"
 	,"CUP_I_V3S_Refuel_TKG"
 	,"CUP_I_V3S_Repair_TKG"
-	,"CUP_V3S_Open_NAPA"
-	
-	
-	];
+	,"CUP_V3S_Open_NAPA"];
 
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
@@ -274,27 +291,37 @@ a3e_arr_ComCenParkedVehicles = [
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
-		"CUP_C_UAZ_Unarmed_TK_CIV"
-		,"CUP_C_UAZ_Open_TK_CIV"
-		,"CUP_C_Ural_Civ_01"
-		,"CUP_C_Ural_Civ_02"
-		,"CUP_C_Ural_Civ_03"
-		,"CUP_C_Ural_Open_Civ_01"
-		,"CUP_C_Ural_Open_Civ_02"
-		,"CUP_C_Ural_Open_Civ_03"
-		,"CUP_C_Datsun"
-		,"CUP_C_Datsun_4seat"
-		,"CUP_C_Datsun_Plain"
-		,"CUP_C_Datsun_Covered"
-		,"CUP_C_Datsun_Tubeframe"
-		,"CUP_C_Skoda_White_CIV"
-		,"CUP_C_Skoda_Red_CIV"
-		,"CUP_C_Skoda_Blue_CIV"
-		,"CUP_C_Skoda_Green_CIV"
-		,"CUP_C_Golf4_red_Civ"
-		,"CUP_C_Golf4_random_Civ"
-		,"CUP_C_Golf4_random_Civ"
-		,"CUP_C_SUV_CIV"];
+	"CUP_C_UAZ_Unarmed_TK_CIV"
+	,"CUP_C_UAZ_Open_TK_CIV"
+	,"CUP_C_Ural_Civ_01"
+	,"CUP_C_Ural_Civ_02"
+	,"CUP_C_Ural_Civ_03"
+	,"CUP_C_Ural_Open_Civ_01"
+	,"CUP_C_Ural_Open_Civ_02"
+	,"CUP_C_Ural_Open_Civ_03"
+	,"CUP_C_Datsun"
+	,"CUP_C_Datsun_4seat"
+	,"CUP_C_Datsun_Plain"
+	,"CUP_C_Datsun_Covered"
+	,"CUP_C_Datsun_Tubeframe"
+	,"CUP_C_Octavia_CIV"
+	,"CUP_C_Skoda_White_CIV"
+	,"CUP_C_Skoda_Red_CIV"
+	,"CUP_C_Skoda_Blue_CIV"
+	,"CUP_C_Skoda_Green_CIV"
+	,"CUP_C_Golf4_red_Civ"
+	,"CUP_C_Golf4_random_Civ"
+	,"CUP_C_Golf4_random_Civ"
+	,"C_Hatchback_01_F"
+	,"C_Hatchback_01_sport_F"
+	,"C_Offroad_01_F"
+	,"C_Quadbike_01_F"
+	,"C_SUV_01_F"
+	,"C_Van_01_box_F"
+	,"C_Van_01_transport_F"
+	,"C_Van_01_fuel_F"
+	,"C_Van_02_vehicle_F"
+	,"C_Van_02_transport_F"];
 
 // Vehicles, weapons and ammo at ammo depots
 

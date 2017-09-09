@@ -61,8 +61,18 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"C_Van_01_box_F"
 	,"C_Van_01_transport_F"
 	,"C_Van_01_fuel_F"
-	,"C_Van_01_fuel_F"
-	,"C_Van_01_fuel_F"];
+	,"C_Offroad_02_unarmed_F"
+	,"C_Truck_02_fuel_F"
+	,"C_Truck_02_box_F"
+	,"C_Truck_02_transport_F"
+	,"C_Truck_02_covered_F"
+	,"C_Van_02_medevac_F"
+	,"C_Van_02_vehicle_F"
+	,"C_Van_02_service_F"
+	,"C_Van_02_transport_F"
+	,"C_IDAP_Truck_02_water_F"
+	,"C_IDAP_Offroad_02_unarmed_F"
+	,"C_IDAP_Offroad_01_F"];
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -406,8 +416,8 @@ a3e_arr_ComCenParkedVehicles = [
 	,"B_Truck_01_ammo_F"
 	,"B_Truck_01_Repair_F"
 	,"I_G_Offroad_01_F"
-	,"I_G_Offroad_01_armed_F
-	","I_G_Offroad_01_armed_F"];
+	,"I_G_Offroad_01_armed_F"
+	,"I_G_Offroad_01_armed_F"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
@@ -418,7 +428,9 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"C_SUV_01_F"
 	,"C_Van_01_box_F"
 	,"C_Van_01_transport_F"
-	,"C_Van_01_fuel_F"];
+	,"C_Van_01_fuel_F"
+	,"C_Van_02_vehicle_F"
+	,"C_Van_02_transport_F"];
 
 // Vehicles, weapons and ammo at ammo depots
 
@@ -787,8 +799,8 @@ a3e_arr_AquaticPatrols = [
 // What kind of weapon boxes are spawned when the parameter "additional weapons" is activated
 // use to add boxes from mods to the ammo depots
 //////////////////////////////////////////////////////////////////
-a3e_additional_weapon_box_1 = "rhsusf_weapons_crate";
-a3e_additional_weapon_box_2 = "rhsusf_ammo_crate";
+a3e_additional_weapon_box_1 = "rhsusf_weapon_crate";
+a3e_additional_weapon_box_2 = "rhsusf_mags_crate";
 
 //////////////////////////////////////////////////////////////////
 // fn_MortarSite
