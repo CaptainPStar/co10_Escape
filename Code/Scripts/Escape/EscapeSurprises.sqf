@@ -55,9 +55,7 @@ diag_log ("ESCAPE SURPRISE: " + str _surprise);
 //Leaflet Drone
 
 _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
-//_timeInSek = 5 * 60 + random (30 * 60);
-//_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
-_timeInSek = 10;
+_timeInSek = 5 * 60 + random (30 * 60);
 _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
 _surprise = ["LEAFLETDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
 _surprises set [count _surprises, _surprise];
@@ -293,7 +291,7 @@ while {true} do {
 				if (_surpriseID == "LEAFLETDRONE") then {
                     private ["_chopper", "_result", "_group","_helitype","_arr"];
 					
-					_arr = [(getMarkerPos "drn_russianSearchChopperStartPosMarker"), 0, "I_UAV_01_F", A3E_VAR_Side_Ind] call bis_fnc_spawnvehicle;
+					_arr = [(getMarkerPos "drn_russianSearchChopperStartPosMarker"), 0, "I_UAV_06_F", A3E_VAR_Side_Ind] call bis_fnc_spawnvehicle;
 					_chopper = _arr select 0;
 					_group = _arr select 2;
 					_chopper lock false;

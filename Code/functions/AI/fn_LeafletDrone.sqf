@@ -36,7 +36,9 @@ if (vehicleVarName _chopper == "") exitWith {
 while {!([_searchAreaMarker] call drn_fnc_CL_MarkerExists)} do {
 	sleep 1;
 };
-
+if (A3E_Debug) then {
+    player sideChat "Leaflet drone moving out...";
+};
 _exitScript = false;
 
 while {!_exitScript} do {
@@ -49,12 +51,12 @@ while {!_exitScript} do {
 				player sideChat "leaflet drone state: MOVING OUT.";
 			};
 
-			_chopper flyInHeight 100;
+			_chopper flyInHeight 60;
 			_chopper setVariable ["waypointFulfilled", false];
 			
 			_chopper engineOn true;
 			_chopper move [position _chopper select 0, position _chopper select 1, 85];
-			while {(position _chopper) select 2 < 75} do {
+			while {(position _chopper) select 2 < 50} do {
 				sleep 1;
 			};
 			
@@ -63,7 +65,7 @@ while {!_exitScript} do {
 			_waypoint = _group addWaypoint [_position, 0];
 			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointBehaviour "SAFE";
-			_waypoint setWaypointSpeed "NORMAL";
+			_waypoint setWaypointSpeed "FULL";
 			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 
 			if (A3E_Debug) then {
@@ -78,29 +80,28 @@ while {!_exitScript} do {
 
 			_chopper setVariable ["waypointFulfilled", false];
 			
-			if ({(_x distance _chopper)<100;} count call A3E_fnc_GetPlayers;) then {
+			if (({(_x distance _chopper)<200} count ([] call A3E_fnc_GetPlayers))>0) then {
 			_chopper fire "Bomb_Leaflets";
-			_chopper setVariable ["waypointFulfilled", true];
 			
 			diag_log format["fn_LeafletDrone: Leaflets dropped at %1",(getpos _chopper)];
 			if (A3E_Debug) then {
-				player sideChat "Search chopper state: DEAD.";
+				player sideChat format["fn_LeafletDrone: Leaflets dropped at %1",(getpos _chopper)];
 				};
 			};
-			_position = getpos player;
-			_waypoint = _group addWaypoint [_position, 0];
-			_waypoint setWaypointType "SAD";
-			_waypoint setWaypointBehaviour "COMBAT";
+			_position = getpos ([] call A3E_fnc_GetRandomPlayer);
+			_waypoint = _group addWaypoint [_position, 50];
+			_waypoint setWaypointType "MOVE";
+			_waypoint setWaypointBehaviour "SAFE";
 			_waypoint setWaypointSpeed "LIMITED";
 			//_waypoint setWaypointLoiterType "CIRCLE";
 			//_waypoint setWaypointLoiterRadius ((random 75) + 75);
 			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 
-			_chopper flyInHeight 50;
+			_chopper flyInHeight 25;
 
 			if (A3E_Debug) then {
 				//"SmokeShellRed" createVehicle _position;
-				createVehicle ["SmokeShellRed", _position, [], 0, "NONE"];
+				//createVehicle ["SmokeShellRed", _position, [], 0, "NONE"];
 			};
 		};
 		case "RETURNING": {
@@ -149,7 +150,7 @@ while {!_exitScript} do {
 		};
 	};
 
-	while {1 == 1} do {
+	while {true} do {
 
 		// Check to see if chopper is still alive
 		if (!alive _chopper) exitWith {
@@ -198,7 +199,9 @@ while {!_exitScript} do {
 		if ((diag_tickTime > _moveOutTimeSek + (_searchTimeMin * 60)) && (_state == "SEARCHING" || _state == "MOVING OUT")) exitWith {
 			_state = "RETURNING";
 		};
-
+		if (!("1Rnd_Leaflets_Guer_F" in magazines _chopper) && !(state == "RETURNING")) exitWith {
+			_state = "RETURNING";
+		};
 		sleep 1;
 	};
 
