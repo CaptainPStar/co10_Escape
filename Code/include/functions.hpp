@@ -45,6 +45,7 @@ class CfgFunctions
 			class Move {};
 			class Search {};
 			class SearchDrone {};
+			class LeafletDrone {};
 			class Patrol {};
 			class Flee {};
 			class FireArtillery {};
