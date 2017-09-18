@@ -642,7 +642,7 @@ waitUntil {scriptDone _scriptHandle};
 			sleep 1;
             // If any member of the group is to far away from fence, then escape has started
             {
-				if(_x getvariable ["A3E_PlayerInitialized",false]) then {
+				if(_x getvariable ["A3E_PlayerInitializedServer",false]) then {
 					if ((_x distance A3E_StartPos) > 15 && (_x distance A3E_StartPos) < 100) exitWith {
 						A3E_EscapeHasStarted = true;
 						publicVariable "A3E_EscapeHasStarted";
