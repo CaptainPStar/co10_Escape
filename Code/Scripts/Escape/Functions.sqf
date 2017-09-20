@@ -1,13 +1,28 @@
 drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	private["_nighttime"];
-    _this setVehicleAmmo (0.2 + random 0.6);
+    _this setVehicleAmmo (0.2 + random 0.4);
 	if(daytime > 20 OR daytime < 8) then {
 		_nighttime = true;
 	} else {
 		_nighttime = false;
 	};   
 	//Hopefully fixing BIS broken scripts:
-	_this setskill 0.2;
+	private _AISkill = 0.1;
+	switch (Param_EnemySkill) do {
+	case 0: { _AISkill = 0.1; };
+	case 1: { _AISkill = 0.2; };
+	case 2: { _AISkill = 0.3; };
+	case 3: { _AISkill = 0.4; };
+	case 4: { _AISkill = 0.5; };
+    default { _AISkill = 0.2; };
+};
+	_this setskill _AISkill;
+	_this setskill ["spotdistance", _AISkill];
+	_this setskill ["aimingaccuracy", _AISkill]; 
+	_this setskill ["aimingshake", _AISkill]; 
+	_this setskill ["spottime", _AISkill];
+	_this setskill ["commanding", _AISkill];
+	/*_this setskill ["general", 0.3];
 	_this setskill ["aimingspeed", 0.1];
 	_this setskill ["spotdistance", 0.2];
 	_this setskill ["aimingaccuracy", 0.2]; 
@@ -17,17 +32,8 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	_this setskill ["general", 0.3];
 	_this setskill ["reloadspeed", 0.2];
 	_this setskill ["courage", 0.2];
-	_this setskill ["endurance", 0.2];
+	_this setskill ["endurance", 0.2];*/
 	
-
-	
-    //_this setSkill (a3e_var_Escape_enemyMinSkill + random (a3e_var_Escape_enemyMaxSkill - a3e_var_Escape_enemyMinSkill));
-    
-	//[_this, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
-    
-	
-    //player sideChat str (precision _this);
-    //player sideChat (str (precision _this) + "   "  + str(_this skill "aimingAccuracy"));
     
     _this removeItem "FirstAidKit";
 	
