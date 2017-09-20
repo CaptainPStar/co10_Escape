@@ -607,7 +607,13 @@ waitUntil {scriptDone _scriptHandle};
     } foreach _guardGroups;
         
 	//Add an alert trigger to the prison
-
+	A3E_fnc_revealPlayers = {
+		private ["_guardGroup"];
+		_guardGroup = _this;
+		{
+			_guardGroup reveal _x;
+		} foreach call A3E_fnc_GetPlayers;
+	};
 	A3E_fnc_soundAlarm = {
 		private ["_guardGroup"];
 		_guardGroups = _this select 0;
@@ -621,13 +627,6 @@ waitUntil {scriptDone _scriptHandle};
 				_x spawn A3E_fnc_revealPlayers;
 			} foreach _guardGroups;
 		};
-	};
-	A3E_fnc_revealPlayers = {
-		private ["_guardGroup"];
-		_guardGroup = _this;
-		{
-			_guardGroup reveal _x;
-		} foreach call A3E_fnc_GetPlayers;
 	};
     // Start thread that waits for escape to start
     [_guardGroups, _startPos] spawn {
