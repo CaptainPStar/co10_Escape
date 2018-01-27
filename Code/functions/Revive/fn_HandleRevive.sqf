@@ -21,7 +21,6 @@ if(!isnull _target) then {
 			if(AT_Revive_Camera==1) then {
 				[] remoteExec ["ATHSC_fnc_exit", _target, false];
 			};
-
 		};
 		
 		if (!isPlayer _target) then
@@ -30,6 +29,12 @@ if(!isnull _target) then {
 			_target allowDamage true;
 			_target setCaptive false;
 			[_target,"amovppnemstpsraswrfldnon"] remoteExec ["playmove", 0, false];
+		};
+		
+		//Fix revive underwater
+		if(surfaceIsWater (getpos _target)) then {
+			[_target,""] remoteExec ["switchmove", 0, false];
+			[player,""] remoteExec ["switchmove", 0, false];
 		};
 		
 		private _attendant = [(configfile >> "CfgVehicles" >> typeof player),"attendant",0] call BIS_fnc_returnConfigEntry; 
