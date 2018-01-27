@@ -24,7 +24,7 @@ _unit setDamage 0.9;
 _unit setVelocity [0,0,0];
 _unit allowDammage false;
 _unit setCaptive true;
-if(surfaceIsWater getpos _unit && ((getPosASL _unit) select 2)>2 && (vehicle _unit == _unit)) then {
+if(surfaceIsWater getpos _unit && ((getPosASL _unit) select 2)<1 && (vehicle _unit == _unit)) then {
 	[_unit] call ATR_FNC_WashAshore;
 };
 
