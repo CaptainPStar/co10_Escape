@@ -21,7 +21,7 @@ if(Param_RevealMarkers == 2 || _hidden) then {
 		_trigger = createTrigger["EmptyDetector", _markerPosition];
 		_trigger setTriggerArea[200, 200, 0, false];
 		_trigger setTriggerActivation["GROUP", "PRESENT", false];
-		_trigger triggerAttachVehicle ([] call A3E_FNC_getPlayers);
+		_trigger triggerAttachVehicle [([] call A3E_FNC_getPlayers) select 0];
 		_activation = format["%1 setmarkerType %2;",str _marker,str _markerType];
 		_trigger setTriggerStatements["this && isserver",_activation ,""];
 	};
