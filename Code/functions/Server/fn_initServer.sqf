@@ -395,9 +395,9 @@ private _UseMotorPools = Param_MotorPools;
 					if(isNil("a3e_var_Escape_SearchLeader_civilianReporting")) then {
 						a3e_var_Escape_SearchLeader_civilianReporting = true;
 						publicVariable "a3e_var_Escape_SearchLeader_civilianReporting";
-						(_this select 1) addScore -4;
+						(_this select 1) addScore -5;
 					} else {
-						(_this select 1) addScore 1;
+						(_this select 1) addScore -1;
 					};
 					[name (_this select 1) + " has killed a civilian."] call drn_fnc_CL_ShowCommandTextAllClients;
 				}
@@ -405,10 +405,9 @@ private _UseMotorPools = Param_MotorPools;
 		} foreach _crew;
 		
 		if (random 100 < 20) then {
-			private ["_index", "_weaponItem"];
+			private ["_weaponItem"];
 			
-			_index = floor random count a3e_arr_CivilianCarWeapons;
-			_weaponItem = a3e_arr_CivilianCarWeapons select _index;
+			_weaponItem = selectRandom a3e_arr_CivilianCarWeapons;
 			
 			_vehicle addWeaponCargoGlobal [_weaponItem select 0, 1];
 			_vehicle addMagazineCargoGlobal [_weaponItem select 1, _weaponItem select 2];
