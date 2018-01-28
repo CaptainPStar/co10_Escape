@@ -399,6 +399,7 @@ private _UseMotorPools = Param_MotorPools;
 					} else {
 						(_this select 1) addScore -1;
 					};
+					(_this select 1) addRating 400; //Even out the minus score by killing civilians
 					[name (_this select 1) + " has killed a civilian."] call drn_fnc_CL_ShowCommandTextAllClients;
 				}
 			}];
