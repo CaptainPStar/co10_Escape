@@ -40,23 +40,30 @@ wreckRemovalMaxTime = 1800; //seconds
 {  
     class End1
     {
-        title = "Mission failed";
-        subtitle = "";
-        description = "We haven't made it home. Everybody is dead.";
+        title = "Escape failed";
+        subtitle = "Everybody is dead";
+        description = "We haven't made it home. Atleast the enemy won't get any intel from us.";
         pictureBackground = "";
     };
     class End2
     {
-        title = "Mission Completed";
+        title = "Mission successful";
         subtitle = "";
-        description = "We escaped the enemy and made it back home. Our gathered intel will be valuable in the upcoming invasion.";
+        description = "We escaped the enemy and made it back home. Our gathered intel about the enemy forces will be valuable in the upcoming invasion.";
         pictureBackground = "";
     };
 	class End3
     {
-        title = "Mission failed";
-        subtitle = "";
+        title = "Escape failed";
+        subtitle = "We left somebody behind";
         description = "We escaped the enemy but not everybody made it home!";
+        pictureBackground = "";
+    };
+	class End4
+    {
+        title = "Escape successful";
+        subtitle = "";
+        description = "We escaped but our actions did not go unnoticed. Members of the squad will be court-martialed.";
         pictureBackground = "";
     };
 };
