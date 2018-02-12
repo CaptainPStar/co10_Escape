@@ -423,7 +423,7 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	,"rhsusf_M1083A1P2_B_D_fmtv_usarmy"
 	,"rhsusf_M1083A1P2_B_M2_D_fmtv_usarmy"
 	,"rhsusf_M1083A1P2_B_M2_D_flatbed_fmtv_usarmy"
-	,"rhsusf_mrzr4_d_mud"//SOCOM];
+	,"rhsusf_mrzr4_d_mud"];//SOCOM
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	"rhssaf_un_uaz"
 	,"rhssaf_un_uaz_open"
