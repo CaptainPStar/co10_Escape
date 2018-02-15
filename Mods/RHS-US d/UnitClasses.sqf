@@ -66,8 +66,11 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"C_Van_01_box_F"
 	,"C_Van_01_transport_F"
 	,"C_Van_01_fuel_F"
-	,"C_Van_01_fuel_F"
-	,"C_Van_01_fuel_F"];
+	,"C_Offroad_02_unarmed_F"
+	,"C_Truck_02_fuel_F"
+	,"C_Truck_02_box_F"
+	,"C_Truck_02_transport_F"
+	,"C_Truck_02_covered_F"];
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -501,7 +504,9 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"C_SUV_01_F"
 	,"C_Van_01_box_F"
 	,"C_Van_01_transport_F"
-	,"C_Van_01_fuel_F"];
+	,"C_Van_01_fuel_F"
+	,"C_Offroad_02_unarmed_F"
+	,"C_Truck_02_covered_F"];
 
 // Vehicles, weapons and ammo at ammo depots
 
@@ -558,7 +563,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m16a4_grip", 50, 1, 3, ["rhs_m
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m16a4_carryhandle_M203", 50, 1, 3, ["rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_M441_HE"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_g36c", 10, 1, 2, ["rhssaf_30rnd_556x45_Tracers_G36"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m14ebrri_leu", 10, 1, 2, ["rhsusf_20Rnd_762x51_m118_special_Mag"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_g36kv", 10, 1, 2, ["rhs_30Rnd_545x39_AK"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_g36kv", 10, 1, 2, ["rhssaf_30rnd_556x45_Tracers_G36"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_hk416d10_m320", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red","rhs_mag_M441_HE"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m4_grip", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_mk18_KAC_d", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag"], 4];
@@ -693,7 +698,7 @@ a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_harris_bipod", 10, 1, 2];
 // Index 2: Number of magazines.
 a3e_arr_CivilianCarWeapons = [];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_makarov_pm", "rhs_mag_9x18_8_57N181S", 5];
-a3e_arr_CivilianCarWeapons pushback ["rhs_weap_ak74m_2mag_camo_npz", "rhs_30Rnd_545x39_AK", 5];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weapon_ak74m_desert_npz", "rhs_30Rnd_545x39_AK", 5];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_M590_5RD", "rhsusf_5Rnd_00Buck", 11];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_M590_8RD", "rhsusf_8Rnd_00Buck", 9];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_mk18_grip2_eotech_usmc", "rhs_mag_30Rnd_556x45_Mk318_Stanag", 9];
@@ -702,7 +707,7 @@ a3e_arr_CivilianCarWeapons pushback ["rhs_weap_M320", "rhs_mag_M433_HEDP", 10];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_ak74m_plummag_npz", "rhs_30Rnd_545x39_AK", 7];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_m240b_usmc", "rhsusf_100Rnd_762x51", 5];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_m16a4_grip_acog_usmc", "rhs_mag_30Rnd_556x45_Mk318_Stanag", 8];
-a3e_arr_CivilianCarWeapons pushback ["rhs_weap_XM2010_wd_leu", "rhsusf_5Rnd_300winmag_xm2010", 10];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_XM2010_d_leu", "rhsusf_5Rnd_300winmag_xm2010", 10];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_sr25_sup_marsoc", "rhsusf_20Rnd_762x51_m118_special_Mag", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_rshg2","rhs_rshg2_mag", 2];
 a3e_arr_CivilianCarWeapons pushback ["rhsusf_weap_MP7A2_aor1", "rhsusf_mag_40Rnd_46x30_AP", 8];
