@@ -1197,7 +1197,7 @@ a3e_arr_CASplane = [
 	,"rhs_mig29sm_vvs"
 	,"RHS_Su25SM_vvs"
 	,"RHS_T50_vvs_generic"
-	;"RHS_T50_vvs_generic_ext"
+	,"RHS_T50_vvs_generic_ext"
 	,"RHS_T50_vvs_blueonblue"];
 
 //////////////////////////////////////////////////////////////////

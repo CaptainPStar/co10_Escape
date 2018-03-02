@@ -698,7 +698,7 @@ a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_harris_bipod", 10, 1, 2];
 // Index 2: Number of magazines.
 a3e_arr_CivilianCarWeapons = [];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_makarov_pm", "rhs_mag_9x18_8_57N181S", 5];
-a3e_arr_CivilianCarWeapons pushback ["rhs_weapon_ak74m_desert_npz", "rhs_30Rnd_545x39_AK", 5];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_ak74m_desert_npz", "rhs_30Rnd_545x39_AK", 5];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_M590_5RD", "rhsusf_5Rnd_00Buck", 11];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_M590_8RD", "rhsusf_8Rnd_00Buck", 9];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_mk18_grip2_eotech_usmc", "rhs_mag_30Rnd_556x45_Mk318_Stanag", 9];
