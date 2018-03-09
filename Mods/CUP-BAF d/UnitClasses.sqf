@@ -332,17 +332,17 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [7, 7, 7, 4, 4, 8, 
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
 	"CUP_B_LR_MG_GB_W"
-	,"CUP_B_Ridgback_LMG_GB_W"
-	,"CUP_B_Ridgback_HMG_GB_W"
-	,"CUP_B_Ridgback_GMG_GB_W"
-	,"CUP_B_Mastiff_LMG_GB_W"
-	,"CUP_B_Jackal2_L2A1_GB_W"
-	,"CUP_B_Jackal2_GMG_GB_W"
-	,"CUP_B_BAF_Coyote_L2A1_W"
-	,"CUP_B_BAF_Coyote_GMG_W"
+	,"CUP_B_Ridgback_LMG_GB_D"
+	,"CUP_B_Ridgback_HMG_GB_D"
+	,"CUP_B_Ridgback_GMG_GB_D"
+	,"CUP_B_Mastiff_LMG_GB_D"
+	,"CUP_B_Jackal2_L2A1_GB_D"
+	,"CUP_B_Jackal2_GMG_GB_D"
+	,"CUP_B_BAF_Coyote_L2A1_D"
+	,"CUP_B_BAF_Coyote_GMG_D"
 	,"CUP_B_M1126_ICV_MK19_Desert"
-	,"CUP_B_FV432_Bulldog_GB_W_RWS"
-	,"CUP_B_FV432_Bulldog_GB_W"
+	,"CUP_B_FV432_Bulldog_GB_D_RWS"
+	,"CUP_B_FV432_Bulldog_GB_D"
 	,"CUP_I_SUV_Armored_ION"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
