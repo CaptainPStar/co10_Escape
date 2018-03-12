@@ -199,7 +199,7 @@ while {!_exitScript} do {
 		if ((diag_tickTime > _moveOutTimeSek + (_searchTimeMin * 60)) && (_state == "SEARCHING" || _state == "MOVING OUT")) exitWith {
 			_state = "RETURNING";
 		};
-		if (!("1Rnd_Leaflets_Guer_F" in magazines _chopper) && !(state == "RETURNING")) exitWith {
+		if (!("1Rnd_Leaflets_Guer_F" in magazines _chopper) && !(_state == "RETURNING")) exitWith {
 			_state = "RETURNING";
 		};
 		sleep 1;
