@@ -49,6 +49,7 @@ _obj = ["Land_Bunker_01_blocks_1_F",_center,[-8.90588,-12.6616,0],_rotation,90.7
 _obj = ["Land_Bunker_01_blocks_1_F",_center,[-8.75488,-14.3672,0],_rotation,0] call _fnc_createObject;
 _obj = ["Land_SandbagBarricade_01_hole_F",_center,[9.87732,-8.4917,0],_rotation,268.784] call _fnc_createObject;
 _obj = ["Land_Bunker_01_tall_F",_center,[8.11548,-3.84229,0],_rotation,269.456] call _fnc_createObject;
+_obj allowDamage false;
 _obj = ["Land_Bunker_01_small_F",_center,[6.03345,-13.6006,0],_rotation,359.472] call _fnc_createObject;
 _obj = ["Land_Bunker_01_blocks_3_F",_center,[-0.138062,-14.3682,0],_rotation,0] call _fnc_createObject;
 _obj = ["Land_Bunker_01_blocks_3_F",_center,[-5.29395,-14.3638,0],_rotation,0] call _fnc_createObject;

@@ -58,6 +58,7 @@ _obj = ["Land_ToiletBox_F",_center,[-9.8363,-16.4731,-0.413996],_rotation,269.50
 _obj = ["Land_ToiletBox_F",_center,[-9.76563,-13.8613,-0.413999],_rotation,269.504] call _fnc_createObject;
 _obj = ["Land_ToiletBox_F",_center,[-9.79028,-15.1392,-0.413998],_rotation,269.504] call _fnc_createObject;
 _obj = ["Land_Cargo_Tower_V1_F",_center,[0.448608,3.06445,-0.438],_rotation,0] call _fnc_createObject;
+_obj allowDamage false;
 _obj = ["Land_CncBarrierMedium_F",_center,[-9.55933,-2.3584,-0.438],_rotation,0] call _fnc_createObject;
 _obj = ["Land_CncBarrierMedium_F",_center,[-9.50989,-11.54,-0.438],_rotation,0] call _fnc_createObject;
 _obj = ["CargoNet_01_barrels_F",_center,[3.14526,-0.0991211,-0.413995],_rotation,88.1961] call _fnc_createObject;
