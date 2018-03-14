@@ -944,6 +944,16 @@
 				"ISLAND" : "Beketov",
 				"ISLANDNAME" : "Beketov"
 				}
+		},
+		{
+			"name" : "Isles of Cumbrae",
+			"class" : "Isles_of_Cumbrae",
+			"path" : "./Islands/Isles_of_Cumbrae/",
+			"replace" :
+				{
+				"ISLAND" : "Isles of Cumbrae",
+				"ISLANDNAME" : "Isles of Cumbrae"
+				}
 		}
 	],
 	"Missions" : [
@@ -1193,6 +1203,13 @@
 			"name" : "co10_Escape"
 		},
 		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "Isles_of-Cumbrae",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
 			"island" : "Altis",
 			"sqm": "Altis",
 			"mod" : "AT RHS CAF-EU",
@@ -1426,6 +1443,13 @@
 		{
 			"island" : "Beketov",
 			"sqm": "Beketov",
+			"mod" : "AT woodland RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "Isles_of-Cumbrae",
 			"mod" : "AT woodland RHS CAF-EU",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
@@ -1732,6 +1756,13 @@
 			"name" : "co10_Escape_RHS_US_VS_RU"
 		},
 		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "Isles_of_Cumbrae",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_VS_RU"
+		},
+		{
 			"island" : "Altis",
 			"sqm": "Altis",
 			"mod" : "RHS-US w",
@@ -1874,6 +1905,13 @@
 		{
 			"island" : "Beketov",
 			"sqm": "Beketov",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_VS_US"
+		},
+		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "Isles_of_Cumbrae",
 			"mod" : "RHS-US w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_RU_VS_US"
@@ -2280,6 +2318,20 @@
 		{
 			"island" : "Beketov",
 			"sqm": "Beketov",
+			"mod" : "CUP-US USMC",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "Isles_of_Cumbrae",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_VS_RU"
+		},
+		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "Isles_of_Cumbrae",
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
@@ -2523,6 +2575,13 @@
 			"name" : "co10_Escape_IFA3"
 		},
 		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "Isles_of_Cumbrae",
+			"mod" : "IFA3",
+			"replace" : {},
+			"name" : "co10_Escape_IFA3"
+		},
+		{
 			"island" : "Altis",
 			"sqm": "Altis",
 			"mod" : "IFA3+LEN",
@@ -2591,6 +2650,13 @@
 			"mod" : "IFA3+LEN",
 			"replace" : {},
 			"name" : "co10_Escape_IFA3-LEN"
+		},
+		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "Isles_of_Cumbrae",
+			"mod" : "IFA3+LEN",
+			"replace" : {},
+			"name" : "co10_Escape_IFA3-LEN"
 		}
 	],
 	"Addons" : [
@@ -2605,6 +2671,14 @@
 		{
 			"name" : "CUP",
 			"mods" : ["CUP SLA","CUP-US Army d","CUP-BAF d","CUP RU","CUP Taki","CUP-US USMC"]
+		},
+		{
+			"name" : "RHS",
+			"mods" : ["RHS w","RHS d","RHS mf","RHS-US w","RHS-US d"]
+		},
+		{
+			"name" : "IFA3",
+			"mods" : ["IFA3","IFA3+LEN"]
 		}
 	]
 	
