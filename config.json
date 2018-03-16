@@ -553,6 +553,26 @@
 				}
 		},
 		{
+			"name" : "CUP-BAF w",
+			"path" : "./Mods/CUP-BAF w/",
+			"require" : ["CUP_Creatures_Military_USArmy","CUP_Creatures_Military_PMC","CUP_Creatures_Military_Russia"],
+			"replace" :
+				{
+					"MOD" : "CUP RU vs BAF",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "CUP_O_RU_Officer",
+					"PLAYERUNIT_2" : "CUP_O_RU_Soldier_GL",
+					"PLAYERUNIT_3" : "CUP_O_RU_Soldier_Marksman",
+					"PLAYERUNIT_4" : "CUP_O_RU_Engineer",
+					"PLAYERUNIT_5" : "CUP_O_RU_Soldier_AA",
+					"PLAYERUNIT_6" : "CUP_O_RU_Soldier_AR",
+					"PLAYERUNIT_7" : "CUP_O_RU_Soldier_AT",
+					"PLAYERUNIT_8" : "CUP_O_RU_Soldier_MG",
+					"PLAYERUNIT_9" : "CUP_O_RU_Soldier",
+					"PLAYERUNIT_10" : "CUP_O_RU_Medic"
+				}
+		},
+		{
 			"name" : "Massi AFR",
 			"path" : "./Mods/Massi AFR/",
 			"require" : ["mas_afr_rebl_b"],
@@ -946,6 +966,16 @@
 				}
 		},
 		{
+			"name" : "Vis",
+			"class" : "Vis",
+			"path" : "./Islands/Vis/",
+			"replace" :
+				{
+				"ISLAND" : "Vis",
+				"ISLANDNAME" : "Vis"
+				}
+		},
+		{
 			"name" : "Isles of Cumbrae",
 			"class" : "rof_isles_of_cumbrae",
 			"path" : "./Islands/rof_isles_of_cumbrae/",
@@ -1191,6 +1221,13 @@
 		{
 			"island" : "Beketov",
 			"sqm": "Beketov",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
+			"island" : "Vis",
+			"sqm": "Vis",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape"
@@ -1443,6 +1480,13 @@
 		{
 			"island" : "Beketov",
 			"sqm": "Beketov",
+			"mod" : "AT woodland RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Vis",
+			"sqm": "Vis",
 			"mod" : "AT woodland RHS CAF-EU",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
@@ -1756,6 +1800,13 @@
 			"name" : "co10_Escape_RHS_US_VS_RU"
 		},
 		{
+			"island" : "Vis",
+			"sqm": "Vis",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_VS_RU"
+		},
+		{
 			"island" : "Isles of Cumbrae",
 			"sqm": "rof_isles_of_cumbrae",
 			"mod" : "RHS w",
@@ -1910,6 +1961,13 @@
 			"name" : "co10_Escape_RHS_RU_VS_US"
 		},
 		{
+			"island" : "Vis",
+			"sqm": "Vis",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_VS_US"
+		},
+		{
 			"island" : "Isles of Cumbrae",
 			"sqm": "rof_isles_of_cumbrae",
 			"mod" : "RHS-US w",
@@ -1926,6 +1984,13 @@
 		{
 			"island" : "Altis",
 			"sqm": "Altis",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
+		},
+		{
+			"island" : "Altis",
+			"sqm": "Altis",
 			"mod" : "CUP RU",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_USMC_VS_RU"
@@ -1936,6 +2001,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Stratis",
+			"sqm": "Stratis",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Stratis",
@@ -1952,11 +2024,32 @@
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
 		},
 		{
+			"island" : "Tanoa",
+			"sqm": "Tanoa",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
+		},
+		{
+			"island" : "Tanoa",
+			"sqm": "Tanoa",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_VS_RU"
+		},
+		{
 			"island" : "Malden 2035",
 			"sqm": "Malden",
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Malden 2035",
+			"sqm": "Malden",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Malden 2035",
@@ -1971,6 +2064,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Bornholm",
+			"sqm": "Bornholm",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Bornholm",
@@ -1985,6 +2085,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Chernarus",
+			"sqm": "Chernarus",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Chernarus",
@@ -1999,6 +2106,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"sqm": "Chernarus_Summer",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Chernarus_Summer",
@@ -2013,6 +2127,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Podagorsk",
+			"sqm": "FDF_Isle1_a",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Podagorsk",
@@ -2027,6 +2148,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Panthera",
+			"sqm": "Panthera3",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Panthera",
@@ -2041,6 +2169,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Winter Panthera",
+			"sqm": "Winthera3",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Winter Panthera",
@@ -2055,6 +2190,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Lingor",
@@ -2094,6 +2236,13 @@
 		{
 			"island" : "Abramia",
 			"sqm": "Abramia",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
+		},
+		{
+			"island" : "Abramia",
+			"sqm": "Abramia",
 			"mod" : "CUP RU",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_USMC_VS_RU"
@@ -2104,6 +2253,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Celle",
+			"sqm": "mbg_celle2",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Celle",
@@ -2118,6 +2274,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Thirsk",
+			"sqm": "Thirsk",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Thirsk",
@@ -2132,6 +2295,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Esseker",
+			"sqm": "Esseker",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Esseker",
@@ -2167,6 +2337,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Thirsk Winter",
+			"sqm": "ThirskW",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Thirsk Winter",
@@ -2267,6 +2444,13 @@
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
 		},
 		{
+			"island" : "Everon",
+			"sqm": "Eden",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
+		},
+		{
 			"island" : "Malden",
 			"sqm": "Abel",
 			"mod" : "CUP RU",
@@ -2279,6 +2463,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Malden",
+			"sqm": "Abel",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Kolgujev",
@@ -2295,6 +2486,13 @@
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
 		},
 		{
+			"island" : "Kolgujev",
+			"sqm": "Cain",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
+		},
+		{
 			"island" : "Nogova",
 			"sqm": "Noe",
 			"mod" : "CUP RU",
@@ -2307,6 +2505,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Nogova",
+			"sqm": "Noe",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Beketov",
@@ -2323,6 +2528,34 @@
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
 		},
 		{
+			"island" : "Beketov",
+			"sqm": "Beketov",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
+		},
+		{
+			"island" : "Vis",
+			"sqm": "Vis",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_VS_RU"
+		},
+		{
+			"island" : "Vis",
+			"sqm": "Vis",
+			"mod" : "CUP-US USMC",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Vis",
+			"sqm": "Vis",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
+		},
+		{
 			"island" : "Isles of Cumbrae",
 			"sqm": "rof_isles_of_cumbrae",
 			"mod" : "CUP RU",
@@ -2335,6 +2568,13 @@
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_VS_USMC"
+		},
+		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "rof_isles_of_cumbrae",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
 		},
 		{
 			"island" : "Clafghan",
@@ -2575,6 +2815,13 @@
 			"name" : "co10_Escape_IFA3"
 		},
 		{
+			"island" : "Vis",
+			"sqm": "Vis",
+			"mod" : "IFA3",
+			"replace" : {},
+			"name" : "co10_Escape_IFA3"
+		},
+		{
 			"island" : "Isles of Cumbrae",
 			"sqm": "rof_isles_of_cumbrae",
 			"mod" : "IFA3",
@@ -2652,6 +2899,13 @@
 			"name" : "co10_Escape_IFA3-LEN"
 		},
 		{
+			"island" : "Vis",
+			"sqm": "Vis",
+			"mod" : "IFA3+LEN",
+			"replace" : {},
+			"name" : "co10_Escape_IFA3-LEN"
+		},
+		{
 			"island" : "Isles of Cumbrae",
 			"sqm": "rof_isles_of_cumbrae",
 			"mod" : "IFA3+LEN",
@@ -2670,7 +2924,7 @@
 		},
 		{
 			"name" : "CUP",
-			"mods" : ["CUP SLA","CUP-US Army d","CUP-BAF d","CUP RU","CUP Taki","CUP-US USMC"]
+			"mods" : ["CUP SLA","CUP-US Army d","CUP-BAF d","CUP-BAF w","CUP RU","CUP Taki","CUP-US USMC"]
 		},
 		{
 			"name" : "RHS",
