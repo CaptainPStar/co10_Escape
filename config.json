@@ -994,6 +994,16 @@
 				"ISLAND" : "Schwemlitz",
 				"ISLANDNAME" : "Schwemlitz"
 				}
+		},
+		{
+			"name" : "Diyala",
+			"class" : "DYA",
+			"path" : "./Islands/DYA/",
+			"replace" :
+				{
+				"ISLAND" : "Diyala",
+				"ISLANDNAME" : "Diyala"
+				}
 		}
 	],
 	"Missions" : [
@@ -1264,6 +1274,13 @@
 			"name" : "co10_Escape"
 		},
 		{
+			"island" : "Diyala",
+			"sqm": "Diyala",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape"
+		},
+		{
 			"island" : "Altis",
 			"sqm": "Altis",
 			"mod" : "AT RHS CAF-EU",
@@ -1519,6 +1536,13 @@
 			"island" : "Schwemlitz",
 			"sqm": "Schwemlitz",
 			"mod" : "AT woodland RHS CAF-EU",
+			"replace" : {},
+			"name" : "co10_Escape_AT"
+		},
+		{
+			"island" : "Diyala",
+			"sqm": "Diyala",
+			"mod" : "AT desert RHS CAF-ME",
 			"replace" : {},
 			"name" : "co10_Escape_AT"
 		},
@@ -2013,6 +2037,20 @@
 			"name" : "co10_Escape_RHS_RU_VS_US"
 		},
 		{
+			"island" : "Diyala",
+			"sqm": "Diyala",
+			"mod" : "RHS mf",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_VS_RU"
+		},
+		{
+			"island" : "Diyala",
+			"sqm": "Diyala",
+			"mod" : "RHS-US d",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_VS_US"
+		},
+		{
 			"island" : "Altis",
 			"sqm": "Altis",
 			"mod" : "CUP-US USMC",
@@ -2741,6 +2779,27 @@
 			"name" : "co10_Escape_CUP_USMC_VS_SLA"
 		},
 		{
+			"island" : "Diyala",
+			"sqm": "Diyala",
+			"mod" : "CUP-US Army d",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_US_ARMY"
+		},
+		{
+			"island" : "Diyala",
+			"sqm": "Diyala",
+			"mod" : "CUP-BAF d",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_VS_BAF"
+		},
+		{
+			"island" : "Diyala",
+			"sqm": "Diyala",
+			"mod" : "CUP Taki",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Ger_VS_Taki"
+		},
+		{
 			"island" : "Isla Duala",
 			"sqm": "IslaDuala3",
 			"mod" : "Massi AFR",
@@ -2799,6 +2858,13 @@
 		{
 			"island" : "Fallujah",
 			"sqm": "Fallujah",
+			"mod" : "Massi AFR",
+			"replace" : {},
+			"name" : "co10_Escape_MassiAFR"
+		},
+		{
+			"island" : "Diyala",
+			"sqm": "Diyala",
 			"mod" : "Massi AFR",
 			"replace" : {},
 			"name" : "co10_Escape_MassiAFR"
@@ -3003,6 +3069,10 @@
 			"name" : "RHS",
 			"mods" : ["RHS w","RHS d","RHS mf","RHS-US w","RHS-US d"]
 		},
+		{
+			"name" : "Massi",
+			"mods" : ["Massi AFR"]
+		,
 		{
 			"name" : "IFA3",
 			"mods" : ["IFA3","IFA3+LEN"]
