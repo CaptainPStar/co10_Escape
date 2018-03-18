@@ -1,5 +1,5 @@
 #define VERSION "{* VERSION *}"
-#define MISSIONNAME "{* MISSION *} {* ISLANDNAME *} {* MOD *}"
+#define MISSIONNAME "{* MISSION_FULL *}"
 #define MISSIONNAMEFULL "{* MISSION_FULL *} {* ISLANDNAME *} {* MOD *} {* VERSION *}"
 
 //--- [Controls Style Preprocessors]

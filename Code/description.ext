@@ -3,20 +3,19 @@
 // Mission Header
 class Header
 {
-  gameType = Coop;
+  gameType = Escape;
   minPlayers = 1;
   maxPlayers = 10;
 };
 
-
-onLoadMission = MISSIONNAME;
+onLoadName = MISSIONNAME;
+onLoadMission = MISSIONNAMEFULL;
 OnLoadMissionTime = FALSE;
 dev = "NeoArmageddon and Scruffy";
-briefingName = MISSIONNAME;
+briefingName = MISSIONNAMEFULL;
 author = "NeoArmageddon and Scruffy";
 overviewPicture = "a3\Missions_F_Gamma\data\img\MP_COOP_m03_overview_CA.paa";
 overviewText = MISSIONNAMEFULL;
-onLoadName = MISSIONNAME;
 loadScreen = "escape_banner.paa"; 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
