@@ -56,7 +56,7 @@ _aquaticPatrolZoneNo = 0;
 	// Set village trigger
 	//#### We should add two trigger, one for population one for depopulation ######
 
-	_trigger = createTrigger["EmptyDetector", _aquaticPatrolZonePos];
+	_trigger = createTrigger["EmptyDetector", _aquaticPatrolZonePos, false];
 	_trigger triggerAttachVehicle [vehicle _referenceUnit];
 	_trigger setTriggerArea[_spawnRadius, _spawnRadius, 0, false];
 	_trigger setTriggerActivation["MEMBER", "PRESENT", true];

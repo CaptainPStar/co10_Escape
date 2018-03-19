@@ -10,20 +10,20 @@ if(Param_RevealMarkers == 0) then {
 };
 if(Param_RevealMarkers == 1 && !_hidden) then {
 		_marker setMarkerType "hd_unknown";
-		_trigger = createTrigger["EmptyDetector", _markerPosition];
+		_trigger = createTrigger["EmptyDetector", _markerPosition, false];
 		_trigger setTriggerArea[200, 200, 0, false];
 		_trigger setTriggerActivation[A3E_VAR_Side_Blufor_Str, "PRESENT", false];
 		_activation = format["%1 setmarkerType %2;",str _marker,str _markerType];
-		_trigger setTriggerStatements["this && isserver",_activation ,""];
+		_trigger setTriggerStatements["this",_activation ,""];
 	};
 if(Param_RevealMarkers == 2 || _hidden) then {
 		_marker setMarkerType "Empty";
-		_trigger = createTrigger["EmptyDetector", _markerPosition];
+		_trigger = createTrigger["EmptyDetector", _markerPosition, false];
 		_trigger setTriggerArea[200, 200, 0, false];
 		_trigger setTriggerActivation["GROUP", "PRESENT", false];
 		_trigger triggerAttachVehicle [([] call A3E_FNC_getPlayers) select 0];
 		_activation = format["%1 setmarkerType %2;",str _marker,str _markerType];
-		_trigger setTriggerStatements["this && isserver",_activation ,""];
+		_trigger setTriggerStatements["this",_activation ,""];
 	};
 if(Param_RevealMarkers == 3) then {
 		deleteMarker _marker;
