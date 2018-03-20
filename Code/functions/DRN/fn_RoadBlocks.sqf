@@ -1,19 +1,19 @@
-private ["_referenceGroup", "_side", "_infantryClasses", "_mannedVehicleClasses", "_numberOfRoadBlocks", "_minSpawnDistance", "_maxSpawnDistance", "_minDistanceBetweenRoadBlocks", "_minSpawnDistanceAtStartup", "_fnc_OnSpawnInfantryGroup", "_fnc_OnSpawnMannedVehicle", "_debug"];
+private ["_side", "_infantryClasses", "_mannedVehicleClasses", "_numberOfRoadBlocks", "_minSpawnDistance", "_maxSpawnDistance", "_minDistanceBetweenRoadBlocks", "_minSpawnDistanceAtStartup", "_fnc_OnSpawnInfantryGroup", "_fnc_OnSpawnMannedVehicle", "_debug"];
 private ["_roadBlocks", "_roadSegment", "_roadBlockItem", "_roadBlocksDeleted", "_instanceNo", "_tempRoadBlocks", "_units", "_group", "_firstLoop", "_minDistance", "_isFaction", "_factionsArray"];
 private ["_possibleInfantryTypes", "_possibleVehicleTypes", "_fnc_FindRoadBlockSegment", "_fnc_CreateRoadBlock"];
 
-_referenceGroup = _this select 0;
-if (count _this > 1) then { _side = _this select 1; } else { _side = west; };
-if (count _this > 2) then { _infantryClasses = _this select 2; } else { _infantryClasses = "USMC"; };
-if (count _this > 3) then { _mannedVehicleClasses = _this select 3; } else { _mannedVehicleClasses = "USMC"; };
-if (count _this > 4) then { _numberOfRoadBlocks = _this select 4; } else { _numberOfRoadBlocks = 10; };
-if (count _this > 5) then { _minSpawnDistance = _this select 5; } else { _minSpawnDistance = 1500; };
-if (count _this > 6) then { _maxSpawnDistance = _this select 6; } else { _maxSpawnDistance = 2000; };
-if (count _this > 7) then { _minDistanceBetweenRoadBlocks = _this select 7; } else { _minDistanceBetweenRoadBlocks = 500; };
-if (count _this > 8) then { _minSpawnDistanceAtStartup = _this select 8; } else { _minSpawnDistanceAtStartup = 300; };
-if (count _this > 9) then { _fnc_OnSpawnInfantryGroup = _this select 9; } else { _fnc_OnSpawnInfantryGroup = {}; };
-if (count _this > 10) then { _fnc_OnSpawnMannedVehicle = _this select 10; } else { _fnc_OnSpawnMannedVehicle = {}; };
-if (count _this > 11) then { _debug = _this select 11; } else { _debug = false; };
+
+if (count _this > 0) then { _side = _this select 0; } else { _side = west; };
+if (count _this > 1) then { _infantryClasses = _this select 1; } else { _infantryClasses = "USMC"; };
+if (count _this > 2) then { _mannedVehicleClasses = _this select 2; } else { _mannedVehicleClasses = "USMC"; };
+if (count _this > 3) then { _numberOfRoadBlocks = _this select 3; } else { _numberOfRoadBlocks = 10; };
+if (count _this > 4) then { _minSpawnDistance = _this select 4; } else { _minSpawnDistance = 1500; };
+if (count _this > 5) then { _maxSpawnDistance = _this select 5; } else { _maxSpawnDistance = 2000; };
+if (count _this > 6) then { _minDistanceBetweenRoadBlocks = _this select 6; } else { _minDistanceBetweenRoadBlocks = 500; };
+if (count _this > 7) then { _minSpawnDistanceAtStartup = _this select 7; } else { _minSpawnDistanceAtStartup = 300; };
+if (count _this > 8) then { _fnc_OnSpawnInfantryGroup = _this select 8; } else { _fnc_OnSpawnInfantryGroup = {}; };
+if (count _this > 9) then { _fnc_OnSpawnMannedVehicle = _this select 9; } else { _fnc_OnSpawnMannedVehicle = {}; };
+if (count _this > 10) then { _debug = _this select 10; } else { _debug = false; };
 
 _factionsArray = [A3E_VAR_Side_Ind , A3E_VAR_Side_Opfor];
 
@@ -21,20 +21,22 @@ _factionsArray = [A3E_VAR_Side_Ind , A3E_VAR_Side_Opfor];
 _roadBlocks = [];
 
 _fnc_FindRoadBlockSegment = {
-    private ["_roadBlocks", "_referenceGroup", "_minSpawnDistance", "_maxSpawnDistance", "_minDistanceBetweenRoadBlocks", "_nullVal"];
+    private ["_roadBlocks", "_referenceUnits", "_minSpawnDistance", "_maxSpawnDistance", "_minDistanceBetweenRoadBlocks", "_nullVal"];
     private ["_refUnit", "_isOk", "_tries", "_spawnDistanceDiff", "_refPosX", "_refPosY", "_dir", "_tooClose", "_tooFarAwayFromAll"];
 
     _roadBlocks = _this select 0;
-    _referenceGroup = _this select 1;
+    _referenceUnits  = _this select 1;
     _minSpawnDistance = _this select 2;
     _maxSpawnDistance = _this select 3;
     _minDistanceBetweenRoadBlocks = _this select 4;
 	private _result = objNull;
-    
     _spawnDistanceDiff = _maxSpawnDistance - _minSpawnDistance;//Half?
     _roadSegment = _result;
-    _refUnit = vehicle (selectRandom (units _referenceGroup));
+	
+    _refUnit = vehicle (selectRandom _referenceUnits);
     
+	if(isNil "_refUnit") exitwith {objNull;};
+	if(isNull(_refUnit)) exitwith {objNull;};
     _isOk = false;
     _tries = 0;
     while {!_isOk && _tries < 100} do {
@@ -73,8 +75,8 @@ _fnc_FindRoadBlockSegment = {
                 if (!_tooFarAway) then {
                     _tooFarAwayFromAll = false;
                 };
-            } foreach units _referenceGroup;
-            
+            } foreach _referenceUnits;
+			
             if (_tooClose || _tooFarAwayFromAll) then {
                 _isOk = false;
             };
@@ -219,7 +221,7 @@ while {true} do {
             _minDistance = _minSpawnDistance;
         };
 		
-        _roadSegment = [_roadBlocks, _referenceGroup, _minDistance, _maxSpawnDistance, _minDistanceBetweenRoadBlocks] call _fnc_FindRoadBlockSegment;
+        _roadSegment = [_roadBlocks, ([] call A3E_fnc_getPlayers), _minDistance, _maxSpawnDistance, _minDistanceBetweenRoadBlocks] call _fnc_FindRoadBlockSegment;
         if(!(isNil "_roadSegment")) then {
 			if (!isNull _roadSegment) then {
 				private _side = _factionsArray select (floor (random (count _factionsArray)));
