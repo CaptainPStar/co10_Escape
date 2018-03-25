@@ -17,5 +17,5 @@ with uiNamespace do {
  _html ctrlSetBackgroundColor [0,0,0,1]; 
  _html ctrlSetPosition [0,0,0,0]; 
  _html ctrlCommit 0; 
- _html htmlLoad "http://escape.anzp.de/track.php?map=" + _island + "&mod=" + _mod + "&version=" + _version + "&players="+str count(call BIS_fnc_listPlayers)+"&end="+_endType+"&t1="+str A3E_Task_Prison_Complete+"&t2="+str A3E_Task_Map_Complete+"&t3="+str A3E_Task_ComCenter_Complete+"&t4="+str A3E_Task_Exfil_Complete; 
+ _html htmlLoad "http://escape.anzp.de/track.php?map=" + _island + "&mod=" + _mod + "&version=" + _version + "&players="+str count(call BIS_fnc_listPlayers)+"&end="+_endType+"&t1="+str A3E_Task_Prison_Complete+"&t2="+str A3E_Task_Map_Complete+"&t3="+str A3E_Task_ComCenter_Complete+"&t4="+str A3E_Task_Exfil_Complete+"&server="+serverName; 
 };
