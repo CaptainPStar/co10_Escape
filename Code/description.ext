@@ -18,6 +18,10 @@ overviewPicture = "a3\Missions_F_Gamma\data\img\MP_COOP_m03_overview_CA.paa";
 overviewText = MISSIONNAMEFULL;
 loadScreen = "escape_banner.paa"; 
 
+EscapeIsland = ISLAND;
+EscapeMod = MOD;
+EscapeVersion = VERSION;
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 Respawn = "INSTANT";
 RespawnDelay = 60;
@@ -184,7 +188,11 @@ class RscTitles {
 			};
 	};
 };
-
+class CfgCommands {
+   allowedHTMLLoadURIs[] += {
+      "http://escape.anzp.de/track.php*"
+   };
+};
 class CfgLeaflets
 {
 	class Guer // Configuration for 1Rnd_Leaflets_Guer_F

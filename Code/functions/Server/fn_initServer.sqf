@@ -20,7 +20,8 @@ if(!isNil("Param_Debug")) then {
 };
 publicVariable "A3E_Debug";
 
-
+//Load Statistics
+[] spawn A3E_fnc_LoadStatistics;
 // Add crashsite here
 //##############
 

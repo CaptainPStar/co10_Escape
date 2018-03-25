@@ -85,6 +85,7 @@ class CfgFunctions
 			class firedNearExtraction {};
 			class weather {};
 			class FindSpawnRoad {};
+			class EndMissionServer {};
 		};
 		class Templates
 		{
@@ -110,6 +111,12 @@ class CfgFunctions
 			class Chronos_Run {};
 			class Chronos_Register {};
 			class Chronos_Dispatch {};
+		};
+		class Statistics
+		{
+			class LoadStatistics {};
+			class WriteStatisticsToBriefing {};
+			class SaveStatistics {};
 		};
 	};
 	class drn
