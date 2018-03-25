@@ -67,6 +67,16 @@ _date = date;
 if(_hour==24) then {
 	_hour = round(random(24));
 };
+
+//Random Daytime
+if(_hour==25) then {
+	_hour = 6+round(random(14)); //Between 0600 and 2000
+};
+//Random Nighttime
+if(_hour==26) then {
+	_hour = 20 + round(random(8)); //Between 2000 and 0400
+	_hour = _hour % 24;
+};
 _date set [3,_hour];
 [_date] call bis_fnc_setDate;
 
