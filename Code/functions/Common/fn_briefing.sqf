@@ -124,11 +124,11 @@ if(isNil("A3E_Task_Prison_Failed")) then {
 	_trigger setTriggerStatements["A3E_Task_Prison_Failed", "A3E_Task_Prison setTaskState ""Failed"";", ""];
 
 if(isserver) then {
-	_trigger = createTrigger["EmptyDetector", [0,0,0]];
+	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
 	_trigger setTriggerArea[0, 0, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", false];
 	_trigger setTriggerTimeout [0, 0, 0, false];
-	_trigger setTriggerStatements["isServer && A3E_EscapeHasStarted && ({(_x distance A3E_StartPos) > 50} count playableUnits)>0", "A3E_Task_Prison_Complete = true;publicVariable ""A3E_Task_Prison_Complete"";", ""];
+	_trigger setTriggerStatements["A3E_EscapeHasStarted && ({(_x distance A3E_StartPos) > 50} count (call BIS_fnc_listPlayers))>0", "A3E_Task_Prison_Complete = true;publicVariable ""A3E_Task_Prison_Complete"";", ""];
 };
 
 // Task find Map

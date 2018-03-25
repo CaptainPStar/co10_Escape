@@ -70,14 +70,15 @@ AT_Revive_Camera = Param_ReviveView;
 player setvariable["A3E_PlayerInitializedLocal",true,true];
 waituntil{sleep 0.1;(!isNil("A3E_FenceIsCreated") && !isNil("A3E_StartPos") && (player getvariable["A3E_PlayerInitializedServer",false]))};
 
-sleep 1.0;
-
 diag_log format["Escape debug: %1 is now ready (clientside).", name player];
 
-titleFadeOut 1;
-sleep 2;
-["Somewhere on", A3E_WorldName , str (date select 2) + "/" + str (date select 1) + "/" + str (date select 0) + " " + str (date select 3) + ":00"] spawn BIS_fnc_infoText;
+titleFadeOut 0.5;
+
 
 waituntil{sleep 0.5;!isNil("A3E_EscapeHasStarted")};
 
 player setCaptive false;
+[] spawn {
+	waituntil{sleep 0.5;A3E_Task_Prison_Complete};
+	["Somewhere on", A3E_WorldName , str (date select 2) + "/" + str (date select 1) + "/" + str (date select 0) + " " + str (date select 3) + ":00"] spawn BIS_fnc_infoText;
+};
