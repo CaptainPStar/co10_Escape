@@ -19,7 +19,7 @@ private _html = _emptyDisplay ctrlCreate ["RscHTML", -1];
 _html ctrlSetBackgroundColor [0,0,0,1]; 
 _html ctrlSetPosition [0,0,0,0]; 
 _html ctrlCommit 0; 
-private _uri = "http://escape.anzp.de/track.php?map=" + _island + "&mod=" + _mod + "&version=" + _version + "&players="+str count(call BIS_fnc_listPlayers)+"&end="+_endType+"&t1="+str A3E_Task_Prison_Complete+"&t2="+str A3E_Task_Map_Complete+"&t3="+str A3E_Task_ComCenter_Complete+"&t4="+str A3E_Task_Exfil_Complete+"&server="+serverName;
+private _uri = "http://escape.anzp.de/track.php?map=" + _island + "&mod=" + _mod + "&version=" + _version + "&players="+str count(call BIS_fnc_listPlayers)+"&end="+_endType+"&t1="+str A3E_Task_Prison_Complete+"&t2="+str A3E_Task_Map_Complete+"&t3="+str A3E_Task_ComCenter_Complete+"&t4="+str A3E_Task_Exfil_Complete+"&server="+serverName+"&time="+str round(time);
 _html htmlLoad _uri;
 diag_log _uri; 
 _display closeDisplay 1;
