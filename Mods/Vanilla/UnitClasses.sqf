@@ -776,7 +776,11 @@ a3e_arr_MortarSite = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
 	"O_Plane_CAS_02_F"
-	,"I_Plane_Fighter_03_CAS_F"];
+	,"I_Plane_Fighter_03_CAS_F"
+	,"O_Plane_Fighter_02_Cluster_F"
+	,"O_Plane_CAS_02_Cluster_F"
+	,"I_Plane_Fighter_04_Cluster_F"
+	,"I_Plane_Fighter_03_Cluster_F"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite

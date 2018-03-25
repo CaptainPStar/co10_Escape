@@ -747,8 +747,12 @@ a3e_arr_MortarSite = [
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
-	"O_T_VTOL_02_infantry_F"
-	,"O_T_VTOL_02_infantry_F"];
+	"O_Plane_CAS_02_F"
+	,"I_Plane_Fighter_03_CAS_F"
+	,"O_Plane_Fighter_02_Cluster_F"
+	,"O_Plane_CAS_02_Cluster_F"
+	,"I_Plane_Fighter_04_Cluster_F"
+	,"I_Plane_Fighter_03_Cluster_F"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
