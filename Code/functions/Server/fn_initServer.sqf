@@ -586,15 +586,23 @@ waitUntil {scriptDone _scriptHandle};
         
         {
             _unit = _x; //(units _guardGroup) select 0;
+			
             _unit setUnitRank "CAPTAIN";
+			
 			_unit unlinkItem "ItemMap";
             _unit unlinkItem "ItemCompass";
             _unit unlinkItem "ItemGPS";
 			
-			if(random 100 < 80) then {
-				removeAllPrimaryWeaponItems _unit;
-				
-			};
+			removeBackpackGlobal _unit;
+			
+			_unit removeWeaponGlobal (secondaryWeapon _unit);
+			
+			[_unit,0,0,0,0,0] call BIS_fnc_limitWeaponItems;
+			[_unit,2,0,0,0,0] call BIS_fnc_limitWeaponItems;
+			
+			[_unit,[0.2,1.0],[0.3,0.6],[0.6,1]] call BIS_fnc_limitAmmunition;
+			[_unit,0,0,0,0,100,60,60] call BIS_fnc_limitItems;
+			
 			private["_hmd"];
 			_hmd = hmd _unit;
             if ((random 100 > 20) || (Param_NoNightvision==1)) then {
@@ -608,8 +616,7 @@ waitUntil {scriptDone _scriptHandle};
 			
 			//This should remove all types of handgrenades (for example RHS)
             _unit removeMagazines "Handgrenade";
-            
-            _unit setVehicleAmmo 0.3 + random 0.7;
+
 
         } foreach units _guardGroup;
         
