@@ -88,7 +88,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	_limit = [player] call BIS_fnc_limitAmmunition;
 	_limit = [player,[],[0.5,0.5],[0,1]] call BIS_fnc_limitAmmunition;
 */
-	[_this,[0.2,1.0],[0.3,0.6],[0.6,1]] call BIS_fnc_limitAmmunition;
+	[_this,[0.2,1.0],[0.5,0.8],[0.6,1]] call BIS_fnc_limitAmmunition;
 
 	
 	/*
