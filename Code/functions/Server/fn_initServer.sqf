@@ -70,7 +70,7 @@ if(_hour==24) then {
 
 //Random Daytime
 if(_hour==25) then {
-	_hour = 6+round(random(14)); //Between 0600 and 2000
+	_hour = 6+round(random(12)); //Between 0600 and 1800
 };
 //Random Nighttime
 if(_hour==26) then {
@@ -78,6 +78,7 @@ if(_hour==26) then {
 	_hour = _hour % 24;
 };
 _date set [3,_hour];
+_date set [4,0];
 [_date] call bis_fnc_setDate;
 
 setTimeMultiplier Param_TimeMultiplier;
