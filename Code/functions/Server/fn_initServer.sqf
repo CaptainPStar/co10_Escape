@@ -388,7 +388,7 @@ private _UseMotorPools = Param_MotorPools;
 		};
 	};
 	
-	_radius = _enemySpawnDistance + 500;
+	_radius = _enemySpawnDistance - 500;
 	_vehiclesCount = round (_vehiclesPerSqkm * (_radius / 1000) * (_radius / 1000) * 3.141592);
 	
 	_fnc_onSpawnCivilian = {
