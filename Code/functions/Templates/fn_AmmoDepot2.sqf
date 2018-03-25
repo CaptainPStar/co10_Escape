@@ -231,6 +231,8 @@ _obj setPosATL _pos;
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
+
         
         {
             _box addWeaponCargoGlobal _x;
@@ -279,6 +281,7 @@ _obj setPosATL _pos;
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
         
         {
             _box addWeaponCargoGlobal _x;
@@ -333,6 +336,7 @@ _obj setPosATL _pos;
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
         
         {
             _box addWeaponCargoGlobal _x;
@@ -401,6 +405,7 @@ _obj setPosATL _pos;
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
         
         {
             _box addWeaponCargoGlobal _x;
@@ -450,6 +455,7 @@ _obj setPosATL _pos;
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
         
         {
             _box addItemCargoGlobal _x;
@@ -497,6 +503,7 @@ _obj setPosATL _pos;
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
         
         {
             _box addWeaponCargoGlobal _x;
