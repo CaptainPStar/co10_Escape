@@ -253,7 +253,9 @@ a3e_arr_Escape_InfantryTypes = [
 	,"O_Sharpshooter_F"
 	,"O_Pathfinder_F"
 	,"O_HeavyGunner_F"
-	,"O_G_Sharpshooter_F"];
+	,"O_soldier_UAV_06_F"
+	,"O_soldier_UAV_06_medical_F"
+	,"O_soldier_mine_F"];
 a3e_arr_Escape_InfantryTypes_Ind = [
 	"I_engineer_F"
 	,"I_engineer_F"
@@ -301,7 +303,9 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"I_support_GMG_F"
 	,"I_support_MG_F"
 	,"I_support_Mort_F"
-	,"I_G_Sharpshooter_F"];
+	,"I_soldier_UAV_06_F"
+	,"I_soldier_UAV_06_medical_F"
+	,"I_soldier_mine_F"];
 a3e_arr_recon_InfantryTypes = [
 	"O_recon_exp_F"
 	,"O_recon_JTAC_F"
@@ -311,13 +315,20 @@ a3e_arr_recon_InfantryTypes = [
 	,"O_recon_LAT_F"
 	,"O_recon_TL_F"];
 a3e_arr_recon_I_InfantryTypes = [
-	"O_recon_exp_F"
-	,"O_recon_JTAC_F"
-	,"O_recon_M_F"
-	,"O_recon_medic_F"
-	,"O_recon_F"
-	,"O_recon_LAT_F"
-	,"O_recon_TL_F"];
+	"I_G_officer_F"
+	,"I_G_Soldier_A_F"
+	,"I_G_Soldier_LAT_F"
+	,"I_G_Soldier_M_F"
+	,"I_G_Soldier_GL_F"
+	,"I_G_Soldier_exp_F"
+	,"I_G_engineer_F"
+	,"I_G_medic_F"
+	,"I_G_Soldier_AR_F"
+	,"I_G_Soldier_TL_F"
+	,"I_G_Soldier_SL_F"
+	,"I_G_Soldier_lite_F"
+	,"I_G_Soldier_F"
+	,"I_G_Sharpshooter_F"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
