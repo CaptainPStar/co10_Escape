@@ -12,7 +12,9 @@ private _mapFound = 0;
 private _comHacked = 0;
 private _kurzvormklo = 0;
 private _civskilled = 0;
+private _curTerrainWon = 0;
 //[_version,_mod,_island,_endType, count allPlayers, time, A3E_Task_Prison_Complete,A3E_Task_Map_Complete,A3E_Task_ComCenter_Complete,A3E_Task_Exfil_Complete];
+private _island = getText (missionConfigFile >> "EscapeIsland");
 
 {
 	_played = _played + 1;
@@ -44,6 +46,9 @@ private _civskilled = 0;
 	if((_x select 9) && !_won) then {
 		_kurzvormklo = _kurzvormklo + 1;
 	};
+	if((_x select 2) == _island) then {
+		_curTerrainWon = _curTerrainWon + 1;
+	};
 } foreach _statistics;
 
 private _statisticText = "Statistics for this Server:<br/><br/>";
@@ -71,4 +76,10 @@ if((_kurzvormklo)>0) then {
 if((_civskilled)>0) then {
 	_statisticText = _statisticText + format["<br/>%1 times the players escaped but were court-martialed for conducting war crimes.<br/>",_civskilled];
 };
+if(_curTerrainWon>0) then {
+	_statisticText = _statisticText + format["<br/>Successfully escaped from %1 %2 times.<br/>",_island, _curTerrainWon];
+} else {
+	_statisticText = _statisticText + format["<br/>Never escaped from %1. You can do it!<br/>",_island];
+};
+_curTerrainWon
 _statisticText remoteExec ["A3E_fnc_WriteStatisticsToBriefing", 0, true]; 
