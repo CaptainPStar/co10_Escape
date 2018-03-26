@@ -23,7 +23,7 @@ private _civskilled = 0;
 	} else {
 		_failed = _failed + 1;
 	};
-	if((_x select 3) == ["end2","end4"]) then {
+	if((_x select 3) == "end4") then {
 		_civskilled = _civskilled + 1; 
 	};
 	if((_x select 5)>_longest && _won) then {
