@@ -56,10 +56,10 @@ _statisticText = _statisticText + format["Escapes played: %1<br/>",_played];
 _statisticText = _statisticText + format["Escaped: %1<br/>",_escaped];
 _statisticText = _statisticText + format["Failed: %1<br/>",_failed];
 if(_longest>0) then {
-	_statisticText = _statisticText + format["Longest successful Escape: %1 Minutes<br/>",round(_longest)];
+	_statisticText = _statisticText + format["Longest successful Escape: %1 Minutes<br/>",round(_longest/60)];
 };
 if(_shortest>0) then {
-	_statisticText = _statisticText + format["Shortest successful Escape: %1 Minutes<br/>",round(_shortest)];
+	_statisticText = _statisticText + format["Shortest successful Escape: %1 Minutes<br/>",round(_shortest/60)];
 };
 if((_escapedPrison)>0) then {
 	_statisticText = _statisticText + format["<br/>%1 times the players were stopped by the prison guards.<br/>",(_played - _escapedPrison)];
