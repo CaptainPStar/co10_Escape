@@ -66,7 +66,7 @@ call AT_fnc_ParamsToVar;
 private _paramsBriefing = "Parameters:<br/>"; //An string for the briefing entry every player will receive:
 private["_c","_paramName"];
 _c=count (missionConfigFile/"Params");
-for [ {_i=0}, {_i<_c}, {_i=_i+1} ] do
+for [ {_i=1}, {_i<_c}, {_i=_i+1} ] do
 {
 	private _param = ((missionConfigFile >> "Params") select _i);
 	private _name = getText (_param >> "title");
