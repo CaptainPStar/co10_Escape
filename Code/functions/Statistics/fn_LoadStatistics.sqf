@@ -46,7 +46,7 @@ private _island = getText (missionConfigFile >> "EscapeIsland");
 	if((_x select 9) && !_won) then {
 		_kurzvormklo = _kurzvormklo + 1;
 	};
-	if((_x select 2) == _island) then {
+	if((_x select 2) == _island && _won) then {
 		_curTerrainWon = _curTerrainWon + 1;
 	};
 } foreach _statistics;
