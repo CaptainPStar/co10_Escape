@@ -13,7 +13,7 @@ private _comHacked = 0;
 private _kurzvormklo = 0;
 private _civskilled = 0;
 private _curTerrainWon = 0;
-//[_version,_mod,_island,_endType, count allPlayers, time, A3E_Task_Prison_Complete,A3E_Task_Map_Complete,A3E_Task_ComCenter_Complete,A3E_Task_Exfil_Complete];
+
 private _island = getText (missionConfigFile >> "EscapeIsland");
 
 {
@@ -81,5 +81,5 @@ if(_curTerrainWon>0) then {
 } else {
 	_statisticText = _statisticText + format["<br/>Never escaped from %1. You can do it!<br/>",_island];
 };
-_curTerrainWon
+
 _statisticText remoteExec ["A3E_fnc_WriteStatisticsToBriefing", 0, true]; 
