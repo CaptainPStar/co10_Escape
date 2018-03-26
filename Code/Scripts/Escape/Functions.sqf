@@ -1,6 +1,6 @@
 drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	private["_nighttime"];
-    _this setVehicleAmmo (0.2 + random 0.4);
+
 	if(daytime > 20 OR daytime < 8) then {
 		_nighttime = true;
 	} else {
@@ -88,7 +88,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	_limit = [player] call BIS_fnc_limitAmmunition;
 	_limit = [player,[],[0.5,0.5],[0,1]] call BIS_fnc_limitAmmunition;
 */
-	[_this,[0.2,1.0],[0.5,0.8],[0.6,1]] call BIS_fnc_limitAmmunition;
+	[_this,[0.6,1.0],[0.4,0.8],[0.4,1]] call BIS_fnc_limitAmmunition;
 
 	
 	/*
@@ -160,6 +160,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (Param_NoNightvision==0)) then {
 		_this linkItem "NVGoggles_OPFOR";
 	};
+
 };
 
 drn_fnc_Escape_FindGoodPos = {
