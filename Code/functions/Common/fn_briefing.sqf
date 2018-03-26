@@ -252,7 +252,7 @@ if(isNil("A3E_WorldName")) then {
 player createDiaryRecord ["Diary", ["Credits", "Original Mission (Arma2) by Engima.<br />Mission ported to Arma3 by Vormulac and HyperZ.<br />Continue devlopment by NeoArmageddon.<br />Island ports and unit configs by Scruffy.<br />Additional coding and bugfixing by abelian, FrozenLiquidity, Dystopian and Phantom.<br /><br />The official co10 Escape mission for Arma3 is developed and maintained by NeoArmageddon and Scruffy."]]; 
 player createDiaryRecord ["Diary", ["Hints (with spoilers)", "A local resistance member has hidden a bag of pistols in the temporary prison just before your arrival.<br /><br />
 The guards will be alarmed, if you gear up or escape. Prepare for a fight!<br /><br />
-The start is difficulty! Even experienced squads often fail the initial escape. Just restart and try again. I believe in you!<br /><br />
+The start is difficult! Even experienced squads often fail the initial escape. Just restart and try again. I believe in you!<br /><br />
 The prison is placed randomly. Search for the nearest settlement and have a look at the place-name sign.<br /><br />
 Ambush enemy patrols to gear up and receive a map with the enemy POIs like ammodepots and comcenters.<br /><br />
 Ambush an ammodepot to get heavy weapons like sniperrifles and launchers.<br /><br />
