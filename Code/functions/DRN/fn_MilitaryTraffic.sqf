@@ -19,6 +19,47 @@ if (count _this > 7) then {_maxSkill = _this select 7;} else {_maxSkill = 0.6;};
 if (count _this > 8) then {_fnc_OnSpawnVehicle = _this select 8;} else {_fnc_OnSpawnVehicle = {};};
 if (count _this > 9) then {_debug = _this select 9;} else {_debug = false;};
 
+//trying around to get traffic working on smaller islands
+//_minSpawnDistance = 500;
+private _mapsize = (getPos NorthEast) distance (getPos SouthWest);
+if (_mapsize < 500) then 
+	{
+		_minSpawnDistance = 300;
+	}
+	else
+	{
+		if (_mapsize < 1000) then
+		{
+			_minSpawnDistance = 400;
+		}
+		else
+		{
+			if (_mapsize < 2000) then
+			{
+				_minSpawnDistance = 500;
+			}
+			else
+			{
+				if (_mapsize < 2500) then
+				{
+					_minSpawnDistance = 600;
+				}
+				else
+				{
+					if (_mapsize < 5000) then
+					{
+						_minSpawnDistance = 800;
+					}
+					else
+					{
+						_minSpawnDistance = 1000;
+					};
+				};
+			};
+		};
+	};
+
+
 while {isNil "a3e_var_commonLibInitialized"} do {
     player sideChat "Script MilitaryTraffic.sqf requires CommonLib v1.02.";
     sleep 10;
