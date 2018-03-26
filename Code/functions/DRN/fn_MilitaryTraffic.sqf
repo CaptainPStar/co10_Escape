@@ -23,48 +23,40 @@ if (count _this > 9) then {_debug = _this select 9;} else {_debug = false;};
 //_minSpawnDistance = 500;
 private _goToDistance = 5000; //Temporary for smaller terrains
 private _mapsize = (getPos NorthEast) distance (getPos SouthWest);
-if (_mapsize < 500) then 
+if (_mapsize < 1000) then
+{
+	_minSpawnDistance = 400;
+	_goToDistance = 400;
+}
+else
+{
+	if (_mapsize < 2000) then
 	{
-		_minSpawnDistance = 300;
-		_goToDistance = 200;
+		_minSpawnDistance = 500;
+		_goToDistance = 1000;
 	}
 	else
 	{
-		if (_mapsize < 1000) then
+		if (_mapsize < 2500) then
 		{
-			_minSpawnDistance = 400;
-			_goToDistance = 400;
+			_minSpawnDistance = 600;
+			_goToDistance = 1200;
 		}
 		else
 		{
-			if (_mapsize < 2000) then
+			if (_mapsize < 5000) then
 			{
-				_minSpawnDistance = 500;
-				_goToDistance = 1000;
+				_minSpawnDistance = 800;
+				_goToDistance = 2000;
 			}
 			else
 			{
-				if (_mapsize < 2500) then
-				{
-					_minSpawnDistance = 600;
-					_goToDistance = 1200;
-				}
-				else
-				{
-					if (_mapsize < 5000) then
-					{
-						_minSpawnDistance = 800;
-						_goToDistance = 2000;
-					}
-					else
-					{
-						_minSpawnDistance = 1000;
-						_goToDistance = 4000;
-					};
-				};
+				_minSpawnDistance = 1000;
+				_goToDistance = 4000;
 			};
 		};
 	};
+};
 
 
 while {isNil "a3e_var_commonLibInitialized"} do {
@@ -356,9 +348,11 @@ while {true} do {
             if (_debug) then {
                 ["Vehicle '" + vehicleVarName _vehicle + "' created! Total vehicles = " + str count _activeVehiclesAndGroup] call drn_fnc_CL_ShowDebugTextAllClients;
             };
+			systemchat format ["Vehicle spawned at %1", getpos _vehicle];
         }
         else {
             _tries = _tries + 1;
+			systemchat "No road found for traffic";
         };
     };
     
