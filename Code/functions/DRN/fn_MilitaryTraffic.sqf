@@ -21,38 +21,45 @@ if (count _this > 9) then {_debug = _this select 9;} else {_debug = false;};
 
 //trying around to get traffic working on smaller islands
 //_minSpawnDistance = 500;
+private _goToDistance = 5000; //Temporary for smaller terrains
 private _mapsize = (getPos NorthEast) distance (getPos SouthWest);
 if (_mapsize < 500) then 
 	{
 		_minSpawnDistance = 300;
+		_goToDistance = 200;
 	}
 	else
 	{
 		if (_mapsize < 1000) then
 		{
 			_minSpawnDistance = 400;
+			_goToDistance = 400;
 		}
 		else
 		{
 			if (_mapsize < 2000) then
 			{
 				_minSpawnDistance = 500;
+				_goToDistance = 1000;
 			}
 			else
 			{
 				if (_mapsize < 2500) then
 				{
 					_minSpawnDistance = 600;
+					_goToDistance = 1200;
 				}
 				else
 				{
 					if (_mapsize < 5000) then
 					{
 						_minSpawnDistance = 800;
+						_goToDistance = 2000;
 					}
 					else
 					{
 						_minSpawnDistance = 1000;
+						_goToDistance = 4000;
 					};
 				};
 			};
@@ -65,25 +72,6 @@ while {isNil "a3e_var_commonLibInitialized"} do {
     sleep 10;
 };
 
-while {!(["TrafficMarker_SouthWest"] call drn_fnc_CL_MarkerExists)} do {
-    player sideChat "Script MilitaryTraffic.sqf requires marker TrafficMarker_SouthWest placed on map.";
-    sleep 10;
-};
-
-while {!(["TrafficMarker_SouthEast"] call drn_fnc_CL_MarkerExists)} do {
-    player sideChat "Script MilitaryTraffic.sqf requires marker TrafficMarker_SouthEast placed on map.";
-    sleep 10;
-};
-
-while {!(["TrafficMarker_SouthWest"] call drn_fnc_CL_MarkerExists)} do {
-    player sideChat "Script MilitaryTraffic.sqf requires marker TrafficMarker_NorthEast placed on map.";
-    sleep 10;
-};
-
-while {!(["TrafficMarker_SouthWest"] call drn_fnc_CL_MarkerExists)} do {
-    player sideChat "Script MilitaryTraffic.sqf requires marker TrafficMarker_NorthWest placed on map.";
-    sleep 10;
-};
 
  if(_side != civilian) then {
 	sleep 180; //Wait three mins until creating enemy vehicles
@@ -251,14 +239,14 @@ while {true} do {
             while {count _roadSegments == 0} do {
                 _trafficLocation = floor random 8;
                 switch (_trafficLocation) do {
-                    case 0: { _roadSegments = ([(_refPos select 0) + 5000, (_refPos select 1) + 5000]  ) nearRoads 1500; };
-                    case 1: { _roadSegments = ([(_refPos select 0) - 5000, (_refPos select 1) + 5000] ) nearRoads 1500; };
-                    case 2: { _roadSegments = ([(_refPos select 0) + 5000, (_refPos select 1) - 5000] ) nearRoads 1500; };
-                    case 3: { _roadSegments = ([(_refPos select 0) - 5000, (_refPos select 1) - 5000] ) nearRoads 1500; };
-                    case 4: { _roadSegments = ([(_refPos select 0), (_refPos select 1) + 7071]  ) nearRoads 1500; };
-                    case 5: { _roadSegments = ([(_refPos select 0), (_refPos select 1) - 7071] ) nearRoads 1500; };
-                    case 6: { _roadSegments = ([(_refPos select 0) + 7071, (_refPos select 1)] ) nearRoads 1500; };
-                    case 7: { _roadSegments = ([(_refPos select 0) - 7071, (_refPos select 1)] ) nearRoads 1500; };
+                    case 0: { _roadSegments = ([(_refPos select 0) + _goToDistance, (_refPos select 1) + _goToDistance]  ) nearRoads 1500; };
+                    case 1: { _roadSegments = ([(_refPos select 0) - _goToDistance, (_refPos select 1) + _goToDistance] ) nearRoads 1500; };
+                    case 2: { _roadSegments = ([(_refPos select 0) + _goToDistance, (_refPos select 1) - _goToDistance] ) nearRoads 1500; };
+                    case 3: { _roadSegments = ([(_refPos select 0) - _goToDistance, (_refPos select 1) - _goToDistance] ) nearRoads 1500; };
+                    case 4: { _roadSegments = ([(_refPos select 0), (_refPos select 1) + _goToDistance*1.414]  ) nearRoads 1500; };
+                    case 5: { _roadSegments = ([(_refPos select 0), (_refPos select 1) - _goToDistance*1.414] ) nearRoads 1500; };
+                    case 6: { _roadSegments = ([(_refPos select 0) + _goToDistance*1.414, (_refPos select 1)] ) nearRoads 1500; };
+                    case 7: { _roadSegments = ([(_refPos select 0) - _goToDistance*1.414, (_refPos select 1)] ) nearRoads 1500; };
                 };
             };
             
