@@ -1,6 +1,3 @@
-if (!isServer) exitWith {};
-
-private ["_referenceGroup", "_side", "_vehicleClasses", "_vehicleCount", "_minSpawnDistance", "_maxSpawnDistance", "_minSkill", "_maxSkill", "_debug"];
 private ["_activeVehiclesAndGroup", "_vehiclesGroup", "_spawnSegment", "_vehicle", "_group", "_result", "_possibleVehicles", "_vehicleType", "_vehiclesCrew", "_skill", "_minDistance", "_tries", "_trafficLocation"];
 private ["_currentEntityNo", "_vehicleVarName", "_tempVehiclesAndGroup", "_deletedVehiclesCount", "_firstIteration", "_roadSegments", "_destinationSegment", "_destinationPos", "_direction"];
 private ["_roadSegmentDirection", "_testDirection", "_facingAway", "_posX", "_posY", "_pos"];
@@ -8,28 +5,16 @@ private ["_fnc_OnSpawnVehicle", "_fnc_FindSpawnSegment"];
 private ["_debugMarkerName", "_allRoadSegments"];
 //private ["_debugMarkers", "_debugMarkerNo", "_debugMarker", "_debugMarkerName"];
 
-_referenceGroup = _this select 0;
-_side = _this select 1;
-_vehicleClasses = _this select 2; //Unused
-if (count _this > 3) then {_vehicleCount = _this select 3;} else {_vehicleCount = 10;};
-//if (count _this > 4) then {_minSpawnDistance = _this select 4;} else {_minSpawnDistance = 1000;};
-//if (count _this > 5) then {_maxSpawnDistance = _this select 5;} else {_maxSpawnDistance = 1500;};
-if (count _this > 6) then {_minSkill = _this select 6;} else {_minSkill = 0.4;};
-if (count _this > 7) then {_maxSkill = _this select 7;} else {_maxSkill = 0.6;};
-if (count _this > 8) then {_fnc_OnSpawnVehicle = _this select 8;} else {_fnc_OnSpawnVehicle = {};};
-if (count _this > 9) then {_debug = _this select 9;} else {_debug = false;};
+params["_side","_vehicleClasses",["_vehicleCount",10],["_minSpawnDistance",1000],["_maxSpawnDistance",1500],["_minSkill",0.5],["_maxskill",0.6],["_fnc_OnSpawnVehicle",{}],["_debug",false]];
+
 
 //trying around to get traffic working on smaller islands
-//ignoring distance handed over by fn_initServer
-//_minspawndistance was based on Param_EnemySpawnDistance either 800/1050/1300, default 1300
-//_maxspawndistance wasParam_EnemySpawnDistance +500
 //_minSpawnDistance = 500;
 private _goToDistance = 5000; //Temporary for smaller terrains
 private _mapsize = (getPos NorthEast) distance (getPos SouthWest);
 if (_mapsize < 1000) then
 {
 	_minSpawnDistance = 400;
-	_maxSpawnDistance = 900;
 	_goToDistance = 400;
 }
 else
@@ -37,29 +22,25 @@ else
 	if (_mapsize < 2000) then
 	{
 		_minSpawnDistance = 500;
-		_maxSpawnDistance = 1000;
 		_goToDistance = 1000;
 	}
 	else
 	{
-		if (_mapsize < 5000) then
+		if (_mapsize < 2500) then
 		{
-			_minSpawnDistance = 750;
-			_maxSpawnDistance = 1250;
-			_goToDistance = 1500;
+			_minSpawnDistance = 600;
+			_goToDistance = 1200;
 		}
 		else
 		{
-			if (_mapsize < 10000) then
+			if (_mapsize < 5000) then
 			{
-				_minSpawnDistance = 900;
-				_maxSpawnDistance = 1400;
-				_goToDistance = 2500;
+				_minSpawnDistance = 800;
+				_goToDistance = 2000;
 			}
 			else
 			{
-				_minSpawnDistance = 1300;
-				_maxSpawnDistance = 1800;
+				_minSpawnDistance = 1000;
 				_goToDistance = 4000;
 			};
 		};
@@ -125,17 +106,17 @@ _activeVehiclesAndGroup = [];
 _possibleVehicles = [];
 
 _fnc_FindSpawnSegment = {
-    private ["_referenceGroup", "_minSpawnDistance", "_maxSpawnDistance", "_activeVehiclesAndGroup"];
+    private ["_referenceUnits", "_minSpawnDistance", "_maxSpawnDistance", "_activeVehiclesAndGroup"];
     private ["_refUnit", "_roadSegments", "_roadSegment", "_isOk", "_tries", "_result", "_spawnDistanceDiff", "_refPosX", "_refPosY", "_dir", "_tooFarAwayFromAll", "_tooClose", "_tooCloseToAnotherVehicle"];
 
-    _referenceGroup = _this select 0;
+    _referenceUnits = _this select 0;
     _minSpawnDistance = _this select 1;
     _maxSpawnDistance = _this select 2;
     _activeVehiclesAndGroup = _this select 3;
     
     _spawnDistanceDiff = _maxSpawnDistance - _minSpawnDistance;
     _roadSegment = "NULL";
-    _refUnit = vehicle (selectRandom (units _referenceGroup));
+    _refUnit = vehicle (selectRandom _referenceUnits);
 
     _isOk = false;
     _tries = 0;
@@ -178,7 +159,7 @@ _fnc_FindSpawnSegment = {
                         _tooCloseToAnotherVehicle = true;
                     };                
                 } foreach _activeVehiclesAndGroup;
-            } foreach units _referenceGroup;
+            } foreach _referenceUnits;
             
             _isOk = true;
             
@@ -209,7 +190,7 @@ _firstIteration = true;
 
 while {true} do {
     scopeName "mainScope";
-
+	private _referenceUnits = [] call A3E_FNC_GetPlayers;
     // If there are few vehicles, add a vehicle
 
     _tries = 0;
@@ -226,8 +207,8 @@ while {true} do {
         else {
             _minDistance = _minSpawnDistance;
         };
-        _refUnit = vehicle (selectRandom (units _referenceGroup));
-        _spawnSegment = [_referenceGroup, _minDistance, _maxSpawnDistance, _activeVehiclesAndGroup] call _fnc_FindSpawnSegment;
+
+        _spawnSegment = [_referenceUnits, _minDistance, _maxSpawnDistance, _activeVehiclesAndGroup] call _fnc_FindSpawnSegment;
         
         // If there were spawn positions
         if (str _spawnSegment != """NULL""") then {
