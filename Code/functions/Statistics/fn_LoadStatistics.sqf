@@ -71,7 +71,7 @@ if((_comHacked)>0) then {
 	_statisticText = _statisticText + format["<br/>%1 times a ComCenter was hacked.<br/>",_comHacked];
 };
 if((_kurzvormklo)>0) then {
-	_statisticText = _statisticText + format["<br/>The mission failed %1 times even though the the helicopters were reached.<br/>",_kurzvormklo];
+	_statisticText = _statisticText + format["<br/>The mission failed %1 times even though the helicopters were reached.<br/>",_kurzvormklo];
 };
 if((_civskilled)>0) then {
 	_statisticText = _statisticText + format["<br/>%1 times the players escaped but were court-martialed for conducting war crimes.<br/>",_civskilled];
