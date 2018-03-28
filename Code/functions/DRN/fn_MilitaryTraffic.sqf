@@ -12,20 +12,24 @@ _referenceGroup = _this select 0;
 _side = _this select 1;
 _vehicleClasses = _this select 2; //Unused
 if (count _this > 3) then {_vehicleCount = _this select 3;} else {_vehicleCount = 10;};
-if (count _this > 4) then {_minSpawnDistance = _this select 4;} else {_minSpawnDistance = 1000;};
-if (count _this > 5) then {_maxSpawnDistance = _this select 5;} else {_maxSpawnDistance = 1500;};
+//if (count _this > 4) then {_minSpawnDistance = _this select 4;} else {_minSpawnDistance = 1000;};
+//if (count _this > 5) then {_maxSpawnDistance = _this select 5;} else {_maxSpawnDistance = 1500;};
 if (count _this > 6) then {_minSkill = _this select 6;} else {_minSkill = 0.4;};
 if (count _this > 7) then {_maxSkill = _this select 7;} else {_maxSkill = 0.6;};
 if (count _this > 8) then {_fnc_OnSpawnVehicle = _this select 8;} else {_fnc_OnSpawnVehicle = {};};
 if (count _this > 9) then {_debug = _this select 9;} else {_debug = false;};
 
 //trying around to get traffic working on smaller islands
+//ignoring distance handed over by fn_initServer
+//_minspawndistance was based on Param_EnemySpawnDistance either 800/1050/1300, default 1300
+//_maxspawndistance wasParam_EnemySpawnDistance +500
 //_minSpawnDistance = 500;
 private _goToDistance = 5000; //Temporary for smaller terrains
 private _mapsize = (getPos NorthEast) distance (getPos SouthWest);
 if (_mapsize < 1000) then
 {
 	_minSpawnDistance = 400;
+	_maxSpawnDistance = 900;
 	_goToDistance = 400;
 }
 else
@@ -33,25 +37,29 @@ else
 	if (_mapsize < 2000) then
 	{
 		_minSpawnDistance = 500;
+		_maxSpawnDistance = 1000;
 		_goToDistance = 1000;
 	}
 	else
 	{
-		if (_mapsize < 2500) then
+		if (_mapsize < 5000) then
 		{
-			_minSpawnDistance = 600;
-			_goToDistance = 1200;
+			_minSpawnDistance = 750;
+			_maxSpawnDistance = 1250;
+			_goToDistance = 1500;
 		}
 		else
 		{
-			if (_mapsize < 5000) then
+			if (_mapsize < 10000) then
 			{
-				_minSpawnDistance = 800;
-				_goToDistance = 2000;
+				_minSpawnDistance = 900;
+				_maxSpawnDistance = 1400;
+				_goToDistance = 2500;
 			}
 			else
 			{
-				_minSpawnDistance = 1000;
+				_minSpawnDistance = 1300;
+				_maxSpawnDistance = 1800;
 				_goToDistance = 4000;
 			};
 		};
