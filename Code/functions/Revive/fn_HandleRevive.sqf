@@ -7,14 +7,14 @@ if(!isnull _target) then {
 		_target setVariable ["AT_Revive_isDragged", player, true];
 		if(primaryWeapon player != "") then {
 			//Select primary weapon so the player does not switch weapons multiple times after revive
-			private _muzzles = getArray(configFile >> "cfgWeapons" >> _type >> "muzzles");
+			private _muzzles = getArray(configFile >> "cfgWeapons" >> (primaryWeapon player) >> "muzzles");
 			if (count _muzzles > 1) then
 			{
 				 player selectWeapon (_muzzles select 0);
 			}
 			else
 			{
-				player selectWeapon _type;
+				player selectWeapon (primaryWeapon player);
 			};
 			if(stance player == "PRONE") then {
 				player playMove "AinvPpneMstpSlayWnonDnon_medicOther";
