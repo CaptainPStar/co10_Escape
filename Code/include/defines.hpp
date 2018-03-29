@@ -3,6 +3,7 @@
 #define MISSIONNAMEFULL "{* MISSION_FULL *} {* ISLANDNAME *} {* MOD *} {* VERSION *}"
 #define MOD "{* MOD *}"
 #define ISLAND "{* ISLANDNAME *}"
+#define RELEASE "{* RELEASE *}"
 
 //--- [Controls Style Preprocessors]
 #define ST_LEFT 				0
