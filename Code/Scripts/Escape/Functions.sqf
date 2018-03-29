@@ -606,14 +606,15 @@ drn_fnc_Escape_AddRemoveComCenArmor = {
         } foreach _armorObjects;*/
         
 		 {
-			if(count((crew _x) arrayIntersect _players)==0) then {
-				private _group = group _x;
+			private _vehicle = _x;
+			if(count((crew _vehicle) arrayIntersect _players)==0 && ({(_x distance _vehicle)<500} count _players)==0) then {
+				private _group = group _vehicle;
 				
 				{
 					deleteVehicle _x;
-				} foreach crew _x;
+				} foreach crew _vehicle;
 				
-				deleteVehicle _x;
+				deleteVehicle _vehicle;
 			};
 		} foreach _armorObjects;
 
