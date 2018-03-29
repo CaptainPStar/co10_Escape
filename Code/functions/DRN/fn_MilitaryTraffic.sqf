@@ -345,11 +345,11 @@ while {true} do {
             if (_debug) then {
                 ["Vehicle '" + vehicleVarName _vehicle + "' created! Total vehicles = " + str count _activeVehiclesAndGroup] call drn_fnc_CL_ShowDebugTextAllClients;
             };
-			systemchat format ["Vehicle spawned at %1", getpos _vehicle];
+			//systemchat format ["Vehicle spawned at %1", getpos _vehicle];
         }
         else {
             _tries = _tries + 1;
-			systemchat "No road found for traffic";
+			//systemchat "No road found for traffic";
         };
     };
     
