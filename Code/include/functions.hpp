@@ -86,6 +86,7 @@ class CfgFunctions
 			class weather {};
 			class FindSpawnRoad {};
 			class EndMissionServer {};
+			class SelectExtractionZone {};
 		};
 		class Templates
 		{
