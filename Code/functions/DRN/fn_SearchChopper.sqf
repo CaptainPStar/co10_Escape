@@ -21,7 +21,7 @@ if (isNil "a3e_var_commonLibInitialized") exitWith {
 
 _group = group _chopper;
 _side = side leader _group;
-_state = "READY";
+_state = "IDLE";
 _homePos = getPos _chopper;
 _debug = false;
 if (_debug) then {
@@ -41,6 +41,19 @@ _exitScript = false;
 
 while {!_exitScript} do {
 	switch (_state) do {
+		case "IDLE": {
+			_waypoint = _group addWaypoint [getpos _chopper, 500];
+			_waypoint setWaypointType "LOITER";
+			_waypoint setWaypointLoiterType "CIRCLE";
+			_waypoint setWaypointLoiterRadius 500;
+			_waypoint setWaypointBehaviour "SAFE";
+			_waypoint setWaypointSpeed "LIMITED";
+			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
+			while {!([_searchAreaMarker] call drn_fnc_CL_MarkerExists)} do {
+				sleep 1;
+			};
+			_state = "READY";
+		};
 		case "READY": {
 			_state = "MOVING OUT";
 			_moveOutTimeSek = diag_tickTime;
@@ -63,7 +76,7 @@ while {!_exitScript} do {
 			_waypoint = _group addWaypoint [_position, 0];
 			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointBehaviour "SAFE";
-			_waypoint setWaypointSpeed "NORMAL";
+			_waypoint setWaypointSpeed "FULL";
 			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 
 			if (_debug) then {
@@ -80,7 +93,9 @@ while {!_exitScript} do {
 
 			_position = [_searchAreaMarker] call drn_fnc_CL_GetRandomMarkerPos;
 			_waypoint = _group addWaypoint [_position, 0];
-			_waypoint setWaypointType "SAD";
+			_waypoint setWaypointType "LOITER";
+			_waypoint setWaypointLoiterType "CIRCLE";
+			_waypoint setWaypointLoiterRadius 200;
 			_waypoint setWaypointBehaviour "COMBAT";
 			_waypoint setWaypointSpeed "LIMITED";
 			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
