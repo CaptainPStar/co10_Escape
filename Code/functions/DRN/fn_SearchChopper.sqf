@@ -1,7 +1,6 @@
 // Search Chopper v1.0
 // Author: Engima of Östgöta Ops
 
-if (!isServer) exitWith {};
 
 private ["_chopper", "_searchAreaMarker", "_searchTimeMin", "_refuelTimeMin", "_debug", "_group", "_side", "_state", "_exitScript", "_position", "_waypoint", "_moveOutTimeSek", "_refuelStartTimeSek"];
 private ["_oldGroup", "_homePos"];
@@ -15,7 +14,7 @@ if (count _this > 4) then {_debug = _this select 4;} else {_debug = false;};
 if (isNil "a3e_var_commonLibInitialized") exitWith {
 	private ["_message"];
 	_message = "Scripts\DRN\CommonLib\CommonLib.sqf must be called before call to Scripts/DRN/SearchChopper/SearchChopper.sqf.";
-	player sideChat _message;
+	systemchat _message;
 	diag_log _message;
 };
 
@@ -23,43 +22,38 @@ _group = group _chopper;
 _side = side leader _group;
 _state = "IDLE";
 _homePos = getPos _chopper;
-_debug = false;
+private _updateSearchAreaTime = 0;
 if (_debug) then {
-    player sideChat "Starting search chopper script...";
+    systemchat "Starting search chopper script...";
 };
 
 if (vehicleVarName _chopper == "") exitWith {
 	sleep 5;
-	player sideChat "Search chopper must have a name. Script exiting.";
+	systemchat "Search chopper must have a name. Script exiting.";
 };
 
-while {!([_searchAreaMarker] call drn_fnc_CL_MarkerExists)} do {
-	sleep 1;
-};
 
 _exitScript = false;
 
 while {!_exitScript} do {
 	switch (_state) do {
 		case "IDLE": {
-			_waypoint = _group addWaypoint [getpos _chopper, 500];
+			_waypoint = _group addWaypoint [getpos _chopper, 50];
 			_waypoint setWaypointType "LOITER";
 			_waypoint setWaypointLoiterType "CIRCLE";
 			_waypoint setWaypointLoiterRadius 500;
 			_waypoint setWaypointBehaviour "SAFE";
 			_waypoint setWaypointSpeed "LIMITED";
-			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 			while {!([_searchAreaMarker] call drn_fnc_CL_MarkerExists)} do {
 				sleep 1;
 			};
-			_state = "READY";
 		};
 		case "READY": {
 			_state = "MOVING OUT";
 			_moveOutTimeSek = diag_tickTime;
 
 			if (_debug) then {
-				player sideChat "Search chopper state: MOVING OUT.";
+				systemchat "Search chopper state: MOVING OUT.";
 			};
 
 			_chopper flyInHeight 100;
@@ -78,7 +72,7 @@ while {!_exitScript} do {
 			_waypoint setWaypointBehaviour "SAFE";
 			_waypoint setWaypointSpeed "FULL";
 			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
-
+			_group setCurrentWaypoint _waypoint;
 			if (_debug) then {
 				//"SmokeShellBlue" createVehicle _position;
 				createVehicle ["SmokeShellBlue", _position, [], 0, "NONE"];
@@ -86,21 +80,20 @@ while {!_exitScript} do {
 		};
 		case "SEARCHING": {
 			if (_debug) then {
-				player sideChat "Search chopper state: SEARCHING.";
+				systemchat "Search chopper state: SEARCHING.";
 			};
-
+			
 			_chopper setVariable ["waypointFulfilled", false];
 
 			_position = [_searchAreaMarker] call drn_fnc_CL_GetRandomMarkerPos;
 			_waypoint = _group addWaypoint [_position, 0];
 			_waypoint setWaypointType "LOITER";
-			_waypoint setWaypointLoiterType "CIRCLE";
-			_waypoint setWaypointLoiterRadius 200;
+			_waypoint setWaypointLoiterType "CIRCLE_L";
+			_waypoint setWaypointLoiterRadius (200+random 60);
 			_waypoint setWaypointBehaviour "COMBAT";
 			_waypoint setWaypointSpeed "LIMITED";
-			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
-
-			_chopper flyInHeight 100;
+			_group setCurrentWaypoint _waypoint;
+			_chopper flyInHeight 60 + random 40;
 
 			if (_debug) then {
 				//"SmokeShellRed" createVehicle _position;
@@ -109,7 +102,7 @@ while {!_exitScript} do {
 		};
 		case "RETURNING": {
 			if (_debug) then {
-				player sideChat "Search chopper state: RETURNING.";
+				systemchat "Search chopper state: RETURNING.";
 			};
 
 			_oldGroup = _group;
@@ -124,7 +117,7 @@ while {!_exitScript} do {
 			_waypoint setWaypointBehaviour "SAFE";
 			_waypoint setWaypointSpeed "NORMAL";
 			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
-
+			_group setCurrentWaypoint _waypoint;
 			if (_debug) then {
 				//"SmokeShellBlue" createVehicle _homePos;
 				createVehicle ["SmokeShellBlue", _homePos, [], 0, "NONE"];
@@ -134,7 +127,7 @@ while {!_exitScript} do {
 		};
 		case "LANDING": {
 			if (_debug) then {
-				player sideChat "Search chopper state: LANDING.";
+				systemchat "Search chopper state: LANDING.";
 			};
 
 			_chopper land "LAND";
@@ -145,11 +138,11 @@ while {!_exitScript} do {
 		};
 		case "DEAD": {
 			if (_debug) then {
-				player sideChat "Search chopper state: DEAD.";
+				systemchat "Search chopper state: DEAD.";
 			};
 		};
 		default {
-			player sideChat "ERROR IN SearchChopper.sqf: Case " + _state + " not taken care of (1st switch)!";
+			systemchat "ERROR IN SearchChopper.sqf: Case " + _state + " not taken care of (1st switch)!";
 		};
 	};
 
@@ -160,7 +153,9 @@ while {!_exitScript} do {
 			_state = "DEAD";
 			_exitScript = true;
 		};
-
+		if(_state == "IDLE") exitWith {
+			_state = "READY";
+		};
 		// Check if current waypoint is fulfilled
 		if (_chopper getVariable "waypointFulfilled") exitWith {
 
@@ -168,14 +163,11 @@ while {!_exitScript} do {
 				case "MOVING OUT": {
 					_state = "SEARCHING";
 				};
-				case "SEARCHING": {
-					_state = "SEARCHING";
-				};
 				case "RETURNING": {
 					_state = "LANDING";
 				};
 				default {
-					player sideChat "ERROR IN SearchChopper.sqf: Case " + _state + " not taken care of (2nd switch)!";
+					systemchat "ERROR IN SearchChopper.sqf: Case " + _state + " not taken care of (2nd switch)!";
 				};
 			};
 		};
@@ -183,7 +175,7 @@ while {!_exitScript} do {
 		if (_state == "LANDING") exitWith {
 			_state = "REFUELING";
 			if (_debug) then {
-				player sideChat "Search chopper state: REFUELING.";
+				systemchat "Search chopper state: REFUELING.";
 			};
 
 			_refuelStartTimeSek = diag_tickTime;
@@ -191,7 +183,7 @@ while {!_exitScript} do {
 		};
 
 		if (_state == "REFUELING") exitWith {
-//			player sideChat "Tick time == " + str diag_tickTime + " AND right side == " + str (_refuelStartTimeSek + (_refuelTimeMin * 60));
+//			systemchat "Tick time == " + str diag_tickTime + " AND right side == " + str (_refuelStartTimeSek + (_refuelTimeMin * 60));
 			if (diag_tickTime > _refuelStartTimeSek + (_refuelTimeMin * 60)) then {
 				_state = "READY";
 			};
@@ -201,7 +193,11 @@ while {!_exitScript} do {
 		if ((diag_tickTime > _moveOutTimeSek + (_searchTimeMin * 60)) && (_state == "SEARCHING" || _state == "MOVING OUT")) exitWith {
 			_state = "RETURNING";
 		};
-
+		
+		if (_state == "SEARCHING") exitWith {
+			sleep 15;
+			_state = "SEARCHING";
+		};
 		sleep 1;
 	};
 
@@ -210,7 +206,7 @@ while {!_exitScript} do {
 
 if (_exitScript) then {
 	if (_debug) then {
-		player sideChat "Search chopper unable to continue. Script exiting.";
+		systemchat "Search chopper unable to continue. Script exiting.";
 	};
 };
 
