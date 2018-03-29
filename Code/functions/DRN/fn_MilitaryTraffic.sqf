@@ -9,12 +9,16 @@ params["_side","_vehicleClasses",["_vehicleCount",10],["_minSpawnDistance",1000]
 
 
 //trying around to get traffic working on smaller islands
+//ignoring distance handed over by fn_initServer
+//_minspawndistance was based on Param_EnemySpawnDistance either 800/1050/1300, default 1300
+//_maxspawndistance wasParam_EnemySpawnDistance +500
 //_minSpawnDistance = 500;
 private _goToDistance = 5000; //Temporary for smaller terrains
 private _mapsize = (getPos NorthEast) distance (getPos SouthWest);
 if (_mapsize < 1000) then
 {
 	_minSpawnDistance = 400;
+	_maxSpawnDistance = 900;
 	_goToDistance = 400;
 }
 else
@@ -22,25 +26,29 @@ else
 	if (_mapsize < 2000) then
 	{
 		_minSpawnDistance = 500;
+		_maxSpawnDistance = 1000;
 		_goToDistance = 1000;
 	}
 	else
 	{
-		if (_mapsize < 2500) then
+		if (_mapsize < 5000) then
 		{
-			_minSpawnDistance = 600;
-			_goToDistance = 1200;
+			_minSpawnDistance = 750;
+			_maxSpawnDistance = 1250;
+			_goToDistance = 1500;
 		}
 		else
 		{
-			if (_mapsize < 5000) then
+			if (_mapsize < 10000) then
 			{
-				_minSpawnDistance = 800;
-				_goToDistance = 2000;
+				_minSpawnDistance = 900;
+				_maxSpawnDistance = 1400;
+				_goToDistance = 2500;
 			}
 			else
 			{
-				_minSpawnDistance = 1000;
+				_minSpawnDistance = 1300;
+				_maxSpawnDistance = 1800;
 				_goToDistance = 4000;
 			};
 		};
