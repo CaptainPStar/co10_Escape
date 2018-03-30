@@ -66,12 +66,7 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses append [
 	,"O_APC_Tracked_02_cannon_F"
 	,"O_APC_Wheeled_02_rcws_F"
 	];
-// Total cargo motorized search group vehicle. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses above.
-a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo append [
-	8
-	,8
-	,8
-	];
+
 
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles append [
