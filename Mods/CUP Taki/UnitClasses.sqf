@@ -347,8 +347,8 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	,"CUP_O_Ural_TKA"
 	,"CUP_O_Ural_Open_TKA"
 	,"CUP_O_LR_Transport_TKM"];
-// Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
-a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [5, 5, 5, 12, 12];
+
+
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
@@ -361,8 +361,8 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"CUP_O_BTR60_TK"
 	,"CUP_O_BRDM2_TKA"
 	,"CUP_O_M113_TKA"];
-// Total cargo motorized search group vehicle. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses above.
-a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [5, 5, 5, 2, 12, 8, 3, 11];
+
+
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
 // light *and* a random heavy armor.

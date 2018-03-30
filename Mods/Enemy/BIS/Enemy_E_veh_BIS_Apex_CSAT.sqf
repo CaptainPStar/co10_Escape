@@ -76,7 +76,7 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses append [
 	"O_T_Truck_03_transport_ghex_F"
 	,"O_T_Truck_03_covered_ghex_F"
 	];
-// Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
+
 a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo append [
 	16
 	,16
