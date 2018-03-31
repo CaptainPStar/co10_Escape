@@ -118,6 +118,7 @@ class CfgFunctions
 			class LoadStatistics {};
 			class WriteStatisticsToBriefing {};
 			class SaveStatistics {};
+			class ParseStatistics {};
 		};
 	};
 	class drn

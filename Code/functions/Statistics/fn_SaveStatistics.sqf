@@ -12,8 +12,8 @@ if(!_statisticsCollected) then {
 	_statistics pushBack [_version,_mod,_island,_endType, count (call BIS_fnc_listPlayers), time, A3E_Task_Prison_Complete,A3E_Task_Map_Complete,A3E_Task_ComCenter_Complete,A3E_Task_Exfil_Complete];
 
 	profileNamespace setVariable ["A3E_Statistics", _statistics]; 
+	missionNamespace setvariable ["A3E_EndStatistics",[_statistics] call A3E_fnc_parseStatistics,true];
 	saveProfileNamespace;
-
 
 	"DummyLayer" cutRsc ["RscTitleDisplayEmpty", "PLAIN"];
 	private _emptyDisplay = uiNamespace getVariable "RscTitleDisplayEmpty";
