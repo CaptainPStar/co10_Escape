@@ -1,41 +1,11 @@
 //General mission flow triggerActivated
 
-if(!isDedicated) then {
-	//Mission won (client)
-	private _trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [3, 3, 3, true];
-	_trigger setTriggerStatements["a3e_var_Escape_MissionComplete && !a3e_var_Escape_SearchLeader_civilianReporting && !a3e_var_Escape_AllPlayersDead", "[""end2"",true,true,true,true] call BIS_fnc_endMission;", ""];
-	
-	//Mission win (but failed by killing civilians)
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [3, 3, 3, true];
-	_trigger setTriggerStatements["a3e_var_Escape_MissionComplete && a3e_var_Escape_SearchLeader_civilianReporting && !a3e_var_Escape_AllPlayersDead", "[""end4"",false,true,true,true] call BIS_fnc_endMission;", ""];
-	
-	//Mission failed by MIA
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [3, 3, 3, true];
-	_trigger setTriggerStatements["a3e_var_Escape_MissionFailed_LeftBehind && !a3e_var_Escape_AllPlayersDead", "[""end3"",false,true,true,true] call BIS_fnc_endMission;", ""];
-
-	//Mission failed
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [2, 2, 2, false];
-	_trigger setTriggerStatements["a3e_var_Escape_AllPlayersDead", "[""end1"",false,true,true,true] call BIS_fnc_endMission;", ""];
-		
-};
-if(isDedicated) then {
+if(isServer) then {
 	//Win mission server
 	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
 	_trigger setTriggerArea[0, 0, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [5, 5, 5, true];
+	_trigger setTriggerTimeout [3, 3, 3, true];
 	_trigger setTriggerStatements["a3e_var_Escape_MissionComplete && !a3e_var_Escape_SearchLeader_civilianReporting && !a3e_var_Escape_AllPlayersDead", """end2"" call A3E_fnc_endMissionServer;", ""];
 	
 	
@@ -43,21 +13,21 @@ if(isDedicated) then {
 	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
 	_trigger setTriggerArea[0, 0, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [5, 5, 5, true];
+	_trigger setTriggerTimeout [3, 3, 3, true];
 	_trigger setTriggerStatements["a3e_var_Escape_MissionComplete && a3e_var_Escape_SearchLeader_civilianReporting && !a3e_var_Escape_AllPlayersDead", """end4"" call A3E_fnc_endMissionServer;", ""];
 	
 	//Mission failed by MIA
 	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
 	_trigger setTriggerArea[0, 0, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [5, 5, 5, true];
+	_trigger setTriggerTimeout [3, 3, 3, true];
 	_trigger setTriggerStatements["a3e_var_Escape_MissionFailed_LeftBehind && !a3e_var_Escape_AllPlayersDead", """end3"" call A3E_fnc_endMissionServer;", ""];
 
 	//Mission failed
 	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
 	_trigger setTriggerArea[0, 0, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [5, 5, 5, true];
+	_trigger setTriggerTimeout [2, 2, 2, true];
 	_trigger setTriggerStatements["a3e_var_Escape_AllPlayersDead", """end1"" call A3E_fnc_endMissionServer;", ""];
 	
 };
