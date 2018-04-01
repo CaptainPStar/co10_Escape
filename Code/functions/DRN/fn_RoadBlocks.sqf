@@ -160,7 +160,7 @@ _fnc_CreateRoadBlock = {
 	_units pushback ([_static,_side] call A3E_fnc_AddStaticGunner); 
 	// A3E_fnc_Roadblock ["_center","_rotation","_static","_vehicle"];
 
-	_units append (call compile ("["+str _pos+","+str(_dir + _angle)+",_static,_vehicle] call "+ selectRandom ["A3E_fnc_Roadblock","A3E_fnc_Roadblock2","A3E_fnc_Roadblock3"]));
+	_units append (call compile ("["+str _pos+","+str(_dir + _angle)+",_static,_vehicle] call "+ selectRandom ["A3E_fnc_Roadblock","A3E_fnc_Roadblock","A3E_fnc_Roadblock"]));
 	
 	//_units append ([_pos,(_dir + _angle),_static,_vehicle] call A3E_fnc_Roadblock);
     
