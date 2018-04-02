@@ -12,13 +12,16 @@ private _vehicle = param[3];
 
 
 _fnc_createObject = {
-    params["_className","_centerPos","_relativePos","_rotateDir","_relativeDir"];
+    params["_className","_centerPos","_relativePos","_rotateDir","_relativeDir",["_align",true]];
     private["_object", "_realPos", "_realDir"];
-
     _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1),(_relativePos select 2)], _rotateDir] call A3E_fnc_RotatePosition);
     _object = createVehicle [_className, _realPos, [], 0, "CAN_COLLIDE"];
     _object setdir (_relativeDir + _rotateDir);
     _object setPosATL _realPos;
+	if(_align) then {
+		_object setVectorUp surfaceNormal _realPos;
+	};
+	
     _object;
 };
 
@@ -50,10 +53,12 @@ _objects pushBack _obj;
 
 
 if(!(isNull _static)) then {
-	_pos = [_center,_center vectorAdd [6.16589,2.5979,2.74288],_rotation] call A3E_FNC_RotatePosition;
-	_static setdir (181.934 + _rotation);
+	_pos = [_center,_center vectorAdd [6.4,2.8,2.7],_rotation] call A3E_FNC_RotatePosition;
+	_static setdir ((getdir _static) + _rotation + 180);
+	_static setVectorUp surfaceNormal _pos;
     _static setPosATL _pos;
 };
+
 if(!(isNull _vehicle)) then {
 	_pos = [_center,_center vectorAdd [-7.81958,3.0061,0.0331655],_rotation] call A3E_FNC_RotatePosition;
 	_vehicle setdir (180.256 + _rotation);
