@@ -27,9 +27,6 @@ class CfgFunctions
 		class Briefing {
 			postInit = 1;
 		};
-		class Bootstrap {
-			postInit = 1;
-		};
 		class cleanupTerrain {};
 		class handleRating {};
 		class handleScore {};
@@ -87,6 +84,7 @@ class CfgFunctions
 			class FindSpawnRoad {};
 			class EndMissionServer {};
 			class SelectExtractionZone {};
+			class RoadBlocks {};
 		};
 		class Templates
 		{
@@ -135,8 +133,7 @@ class CfgFunctions
 			class InsertionTruck {};
 			class MilitaryTraffic {};
 			class MoveVehicle {};
-			class MotorizedSearchGroup {};
-			class RoadBlocks {};	
+			class MotorizedSearchGroup {};	
 			class SearchChopper {};
 			class SearchGroup {};
 			class InitVillageMarkers{};
