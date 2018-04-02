@@ -42,7 +42,7 @@ private _fnc_FindRoadBlockSegment = {
     private _tries = 0;
 	private _isOk = false;
 	private _roadSegment = objNull;
-    while {!_isOk && _tries < 100} do {
+    while {!_isOk && _tries < 20} do {
 
         private _dir = random 360;
         private _refPosX = ((getPos _refUnit) select 0) + (_minSpawnDistance + _spawnDistanceDiff) * sin _dir;
@@ -153,8 +153,7 @@ _fnc_CreateRoadBlock = {
 while {true} do {
 	private _numberOfRoadBlocks = missionnameSpace getvariable ["MaxNumberOfRoadblocks",10];
 	private _roadBlocks = missionnameSpace getvariable ["A3E_arr_RoadBlocks",[]];
-    while {count (missionnameSpace getvariable ["A3E_arr_RoadBlocks",[]]) < _numberOfRoadBlocks} do { 
-        sleep random 0.05;
+    if(count (missionnameSpace getvariable ["A3E_arr_RoadBlocks",[]]) < _numberOfRoadBlocks) then { 
         if (isNil "a3e_var_RoadBlocks_InstanceNo") then {
             a3e_var_RoadBlocks_InstanceNo = 0;
         }
@@ -163,15 +162,17 @@ while {true} do {
         };
         _instanceNo = a3e_var_RoadBlocks_InstanceNo;
         private _roadSegment = [([] call A3E_fnc_getPlayers)] call _fnc_FindRoadBlockSegment;
-        if(isNil "_roadSegment") exitwith {};
-		if(isNull _roadSegment) exitwith {};
-		private _side = selectRandom _factionsArray;
-		private _composition = [_roadSegment, _side, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle,_instanceNo] call _fnc_CreateRoadBlock;
-		_roadBlocks pushback [_instanceNo, _roadSegment, _composition select 0, _composition select 1];
-		
-		if (missionNamespace getvariable["DebugRoadblocks",false]) then {
-			["Road block created. Number of road blocks: " + str count _roadBlocks] call drn_fnc_CL_ShowDebugTextAllClients;
-			["drn(missionnamespace getvariable [DebugRoadblocks,false])Marker_RoadBlocks_" + str _instanceNo, getPos _roadSegment, "mil_dot", "ColorRed", "Road Block"] call drn_fnc_CL_SetDebugMarkerAllClients;
+        if(!isNil "_roadSegment") then {
+			if(!isNull _roadSegment) the {
+				private _side = selectRandom _factionsArray;
+				private _composition = [_roadSegment, _side, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle,_instanceNo] call _fnc_CreateRoadBlock;
+				_roadBlocks pushback [_instanceNo, _roadSegment, _composition select 0, _composition select 1];
+				
+				if (missionNamespace getvariable["DebugRoadblocks",false]) then {
+					["Road block created. Number of road blocks: " + str count _roadBlocks] call drn_fnc_CL_ShowDebugTextAllClients;
+					["drn(missionnamespace getvariable [DebugRoadblocks,false])Marker_RoadBlocks_" + str _instanceNo, getPos _roadSegment, "mil_dot", "ColorRed", "Road Block"] call drn_fnc_CL_SetDebugMarkerAllClients;
+				};
+			};
 		};
 	};
 
