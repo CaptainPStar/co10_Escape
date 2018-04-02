@@ -482,13 +482,11 @@ private _UseMotorPools = Param_MotorPools;
 		_roadBlockCount = 1;
 	};
 	//A3E_VAR_Side_Ind
-	[A3E_VAR_Side_Opfor, a3e_arr_Escape_InfantryTypes, a3e_arr_Escape_RoadBlock_MannedVehicleTypes, _roadBlockCount, _enemySpawnDistance, _enemySpawnDistance + 500, 750, 300, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, A3E_Debug] spawn drn_fnc_RoadBlocks;
+	[a3e_arr_Escape_InfantryTypes, a3e_arr_Escape_RoadBlock_MannedVehicleTypes, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, A3E_Debug] spawn A3E_fnc_RoadBlocks;
 
 	//Spawn crashsites
-	if(isNil("A3E_CrashSiteCountMax")) then {
-		A3E_CrashSiteCountMax = 2;
-	};
-	_crashSiteCount = random A3E_CrashSiteCountMax;
+
+	_crashSiteCount = ceil(random(missionNamespace getvariable["CrashSiteCountMax",3]));
 	for [{_x=0},{_x<_crashSiteCount},{_x=_x+1}] do {
 	  _pos = [] call A3E_fnc_findFlatArea;
 	  [_pos] call A3E_fnc_crashSite;
