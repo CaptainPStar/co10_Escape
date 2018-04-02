@@ -59,7 +59,7 @@ if(_longest>0) then {
 if(_shortest>0) then {
 	_statisticText = _statisticText + format["Shortest successful Escape: %1 Minutes<br/>",round(_shortest/60)];
 };
-if((_escapedPrison)>0) then {
+if((_played - _escapedPrison)>0) then {
 	_statisticText = _statisticText + format["<br/>%1 times the players were stopped by the prison guards.<br/>",(_played - _escapedPrison)];
 };
 if((_played - _mapFound)>0) then {
