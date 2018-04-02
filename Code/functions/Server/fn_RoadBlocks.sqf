@@ -163,7 +163,7 @@ while {true} do {
         _instanceNo = a3e_var_RoadBlocks_InstanceNo;
         private _roadSegment = [([] call A3E_fnc_getPlayers)] call _fnc_FindRoadBlockSegment;
         if(!isNil "_roadSegment") then {
-			if(!isNull _roadSegment) the {
+			if(!isNull _roadSegment) then {
 				private _side = selectRandom _factionsArray;
 				private _composition = [_roadSegment, _side, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle,_instanceNo] call _fnc_CreateRoadBlock;
 				_roadBlocks pushback [_instanceNo, _roadSegment, _composition select 0, _composition select 1];
