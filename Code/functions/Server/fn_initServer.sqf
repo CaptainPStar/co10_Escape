@@ -144,7 +144,7 @@ if(isNil("A3E_ClearedPositionDistance")) then {
 // Build start position
 _fenceRotateDir = random 360;
 
-private _backPack = call compile format["[A3E_StartPos, %1] call %2;",_fenceRotateDir,selectRandom ["a3e_fnc_BuildPrison","a3e_fnc_BuildPrison"]];
+private _backPack = call compile format["[A3E_StartPos, %1] call %2;",_fenceRotateDir,selectRandom ["a3e_fnc_BuildPrison","a3e_fnc_BuildPrison1","a3e_fnc_BuildPrison2","a3e_fnc_BuildPrison3","a3e_fnc_BuildPrison4","a3e_fnc_BuildPrison5"]];
 
 A3E_FenceIsCreated = true;
 publicVariable "A3E_FenceIsCreated";
