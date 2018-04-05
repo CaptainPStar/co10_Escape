@@ -17,7 +17,7 @@ private _waypoint = _group1 addWaypoint [getMarkerPos _extractionMarkerName, 0];
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointFormation "WEDGE";
-_waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
+_waypoint setWaypointStatements ["true", ""];
 
 sleep 5;
 
@@ -42,7 +42,7 @@ _waypoint = _group2 addWaypoint [getMarkerPos _extractionMarkerName2, 0];
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointFormation "WEDGE";
-_waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
+_waypoint setWaypointStatements ["true", ""];
 
 diag_log format["fn_RunExtraction: Extraction choppers spawned: %1, %2 and %3",_boat1,_boat2,_boat3];
 
@@ -94,6 +94,20 @@ _extractionGuard = {
 	};
 };
 
+//Make helis charged :D
+[_boat1,_boat2] spawn {
+	params["_heli1","_heli2"];
+	while{alive _heli1 || alive _heli2} do {
+		private _distance = _heli1 distance _heli2;
+		if(_distance < 30) then {
+			private _vDis = vectorNormalized(getposATL _heli1 vectordiff getposATL _heli2);
+			_heli1 setVelocity ((velocity _heli1) vectorAdd (_vDis vectorMultiply (15/_distance)));
+			_heli2 setVelocity ((velocity _heli1) vectorAdd (_vDis vectorMultiply (-15/_distance)));
+		};
+		sleep 0.5;
+	};
+};
+
 [_boat1] spawn _heloGuard;
 [_boat2] spawn _heloGuard;
 [_boat3] spawn _heloGuard;
@@ -109,9 +123,18 @@ sleep 1;
 
 while {{(_x in  _boat1) || (_x in _boat2)} count (call A3E_fnc_GetPlayers) != count(call A3E_fnc_GetPlayers)} do {
 	sleep 1;
+	if(alive _boat1 && (unitReady _boat1)) then {
+		_boat1 land "GET IN";
+	};
+	if(alive _boat2 && (unitReady _boat2)) then {
+		_boat2 land "GET IN";
+	};
 };
-
-
+//When all are in, lock helis to prevent Joshi and Darcy from 'accidentally' ejecting
+if({(_x in  _boat1) || (_x in _boat2)} count (call A3E_fnc_GetPlayers) == count(call A3E_fnc_GetPlayers)) then {
+	_boat1 lock true;
+	_boat2 lock true;
+};
 _boat1 land "NONE";
 _boat2 land "NONE";
 
@@ -127,6 +150,8 @@ private _away = (getMarkerPos _extractionMarkerName) vectorAdd (((getMarkerPos _
 _waypoint = _group1 addWaypoint [_away vectoradd [random 200, random 200, 0], 0];
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "CARELESS";
+
+//sleep 5;
 
 _waypoint = _group2 addWaypoint [_away vectoradd [random 200, random 200, 0], 0];
 _waypoint setWaypointSpeed "FULL";
