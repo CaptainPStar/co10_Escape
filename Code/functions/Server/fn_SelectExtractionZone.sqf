@@ -2,7 +2,7 @@
 //### mode 0: totally random
 //### mode 1: try to pick a close extraction point
 //### mode 2: try to pick a extraction far away 
-params[["_hackPos",[0,0,0]]];
+params[["_hackPos",[0,0,0]],["_select",-1]];
 
 private _mode = Param_ExtractionSelection;
 
@@ -32,25 +32,32 @@ if(count _extractions == 0) then {
 	_extractions = A3E_ExtractionPositions;
 };
 private _extraction = [];
-if(_mode == 0) then {
-	_extraction = selectRandom _extractions;
+if(_select > 0) then {
+	_extraction = selectRandom A3E_ExtractionPositions;
+	{
+		if(_x select 0 == _select) exitwith {_extraction = _x;};
+	} foreach A3E_ExtractionPositions;
 } else {
-	if(_mode == 1) then {
-		if(({((_x select 1) distance _hackPos) < (A3E_MinComCenterDistance*2)} count _extractions) > 0) then {
-			_extraction = selectRandom (_extractions select {((_x select 1) distance _hackPos) < (A3E_MinComCenterDistance*2)});
-		} else {
-			_extraction = selectRandom _extractions;
-		};
+	if(_mode == 0) then {
+		_extraction = selectRandom _extractions;
 	} else {
-		
-		if(_mode == 2) then {
-			if(({((_x select 1) distance _hackPos) > (A3E_MinComCenterDistance*2)} count _extractions) > 0) then {
-				_extraction = selectRandom (_extractions select {((_x select 1) distance _hackPos) > (A3E_MinComCenterDistance*2)});
+		if(_mode == 1) then {
+			if(({((_x select 1) distance _hackPos) < (A3E_MinComCenterDistance*2)} count _extractions) > 0) then {
+				_extraction = selectRandom (_extractions select {((_x select 1) distance _hackPos) < (A3E_MinComCenterDistance*2)});
 			} else {
 				_extraction = selectRandom _extractions;
 			};
+		} else {
+			
+			if(_mode == 2) then {
+				if(({((_x select 1) distance _hackPos) > (A3E_MinComCenterDistance*2)} count _extractions) > 0) then {
+					_extraction = selectRandom (_extractions select {((_x select 1) distance _hackPos) > (A3E_MinComCenterDistance*2)});
+				} else {
+					_extraction = selectRandom _extractions;
+				};
+			};
+			
 		};
-		
 	};
 };
 _extraction set [3,true]; //Set zone as used
