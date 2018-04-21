@@ -51,8 +51,14 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"C_SUV_01_F"
 	,"C_Van_01_box_F"
 	,"C_Van_01_transport_F"
-	,"C_Van_01_fuel_F"];
-
+	,"C_Van_01_fuel_F"
+	,"C_Offroad_02_unarmed_F"
+	,"C_Truck_02_covered_F"
+	,"C_Offroad_01_repair_F"
+	,"C_Truck_02_fuel_F"
+	,"C_Truck_02_box_F"
+	,"C_Truck_02_transport_F"];
+	
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
 switch (_enemyFrequency) do {
@@ -67,6 +73,10 @@ switch (_enemyFrequency) do {
 		,"O_Quadbike_01_F"
 		,"O_Quadbike_01_F"
 		,"O_Quadbike_01_F"
+		,"O_LSV_02_unarmed_F"
+		,"O_LSV_02_armed_F"
+		,"O_LSV_02_AT_F"
+		,"O_UGV_01_rcws_F"
 		,"O_Truck_02_covered_F"
 		,"O_Truck_02_transport_F"
 		,"O_Truck_02_ammo_F"
@@ -78,6 +88,7 @@ switch (_enemyFrequency) do {
 		,"O_APC_Tracked_02_cannon_F"
 		,"O_MBT_02_arty_F"
 		,"O_MBT_02_cannon_F"
+		,"O_MBT_04_cannon_F"
 		,"O_Truck_03_device_F"
 		,"O_Truck_03_transport_F"
 		,"O_Truck_03_covered_F"
@@ -95,7 +106,15 @@ switch (_enemyFrequency) do {
 		,"I_G_Offroad_01_armed_F"
 		,"I_G_Offroad_01_armed_F"
 		,"I_G_Offroad_01_armed_F"
+		,"I_G_Offroad_01_AT_F"
+		,"I_G_Offroad_01_AT_F"
 		,"I_G_Offroad_01_F"
+		,"I_UGV_01_rcws_F"
+		,"I_Truck_02_MRL_F"
+		,"I_LT_01_AA_F"
+		,"I_LT_01_AT_F"
+		,"I_LT_01_scout_F"
+		,"I_LT_01_cannon_F"
 		,"I_MBT_03_cannon_F"
 		,"I_APC_tracked_03_cannon_F"
 		,"I_APC_tracked_03_cannon_F"];
@@ -109,6 +128,10 @@ switch (_enemyFrequency) do {
 		,"O_MRAP_02_hmg_F"
 		,"O_Quadbike_01_F"
 		,"O_Quadbike_01_F"
+		,"O_LSV_02_unarmed_F"
+		,"O_LSV_02_armed_F"
+		,"O_LSV_02_AT_F"
+		,"O_UGV_01_rcws_F"
 		,"O_Truck_02_covered_F"
 		,"O_Truck_02_transport_F"
 		,"O_Truck_02_ammo_F"
@@ -125,6 +148,8 @@ switch (_enemyFrequency) do {
 		,"O_MBT_02_arty_F"
 		,"O_MBT_02_cannon_F"
 		,"O_MBT_02_cannon_F"
+		,"O_MBT_04_cannon_F"
+		,"O_MBT_04_command_F"
 		,"O_Truck_03_device_F"
 		,"O_Truck_03_transport_F"
 		,"O_Truck_03_covered_F"
@@ -142,7 +167,15 @@ switch (_enemyFrequency) do {
 		,"I_G_Offroad_01_armed_F"
 		,"I_G_Offroad_01_armed_F"
 		,"I_G_Offroad_01_armed_F"
+		,"I_G_Offroad_01_AT_F"
+		,"I_G_Offroad_01_AT_F"
 		,"I_G_Offroad_01_F"
+		,"I_UGV_01_rcws_F"
+		,"I_Truck_02_MRL_F"
+		,"I_LT_01_AA_F"
+		,"I_LT_01_AT_F"
+		,"I_LT_01_scout_F"
+		,"I_LT_01_cannon_F"
 		,"I_MBT_03_cannon_F"
 		,"I_MBT_03_cannon_F"
 		,"I_APC_tracked_03_cannon_F"
@@ -159,6 +192,10 @@ switch (_enemyFrequency) do {
 		,"O_MRAP_02_hmg_F"
 		,"O_Quadbike_01_F"
 		,"O_Quadbike_01_F"
+		,"O_LSV_02_unarmed_F"
+		,"O_LSV_02_armed_F"
+		,"O_LSV_02_AT_F"
+		,"O_UGV_01_rcws_F"
 		,"O_Truck_02_covered_F"
 		,"O_Truck_02_transport_F"
 		,"O_Truck_02_ammo_F"
@@ -175,6 +212,8 @@ switch (_enemyFrequency) do {
 		,"O_MBT_02_arty_F"
 		,"O_MBT_02_cannon_F"
 		,"O_MBT_02_cannon_F"
+		,"O_MBT_04_cannon_F"
+		,"O_MBT_04_command_F"
 		,"O_Truck_03_device_F"
 		,"O_Truck_03_transport_F"
 		,"O_Truck_03_covered_F"
@@ -192,7 +231,15 @@ switch (_enemyFrequency) do {
 		,"I_G_Offroad_01_armed_F"
 		,"I_G_Offroad_01_armed_F"
 		,"I_G_Offroad_01_armed_F"
+		,"I_G_Offroad_01_AT_F"
+		,"I_G_Offroad_01_AT_F"
 		,"I_G_Offroad_01_F"
+		,"I_UGV_01_rcws_F"
+		,"I_Truck_02_MRL_F"
+		,"I_LT_01_AA_F"
+		,"I_LT_01_AT_F"
+		,"I_LT_01_scout_F"
+		,"I_LT_01_cannon_F"
 		,"I_MBT_03_cannon_F"
 		,"I_MBT_03_cannon_F"
 		,"I_APC_tracked_03_cannon_F"
@@ -255,7 +302,9 @@ a3e_arr_Escape_InfantryTypes = [
 	,"O_HeavyGunner_F"
 	,"O_soldier_UAV_06_F"
 	,"O_soldier_UAV_06_medical_F"
-	,"O_soldier_mine_F"];
+	,"O_soldier_mine_F"
+	,"O_Soldier_AHAT_F"
+	,"O_Soldier_HAT_F"];
 a3e_arr_Escape_InfantryTypes_Ind = [
 	"I_engineer_F"
 	,"I_engineer_F"
@@ -305,7 +354,12 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"I_support_Mort_F"
 	,"I_soldier_UAV_06_F"
 	,"I_soldier_UAV_06_medical_F"
-	,"I_soldier_mine_F"];
+	,"I_soldier_mine_F"
+	,"I_Soldier_LAT2_F"
+	,"I_Soldier_LAT2_F"
+	,"I_Spotter_F"
+	,"I_Sniper_F"
+	,"I_ghillie_ard_F"];
 a3e_arr_recon_InfantryTypes = [
 	"O_recon_exp_F"
 	,"O_recon_JTAC_F"
@@ -328,16 +382,22 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"I_G_Soldier_SL_F"
 	,"I_G_Soldier_lite_F"
 	,"I_G_Soldier_F"
-	,"I_G_Sharpshooter_F"];
+	,"I_G_Sharpshooter_F"]
+	,"I_G_Soldier_LAT2_F";
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"O_MRAP_02_hmg_F"
+	,"O_LSV_02_armed_F"
+	,"O_LSV_02_AT_F"
+	,"O_UGV_01_rcws_F"
 	,"O_HMG_01_high_F"
 	,"O_static_AT_F"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"I_G_Offroad_01_armed_F"
+	,"I_G_Offroad_01_AT_F"
 	,"I_MRAP_03_hmg_F"
+	,"I_LT_01_cannon_F"
 	,"I_HMG_01_high_f"
 	,"I_static_AT_F"
 	,"I_G_Offroad_01_F"];
@@ -359,7 +419,8 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	"O_APC_Wheeled_02_rcws_F"
 	,"O_APC_Tracked_02_cannon_F"
-	,"O_APC_Wheeled_02_rcws_F"];
+	,"O_APC_Wheeled_02_rcws_F"
+	,"I_LT_01_cannon_F"];
 
 
 
@@ -371,23 +432,20 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 	"O_MRAP_02_gmg_F"
 	,"O_MRAP_02_hmg_F"
 	,"O_APC_Wheeled_02_rcws_F"
-	,"O_APC_Tracked_02_AA_F"
-	,"O_Truck_03_device_F"
-	,"O_Truck_03_transport_F"
-	,"O_Truck_03_covered_F"
-	,"O_Truck_03_ammo_F"
-	,"O_Truck_03_fuel_F"
-	,"O_Truck_03_medical_F"
-	,"O_Truck_03_repair_F"];
+	,"O_APC_Tracked_02_AA_F"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"O_MBT_02_cannon_F"
-	,"O_APC_Tracked_02_cannon_F"];
+	,"O_APC_Tracked_02_cannon_F"
+	,"O_MBT_04_cannon_F"
+	,"O_MBT_04_command_F"];
 
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
 a3e_arr_ComCenStaticWeapons = [
-	"O_HMG_01_high_F"];
+	"O_HMG_01_high_F"
+	,"O_HMG_01_high_F"
+	,"O_GMG_01_high_F"];
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
 	"I_G_Offroad_01_repair_F"
@@ -402,9 +460,20 @@ a3e_arr_ComCenParkedVehicles = [
 	,"O_Truck_02_box_F"
 	,"O_MRAP_02_F"
 	,"I_G_Offroad_01_armed_F"
+	,"I_G_Offroad_01_AT_F"
 	,"I_MRAP_03_hmg_F"
 	,"I_MRAP_03_gmg_F"
-	,"I_G_Offroad_01_F"];
+	,"I_G_Offroad_01_F"
+	,"O_Truck_03_device_F"
+	,"O_Truck_03_transport_F"
+	,"O_Truck_03_covered_F"
+	,"O_Truck_03_ammo_F"
+	,"O_Truck_03_fuel_F"
+	,"O_Truck_03_medical_F"
+	,"O_Truck_03_repair_F"
+	,"O_LSV_02_unarmed_F"
+	,"O_LSV_02_armed_F"
+	,"O_LSV_02_AT_F"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
@@ -415,7 +484,10 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"C_SUV_01_F"
 	,"C_Van_01_box_F"
 	,"C_Van_01_transport_F"
-	,"C_Van_01_fuel_F"];
+	,"C_Van_01_fuel_F"
+	,"C_Offroad_02_unarmed_F"
+	,"C_Truck_02_covered_F"];
+	
 
 // Vehicles, weapons and ammo at ammo depots
 
@@ -436,6 +508,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"O_Truck_02_ammo_F"
 	,"O_Truck_02_box_F"
 	,"I_G_Offroad_01_armed_F"
+	,"I_G_Offroad_01_AT_F"
 	,"I_MRAP_03_hmg_F"
 	,"I_MRAP_03_gmg_F"
 	,"I_G_Offroad_01_F"
@@ -445,7 +518,10 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"O_Truck_03_ammo_F"
 	,"O_Truck_03_fuel_F"
 	,"O_Truck_03_medical_F"
-	,"O_Truck_03_repair_F"];
+	,"O_Truck_03_repair_F"
+	,"O_LSV_02_unarmed_F"
+	,"O_LSV_02_armed_F"
+	,"O_LSV_02_AT_F"];
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
@@ -524,8 +600,10 @@ a3e_arr_AmmoDepotLaunchers = [];
 a3e_arr_AmmoDepotLaunchers pushback ["launch_RPG32_F", 50, 3, 5, ["RPG32_F", "RPG32_HE_F"], 6];
 a3e_arr_AmmoDepotLaunchers pushback ["launch_O_Titan_F", 50, 1, 1, ["Titan_AA"], 3];
 a3e_arr_AmmoDepotLaunchers pushback ["launch_O_Titan_short_F", 50, 1, 1, ["Titan_AP", "Titan_AT"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["launch_O_Vorona_brown_F", 50, 1, 1, ["Vorona_HEAT", "Vorona_HE"], 2];
 // non-CSAT weapons
-//a3e_arr_AmmoDepotLaunchers pushback ["launch_NLAW_F", 100, 3, 5, ["NLAW_F"], 6];
+a3e_arr_AmmoDepotLaunchers pushback ["launch_NLAW_F", 50, 3, 5, ["NLAW_F"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["launch_MRAWS_olive_rail_F", 50, 1, 1, ["MRAWS_HEAT_F", "MRAWS_HE_F"], 2];
 //a3e_arr_AmmoDepotLaunchers pushback ["launch_I_Titan_F", 100, 1, 1, ["Titan_AA"], 3];
 //a3e_arr_AmmoDepotLaunchers pushback ["launch_I_Titan_short_F", 100, 1, 1, ["Titan_AP", "Titan_AT"], 3];
 //a3e_arr_AmmoDepotLaunchers pushback ["launch_B_Titan_F", 100, 1, 1, ["Titan_AA"], 3];
@@ -688,7 +766,9 @@ a3e_arr_Bipods = [
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"B_Heli_Transport_01_F"];
+	"B_Heli_Transport_01_F"
+	,"B_Heli_Transport_01_F"
+	,"B_Heli_Transport_03_F"];
 a3e_arr_extraction_chopper_escort = [
 	"B_Heli_Attack_01_F"];
 
@@ -764,7 +844,8 @@ a3e_arr_roadblocks_Veh_GUE = a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
 // boats that are spawned
 //////////////////////////////////////////////////////////////////
 a3e_arr_AquaticPatrols = [
-	"O_Boat_Armed_01_hmg_F"];
+	"O_Boat_Armed_01_hmg_F"
+	,"I_Boat_Armed_01_minigun_F"];
 
 //////////////////////////////////////////////////////////////////
 // fn_AmmoDepot
@@ -814,12 +895,14 @@ a3e_arr_CrashSiteCrew = [
 a3e_arr_CrashSiteWrecksCar = [
 	"Land_Wreck_HMMWV_F"
 	,"Land_Wreck_Hunter_F"
-	,"Land_Wreck_Slammer_F"];
+	,"Land_Wreck_Slammer_F"
+	,"Land_Wreck_AFV_Wheeled_01_F"];
 a3e_arr_CrashSiteCrewCar = [
 	"B_Soldier_lite_F"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["launch_NLAW_F", 10, 1, 2, ["NLAW_F"], 3];
+a3e_arr_CrashSiteWeapons pushback ["launch_MRAWS_sand_F", 10, 1, 2, ["MRAWS_HEAT_F","MRAWS_HE_F"], 2];
 a3e_arr_CrashSiteWeapons pushback ["srifle_EBR_F", 10, 1, 2, ["20Rnd_762x51_Mag"], 8];
 a3e_arr_CrashSiteWeapons pushback ["srifle_LRR_F", 10, 1, 2, ["7Rnd_408_Mag"], 8];
 a3e_arr_CrashSiteWeapons pushback ["arifle_MX_F", 75, 2, 4, ["30Rnd_65x39_caseless_mag"], 6];
