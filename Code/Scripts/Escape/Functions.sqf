@@ -1,6 +1,6 @@
 drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	private["_nighttime"];
-
+    _this setVehicleAmmo (0.2 + random 0.4);
 	if(daytime > 20 OR daytime < 8) then {
 		_nighttime = true;
 	} else {
@@ -37,106 +37,22 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
     
     _this removeItem "FirstAidKit";
 	
-	/*
-	Author: Vaclav "Watty Watts" Oliva
+	//Chance for a random scope (and no scope):
+	if(random 100 < 70) then {
 
-	Description:
-	Keeps or removes unit's items (including NVGs and binocular/designator) based on probability user sets.
-	- use 0-100 to randomize the chance of keeping the current attachment
-	- use 100 to always keep the attachment
-	- use 0 to always remove the attachment
-
-	Parameters:
-	Select 0 - OBJECT: Target unit
-	Select 1 - NUMBER: Chance to keep the NVGs. Default is 50.
-	Select 2 - NUMBER: Chance to keep the binocular. Default is 50.
-	Select 3 - NUMBER: Chance to keep the GPS. Default is 50.
-	Select 4 - NUMBER: Chance to keep the map. Default is 50.
-	Select 5 - NUMBER: Chance to keep the radio. Default is 50.
-	Select 6 - NUMBER: Chance to keep the compass. Default is 50.
-	Select 7 - NUMBER: Chance to keep the watch. Default is 50.
-
-	Returns:
-	Boolean
-
-	Examples:
-	_limit = [player] call BIS_fnc_limitItems;
-	_limit = [player,0,15,30,45,60,75,90] call BIS_fnc_limitItems;
-*/
-
-	//[_this,20,30,10,20,100,50,70] call BIS_fnc_limitItems;
-	
-	/*
-	Author: Vaclav "Watty Watts" Oliva
-
-	Description:
-	Limits the number of magazines carried by individual unit. Each container (uniform, vest and backpack) can be limited separately or left untouched.
-	The function limits the number of magazines of each unique ammo category in respective container. Items like First Aid Kit or Mine Detector are not affected by the function.
-
-	Set the minimum and maximum values in an array, for example [0.5,1] will set the magazine count anywhere between 50-100% of default count.
-
-	Parameters:
-	Select 0 - OBJECT: Target unit
-	Select 1 - ARRAY: Uniform magazines, use [<0-1>,<0-1>] or [] to skip. Default is [0.4,0.8].
-	Select 2 - ARRAY: Vest magazines, use [<0-1>,<0-1>] or [] to skip. Default is [0.4,0.8].
-	Select 3 - ARRAY: Backpack magazines, use [<0-1>,<0-1>] or [] to skip. Default is [0.4,0.8].
-
-	Returns:
-	Boolean
-
-	Examples:
-	_limit = [player] call BIS_fnc_limitAmmunition;
-	_limit = [player,[],[0.5,0.5],[0,1]] call BIS_fnc_limitAmmunition;
-*/
-	//[_this,[0.6,1.0],[0.4,0.8],[0.4,1]] call BIS_fnc_limitAmmunition;
-
-	
-	/*
-	Author: Vaclav "Watty Watts" Oliva
-
-	Description:
-	Keeps or remove unit's weapon attachments based on probability user sets. Apply for primary, secondary or handgun weapon separately.
-	- use 0-100 to randomize the chance of keeping the current attachment
-	- use 100 to always keep the attachment
-	- use 0 to always remove the attachment
-
-	Parameters:
-	Select 0 - OBJECT: Target unit
-	Select 1 - NUMBER: Mode - 0 for primary weapon, 1 for secondary, 2 for handgun. Defult is 0.
-	Select 2 - NUMBER or ARRAY: Chance to keep the current optics, in %. Default is 50.
-	Select 3 - NUMBER or ARRAY: Chance to keep the current side attachment, in %. Default is 50.
-	Select 4 - NUMBER or ARRAY: Chance to keep the current muzzle attachment, in %. Default is 50.
-	Select 5 - NUMBER or ARRAY: Chance to keep the current underbarrel attachment, in %. Default is 50.
-
-	If you use ["itemClassname",number], the function will add that attachment if it passes the check. If not, current will be removed.
-
-	Returns:
-	Boolean
-
-	Examples:
-	_limit = [player] call BIS_fnc_limitWeaponItems;
-	_limit = [player,0,25,50,75,100] call BIS_fnc_limitWeaponItems;
-	_limit = [player,0,25,["acc_flashlight",50],75,100] call BIS_fnc_limitWeaponItems;
-	_limit = [player,2,["optic_Yorris",50]] call BIS_fnc_limitWeaponItems;
-	_limit = [player,0,["optic_lrps",100],["acc_pointer_ir",100],["muzzle_snds_B",100],["bipod_01_F_blk",100]] call BIS_fnc_limitWeaponItems;
-*/
-	//[_this,0,20,20,40,40] call BIS_fnc_limitWeaponItems;
-	//[_this,2,20,20,40,40] call BIS_fnc_limitWeaponItems;
-	
-	//Chance for a additional stuff:
-	//removeAllPrimaryWeaponItems _this;
-	if((random 100 < 30)) then {
-		_scopes = A3E_arr_Scopes;
-		if(Param_NoNightvision==0) then {
-			_scopes = _scopes + A3E_arr_TWSScopes;
+		removeAllPrimaryWeaponItems _this;
+		if((random 100 < 30)) then {
+			_scopes = A3E_arr_Scopes;
+			if(Param_NoNightvision==0) then {
+				_scopes = _scopes + A3E_arr_TWSScopes;
+			};
+			if(_nighttime) then {
+				_scopes = _scopes + A3E_arr_NightScopes;
+			};
+			_scope = _scopes select floor(random(count(_scopes)));
+			_this addPrimaryWeaponItem _scope;
 		};
-		if(_nighttime) then {
-			_scopes = _scopes + A3E_arr_NightScopes;
-		};
-		_scope = selectRandom _scopes;
-		_this addPrimaryWeaponItem _scope;
 	};
-
 	//Chance for random attachment
 	if(((random 100 < 15) && (!_nighttime)) OR ((random 100 < 70) && (_nighttime))) then {
 		if(random 100 < 70) then {
@@ -148,17 +64,62 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	
 	//Bipod chance
 	if((random 100 < 20)) then {
-		_this addPrimaryWeaponItem selectRandom a3e_arr_Bipods;
+		_this addPrimaryWeaponItem (a3e_arr_Bipods select floor(random(count(a3e_arr_Bipods))));
 	};
 	
 	//Chance for silencers
 	if(((random 100 < 10) && (!_nighttime)) OR ((random 100 < 40) && (_nighttime))) then {
 		//Not yet
 	};
-
+    if (random 100 > 20) then {
+        //_this additem "ItemMap";
+        //_this assignItem "ItemMap";
+		_this unlinkItem "ItemMap";
+    };
+	if (random 100 > 30) then {
+        //_this additem "ItemCompass";
+        //_this assignItem "ItemCompass";
+		_this unlinkItem "ItemCompass";
+    };
+    if (random 100 > 5) then {
+        //_this additem "ItemGPS";
+       // _this assignItem "ItemGPS";
+		_this unlinkItem "ItemGPS";
+    };
+	if ("Binocular" in (assignedItems _this)) then {
+		if (random 100 > 30) then {
+			//_this additem "ItemGPS";
+		   // _this assignItem "ItemGPS";
+			_this unlinkItem "Binocular";
+		};
+	};
+	if ("Rangefinder" in (assignedItems _this)) then {
+		if (random 100 > 30) then {
+			//_this additem "ItemGPS";
+		   // _this assignItem "ItemGPS";
+			_this unlinkItem "Rangefinder";
+		};
+	};
+	//if ("NVGoggles_OPFOR" in (assignedItems _this)) then {
+	//		if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
+	//			_this unlinkItem "NVGoggles_OPFOR";
+	//		};
+	//};
+	//if ("NVGoggles_INDEP" in (assignedItems _this)) then {
+	//		if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
+	//			_this unlinkItem "NVGoggles_INDEP";
+	//		};
+	//};
 	private["_nvgs"];
-	if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (Param_NoNightvision==0)) then {
-		_this linkItem "NVGoggles_OPFOR";
+	_nvgs = hmd _this; //NVGoggles
+	if(_nvgs != "") then {
+		if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
+			_this unlinkItem _nvgs;
+		};
+	} else {
+		if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (Param_NoNightvision==0)) then {
+			_this linkItem "NVGoggles_OPFOR";
+		};
 	};
 
 };
