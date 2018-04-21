@@ -49,7 +49,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 			if(_nighttime) then {
 				_scopes = _scopes + A3E_arr_NightScopes;
 			};
-			_scope = _scopes select floor(random(count(_scopes)));
+			_scope = selectRandom _scopes;
 			_this addPrimaryWeaponItem _scope;
 		};
 	};
@@ -64,7 +64,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	
 	//Bipod chance
 	if((random 100 < 20)) then {
-		_this addPrimaryWeaponItem (a3e_arr_Bipods select floor(random(count(a3e_arr_Bipods))));
+		_this addPrimaryWeaponItem (selectRandom a3e_arr_Bipods);
 	};
 	
 	//Chance for silencers
