@@ -53,6 +53,26 @@
 				}
 		},
 		{
+			"name" : "Vanilla Apex US",
+			"path" : "./Mods/Vanilla Apex US/",
+			"require" : [],
+			"replace" :
+				{
+					"MOD" : "Vanilla Apex US",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "O_T_Soldier_TL_F",
+					"PLAYERUNIT_2" : "O_T_Soldier_AR_F",
+					"PLAYERUNIT_3" : "O_T_Soldier_UAV_F",
+					"PLAYERUNIT_4" : "O_T_Engineer_F",
+					"PLAYERUNIT_5" : "O_T_Soldier_GL_F",
+					"PLAYERUNIT_6" : "O_T_Soldier_AR_F",
+					"PLAYERUNIT_7" : "O_T_Soldier_LAT_F",
+					"PLAYERUNIT_8" : "O_T_Soldier_F",
+					"PLAYERUNIT_9" : "O_T_Soldier_M_F",
+					"PLAYERUNIT_10" : "O_T_Medic_F"
+				}
+		},
+		{
 			"name" : "AT RHS CAF-EU",
 			"path" : "./Mods/AT RHS CAF-EU/",
 			"require" : ["AT_UNITS","rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
@@ -1056,6 +1076,13 @@
 			"name" : "co10_Escape_Vanilla_Apex"
 		},
 		{
+			"island" : "Tanoa",
+			"sqm": "Tanoa",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_Vanilla_Apex_US"
+		},
+		{
 			"island" : "Malden 2035",
 			"sqm": "Malden",
 			"mod" : "Vanilla",
@@ -1124,6 +1151,13 @@
 			"mod" : "Vanilla Apex",
 			"replace" : {},
 			"name" : "co10_Escape_Vanilla_Apex"
+		},
+		{
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_Vanilla_Apex_US"
 		},
 		{
 			"island" : "Dingor",
@@ -3086,7 +3120,7 @@
 		},
 		{
 			"name" : "Apex",
-			"mods" : ["Vanilla Apex"]
+			"mods" : ["Vanilla Apex","Vanilla Apex US"]
 		},
 		{
 			"name" : "CUP",
