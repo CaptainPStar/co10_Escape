@@ -64,7 +64,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	_limit = [player,0,15,30,45,60,75,90] call BIS_fnc_limitItems;
 */
 
-	[_this,20,30,10,20,100,50,70] call BIS_fnc_limitItems;
+	//[_this,20,30,10,20,100,50,70] call BIS_fnc_limitItems;
 	
 	/*
 	Author: Vaclav "Watty Watts" Oliva
@@ -88,7 +88,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	_limit = [player] call BIS_fnc_limitAmmunition;
 	_limit = [player,[],[0.5,0.5],[0,1]] call BIS_fnc_limitAmmunition;
 */
-	[_this,[0.6,1.0],[0.4,0.8],[0.4,1]] call BIS_fnc_limitAmmunition;
+	//[_this,[0.6,1.0],[0.4,0.8],[0.4,1]] call BIS_fnc_limitAmmunition;
 
 	
 	/*
@@ -120,11 +120,11 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	_limit = [player,2,["optic_Yorris",50]] call BIS_fnc_limitWeaponItems;
 	_limit = [player,0,["optic_lrps",100],["acc_pointer_ir",100],["muzzle_snds_B",100],["bipod_01_F_blk",100]] call BIS_fnc_limitWeaponItems;
 */
-	[_this,0,20,20,40,40] call BIS_fnc_limitWeaponItems;
-	[_this,2,20,20,40,40] call BIS_fnc_limitWeaponItems;
+	//[_this,0,20,20,40,40] call BIS_fnc_limitWeaponItems;
+	//[_this,2,20,20,40,40] call BIS_fnc_limitWeaponItems;
 	
 	//Chance for a additional stuff:
-	removeAllPrimaryWeaponItems _this;
+	//removeAllPrimaryWeaponItems _this;
 	if((random 100 < 30)) then {
 		_scopes = A3E_arr_Scopes;
 		if(Param_NoNightvision==0) then {
