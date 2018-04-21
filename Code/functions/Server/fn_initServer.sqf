@@ -590,6 +590,8 @@ waitUntil {scriptDone _scriptHandle};
             _unit unlinkItem "ItemCompass";
             _unit unlinkItem "ItemGPS";
 			
+			removeBackpackGlobal _unit;
+			
 			if(random 100 < 80) then {
 				removeAllPrimaryWeaponItems _unit;
 				
