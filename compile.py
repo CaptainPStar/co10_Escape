@@ -63,7 +63,7 @@ for mission in missions:
                     f.flush()
                     f.close()
     subprocess.call(["cpbo.exe", "-p", missiondir])
-    shutil.copyfile(data['BuildDir'] + missiondir + ".pbo", './Artifacts/Missions/') #Copy build artifact
+    shutil.copyfile(missiondir + ".pbo", './Artifacts/Missions/') #Copy build artifact
 addons = data['Addons'];
 t = []
 for m in missions:
