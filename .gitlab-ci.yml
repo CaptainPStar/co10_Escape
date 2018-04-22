@@ -4,7 +4,7 @@ stages:
 job 1:
   stage: build
   script: 
-  - "mdir ./Build"
+  - "mkdir ./Build"
   - "python ./compile.py"
   environment:
     name: development
