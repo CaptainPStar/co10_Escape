@@ -63,7 +63,7 @@ for mission in missions:
                     f.flush()
                     f.close()
     subprocess.call(["cpbo.exe", "-p", missiondir])
-    shutil.copy(missiondir + ".pbo", './Artifacts/Missions/') #Copy build artifact
+    shutil.copyfile(missiondir + ".pbo", './Artifacts/Missions/'+mission['name']+'.'+ missionIsland['class']+'.pbo') #Copy build artifact
 addons = data['Addons'];
 t = []
 for m in missions:
@@ -131,4 +131,4 @@ for addon in addons:
                 if os.path.exists(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0]):
                     os.remove(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0])
                 shutil.copyfile(data['BuildDir'] + '/addons/' + pbo[0], data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0]) #Copy build artifact
-        shutil.copytree(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name'],'./Artifacts/Addons/')
+        shutil.copytree(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name'],'./Artifacts/Addons/'+ '@'+data['Missionname']+'_'+addon['name'])
