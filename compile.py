@@ -1,22 +1,14 @@
-import json
+﻿import json
 import os
 import shutil
 import subprocess
-with open('./Configs/config.json') as json_data_file:
+with open('config.json') as json_data_file:
     data = json.load(json_data_file)
-mods = data['Mods']
-islands = data['Islands']
-missions = data['Missions']
-addons = data['Addons']
-for scfg in data['Subconfigs']:
-  with open(scfg) as json_adata:
-    adata = json.load(json_adata)  
-    mods = mods + adata['Mods'];
-    islands = islands + adata['Islands'];
-    missions = missions + adata['Missions'];
-    addons =addons + adata['Addons']
+mods = data['Mods'];
+islands = data['Islands'];
+missions = data['Missions'];
 #Add devbuild number to version
-data['replace']['VERSION'] += ' dev'+os.environ['BUILD_NUMBER']
+data['replace']['VERSION'] += ' dev'+os.environ['CI_JOB_ID']
 data['replace']['RELEASE'] = 'Mission'
 cpbo = data['cpbo'];
 for the_file in os.listdir(data['BuildDir']):
@@ -72,6 +64,7 @@ for mission in missions:
                     f.close()
     subprocess.call(["cpbo.exe", "-p", missiondir])
     
+addons = data['Addons'];
 t = []
 for m in missions:
     t.append(m['name'].lower())
