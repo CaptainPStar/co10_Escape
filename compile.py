@@ -131,4 +131,4 @@ for addon in addons:
                 if os.path.exists(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0]):
                     os.remove(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0])
                 shutil.copyfile(data['BuildDir'] + '/addons/' + pbo[0], data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0]) #Copy build artifact
-        shutil.copytree(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name'],'./Artifacts/Addons/'+ '@'+data['Missionname']+'_'+addon['name'])
+        shutil.copytree(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name'],'./Artifacts/Addons/')
