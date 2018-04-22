@@ -1,15 +1,16 @@
 stages:
   - build
 
-job 1:
+development:
   stage: build
   script: 
   - "mkdir Build"
+  - "mkdir Artifacts"
   - "python ./compile.py"
   environment:
     name: development
   artifacts:
     name: "%CI_JOB_NAME-%CI_COMMIT_REF_NAME"
     paths:
-    - Build/missionfiles
-    - Build/addons
+    - Artifacts/Missions
+    - Artifacts/Addons
