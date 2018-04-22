@@ -6,7 +6,9 @@ development:
   script: 
   - "mkdir Build"
   - "mkdir Artifacts"
-  - "mkdir Artifacts/Missions"
+  - "cd Artifacts"
+  - "mkdir Missions"
+  - "cd .."
   - "python ./compile.py"
   environment:
     name: development
