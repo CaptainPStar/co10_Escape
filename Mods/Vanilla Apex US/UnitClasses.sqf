@@ -690,7 +690,7 @@ a3e_arr_extraction_boat_escort = [
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
-	"O_UAV_01_F"
+	"B_UAV_01_F"
 	,"B_UAV_02_dynamicLoadout_F"
 	,"B_UAV_05_F"
 	,"B_T_UAV_03_dynamicLoadout_F"];
@@ -703,12 +703,12 @@ a3e_arr_searchdrone = [
 a3e_arr_searchChopperEasy = [
 	"I_C_Heli_Light_01_civil_F"];
 a3e_arr_searchChopperHard = [
-	"O_Heli_Light_02_v2_F"
-	,"O_Heli_Light_02_v2_F"];
+	"B_Heli_Light_01_dynamicLoadout_F"
+	,"B_Heli_Transport_01_F"];
 a3e_arr_searchChopper_pilot = [
-	"O_T_Helipilot_F"];
+	"B_T_Helipilot_F"];
 a3e_arr_searchChopper_crew = [
-	"O_T_Helicrew_F"];
+	"B_T_Helicrew_F"];
 
 if(Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
