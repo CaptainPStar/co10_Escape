@@ -169,6 +169,55 @@ class Params
 	};
 	class Param_Spacer5
     {
+            title = "==================== DLC Settings ====================";
+            values[] = {0};
+            texts[] = {""};
+            default = 0;
+	};
+	class Param_UseDLC-Apex
+	{
+		title="Allow useage of units from Apex DLC";
+		values[]={0,1};
+		texts[]={"No", "Yes"};
+		default = 1;
+	};
+	class Param_UseDLC-Helis
+	{
+		title="Allow useage of units from Helicopters DLC";
+		values[]={0,1};
+		texts[]={"No", "Yes"};
+		default = 1;
+	};
+	class Param_UseDLC-Marksmen
+	{
+		title="Allow useage of premium classes from Marksmen DLC";
+		values[]={0,1};
+		texts[]={"No", "Yes"};
+		default = 1;
+	};
+	/*class Param_UseDLC-Jets
+	{
+		title="Allow useage of units from Jets DLC";
+		values[]={0,1};
+		texts[]={"No", "Yes"};
+		default = 1;
+	};*/
+	class Param_UseDLC-Laws
+	{
+		title="Allow useage of units from Laws of War DLC";
+		values[]={0,1};
+		texts[]={"No", "Yes"};
+		default = 1;
+	};
+	class Param_UseDLC-Tanks
+	{
+		title="Allow useage of units from Tanks DLC";
+		values[]={0,1};
+		texts[]={"No", "Yes"};
+		default = 1;
+	};
+	class Param_Spacer6
+    {
             title = "==================== Debug Settings ====================";
             values[] = {0};
             texts[] = {""};
