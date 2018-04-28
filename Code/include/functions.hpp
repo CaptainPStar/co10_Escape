@@ -52,6 +52,7 @@ class CfgFunctions
 			class GetTaskState {};
 			class AquaticPatrol {};
 			class AddStaticGunner {};
+			class ExtractionChopper {};
 		};
 		class Debug
 		{
