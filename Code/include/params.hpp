@@ -155,6 +155,20 @@ class Params
 	};
 	class Param_Spacer4
     {
+            title = "==================== Statistic Settings ====================";
+            values[] = {0};
+            texts[] = {""};
+            default = 0;
+	};
+	class Param_SendStatistics
+	{
+		title="Send statistics at mission end";
+		values[]={0,1};
+		texts[]={"No", "Yes"};
+		default = 1;
+	};
+	class Param_Spacer5
+    {
             title = "==================== Debug Settings ====================";
             values[] = {0};
             texts[] = {""};
