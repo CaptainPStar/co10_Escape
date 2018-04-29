@@ -64,20 +64,20 @@ if(Param_War_Torn == 0) then {
 
 private ["_hour","_date"];
 _hour = Param_TimeOfDay;
+switch (Param_TimeOfDay) do {
+    case 24: { 
+		_hour = round(random(24));
+	};
+    case 25: {
+		_hour = 6+round(random(12));  //Between 0600 and 1800
+	};
+	case 26: { 
+		_hour = 20 + round(random(8)); //Between 2000 and 0400
+		_hour = _hour % 24;
+	};
+    default { _hour = Param_TimeOfDay };
+};
 _date = date;
-if(_hour==24) then {
-	_hour = round(random(24));
-};
-
-//Random Daytime
-if(_hour==25) then {
-	_hour = 6+round(random(12)); //Between 0600 and 1800
-};
-//Random Nighttime
-if(_hour==26) then {
-	_hour = 20 + round(random(8)); //Between 2000 and 0400
-	_hour = _hour % 24;
-};
 _date set [3,_hour];
 _date set [4,0];
 [_date] call bis_fnc_setDate;
