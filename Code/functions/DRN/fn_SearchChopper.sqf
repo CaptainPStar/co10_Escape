@@ -38,12 +38,27 @@ _exitScript = false;
 while {!_exitScript} do {
 	switch (_state) do {
 		case "IDLE": {
-			_waypoint = _group addWaypoint [getpos _chopper, 50];
-			_waypoint setWaypointType "LOITER";
-			_waypoint setWaypointLoiterType "CIRCLE";
-			_waypoint setWaypointLoiterRadius 500;
+			
+			_waypoint = _group addWaypoint [(getpos _chopper) vectoradd [-25,100,0], 0];
+			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointBehaviour "SAFE";
 			_waypoint setWaypointSpeed "LIMITED";
+			
+			_waypoint = _group addWaypoint [(getpos _chopper) vectoradd [75,75,0], 0];
+			_waypoint setWaypointType "MOVE";
+			_waypoint setWaypointBehaviour "SAFE";
+			_waypoint setWaypointSpeed "LIMITED";
+			
+			_waypoint = _group addWaypoint [(getpos _chopper) vectoradd [-25,-100,0], 0];
+			_waypoint setWaypointType "MOVE";
+			_waypoint setWaypointBehaviour "SAFE";
+			_waypoint setWaypointSpeed "LIMITED";
+			
+			_waypoint = _group addWaypoint [(getpos _chopper) vectoradd [-25,100,0], 0];
+			_waypoint setWaypointType "CYCLE";
+			_waypoint setWaypointBehaviour "SAFE";
+			_waypoint setWaypointSpeed "LIMITED";
+			
 			while {!([_searchAreaMarker] call drn_fnc_CL_MarkerExists)} do {
 				sleep 1;
 			};
