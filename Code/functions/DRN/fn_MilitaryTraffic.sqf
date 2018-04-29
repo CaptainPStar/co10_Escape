@@ -115,7 +115,7 @@ _possibleVehicles = [];
 
 _fnc_FindSpawnSegment = {
     private ["_referenceUnits", "_minSpawnDistance", "_maxSpawnDistance", "_activeVehiclesAndGroup"];
-    private ["_refUnit", "_roadSegments", "_roadSegment", "_isOk", "_tries", "_result", "_spawnDistanceDiff", "_refPosX", "_refPosY", "_dir", "_tooFarAwayFromAll", "_tooClose", "_tooCloseToAnotherVehicle"];
+    private ["_roadSegments", "_roadSegment", "_isOk", "_tries", "_result", "_spawnDistanceDiff", "_refPosX", "_refPosY", "_dir", "_tooFarAwayFromAll", "_tooClose", "_tooCloseToAnotherVehicle"];
 
     _referenceUnits = _this select 0;
     _minSpawnDistance = _this select 1;
@@ -124,8 +124,10 @@ _fnc_FindSpawnSegment = {
     
     _spawnDistanceDiff = _maxSpawnDistance - _minSpawnDistance;
     _roadSegment = "NULL";
+	if(count _referenceUnits == 0) exitwith {"NULL"};
+	private _refUnit = objNull;
     _refUnit = vehicle (selectRandom _referenceUnits);
-
+	if(isNull _refUnit) exitwith {"NULL"};
     _isOk = false;
     _tries = 0;
     while {!_isOk && _tries < 5} do {
