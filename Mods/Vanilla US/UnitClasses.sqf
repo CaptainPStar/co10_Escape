@@ -52,12 +52,14 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"C_Van_01_box_F"
 	,"C_Van_01_transport_F"
 	,"C_Van_01_fuel_F"
-	,"C_Offroad_02_unarmed_F"
 	,"C_Truck_02_covered_F"
 	,"C_Offroad_01_repair_F"
 	,"C_Truck_02_fuel_F"
 	,"C_Truck_02_box_F"
 	,"C_Truck_02_transport_F"];
+	if(Param_UseDLCApex==1) then {
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
+	};
 	if(Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
@@ -80,9 +82,6 @@ switch (_enemyFrequency) do {
 		,"B_Quadbike_01_F"
 		,"B_Quadbike_01_F"
 		,"B_Quadbike_01_F"
-		,"B_LSV_01_unarmed_F"
-		,"B_LSV_01_armed_F"
-		,"B_LSV_01_AT_F"
 		,"B_UGV_01_rcws_F"
 		,"B_Truck_01_covered_F"
 		,"B_Truck_01_transport_F"
@@ -101,6 +100,11 @@ switch (_enemyFrequency) do {
 		,"B_MBT_01_mlrs_F"
 		,"B_MBT_01_cannon_F"
 		,"B_MBT_01_TUSK_F"];
+		if(Param_UseDLCApex==1) then {
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_LSV_01_unarmed_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_LSV_01_armed_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_LSV_01_AT_F";
+		};
 		if(Param_UseDLCTanks==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_AFV_Wheeled_01_cannon_F";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_AFV_Wheeled_01_up_cannon_F";
@@ -144,9 +148,6 @@ switch (_enemyFrequency) do {
 		,"B_Quadbike_01_F"
 		,"B_Quadbike_01_F"
 		,"B_Quadbike_01_F"
-		,"B_LSV_01_unarmed_F"
-		,"B_LSV_01_armed_F"
-		,"B_LSV_01_AT_F"
 		,"B_UGV_01_rcws_F"
 		,"B_Truck_01_covered_F"
 		,"B_Truck_01_transport_F"
@@ -165,6 +166,11 @@ switch (_enemyFrequency) do {
 		,"B_MBT_01_mlrs_F"
 		,"B_MBT_01_cannon_F"
 		,"B_MBT_01_TUSK_F"];
+		if(Param_UseDLCApex==1) then {
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_LSV_01_unarmed_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_LSV_01_armed_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_LSV_01_AT_F";
+		};
 		if(Param_UseDLCTanks==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_AFV_Wheeled_01_cannon_F";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_AFV_Wheeled_01_up_cannon_F";
@@ -208,9 +214,6 @@ switch (_enemyFrequency) do {
 		,"B_Quadbike_01_F"
 		,"B_Quadbike_01_F"
 		,"B_Quadbike_01_F"
-		,"B_LSV_01_unarmed_F"
-		,"B_LSV_01_armed_F"
-		,"B_LSV_01_AT_F"
 		,"B_UGV_01_rcws_F"
 		,"B_Truck_01_covered_F"
 		,"B_Truck_01_transport_F"
@@ -229,6 +232,11 @@ switch (_enemyFrequency) do {
 		,"B_MBT_01_mlrs_F"
 		,"B_MBT_01_cannon_F"
 		,"B_MBT_01_TUSK_F"];
+		if(Param_UseDLCApex==1) then {
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_LSV_01_unarmed_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_LSV_01_armed_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_LSV_01_AT_F";
+		};
 		if(Param_UseDLCTanks==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_AFV_Wheeled_01_cannon_F";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_AFV_Wheeled_01_up_cannon_F";
@@ -313,13 +321,13 @@ a3e_arr_Escape_InfantryTypes = [
 	,"B_support_Mort_F"
 	,"B_Soldier_SL_F"
 	,"B_Soldier_TL_F"
-	,"B_soldier_LAT2_F"
-	,"B_soldier_mine_F"];
+	,"B_soldier_LAT2_F"];
 	if(Param_UseDLCMarksmen==1) then {
 		a3e_arr_Escape_InfantryTypes pushback "B_HeavyGunner_F";
 		a3e_arr_Escape_InfantryTypes pushback "B_Sharpshooter_F";
 	};
 	if(Param_UseDLCLaws==1) then {
+		a3e_arr_Escape_InfantryTypes pushback "B_soldier_mine_F";
 		a3e_arr_Escape_InfantryTypes pushback "B_soldier_UAV_06_F";
 		a3e_arr_Escape_InfantryTypes pushback "B_soldier_UAV_06_medical_F";
 	};
@@ -370,13 +378,15 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"I_support_GMG_F"
 	,"I_support_MG_F"
 	,"I_support_Mort_F"
-	,"I_soldier_mine_F"
 	,"I_Soldier_LAT2_F"
 	,"I_Soldier_LAT2_F"
 	,"I_Spotter_F"
-	,"I_Sniper_F"
-	,"I_ghillie_ard_F"];
+	,"I_Sniper_F"];
+	if(Param_UseDLCMarksmen==1) then {
+		a3e_arr_Escape_InfantryTypes_Ind pushback "I_ghillie_ard_F";
+	};
 	if(Param_UseDLCLaws==1) then {
+		a3e_arr_Escape_InfantryTypes_Ind pushback "I_soldier_mine_F";
 		a3e_arr_Escape_InfantryTypes_Ind pushback "I_soldier_UAV_06_F";
 		a3e_arr_Escape_InfantryTypes_Ind pushback "I_soldier_UAV_06_medical_F";
 	};
@@ -413,11 +423,15 @@ a3e_arr_recon_I_InfantryTypes = [
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"B_MRAP_01_hmg_F"
-	,"B_LSV_01_armed_F"
-	,"B_LSV_01_AT_F"
+	,"B_MRAP_01_hmg_F"
+	,"B_MRAP_01_gmg_F"
 	,"B_UGV_01_rcws_F"
 	,"B_HMG_01_high_F"
 	,"B_static_AT_F"];
+	if(Param_UseDLCApex==1) then {
+		a3e_arr_Escape_RoadBlock_MannedVehicleTypes pushback "B_LSV_01_armed_F";
+		a3e_arr_Escape_RoadBlock_MannedVehicleTypes pushback "B_LSV_01_AT_F";
+	};
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"I_G_Offroad_01_armed_F"
 	,"I_G_Offroad_01_AT_F"
@@ -499,11 +513,12 @@ a3e_arr_ComCenParkedVehicles = [
 	,"B_Truck_01_medical_F"
 	,"B_Truck_01_Repair_F"
 	,"B_Truck_01_box_F"
-	,"B_Truck_01_mover_F"
-	,"B_LSV_01_unarmed_F"
-	,"B_LSV_01_armed_F"
-	,"B_LSV_01_AT_F"];
-
+	,"B_Truck_01_mover_F"];
+	if(Param_UseDLCApex==1) then {
+		a3e_arr_ComCenParkedVehicles pushback "B_LSV_01_unarmed_F";
+		a3e_arr_ComCenParkedVehicles pushback "B_LSV_01_armed_F";
+		a3e_arr_ComCenParkedVehicles pushback "B_LSV_01_AT_F";
+	};
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
 	"C_Hatchback_01_F"
@@ -514,11 +529,13 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"C_Van_01_box_F"
 	,"C_Van_01_transport_F"
 	,"C_Van_01_fuel_F"
-	,"C_Offroad_02_unarmed_F"
 	,"C_Truck_02_fuel_F"
 	,"C_Truck_02_box_F"
 	,"C_Truck_02_transport_F"
 	,"C_Truck_02_covered_F"];
+	if(Param_UseDLCApex==1) then {
+		a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
+	};
 	if(Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
@@ -554,11 +571,12 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"B_Truck_01_medical_F"
 	,"B_Truck_01_Repair_F"
 	,"B_Truck_01_box_F"
-	,"B_Truck_01_mover_F"
-	,"B_LSV_01_unarmed_F"
-	,"B_LSV_01_armed_F"
-	,"B_LSV_01_AT_F"];
-
+	,"B_Truck_01_mover_F"];
+	if(Param_UseDLCApex==1) then {
+		a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses pushback "B_LSV_01_unarmed_F";
+		a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses pushback "B_LSV_01_armed_F";
+		a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses pushback "B_LSV_01_AT_F";
+	};
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
 	"B_Heli_Attack_01_dynamicLoadout_F"
@@ -746,7 +764,9 @@ a3e_arr_CivilianCarWeapons pushback ["arifle_Katiba_C_F", "30Rnd_65x39_caseless_
 a3e_arr_CivilianCarWeapons pushback ["arifle_Mk20_GL_ACO_F", "UGL_FlareWhite_F", 8];
 a3e_arr_CivilianCarWeapons pushback ["SMG_01_Holo_F", "30Rnd_45ACP_Mag_SMG_01_Tracer_Green", 5];
 a3e_arr_CivilianCarWeapons pushback ["SMG_02_ACO_F", "30Rnd_9x21_Mag", 12];
-a3e_arr_CivilianCarWeapons pushback ["srifle_DMR_06_camo_khs_F", "20Rnd_762x51_Mag", 8];
+if(Param_UseDLCMarksmen==1) then {
+	a3e_arr_CivilianCarWeapons pushback ["srifle_DMR_06_camo_khs_F", "20Rnd_762x51_Mag", 8];
+};
 a3e_arr_CivilianCarWeapons pushback ["launch_RPG32_F", "RPG32_F", 2];
 a3e_arr_CivilianCarWeapons pushback ["MineDetector", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Medikit", objNull, 0];
