@@ -42,15 +42,30 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	"C_mas_afr_Offroad_01_F"
 	,"C_mas_afr_Truck_02_covered_F"
 	,"C_mas_afr_Truck_02_covered_F"
-	,"C_Offroad_01_F"
-	,"C_Quadbike_01_F"
 	,"C_mas_afr_Truck_02_covered_F"
 	,"C_mas_afr_Truck_02_refuel_F"
 	,"C_mas_afr_Truck_02_refuel_F"
+	,"C_Hatchback_01_F"
+	,"C_Hatchback_01_sport_F"
 	,"C_Offroad_01_F"
 	,"C_Quadbike_01_F"
+	,"C_SUV_01_F"
 	,"C_Van_01_box_F"
-	,"C_Van_01_transport_F"];
+	,"C_Van_01_transport_F"
+	,"C_Van_01_fuel_F"
+	,"C_Truck_02_fuel_F"
+	,"C_Truck_02_box_F"
+	,"C_Truck_02_transport_F"
+	,"C_Truck_02_covered_F"];
+	if(Param_UseDLCApex==1) then {
+		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
+	};
+	if(Param_UseDLCLaws==1) then {
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
+	};
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -379,8 +394,33 @@ a3e_arr_ComCenParkedVehicles = [
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
-	"C_mas_afr_Truck_02_covered_F"
-	,"C_mas_afr_Truck_02_transport_F"];
+	"C_mas_afr_Offroad_01_F"
+	,"C_mas_afr_Truck_02_covered_F"
+	,"C_mas_afr_Truck_02_covered_F"
+	,"C_mas_afr_Truck_02_covered_F"
+	,"C_mas_afr_Truck_02_refuel_F"
+	,"C_mas_afr_Truck_02_refuel_F"
+	,"C_Hatchback_01_F"
+	,"C_Hatchback_01_sport_F"
+	,"C_Offroad_01_F"
+	,"C_Quadbike_01_F"
+	,"C_SUV_01_F"
+	,"C_Van_01_box_F"
+	,"C_Van_01_transport_F"
+	,"C_Van_01_fuel_F"
+	,"C_Truck_02_fuel_F"
+	,"C_Truck_02_box_F"
+	,"C_Truck_02_transport_F"
+	,"C_Truck_02_covered_F"];
+	if(Param_UseDLCApex==1) then {
+		a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
+	};
+	if(Param_UseDLCLaws==1) then {
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_service_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_transport_F";
+	};
 
 // Vehicles, weapons and ammo at ammo depots
 
