@@ -176,42 +176,42 @@ class Params
 	};
 	class Param_UseDLCApex
 	{
-		title="Allow useage of units from Apex DLC";
+		title="Allow usage of units from Apex DLC";
 		values[]={0,1};
 		texts[]={"No", "Yes"};
 		default = 1;
 	};
 	class Param_UseDLCHelis
 	{
-		title="Allow useage of units from Helicopters DLC";
+		title="Allow usage of units from Helicopters DLC";
 		values[]={0,1};
 		texts[]={"No", "Yes"};
 		default = 1;
 	};
 	class Param_UseDLCMarksmen
 	{
-		title="Allow useage of premium classes from Marksmen DLC";
+		title="Allow usage of premium classes from Marksmen DLC";
 		values[]={0,1};
 		texts[]={"No", "Yes"};
 		default = 1;
 	};
 	/*class Param_UseDLCJets
 	{
-		title="Allow useage of units from Jets DLC";
+		title="Allow usage of units from Jets DLC";
 		values[]={0,1};
 		texts[]={"No", "Yes"};
 		default = 1;
 	};*/
 	class Param_UseDLCLaws
 	{
-		title="Allow useage of units from Laws of War DLC";
+		title="Allow usage of units from Laws of War DLC";
 		values[]={0,1};
 		texts[]={"No", "Yes"};
 		default = 1;
 	};
 	class Param_UseDLCTanks
 	{
-		title="Allow useage of units from Tanks DLC";
+		title="Allow usage of units from Tanks DLC";
 		values[]={0,1};
 		texts[]={"No", "Yes"};
 		default = 1;
