@@ -47,11 +47,15 @@ while {!(isNil _vehicleVarName)} do {
 //_chopper = "O_Heli_Light_02_F" createVehicle _homePos;
 //_chopper = createVehicle ["RHS_Mi8AMTSh_vvsc", _homePos, [], 0, "NONE"];
 private _type =  selectRandom a3e_arr_searchChopper;
-if(_type isKindof "Plane") then {
-	_homePos = _homePos vectorAdd [0,0,100];
-};
-_chopperspawn = [_homePos, random 360, (a3e_arr_searchChopper select floor (random count a3e_arr_searchChopper)), A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
-_chopper = _chopperspawn select 0;
+
+_homePos = _homePos vectorAdd [0,0,100];
+
+//_chopperspawn = [_homePos, random 360, _type, A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
+_chopper = createVehicle [_type, _homePos, [], random 360, "FLY"];
+createVehicleCrew _chopper;
+{
+	_x call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
+} foreach crew _chopper;
 _chopper lock 0;
 _chopper setVehicleVarName _vehicleVarName;
 _chopper call compile format ["%1=_this;", _vehicleVarName];

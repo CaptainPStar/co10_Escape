@@ -230,7 +230,7 @@ while {true} do {
                     _helitype = a3e_arr_O_attack_heli select floor(random(count(a3e_arr_O_attack_heli)));
 					_crewtype = a3e_arr_O_pilots select floor(random(count(a3e_arr_O_pilots)));
                     //_chopper = "O_Heli_Light_02_F" createVehicle getMarkerPos "drn_russianSearchChopperStartPosMarker";
-                    _chopper = createVehicle [_helitype, (getMarkerPos "drn_russianSearchChopperStartPosMarker"), [], 0, "NONE"];
+                    _chopper = createVehicle [_helitype, (getMarkerPos "drn_russianSearchChopperStartPosMarker"), [], 0, "FLY"];
                     _chopper lock false;
                     _chopper setVehicleVarName "drn_russianSearchChopper";
                     _chopper call compile format ["%1=_this;", "drn_russianSearchChopper"];
@@ -266,11 +266,11 @@ while {true} do {
 				
 				
 				if (_surpriseID == "SEARCHDRONE") then {
-                    private ["_chopper", "_result", "_group","_helitype","_arr"];
+                    private ["_chopper", "_result"];
+
+					_chopper = createVehicle [selectRandom a3e_arr_searchdrone, getMarkerPos "drn_russianSearchChopperStartPosMarker", [], random 360, "FLY"];
+					createVehicleCrew _chopper;
 					
-					_arr = [(getMarkerPos "drn_russianSearchChopperStartPosMarker"), 0, (a3e_arr_searchdrone select floor (random count a3e_arr_searchdrone)), A3E_VAR_Side_Ind] call bis_fnc_spawnvehicle;
-					_chopper = _arr select 0;
-					_group = _arr select 2;
 					_chopper lock false;
 					_chopper setVehicleVarName "a3e_searchdrone";
 					_chopper call compile format ["%1=_this;", "a3e_searchdrone"];
