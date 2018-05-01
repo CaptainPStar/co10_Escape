@@ -11,7 +11,11 @@ compile:
   - "mkdir Missions"
   - "cd .."
   - "python ./compile.py"
-
+  cache:
+    key: "%CI_COMMIT_REF_SLUG%"
+    paths:
+    - Packed/Missions
+    - Packed/Addons
 
 development:
   stage: deploy
@@ -19,6 +23,12 @@ development:
   - "echo Deploying development build..."
   - "copy ./readme.txt ./Packed/Missions/readme.txt" 
   - "copy ./readme.txt ./Packed/Addons/readme.txt" 
+  cache:
+    key: "%CI_COMMIT_REF_SLUG%"
+    paths:
+    - Packed/Missions
+    - Packed/Addons
+    policy: pull
   dependencies: 
     - compile
   artifacts:
@@ -35,6 +45,12 @@ release:
   - "echo Deploying %CI_COMMIT_TAG tag..."
   - "copy ./readme.txt ./Packed/Missions/readme.txt" 
   - "copy ./readme.txt ./Packed/Addons/readme.txt" 
+  cache:
+    key: "%CI_COMMIT_REF_SLUG%"
+    paths:
+    - Packed/Missions
+    - Packed/Addons
+    policy: pull
   dependencies: 
     - compile
   artifacts:
