@@ -7,13 +7,14 @@ with open('Configs/config.json') as json_data_file:
 mods = data['Mods'];
 islands = data['Islands'];
 missions = data['Missions'];
+addons = data['Addons']
 for scfg in data['Subconfigs']:
     with open(scfg) as json_adata:
         adata = json.load(json_adata)  
         mods = mods + adata['Mods'];
         islands = islands + adata['Islands'];
         missions = missions + adata['Missions'];
-        addons =addons + adata['Addons']
+        addons = addons + adata['Addons']
 #Add devbuild number to version
 data['replace']['VERSION'] += ' dev'+os.environ['CI_JOB_ID']
 data['replace']['RELEASE'] = 'Mission'
@@ -71,7 +72,6 @@ for mission in missions:
                     f.close()
     subprocess.call(["cpbo.exe", "-p", missiondir])
     shutil.copyfile(missiondir + ".pbo", './Packed/Missions/'+mission['name']+'.'+ missionIsland['class']+'.pbo') #Copy build artifact
-addons = data['Addons'];
 t = []
 for m in missions:
     t.append(m['name'].lower())

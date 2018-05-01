@@ -1,19 +1,38 @@
 stages:
   - build
+  - deploy
 
-development:
+compile:
   stage: build
   script: 
   - "mkdir Build"
-  - "mkdir Artifacts"
-  - "cd Artifacts"
+  - "mkdir Packed"
+  - "cd Packed"
   - "mkdir Missions"
   - "cd .."
   - "python ./compile.py"
-  environment:
-    name: development
+	
+development:
+  stage: deploy
+  script: ""
   artifacts:
-    name: "%CI_JOB_NAME-%CI_COMMIT_REF_NAME"
+    name: "co10_Escape-%CI_COMMIT_REF_SLUG-%CI_COMMIT_SHA"
     paths:
-    - Artifacts/Missions
-    - Artifacts/Addons
+    - Packed/Missions
+    - Packed/Addons
+  except:
+    - tags
+    refs:
+        - master
+  
+release:
+  stage: deploy
+  script: ""
+  artifacts:
+    name: "co10_Escape-%CI_COMMIT_TAG"
+    paths:
+    - Packed/Missions
+    - Packed/Addons
+  only:
+    - tags
+
