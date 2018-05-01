@@ -22,8 +22,8 @@ development:
   stage: deploy
   script: 
   - "echo Deploying development build..."
-  - "copy .\readme.txt .\Packed\Missions\readme.txt" 
-  - "copy .\readme.txt .\Packed\Addons\readme.txt" 
+  - "copy .\\readme.txt .\\Packed\\Missions\\readme.txt" 
+  - "copy .\\readme.txt .\\Packed\\Addons\\readme.txt" 
   cache:
     key: "%CI_COMMIT_REF_SLUG%"
     paths:
@@ -44,8 +44,8 @@ release:
   stage: deploy
   script: 
   - "echo Deploying %CI_COMMIT_TAG tag..."
-  - "copy .\readme.txt .\Packed\Missions\readme.txt" 
-  - "copy .\readme.txt .\Packed\Addons\readme.txt" 
+  - "copy .\\readme.txt .\\Packed\\Missions\\readme.txt" 
+  - "copy .\\readme.txt .\\Packed\\Addons\\readme.txt" 
   cache:
     key: "%CI_COMMIT_REF_SLUG%"
     paths:
