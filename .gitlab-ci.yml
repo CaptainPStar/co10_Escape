@@ -16,7 +16,7 @@ compile:
 development:
   stage: deploy
   script: 
-  -"echo Deploying development build..."
+  - "echo Deploying development build..."
   - "copy ./readme.txt ./Packed/Missions/readme.txt" 
   - "copy ./readme.txt ./Packed/Addons/readme.txt" 
   dependencies: 
