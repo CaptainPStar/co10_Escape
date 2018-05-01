@@ -7,6 +7,13 @@ with open('Configs/config.json') as json_data_file:
 mods = data['Mods'];
 islands = data['Islands'];
 missions = data['Missions'];
+for scfg in data['Subconfigs']:
+    with open(scfg) as json_adata:
+        adata = json.load(json_adata)  
+        mods = mods + adata['Mods'];
+        islands = islands + adata['Islands'];
+        missions = missions + adata['Missions'];
+        addons =addons + adata['Addons']
 #Add devbuild number to version
 data['replace']['VERSION'] += ' dev'+os.environ['CI_JOB_ID']
 data['replace']['RELEASE'] = 'Mission'
@@ -63,7 +70,7 @@ for mission in missions:
                     f.flush()
                     f.close()
     subprocess.call(["cpbo.exe", "-p", missiondir])
-    shutil.copyfile(missiondir + ".pbo", './Artifacts/Missions/'+mission['name']+'.'+ missionIsland['class']+'.pbo') #Copy build artifact
+    shutil.copyfile(missiondir + ".pbo", './Packed/Missions/'+mission['name']+'.'+ missionIsland['class']+'.pbo') #Copy build artifact
 addons = data['Addons'];
 t = []
 for m in missions:
@@ -131,6 +138,6 @@ for addon in addons:
                 if os.path.exists(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0]):
                     os.remove(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0])
                 shutil.copyfile(data['BuildDir'] + '/addons/' + pbo[0], data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0]) #Copy build artifact
-        if os.path.exists('./Artifacts/Addons/'+ '@'+data['Missionname']+'_'+addon['name']):
-            shutil.rmtree('./Artifacts/Addons/'+ '@'+data['Missionname']+'_'+addon['name'])
-        shutil.copytree(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name'],'./Artifacts/Addons/'+ '@'+data['Missionname']+'_'+addon['name'])
+        if os.path.exists('./Packed/Addons/'+ '@'+data['Missionname']+'_'+addon['name']):
+            shutil.rmtree('./Packed/Addons/'+ '@'+data['Missionname']+'_'+addon['name'])
+        shutil.copytree(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name'],'./Packed/Addons/'+ '@'+data['Missionname']+'_'+addon['name'])
