@@ -14,7 +14,7 @@ compile:
 
 development:
   stage: deploy
-  script: ""
+  script: "echo Deploying development build..."
   artifacts:
     name: "co10_Escape-%CI_COMMIT_REF_SLUG-%CI_COMMIT_SHA"
     paths:
@@ -25,7 +25,7 @@ development:
   
 release:
   stage: deploy
-  script: ""
+  script: "echo Deploying %CI_COMMIT_TAG tag..."
   artifacts:
     name: "co10_Escape-%CI_COMMIT_TAG"
     paths:
