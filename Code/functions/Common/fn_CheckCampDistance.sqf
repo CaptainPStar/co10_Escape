@@ -22,7 +22,7 @@ if(isNil("_pos")) exitwith {diag_log format ["%1 : Error: fn_CheckCampDistance w
 if(isNil("_dis")) then {_dis = 100};
 if(isNil("_checkAgainst")) then {_checkagainst = "All";};
 
-switch (_checkAgainst) do 
+private _positions = switch (_checkAgainst) do 
 {
 	case "all": {A3E_Var_ClearedPositions};
 	case "com": {a3e_var_Escape_communicationCenterPositions};
@@ -31,7 +31,8 @@ switch (_checkAgainst) do
 };
 
 _check = true;
-{if ((_pos distance _x) < _dis) exitWith {_check=false}
-	} foreach _checkAgainst;
+{
+	if ((_pos distance _x) < _dis) exitWith {_check=false;}
+} foreach _positions;
 	
 _check

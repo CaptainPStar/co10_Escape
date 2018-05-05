@@ -20,7 +20,8 @@ if(!isNil("Param_Debug")) then {
 };
 publicVariable "A3E_Debug";
 
-
+//Load Statistics
+[] spawn A3E_fnc_LoadStatistics;
 // Add crashsite here
 //##############
 
@@ -63,11 +64,22 @@ if(Param_War_Torn == 0) then {
 
 private ["_hour","_date"];
 _hour = Param_TimeOfDay;
-_date = date;
-if(_hour==24) then {
-	_hour = round(random(24));
+switch (Param_TimeOfDay) do {
+    case 24: { 
+		_hour = round(random(24));
+	};
+    case 25: {
+		_hour = 6+round(random(12));  //Between 0600 and 1800
+	};
+	case 26: { 
+		_hour = 20 + round(random(8)); //Between 2000 and 0400
+		_hour = _hour % 24;
+	};
+    default { _hour = Param_TimeOfDay };
 };
+_date = date;
 _date set [3,_hour];
+_date set [4,0];
 [_date] call bis_fnc_setDate;
 
 setTimeMultiplier Param_TimeMultiplier;
@@ -132,7 +144,7 @@ if(isNil("A3E_ClearedPositionDistance")) then {
 // Build start position
 _fenceRotateDir = random 360;
 
-private _backPack = call compile format["[A3E_StartPos, %1] call %2;",_fenceRotateDir,selectRandom ["a3e_fnc_BuildPrison","a3e_fnc_BuildPrison"]];
+private _backPack = call compile format["[A3E_StartPos, %1] call %2;",_fenceRotateDir,selectRandom ["a3e_fnc_BuildPrison","a3e_fnc_BuildPrison1","a3e_fnc_BuildPrison2","a3e_fnc_BuildPrison3","a3e_fnc_BuildPrison4","a3e_fnc_BuildPrison5"]];
 
 A3E_FenceIsCreated = true;
 publicVariable "A3E_FenceIsCreated";
@@ -415,7 +427,7 @@ private _UseMotorPools = Param_MotorPools;
 		};
 	};
 	
-	[_playerGroup, civilian, [], _vehiclesCount, _enemySpawnDistance, _radius, 0.5, 0.5, _fnc_onSpawnCivilian, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
+	[civilian, [], _vehiclesCount, _enemySpawnDistance, _radius, 0.5, 0.5, _fnc_onSpawnCivilian, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
 
 	
 	// Enemy military traffic
@@ -441,8 +453,8 @@ private _UseMotorPools = Param_MotorPools;
 	[_playerGroup,_vehiclesCount,_enemySpawnDistance,_radius,_enemyMinSkill, _enemyMaxSkill] spawn {
 		params["_playerGroup","_vehiclesCount","_enemySpawnDistance","_radius","_enemyMinSkill", "_enemyMaxSkill"];
 		sleep 300;
-		[_playerGroup, A3E_VAR_Side_Opfor, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
-		[_playerGroup, A3E_VAR_Side_Ind, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
+		[A3E_VAR_Side_Opfor, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
+		[A3E_VAR_Side_Ind, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
     };
 
 	private ["_areaPerRoadBlock", "_maxEnemySpawnDistanceKm", "_roadBlockCount"];
@@ -470,13 +482,11 @@ private _UseMotorPools = Param_MotorPools;
 		_roadBlockCount = 1;
 	};
 	//A3E_VAR_Side_Ind
-	[_playerGroup, A3E_VAR_Side_Opfor, a3e_arr_Escape_InfantryTypes, a3e_arr_Escape_RoadBlock_MannedVehicleTypes, _roadBlockCount, _enemySpawnDistance, _enemySpawnDistance + 500, 750, 300, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, A3E_Debug] spawn drn_fnc_RoadBlocks;
+	[a3e_arr_Escape_InfantryTypes, a3e_arr_Escape_RoadBlock_MannedVehicleTypes, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, A3E_Debug] spawn A3E_fnc_RoadBlocks;
 
 	//Spawn crashsites
-	if(isNil("A3E_CrashSiteCountMax")) then {
-		A3E_CrashSiteCountMax = 2;
-	};
-	_crashSiteCount = random A3E_CrashSiteCountMax;
+
+	_crashSiteCount = ceil(random(missionNamespace getvariable["CrashSiteCountMax",3]));
 	for [{_x=0},{_x<_crashSiteCount},{_x=_x+1}] do {
 	  _pos = [] call A3E_fnc_findFlatArea;
 	  [_pos] call A3E_fnc_crashSite;
@@ -579,6 +589,8 @@ waitUntil {scriptDone _scriptHandle};
 			_unit unlinkItem "ItemMap";
             _unit unlinkItem "ItemCompass";
             _unit unlinkItem "ItemGPS";
+			
+			removeBackpackGlobal _unit;
 			
 			if(random 100 < 80) then {
 				removeAllPrimaryWeaponItems _unit;

@@ -71,7 +71,7 @@ while {_locationExists} do {
     // Set ammo depot trigger
     private ["_marker", "_count", "_populated", "_trigger"];
     
-    _trigger = createTrigger["EmptyDetector", getMarkerPos _locationFullName];
+    _trigger = createTrigger["EmptyDetector", getMarkerPos _locationFullName, false];
     _trigger triggerAttachVehicle [vehicle (units _referenceGroup select 0)];
     _trigger setTriggerArea[_spawnRadius, _spawnRadius, 0, false];
     _trigger setTriggerActivation["MEMBER", "PRESENT", true];

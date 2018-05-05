@@ -58,11 +58,7 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind append [
 	"I_Truck_02_transport_F"
 	,"I_Truck_02_covered"
 	];
-// Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
-a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo append [
-	16
-	,16
-	];
+
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses append [
@@ -70,12 +66,7 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses append [
 	,"O_APC_Tracked_02_cannon_F"
 	,"O_APC_Wheeled_02_rcws_F"
 	];
-// Total cargo motorized search group vehicle. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses above.
-a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo append [
-	8
-	,8
-	,8
-	];
+
 
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles append [

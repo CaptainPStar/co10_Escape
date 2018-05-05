@@ -251,6 +251,7 @@
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
         
         {
             _box addWeaponCargoGlobal _x;
@@ -294,6 +295,7 @@
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
         
         {
             _box addWeaponCargoGlobal _x;
@@ -341,6 +343,7 @@
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
         
         {
             _box addWeaponCargoGlobal _x;
@@ -402,6 +405,7 @@
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
         
         {
             _box addWeaponCargoGlobal _x;
@@ -444,6 +448,7 @@
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
         
         {
             _box addItemCargoGlobal _x;
@@ -483,6 +488,7 @@
         clearWeaponCargoGlobal _box;
         clearMagazineCargoGlobal _box;
         clearItemCargoGlobal _box;
+		clearBackpackCargoGlobal _box;
         
         {
             _box addWeaponCargoGlobal _x;

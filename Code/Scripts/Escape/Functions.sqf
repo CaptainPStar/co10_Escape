@@ -49,7 +49,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 			if(_nighttime) then {
 				_scopes = _scopes + A3E_arr_NightScopes;
 			};
-			_scope = _scopes select floor(random(count(_scopes)));
+			_scope = selectRandom _scopes;
 			_this addPrimaryWeaponItem _scope;
 		};
 	};
@@ -64,7 +64,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	
 	//Bipod chance
 	if((random 100 < 20)) then {
-		_this addPrimaryWeaponItem (a3e_arr_Bipods select floor(random(count(a3e_arr_Bipods))));
+		_this addPrimaryWeaponItem (selectRandom a3e_arr_Bipods);
 	};
 	
 	//Chance for silencers
@@ -121,6 +121,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 			_this linkItem "NVGoggles_OPFOR";
 		};
 	};
+
 };
 
 drn_fnc_Escape_FindGoodPos = {
@@ -566,14 +567,15 @@ drn_fnc_Escape_AddRemoveComCenArmor = {
         } foreach _armorObjects;*/
         
 		 {
-			if(count((crew _x) arrayIntersect _players)==0) then {
-				private _group = group _x;
+			private _vehicle = _x;
+			if(count((crew _vehicle) arrayIntersect _players)==0 && ({(_x distance _vehicle)<500} count _players)==0) then {
+				private _group = group _vehicle;
 				
 				{
 					deleteVehicle _x;
-				} foreach crew _x;
+				} foreach crew _vehicle;
 				
-				deleteVehicle _x;
+				deleteVehicle _vehicle;
 			};
 		} foreach _armorObjects;
 

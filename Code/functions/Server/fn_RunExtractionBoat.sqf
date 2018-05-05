@@ -4,9 +4,9 @@ private ["_extractionPointNo"];
 private ["_spawnMarkerName", "_extractionMarkerName", "_extractionMarkerName2", "_result", "_boat1", "_boat2", "_boat3", "_group1", "_group2", "_group3", "_waypoint"];
 
 _extractionPointNo = _this select 0;
-_spawnMarkerName = "drn_Escape_ExtracionBoatSpawnPos" + str _extractionPointNo;
-_extractionMarkerName = "drn_Escape_ExtractionPos" + str _extractionPointNo;
-_extractionMarkerName2 = "drn_Escape_ExtractionPos" + str _extractionPointNo + "_1";
+_spawnMarkerName = "A3E_ExtractionSpawnPos" + str _extractionPointNo;
+_extractionMarkerName = "A3E_ExtractionPos" + str _extractionPointNo;
+_extractionMarkerName2 = "A3E_ExtractionPos" + str _extractionPointNo + "_1";
 
 private _dir = (getMarkerPos _spawnMarkerName) getDir (getMarkerPos _extractionMarkerName);
 _result = [[((getMarkerPos _spawnMarkerName) select 0) + 80, ((getMarkerPos _spawnMarkerName) select 1), 0],_dir, (a3e_arr_extraction_boat select floor (random count a3e_arr_extraction_boat)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;

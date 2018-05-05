@@ -14,13 +14,16 @@ _rotation = _rotation;
 
 
 _fnc_createObject = {
-    params["_className","_centerPos","_relativePos","_rotateDir","_relativeDir"];
+    params["_className","_centerPos","_relativePos","_rotateDir","_relativeDir",["_align",true]];
     private["_object", "_realPos", "_realDir"];
-
     _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1),(_relativePos select 2)], _rotateDir] call A3E_fnc_RotatePosition);
     _object = createVehicle [_className, _realPos, [], 0, "CAN_COLLIDE"];
     _object setdir (_relativeDir + _rotateDir);
     _object setPosATL _realPos;
+	if(_align) then {
+		_object setVectorUp surfaceNormal _realPos;
+	};
+	
     _object;
 };
 

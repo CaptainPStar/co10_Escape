@@ -13,9 +13,9 @@ if(name _player == "HC") then {
     };
 } else {
     //[format["%1 joined the Game!",name _player]] spawn a3e_fnc_debugmsg;
-	if(!isNil("paramsArray")) then {
-		paramsArray call A3E_fnc_WriteParamBriefing;
-	};
+	//if(!isNil("paramsArray")) then {
+	//paramsArray call A3E_fnc_WriteParamBriefing;
+	//};
 
 	
 	//The following is outdates. We are now using "allplayers". But this might be referenced somewhere

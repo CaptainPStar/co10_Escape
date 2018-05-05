@@ -253,8 +253,8 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	,"LIB_SdKfz251"
 	,"LIB_opelblitz_tent_y_camo"
 	,"LIB_opelblitz_open_y_camo"];
-// Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
-a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [3, 3, 8, 10, 12, 12];
+
+
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
@@ -265,8 +265,8 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"LIB_SdKfz251"
 	,"LIB_opelblitz_tent_y_camo"
 	,"LIB_opelblitz_open_y_camo"];
-// Total cargo motorized search group vehicle. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses above.
-a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [3, 3, 8, 10, 12, 12];
+
+
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
 // light *and* a random heavy armor.

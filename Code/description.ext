@@ -3,21 +3,25 @@
 // Mission Header
 class Header
 {
-  gameType = Coop;
+  gameType = Escape;
   minPlayers = 1;
   maxPlayers = 10;
 };
 
-
-onLoadMission = MISSIONNAME;
+onLoadName = MISSIONNAME;
+onLoadMission = MISSIONNAMEFULL;
 OnLoadMissionTime = FALSE;
 dev = "NeoArmageddon and Scruffy";
-briefingName = MISSIONNAME;
+briefingName = MISSIONNAMEFULL;
 author = "NeoArmageddon and Scruffy";
 overviewPicture = "a3\Missions_F_Gamma\data\img\MP_COOP_m03_overview_CA.paa";
 overviewText = MISSIONNAMEFULL;
-onLoadName = MISSIONNAME;
 loadScreen = "escape_banner.paa"; 
+
+EscapeIsland = ISLAND;
+EscapeMod = MOD;
+EscapeVersion = VERSION;
+EscapeRelease = RELEASE;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 Respawn = "INSTANT";
@@ -67,7 +71,14 @@ wreckRemovalMaxTime = 1800; //seconds
         pictureBackground = "";
     };
 };
-
+class CfgDebriefingSections
+{
+	class A3EStatistics
+	{
+		title = "Statistics";
+		variable = "A3E_EndStatistics";
+	};
+};
 
 #include "include\params.hpp"
 #include "include\functions.hpp"
@@ -185,13 +196,17 @@ class RscTitles {
 			};
 	};
 };
-
+class CfgCommands {
+   allowedHTMLLoadURIs[] += {
+      "http://escape.anzp.de/track.php*"
+   };
+};
 class CfgLeaflets
 {
 	class Guer // Configuration for 1Rnd_Leaflets_Guer_F
 	{
-		text = "We want you! To surrender."; // Text shown when previewing the leaflet full-screen. Ideally should be localized, so even player who cannot read the image can get the information
-		texture = "EscapeLeaflet_USA_co.paa"; // Leaflet texture shown when previewing the leaflet full-screen
+		text = "Please come back!!"; // Text shown when previewing the leaflet full-screen. Ideally should be localized, so even player who cannot read the image can get the information
+		texture = "leaflet.paa"; // Leaflet texture shown when previewing the leaflet full-screen
 		//model = "myLeaflet.p3d"; // In-flight model. Generic white leaflet is used when not defined.
 	}
 };

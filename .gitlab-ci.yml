@@ -1,0 +1,64 @@
+stages:
+  - build
+  - deploy
+
+compile:
+  stage: build
+  script: 
+  - "mkdir Build"
+  - "mkdir Packed"
+  - "cd Packed"
+  - "mkdir Missions"
+  - "cd .."
+  - "python ./compile.py"
+  cache:
+    key: "%CI_COMMIT_REF_SLUG%"
+    policy: push
+    paths:
+    - Packed/Missions
+    - Packed/Addons
+
+development:
+  stage: deploy
+  script: 
+  - "echo Deploying development build..."
+  - "copy .\\readme.txt .\\Packed\\Missions\\readme.txt" 
+  - "copy .\\readme.txt .\\Packed\\Addons\\readme.txt" 
+  cache:
+    key: "%CI_COMMIT_REF_SLUG%"
+    paths:
+    - Packed/Missions
+    - Packed/Addons
+    policy: pull
+  dependencies: 
+    - compile
+  artifacts:
+    name: "co10_Escape-%CI_COMMIT_REF_SLUG%-%CI_COMMIT_SHA%"
+    paths:
+    - Packed/Missions
+    - Packed/Addons
+  except:
+    - tags
+  
+release:
+  stage: deploy
+  script: 
+  - "echo Deploying %CI_COMMIT_TAG% tag..."
+  - "copy .\\readme.txt .\\Packed\\Missions\\readme.txt" 
+  - "copy .\\readme.txt .\\Packed\\Addons\\readme.txt" 
+  cache:
+    key: "%CI_COMMIT_REF_SLUG%"
+    paths:
+    - Packed/Missions
+    - Packed/Addons
+    policy: pull
+  dependencies: 
+    - compile
+  artifacts:
+    name: "co10_Escape-%CI_COMMIT_TAG"
+    paths:
+    - Packed/Missions
+    - Packed/Addons
+  only:
+    - tags
+

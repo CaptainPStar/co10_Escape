@@ -1,6 +1,9 @@
 #define VERSION "{* VERSION *}"
-#define MISSIONNAME "{* MISSION *} {* ISLANDNAME *} {* MOD *}"
+#define MISSIONNAME "{* MISSION_FULL *}"
 #define MISSIONNAMEFULL "{* MISSION_FULL *} {* ISLANDNAME *} {* MOD *} {* VERSION *}"
+#define MOD "{* MOD *}"
+#define ISLAND "{* ISLANDNAME *}"
+#define RELEASE "{* RELEASE *}"
 
 //--- [Controls Style Preprocessors]
 #define ST_LEFT 				0

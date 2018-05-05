@@ -57,40 +57,50 @@ a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_SA61","CUP_20Rnd_B_765x17_Ball
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
-		"CUP_C_UAZ_Unarmed_TK_CIV"
-		,"CUP_C_UAZ_Open_TK_CIV"
-		,"CUP_C_Ural_Civ_01"
-		,"CUP_C_Ural_Civ_02"
-		,"CUP_C_Ural_Civ_03"
-		,"CUP_C_Ural_Open_Civ_01"
-		,"CUP_C_Ural_Open_Civ_02"
-		,"CUP_C_Ural_Open_Civ_03"
-		,"CUP_C_Datsun"
-		,"CUP_C_Datsun_4seat"
-		,"CUP_C_Datsun_Plain"
-		,"CUP_C_Datsun_Covered"
-		,"CUP_C_Datsun_Tubeframe"
-		,"CUP_C_Octavia_CIV"
-		,"CUP_C_Skoda_White_CIV"
-		,"CUP_C_Skoda_Red_CIV"
-		,"CUP_C_Skoda_Blue_CIV"
-		,"CUP_C_Skoda_Green_CIV"
-		,"CUP_C_Golf4_red_Civ"
-		,"CUP_C_Golf4_random_Civ"
-		,"CUP_C_Golf4_random_Civ"
-		,"C_Hatchback_01_F"
-		,"C_Hatchback_01_sport_F"
-		,"C_Offroad_01_F"
-		,"C_Quadbike_01_F"
-		,"C_SUV_01_F"
-		,"C_Hatchback_01_F"
-		,"C_Hatchback_01_sport_F"
-		,"C_Offroad_01_F"
-		,"C_Quadbike_01_F"
-		,"C_SUV_01_F"
-		,"C_Van_01_box_F"
-		,"C_Van_01_transport_F"
-		,"C_Van_01_fuel_F"];
+	"CUP_C_UAZ_Unarmed_TK_CIV"
+	,"CUP_C_UAZ_Open_TK_CIV"
+	,"CUP_C_Ural_Civ_01"
+	,"CUP_C_Ural_Civ_02"
+	,"CUP_C_Ural_Civ_03"
+	,"CUP_C_Ural_Open_Civ_01"
+	,"CUP_C_Ural_Open_Civ_02"
+	,"CUP_C_Ural_Open_Civ_03"
+	,"CUP_C_Datsun"
+	,"CUP_C_Datsun_4seat"
+	,"CUP_C_Datsun_Plain"
+	,"CUP_C_Datsun_Covered"
+	,"CUP_C_Datsun_Tubeframe"
+	,"CUP_C_Octavia_CIV"
+	,"CUP_C_Skoda_White_CIV"
+	,"CUP_C_Skoda_Red_CIV"
+	,"CUP_C_Skoda_Blue_CIV"
+	,"CUP_C_Skoda_Green_CIV"
+	,"CUP_C_Golf4_red_Civ"
+	,"CUP_C_Golf4_random_Civ"
+	,"CUP_C_Golf4_random_Civ"
+	,"CUP_C_SUV_CIV"
+	,"C_Hatchback_01_F"
+	,"C_Hatchback_01_sport_F"
+	,"C_Offroad_01_F"
+	,"C_Quadbike_01_F"
+	,"C_SUV_01_F"
+	,"C_Van_01_box_F"
+	,"C_Van_01_transport_F"
+	,"C_Van_01_fuel_F"
+	,"C_Truck_02_covered_F"
+	,"C_Offroad_01_repair_F"
+	,"C_Truck_02_fuel_F"
+	,"C_Truck_02_box_F"
+	,"C_Truck_02_transport_F"];
+	if(Param_UseDLCApex==1) then {
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
+	};
+	if(Param_UseDLCLaws==1) then {
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
+	};
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -335,8 +345,8 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	,"CUP_I_SUV_Armored_ION"//9
 	,"CUP_I_SUV_ION"//12
 	,"CUP_I_SUV_Armored_ION"];//9
-// Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
-a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [7, 7, 8, 9, 8, 8, 7, 8];
+
+
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
@@ -356,8 +366,8 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"CUP_B_MCV80_GB_W"
 	,"CUP_I_SUV_Armored_ION"
 	,"CUP_I_SUV_Armored_ION"];
-// Total cargo motorized search group vehicle. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses above.
-a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [7, 7, 7, 4, 4, 8, 8, 9, 8, 8, 7, 7, 9, 12];
+
+
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
 // light *and* a random heavy armor.
@@ -432,6 +442,7 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"CUP_C_Golf4_red_Civ"
 	,"CUP_C_Golf4_random_Civ"
 	,"CUP_C_Golf4_random_Civ"
+	,"CUP_C_SUV_CIV"
 	,"C_Hatchback_01_F"
 	,"C_Hatchback_01_sport_F"
 	,"C_Offroad_01_F"
@@ -439,7 +450,20 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"C_SUV_01_F"
 	,"C_Van_01_box_F"
 	,"C_Van_01_transport_F"
-	,"C_Van_01_fuel_F"];
+	,"C_Van_01_fuel_F"
+	,"C_Truck_02_fuel_F"
+	,"C_Truck_02_box_F"
+	,"C_Truck_02_transport_F"
+	,"C_Truck_02_covered_F"];
+	if(Param_UseDLCApex==1) then {
+		a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
+	};
+	if(Param_UseDLCLaws==1) then {
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_service_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_transport_F";
+	};
 
 // Vehicles, weapons and ammo at ammo depots
 
