@@ -78,6 +78,10 @@ if (isMultiplayer) then {
 waituntil{sleep 0.1;!isNil("A3E_ParamsParsed")};
 AT_Revive_Camera = Param_ReviveView;
 
+if (Param_Magrepack == 1) then {
+	[] execVM "Scripts\outlw_magRepack\MagRepack_init_sv.sqf";
+};
+
 
 [] spawn {
 	disableSerialization;

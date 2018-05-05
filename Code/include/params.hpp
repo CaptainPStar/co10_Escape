@@ -153,6 +153,13 @@ class Params
 		texts[]={"All", "No Goggles and TWS"};
 		default = 0;
 	};
+	class Param_Magrepack
+	{
+		title="Mag repack";
+		values[]={0,1};
+		texts[]={"Disabled", "Enabled"};
+		default = 0;
+	};
 	class Param_Spacer4
     {
             title = "==================== Statistic Settings ====================";
