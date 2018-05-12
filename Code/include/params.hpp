@@ -217,6 +217,20 @@ class Params
 		default = 1;
 	};
 	class Param_Spacer6
+	{
+            title = "==================== 3rd-party scripts ====================";
+            values[] = {0};
+            texts[] = {""};
+            default = 0;
+	};
+	class Param_Magrepack
+	{
+		title="Mag repack";
+		values[]={0,1};
+		texts[]={"Disabled", "Enabled"};
+		default = 0;
+	};
+	class Param_Spacer7
     {
             title = "==================== Debug Settings ====================";
             values[] = {0};
