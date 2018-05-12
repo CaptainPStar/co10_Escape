@@ -51,22 +51,33 @@ if(ATHSC_CamDir<-360) then {
 	ATHSC_CamDir = ATHSC_CamDir%360;
 };
 
+private _allowed = [];
+_allowed pushBack (actionKeys "Watch");
+_allowed pushBack (actionKeys "chat");
+_allowed pushBack (actionKeys "networkStats");
+_allowed pushBack (actionKeys "prevChannel");
+_allowed pushBack (actionKeys "nextChannel");
+_allowed pushBack (actionKeys "networkPlayers");
+_allowed pushBack (actionKeys "nightVision");
+_allowed pushBack (actionKeys "showMap");
+_allowed pushBack (actionKeys "hideMap");
+_allowed pushBack (actionKeys "compass");
 
-if(_dikCode == DIK_N) then {
+
+if({_dikCode in _x} count _allowed > 0) then {
+	_handled = false;
+};
+if(_dikCode in (actionKeys "nightVision")) then {
 	call ATHSC_fnc_toggleNV;
 };
-if(_dikCode == DIK_M) then {
+if(_dikCode in (actionKeys "showMap") || _dikCode in (actionKeys "hideMap")) then {
+	if(visibleMap) then {
+		openMap [false,false];
+	} else {
+		openMap [true,true];
+	};
 	//_handled = false;
 };
-if(_dikCode == DIK_P || _dikCode == DIK_I ) then {
-	_handled = false;
-};
-if(_dikCode in (actionKeys "Watch")) then {
-	_handled = false;
-};
-if(_dikCode in (actionKeys "Chat")) then {
-	_handled = false;
-};     
 if(_dikCode == DIK_RETURN) then {
 	_handled = false;
 };    

@@ -1,13 +1,28 @@
 if(!isserver) exitwith {};
 
-private ["_object", "_position", "_marker", "_instanceNo", "_randomNo", "_gun", "_angle", "_car","_dir","_boxpos","_boxType"];
+private ["_object", "_position", "_marker", "_instanceNo", "_randomNo", "_gun", "_angle", "_car","_dir","_boxpos","_boxType","_TypeOfWreck"];
 
 _position = [_this,0] call bis_fnc_param;
 
+_TypeOfWreck = [];
+_typeOfUnit = [];
+if (count a3e_arr_CrashSiteWrecksCar >0) then {
+	_blah=floor(random 2);
+	if (_blah == 0) then {
+	_TypeOfWreck = a3e_arr_CrashSiteWrecks;
+	_typeOfUnit = a3e_arr_CrashSiteCrew;
+	} else {
+	_TypeOfWreck = a3e_arr_CrashSiteWrecksCar;
+	_typeOfUnit = a3e_arr_CrashSiteCrewCar;
+	};
+} else { 
+	_TypeOfWreck = a3e_arr_CrashSiteWrecks;
+	_typeOfUnit = a3e_arr_CrashSiteCrew;
+};
 
 //Create a crashed object
 _dir = random 360;
-_object = createVehicle [a3e_arr_CrashSiteWrecks select(floor(random(count(a3e_arr_CrashSiteWrecks)))), _position, [], 0, "NONE"];
+_object = createVehicle [_TypeOfWreck select(floor(random(count(_TypeOfWreck)))), _position, [], 0, "NONE"];
 _object setPos _position;
 _object setDir _dir;
 
@@ -89,9 +104,11 @@ _boxpos = _position findEmptyPosition [3,15,_boxType];
 
 	
 	_grp = createGroup A3E_VAR_Side_Blufor;
-	_deadcrew = _grp createUnit [a3e_arr_CrashSiteCrew select(floor(random(count(a3e_arr_CrashSiteCrew)))), getpos _box, [], 15, "FORM"] ;   
+	_deadcrew = _grp createUnit [_typeOfUnit select(floor(random(count(_typeOfUnit)))), getpos _box, [], 15, "FORM"] ;   
 	_deadcrew setdammage 1;
-	_deadcrew = _grp createUnit [a3e_arr_CrashSiteCrew select(floor(random(count(a3e_arr_CrashSiteCrew)))), getpos _box, [], 15, "FORM"] ;   
+	_deadcrew = _grp createUnit [_typeOfUnit select(floor(random(count(_typeOfUnit)))), getpos _box, [], 15, "FORM"] ;   
 	_deadcrew setdammage 1;
+	
+	diag_log format["fn_CrashSite: Camp created at %1", getpos _box];
  };
  

@@ -7,6 +7,12 @@ if(isNil("AT_Revive_EnableRespawn")) then {
 if(isNil("AT_Revive_clearedDistance")) then {
 	AT_Revive_clearedDistance = 100;
 };
+if(isNil("ATHSC_Cam")) then {
+	ATHSC_Cam = objNull;
+};
+if(!isNull ATHSC_Cam) then {
+	[] call ATHSC_fnc_exit;
+};
 ATHSC_Cam = objNull;
 ATHSC_CamTarget = player;
 ATHSC_AttempRespawn = false;
@@ -41,7 +47,7 @@ ATHSC_Cam camSetTarget player;
 	sleep 0.5;
 	cutText ["", "BLACK IN"];
 	sleep 1.0;
-	cutRsc ["HSC_View", "PLAIN",2];
+	("HSC" call BIS_fnc_rscLayer) cutRsc ["HSC_View", "PLAIN", 2, false];
 };
 private _distance = ATHSC_CamDistance;
 for[{_i=1},{_i<ATHSC_CamDistance},{_i=_i+1}] do {

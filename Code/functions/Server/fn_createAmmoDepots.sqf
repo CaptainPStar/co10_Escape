@@ -85,7 +85,7 @@ while {count _positions < A3E_AmmoDepotCount} do {
 
 
 {
-    [_x,a3e_arr_Escape_AmmoDepot_StaticWeaponClasses,a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses] call A3E_fnc_AmmoDepot;
+	call compile format["[%1,a3e_arr_Escape_AmmoDepot_StaticWeaponClasses,a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses] call %2",str _x,selectRandom ["A3E_fnc_AmmoDepot","A3E_fnc_AmmoDepot2"]];
 } foreach _positions;
 
 a3e_var_Escape_AmmoDepotPositions = _positions;

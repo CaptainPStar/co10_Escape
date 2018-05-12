@@ -46,47 +46,23 @@ while {!(isNil _vehicleVarName)} do {
 
 //_chopper = "O_Heli_Light_02_F" createVehicle _homePos;
 //_chopper = createVehicle ["RHS_Mi8AMTSh_vvsc", _homePos, [], 0, "NONE"];
-_chopperspawn = [_homePos, random 360, (a3e_arr_searchChopper select floor (random count a3e_arr_searchChopper)), A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
-_chopper = _chopperspawn select 0;
+private _type =  selectRandom a3e_arr_searchChopper;
+
+_homePos = _homePos vectorAdd [0,0,100];
+
+//_chopperspawn = [_homePos, random 360, _type, A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
+_chopper = createVehicle [_type, _homePos, [], random 360, "FLY"];
+createVehicleCrew _chopper;
+{
+	_x call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
+} foreach crew _chopper;
 _chopper lock 0;
 _chopper setVehicleVarName _vehicleVarName;
 _chopper call compile format ["%1=_this;", _vehicleVarName];
 
-_group = createGroup _side;
-
-//"O_Pilot_F" createUnit [getMarkerPos "drn_searchChopperStartPosMarker", _group, "", (_minSkill + random (_maxSkill - _minSkill)), "LIEUTNANT"];
-//"O_Pilot_F" createUnit [getMarkerPos "drn_searchChopperStartPosMarker", _group, "", (_minSkill + random (_maxSkill - _minSkill)), "LIEUTNANT"];
-//"O_Pilot_F" createUnit [position player, _group, "", (_minSkill + random (_maxSkill - _minSkill)), "LIEUTNANT"];
-/*_group createUnit [(a3e_arr_searchChopper_pilot select floor (random count a3e_arr_searchChopper_pilot)), getMarkerPos "drn_searchChopperStartPosMarker", [], 0, "FORM"];
-_group createUnit [(a3e_arr_searchChopper_pilot select floor (random count a3e_arr_searchChopper_pilot)), getMarkerPos "drn_searchChopperStartPosMarker", [], 0, "FORM"];
-_group createUnit [(a3e_arr_searchChopper_crew select floor (random count a3e_arr_searchChopper_crew)), getMarkerPos "drn_searchChopperStartPosMarker", [], 0, "FORM"];
-_group createUnit [(a3e_arr_searchChopper_crew select floor (random count a3e_arr_searchChopper_crew)), getMarkerPos "drn_searchChopperStartPosMarker", [], 0, "FORM"];
-_group createUnit [(a3e_arr_searchChopper_crew select floor (random count a3e_arr_searchChopper_crew)), getMarkerPos "drn_searchChopperStartPosMarker", [], 0, "FORM"];
-
-_unitArray = _unitArray + units _group;
-
-_pilot = (units _group) select 0;
-_copilot = (units _group) select 1;
-_gunner1 = (units _group) select 2;
-_gunner2 = (units _group) select 3;
-_gunner3 = (units _group) select 4;
-
-_pilot assignAsDriver _chopper;
-_pilot moveInDriver _chopper;
-_copilot assignAsGunner _chopper;
-_copilot moveInTurret [_chopper, [0]];
-_gunner1 assignAsGunner _chopper;
-_gunner1 moveInTurret [_chopper, [1]];
-_gunner2 assignAsGunner _chopper;
-_gunner2 moveInTurret [_chopper, [2]];
-_gunner3 assignAsGunner _chopper;
-_gunner3 moveInTurret [_chopper, [3]];*/
 _chopper action ["lightOn", _chopper];
 
-/*{
-	_x setUnitRank "LIEUTENANT";
-    _x call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
-} foreach units _group;*/
+
 
 [_chopper, _searchAreaMarker, _searchTimeMin, _refuelTimeMin, _debug] spawn drn_fnc_SearchChopper;
 

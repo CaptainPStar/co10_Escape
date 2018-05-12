@@ -52,11 +52,6 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind append [
 	"I_C_Offroad_02_unarmed_F"
 	,"I_C_Van_01_transport_F"
 	];
-// Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
-a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo append [
-	3
-	,12
-	];
 
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles append [

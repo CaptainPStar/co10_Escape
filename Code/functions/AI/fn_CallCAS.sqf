@@ -1,10 +1,10 @@
 _center = createCenter sideLogic;    
 _group = createGroup _center;    
-_pos = getpos player;     
+/*_pos = getpos player;
 _cas = _group createUnit ["ModuleCAS_F",_pos , [], 0, ""];   
 _cas setDir 180;
 _cas setVariable ["vehicle","I_Plane_Fighter_03_CAS_F"]; 
-_cas setVariable ["type", 1];
+_cas setVariable ["type", 1];*/
 
 private["_position","_success","_cas"];
 _position = [_this,0,[0,0,0],[[]]] call bis_fnc_param;
@@ -14,9 +14,9 @@ _success = false;
 
 _cas = _group createUnit ["ModuleCAS_F",_position , [], 0, ""]; 
 _cas setDir (random 360);
-_cas setVariable ["vehicle",(a3e_arr_CASplane select floor (random count a3e_arr_CASplane)),true];
-_cas setVariable ["type", 0,true]; //0=guns	1=missiles	2=both
-
+_cas setVariable ["vehicle",selectRandom a3e_arr_CASplane,true];
+//_cas setVariable ["type", selectRandom[0,0,1,2,3],true]; //0=guns	1=missiles	2=both, 3=bomb
+_cas setVariable ["type", 3 ,true];
 
 
 [_position] spawn {

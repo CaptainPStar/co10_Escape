@@ -16,7 +16,7 @@ if(count(_allowed arrayIntersect _parents) > 0 ) then {
 	} else {
 		[_markerNo] spawn A3E_fnc_RunExtraction;
 		diag_log format["fn_firedNearExtraction: marker on land, calling helicopters to marker number %1",_markerNo];
-		};
+	};
 
 	deletevehicle _unit;
 	//diag_log format["Extraction triggered at %1",_markerNo];

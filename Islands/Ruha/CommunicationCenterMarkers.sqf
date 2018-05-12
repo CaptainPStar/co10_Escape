@@ -1,0 +1,16 @@
+a3e_communicationCenterMarkers = [];
+a3e_communicationCenterMarkers set [0, [[2312.52,6817.02,0], 0]];
+a3e_communicationCenterMarkers set [1, [[1877.67,5227.54,0], 0]];
+a3e_communicationCenterMarkers set [2, [[1211.77,3290.6,0], 0]];
+a3e_communicationCenterMarkers set [3, [[742.554,1942.36,0], 0]];
+a3e_communicationCenterMarkers set [4, [[1806.66,1184.1,0], 0]];
+a3e_communicationCenterMarkers set [5, [[2271.25,108.414,0], 0]];
+a3e_communicationCenterMarkers set [6, [[4264.54,1288.2,0], 0]];
+a3e_communicationCenterMarkers set [7, [[6241.7,1332.64,0], 0]];
+a3e_communicationCenterMarkers set [8, [[4621.02,4526.08,0], 0]];
+a3e_communicationCenterMarkers set [9, [[4754.7,6832.81,0], 0]];
+a3e_communicationCenterMarkers set [10, [[6117.15,7060.82,0], 0]];
+a3e_communicationCenterMarkers set [11, [[7670.24,6528.05,0], 107.216]];
+a3e_communicationCenterMarkers set [12, [[7966.78,3489.03,0], 0]];
+a3e_communicationCenterMarkers set [13, [[6206.31,3221.55,0], 0]];
+a3e_communicationCenterMarkers set [14, [[6105.63,5299.53,0], 0]];

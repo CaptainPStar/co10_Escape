@@ -462,8 +462,8 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	,"rhs_gaz66_msv"];
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	"CAF_AG_eeur_r_van_01"];
-// Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
-a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [14, 14, 13];
+
+
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
@@ -476,8 +476,8 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"rhs_btr70_msv"
 	,"rhs_btr80_msv"
 	,"rhs_btr80a_msv"];
-// Total cargo motorized search group vehicle. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses above.
-a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [6, 6, 8, 8, 8, 8, 8, 8];
+
+
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
 // light *and* a random heavy armor.
@@ -704,7 +704,7 @@ a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["Laserbatteries"], 5];
 // Weapons and ammo in the vehicle box (the big one)
 // Some high volumes (mostly for immersion)
 a3e_arr_AmmoDepotVehicle = [];
-a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["HandGrenade", "MiniGrenade", "HandGrenade_Stone"], 50];
+a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["HandGrenade", "MiniGrenade"], 50];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["SmokeShell", "SmokeShellYellow", "SmokeShellRed", "SmokeShellGreen", "SmokeShellPurple", "SmokeShellBlue", "SmokeShellOrange"], 50];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["Chemlight_blue", "Chemlight_green", "Chemlight_red", "Chemlight_yellow"], 50];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 10, 1, 1, ["rhs_mag_M433_HEDP", "rhs_mag_M714_white", "rhs_mag_M716_yellow", "rhs_mag_M713_red", "rhs_mag_M585_white", "rhs_mag_M661_green"], 5];
@@ -963,7 +963,9 @@ a3e_arr_roadblocks_Veh_GUE = a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
 // boats that are spawned
 //////////////////////////////////////////////////////////////////
 a3e_arr_AquaticPatrols = [
-	"O_Boat_Armed_01_hmg_F"];
+	"O_Boat_Armed_01_hmg_F"
+	,"feint_shark"
+	,"feint_shark2"];
 
 //////////////////////////////////////////////////////////////////
 // fn_AmmoDepot
@@ -985,8 +987,13 @@ a3e_arr_MortarSite = [
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
-	"RHS_Su25SM_vvs"
-	,"RHS_T50_vvs_generic"];
+	"O_Plane_CAS_02_Cluster_F"
+	,"O_Plane_Fighter_02_Cluster_F"
+	,"I_Plane_Fighter_03_Cluster_F"
+	,"I_Plane_Fighter_04_Cluster_F"];
+
+	//"RHS_Su25SM_vvs"
+	//,"RHS_T50_vvs_generic"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
@@ -1006,6 +1013,15 @@ a3e_arr_CrashSiteWrecks = [
 	,"Land_Wreck_Heli_Attack_01_F"];
 a3e_arr_CrashSiteCrew = [
 	"rhsusf_airforce_pilot"];
+a3e_arr_CrashSiteWrecksCar = [
+	"Land_Wreck_HMMWV_F"
+	,"Land_Wreck_Hunter_F"
+	,"Land_Wreck_Slammer_F"
+	,"M113Wreck"];
+a3e_arr_CrashSiteCrewCar = [
+	"rhsusf_usmc_marpat_wd_driver"
+	,"rhsusf_usmc_marpat_wd_crewman"
+	,"rhsusf_usmc_marpat_wd_combatcrewman"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["hlc_rifle_auga3", 50, 2, 5, ["hlc_30Rnd_556x45_B_AUG"], 12];

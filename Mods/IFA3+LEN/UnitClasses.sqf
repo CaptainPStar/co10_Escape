@@ -253,8 +253,8 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	,"LIB_SdKfz251"
 	,"LIB_opelblitz_tent_y_camo"
 	,"LIB_opelblitz_open_y_camo"];
-// Total cargo for reinforcement trucks. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_ReinforcementTruck_vehicleClasses above.
-a3e_arr_Escape_ReinforcementTruck_vehicleClassesMaxCargo = [3, 3, 8, 10, 12, 12];
+
+
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
@@ -265,8 +265,8 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"LIB_SdKfz251"
 	,"LIB_opelblitz_tent_y_camo"
 	,"LIB_opelblitz_open_y_camo"];
-// Total cargo motorized search group vehicle. Each element corresponds to a vehicle (array element) in array a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses above.
-a3e_arr_Escape_MotorizedSearchGroup_vehicleClassesMaxCargo = [3, 3, 8, 10, 12, 12];
+
+
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
 // light *and* a random heavy armor.
@@ -604,13 +604,19 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"Land_HistoricalPlaneWreck_03_F"
-	,"LIB_Pe2_MRWreck"
-	,"LIB_P47_MRWreck"
-	,"LIB_Ju87_MRWreck"];
+	"LIB_HORSA_Wreck"
+	,"LIB_CG4_WACO_Wreck2"
+	,"LIB_CG4_WACO_Wreck"
+	,"LIB_P47_MRWreck"];
 a3e_arr_CrashSiteCrew = [
-	"LIB_GER_pilot"
-	,"LIB_US_pilot"];
+	"LIB_US_pilot"
+	,"LIB_US_rifleman"];
+a3e_arr_CrashSiteWrecksCar = [
+	"LIB_M4A3_75_wreck"];
+a3e_arr_CrashSiteCrewCar = [
+	"LIB_US_tank_crew"
+	,"LIB_US_tank_second_lieutenant"
+	,"LIB_US_tank_sergeant"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["LIB_M1918A2_BAR", 10, 2, 4, ["LIB_20Rnd_762x63","LIB_20Rnd_762x63"], 3];

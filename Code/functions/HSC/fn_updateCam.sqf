@@ -11,7 +11,7 @@ if(!(isNull ATHSC_Cam)) then {
 		ATHSC_Cam camSetTarget _target;
 		//ATHSC_Cam camSetRelPos [0, 8, 15];
 		private _camVector = [[0,1,0],[ATHSC_CamAngle,0,ATHSC_CamDir]] call ATHSC_FNC_rotateVector;
-		ATHSC_Cam camSetPos ((getpos _target) vectorAdd (_camVector vectorMultiply ATHSC_CamDistance));
+		ATHSC_Cam camSetPos ((getPosATL _target) vectorAdd (_camVector vectorMultiply ATHSC_CamDistance));
 		ATHSC_Cam cameraEffect ["internal", "back"];
 		ATHSC_Cam camCommit _commit;
 	};

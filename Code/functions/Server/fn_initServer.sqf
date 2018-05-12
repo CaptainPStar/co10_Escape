@@ -20,7 +20,8 @@ if(!isNil("Param_Debug")) then {
 };
 publicVariable "A3E_Debug";
 
-
+//Load Statistics
+[] spawn A3E_fnc_LoadStatistics;
 // Add crashsite here
 //##############
 
@@ -63,11 +64,22 @@ if(Param_War_Torn == 0) then {
 
 private ["_hour","_date"];
 _hour = Param_TimeOfDay;
-_date = date;
-if(_hour==24) then {
-	_hour = round(random(24));
+switch (Param_TimeOfDay) do {
+    case 24: { 
+		_hour = round(random(24));
+	};
+    case 25: {
+		_hour = 6+round(random(12));  //Between 0600 and 1800
+	};
+	case 26: { 
+		_hour = 20 + round(random(8)); //Between 2000 and 0400
+		_hour = _hour % 24;
+	};
+    default { _hour = Param_TimeOfDay };
 };
+_date = date;
 _date set [3,_hour];
+_date set [4,0];
 [_date] call bis_fnc_setDate;
 
 setTimeMultiplier Param_TimeMultiplier;
@@ -131,7 +143,8 @@ if(isNil("A3E_ClearedPositionDistance")) then {
 
 // Build start position
 _fenceRotateDir = random 360;
-private _backPack = [A3E_StartPos, _fenceRotateDir] call a3e_fnc_BuildPrison;
+
+private _backPack = call compile format["[A3E_StartPos, %1] call %2;",_fenceRotateDir,selectRandom ["a3e_fnc_BuildPrison","a3e_fnc_BuildPrison1","a3e_fnc_BuildPrison2","a3e_fnc_BuildPrison3","a3e_fnc_BuildPrison4","a3e_fnc_BuildPrison5"]];
 
 A3E_FenceIsCreated = true;
 publicVariable "A3E_FenceIsCreated";
@@ -394,27 +407,27 @@ private _UseMotorPools = Param_MotorPools;
 					if(isNil("a3e_var_Escape_SearchLeader_civilianReporting")) then {
 						a3e_var_Escape_SearchLeader_civilianReporting = true;
 						publicVariable "a3e_var_Escape_SearchLeader_civilianReporting";
-						(_this select 1) addScore -4;
+						(_this select 1) addScore -5;
 					} else {
-						(_this select 1) addScore 1;
+						(_this select 1) addScore -1;
 					};
+					(_this select 1) addRating 1000; //Even out the minus score by killing civilians
 					[name (_this select 1) + " has killed a civilian."] call drn_fnc_CL_ShowCommandTextAllClients;
 				}
 			}];
 		} foreach _crew;
 		
 		if (random 100 < 20) then {
-			private ["_index", "_weaponItem"];
+			private ["_weaponItem"];
 			
-			_index = floor random count a3e_arr_CivilianCarWeapons;
-			_weaponItem = a3e_arr_CivilianCarWeapons select _index;
+			_weaponItem = selectRandom a3e_arr_CivilianCarWeapons;
 			
 			_vehicle addWeaponCargoGlobal [_weaponItem select 0, 1];
 			_vehicle addMagazineCargoGlobal [_weaponItem select 1, _weaponItem select 2];
 		};
 	};
 	
-	[_playerGroup, civilian, [], _vehiclesCount, _enemySpawnDistance, _radius, 0.5, 0.5, _fnc_onSpawnCivilian, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
+	[civilian, [], _vehiclesCount, _enemySpawnDistance, _radius, 0.5, 0.5, _fnc_onSpawnCivilian, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
 
 	
 	// Enemy military traffic
@@ -440,8 +453,8 @@ private _UseMotorPools = Param_MotorPools;
 	[_playerGroup,_vehiclesCount,_enemySpawnDistance,_radius,_enemyMinSkill, _enemyMaxSkill] spawn {
 		params["_playerGroup","_vehiclesCount","_enemySpawnDistance","_radius","_enemyMinSkill", "_enemyMaxSkill"];
 		sleep 300;
-		[_playerGroup, A3E_VAR_Side_Opfor, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
-		[_playerGroup, A3E_VAR_Side_Ind, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
+		[A3E_VAR_Side_Opfor, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
+		[A3E_VAR_Side_Ind, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
     };
 
 	private ["_areaPerRoadBlock", "_maxEnemySpawnDistanceKm", "_roadBlockCount"];
@@ -469,13 +482,11 @@ private _UseMotorPools = Param_MotorPools;
 		_roadBlockCount = 1;
 	};
 	//A3E_VAR_Side_Ind
-	[_playerGroup, A3E_VAR_Side_Opfor, a3e_arr_Escape_InfantryTypes, a3e_arr_Escape_RoadBlock_MannedVehicleTypes, _roadBlockCount, _enemySpawnDistance, _enemySpawnDistance + 500, 750, 300, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, A3E_Debug] spawn drn_fnc_RoadBlocks;
+	[a3e_arr_Escape_InfantryTypes, a3e_arr_Escape_RoadBlock_MannedVehicleTypes, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle, A3E_Debug] spawn A3E_fnc_RoadBlocks;
 
 	//Spawn crashsites
-	if(isNil("A3E_CrashSiteCountMax")) then {
-		A3E_CrashSiteCountMax = 2;
-	};
-	_crashSiteCount = random A3E_CrashSiteCountMax;
+
+	_crashSiteCount = ceil(random(missionNamespace getvariable["CrashSiteCountMax",3]));
 	for [{_x=0},{_x<_crashSiteCount},{_x=_x+1}] do {
 	  _pos = [] call A3E_fnc_findFlatArea;
 	  [_pos] call A3E_fnc_crashSite;
@@ -579,6 +590,8 @@ waitUntil {scriptDone _scriptHandle};
             _unit unlinkItem "ItemCompass";
             _unit unlinkItem "ItemGPS";
 			
+			removeBackpackGlobal _unit;
+			
 			if(random 100 < 80) then {
 				removeAllPrimaryWeaponItems _unit;
 				
@@ -606,7 +619,13 @@ waitUntil {scriptDone _scriptHandle};
     } foreach _guardGroups;
         
 	//Add an alert trigger to the prison
-
+	A3E_fnc_revealPlayers = {
+		private ["_guardGroup"];
+		_guardGroup = _this;
+		{
+			_guardGroup reveal _x;
+		} foreach call A3E_fnc_GetPlayers;
+	};
 	A3E_fnc_soundAlarm = {
 		private ["_guardGroup"];
 		_guardGroups = _this select 0;
@@ -621,13 +640,6 @@ waitUntil {scriptDone _scriptHandle};
 			} foreach _guardGroups;
 		};
 	};
-	A3E_fnc_revealPlayers = {
-		private ["_guardGroup"];
-		_guardGroup = _this;
-		{
-			_guardGroup reveal _x;
-		} foreach call A3E_fnc_GetPlayers;
-	};
     // Start thread that waits for escape to start
     [_guardGroups, _startPos] spawn {
         private ["_guardGroups", "_startPos"];
@@ -641,7 +653,7 @@ waitUntil {scriptDone _scriptHandle};
 			sleep 1;
             // If any member of the group is to far away from fence, then escape has started
             {
-				if(_x getvariable ["A3E_PlayerInitialized",false]) then {
+				if(_x getvariable ["A3E_PlayerInitializedServer",false]) then {
 					if ((_x distance A3E_StartPos) > 15 && (_x distance A3E_StartPos) < 100) exitWith {
 						A3E_EscapeHasStarted = true;
 						publicVariable "A3E_EscapeHasStarted";

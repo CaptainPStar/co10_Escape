@@ -20,7 +20,7 @@ if(_found) then {
 		titleText ["", "BLACK",1];
 	};
 	sleep 1;
-	_unit setpos _pos; 
+	_unit setVehiclePosition [_pos, [], 0, "NONE"];
 	_msg = format["%1's body washed ashore.",name _unit];
 	_msg remoteExec ["systemchat", 0, false];
 	sleep 1;

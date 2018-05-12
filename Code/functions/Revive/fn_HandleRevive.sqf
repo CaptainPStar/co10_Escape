@@ -6,11 +6,24 @@ if(!isnull _target) then {
 	{
 		_target setVariable ["AT_Revive_isDragged", player, true];
 		if(primaryWeapon player != "") then {
-			player playMove "AinvPknlMstpSlayWrflDnon_medic";
+			//Select primary weapon so the player does not switch weapons multiple times after revive
+			private _muzzles = getArray(configFile >> "cfgWeapons" >> (primaryWeapon player) >> "muzzles");
+			if (count _muzzles > 1) then
+			{
+				 player selectWeapon (_muzzles select 0);
+			}
+			else
+			{
+				player selectWeapon (primaryWeapon player);
+			};
+			if(stance player == "PRONE") then {
+				player playMove "AinvPpneMstpSlayWnonDnon_medicOther";
+			} else {
+				player playMove "AinvPknlMstpSlayWrflDnon_medic";
+			};
 		} else {
 			player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
 		};
-
 		sleep 6;
 		_target setVariable ["AT_Revive_isDragged", objNull, true];
 		
@@ -21,7 +34,6 @@ if(!isnull _target) then {
 			if(AT_Revive_Camera==1) then {
 				[] remoteExec ["ATHSC_fnc_exit", _target, false];
 			};
-
 		};
 		
 		if (!isPlayer _target) then
@@ -30,6 +42,12 @@ if(!isnull _target) then {
 			_target allowDamage true;
 			_target setCaptive false;
 			[_target,"amovppnemstpsraswrfldnon"] remoteExec ["playmove", 0, false];
+		};
+		
+		//Fix revive underwater
+		if(surfaceIsWater (getpos _target)) then {
+			[_target,""] remoteExec ["switchmove", 0, false];
+			[player,""] remoteExec ["switchmove", 0, false];
 		};
 		
 		private _attendant = [(configfile >> "CfgVehicles" >> typeof player),"attendant",0] call BIS_fnc_returnConfigEntry; 

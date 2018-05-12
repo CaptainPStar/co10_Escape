@@ -75,3 +75,4 @@ _firstGroup = true;
     //sleep 0.25;
 } foreach _soldierObjects;
 
+_garrison = [_side, _soldiertype, _markername, _locationObject] spawn drn_fnc_GarrisonUnits;

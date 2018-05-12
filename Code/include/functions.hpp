@@ -27,9 +27,6 @@ class CfgFunctions
 		class Briefing {
 			postInit = 1;
 		};
-		class Bootstrap {
-			postInit = 1;
-		};
 		class cleanupTerrain {};
 		class handleRating {};
 		class handleScore {};
@@ -45,6 +42,7 @@ class CfgFunctions
 			class Move {};
 			class Search {};
 			class SearchDrone {};
+			class LeafletDrone {};
 			class Patrol {};
 			class Flee {};
 			class FireArtillery {};
@@ -54,6 +52,7 @@ class CfgFunctions
 			class GetTaskState {};
 			class AquaticPatrol {};
 			class AddStaticGunner {};
+			class ExtractionChopper {};
 		};
 		class Debug
 		{
@@ -84,16 +83,30 @@ class CfgFunctions
 			class firedNearExtraction {};
 			class weather {};
 			class FindSpawnRoad {};
+			class EndMissionServer {};
+			class SelectExtractionZone {};
+			class RoadBlocks {};
 		};
 		class Templates
 		{
             class BuildPrison {};
+			class BuildPrison1 {};
+			class BuildPrison2 {};
+			class BuildPrison3 {};
+			class BuildPrison4 {};
+			class BuildPrison5 {};
             class BuildComCenter {};
+			class BuildComCenter2 {};
+			class BuildComCenter3 {};
             class BuildMotorPool {};
             class AmmoDepot {};
+			class AmmoDepot2 {};
 			class CrashSite {};
 			class MortarSite {};
+			class MortarSite2 {};
 			class Roadblock {};
+			class Roadblock2 {};
+			class Roadblock3 {};
 		};
 		class Chronos
 		{
@@ -101,6 +114,13 @@ class CfgFunctions
 			class Chronos_Run {};
 			class Chronos_Register {};
 			class Chronos_Dispatch {};
+		};
+		class Statistics
+		{
+			class LoadStatistics {};
+			class WriteStatisticsToBriefing {};
+			class SaveStatistics {};
+			class ParseStatistics {};
 		};
 	};
 	class drn
@@ -117,8 +137,7 @@ class CfgFunctions
 			class InsertionTruck {};
 			class MilitaryTraffic {};
 			class MoveVehicle {};
-			class MotorizedSearchGroup {};
-			class RoadBlocks {};	
+			class MotorizedSearchGroup {};	
 			class SearchChopper {};
 			class SearchGroup {};
 			class InitVillageMarkers{};
@@ -129,6 +148,7 @@ class CfgFunctions
 			class PopulateAquaticPatrol {};
 			class DepopulateAquaticPatrol {};
 			class InitAquaticPatrolMarkers {};
+			class GarrisonUnits {};
 		};
 	};
 	class ATR

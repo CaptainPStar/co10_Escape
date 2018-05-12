@@ -14,20 +14,20 @@ if (isNil "paramsArray") then
         };
     };
 };
-	AT_fnc_ParamsToVar = {
-		//Compile params into real variables:
-		private["_c","_paramName"];
-		_c=count (missionConfigFile/"Params");
-		for [ {_i=0}, {_i<_c}, {_i=_i+1} ] do
-		{
-			_paramName = (configName ((missionConfigFile >> "Params") select _i));
-			call compile format["%1 = %2;publicVariable '%1';",_paramName,paramsArray select _i];
+AT_fnc_ParamsToVar = {
+	//Compile params into real variables:
+	private["_c","_paramName"];
+	_c=count (missionConfigFile/"Params");
+	for [ {_i=0}, {_i<_c}, {_i=_i+1} ] do
+	{
+		_paramName = (configName ((missionConfigFile >> "Params") select _i));
+		call compile format["%1 = %2;publicVariable '%1';",_paramName,paramsArray select _i];
 
-		};
 	};
+};
 	
-	//Compile Params into Variables
-	call AT_fnc_ParamsToVar;
+//Compile Params into Variables
+call AT_fnc_ParamsToVar;
 	
 private["_paramLoading","_params"];
 _paramLoading = Param_Loadparams;
@@ -60,10 +60,36 @@ switch (_paramLoading) do
 };
 
 
-	//Reompile Params into Variables because they may have changed
-	call AT_fnc_ParamsToVar;
+//Recompile Params into Variables because they may have changed
+call AT_fnc_ParamsToVar;
 
+private _paramsBriefing = "Parameters:<br/>"; //An string for the briefing entry every player will receive:
+private["_c","_paramName"];
+_c=count (missionConfigFile/"Params");
+for [ {_i=1}, {_i<_c}, {_i=_i+1} ] do
+{
+	private _param = ((missionConfigFile >> "Params") select _i);
+	private _name = getText (_param >> "title");
+	private _value = paramsArray select _i;
+	private _values = (getArray (_param >> "values"));
+	private _index = _values find _value;
+	private _valueName = (getArray (_param >> "texts")) select _index;
+	private _default = getNumber (_param >> "default");
+	private _defaultIndex = _values find _default;
+	private _defaultName = (getArray (_param >> "texts")) select _defaultIndex;
+	
+	if(count _values > 1) then {
+		_paramsBriefing = _paramsBriefing + format["<br/>%1:<br/>Current: %2<br/>Default: %3<br/><br/>",_name,_valueName,_defaultName];
+	} else {
+		//This seems to be a spacer:
+		_paramsBriefing = _paramsBriefing + format["<br/>%1<br/>",_name];
+	};
+
+	//call compile format["%1 = %2;publicVariable '%1';",_paramName,paramsArray select _i];
+};
+_paramsBriefing remoteExec ["A3E_fnc_WriteParamBriefing", 0, true]; 
+diag_log _paramsBriefing;
 
 A3E_ParamsParsed = true;
 publicVariable "A3E_ParamsParsed";
-//[paramsArray,"a3e_fnc_WriteParamBriefing",true,true] call BIS_fnc_MP;
+

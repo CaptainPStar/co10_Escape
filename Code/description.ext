@@ -3,21 +3,25 @@
 // Mission Header
 class Header
 {
-  gameType = Coop;
+  gameType = Escape;
   minPlayers = 1;
   maxPlayers = 10;
 };
 
-
-onLoadMission = MISSIONNAME;
+onLoadName = MISSIONNAME;
+onLoadMission = MISSIONNAMEFULL;
 OnLoadMissionTime = FALSE;
 dev = "NeoArmageddon and Scruffy";
-briefingName = MISSIONNAME;
+briefingName = MISSIONNAMEFULL;
 author = "NeoArmageddon and Scruffy";
 overviewPicture = "a3\Missions_F_Gamma\data\img\MP_COOP_m03_overview_CA.paa";
 overviewText = MISSIONNAMEFULL;
-onLoadName = MISSIONNAME;
 loadScreen = "escape_banner.paa"; 
+
+EscapeIsland = ISLAND;
+EscapeMod = MOD;
+EscapeVersion = VERSION;
+EscapeRelease = RELEASE;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 Respawn = "INSTANT";
@@ -40,30 +44,46 @@ wreckRemovalMaxTime = 1800; //seconds
 {  
     class End1
     {
-        title = "Mission failed";
-        subtitle = "";
-        description = "We haven't made it home. Everybody is dead.";
+        title = "Escape failed";
+        subtitle = "Everybody is dead";
+        description = "We haven't made it home. Atleast the enemy won't get any intel from us.";
         pictureBackground = "";
     };
     class End2
     {
-        title = "Mission Completed";
+        title = "Mission successful";
         subtitle = "";
-        description = "We escaped the enemy and made it back home. Our gathered intel will be valuable in the upcoming invasion.";
+        description = "We escaped the enemy and made it back home. Our gathered intel about the enemy forces will be valuable in the upcoming invasion.";
         pictureBackground = "";
     };
 	class End3
     {
-        title = "Mission failed";
-        subtitle = "";
+        title = "Escape failed";
+        subtitle = "We left somebody behind";
         description = "We escaped the enemy but not everybody made it home!";
         pictureBackground = "";
     };
+	class End4
+    {
+        title = "Escape successful";
+        subtitle = "";
+        description = "We escaped but our actions did not go unnoticed. Members of the squad will be court-martialed.";
+        pictureBackground = "";
+    };
 };
-
+class CfgDebriefingSections
+{
+	class A3EStatistics
+	{
+		title = "Statistics";
+		variable = "A3E_EndStatistics";
+	};
+};
 
 #include "include\params.hpp"
 #include "include\functions.hpp"
+
+#include "Scripts\outlw_magRepack\MagRepack_config.hpp"
 
 
 class CfgRemoteExec
@@ -177,4 +197,18 @@ class RscTitles {
 				};
 			};
 	};
+};
+class CfgCommands {
+   allowedHTMLLoadURIs[] += {
+      "http://escape.anzp.de/track.php*"
+   };
+};
+class CfgLeaflets
+{
+	class Guer // Configuration for 1Rnd_Leaflets_Guer_F
+	{
+		text = "Please come back!!"; // Text shown when previewing the leaflet full-screen. Ideally should be localized, so even player who cannot read the image can get the information
+		texture = "leaflet.paa"; // Leaflet texture shown when previewing the leaflet full-screen
+		//model = "myLeaflet.p3d"; // In-flight model. Generic white leaflet is used when not defined.
+	}
 };
