@@ -29,8 +29,6 @@ Vanilla
 Vanilla Apex
 CUP
 RHS
-IFA3
-Massi
 
 The mission is available on the following terrains (with the mods above when applicable):
 Altis
@@ -75,12 +73,12 @@ Valtatie 5
 
 
 Credits
-
 Original Mission (Arma2) by Engima of Östgöta Ops.
 Mission ported to Arma3 by Vormulac and HyperZ.
 Continue devlopment by NeoArmageddon and Scruffy.
 Island ports and unit configs by Scruffy.
 Additional scripting and fixing by abelian, dystopian1, FrozenLiquidity, Cyprus, DPM
+Magrepack by outlawled
 
 Additional ports and configs by 
 SurvivorOfZeds (IFA3+LEN)
@@ -93,6 +91,12 @@ Testing: Maikeks, Darcy, Memphis Belle, Aurelia, Freshman, Roy and many more.
 
 The official co10 Escape mission for Arma3 is currently developed and maintained by NeoArmageddon and Scruffy.
 
+
+License
+This mission is released under the APL-SA license.
+
+Modification
+When you release a modified version of this mission, please make sure to change the line #define RELEASE "something" in include/defines.hpp to your user/clan/squadname. This makes collecting feedback and issues for me much easier.
 
 Feedback
 Please post bugs and feedback in our Gitlab at https://gitlab.anzp.de
