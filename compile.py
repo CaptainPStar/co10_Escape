@@ -2,14 +2,16 @@
 import os
 import shutil
 import subprocess
+print("Loading config...") 
 with open('Configs/config.json') as json_data_file:
     data = json.load(json_data_file)
 mods = data['Mods'];
-islands = data['Islands'];
-missions = data['Missions'];
+islands = data['Islands']
+missions = data['Missions']
 addons = data['Addons']
 for scfg in data['Subconfigs']:
-    with open(scfg) as json_adata:
+    print("Parsing config "+scfg)    
+    with open(scfg) as json_adata:  
         adata = json.load(json_adata)  
         mods = mods + adata['Mods'];
         islands = islands + adata['Islands'];
