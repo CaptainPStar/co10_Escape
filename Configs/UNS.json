@@ -22,7 +22,18 @@
 				}
 		}
 	],
-	"Islands": [],
+	"Islands": [
+		{
+			"name" : "Da Krong",
+			"class" : "DaKrong",
+			"path" : "./Islands/DaKrong/",
+			"replace" :
+				{
+				"ISLAND" : "Da Krong",
+				"ISLANDNAME" : "Da Krong"
+				}
+		}
+	],
 	"Missions" : [
 		{
 			"island" : "Tanoa",
@@ -48,6 +59,13 @@
 		{
 			"island" : "Prei Khmaoch Luong",
 			"sqm": "prei_khmaoch_luong",
+			"mod" : "UNS",
+			"replace" : {},
+			"name" : "co10_Escape_UNS_US_vs_NVA"
+		},
+		{
+			"island" : "Da Krong",
+			"sqm": "DaKrong",
 			"mod" : "UNS",
 			"replace" : {},
 			"name" : "co10_Escape_UNS_US_vs_NVA"
