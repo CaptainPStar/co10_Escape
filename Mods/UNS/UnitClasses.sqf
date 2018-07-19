@@ -37,7 +37,7 @@ a3e_arr_PrisonBackpackWeapons pushback ["uns_coltcmdr","uns_coltcmdrmag"];
 a3e_arr_PrisonBackpackWeapons pushback ["uns_357m","uns_357mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["uns_m1911","uns_m1911mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["uns_m2carbine_shorty_p","uns_m2carbinemag"];
-a3e_arr_PrisonBackpackWeapons pushback ["uns_m79p","uns_1Rnd_BS_M576"];
+//a3e_arr_PrisonBackpackWeapons pushback ["uns_m79p","uns_1Rnd_BS_M576"]; //doesnt work right now
 a3e_arr_PrisonBackpackWeapons pushback ["uns_MX991_m1911_base","uns_m1911mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["uns_MX991_m1911SD_base","uns_m1911mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["uns_makarov", "uns_makarovmag"];
@@ -664,8 +664,6 @@ a3e_arr_extraction_chopper = [
 	"uns_ch34_army"
 	,"uns_ch34_army_M60"
 	,"uns_ch47_m60_army"
-	,"uns_ach47_m134"
-	,"uns_ach47_m200"
 	,"uns_UH1D_m60"
 	,"uns_UH1H_m60"
 	,"uns_h21c_mg"
