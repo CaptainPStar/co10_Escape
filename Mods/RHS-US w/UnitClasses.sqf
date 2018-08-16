@@ -11,9 +11,9 @@ _enemyFrequency = _this select 0;
 
 //Sides
 
-A3E_VAR_Side_Blufor = east;
-A3E_VAR_Side_Opfor = west;
-A3E_VAR_Side_Ind = resistance;
+A3E_VAR_Side_Blufor = east; // playerside, RHS AFRF, Russian VDV flora
+A3E_VAR_Side_Opfor = west; // RHS USAF, US-Army OCP and USMC woodland
+A3E_VAR_Side_Ind = resistance; // RHS SAF, KOF Oakleaf and Airborne
 
 A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_nato_CO.paa";
 A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_green_CO.paa";
@@ -24,27 +24,41 @@ A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
 // Random array. Start position guard types around the prison.
 a3e_arr_Escape_StartPositionGuardTypes = [
-	"rhsusf_army_ocp_rifleman"
-	,"rhsusf_army_ocp_rifleman_m4"
-	,"rhsusf_army_ocp_rifleman_m16"
-	,"rhsusf_army_ocp_rifleman_m590"
-	,"rhsusf_army_ocp_riflemanl"
-	,"rhsusf_army_ocp_grenadier"];
+	"rhssaf_army_m93_oakleaf_summer_rifleman_m21"
+	,"rhssaf_army_m93_oakleaf_summer_rifleman_m70"
+	,"rhssaf_army_m93_oakleaf_summer_crew"
+	,"rhssaf_army_m93_oakleaf_summer_officer"
+	,"rhssaf_army_m93_oakleaf_summer_gl"];
 
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pb_6p9","rhs_mag_9x18_8_57N181S"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pb_6p9","rhs_mag_9x18_8_57N181S"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pya","rhs_mag_9x19_17"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pya","rhs_mag_9x19_17"];
-a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_makarov_pmm","rhs_mag_9x18_12_57N181S"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_makarov_pm","rhs_mag_9x18_8_57N181S"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_makarov_pm","rhs_mag_9x18_8_57N181S"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pp2000_folded","rhs_mag_9x19mm_7n21_20"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pp2000_folded","rhs_mag_9x19mm_7n31_44"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_savz61_folded","rhsgref_20rnd_765x17_vz61"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_savz61_folded","rhsgref_10rnd_765x17_vz61"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_tt33","rhs_mag_762x25_8"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_tt33","rhs_mag_762x25_8"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_6p53","rhs_18rnd_9x21mm_7N28"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_6p53","rhs_18rnd_9x21mm_7N29"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_type94_new","rhs_mag_6x8mm_mhp"];
+
+/* US pistols
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_FMJ"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m1911a1","rhsusf_mag_7x45acp_MHP"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m1911a1","rhsusf_mag_7x45acp_MHP"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_glock17g4","rhsusf_mag_17Rnd_9x19_JHP"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_glock17g4","rhsusf_mag_17Rnd_9x19_FMJ"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_PDW2000_F","30Rnd_9x21_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
-a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_FMJ"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_snds_F","30Rnd_9x21_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_Rook40_snds_F","30Rnd_9x21_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_MP7A2","rhsusf_mag_40Rnd_46x30_FMJ"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_m3a1","rhsgref_30rnd_1143x23_M1911B_SMG"];
+
+*/
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
@@ -81,182 +95,261 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 switch (_enemyFrequency) do {
     case 1: {//Few (1-3)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"rhsusf_m998_w_2dr"
-		,"rhsusf_m998_w_2dr_halftop"
-		,"rhsusf_m998_w_2dr_fulltop"
-		,"rhsusf_m998_w_4dr"
-		,"rhsusf_m998_w_4dr_halftop"
-		,"rhsusf_m998_w_4dr_fulltop"
-		,"rhsusf_m1025_w"
-		,"rhsusf_m1025_w_m2"
-		,"rhsusf_m1025_w_mk19"
-		,"rhsusf_M1078A1P2_wd_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_B_M2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_wd_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_B_M2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M977A2_CPK_usarmy_wd"
-		,"rhsusf_M978A2_usarmy_wd"
-		,"rhsusf_M978A2_CPK_usarmy_wd"
-		,"rhsusf_rg33_wd"
-		,"rhsusf_rg33_m2_wd"
+		"rhsusf_m998_w_s_2dr"//USMC
+		,"rhsusf_m998_w_s_2dr_halftop"//USMC
+		,"rhsusf_m998_w_s_2dr_fulltop"//USMC
+		,"rhsusf_m998_w_s_4dr"//USMC
+		,"rhsusf_m998_w_s_4dr_halftop"//USMC
+		,"rhsusf_m998_w_s_4dr_fulltop"//USMC
+		,"rhsusf_m1025_w_s"//USMC
+		,"rhsusf_m1025_w_s_m2"//USMC
+		,"rhsusf_m1025_w_s_Mk19"//USMC
+		,"rhsusf_m1043_w_s"//USMC
+		,"rhsusf_m1043_w_s_m2"//USMC
+		,"rhsusf_m1043_w_s_mk19"//USMC
+		,"rhsusf_m1045_w_s"//USMC
+		,"rhsusf_M1078A1P2_WD_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_WD_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_WD_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_WD_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy"
+		,"rhsusf_M1084A1P2_WD_fmtv_usarmy"
+		,"rhsusf_M1084A1P2_B_WD_fmtv_usarmy"
+		,"rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy"
+		,"rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy"
+		,"rhsusf_M977A4_usarmy_wd"
+		,"rhsusf_M977A4_AMMO_usarmy_wd"
+		,"rhsusf_M977A4_REPAIR_usarmy_wd"
+		,"rhsusf_M977A4_BKIT_usarmy_wd"
+		,"rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_wd"
+		,"rhsusf_M977A4_AMMO_BKIT_usarmy_wd"
+		,"rhsusf_M977A4_BKIT_M2_usarmy_wd"
+		,"rhsusf_M977A4_AMMO_BKIT_M2_usarmy_wd"
+		,"rhsusf_M977A4_REPAIR_BKIT_usarmy_wd"
+		,"rhsusf_M978A4_usarmy_wd"
+		,"rhsusf_M978A4_BKIT_usarmy_wd"
+		,"rhsusf_M1117_W"
+		,"rhsusf_M1220_usarmy_wd"
+		,"rhsusf_M1220_M153_M2_usarmy_wd"
+		,"rhsusf_M1220_M2_usarmy_wd"
+		,"rhsusf_M1220_MK19_usarmy_wd"
+		,"rhsusf_M1230_M2_usarmy_wd"
+		,"rhsusf_M1230_MK19_usarmy_wd"
+		,"rhsusf_M1230a1_usarmy_wd"
+		,"rhsusf_M1232_usarmy_wd"
+		,"rhsusf_M1232_MC_M2_usmc_wd"//USMC
+		,"rhsusf_M1232_MC_MK19_usmc_wd"//USMC
+		,"rhsusf_M1237_M2_usarmy_wd"
+		,"rhsusf_M1237_MK19_usarmy_wd"
+		,"rhsusf_CGRCAT1A2_usmc_wd"//USMC
+		,"rhsusf_CGRCAT1A2_M2_usmc_wd"//USMC
+		,"rhsusf_CGRCAT1A2_Mk19_usmc_wd"//USMC
 		,"rhsusf_m113_usarmy"
 		,"rhsusf_m113_usarmy_M240"
 		,"rhsusf_m113_usarmy_MK19"
 		,"rhsusf_m113_usarmy_supply"
-		,"rhsusf_m113_usarmy_MK19"
-		,"RHS_M6_wd","RHS_M6_wd"
+		,"rhsusf_m113_usarmy_M2_90"
+		,"rhsusf_m113_usarmy_MK19_90"
+		,"rhsusf_m113_usarmy_medical"
+		,"rhsusf_m113_usarmy_unarmed"
+		,"RHS_M6_wd"
+		,"RHS_M6_wd"
 		,"RHS_M2A2_wd"
 		,"RHS_M2A2_BUSKI_WD"
 		,"RHS_M2A3_wd"
 		,"RHS_M2A3_BUSKI_wd"
+		,"RHS_M2A3_BUSKIII_wd"
 		,"rhsusf_m1a1aimwd_usarmy"
 		,"rhsusf_m1a1aim_tuski_wd"
 		,"rhsusf_m1a2sep1wd_usarmy"
 		,"rhsusf_m1a2sep1tuskiwd_usarmy"
 		,"rhsusf_m1a2sep1tuskiiwd_usarmy"
-		,"rhsusf_m109_usarmy"];
+		,"rhsusf_m109_usarmy"
+		,"rhsusf_M142_usmc_WD"];//USMC
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"rhsusf_m998_w_s_2dr"
-		,"rhsusf_m998_w_s_2dr_halftop"
-		,"rhsusf_m998_w_s_2dr_fulltop"
-		,"rhsusf_m998_w_s_4dr"
-		,"rhsusf_m998_w_s_4dr_halftop"
-		,"rhsusf_m998_w_s_4dr_fulltop"
-		,"rhsusf_m1025_w_s"
-		,"rhsusf_m1025_w_s_m2"
-		,"rhsusf_m1025_w_s_Mk19"
-		,"rhsusf_rg33_usmc_wd"
-		,"rhsusf_rg33_m2_usmc_wd"
-		,"rhsusf_m1a1fep_wd"
-		,"rhsusf_m1a1fep_od"];
+		"rhssaf_m998_olive_2dr_fulltop"
+		,"rhssaf_m998_olive_2dr_halftop"
+		,"rhssaf_m1025_olive"
+		,"rhssaf_m1025_olive_m2"
+		,"rhssaf_army_ural"
+		,"rhssaf_army_ural_open"
+		,"rhssaf_army_ural_fuel"
+		,"rhssaf_army_pts"
+		,"rhssaf_army_t72s"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"rhsusf_m998_w_2dr"
-		,"rhsusf_m998_w_2dr_halftop"
-		,"rhsusf_m998_w_2dr_fulltop"
-		,"rhsusf_m998_w_4dr"
-		,"rhsusf_m998_w_4dr_halftop"
-		,"rhsusf_m998_w_4dr_fulltop"
-		,"rhsusf_m1025_w"
-		,"rhsusf_m1025_w_m2"
-		,"rhsusf_m1025_w_mk19"
-		,"rhsusf_M1078A1P2_wd_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_B_M2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_wd_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_B_M2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M977A2_CPK_usarmy_wd"
-		,"rhsusf_M978A2_usarmy_wd"
-		,"rhsusf_M978A2_CPK_usarmy_wd"
-		,"rhsusf_rg33_wd"
-		,"rhsusf_rg33_m2_wd"
+		"rhsusf_m998_w_s_2dr"//USMC
+		,"rhsusf_m998_w_s_2dr_halftop"//USMC
+		,"rhsusf_m998_w_s_2dr_fulltop"//USMC
+		,"rhsusf_m998_w_s_4dr"//USMC
+		,"rhsusf_m998_w_s_4dr_halftop"//USMC
+		,"rhsusf_m998_w_s_4dr_fulltop"//USMC
+		,"rhsusf_m1025_w_s"//USMC
+		,"rhsusf_m1025_w_s_m2"//USMC
+		,"rhsusf_m1025_w_s_Mk19"//USMC
+		,"rhsusf_m1043_w_s"//USMC
+		,"rhsusf_m1043_w_s_m2"//USMC
+		,"rhsusf_m1043_w_s_mk19"//USMC
+		,"rhsusf_m1045_w_s"//USMC
+		,"rhsusf_M1078A1P2_WD_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_WD_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_WD_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_WD_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy"
+		,"rhsusf_M1084A1P2_WD_fmtv_usarmy"
+		,"rhsusf_M1084A1P2_B_WD_fmtv_usarmy"
+		,"rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy"
+		,"rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy"
+		,"rhsusf_M977A4_usarmy_wd"
+		,"rhsusf_M977A4_AMMO_usarmy_wd"
+		,"rhsusf_M977A4_REPAIR_usarmy_wd"
+		,"rhsusf_M977A4_BKIT_usarmy_wd"
+		,"rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_wd"
+		,"rhsusf_M977A4_AMMO_BKIT_usarmy_wd"
+		,"rhsusf_M977A4_BKIT_M2_usarmy_wd"
+		,"rhsusf_M977A4_AMMO_BKIT_M2_usarmy_wd"
+		,"rhsusf_M977A4_REPAIR_BKIT_usarmy_wd"
+		,"rhsusf_M978A4_usarmy_wd"
+		,"rhsusf_M978A4_BKIT_usarmy_wd"
+		,"rhsusf_M1117_W"
+		,"rhsusf_M1220_usarmy_wd"
+		,"rhsusf_M1220_M153_M2_usarmy_wd"
+		,"rhsusf_M1220_M2_usarmy_wd"
+		,"rhsusf_M1220_MK19_usarmy_wd"
+		,"rhsusf_M1230_M2_usarmy_wd"
+		,"rhsusf_M1230_MK19_usarmy_wd"
+		,"rhsusf_M1230a1_usarmy_wd"
+		,"rhsusf_M1232_usarmy_wd"
+		,"rhsusf_M1232_MC_M2_usmc_wd"//USMC
+		,"rhsusf_M1232_MC_MK19_usmc_wd"//USMC
+		,"rhsusf_M1237_M2_usarmy_wd"
+		,"rhsusf_M1237_MK19_usarmy_wd"
+		,"rhsusf_CGRCAT1A2_usmc_wd"//USMC
+		,"rhsusf_CGRCAT1A2_M2_usmc_wd"//USMC
+		,"rhsusf_CGRCAT1A2_Mk19_usmc_wd"//USMC
 		,"rhsusf_m113_usarmy"
 		,"rhsusf_m113_usarmy_M240"
 		,"rhsusf_m113_usarmy_MK19"
 		,"rhsusf_m113_usarmy_supply"
-		,"rhsusf_m113_usarmy_MK19"
+		,"rhsusf_m113_usarmy_M2_90"
+		,"rhsusf_m113_usarmy_MK19_90"
+		,"rhsusf_m113_usarmy_medical"
+		,"rhsusf_m113_usarmy_unarmed"
 		,"RHS_M6_wd"
 		,"RHS_M6_wd"
 		,"RHS_M2A2_wd"
 		,"RHS_M2A2_BUSKI_WD"
 		,"RHS_M2A3_wd"
 		,"RHS_M2A3_BUSKI_wd"
+		,"RHS_M2A3_BUSKIII_wd"
 		,"rhsusf_m1a1aimwd_usarmy"
 		,"rhsusf_m1a1aim_tuski_wd"
 		,"rhsusf_m1a2sep1wd_usarmy"
 		,"rhsusf_m1a2sep1tuskiwd_usarmy"
 		,"rhsusf_m1a2sep1tuskiiwd_usarmy"
-		,"rhsusf_m109_usarmy"];
+		,"rhsusf_m109_usarmy"
+		,"rhsusf_M142_usmc_WD"];//USMC
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"rhsusf_m998_w_s_2dr"
-		,"rhsusf_m998_w_s_2dr_halftop"
-		,"rhsusf_m998_w_s_2dr_fulltop"
-		,"rhsusf_m998_w_s_4dr"
-		,"rhsusf_m998_w_s_4dr_halftop"
-		,"rhsusf_m998_w_s_4dr_fulltop"
-		,"rhsusf_m1025_w_s"
-		,"rhsusf_m1025_w_s_m2"
-		,"rhsusf_m1025_w_s_Mk19"
-		,"rhsusf_rg33_usmc_wd"
-		,"rhsusf_rg33_m2_usmc_wd"
-		,"rhsusf_m1a1fep_wd"
-		,"rhsusf_m1a1fep_od"];
+		"rhssaf_m998_olive_2dr_fulltop"
+		,"rhssaf_m998_olive_2dr_halftop"
+		,"rhssaf_m1025_olive"
+		,"rhssaf_m1025_olive_m2"
+		,"rhssaf_army_ural"
+		,"rhssaf_army_ural_open"
+		,"rhssaf_army_ural_fuel"
+		,"rhssaf_army_pts"
+		,"rhssaf_army_t72s"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"rhsusf_m998_w_2dr"
-		,"rhsusf_m998_w_2dr_halftop"
-		,"rhsusf_m998_w_2dr_fulltop"
-		,"rhsusf_m998_w_4dr"
-		,"rhsusf_m998_w_4dr_halftop"
-		,"rhsusf_m998_w_4dr_fulltop"
-		,"rhsusf_m1025_w"
-		,"rhsusf_m1025_w_m2"
-		,"rhsusf_m1025_w_mk19"
-		,"rhsusf_M1078A1P2_wd_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1078A1P2_B_M2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_wd_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy"
-		,"rhsusf_M1083A1P2_B_M2_wd_flatbed_fmtv_usarmy"
-		,"rhsusf_M977A2_CPK_usarmy_wd"
-		,"rhsusf_M978A2_usarmy_wd"
-		,"rhsusf_M978A2_CPK_usarmy_wd"
-		,"rhsusf_rg33_wd"
-		,"rhsusf_rg33_m2_wd"
+		"rhsusf_m998_w_s_2dr"//USMC
+		,"rhsusf_m998_w_s_2dr_halftop"//USMC
+		,"rhsusf_m998_w_s_2dr_fulltop"//USMC
+		,"rhsusf_m998_w_s_4dr"//USMC
+		,"rhsusf_m998_w_s_4dr_halftop"//USMC
+		,"rhsusf_m998_w_s_4dr_fulltop"//USMC
+		,"rhsusf_m1025_w_s"//USMC
+		,"rhsusf_m1025_w_s_m2"//USMC
+		,"rhsusf_m1025_w_s_Mk19"//USMC
+		,"rhsusf_m1043_w_s"//USMC
+		,"rhsusf_m1043_w_s_m2"//USMC
+		,"rhsusf_m1043_w_s_mk19"//USMC
+		,"rhsusf_m1045_w_s"//USMC
+		,"rhsusf_M1078A1P2_WD_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_WD_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy"
+		,"rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_WD_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_WD_fmtv_usarmy"
+		,"rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy"
+		,"rhsusf_M1084A1P2_WD_fmtv_usarmy"
+		,"rhsusf_M1084A1P2_B_WD_fmtv_usarmy"
+		,"rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy"
+		,"rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy"
+		,"rhsusf_M977A4_usarmy_wd"
+		,"rhsusf_M977A4_AMMO_usarmy_wd"
+		,"rhsusf_M977A4_REPAIR_usarmy_wd"
+		,"rhsusf_M977A4_BKIT_usarmy_wd"
+		,"rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_wd"
+		,"rhsusf_M977A4_AMMO_BKIT_usarmy_wd"
+		,"rhsusf_M977A4_BKIT_M2_usarmy_wd"
+		,"rhsusf_M977A4_AMMO_BKIT_M2_usarmy_wd"
+		,"rhsusf_M977A4_REPAIR_BKIT_usarmy_wd"
+		,"rhsusf_M978A4_usarmy_wd"
+		,"rhsusf_M978A4_BKIT_usarmy_wd"
+		,"rhsusf_M1117_W"
+		,"rhsusf_M1220_usarmy_wd"
+		,"rhsusf_M1220_M153_M2_usarmy_wd"
+		,"rhsusf_M1220_M2_usarmy_wd"
+		,"rhsusf_M1220_MK19_usarmy_wd"
+		,"rhsusf_M1230_M2_usarmy_wd"
+		,"rhsusf_M1230_MK19_usarmy_wd"
+		,"rhsusf_M1230a1_usarmy_wd"
+		,"rhsusf_M1232_usarmy_wd"
+		,"rhsusf_M1232_MC_M2_usmc_wd"//USMC
+		,"rhsusf_M1232_MC_MK19_usmc_wd"//USMC
+		,"rhsusf_M1237_M2_usarmy_wd"
+		,"rhsusf_M1237_MK19_usarmy_wd"
+		,"rhsusf_CGRCAT1A2_usmc_wd"//USMC
+		,"rhsusf_CGRCAT1A2_M2_usmc_wd"//USMC
+		,"rhsusf_CGRCAT1A2_Mk19_usmc_wd"//USMC
 		,"rhsusf_m113_usarmy"
 		,"rhsusf_m113_usarmy_M240"
 		,"rhsusf_m113_usarmy_MK19"
 		,"rhsusf_m113_usarmy_supply"
-		,"rhsusf_m113_usarmy_MK19"
+		,"rhsusf_m113_usarmy_M2_90"
+		,"rhsusf_m113_usarmy_MK19_90"
+		,"rhsusf_m113_usarmy_medical"
+		,"rhsusf_m113_usarmy_unarmed"
 		,"RHS_M6_wd"
 		,"RHS_M6_wd"
 		,"RHS_M2A2_wd"
 		,"RHS_M2A2_BUSKI_WD"
 		,"RHS_M2A3_wd"
 		,"RHS_M2A3_BUSKI_wd"
+		,"RHS_M2A3_BUSKIII_wd"
 		,"rhsusf_m1a1aimwd_usarmy"
 		,"rhsusf_m1a1aim_tuski_wd"
 		,"rhsusf_m1a2sep1wd_usarmy"
 		,"rhsusf_m1a2sep1tuskiwd_usarmy"
 		,"rhsusf_m1a2sep1tuskiiwd_usarmy"
-		,"rhsusf_m109_usarmy"];
+		,"rhsusf_m109_usarmy"
+		,"rhsusf_M142_usmc_WD"];//USMC
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"rhsusf_m998_w_s_2dr"
-		,"rhsusf_m998_w_s_2dr_halftop"
-		,"rhsusf_m998_w_s_2dr_fulltop"
-		,"rhsusf_m998_w_s_4dr"
-		,"rhsusf_m998_w_s_4dr_halftop"
-		,"rhsusf_m998_w_s_4dr_fulltop"
-		,"rhsusf_m1025_w_s"
-		,"rhsusf_m1025_w_s_m2"
-		,"rhsusf_m1025_w_s_Mk19"
-		,"rhsusf_rg33_usmc_wd"
-		,"rhsusf_rg33_m2_usmc_wd"
-		,"rhsusf_m1a1fep_wd"
-		,"rhsusf_m1a1fep_od"];
+		"rhssaf_m998_olive_2dr_fulltop"
+		,"rhssaf_m998_olive_2dr_halftop"
+		,"rhssaf_m1025_olive"
+		,"rhssaf_m1025_olive_m2"
+		,"rhssaf_army_ural"
+		,"rhssaf_army_ural_open"
+		,"rhssaf_army_ural_fuel"
+		,"rhssaf_army_pts"
+		,"rhssaf_army_t72s"];
     };
 };
 
@@ -283,91 +376,135 @@ a3e_arr_Escape_InfantryTypes = [
 	,"rhsusf_army_ocp_autoriflemana"
 	,"rhsusf_army_ocp_rifleman_m4"
 	,"rhsusf_army_ocp_rifleman_m16"
-	,"rhsusf_army_ocp_rifleman_m590"];
+	,"rhsusf_army_ocp_rifleman_m590"
+	,"rhsusf_army_ocp_javelin_assistant"
+	,"rhsusf_army_ocp_maaws"
+	,"rhsusf_army_ocp_fso"
+	,"rhsusf_army_ocp_jfo"
+	,"rhsusf_army_ocp_sniper"
+	,"rhsusf_army_ocp_sniper_m107"
+	,"rhsusf_army_ocp_sniper_m24sws"
+	,"rhsusf_army_ocp_uav"];
 a3e_arr_Escape_InfantryTypes_Ind = [
-	"rhsusf_usmc_marpat_wd_officer"
-	,"rhsusf_usmc_marpat_wd_squadleader"
-	,"rhsusf_usmc_marpat_wd_teamleader"
-	,"rhsusf_usmc_marpat_wd_rifleman"
-	,"rhsusf_usmc_marpat_wd_rifleman_m4"
-	,"rhsusf_usmc_marpat_wd_rifleman_m590"
-	,"rhsusf_usmc_marpat_wd_rifleman_light"
-	,"rhsusf_usmc_marpat_wd_autorifleman"
-	,"rhsusf_navy_marpat_wd_medic"
-	,"rhsusf_usmc_marpat_wd_engineer"
-	,"rhsusf_usmc_marpat_wd_explosives"
-	,"rhsusf_usmc_marpat_wd_grenadier"
-	,"rhsusf_usmc_marpat_wd_javelin"
-	,"rhsusf_usmc_marpat_wd_marksman"
-	,"rhsusf_usmc_marpat_wd_riflemanat"
-	,"rhsusf_usmc_marpat_wd_stinger"
-	,"rhsusf_usmc_marpat_wd_autorifleman_m249_ass"
-	,"rhsusf_usmc_marpat_wd_jfo"];
+	"rhssaf_army_m93_oakleaf_summer_asst_mgun"
+	,"rhssaf_army_m93_oakleaf_summer_asst_spec_aa"
+	,"rhssaf_army_m93_oakleaf_summer_asst_spec_at"
+	,"rhssaf_army_m93_oakleaf_summer_crew"
+	,"rhssaf_army_m93_oakleaf_summer_engineer"
+	,"rhssaf_army_m93_oakleaf_summer_exp"
+	,"rhssaf_army_m93_oakleaf_summer_medic"
+	,"rhssaf_army_m93_oakleaf_summer_medic"
+	,"rhssaf_army_m93_oakleaf_summer_ft_lead"
+	,"rhssaf_army_m93_oakleaf_summer_gl"
+	,"rhssaf_army_m93_oakleaf_summer_mgun_m84"
+	,"rhssaf_army_m93_oakleaf_summer_sniper_m76"
+	,"rhssaf_army_m93_oakleaf_summer_spec_aa"
+	,"rhssaf_army_m93_oakleaf_summer_spec_at"
+	,"rhssaf_army_m93_oakleaf_summer_officer"
+	,"rhssaf_army_m93_oakleaf_summer_repair"
+	,"rhssaf_army_m93_oakleaf_summer_rifleman_ammo"
+	,"rhssaf_army_m93_oakleaf_summer_rifleman_at"
+	,"rhssaf_army_m93_oakleaf_summer_rifleman_m21"
+	,"rhssaf_army_m93_oakleaf_summer_rifleman_m70"
+	,"rhssaf_army_m93_oakleaf_summer_spotter"
+	,"rhssaf_army_m93_oakleaf_summer_sq_lead"];
 a3e_arr_recon_InfantryTypes = [
 	"rhsusf_socom_marsoc_teamleader"
 	,"rhsusf_socom_marsoc_teamchief"
 	,"rhsusf_socom_marsoc_elementleader"
 	,"rhsusf_socom_marsoc_cso_mechanic"
-	,"rhsusf_socom_marsoc_marksman"
+	,"rhsusf_socom_marsoc_sniper"
 	,"rhsusf_socom_marsoc_cso_cqb"
 	,"rhsusf_socom_marsoc_cso_breacher"
 	,"rhsusf_socom_marsoc_cso_light"
 	,"rhsusf_socom_marsoc_cso"
-	,"rhsusf_navy_marpat_wd_medic"];
+	,"rhsusf_socom_marsoc_sarc"
+	,"rhsusf_socom_marsoc_cso_eod"
+	,"rhsusf_socom_marsoc_cso_grenadier"
+	,"rhsusf_socom_marsoc_jfo"
+	,"rhsusf_socom_marsoc_jtac"
+	,"rhsusf_socom_marsoc_spotter"
+	,"rhsusf_socom_marsoc_sniper_m107"];
 a3e_arr_recon_I_InfantryTypes = [
-	"rhsusf_usmc_fr_marpat_wd_squadleader"
-	,"rhsusf_usmc_fr_marpat_wd_teamleader"
-	,"rhsusf_usmc_fr_marpat_wd_engineer"
-	,"rhsusf_usmc_fr_marpat_wd_marksman"
-	,"rhsusf_usmc_fr_marpat_wd_machinegunner"
-	,"rhsusf_usmc_fr_marpat_wd_riflemanat"
-	,"rhsusf_usmc_fr_marpat_wd_rifleman_cqb"
-	,"rhsusf_usmc_fr_marpat_wd_light"
-	,"rhsusf_usmc_fr_marpat_wd_rifleman"
-	,"rhsusf_navy_marpat_wd_medic"];
+	"rhssaf_army_m10_para_asst_mgun_m84"
+	,"rhssaf_army_m10_para_asst_mgun_minimi"
+	,"rhssaf_army_m10_para_asst_spec_aa"
+	,"rhssaf_army_m10_para_asst_spec_at"
+	,"rhssaf_army_m10_para_exp"
+	,"rhssaf_army_m10_para_engineer"
+	,"rhssaf_army_m10_para_medic"
+	,"rhssaf_army_m10_para_medic"
+	,"rhssaf_army_m10_para_ft_lead"
+	,"rhssaf_army_m10_para_gl_ag36"
+	,"rhssaf_army_m10_para_gl_m320"
+	,"rhssaf_army_m10_para_mgun_m84"
+	,"rhssaf_army_m10_para_mgun_minimi"
+	,"rhssaf_army_m10_para_sniper_m76"
+	,"rhssaf_army_m10_para_spec_aa"
+	,"rhssaf_army_m10_para_spec_at"
+	,"rhssaf_army_m10_para_officer"
+	,"rhssaf_army_m10_para_repair"
+	,"rhssaf_army_m10_para_rifleman_ammo"
+	,"rhssaf_army_m10_para_rifleman_at"
+	,"rhssaf_army_m10_para_rifleman_hk416"
+	,"rhssaf_army_m10_para_rifleman_g36"
+	,"rhssaf_army_m10_para_rifleman_m21"
+	,"rhssaf_army_m10_para_sniper_m82a1"
+	,"rhssaf_army_m10_para_spotter"
+	,"rhssaf_army_m10_para_sq_lead"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
-	"rhsusf_m1025_w_m2"
-	,"rhsusf_m1025_w_mk19"
-	,"rhsusf_m113_usarmy"
-	,"RHS_M2StaticMG_D"
-	,"RHS_M2StaticMG_MiniTripod_D"
-	,"RHS_MK19_TriPod_WD"
-	,"RHS_TOW_TriPod_WD"];
-a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"rhsusf_m1025_w_s_m2"
 	,"rhsusf_m1025_w_s_Mk19"
-	,"rhsusf_rg33_m2_usmc_wd"];
+	,"rhsusf_m1043_w_s_m2"
+	,"rhsusf_m1043_w_s_mk19"
+	,"rhsusf_CGRCAT1A2_M2_usmc_wd"
+	,"rhsusf_M1232_MC_M2_usmc_wd"
+	,"RHS_M2StaticMG_USMC_WD"
+	,"RHS_M2StaticMG_MiniTripod_USMC_WD"
+	,"RHS_TOW_TriPod_USMC_WD"
+	,"RHS_MK19_TriPod_USMC_WD"];
+a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
+	"rhssaf_m1025_olive_m2"
+	,"rhssaf_m1025_olive_m2"
+	,"rhssaf_m1025_olive_m2"
+	,"rhssaf_army_ags30_tripod"
+	,"rhssaf_army_nsv_tripod"
+	,"rhssaf_army_m2staticmg_minitripod"
+	,"rhssaf_army_metis_9k115"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
-	"rhsusf_m998_w_2dr_halftop"
-	,"rhsusf_rg33_wd"
-	,"rhsusf_rg33_m2_wd"
-	,"rhsusf_M1078A1P2_wd_fmtv_usarmy"
-	,"rhsusf_M1078A1P2_wd_open_fmtv_usarmy"
-	,"rhsusf_M1083A1P2_wd_fmtv_usarmy"
-	,"rhsusf_M1083A1P2_wd_open_fmtv_usarmy"
-	,"rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy"];
-a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	"rhsusf_m998_w_s_2dr_halftop"
-	,"rhsusf_rg33_usmc_wd"
-	,"rhsusf_rg33_m2_usmc_wd"];
-
-
+	,"rhsusf_M1220_M153_M2_usarmy_wd"
+	,"rhsusf_M1117_W"
+	,"rhsusf_M1078A1P2_WD_fmtv_usarmy"
+	,"rhsusf_M1078A1P2_B_WD_fmtv_usarmy"
+	,"rhsusf_M1083A1P2_WD_fmtv_usarmy"
+	,"rhsusf_M1083A1P2_B_WD_fmtv_usarmy"
+	,"rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy"
+	,"rhsusf_CGRCAT1A2_M2_usmc_wd"];
+a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
+	"rhssaf_m1025_olive_m2"
+	,"rhssaf_m998_olive_2dr_fulltop"
+	,"rhssaf_m998_olive_2dr_halftop"
+	,"rhssaf_army_ural"
+	,"rhssaf_army_ural_open"];
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
-	"rhsusf_m1025_w"
-	,"rhsusf_m1025_w_m2"
-	,"rhsusf_m1025_w_mk19"
-	,"rhsusf_M1078A1P2_B_M2_wd_fmtv_usarmy"
-	,"rhsusf_M1078A1P2_B_M2_wd_open_fmtv_usarmy"
-	,"rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy"
-	,"rhsusf_M1083A1P2_B_M2_wd_open_fmtv_usarmy"
-	,"rhsusf_m113_usarmy"
+	"rhsusf_mrzr4_w_mud"//SOCOM
+	,"rhsusf_m1025_w_s"
+	,"rhsusf_m1025_w_s_m2"
+	,"rhsusf_m1025_w_s_Mk19"
+	,"rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy"
+	,"rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy"
+	,"rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy"
+	,"rhsusf_M1232_MC_M2_usmc_wd"
+	,"rhsusf_m113_usarmy_M240"
+	,"rhsusf_CGRCAT1A2_M2_usmc_wd"
 	,"RHS_M2A2_wd"];
 
 
@@ -386,7 +523,7 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 	,"RHS_M2A3_BUSKI_wd"
 	,"rhsusf_m1025_w_m2"
 	,"rhsusf_m1025_w_mk19"
-	,"rhsusf_rg33_m2_wd"];
+	,"rhsusf_CGRCAT1A2_M2_usmc_wd"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"rhsusf_m1a1aimwd_usarmy"
@@ -403,7 +540,7 @@ a3e_arr_ComCenStaticWeapons = [
 a3e_arr_ComCenParkedVehicles = [
 	"I_G_Offroad_01_repair_F"
 	,"rhsusf_m113_usarmy"
-	,"rhsusf_rg33_wd"
+	,"rhsusf_CGRCAT1A2_usmc_wd"
 	,"rhsusf_M1078A1P2_wd_fmtv_usarmy"
 	,"rhsusf_M1078A1P2_wd_open_fmtv_usarmy"
 	,"rhsusf_M1078A1P2_wd_flatbed_fmtv_usarmy"
@@ -413,11 +550,11 @@ a3e_arr_ComCenParkedVehicles = [
 	,"rhsusf_m1025_w"
 	,"rhsusf_m1025_w_m2"
 	,"rhsusf_m1025_w_mk19"
-	,"B_Truck_01_medical_F"
-	,"B_Truck_01_fuel_F"
-	,"B_Truck_01_ammo_F"
-	,"B_Truck_01_Repair_F"
-	,"I_G_Offroad_01_F"
+	,"rhsusf_m113_usarmy_medical"
+	,"rhsusf_M978A4_usarmy_wd"
+	,"rhsusf_M977A4_AMMO_usarmy_wd"
+	,"rhsusf_M977A4_REPAIR_usarmy_wd"
+	,"rhsusf_m998_w_s_2dr"
 	,"I_G_Offroad_01_armed_F
 	","I_G_Offroad_01_armed_F"];
 
@@ -451,9 +588,9 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	"RHS_M2StaticMG_D"
 	,"RHS_M2StaticMG_MiniTripod_D"
-	,"RHS_MK19_TriPod_WD"
-	,"RHS_TOW_TriPod_WD"
-	,"RHS_Stinger_AA_pod_WD"];
+	,"RHS_MK19_TriPod_D"
+	,"RHS_TOW_TriPod_D"
+	,"RHS_Stinger_AA_pod_D"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 
@@ -465,23 +602,23 @@ a3e_arr_O_attack_heli = [
 	,"RHS_AH64D_wd_AA"
 	,"RHS_AH1Z_wd"
 	,"RHS_AH1Z_wd_GS"
-	,"RHS_AH1Z_wd_CS"];
+	,"RHS_AH1Z_wd_CS"
+	,"RHS_MELB_AH6M"];
 a3e_arr_O_transport_heli = [
 	"RHS_CH_47F"
-	,"RHS_CH_47F_10"
-	,"RHS_CH_47F_light"
+	,"rhsusf_CH53E_USMC"
+	,"RHS_MELB_MH6M"
 	,"RHS_UH60M"
-	,"RHS_UH60M_MEV"
-	,"RHS_UH60M_MEV2"
-	,"rhsusf_CH53E_USMC"];
+	,"RHS_UH60M2"
+	,"RHS_UH60M_ESSS"
+	,"RHS_UH60M_ESSS2"
+	,"RHS_UH1Y_UNARMED"];
 a3e_arr_O_pilots = [
 	"rhsusf_army_ocp_helipilot"];
 a3e_arr_I_transport_heli = [
-	"RHS_UH1Y"
-	,"RHS_UH1Y_FFAR"
-	,"RHS_UH1Y_UNARMED"];
+	"rhssaf_airforce_ht48"];
 a3e_arr_I_pilots = [
-	"rhsusf_usmc_marpat_wd_helipilot"];
+	"rhssaf_airforce_pilot_transport_heli"];
 
 
 // The following arrays define weapons and ammo contained at the ammo depots
@@ -496,10 +633,10 @@ a3e_arr_I_pilots = [
 a3e_arr_AmmoDepotBasicWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhsusf_weap_m1911a1", 50, 2, 5, ["rhsusf_mag_7x45acp_MHP"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["SMG_01_F", 10, 1, 2, ["30Rnd_45ACP_Mag_SMG_01"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m4a1", 100, 3, 5, ["rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m4a1_carryhandle_grip2", 50, 2, 4, ["rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m4a1_m320", 75, 2, 4, ["rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red","rhs_mag_M441_HE"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhsusf_weap_MP7A2", 50, 1, 2, ["rhsusf_mag_40Rnd_46x30_FMJ"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m4a1_wd", 100, 3, 5, ["rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m4a1_blockII_KAC_wd", 50, 2, 4, ["rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m4a1_m203s_wd", 75, 2, 4, ["rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red","rhs_mag_M441_HE"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m240B", 20, 1, 2, ["rhsusf_100Rnd_762x51"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_XM2010_wd", 10, 1, 2, ["rhsusf_5Rnd_300winmag_xm2010"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_XM2010_wd_leu", 10, 1, 2, ["rhsusf_5Rnd_300winmag_xm2010"], 6];
@@ -507,37 +644,41 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_XM2010_wd_leu", 10, 1, 2, ["rh
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m249_pip", 50, 2, 4, ["rhsusf_100Rnd_556x45_soft_pouch"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m16a4_grip", 50, 1, 3, ["rhs_mag_30Rnd_556x45_M855A1_Stanag"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m16a4_carryhandle_M203", 50, 1, 3, ["rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_M441_HE"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_ak103_dtk", 10, 1, 2, ["rhs_30Rnd_762x39mm_tracer"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_g36c", 30, 1, 2, ["rhssaf_30rnd_556x45_Tracers_G36"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m14ebrri_leu", 10, 1, 2, ["rhsusf_20Rnd_762x51_m118_special_Mag"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_ak74m", 10, 1, 2, ["rhs_30Rnd_545x39_AK"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_ak74m_gp25", 10, 1, 2, ["rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK_green","rhs_VOG25","rhs_VG40OP_white","rhs_VG40OP_green"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_g36kv", 50, 1, 2, ["rhssaf_30rnd_556x45_Tracers_G36"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_hk416d10_m320", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red","rhs_mag_M441_HE"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m4_grip", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_mk18_KAC", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_svd_pso1", 10, 1, 2, ["rhs_10Rnd_762x54mmR_7N1"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_ak103_dtk", 10, 1, 2, ["rhs_30Rnd_762x39mm_tracer"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_mk18_KAC_wd", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_scorpion", 40, 1, 2, ["rhsgref_20rnd_765x17_vz61"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m21a_pr", 40, 1, 2, ["rhsgref_30rnd_556x45_m21"], 8];
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m70ab2", 40, 1, 2, ["rhssaf_30Rnd_762x39mm_M67"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_M590_8RD", 10, 1, 2, ["rhsusf_8Rnd_00Buck","rhsusf_8Rnd_Slug"], 10];
 
 
 // Weapons and ammo in the special weapons box
 a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
-a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_sr25", 50, 2, 4, ["rhsusf_20Rnd_762x51_m118_special_Mag"], 9];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_svds", 10, 2, 4, ["rhs_10Rnd_762x54mmR_7N1"], 9];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m27iar", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag"], 4];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_XM2010_wd", 50, 2, 4, ["rhsusf_5Rnd_300winmag_xm2010"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_sr25_ec_wd", 20, 2, 4, ["rhsusf_20Rnd_762x51_m118_special_Mag"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m40a5_wd", 30, 2, 4, ["rhsusf_10Rnd_762x51_m118_special_Mag"], 10];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_hk416d145_wd", 10, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m27iar", 30, 1, 2, ["rhs_mag_30Rnd_556x45_M855A1_Stanag"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_XM2010_wd", 30, 2, 4, ["rhsusf_5Rnd_300winmag_xm2010"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m240B_CAP", 50, 1, 3, ["rhsusf_50Rnd_762x51_m80a1epr","rhsusf_100Rnd_762x51"], 3];
 // non-CAST weapons
-a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_pkm", 10, 2, 4, ["rhs_100Rnd_762x54mmR","rhs_100Rnd_762x54mmR_green"], 3];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m249_pip", 50, 1, 2, ["rhsusf_100Rnd_556x45_soft_pouch"], 4];
-
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m32_usmc", 10, 2, 4, ["rhsusf_mag_6Rnd_M433_HEDP","rhsusf_mag_6Rnd_M576_Buckshot","rhsusf_mag_6Rnd_M713_red"], 5];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m249_pip", 30, 1, 2, ["rhsusf_100Rnd_556x45_soft_pouch"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m84", 50, 1, 2, ["rhs_100Rnd_762x54mmR"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m70b1n", 35, 1, 2, ["rhssaf_30Rnd_762x39mm_M67"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m70b3n", 35, 1, 2, ["rhssaf_30Rnd_762x39mm_M67"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["rhs_weap_m82a1", 10, 1, 2, ["rhsusf_mag_10Rnd_STD_50BMG_M33","rhsusf_mag_10Rnd_STD_50BMG_mk211"], 4];
 
 // Weapons and ammo in the launchers box
 a3e_arr_AmmoDepotLaunchers = [];
 // CSAT weapons
-a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_rpg7", 10, 1, 2, ["rhs_rpg7_PG7VL_mag", "rhs_rpg7_PG7VR_mag", "rhs_rpg7_OG7V_mag", "rhs_rpg7_TBG7V_mag"], 6];
-a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_rpg26", 10, 1, 3, ["rhs_rpg26_mag"], 3];
-a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_rshg2", 10, 1, 3, ["rhs_rshg2_mag"], 3];
-a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_igla", 10, 1, 2, ["rhs_mag_9k38_rocket"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_m72a7", 10, 1, 2, ["rhs_m72a7_mag"], 1];
+a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_M136_hedp", 10, 1, 3, ["rhs_m136_hedp_mag"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_maaws", 10, 1, 2, ["rhs_mag_maaws_HEAT","rhs_mag_maaws_HEDP","rhs_mag_maaws_HE"], 2];
 // non-CSAT weapons
 a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_fgm148", 30, 1, 2, ["rhs_fgm148_magazine_AT"], 2];
 a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_smaw_green", 30, 1, 2, ["rhs_mag_smaw_HEAA","rhs_mag_smaw_HEDP"], 2];
@@ -545,7 +686,6 @@ a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_M136", 50, 1, 3, ["rhs_m136_mag"]
 a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_M136_hedp", 50, 1, 3, ["rhs_m136_hedp_mag"], 1];
 a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_M136_hp", 50, 1, 3, ["rhs_m136_hp_mag"], 1];
 a3e_arr_AmmoDepotLaunchers pushback ["rhs_weap_fim92", 50, 1, 2, ["rhs_fim92_mag"], 3];
-
 
 // Weapons and ammo in the ordnance box
 a3e_arr_AmmoDepotOrdnance = [];
@@ -594,13 +734,13 @@ a3e_arr_AmmoDepotItems pushback ["ItemMap", 50, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["ItemRadio", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["ItemWatch", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_anpeq15_light", 50, 1, 5];
-a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_anpeq15side", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_anpeq15side_bk", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_pbs1", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_tgpa", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_tgpv", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_muzzleFlash_dtk", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["rhs_acc_dtk3", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["rhs_acc_dtk1", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_mrds", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_nt4_black", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_LEUPOLDMK4_2", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_1p63", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_pkas", 10, 1, 3];
@@ -610,8 +750,8 @@ a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_ACOG2_USMC", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_ACOG3", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_pso1m2", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhs_acc_1p29", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["rhs_acc_1p78", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_EOTECH", 20, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_wmx_bk", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_eotech_xps3", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_SF3P556", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_SFMB556", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_rotex5_grey", 10, 1, 3];
@@ -624,24 +764,25 @@ a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_M2010S", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_SR25S", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_compm4", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_eotech_552", 20, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_eotech_552_wd", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_ACOG3", 10, 1, 3];
 if(Param_NoNightvision==0) then {
-	a3e_arr_AmmoDepotItems pushback ["rhs_acc_1pn93_1", 10, 1, 3];
-	a3e_arr_AmmoDepotItems pushback ["rhs_acc_1pn93_2", 10, 1, 3];
-	a3e_arr_AmmoDepotItems pushback ["optic_Nightstalker", 10, 1, 3];
+	a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_anpas13gv1", 10, 1, 3];
+	a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_anpvs27", 10, 1, 3];
+	a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_ACOG_anpvs27", 10, 1, 3];
+	a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_premier_anpvs27", 10, 1, 3];
 };
 a3e_arr_AmmoDepotItems pushback ["O_UavTerminal", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["optic_DMS", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["optic_Yorris", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["optic_LRPS", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["optic_AMS", 10, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["optic_KHS_blk", 10, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["bipod_01_F_blk", 10, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["bipod_02_F_blk", 10, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["bipod_03_F_blk", 10, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["bipod_01_F_mtp", 10, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["bipod_02_F_hex", 10, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["bipod_03_F_oli", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["rhs_weap_optic_smaw", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["rhs_optic_maaws", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_grip1", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_grip2", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_grip2_wd", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_grip3", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_rvg_blk", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_tacsac_blk", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_tacsac_blue", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_tdstubby_blk", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_harris_bipod", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["rhs_bipod", 10, 1, 2];
 
@@ -653,18 +794,24 @@ a3e_arr_AmmoDepotItems pushback ["rhs_bipod", 10, 1, 2];
 // Index 2: Number of magazines.
 a3e_arr_CivilianCarWeapons = [];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_makarov_pmm", "rhs_mag_9x18_12_57N181S", 5];
-a3e_arr_CivilianCarWeapons pushback ["rhs_weap_ak74m_2mag_camo_npz", "rhs_30Rnd_545x39_AK", 5];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_m3a1_specops", "rhsgref_30rnd_1143x23_M1911B_2mag_SMG", 5];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_M590_5RD", "rhsusf_5Rnd_00Buck", 11];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_M590_8RD", "rhsusf_8Rnd_00Buck", 9];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_mk18_grip2_eotech_usmc", "rhs_mag_30Rnd_556x45_Mk318_Stanag", 9];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_m4a1_blockII_KAC_SU230", "rhs_mag_30Rnd_556x45_Mk318_Stanag", 8];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_M320", "rhs_mag_M433_HEDP", 10];
-a3e_arr_CivilianCarWeapons pushback ["rhs_weap_ak74m_plummag_npz", "rhs_30Rnd_545x39_AK", 7];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_MP44", "rhsgref_30Rnd_792x33_SmE_StG", 7];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_m240b_usmc", "rhsusf_100Rnd_762x51", 5];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_m16a4_grip_acog_usmc", "rhs_mag_30Rnd_556x45_Mk318_Stanag", 8];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_XM2010_wd_leu", "rhsusf_5Rnd_300winmag_xm2010", 10];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_sr25_sup_marsoc", "rhsusf_20Rnd_762x51_m118_special_Mag", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_rshg2","rhs_rshg2_mag", 2];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_kar98k", "rhsgref_5Rnd_792x57_kar98k", 12];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_m1garand_sa43", "rhsgref_8Rnd_762x63_M2B_M1rifle", 12];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_mosin_sbr", "rhsgref_5Rnd_762x54_m38", 12];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_Izh18", "rhsgref_1Rnd_00Buck", 12];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_Izh18", "rhsgref_1Rnd_Slug", 12];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_panzerfaust60", objNull, 0];
 a3e_arr_CivilianCarWeapons pushback ["MineDetector", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Medikit", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Toolkit", objNull, 0];
@@ -682,46 +829,49 @@ a3e_arr_Scopes = [
 	,"rhsusf_acc_ACOG"
 	,"rhsusf_acc_ACOG2"
 	,"rhsusf_acc_ACOG3"
-	,"rhsusf_acc_ACOG_USMC"
-	,"rhsusf_acc_ACOG2_USMC"
-	,"rhsusf_acc_ACOG3_USMC"
+	,"rhsusf_acc_T1_high"
+	,"rhsusf_acc_g33_T1"
+	,"rhsusf_acc_T1_low"
 	,"rhsusf_acc_LEUPOLDMK4_2"
-	,"rhsusf_acc_EOTECH"
-	,"rhsusf_acc_EOTECH"
+	,"rhsusf_acc_eotech_xps3"
+	,"rhsusf_acc_eotech_xps3"
 	,"rhsusf_acc_eotech_552"
+	,"rhsusf_acc_RM05"
+	,"rhsusf_acc_eotech_xps3"
+	,"rhsusf_acc_eotech_552_wd"
 	,"rhsusf_acc_compm4"
-	,"rhsusf_acc_EOTECH"
-	,"rhsusf_acc_eotech_552"
-	,"rhsusf_acc_compm4"
-	,"rhsusf_acc_EOTECH"
-	,"rhsusf_acc_eotech_552"
+	,"rhsusf_acc_eotech_xps3"
+	,"rhsusf_acc_eotech_552_wd"
 	,"rhsusf_acc_compm4"];
 a3e_arr_Scopes_SMG = [
-	"rhsusf_acc_EOTECH"
+	"rhsusf_acc_eotech_xps3"
 	,"rhsusf_acc_eotech_552"
-	,"rhs_m4_compm4"];
+	,"rhsusf_acc_eotech_552_wd"
+	,"rhs_m4_compm4"
+	,"rhsusf_acc_RM05"];
 a3e_arr_Scopes_Sniper = [
 	"rhsusf_acc_LEUPOLDMK4"
 	,"rhsusf_acc_LEUPOLDMK4_2"];
 a3e_arr_NightScopes = [
-	"optic_NVS"];
+	"rhsusf_acc_anpvs27"
+	,"rhsusf_acc_ACOG_anpvs27"
+	,"rhsusf_acc_premier_anpvs27"];
 a3e_arr_TWSScopes = [
-	"optic_Nightstalker"
-	,"optic_tws"
-	,"optic_tws_mg"];
+	"rhsusf_acc_anpas13gv1"];
 
 // Here is a list of bipods, might get randomly added to enemy patrols:
 a3e_arr_Bipods = [
 	"rhs_bipod"
 	,"rhsusf_acc_harris_bipod"
-	,"bipod_01_F_snd"
-	,"bipod_01_F_blk"
-	,"bipod_01_F_mtp"
-	,"bipod_02_F_blk"
-	,"bipod_02_F_tan"
-	,"bipod_02_F_hex"
-	,"bipod_03_F_blk"
-	,"bipod_03_F_oli"];
+	,"rhsusf_acc_harris_bipod"
+	,"rhsusf_acc_harris_bipod"
+	,"rhsusf_acc_grip1"
+	,"rhsusf_acc_grip2"
+	,"rhsusf_acc_grip2_wd"
+	,"rhsusf_acc_grip3"
+	,"rhsusf_acc_rvg_blk"
+	,"rhsusf_acc_tdstubby_blk"
+	,"rhsusf_acc_tacsac_blk"];
 
 
 //////////////////////////////////////////////////////////////////
@@ -732,7 +882,10 @@ a3e_arr_extraction_chopper = [
 	"rhs_ka60_c"
 	,"RHS_Mi8mt_vvs"];
 a3e_arr_extraction_chopper_escort = [
-	"RHS_Ka52_vvs"];
+	"RHS_Ka52_vvs"
+	,"rhs_mi28n_vvs"
+	,"RHS_Mi24P_vvs"
+	,"RHS_Mi24V_vvs"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -748,14 +901,14 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"rhsusf_CH53E_USMC"
+	"RHS_MELB_MH6M"
 	,"RHS_UH1Y_UNARMED"
-	,"RHS_UH60M_MEV2"
-	,"RHS_UH60M_MEV"];
+	,"RHS_UH60M2"
+	,"RHS_UH60M_ESSS"];
 a3e_arr_searchChopperHard = [
 	"RHS_UH1Y"
 	,"RHS_UH1Y_FFAR"
-	,"RHS_UH1Y_GS"
+	,"RHS_MELB_AH6M"
 	,"RHS_UH60M"];
 a3e_arr_searchChopper_pilot = [
 	"rhsusf_usmc_marpat_wd_helipilot"];
@@ -805,7 +958,7 @@ a3e_arr_roadblocks_Veh_GUE = a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
 // boats that are spawned
 //////////////////////////////////////////////////////////////////
 a3e_arr_AquaticPatrols = [
-	"B_Boat_Armed_01_minigun_F"];
+	"rhsusf_mkvsoc"];
 
 //////////////////////////////////////////////////////////////////
 // fn_AmmoDepot
@@ -820,7 +973,8 @@ a3e_additional_weapon_box_2 = "rhsusf_mags_crate";
 // mortar spawned in the mortar camps
 //////////////////////////////////////////////////////////////////
 a3e_arr_MortarSite = [
-	"RHS_M252_WD"];
+	"RHS_M252_D"
+	,"rhssaf_army_m252"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CallCAS.sqf
@@ -829,7 +983,8 @@ a3e_arr_MortarSite = [
 a3e_arr_CASplane = [
 	"RHS_A10"
 	,"RHS_A10"
-	,"rhsusf_f22"];
+	,"rhsusf_f22"
+	,"rhssaf_airforce_l_18"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
@@ -855,24 +1010,32 @@ a3e_arr_CrashSiteWrecksCar = [
 	,"Land_Wreck_BRDM2_F"
 	,"Land_Wreck_T72_hull_F"];
 a3e_arr_CrashSiteCrewCar = [
-	"rhs_vdv_flora_driver"
-	,"rhs_vdv_flora_driver_armored"];
+	"rhs_vdv_flora_crew"
+	,"rhs_vdv_flora_armoredcrew"
+	,"rhs_vdv_flora_combatcrew"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
-a3e_arr_CrashSiteWeapons pushback ["rhs_weap_ak74m_gp25_1p63", 50, 2, 5, ["rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK_green","rhs_VOG25"], 4];
+a3e_arr_CrashSiteWeapons pushback ["rhs_weap_ak74m_gp25_1p63", 50, 2, 5, ["rhs_30Rnd_545x39_7N6M_green_AK","rhs_30Rnd_545x39_7N10_2mag_plum_AK","rhs_VOG25"], 4];
 a3e_arr_CrashSiteWeapons pushback ["rhs_weap_rpg26", 10, 1, 2, ["rhs_rpg26_mag"], 1];
-a3e_arr_CrashSiteWeapons pushback ["rhs_weap_ak74m_2mag_camo", 100, 3, 5, ["rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK_green"], 4];
+a3e_arr_CrashSiteWeapons pushback ["rhs_weap_ak74_3", 100, 3, 5, ["rhs_30Rnd_545x39_7N6_green_AK","rhs_30Rnd_545x39_7N10_2mag_plum_AK"], 4];
 a3e_arr_CrashSiteWeapons pushback ["rhs_weap_pkm", 10, 1, 2, ["rhs_100Rnd_762x54mmR","rhs_100Rnd_762x54mmR_green"], 3];
 a3e_arr_CrashSiteWeapons pushback ["rhs_weap_akms", 75, 2, 4, ["rhs_30Rnd_545x39_7N10_AK","rhs_45Rnd_545x39_7N10_AK"], 4];
-a3e_arr_CrashSiteWeapons pushback ["rhs_weap_svdp_npz", 20, 1, 2, ["rhs_10Rnd_762x54mmR_7N1"], 8];
+a3e_arr_CrashSiteWeapons pushback ["rhs_weap_svdp_wd_npz", 20, 1, 2, ["rhs_10Rnd_762x54mmR_7N1"], 8];
+a3e_arr_CrashSiteWeapons pushback ["rhs_weap_asval_grip_npz", 20, 1, 2, ["rhs_20rnd_9x39mm_SP6"], 12];
 a3e_arr_CrashSiteWeapons pushback ["rhs_weap_svd_pso1", 10, 1, 2, ["rhs_10Rnd_762x54mmR_7N1"], 8];
 a3e_arr_CrashSiteWeapons pushback ["rhs_weap_pkp_pkas", 10, 1, 2, ["rhs_100Rnd_762x54mmR"], 6];
 // Attachments and other items in crash site box
 a3e_arr_CrashSiteItems = [];
-a3e_arr_CrashSiteItems pushback ["rhs_acc_pbs1", 10, 1, 3];
-a3e_arr_CrashSiteItems pushback ["rhs_acc_dtk4long", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["rhs_acc_ekp1", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["rhs_acc_ekp8_02", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["rhs_acc_npz", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["rhs_acc_pkas", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["rhs_acc_pso1m2", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["rhs_acc_1p78", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["rhs_acc_1p63", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["rhs_acc_nita", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["rhs_acc_2dpZenit", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["rhs_acc_perst1ik", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["hlc_muzzle_545SUP_AK", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["rhs_acc_pbs1", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["rhs_acc_tgpv", 10, 1, 3];
