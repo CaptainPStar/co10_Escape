@@ -19,7 +19,8 @@ AT_Revive_clearedDistance = 0;
 AT_Revive_Camera = 1;
 
 
-call ATR_FNC_ReviveInit;
+//If no ACE use ATR revive
+if !(isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {call ATR_FNC_ReviveInit};
 
 [] call A3E_fnc_addUserActions;
 

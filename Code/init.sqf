@@ -84,3 +84,12 @@ if (isServer) then {
 		} foreach units group player;
 	};
 };
+
+//ACE Revive
+if ((isServer) && (isClass(configFile >> "CfgPatches" >> "ACE_Medical"))) then {
+	countStarted = false;
+	ACE_allUnconscious = false;
+	ACE_UnconsciousPlayers = [];
+	addMissionEventHandler ["HandleDisconnect", ACE_fnc_HandleDisconnect];
+	["ace_unconscious", ACE_fnc_HandleUnconscious] call CBA_fnc_addEventHandler;
+};

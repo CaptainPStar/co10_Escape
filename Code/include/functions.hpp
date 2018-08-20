@@ -165,7 +165,15 @@ class CfgFunctions
 			#include "..\functions\HSC\hsc.hpp"
 		};
 	};
-	
+	class ace
+	{
+		class ace
+		{
+			class HandleDisconnect {};
+			class HandleUnconscious {};
+			class Countdown {};
+		};
+	};
 	class MB
 	{
 		class Weather
