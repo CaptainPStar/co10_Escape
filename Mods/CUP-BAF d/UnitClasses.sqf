@@ -135,7 +135,23 @@ switch (_enemyFrequency) do {
 		,"CUP_B_Challenger2_2CD_BAF"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"CUP_I_SUV_ION"
-		,"CUP_I_SUV_Armored_ION"];
+		,"CUP_I_SUV_Armored_ION"
+		,"CUP_I_FENNEK_ION"
+		,"CUP_I_FENNEK_GMG_ION"
+		,"CUP_I_FENNEK_HMG_ION"
+		,"CUP_I_MATV_ION"
+		,"CUP_I_MATV_GMG_ION"
+		,"CUP_I_MATV_HMG_ION"
+		,"CUP_I_4WD_AT_ION"
+		,"CUP_I_4WD_LMG_ION"
+		,"CUP_I_4WD_unarmed_ION"
+		,"CUP_I_LSV_02_AT_ION"
+		,"CUP_I_LSV_02_Minigun_ION"
+		,"CUP_I_LSV_02_unarmed_ION"
+		,"CUP_I_Van_ammo_ION"
+		,"CUP_I_Van_Cargo_ION"
+		,"CUP_I_Van_Repair_ION"
+		,"CUP_I_Van_Transport_ION"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -167,7 +183,23 @@ switch (_enemyFrequency) do {
 		,"CUP_B_Challenger2_2CD_BAF"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"CUP_I_SUV_ION"
-		,"CUP_I_SUV_Armored_ION"];
+		,"CUP_I_SUV_Armored_ION"
+		,"CUP_I_FENNEK_ION"
+		,"CUP_I_FENNEK_GMG_ION"
+		,"CUP_I_FENNEK_HMG_ION"
+		,"CUP_I_MATV_ION"
+		,"CUP_I_MATV_GMG_ION"
+		,"CUP_I_MATV_HMG_ION"
+		,"CUP_I_4WD_AT_ION"
+		,"CUP_I_4WD_LMG_ION"
+		,"CUP_I_4WD_unarmed_ION"
+		,"CUP_I_LSV_02_AT_ION"
+		,"CUP_I_LSV_02_Minigun_ION"
+		,"CUP_I_LSV_02_unarmed_ION"
+		,"CUP_I_Van_ammo_ION"
+		,"CUP_I_Van_Cargo_ION"
+		,"CUP_I_Van_Repair_ION"
+		,"CUP_I_Van_Transport_ION"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -199,7 +231,23 @@ switch (_enemyFrequency) do {
 		,"CUP_B_Challenger2_2CD_BAF"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"CUP_I_SUV_ION"
-		,"CUP_I_SUV_Armored_ION"];
+		,"CUP_I_SUV_Armored_ION"
+		,"CUP_I_FENNEK_ION"
+		,"CUP_I_FENNEK_GMG_ION"
+		,"CUP_I_FENNEK_HMG_ION"
+		,"CUP_I_MATV_ION"
+		,"CUP_I_MATV_GMG_ION"
+		,"CUP_I_MATV_HMG_ION"
+		,"CUP_I_4WD_AT_ION"
+		,"CUP_I_4WD_LMG_ION"
+		,"CUP_I_4WD_unarmed_ION"
+		,"CUP_I_LSV_02_AT_ION"
+		,"CUP_I_LSV_02_Minigun_ION"
+		,"CUP_I_LSV_02_unarmed_ION"
+		,"CUP_I_Van_ammo_ION"
+		,"CUP_I_Van_Cargo_ION"
+		,"CUP_I_Van_Repair_ION"
+		,"CUP_I_Van_Transport_ION"];
     };
 };
 
@@ -304,9 +352,15 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"CUP_B_L111A1_BAF_MPT"
 	,"CUP_B_L111A1_MiniTripod_BAF_MPT"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
-	"CUP_I_SUV_ION"
+	"CUP_I_FENNEK_HMG_ION"
+	,"CUP_I_FENNEK_GMG_ION"
 	,"CUP_I_SUV_Armored_ION"
-	,"CUP_I_SUV_Armored_ION"];
+	,"CUP_I_SUV_Armored_ION"
+	,"CUP_I_MATV_HMG_ION"
+	,"CUP_I_4WD_AT_ION"
+	,"CUP_I_4WD_LMG_ION"
+	,"CUP_I_LSV_02_AT_ION"
+	,"CUP_I_LSV_02_Minigun_ION"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
@@ -322,7 +376,10 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	"CUP_I_SUV_ION"//12
 	,"CUP_I_SUV_Armored_ION"//9
 	,"CUP_I_SUV_ION"//12
-	,"CUP_I_SUV_Armored_ION"];//9
+	,"CUP_I_SUV_Armored_ION"//9
+	,"CUP_I_FENNEK_ION"
+	,"CUP_I_4WD_unarmed_ION"
+	,"CUP_I_Van_Transport_ION"];
 
 
 
@@ -343,7 +400,10 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"CUP_B_FV510_GB_D"
 	,"CUP_B_MCV80_GB_D"
 	,"CUP_I_SUV_Armored_ION"
-	,"CUP_I_SUV_Armored_ION"];
+	,"CUP_I_LSV_02_Minigun_ION"
+	,"CUP_I_4WD_LMG_ION"
+	,"CUP_I_MATV_HMG_ION"
+	,"CUP_I_FENNEK_HMG_ION"];
 
 
 
@@ -395,7 +455,11 @@ a3e_arr_ComCenParkedVehicles = [
 	,"CUP_B_MTVR_Repair_USA"
 	,"CUP_I_SUV_ION"
 	,"CUP_I_SUV_Armored_ION"
-	,"CUP_I_SUV_Armored_ION"];
+	,"CUP_I_SUV_Armored_ION"
+	,"CUP_I_4WD_AT_ION"
+	,"CUP_I_4WD_LMG_ION"
+	,"CUP_I_LSV_02_Minigun_ION"
+	,"CUP_I_Van_Transport_ION"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
@@ -755,7 +819,8 @@ a3e_arr_extraction_chopper_escort = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
 	"CUP_USMC_MQ9"
-	,"CUP_B_AH6X_USA"];
+	,"CUP_B_AH6X_USA"
+	,"CUP_I_Plane_ION"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
