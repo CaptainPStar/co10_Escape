@@ -44,7 +44,7 @@ if(isserver) then {
 	_trigger setTriggerArea[0, 0, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", false];
 	_trigger setTriggerTimeout [0, 0, 0, false];
-	_trigger setTriggerStatements["isMultiplayer && A3E_EscapeHasStarted && ({!(_x getVariable [""AT_Revive_isUnconscious"",false])} count ([] call BIS_fnc_listPlayers) == 0)", "a3e_var_Escape_AllPlayersDead = true;publicVariable ""a3e_var_Escape_AllPlayersDead"";[] spawn A3E_FNC_FailTasks;", ""];
+	_trigger setTriggerStatements["isMultiplayer && A3E_EscapeHasStarted && (({!(_x getVariable [""AT_Revive_isUnconscious"",false])} count ([] call BIS_fnc_listPlayers) == 0) || ACE_allUnconscious)", "a3e_var_Escape_AllPlayersDead = true;publicVariable ""a3e_var_Escape_AllPlayersDead"";[] spawn A3E_FNC_FailTasks;", ""];
 };
 //Exit HSC cam because missions is ending
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
