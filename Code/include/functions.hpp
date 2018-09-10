@@ -155,14 +155,16 @@ class CfgFunctions
 	{
 		class Revive
 		{
-			#include "..\functions\revive\revive.hpp"
+			file = "Revive\functions\revive";
+			#include "..\Revive\functions\revive\revive.hpp"
 		};
 	};
 	class ATHSC
 	{
 		class HSC
 		{
-			#include "..\functions\HSC\hsc.hpp"
+			file = "Revive\functions\HSC";
+			#include "..\Revive\functions\HSC\hsc.hpp"
 		};
 	};
 	class ace
