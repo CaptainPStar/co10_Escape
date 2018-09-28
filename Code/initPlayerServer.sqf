@@ -3,7 +3,7 @@ private["_player","_didJIP","_players","_placed"];
 _player = _this select 0;
 _didJIP =  _this select 1;
 
-diag_log format["initPlayerServer run for %1", name _player];
+diag_log format["initPlayerServer run for %1 (%2)", name _player, str _this];
 
 if(name _player == "HC") then {
     ["HC present. Offloading AI."] spawn a3e_fnc_debugmsg;

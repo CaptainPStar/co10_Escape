@@ -1,10 +1,11 @@
-diag_log format["initPlayerLocal run for %1 (prewaituntil)", name player];
+diag_log format["initPlayerLocal (prewaituntil) run for %1 (%2)", name player, str _this];
+
+if(isDedicated) exitwith {};
 
 waituntil{!isNull(player)};
 //Clientside Stuff
 //call compile preprocessFile "Revive\reviveInit.sqf";
 
-diag_log format["initPlayerLocal run for %1", name player];
 
 [] spawn {
 	disableSerialization;
