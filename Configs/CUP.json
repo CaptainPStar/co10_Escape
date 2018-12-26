@@ -140,6 +140,26 @@
 					"PLAYERUNIT_9" : "CUP_O_RU_Soldier",
 					"PLAYERUNIT_10" : "CUP_O_RU_Medic"
 				}
+		},
+		{
+			"name" : "CUP-CDF Winter",
+			"path" : "./Mods/CUP-CDF winter/",
+			"require" : ["CUP_Creatures_Military_BAF","CUP_Creatures_Military_PMC","CUP_Creatures_Military_Russia"],
+			"replace" :
+				{
+					"MOD" : "CUP RU vs CDF",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "CUP_O_RU_Officer",
+					"PLAYERUNIT_2" : "CUP_O_RU_Soldier_GL",
+					"PLAYERUNIT_3" : "CUP_O_RU_Soldier_Marksman",
+					"PLAYERUNIT_4" : "CUP_O_RU_Engineer",
+					"PLAYERUNIT_5" : "CUP_O_RU_Soldier_AA",
+					"PLAYERUNIT_6" : "CUP_O_RU_Soldier_AR",
+					"PLAYERUNIT_7" : "CUP_O_RU_Soldier_AT",
+					"PLAYERUNIT_8" : "CUP_O_RU_Soldier_MG",
+					"PLAYERUNIT_9" : "CUP_O_RU_Soldier",
+					"PLAYERUNIT_10" : "CUP_O_RU_Medic"
+				}
 		}
 	],
 	"Islands": [],
@@ -290,6 +310,13 @@
 			"mod" : "CUP RU",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_USMC_vs_RU"
+		},
+		{
+			"island" : "Chernarus_Winter",
+			"sqm": "Chernarus_Winter",
+			"mod" : "CUP-CDF Winter",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_CDF"
 		},
 		{
 			"island" : "Podagorsk",
@@ -1058,7 +1085,7 @@
 	"Addons" : [
 		{
 			"name" : "CUP",
-			"mods" : ["CUP SLA","CUP-US Army d","CUP-BAF d","CUP-BAF w","CUP RU","CUP Taki","CUP-US USMC"]
+			"mods" : ["CUP SLA","CUP-US Army d","CUP-BAF d","CUP-BAF w","CUP RU","CUP Taki","CUP-US USMC","CUP-CDF Winter"]
 		}
 	]
 	
