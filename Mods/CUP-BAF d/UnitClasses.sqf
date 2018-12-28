@@ -13,7 +13,7 @@ _enemyFrequency = _this select 0;
 
 A3E_VAR_Side_Blufor = east;//Player side CUP RU
 A3E_VAR_Side_Opfor = west;//Enemy side CUP BAF desert
-A3E_VAR_Side_Ind = resistance;//Independent side CUP ION PMC
+A3E_VAR_Side_Ind = resistance;//Independent side CUP ACR desert
 
 A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_us_CO.paa";
 A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\flag_ion_CO.paa";
@@ -24,12 +24,12 @@ A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
 // Random array. Start position guard types around the prison.
 a3e_arr_Escape_StartPositionGuardTypes = [
-	"CUP_I_PMC_Bodyguard_M4"
-	,"CUP_I_PMC_Contractor1"
-	,"CUP_I_PMC_Contractor2"
-	,"CUP_I_PMC_Soldier"
-	,"CUP_I_PMC_Soldier_GL"
-	,"CUP_I_PMC_Soldier_GL_M16A2"];
+	"CUP_B_CZ_Soldier_Light_DES"
+	,"CUP_B_CZ_Soldier_Light_DES"
+	,"CUP_B_CZ_Soldier_DES"
+	,"CUP_B_CZ_Soldier_DES"
+	,"CUP_B_CZ_Soldier_805_DES"
+	,"CUP_B_CZ_Soldier_805_GL_DES"];
 
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
@@ -134,24 +134,25 @@ switch (_enemyFrequency) do {
 		,"CUP_B_Challenger2_Desert_BAF"
 		,"CUP_B_Challenger2_2CD_BAF"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"CUP_I_SUV_ION"
-		,"CUP_I_SUV_Armored_ION"
-		,"CUP_I_FENNEK_ION"
-		,"CUP_I_FENNEK_GMG_ION"
-		,"CUP_I_FENNEK_HMG_ION"
-		,"CUP_I_MATV_ION"
-		,"CUP_I_MATV_GMG_ION"
-		,"CUP_I_MATV_HMG_ION"
-		,"CUP_I_4WD_AT_ION"
-		,"CUP_I_4WD_LMG_ION"
-		,"CUP_I_4WD_unarmed_ION"
-		,"CUP_I_LSV_02_AT_ION"
-		,"CUP_I_LSV_02_Minigun_ION"
-		,"CUP_I_LSV_02_unarmed_ION"
-		,"CUP_I_Van_ammo_ION"
-		,"CUP_I_Van_Cargo_ION"
-		,"CUP_I_Van_Repair_ION"
-		,"CUP_I_Van_Transport_ION"];
+		"CUP_B_LR_Transport_CZ_D"
+		,"CUP_B_LR_Special_Des_CZ_D"
+		,"CUP_B_LR_Ambulance_CZ_D"
+		,"CUP_B_HMMWV_Ambulance_ACR"
+		,"CUP_B_HMMWV_AGS_GPK_ACR"
+		,"CUP_B_HMMWV_DSHKM_GPK_ACR"
+		,"CUP_B_HMMWV_M2_GPK_ACR"
+		,"CUP_B_Dingo_CZ_Des"
+		,"CUP_B_Dingo_GL_CZ_Des"
+		,"CUP_B_T810_Unarmed_CZ_DES"
+		,"CUP_B_T810_Armed_CZ_DES"
+		,"CUP_B_T810_Reammo_CZ_DES"
+		,"CUP_B_T810_Refuel_CZ_DES"
+		,"CUP_B_T810_Repair_CZ_DES"
+		,"CUP_B_BRDM2_CZ_Des"
+		,"CUP_B_BRDM2_HQ_CZ_Des"
+		,"CUP_B_BMP2_CZ_Des"
+		,"CUP_B_BMP_HQ_CZ_Des"
+		,"CUP_B_BMP2_AMB_CZ_Des"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -182,24 +183,25 @@ switch (_enemyFrequency) do {
 		,"CUP_B_Challenger2_Desert_BAF"
 		,"CUP_B_Challenger2_2CD_BAF"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"CUP_I_SUV_ION"
-		,"CUP_I_SUV_Armored_ION"
-		,"CUP_I_FENNEK_ION"
-		,"CUP_I_FENNEK_GMG_ION"
-		,"CUP_I_FENNEK_HMG_ION"
-		,"CUP_I_MATV_ION"
-		,"CUP_I_MATV_GMG_ION"
-		,"CUP_I_MATV_HMG_ION"
-		,"CUP_I_4WD_AT_ION"
-		,"CUP_I_4WD_LMG_ION"
-		,"CUP_I_4WD_unarmed_ION"
-		,"CUP_I_LSV_02_AT_ION"
-		,"CUP_I_LSV_02_Minigun_ION"
-		,"CUP_I_LSV_02_unarmed_ION"
-		,"CUP_I_Van_ammo_ION"
-		,"CUP_I_Van_Cargo_ION"
-		,"CUP_I_Van_Repair_ION"
-		,"CUP_I_Van_Transport_ION"];
+		"CUP_B_LR_Transport_CZ_D"
+		,"CUP_B_LR_Special_Des_CZ_D"
+		,"CUP_B_LR_Ambulance_CZ_D"
+		,"CUP_B_HMMWV_Ambulance_ACR"
+		,"CUP_B_HMMWV_AGS_GPK_ACR"
+		,"CUP_B_HMMWV_DSHKM_GPK_ACR"
+		,"CUP_B_HMMWV_M2_GPK_ACR"
+		,"CUP_B_Dingo_CZ_Des"
+		,"CUP_B_Dingo_GL_CZ_Des"
+		,"CUP_B_T810_Unarmed_CZ_DES"
+		,"CUP_B_T810_Armed_CZ_DES"
+		,"CUP_B_T810_Reammo_CZ_DES"
+		,"CUP_B_T810_Refuel_CZ_DES"
+		,"CUP_B_T810_Repair_CZ_DES"
+		,"CUP_B_BRDM2_CZ_Des"
+		,"CUP_B_BRDM2_HQ_CZ_Des"
+		,"CUP_B_BMP2_CZ_Des"
+		,"CUP_B_BMP_HQ_CZ_Des"
+		,"CUP_B_BMP2_AMB_CZ_Des"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -230,24 +232,25 @@ switch (_enemyFrequency) do {
 		,"CUP_B_Challenger2_Desert_BAF"
 		,"CUP_B_Challenger2_2CD_BAF"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"CUP_I_SUV_ION"
-		,"CUP_I_SUV_Armored_ION"
-		,"CUP_I_FENNEK_ION"
-		,"CUP_I_FENNEK_GMG_ION"
-		,"CUP_I_FENNEK_HMG_ION"
-		,"CUP_I_MATV_ION"
-		,"CUP_I_MATV_GMG_ION"
-		,"CUP_I_MATV_HMG_ION"
-		,"CUP_I_4WD_AT_ION"
-		,"CUP_I_4WD_LMG_ION"
-		,"CUP_I_4WD_unarmed_ION"
-		,"CUP_I_LSV_02_AT_ION"
-		,"CUP_I_LSV_02_Minigun_ION"
-		,"CUP_I_LSV_02_unarmed_ION"
-		,"CUP_I_Van_ammo_ION"
-		,"CUP_I_Van_Cargo_ION"
-		,"CUP_I_Van_Repair_ION"
-		,"CUP_I_Van_Transport_ION"];
+		"CUP_B_LR_Transport_CZ_D"
+		,"CUP_B_LR_Special_Des_CZ_D"
+		,"CUP_B_LR_Ambulance_CZ_D"
+		,"CUP_B_HMMWV_Ambulance_ACR"
+		,"CUP_B_HMMWV_AGS_GPK_ACR"
+		,"CUP_B_HMMWV_DSHKM_GPK_ACR"
+		,"CUP_B_HMMWV_M2_GPK_ACR"
+		,"CUP_B_Dingo_CZ_Des"
+		,"CUP_B_Dingo_GL_CZ_Des"
+		,"CUP_B_T810_Unarmed_CZ_DES"
+		,"CUP_B_T810_Armed_CZ_DES"
+		,"CUP_B_T810_Reammo_CZ_DES"
+		,"CUP_B_T810_Refuel_CZ_DES"
+		,"CUP_B_T810_Repair_CZ_DES"
+		,"CUP_B_BRDM2_CZ_Des"
+		,"CUP_B_BRDM2_HQ_CZ_Des"
+		,"CUP_B_BMP2_CZ_Des"
+		,"CUP_B_BMP_HQ_CZ_Des"
+		,"CUP_B_BMP2_AMB_CZ_Des"];
     };
 };
 
@@ -288,25 +291,25 @@ a3e_arr_Escape_InfantryTypes = [
 	,"CUP_B_BAF_Spotter_L85TWS_DDPM"
 	,"CUP_B_BAF_Soldier_TL_DDPM"];
 a3e_arr_Escape_InfantryTypes_Ind = [
-	"CUP_I_PMC_Soldier_TL"
-	,"CUP_I_PMC_Soldier"
-	,"CUP_I_PMC_Soldier_GL"
-	,"CUP_I_PMC_Soldier_GL_M16A2"
-	,"CUP_I_PMC_Soldier_M4A3"
-	,"CUP_I_PMC_Soldier_MG"
-	,"CUP_I_PMC_Soldier_MG_PKM"
-	,"CUP_I_PMC_Soldier_AA"
-	,"CUP_I_PMC_Soldier_AT"
-	,"CUP_I_PMC_Soldier_AT"
-	,"CUP_I_PMC_Soldier_AT"
-	,"CUP_I_PMC_Sniper_KSVK"
-	,"CUP_I_PMC_Sniper"
-	,"CUP_I_PMC_Medic"
-	,"CUP_I_PMC_Engineer"
-	,"CUP_I_PMC_Bodyguard_AA12"
-	,"CUP_I_PMC_Bodyguard_M4"
-	,"CUP_I_PMC_Contractor1"
-	,"CUP_I_PMC_Contractor2"];
+	"CUP_B_CZ_Soldier_ARPG_DES"
+	,"CUP_B_CZ_Soldier_AMG_DES"
+	,"CUP_B_CZ_Soldier_AR_DES"
+	,"CUP_B_CZ_Engineer_DES"
+	,"CUP_B_CZ_ExplosiveSpecialist_DES"
+	,"CUP_B_CZ_Soldier_805_GL_DES"
+	,"CUP_B_CZ_Soldier_MG_DES"
+	,"CUP_B_CZ_Soldier_Marksman_DES"
+	,"CUP_B_CZ_Medic_DES"
+	,"CUP_B_CZ_Soldier_DES"
+	,"CUP_B_CZ_Soldier_AT_DES"
+	,"CUP_B_CZ_Soldier_AT_DES"
+	,"CUP_B_CZ_Soldier_Backpack_DES"
+	,"CUP_B_CZ_Soldier_805_DES"
+	,"CUP_B_CZ_Soldier_RPG_DES"
+	,"CUP_B_CZ_Sniper_DES"
+	,"CUP_B_CZ_Soldier_Light_DES"
+	,"CUP_B_CZ_Spotter_DES"
+	,"CUP_B_CZ_Soldier_SL_DES"];
 a3e_arr_recon_InfantryTypes = [
 	"CUP_B_US_SpecOps_AR"
 	,"CUP_B_US_SpecOps_JTAC"
@@ -321,25 +324,12 @@ a3e_arr_recon_InfantryTypes = [
 	,"CUP_B_US_SpecOps_TL"
 	,"CUP_B_US_SpecOps_UAV"];
 a3e_arr_recon_I_InfantryTypes = [
-	"CUP_I_PMC_Soldier_TL"
-	,"CUP_I_PMC_Soldier"
-	,"CUP_I_PMC_Soldier_GL"
-	,"CUP_I_PMC_Soldier_GL_M16A2"
-	,"CUP_I_PMC_Soldier_M4A3"
-	,"CUP_I_PMC_Soldier_MG"
-	,"CUP_I_PMC_Soldier_MG_PKM"
-	,"CUP_I_PMC_Soldier_AA"
-	,"CUP_I_PMC_Soldier_AT"
-	,"CUP_I_PMC_Soldier_AT"
-	,"CUP_I_PMC_Soldier_AT"
-	,"CUP_I_PMC_Sniper_KSVK"
-	,"CUP_I_PMC_Sniper"
-	,"CUP_I_PMC_Medic"
-	,"CUP_I_PMC_Engineer"
-	,"CUP_I_PMC_Bodyguard_AA12"
-	,"CUP_I_PMC_Bodyguard_M4"
-	,"CUP_I_PMC_Contractor1"
-	,"CUP_I_PMC_Contractor2"];
+	"CUP_B_CZ_SpecOps_GL_DES"
+	,"CUP_B_CZ_SpecOps_MG_DES"
+	,"CUP_B_CZ_SpecOps_Recon_DES"
+	,"CUP_B_CZ_SpecOps_Exp_DES"
+	,"CUP_B_CZ_SpecOps_Scout_DES"
+	,"CUP_B_CZ_SpecOps_TL_DES"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
@@ -352,15 +342,13 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"CUP_B_L111A1_BAF_MPT"
 	,"CUP_B_L111A1_MiniTripod_BAF_MPT"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
-	"CUP_I_FENNEK_HMG_ION"
-	,"CUP_I_FENNEK_GMG_ION"
-	,"CUP_I_SUV_Armored_ION"
-	,"CUP_I_SUV_Armored_ION"
-	,"CUP_I_MATV_HMG_ION"
-	,"CUP_I_4WD_AT_ION"
-	,"CUP_I_4WD_LMG_ION"
-	,"CUP_I_LSV_02_AT_ION"
-	,"CUP_I_LSV_02_Minigun_ION"];
+	"CUP_B_HMMWV_AGS_GPK_ACR"
+	,"CUP_B_HMMWV_DSHKM_GPK_ACR"
+	,"CUP_B_HMMWV_M2_GPK_ACR"
+	,"CUP_B_Dingo_GL_CZ_Des"
+	,"CUP_B_LR_Special_Des_CZ_D"
+	,"CUP_B_BRDM2_CZ_Des"
+	,"CUP_B_BRDM2_HQ_CZ_Des"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
@@ -373,13 +361,10 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	,"CUP_B_FV510_GB_D"//7
 	,"CUP_B_FV432_Bulldog_GB_D"];//8
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
-	"CUP_I_SUV_ION"//12
-	,"CUP_I_SUV_Armored_ION"//9
-	,"CUP_I_SUV_ION"//12
-	,"CUP_I_SUV_Armored_ION"//9
-	,"CUP_I_FENNEK_ION"
-	,"CUP_I_4WD_unarmed_ION"
-	,"CUP_I_Van_Transport_ION"];
+	"CUP_B_T810_Unarmed_CZ_DES"
+	,"CUP_B_T810_Armed_CZ_DES"
+	,"CUP_B_Dingo_CZ_Des"
+	,"CUP_B_Dingo_GL_CZ_Des"];
 
 
 
@@ -399,11 +384,11 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"CUP_B_FV432_Bulldog_GB_D_RWS"
 	,"CUP_B_FV510_GB_D"
 	,"CUP_B_MCV80_GB_D"
-	,"CUP_I_SUV_Armored_ION"
-	,"CUP_I_LSV_02_Minigun_ION"
-	,"CUP_I_4WD_LMG_ION"
-	,"CUP_I_MATV_HMG_ION"
-	,"CUP_I_FENNEK_HMG_ION"];
+	,"CUP_B_T810_Unarmed_CZ_DES"
+	,"CUP_B_T810_Armed_CZ_DES"
+	,"CUP_B_BRDM2_CZ_Des"
+	,"CUP_B_Dingo_CZ_Des"
+	,"CUP_B_Dingo_GL_CZ_Des"];
 
 
 
@@ -422,8 +407,7 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 	,"CUP_B_BAF_Coyote_L2A1_D"
 	,"CUP_B_BAF_Coyote_GMG_D"
 	,"CUP_B_FV432_Bulldog_GB_D_RWS"
-	,"CUP_B_FV432_Bulldog_GB_D"
-	,"CUP_I_SUV_Armored_ION"];
+	,"CUP_B_FV432_Bulldog_GB_D"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"CUP_B_FV510_GB_D_SLAT"
@@ -453,13 +437,17 @@ a3e_arr_ComCenParkedVehicles = [
 	,"CUP_B_MTVR_Ammo_USA"
 	,"CUP_B_MTVR_Refuel_USA"
 	,"CUP_B_MTVR_Repair_USA"
-	,"CUP_I_SUV_ION"
-	,"CUP_I_SUV_Armored_ION"
-	,"CUP_I_SUV_Armored_ION"
-	,"CUP_I_4WD_AT_ION"
-	,"CUP_I_4WD_LMG_ION"
-	,"CUP_I_LSV_02_Minigun_ION"
-	,"CUP_I_Van_Transport_ION"];
+	,"CUP_B_T810_Unarmed_CZ_DES"
+	,"CUP_B_T810_Armed_CZ_DES"
+	,"CUP_B_T810_Reammo_CZ_DES"
+	,"CUP_B_T810_Refuel_CZ_DES"
+	,"CUP_B_T810_Repair_CZ_DES"
+	,"CUP_B_LR_Transport_CZ_D"
+	,"CUP_B_HMMWV_DSHKM_GPK_ACR"
+	,"CUP_B_HMMWV_Ambulance_ACR"
+	,"CUP_B_Dingo_CZ_Des"
+	,"CUP_B_Dingo_GL_CZ_Des"
+	,"CUP_B_BRDM2_HQ_CZ_Des"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
@@ -513,9 +501,10 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	"CUP_B_L111A1_BAF_MPT"
 	,"CUP_B_L111A1_MiniTripod_BAF_MPT"
-	,"CUP_I_MK19_TriPod_AAF"
-	,"CUP_B_TOW_TriPod_US"
-	,"CUP_I_Igla_AA_pod_AAF"];
+	,"CUP_B_AGS_ACR"
+	,"CUP_B_DSHKM_ACR"
+	,"CUP_B_2b14_82mm_ACR"
+	,"CUP_B_RBS70_ACR"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 
@@ -525,9 +514,9 @@ a3e_arr_O_attack_heli = [
 	,"CUP_B_AW159_RN_Blackcat"
 	,"CUP_B_AW159_GB"
 	,"CUP_B_AW159_RN_Grey"
-	,"CUP_I_Mi24_D_ION"
-	,"CUP_I_Mi24_Mk3_ION"
-	,"CUP_I_Mi24_Mk4_ION"];
+	,"CUP_B_Mi171Sh_ACR"
+	,"CUP_B_Mi35_Dynamic_CZ_Des"
+	,"CUP_B_Mi35_Dynamic_CZ_Tiger"];
 a3e_arr_O_transport_heli = [
 	"CUP_B_AW159_Unarmed_RN_Blackcat"
 	,"CUP_B_AW159_Unarmed_GB"
@@ -543,9 +532,9 @@ a3e_arr_O_transport_heli = [
 a3e_arr_O_pilots = [
 	"CUP_B_BAF_Pilot_DDPM"];
 a3e_arr_I_transport_heli = [
-	"CUP_I_MH6M_ION"];
+	"CUP_B_Mi171Sh_Unarmed_ACR"];
 a3e_arr_I_pilots = [
-	"CUP_I_PMC_Pilot"];
+	"CUP_B_CZ_Pilot_DES"];
 
 
 // The following arrays define weapons and ammo contained at the ammo depots
@@ -569,18 +558,17 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_M24_des", 20, 1, 2, ["CUP_5R
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_L129A1", 10, 1, 2, ["CUP_20Rnd_762x51_L129_M"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_L129A1_HG", 10, 1, 2, ["CUP_20Rnd_762x51_L129_M"], 6];
 // non-CSAT weapons
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_xm8_SAW", 50, 2, 4, ["CUP_100Rnd_556x45_BetaCMag"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_L86A2", 50, 1, 3, ["CUP_30Rnd_556x45_Stanag"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_XM8_Carbine_GL", 50, 1, 3, ["CUP_30Rnd_556x45_G36","CUP_1Rnd_HEDP_M203"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_XM8_Carbine", 50, 1, 2, ["CUP_30Rnd_556x45_Stanag"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_M14", 20, 1, 2, ["CUP_20Rnd_762x51_DMR"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Sa58RIS1", 10, 1, 2, ["CUP_30Rnd_Sa58_M"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_L85A2_GL", 25, 1, 2, ["CUP_30Rnd_556x45_Stanag","CUP_1Rnd_HE_M203"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Mk16_CQC_SFG", 20, 1, 2, ["CUP_30Rnd_556x45_Stanag"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Mk16_STD_FG", 50, 1, 2, ["CUP_30Rnd_556x45_Stanag"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Mk17_STD", 20, 1, 2, ["CUP_20Rnd_762x51_B_SCAR"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_sgun_AA12", 20, 1, 2, ["CUP_20Rnd_B_AA12_Pellets"], 10];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_sgun_M1014", 10, 1, 2, ["CUP_8Rnd_B_Beneli_74Slug","CUP_8Rnd_B_Beneli_74Pellets"], 10];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_lmg_UK59", 30, 1, 3, ["CUP_50Rnd_UK59_762x54R_Tracer"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Sa58V_camo", 50, 1, 3, ["CUP_30Rnd_Sa58_M"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Sa58RIS2_gl", 50, 1, 3, ["CUP_30Rnd_Sa58_M","CUP_1Rnd_HEDP_M203"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Sa58P_des", 50, 1, 2, ["CUP_30Rnd_Sa58_M"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_Sa58RIS1_des", 10, 1, 2, ["CUP_30Rnd_Sa58_M"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_CZ805_GL", 25, 1, 2, ["CUP_30Rnd_556x45_G36","CUP_1Rnd_HEDP_M203"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_lmg_m249_pip4", 20, 1, 2, ["CUP_50Rnd_UK59_762x54R_Tracer"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_CZ805_A2", 50, 1, 2, ["CUP_30Rnd_556x45_G36"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_CZ805_A1", 20, 1, 2, ["CUP_30Rnd_556x45_G36"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_SVD", 20, 1, 2, ["CUP_10Rnd_762x54_SVD_M"], 10];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_smg_EVO", 10, 1, 2, ["CUP_30Rnd_9x19_EVO"], 10];
 
 
 // Weapons and ammo in the special weapons box
@@ -593,9 +581,12 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_Mk48_des", 50, 1, 2, ["CUP_10
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_L110A1", 50, 1, 3, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_L7A2", 50, 1, 3, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], 4];
 // non-CAST weapons
-a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_AS50", 10, 2, 4, ["CUP_5Rnd_127x99_as50_M"], 8];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_MG36", 30, 1, 2, ["CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag"], 6];
-
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_CZ750", 10, 2, 4, ["CUP_10Rnd_762x51_CZ750_Tracer"], 8];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_M60E4", 30, 1, 2, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_M4A1_desert", 25, 1, 2, ["CUP_30Rnd_556x45_Stanag"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_M4A1_BUIS_desert_GL", 25, 1, 2, ["CUP_30Rnd_556x45_Stanag","CUP_1Rnd_HE_M203"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_CZ805_B", 25, 1, 2, ["CUP_20Rnd_762x51_CZ805B"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_CZ805_B_GL", 25, 1, 2, ["CUP_20Rnd_TE1_White_Tracer_762x51_CZ805B","CUP_1Rnd_HEDP_M203"], 6];
 
 // Weapons and ammo in the launchers box
 a3e_arr_AmmoDepotLaunchers = [];
@@ -611,8 +602,7 @@ a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_FIM92Stinger", 50, 1, 2, ["CUP_
 a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_RPG7V", 10, 1, 2, ["CUP_PG7V_M", "CUP_PG7VL_M", "CUP_PG7VR_M", "CUP_OG7_M"], 1];
 a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_RPG18", 30, 1, 3, ["CUP_RPG18_M"], 1];
 a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_RPG7V", 20, 1, 3, ["CUP_PG7V_M"], 3];
-a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_Metis", 10, 1, 3, ["CUP_AT13_M"], 2];
-a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_Igla", 10, 1, 2, ["CUP_Igla_M"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_MAAWS", 20, 1, 3, ["CUP_MAAWS_HEDP_M"], 2];
 
 
 // Weapons and ammo in the ordnance box
@@ -662,6 +652,9 @@ a3e_arr_AmmoDepotItems pushback ["CUP_acc_ANPEQ_15", 50, 1, 5];
 a3e_arr_AmmoDepotItems pushback ["CUP_acc_Flashlight", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_snds_M16", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_snds_M16_camo", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["muzzle_snds_B_snd_F", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["muzzle_snds_L", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["muzzle_snds_m_snd_F", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_Eotech533", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_CompM4", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_SUSAT", 10, 1, 3];
@@ -685,7 +678,7 @@ a3e_arr_AmmoDepotItems pushback ["CUP_optic_HoloWdl", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_LeupoldM3LR", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_LeupoldMk4_10x40_LRT_Woodland", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_Kobra", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["CUP_optic_PechenegScope", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["CUP_SVD_camo_d", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_1", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_3", 20, 1, 3];
 if(Param_NoNightvision==0) then {
@@ -819,8 +812,7 @@ a3e_arr_extraction_chopper_escort = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
 	"CUP_USMC_MQ9"
-	,"CUP_B_AH6X_USA"
-	,"CUP_I_Plane_ION"];
+	,"CUP_B_AH6X_USA"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
@@ -828,15 +820,13 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"CUP_I_MH6M_ION"
-	,"CUP_I_MH6M_ION_OBS"];
+	"CUP_B_Mi171Sh_Unarmed_ACR"];
 a3e_arr_searchChopperHard = [
-	"CUP_I_Ka60_Blk_ION"
-	,"CUP_I_Ka60_GL_Blk_ION"];
+	"CUP_B_Mi171Sh_ACR"];
 a3e_arr_searchChopper_pilot = [
-	"CUP_I_PMC_Pilot"];
+	"CUP_B_CZ_Pilot_DES"];
 a3e_arr_searchChopper_crew = [
-	"CUP_I_PMC_Pilot"];
+	"CUP_B_CZ_Pilot_DES"];
 
 if(Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
@@ -906,7 +896,8 @@ a3e_arr_MortarSite = [
 a3e_arr_CASplane = [
 	"CUP_B_F35B_BAF"
 	,"CUP_B_F35B_Stealth_BAF"
-	,"CUP_B_GR9_DYN_GB"];
+	,"CUP_B_GR9_DYN_GB"
+	,"CUP_B_L39_CZ"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
