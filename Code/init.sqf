@@ -60,30 +60,6 @@ call compile preprocessFileLineNumbers "Scripts\Escape\AIskills.sqf";
 
 setTerrainGrid (Param_Grass);
 
-if (isServer) then {
-    a3e_var_Escape_hoursSkipped = 0;
-    
-    if (isMultiplayer) then {
-        private ["_hour"];
-        
-        if (Param_TimeOfDay == 24) then {
-            _hour = floor random 24;
-        }
-        else {
-            _hour = Param_TimeOfDay;
-        };
-        
-        a3e_var_Escape_hoursSkipped = _hour - (date select 3);
-        publicVariable "a3e_var_Escape_hoursSkipped";
-        setDate [date select 0, date select 1, date select 2, _hour, 0];
-    } else {
-		{
-			if (_x != p1) then {
-				deleteVehicle _x;
-			};
-		} foreach units group player;
-	};
-};
 
 //ACE Revive
 if ((isServer) && (isClass(configFile >> "CfgPatches" >> "ACE_Medical"))) then {

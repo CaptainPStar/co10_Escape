@@ -80,7 +80,12 @@ switch (Param_TimeOfDay) do {
 _date = date;
 _date set [3,_hour];
 _date set [4,0];
+
+a3e_var_Escape_hoursSkipped = _hour - (date select 3);
+publicVariable "a3e_var_Escape_hoursSkipped";
+		
 [_date] call bis_fnc_setDate;
+
 
 setTimeMultiplier Param_TimeMultiplier;
 call compile preprocessFileLineNumbers ("Island\CommunicationCenterMarkers.sqf");
