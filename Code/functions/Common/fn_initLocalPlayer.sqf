@@ -1,18 +1,22 @@
-diag_log format["initPlayerLocal (prewaituntil) run for %1 (%2)", name player, str _this];
+diag_log format["initClient run for %1 (%2)", name player, str _this];
 
-if(isDedicated) exitwith {};
+if(!hasInterface) exitwith {};
 
-waituntil{!isNull(player)};
-//Clientside Stuff
-//call compile preprocessFile "Revive\reviveInit.sqf";
 
+titleText ["Loading...", "BLACK",0.1];
+
+waituntil {!isnull player};
+
+call A3E_FNC_Briefing;
+
+[player] remoteExec ["a3e_fnc_initPlayer", 2, false];
 
 [] spawn {
 	disableSerialization;
 	waitUntil {!isNull(findDisplay 46)};
 	(findDisplay 46) displayAddEventHandler ["keyDown", "_this call a3e_fnc_KeyDown"];
 };
-titleText ["Loading...", "BLACK",0.1];
+
 
 AT_Revive_StaticRespawns = [];
 AT_Revive_enableRespawn = false;
@@ -91,7 +95,9 @@ if (Param_Magrepack == 1) then {
 	(findDisplay 46) displayAddEventHandler ["keyDown", "_this call a3e_fnc_KeyDown"];
 };
 player setvariable["A3E_PlayerInitializedLocal",true,true];
-waituntil{sleep 0.1;(!isNil("A3E_FenceIsCreated") && !isNil("A3E_StartPos") && (player getvariable["A3E_PlayerInitializedServer",false]))};
+
+
+waituntil{sleep 0.1;(player getvariable["A3E_PlayerInitializedServer",false])};
 
 diag_log format["Escape debug: %1 is now ready (clientside).", name player];
 
@@ -100,7 +106,7 @@ titleFadeOut 0.5;
 
 waituntil{sleep 0.5;!isNil("A3E_EscapeHasStarted")};
 
-player setCaptive false;
+//player setCaptive false;
 [] spawn {
 	waituntil{sleep 0.5;A3E_Task_Prison_Complete};
 	["Somewhere on", A3E_WorldName , str (date select 2) + "/" + str (date select 1) + "/" + str (date select 0) + " " + str (date select 3) + ":00"] spawn BIS_fnc_infoText;

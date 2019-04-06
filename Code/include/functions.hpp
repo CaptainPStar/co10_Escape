@@ -4,6 +4,11 @@ class CfgFunctions
   {
     class Common
     {
+		class BootstrapEscape {
+			preInit = 0; // 1 to call the function upon mission start, before objects are initialized. Passed arguments are ["preInit"]
+			postInit = 1; // 1 to call the function upon mission start, after objects are initialized. Passed arguments are ["postInit"]
+			recompile = 0;
+		};
 		class RandomMarkerPos {};
 		class GetSideColor {};
 		class RandomSpawnPos {};
@@ -25,7 +30,10 @@ class CfgFunctions
 		class GetRandomPlayer {};
 		class GetPlayerGroup {};
 		class Briefing {
-			postInit = 1;
+			//postInit = 1;
+		};
+		class InitLocalPlayer {
+			postInit = 0;
 		};
 		class cleanupTerrain {};
 		class handleRating {};
@@ -65,12 +73,13 @@ class CfgFunctions
 		};
 		class Server
 		{
-			class watchKnownPosition {};
 			class initServer {
                     preInit = 0; // 1 to call the function upon mission start, before objects are initialized. Passed arguments are ["preInit"]
-                    postInit = 1; // 1 to call the function upon mission start, after objects are initialized. Passed arguments are ["postInit"]
+                    postInit = 0; // 1 to call the function upon mission start, after objects are initialized. Passed arguments are ["postInit"]
                     recompile = 0; // 1 to recompile the function upon mission start
             };
+			class initPlayer {};
+			class watchKnownPosition {};
 			class parameterInit {}; 
             class createComCenters {};
             class createMotorPool {};
@@ -86,6 +95,7 @@ class CfgFunctions
 			class EndMissionServer {};
 			class SelectExtractionZone {};
 			class RoadBlocks {};
+			class MissionFlow {};
 		};
 		class Templates
 		{
