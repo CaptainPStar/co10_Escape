@@ -9,7 +9,6 @@ stages:
 compile:
   stage: build
   script: 
-  - export
   - "mkdir Build"
   - "mkdir Packed"
   - "cd Packed"
@@ -22,6 +21,8 @@ compile:
     paths:
     - Packed/Missions
     - Packed/Addons
+  variables:
+    CI_DEBUG_TRACE: "true"
 
 development:
   stage: deploy
