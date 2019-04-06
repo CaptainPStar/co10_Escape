@@ -9,6 +9,7 @@ stages:
 compile:
   stage: build
   script: 
+  - export
   - "mkdir Build"
   - "mkdir Packed"
   - "cd Packed"
