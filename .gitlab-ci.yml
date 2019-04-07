@@ -21,8 +21,16 @@ compile:
     paths:
     - Packed/Missions
     - Packed/Addons
+  except:
+    changes:
+      - ".gitlab-ci.yml"
+  only:
+    refs:
+      - staging
+      - merge_requests
+      
 
-development:
+staging:
   stage: deploy
   script: 
   - "echo Deploying development build..."
@@ -43,6 +51,9 @@ development:
     - Packed/Addons
   except:
     - tags
+  only:
+    refs:
+      - branches
   
 release:
   stage: deploy
