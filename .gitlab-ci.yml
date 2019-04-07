@@ -15,6 +15,8 @@ compile:
   - "mkdir Missions"
   - "cd .."
   - "python ./compile.py"
+  when: delayed
+  start_in: 1 minutes
   cache:
     key: "%CI_COMMIT_REF_SLUG%"
     policy: push
@@ -28,6 +30,7 @@ compile:
     refs:
       - staging
       - merge_requests
+      - tags
       
 
 staging:
@@ -50,10 +53,12 @@ staging:
     - Packed/Missions
     - Packed/Addons
   except:
-    - tags
+    changes:
+      - ".gitlab-ci.yml"
   only:
-    refs:
-      - branches
+    - staging
+    - merge_requests
+
   
 release:
   stage: deploy
@@ -74,6 +79,9 @@ release:
     paths:
     - Packed/Missions
     - Packed/Addons
+  except:
+    changes:
+      - ".gitlab-ci.yml"
   only:
     - tags
 
