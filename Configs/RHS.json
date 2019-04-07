@@ -7,7 +7,7 @@
 			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr","rhs_cti_insurgents"],
 			"replace" :
 				{
-					"MOD" : "RHS US vs RU",
+					"MOD" : "RHS US vs RU+CDF",
 					"PLAYERSIDE" : "WEST",
 					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
 					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_autorifleman",
@@ -207,7 +207,7 @@
 			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
-					"MOD" : "RHS RU vs US",
+					"MOD" : "RHS RU vs US+SAF",
 					"PLAYERSIDE" : "EAST",
 					"PLAYERUNIT_1" : "rhs_vdv_flora_sergeant",
 					"PLAYERUNIT_2" : "rhs_vdv_flora_junior_sergeant",
@@ -361,7 +361,7 @@
 			"mod" : "RHS mf",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
-		},	
+		},
 		{
 			"island" : "Dingor",
 			"sqm": "Dingor",
@@ -573,8 +573,22 @@
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
 		{
+			"island" : "Rosche",
+			"sqm": "Rosche",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
 			"island" : "Kastellorizo",
 			"sqm": "Kastellorizo",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Kerama",
+			"sqm": "Kerama",
 			"mod" : "RHS w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
@@ -583,6 +597,20 @@
 			"island" : "Valtatie 5",
 			"sqm": "VT5",
 			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Ruha",
+			"sqm": "Ruha",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "RHS mf",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
@@ -659,6 +687,27 @@
 		{
 			"island" : "Abramia",
 			"sqm": "Abramia",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Sahrani",
+			"sqm": "Sara",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "United Sahrani",
+			"sqm": "Sara_dbe1",
 			"mod" : "RHS-US w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_RU_vs_US"
@@ -748,6 +797,13 @@
 			"name" : "co10_Escape_RHS_RU_vs_US"
 		},
 		{
+			"island" : "Rosche",
+			"sqm": "Rosche",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
 			"island" : "Diyala",
 			"sqm": "DYA",
 			"mod" : "RHS mf",
@@ -769,8 +825,71 @@
 			"name" : "co10_Escape_RHS_RU_vs_US"
 		},
 		{
+			"island" : "Kerama",
+			"sqm": "Kerama",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
 			"island" : "Valtatie 5",
 			"sqm": "VT5",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Ruha",
+			"sqm": "Ruha",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Southeast Angola",
+			"sqm": "seangola",
+			"mod" : "RHS mf",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Southeast Angola",
+			"sqm": "seangola",
+			"mod" : "RHS-US d",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Yellowstone",
+			"sqm": "yellowstone",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Yellowstone",
+			"sqm": "yellowstone",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
 			"mod" : "RHS-US w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_RU_vs_US"

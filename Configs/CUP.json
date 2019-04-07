@@ -140,6 +140,26 @@
 					"PLAYERUNIT_9" : "CUP_O_RU_Soldier",
 					"PLAYERUNIT_10" : "CUP_O_RU_Medic"
 				}
+		},
+		{
+			"name" : "CUP-CDF Winter",
+			"path" : "./Mods/CUP-CDF winter/",
+			"require" : ["CUP_Creatures_Military_BAF","CUP_Creatures_Military_PMC","CUP_Creatures_Military_Russia"],
+			"replace" :
+				{
+					"MOD" : "CUP RU vs CDF",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "CUP_O_RU_Officer",
+					"PLAYERUNIT_2" : "CUP_O_RU_Soldier_GL",
+					"PLAYERUNIT_3" : "CUP_O_RU_Soldier_Marksman",
+					"PLAYERUNIT_4" : "CUP_O_RU_Engineer",
+					"PLAYERUNIT_5" : "CUP_O_RU_Soldier_AA",
+					"PLAYERUNIT_6" : "CUP_O_RU_Soldier_AR",
+					"PLAYERUNIT_7" : "CUP_O_RU_Soldier_AT",
+					"PLAYERUNIT_8" : "CUP_O_RU_Soldier_MG",
+					"PLAYERUNIT_9" : "CUP_O_RU_Soldier",
+					"PLAYERUNIT_10" : "CUP_O_RU_Medic"
+				}
 		}
 	],
 	"Islands": [],
@@ -292,6 +312,13 @@
 			"name" : "co10_Escape_CUP_USMC_vs_RU"
 		},
 		{
+			"island" : "Chernarus_Winter",
+			"sqm": "Chernarus_Winter",
+			"mod" : "CUP-CDF Winter",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_CDF"
+		},
+		{
 			"island" : "Podagorsk",
 			"sqm": "FDF_Isle1_a",
 			"mod" : "CUP-US USMC",
@@ -733,6 +760,13 @@
 			"name" : "co10_Escape_CUP_USMC_vs_RU"
 		},
 		{
+			"island" : "Rosche",
+			"sqm": "Rosche",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_vs_RU"
+		},
+		{
 			"island" : "Schwemlitz",
 			"sqm": "Schwemlitz",
 			"mod" : "CUP-US USMC",
@@ -740,8 +774,22 @@
 			"name" : "co10_Escape_CUP_SLA_vs_USMC"
 		},
 		{
+			"island" : "Rosche",
+			"sqm": "Rosche",
+			"mod" : "CUP-US USMC",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_USMC"
+		},
+		{
 			"island" : "Schwemlitz",
 			"sqm": "Schwemlitz",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Rosche",
+			"sqm": "Rosche",
 			"mod" : "CUP-BAF w",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_RU_vs_BAF"
@@ -845,11 +893,25 @@
 			"name" : "co10_Escape_CUP_USMC_vs_SLA"
 		},
 		{
+			"island" : "Sahrani",
+			"sqm": "Sara",
+			"mod" : "CUP-US USMC",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_USMC"
+		},
+		{
 			"island" : "United Sahrani",
 			"sqm": "Sara_dbe1",
 			"mod" : "CUP SLA",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_USMC_vs_SLA"
+		},
+		{
+			"island" : "United Sahrani",
+			"sqm": "Sara_dbe1",
+			"mod" : "CUP-US USMC",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_USMC"
 		},
 		{
 			"island" : "Diyala",
@@ -894,6 +956,27 @@
 			"name" : "co10_Escape_CUP_USMC_vs_RU"
 		},
 		{
+			"island" : "Kerama",
+			"sqm": "Kerama",
+			"mod" : "CUP-US USMC",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_USMC"
+		},
+		{
+			"island" : "Kerama",
+			"sqm": "Kerama",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Kerama",
+			"sqm": "Kerama",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_vs_RU"
+		},
+		{
 			"island" : "Valtatie 5",
 			"sqm": "VT5",
 			"mod" : "CUP-US USMC",
@@ -913,12 +996,138 @@
 			"mod" : "CUP RU",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_USMC_vs_RU"
+		},
+		{
+			"island" : "Ruha",
+			"sqm": "Ruha",
+			"mod" : "CUP-US USMC",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_USMC"
+		},
+		{
+			"island" : "Ruha",
+			"sqm": "Ruha",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Ruha",
+			"sqm": "Ruha",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_vs_RU"
+		},
+		{
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "CUP-US USMC",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_USMC"
+		},
+		{
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_vs_RU"
+		},
+		{
+			"island" : "Porto",
+			"sqm": "Porto",
+			"mod" : "CUP Taki",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Ger_vs_Taki"
+		},
+		{
+			"island" : "Porto",
+			"sqm": "Porto",
+			"mod" : "CUP-US Army d",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_ARMY"
+		},
+		{
+			"island" : "Porto",
+			"sqm": "Porto",
+			"mod" : "CUP-BAF d",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Southeast Angola",
+			"sqm": "seangola",
+			"mod" : "CUP-US Army d",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_ARMY"
+		},
+		{
+			"island" : "Southeast Angola",
+			"sqm": "seangola",
+			"mod" : "CUP-BAF d",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Southeast Angola",
+			"sqm": "seangola",
+			"mod" : "CUP Taki",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Ger_vs_Taki"
+		},
+		{
+			"island" : "Yellowstone",
+			"sqm": "yellowstone",
+			"mod" : "CUP-US USMC",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_USMC"
+		},
+		{
+			"island" : "Yellowstone",
+			"sqm": "yellowstone",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Yellowstone",
+			"sqm": "yellowstone",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_vs_RU"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
+			"mod" : "CUP-US USMC",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_USMC"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
+			"mod" : "CUP-BAF w",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
+			"mod" : "CUP RU",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_USMC_vs_RU"
 		}
 	],
 	"Addons" : [
 		{
 			"name" : "CUP",
-			"mods" : ["CUP SLA","CUP-US Army d","CUP-BAF d","CUP-BAF w","CUP RU","CUP Taki","CUP-US USMC"]
+			"mods" : ["CUP SLA","CUP-US Army d","CUP-BAF d","CUP-BAF w","CUP RU","CUP Taki","CUP-US USMC","CUP-CDF Winter"]
 		}
 	]
 	

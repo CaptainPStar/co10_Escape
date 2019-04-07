@@ -9,11 +9,12 @@
 		"./Configs/RHS.json",
 		"./Configs/CUP.json",
 		"./Configs/IFA3.json",
-		"./Configs/Massi.json"
+		"./Configs/Massi.json",
+		"./Configs/UNS.json"
 	],
 	"replace" :
 		{
-			"VERSION" : "1.9",
+			"VERSION" : "1.10",
 			"MISSION" : "Escape",
 			"MISSION_FULL": "co10 Escape",
 			"PLAYER_INIT" : "this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};"
@@ -169,6 +170,16 @@
 			"replace" :
 				{
 				"ISLAND" : "Chernarus_Summer",
+				"ISLANDNAME" : "Chernarus"
+				}
+		},
+		{
+			"name" : "Chernarus_Winter",
+			"class" : "Chernarus_Winter",
+			"path" : "./Islands/Chernarus_Winter/",
+			"replace" :
+				{
+				"ISLAND" : "Chernarus_Winter",
 				"ISLANDNAME" : "Chernarus"
 				}
 		},
@@ -464,6 +475,16 @@
 				}
 		},
 		{
+			"name" : "Rosche",
+			"class" : "WL_Rosche",
+			"path" : "./Islands/Rosche/",
+			"replace" :
+				{
+				"ISLAND" : "Rosche",
+				"ISLANDNAME" : "Rosche"
+				}
+		},
+		{
 			"name" : "Diyala",
 			"class" : "DYA",
 			"path" : "./Islands/DYA/",
@@ -484,6 +505,16 @@
 				}
 		},
 		{
+			"name" : "Kerama",
+			"class" : "Kerama",
+			"path" : "./Islands/Kerama/",
+			"replace" :
+				{
+				"ISLAND" : "Kerama",
+				"ISLANDNAME" : "Kerama"
+				}
+		},
+		{
 			"name" : "Valtatie 5",
 			"class" : "VT5",
 			"path" : "./Islands/VT5/",
@@ -491,6 +522,56 @@
 				{
 				"ISLAND" : "Valtatie 5",
 				"ISLANDNAME" : "Valtatie 5"
+				}
+		},
+		{
+			"name" : "Ruha",
+			"class" : "Ruha",
+			"path" : "./Islands/Ruha/",
+			"replace" :
+				{
+				"ISLAND" : "Ruha",
+				"ISLANDNAME" : "Ruha"
+				}
+		},
+		{
+			"name" : "Prei Khmaoch Luong",
+			"class" : "prei_khmaoch_luong",
+			"path" : "./Islands/prei_khmaoch_luong/",
+			"replace" :
+				{
+				"ISLAND" : "Prei Khmaoch Luong",
+				"ISLANDNAME" : "Prei Khmaoch Luong"
+				}
+		},
+		{
+			"name" : "Southeast Angola",
+			"class" : "seangola",
+			"path" : "./Islands/seangola/",
+			"replace" :
+				{
+				"ISLAND" : "Southeast Angola",
+				"ISLANDNAME" : "Southeast Angola"
+				}
+		},
+		{
+			"name" : "Yellowstone",
+			"class" : "pabst_yellowstone",
+			"path" : "./Islands/yellowstone/",
+			"replace" :
+				{
+				"ISLAND" : "Yellowstone",
+				"ISLANDNAME" : "Yellowstone"
+				}
+		},
+		{
+			"name" : "Tembelan",
+			"class" : "Tembelan",
+			"path" : "./Islands/Tembelan/",
+			"replace" :
+				{
+				"ISLAND" : "Tembelan",
+				"ISLANDNAME" : "Tembelan"
 				}
 		}
 	],
@@ -769,6 +850,13 @@
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
 		{
+			"island" : "Rosche",
+			"sqm": "Rosche",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
 			"island" : "Diyala",
 			"sqm": "DYA",
 			"mod" : "Vanilla",
@@ -783,8 +871,57 @@
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
 		{
+			"island" : "Kerama",
+			"sqm": "Kerama",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
 			"island" : "Valtatie 5",
 			"sqm": "VT5",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Ruha",
+			"sqm": "Ruha",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Southeast Angola",
+			"sqm": "seangola",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Yellowstone",
+			"sqm": "yellowstone",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
@@ -1035,6 +1172,13 @@
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
 		},
 		{
+			"island" : "Rosche",
+			"sqm": "Rosche",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
 			"island" : "Diyala",
 			"sqm": "DYA",
 			"mod" : "Vanilla US",
@@ -1049,8 +1193,50 @@
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
 		},
 		{
+			"island" : "Kerama",
+			"sqm": "Kerama",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
 			"island" : "Valtatie 5",
 			"sqm": "VT5",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Ruha",
+			"sqm": "Ruha",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Southeast Angola",
+			"sqm": "seangola",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Yellowstone",
+			"sqm": "yellowstone",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
 			"mod" : "Vanilla US",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"

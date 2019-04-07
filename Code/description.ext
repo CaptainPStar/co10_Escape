@@ -22,6 +22,7 @@ EscapeIsland = ISLAND;
 EscapeMod = MOD;
 EscapeVersion = VERSION;
 EscapeRelease = RELEASE;
+cba_settings_hasSettingsFile = 1;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 Respawn = "INSTANT";
@@ -99,7 +100,8 @@ class CfgRemoteExec
        // List of script commands allowed to be sent from client via remoteExec
        class Commands
        {
-              class moveInAny { allowedTargets=0; jip=0; } // can target anyone, sending jip is turned off (overrides settings in the Commands class)
+              class moveInAny { allowedTargets=0; jip=0; }; // can target anyone, sending jip is turned off (overrides settings in the Commands class)
+			  class a3e_fnc_initPlayer { allowedTargets=2; jip=0; };
 	};
 };
 
@@ -210,5 +212,5 @@ class CfgLeaflets
 		text = "Please come back!!"; // Text shown when previewing the leaflet full-screen. Ideally should be localized, so even player who cannot read the image can get the information
 		texture = "leaflet.paa"; // Leaflet texture shown when previewing the leaflet full-screen
 		//model = "myLeaflet.p3d"; // In-flight model. Generic white leaflet is used when not defined.
-	}
+	};
 };

@@ -5,8 +5,14 @@ if(isNil("a3e_var_commonLibInitialized")) then {
 	call compile preprocessFileLineNumbers "Scripts\DRN\CommonLib\CommonLib.sqf";
 };
 
+call compile preprocessFileLineNumbers "config.sqf";
+call compile preprocessFileLineNumbers ("Island\WorldConfig.sqf");
+
 //Parse the parameters
 call a3e_fnc_parameterInit;
+
+call compile preprocessFileLineNumbers "Scripts\Escape\Functions.sqf";
+call compile preprocessFileLineNumbers "Scripts\Escape\AIskills.sqf";
 
 if(!isNil("Param_Debug")) then {
 	if((Param_Debug)==0) then {
@@ -80,7 +86,12 @@ switch (Param_TimeOfDay) do {
 _date = date;
 _date set [3,_hour];
 _date set [4,0];
+
+a3e_var_Escape_hoursSkipped = _hour - (date select 3);
+publicVariable "a3e_var_Escape_hoursSkipped";
+		
 [_date] call bis_fnc_setDate;
+
 
 setTimeMultiplier Param_TimeMultiplier;
 call compile preprocessFileLineNumbers ("Island\CommunicationCenterMarkers.sqf");

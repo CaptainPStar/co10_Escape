@@ -1,51 +1,14 @@
 //General mission flow triggerActivated
 
-if(isServer) then {
-	//Win mission server
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [3, 3, 3, true];
-	_trigger setTriggerStatements["a3e_var_Escape_MissionComplete && !a3e_var_Escape_SearchLeader_civilianReporting && !a3e_var_Escape_AllPlayersDead", """end2"" call A3E_fnc_endMissionServer;", ""];
-	
-	
-	//Mission win (but failed by killing civilians)
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [3, 3, 3, true];
-	_trigger setTriggerStatements["a3e_var_Escape_MissionComplete && a3e_var_Escape_SearchLeader_civilianReporting && !a3e_var_Escape_AllPlayersDead", """end4"" call A3E_fnc_endMissionServer;", ""];
-	
-	//Mission failed by MIA
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [3, 3, 3, true];
-	_trigger setTriggerStatements["a3e_var_Escape_MissionFailed_LeftBehind && !a3e_var_Escape_AllPlayersDead", """end3"" call A3E_fnc_endMissionServer;", ""];
-
-	//Mission failed
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [2, 2, 2, true];
-	_trigger setTriggerStatements["a3e_var_Escape_AllPlayersDead", """end1"" call A3E_fnc_endMissionServer;", ""];
-	
-};
-	//waituntil{sleep 0.1;!isNil("A3E_PrisonLoudspeakerObject")};
-	_trigger = createTrigger["EmptyDetector", [0,0,0]];
-	_trigger setTriggerArea[25, 25, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", true];
-	_trigger setTriggerStatements["A3E_SoundPrisonAlarm", "thisTrigger setposASL ((getposASL A3E_PrisonLoudspeakerObject) vectorAdd [0,0,4]);", ""];
-	_trigger setSoundEffect ["$NONE$", "", "", "AlarmSfx"];
+//waituntil{sleep 0.1;!isNil("A3E_PrisonLoudspeakerObject")};
+_trigger = createTrigger["EmptyDetector", [0,0,0]];
+_trigger setTriggerArea[25, 25, 0, false];
+_trigger setTriggerActivation["NONE", "PRESENT", true];
+_trigger setTriggerStatements["A3E_SoundPrisonAlarm", "thisTrigger setposASL ((getposASL A3E_PrisonLoudspeakerObject) vectorAdd [0,0,4]);", ""];
+_trigger setSoundEffect ["$NONE$", "", "", "AlarmSfx"];
 	
 	//All players are unconscious
-if(isserver) then {
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [0, 0, 0, false];
-	_trigger setTriggerStatements["isMultiplayer && A3E_EscapeHasStarted && ({!(_x getVariable [""AT_Revive_isUnconscious"",false])} count ([] call BIS_fnc_listPlayers) == 0)", "a3e_var_Escape_AllPlayersDead = true;publicVariable ""a3e_var_Escape_AllPlayersDead"";[] spawn A3E_FNC_FailTasks;", ""];
-};
+
 //Exit HSC cam because missions is ending
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
 _trigger setTriggerArea[0, 0, 0, false];
@@ -75,25 +38,18 @@ if(isNil("A3E_Task_Prison_Failed")) then {
 	A3E_Task_Prison_Failed = false;
 };
 
-	_trigger = createTrigger["EmptyDetector", [0,0,0]];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [1, 1, 1, false];
-	_trigger setTriggerStatements["A3E_Task_Prison_Complete", "A3E_Task_Prison setTaskState ""Succeeded"";", ""];
-		
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [1, 1, 1, false];
-	_trigger setTriggerStatements["A3E_Task_Prison_Failed", "A3E_Task_Prison setTaskState ""Failed"";", ""];
+_trigger = createTrigger["EmptyDetector", [0,0,0]];
+_trigger setTriggerArea[0, 0, 0, false];
+_trigger setTriggerActivation["NONE", "PRESENT", false];
+_trigger setTriggerTimeout [1, 1, 1, false];
+_trigger setTriggerStatements["A3E_Task_Prison_Complete", "A3E_Task_Prison setTaskState ""Succeeded"";", ""];
+	
+_trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerArea[0, 0, 0, false];
+_trigger setTriggerActivation["NONE", "PRESENT", false];
+_trigger setTriggerTimeout [1, 1, 1, false];
+_trigger setTriggerStatements["A3E_Task_Prison_Failed", "A3E_Task_Prison setTaskState ""Failed"";", ""];
 
-if(isserver) then {
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [0, 0, 0, false];
-	_trigger setTriggerStatements["A3E_EscapeHasStarted && ({(_x distance A3E_StartPos) > 50} count (call BIS_fnc_listPlayers))>0", "A3E_Task_Prison_Complete = true;publicVariable ""A3E_Task_Prison_Complete"";", ""];
-};
 
 // Task find Map
 A3E_Task_Map= player createSimpleTask ["Find a map"];
@@ -112,24 +68,17 @@ if(isNil("A3E_Task_Map_Failed")) then {
 	A3E_Task_Map_Failed = false;
 };
 
-if(isserver) then {
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [0, 0, 0, false];
-	_trigger setTriggerStatements["A3E_EscapeHasStarted && ({""ItemMap"" in (assignedItems _x)} count playableunits)>0", "A3E_Task_Map_Complete = true; publicvariable ""A3E_Task_Map_Complete"";", ""];
-};
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [1, 1, 1, false];
-	_trigger setTriggerStatements["A3E_Task_Map_Complete", "A3E_Task_Map setTaskState ""Succeeded"";", ""];
-		
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [1, 1, 1, false];
-	_trigger setTriggerStatements["A3E_Task_Map_Failed", "A3E_Task_Map setTaskState ""Failed"";", ""];
+_trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerArea[0, 0, 0, false];
+_trigger setTriggerActivation["NONE", "PRESENT", false];
+_trigger setTriggerTimeout [1, 1, 1, false];
+_trigger setTriggerStatements["A3E_Task_Map_Complete", "A3E_Task_Map setTaskState ""Succeeded"";", ""];
+	
+_trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerArea[0, 0, 0, false];
+_trigger setTriggerActivation["NONE", "PRESENT", false];
+_trigger setTriggerTimeout [1, 1, 1, false];
+_trigger setTriggerStatements["A3E_Task_Map_Failed", "A3E_Task_Map setTaskState ""Failed"";", ""];
 
 
 

@@ -1,23 +1,27 @@
-﻿import json
+import json
 import os
 import shutil
 import subprocess
+print("Loading config...") 
 with open('Configs/config.json') as json_data_file:
     data = json.load(json_data_file)
 mods = data['Mods'];
-islands = data['Islands'];
-missions = data['Missions'];
+islands = data['Islands']
+missions = data['Missions']
 addons = data['Addons']
 for scfg in data['Subconfigs']:
-    with open(scfg) as json_adata:
+    print("Parsing config "+scfg)    
+    with open(scfg) as json_adata:  
         adata = json.load(json_adata)  
         mods = mods + adata['Mods'];
         islands = islands + adata['Islands'];
         missions = missions + adata['Missions'];
         addons = addons + adata['Addons']
 #Add devbuild number to version
-data['replace']['VERSION'] += ' dev'+os.environ['CI_JOB_ID']
+if os.environ['CI_COMMIT_REF_NAME'] == "develop":
+    data['replace']['VERSION'] += ' dev'+os.environ['CI_PIPELINE_ID']
 data['replace']['RELEASE'] = 'Mission'
+data['replace']['COMMIT'] = os.environ['CI_COMMIT_SHORT_SHA']
 cpbo = data['cpbo'];
 for the_file in os.listdir(data['BuildDir']):
     file_path = os.path.join(data['BuildDir'], the_file)

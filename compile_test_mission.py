@@ -60,3 +60,4 @@ for mission in missions:
                     f.flush()
                     f.close()
     subprocess.call([cpbo, "-p", missiondir])
+    shutil.copy2(missiondir+".pbo", "C:/ArmA3/MPMissions")

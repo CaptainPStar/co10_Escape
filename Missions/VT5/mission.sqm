@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=142;
+		nextID=150;
 	};
 	class MarkerIDProvider
 	{
-		nextID=84;
+		nextID=92;
 	};
 	class Camera
 	{
-		pos[]={3172.9883,12.424271,2277.6831};
-		dir[]={0.63570172,-0.10516573,0.76483899};
-		up[]={0.067249633,0.99444944,0.080911733};
-		aside[]={0.76910329,-2.165325e-008,-0.63924831};
+		pos[]={220.21042,83.219727,346.62787};
+		dir[]={-0.044156972,-0.3537859,0.93430555};
+		up[]={-0.016702548,0.93532288,0.3533963};
+		aside[]={0.99890614,-2.507295e-007,0.047212262};
 	};
 };
 binarizationWanted=0;
@@ -116,7 +116,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=62;
+		items=70;
 		class Item0
 		{
 			dataType="Marker";
@@ -155,11 +155,10 @@ class Mission
 		class Item4
 		{
 			dataType="Marker";
-			position[]={338.92889,8.4125977,368.69556};
+			position[]={369.62115,21.686245,413.36829};
 			name="drn_dropChopperStartPosMarker";
 			type="Empty";
 			id=62;
-			atlOffset=-11.291935;
 		};
 		class Item5
 		{
@@ -190,7 +189,7 @@ class Mission
 			name="A3E_ExtractionSpawnPos8";
 			type="Empty";
 			colorName="ColorPink";
-			angle=151.14195;
+			angle=151.14192;
 			id=69;
 		};
 		class Item8
@@ -211,7 +210,7 @@ class Mission
 			name="A3E_ExtractionSpawnPos7";
 			type="Empty";
 			colorName="ColorPink";
-			angle=135.45996;
+			angle=135.45993;
 			id=71;
 			atlOffset=62.931755;
 		};
@@ -287,7 +286,7 @@ class Mission
 			name="A3E_ExtractionSpawnPos5";
 			type="Empty";
 			colorName="ColorPink";
-			angle=278.6459;
+			angle=278.64584;
 			id=78;
 			atlOffset=7.0221176;
 		};
@@ -298,7 +297,7 @@ class Mission
 			name="A3E_ExtractionPos4";
 			type="Empty";
 			colorName="ColorPink";
-			angle=193.77995;
+			angle=193.77991;
 			id=79;
 			atlOffset=-0.00023651123;
 		};
@@ -362,7 +361,7 @@ class Mission
 			name="A3E_ExtractionPos2_1";
 			type="Empty";
 			colorName="ColorPink";
-			angle=357.54089;
+			angle=357.54086;
 			id=85;
 			atlOffset=-3.2170029;
 		};
@@ -383,7 +382,7 @@ class Mission
 			name="A3E_ExtractionSpawnPos2";
 			type="Empty";
 			colorName="ColorPink";
-			angle=107.71698;
+			angle=107.71694;
 			id=87;
 		};
 		class Item26
@@ -413,7 +412,7 @@ class Mission
 			name="A3E_ExtractionSpawnPos1";
 			type="Empty";
 			colorName="ColorPink";
-			angle=296.77692;
+			angle=296.77682;
 			id=90;
 			atlOffset=-0.82896423;
 		};
@@ -616,6 +615,7 @@ class Mission
 					};
 					id=109;
 					type="{* PLAYERUNIT_5 *}";
+					atlOffset=-9.5367432e-007;
 				};
 				class Item5
 				{
@@ -1043,9 +1043,89 @@ class Mission
 			name="A3E_ExtractionSpawnPos9";
 			type="Empty";
 			colorName="ColorPink";
-			angle=151.14195;
+			angle=151.14192;
 			id=141;
 			atlOffset=42.714924;
+		};
+		class Item62
+		{
+			dataType="Marker";
+			position[]={1579.5179,24.528999,11.976};
+			name="TrafficMarker_South";
+			type="Empty";
+			colorName="ColorCIV";
+			id=142;
+			atlOffset=-0.00029563904;
+		};
+		class Item63
+		{
+			dataType="Marker";
+			position[]={5980.0298,29.146,5326.166};
+			name="TrafficMarker_NorthEast";
+			type="Empty";
+			colorName="ColorCIV";
+			id=143;
+			atlOffset=0.00035667419;
+		};
+		class Item64
+		{
+			dataType="Marker";
+			position[]={2630.5969,26.924999,5982.084};
+			name="TrafficMarker_North";
+			type="Empty";
+			colorName="ColorCIV";
+			id=144;
+			atlOffset=0.00012588501;
+		};
+		class Item65
+		{
+			dataType="Marker";
+			position[]={537.68903,27.521,5990.603};
+			name="TrafficMarker_NorthWest";
+			type="Empty";
+			colorName="ColorCIV";
+			id=145;
+			atlOffset=0.0002746582;
+		};
+		class Item66
+		{
+			dataType="Marker";
+			position[]={38.43,14.989,3328.082};
+			name="TrafficMarker_West";
+			type="Empty";
+			colorName="ColorCIV";
+			id=146;
+			atlOffset=-2.0027161e-005;
+		};
+		class Item67
+		{
+			dataType="Marker";
+			position[]={5984.8149,14.115,2114.2839};
+			name="TrafficMarker_East";
+			type="Empty";
+			colorName="ColorCIV";
+			id=147;
+			atlOffset=0.0001411438;
+		};
+		class Item68
+		{
+			dataType="Marker";
+			position[]={3698.085,3.875,587.08502};
+			name="TrafficMarker_SouthEast";
+			type="Empty";
+			colorName="ColorCIV";
+			id=148;
+			atlOffset=-6.9618225e-005;
+		};
+		class Item69
+		{
+			dataType="Marker";
+			position[]={6.1950002,25.424,1228.91};
+			name="TrafficMarker_SouthWest";
+			type="Empty";
+			colorName="ColorCIV";
+			id=149;
+			atlOffset=0.0004940033;
 		};
 	};
 };

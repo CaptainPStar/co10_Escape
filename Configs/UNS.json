@@ -1,0 +1,81 @@
+{
+	"ParsedFiles" : [],
+	"Mods" : [
+		{
+			"name" : "UNS",
+			"path" : "./Mods/UNS/",
+			"require" : ["uns_men_US_SEAL","uns_men_USAF","uns_men_NVA_crew","uns_boats_c","uns_men_NVA_65","uns_btr_c","uns_Type63_c","uns_men_VC_regional"],
+			"replace" :
+				{
+					"MOD" : "UNS US vs NVA",
+					"PLAYERSIDE" : "WEST",
+					"PLAYERUNIT_1" : "uns_men_US_SEAL_TL",
+					"PLAYERUNIT_2" : "uns_men_US_SEAL_RTO",
+					"PLAYERUNIT_3" : "uns_men_US_SEAL_LMG",
+					"PLAYERUNIT_4" : "uns_men_US_SEAL_DEM",
+					"PLAYERUNIT_5" : "uns_men_US_SEAL_GL",
+					"PLAYERUNIT_6" : "uns_men_US_SEAL_AS2",
+					"PLAYERUNIT_7" : "uns_men_US_SEAL_AT",
+					"PLAYERUNIT_8" : "uns_men_US_SEAL_INT",
+					"PLAYERUNIT_9" : "uns_men_US_SEAL_MRK3",
+					"PLAYERUNIT_10" : "uns_men_US_SEAL_MED"
+				}
+		}
+	],
+	"Islands": [
+		{
+			"name" : "Da Krong",
+			"class" : "DaKrong",
+			"path" : "./Islands/DaKrong/",
+			"replace" :
+				{
+				"ISLAND" : "Da Krong",
+				"ISLANDNAME" : "Da Krong"
+				}
+		}
+	],
+	"Missions" : [
+		{
+			"island" : "Tanoa",
+			"sqm": "Tanoa",
+			"mod" : "UNS",
+			"replace" : {},
+			"name" : "co10_Escape_UNS_US_vs_NVA"
+		},
+		{
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "UNS",
+			"replace" : {},
+			"name" : "co10_Escape_UNS_US_vs_NVA"
+		},
+		{
+			"island" : "Porto",
+			"sqm": "Porto",
+			"mod" : "UNS",
+			"replace" : {},
+			"name" : "co10_Escape_UNS_US_vs_NVA"
+		},
+		{
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "UNS",
+			"replace" : {},
+			"name" : "co10_Escape_UNS_US_vs_NVA"
+		},
+		{
+			"island" : "Da Krong",
+			"sqm": "DaKrong",
+			"mod" : "UNS",
+			"replace" : {},
+			"name" : "co10_Escape_UNS_US_vs_NVA"
+		}
+	],
+	"Addons" : [
+		{
+			"name" : "Unsung",
+			"mods" : ["UNS"]
+		}
+	]
+	
+}

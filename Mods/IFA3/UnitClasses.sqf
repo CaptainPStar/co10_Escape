@@ -34,16 +34,16 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 a3e_arr_PrisonBackpackWeapons = [];
 a3e_arr_PrisonBackpackWeapons pushback ["LIB_Colt_M1911","LIB_7Rnd_45ACP"];
 a3e_arr_PrisonBackpackWeapons pushback ["LIB_M1895","LIB_7Rnd_762x38"];
+a3e_arr_PrisonBackpackWeapons pushback ["LIB_M1896","LIB_10Rnd_9x19_M1896"];
 a3e_arr_PrisonBackpackWeapons pushback ["LIB_P08","LIB_8Rnd_9x19_P08"];
 a3e_arr_PrisonBackpackWeapons pushback ["LIB_P38","LIB_8Rnd_9x19"];
 a3e_arr_PrisonBackpackWeapons pushback ["LIB_TT33","LIB_8Rnd_762x25"];
+a3e_arr_PrisonBackpackWeapons pushback ["LIB_WaltherPPK","LIB_7Rnd_9x19"];
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	"LIB_GazM1"
-	,"LIB_CIV_FFI_CitC4"
-	,"LIB_CIV_FFI_CitC4_2"
-	,"LIB_CIV_FFI_CitC4_3"];
+	,"LIB_GazM1_dirty"];
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -298,9 +298,7 @@ a3e_arr_ComCenParkedVehicles = [
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
 	"LIB_GazM1"
-	,"LIB_CIV_FFI_CitC4"
-	,"LIB_CIV_FFI_CitC4_2"
-	,"LIB_CIV_FFI_CitC4_3"];
+	,"LIB_GazM1_dirty"];
 
 // Vehicles, weapons and ammo at ammo depots
 
@@ -454,7 +452,7 @@ a3e_arr_CivilianCarWeapons pushback ["LIB_M1_Carbine", ["LIB_15Rnd_762x33"], 6];
 a3e_arr_CivilianCarWeapons pushback ["LIB_M1903A3_Springfield", ["LIB_5Rnd_762x63"], 6];
 a3e_arr_CivilianCarWeapons pushback ["LIB_M1903A4_Springfield", ["LIB_5Rnd_762x63"], 6];
 a3e_arr_CivilianCarWeapons pushback ["LIB_M1A1_Thompson", ["LIB_30Rnd_45ACP"], 6];
-a3e_arr_CivilianCarWeapons pushback ["LIB_M1_Carbine", ["LEN_10Rnd_303"], 6];
+a3e_arr_CivilianCarWeapons pushback ["LIB_DELISLE", ["LIB_7Rnd_45ACP"], 6];
 
 
 // Here is a list of scopes:
@@ -476,6 +474,15 @@ a3e_arr_extraction_chopper = [
 	"B_Heli_Transport_01_F"];
 a3e_arr_extraction_chopper_escort = [
 	"LIB_P47"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"LIB_LCM3_Armed"];
+a3e_arr_extraction_boat_escort = [
+	"LIB_LCM3_Armed"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -541,7 +548,7 @@ a3e_arr_roadblocks_Veh_GUE = a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
 // boats that are spawned
 //////////////////////////////////////////////////////////////////
 a3e_arr_AquaticPatrols = [
-	"LIB_LCVP_w"];
+	"LIB_LCVP"];
 
 //////////////////////////////////////////////////////////////////
 // fn_AmmoDepot
