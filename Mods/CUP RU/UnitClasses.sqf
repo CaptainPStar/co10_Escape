@@ -16,9 +16,9 @@ A3E_VAR_Side_Ind = resistance;
 A3E_VAR_Flag_Opfor = "\ca\misc\data\sever_vlajka.paa";
 A3E_VAR_Flag_Ind = "\ca\misc\data\jih_vlajka.paa";
 
-A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
-A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
-A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
+A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor]; // CUP USMC
+A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor]; // CUP RU
+A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind]; // CUP NAPA
 
 // Random array. Start position guard types around the prison.
 a3e_arr_Escape_StartPositionGuardTypes = [
@@ -553,7 +553,7 @@ a3e_arr_AmmoDepotItems pushback ["CUP_bipod_Harris_1A2_L", 10, 1, 2];
 // Index 2: Number of magazines.
 a3e_arr_CivilianCarWeapons = [];
 a3e_arr_CivilianCarWeapons pushback ["CUP_hgun_TaurusTracker455_gold", "CUP_6Rnd_45ACP_M", 5];
-a3e_arr_CivilianCarWeapons pushback ["CUP_arifle_AKS_Gold", "CUP_30Rnd_545x39_AK_M", 5];
+a3e_arr_CivilianCarWeapons pushback ["CUP_arifle_AKS_Gold", "CUP_30Rnd_762x39_AK47_M", 5];
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_AA12", "CUP_20Rnd_B_AA12_Pellets", 9];
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_AA12", "CUP_20Rnd_B_AA12_74Slug", 9];
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_AA12", "CUP_20Rnd_B_AA12_HE", 9];
@@ -638,7 +638,6 @@ a3e_arr_extraction_chopper = [
 	"CUP_B_MH6J_USA"
 	,"CUP_B_MH60S_FFV_USMC"
 	,"CUP_B_CH47F_USA"
-	,"CUP_B_CH47F_VIV_USA"
 	,"CUP_B_UH60M_FFV_US"
 	,"CUP_B_UH60M_Unarmed_FFV_US"
 	,"CUP_B_UH60M_Unarmed_FFV_MEV_US"
