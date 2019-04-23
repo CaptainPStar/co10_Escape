@@ -232,6 +232,7 @@ while {true} do {
                     //_chopper = "O_Heli_Light_02_F" createVehicle getMarkerPos "drn_russianSearchChopperStartPosMarker";
                     _chopper = createVehicle [_helitype, (getMarkerPos "drn_russianSearchChopperStartPosMarker"), [], 0, "FLY"];
                     _chopper lock false;
+					[_chopper] call a3e_fnc_onVehicleSpawn;
                     _chopper setVehicleVarName "drn_russianSearchChopper";
                     _chopper call compile format ["%1=_this;", "drn_russianSearchChopper"];
                     

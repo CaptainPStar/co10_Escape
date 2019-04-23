@@ -110,7 +110,14 @@ class Params
         values[]={0,1};
         texts[]={"Disabled - No motor pools","Random - Spawns motor pools, works for all maps"};
         default = 1;
-	};   
+	};
+	class Param_VehicleLock
+	{
+		title="Locked Vehicles";
+		values[]={0, 1, 2};
+		texts[]={"None", "Armed", "All"};
+		default = 0;
+	};
 	class Param_Artillery
 	{
 		title="Artillery";

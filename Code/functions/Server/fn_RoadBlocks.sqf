@@ -100,6 +100,7 @@ _fnc_CreateRoadBlock = {
 	
     private _result = [_pos, _dir, selectRandom _possibleVehicles, _side] call BIS_fnc_spawnVehicle;
     private _vehicle = _result select 0;
+	[_vehicle] call a3e_fnc_onVehicleSpawn;
     private _crew = _result select 1;
     private _group = _result select 2;
     
@@ -111,6 +112,7 @@ _fnc_CreateRoadBlock = {
     private _gun = selectRandom a3e_arr_ComCenStaticWeapons;
    // private _static = [_gun, (_pos vectoradd [10,0,0]), _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 	private _static = createVehicle [_gun, (_pos vectoradd [10,0,0]), [], 0, "NONE"];
+	[_static] call a3e_fnc_onVehicleSpawn;
 	_vehicles pushBack _static;
 	_units pushback ([_static,_side] call A3E_fnc_AddStaticGunner); 
 

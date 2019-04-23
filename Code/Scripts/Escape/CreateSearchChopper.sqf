@@ -52,6 +52,7 @@ _homePos = _homePos vectorAdd [0,0,100];
 
 //_chopperspawn = [_homePos, random 360, _type, A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
 _chopper = createVehicle [_type, _homePos, [], random 360, "FLY"];
+[_chopper] call a3e_fnc_onVehicleSpawn;
 createVehicleCrew _chopper;
 {
 	_x call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;

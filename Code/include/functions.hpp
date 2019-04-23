@@ -40,6 +40,7 @@ class CfgFunctions
 		class handleScore {};
 		class CheckCampDistance {};
 		class FireSmokeFX {};
+		class OnVehicleSpawn {};
 
 		};
 		class AI

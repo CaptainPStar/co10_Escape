@@ -27,6 +27,7 @@ drn_CreateDropChopper_CurrentInstanceNo = drn_CreateDropChopper_CurrentInstanceN
 
 //_chopper = _chopperType createVehicle _spawnPos;
 _chopper = createVehicle [_chopperType, _spawnPos, [], 0, "NONE"];
+[_chopper] call a3e_fnc_onVehicleSpawn;
 _vehicleVarName = "drn_searchChopper" + str _currentInstanceNo;
 _chopper setVehicleVarName _vehicleVarName;
 _chopper Call Compile Format ["%1 = _this; PublicVariable ""%1""", _vehicleVarName];

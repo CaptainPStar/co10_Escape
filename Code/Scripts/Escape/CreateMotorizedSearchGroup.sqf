@@ -21,6 +21,7 @@ if(typename _vehicleMaxCargo != (typename 0)) then {
 
 _result = [_spawnPos, 0, _vehicleClass, A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
 _vehicle = _result select 0;
+[_vehicle] call a3e_fnc_onVehicleSpawn;
 _crew = _result select 1;
 _group = _result select 2;
 
