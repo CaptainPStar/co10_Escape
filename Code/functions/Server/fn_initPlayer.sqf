@@ -61,3 +61,7 @@ diag_log format["Escape debug: %1 is now ready (serverside).", name _player];
 //A3E_PlayerInitializedServer means the player was placed in Prison and is ready for the "Intro"
 _player setvariable["A3E_PlayerInitializedServer",true,true];
 
+waituntil{!isNil("A3E_EscapeHasStarted")};
+
+[_player, false] remoteExec ["setCaptive", _player, false];
+
