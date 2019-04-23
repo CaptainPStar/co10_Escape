@@ -113,7 +113,7 @@ class Params
 	};
 	class Param_VehicleLock
 	{
-		title="Locked Vehicles";
+		title="Lock Vehicles";
 		values[]={0, 1, 2};
 		texts[]={"None", "Armed", "All"};
 		default = 0;
