@@ -23,10 +23,13 @@ compile:
     paths:
     - Packed/Missions
     - Packed/Addons
-  except:
-    changes:
-      - ".gitlab-ci.yml"
-      
+  only:
+    refs:
+      - master
+      - staging
+      - merge_requests
+      - tags
+
 
 staging:
   stage: deploy
@@ -51,9 +54,10 @@ staging:
     changes:
       - ".gitlab-ci.yml"
   only:
-    - master
-    - staging
-    - merge_requests
+    refs:
+      - master
+      - staging
+      - merge_requests
 
   
 release:
@@ -75,9 +79,5 @@ release:
     paths:
     - Packed/Missions
     - Packed/Addons
-  except:
-    changes:
-      - ".gitlab-ci.yml"
   only:
     - tags
-
