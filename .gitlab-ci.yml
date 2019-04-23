@@ -26,12 +26,6 @@ compile:
   except:
     changes:
       - ".gitlab-ci.yml"
-  only:
-    refs:
-      - staging
-      - master
-      - merge_requests
-      - tags
       
 
 staging:
@@ -57,8 +51,8 @@ staging:
     changes:
       - ".gitlab-ci.yml"
   only:
-    - staging
     - master
+    - staging
     - merge_requests
 
   
