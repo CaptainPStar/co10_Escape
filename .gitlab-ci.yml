@@ -29,6 +29,7 @@ compile:
   only:
     refs:
       - staging
+      - master
       - merge_requests
       - tags
       
@@ -57,6 +58,7 @@ staging:
       - ".gitlab-ci.yml"
   only:
     - staging
+    - master
     - merge_requests
 
   
