@@ -50,9 +50,6 @@ staging:
     paths:
     - Packed/Missions
     - Packed/Addons
-  except:
-    changes:
-      - ".gitlab-ci.yml"
   only:
     refs:
       - master
@@ -81,3 +78,4 @@ release:
     - Packed/Addons
   only:
     - tags
+
