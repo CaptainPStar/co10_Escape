@@ -476,7 +476,7 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 	,"B_APC_Wheeled_01_cannon_F"
 	,"B_APC_Tracked_01_AA_F"];
 	if(Param_UseDLCTanks==1) then {
-		a3e_arr_ComCenDefence_heavyArmorClasses pushback "B_AFV_Wheeled_01_cannon_F";
+		a3e_arr_ComCenDefence_LightArmorClasses pushback "B_AFV_Wheeled_01_cannon_F";
 	};
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
