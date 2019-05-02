@@ -116,7 +116,7 @@ _fnc_CreateRoadBlock = {
 	_vehicles pushBack _static;
 	_units pushback ([_static,_side] call A3E_fnc_AddStaticGunner); 
 
-	_units append (call compile ("["+str _pos+","+str(_dir + _angle)+",_static,_vehicle] call "+ selectRandom ["A3E_fnc_Roadblock","A3E_fnc_Roadblock3","A3E_fnc_Roadblock3"]));
+	_units append (call compile ("["+str _pos+","+str(_dir + _angle)+",_static,_vehicle] call "+ selectRandom ["A3E_fnc_Roadblock","A3E_fnc_Roadblock2","A3E_fnc_Roadblock3","A3E_fnc_Roadblock4"]));
 	
     
     _group = createGroup _side;
@@ -235,11 +235,3 @@ while {true} do {
     } foreach _roadBlocks;
 	missionnameSpace setvariable ["A3E_arr_RoadBlocks",_roadBlocks];
 };
-
-
-
-
-
-
-
-
