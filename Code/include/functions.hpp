@@ -30,11 +30,11 @@ class CfgFunctions
 		class GetRandomPlayer {};
 		class GetPlayerGroup {};
 		class Briefing {
-			//postInit = 1;
+		//	postInit = 1;
 		};
 		class InitLocalPlayer {
 			postInit = 0;
-		};
+		};			
 		class cleanupTerrain {};
 		class handleRating {};
 		class handleScore {};
@@ -106,18 +106,24 @@ class CfgFunctions
 			class BuildPrison3 {};
 			class BuildPrison4 {};
 			class BuildPrison5 {};
-            class BuildComCenter {};
+			class BuildComCenter {};
 			class BuildComCenter2 {};
 			class BuildComCenter3 {};
+			class BuildComCenter4 {};
+			class BuildComCenter5 {};
             class BuildMotorPool {};
-            class AmmoDepot {};
+			class AmmoDepot {};
 			class AmmoDepot2 {};
+			class AmmoDepot3 {};
+			class AmmoDepot4 {};
+			class AmmoDepot5 {};			
 			class CrashSite {};
 			class MortarSite {};
 			class MortarSite2 {};
 			class Roadblock {};
 			class Roadblock2 {};
 			class Roadblock3 {};
+			class Roadblock4 {};			
 		};
 		class Chronos
 		{
