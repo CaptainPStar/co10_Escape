@@ -50,7 +50,7 @@ else {
 while {_locationExists} do {
     _locationPos = getMarkerPos _locationFullName;
     _locationSize = getMarkerSize _locationFullName;
-    _maxGroupsCount = ceil(((_locationSize select 0) * (_locationSize select 1)) * 4 / _areaPerGroup);
+    _maxGroupsCount = _maxGroupsCount min (ceil(((_locationSize select 0) * (_locationSize select 1)) * 4 / _areaPerGroup));
 
     _soldierCount = (_minSoldierCount + floor (random (_maxSoldierCount - _minSoldierCount + 1))) * _maxGroupsCount;
     _possibleInfantryTypes = a3e_arr_Escape_InfantryTypes + a3e_arr_Escape_InfantryTypes_Ind + a3e_arr_Escape_InfantryTypes_Ind + a3e_arr_Escape_InfantryTypes_Ind + a3e_arr_Escape_InfantryTypes_Ind;

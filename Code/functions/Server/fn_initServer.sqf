@@ -286,7 +286,7 @@ private _UseMotorPools = Param_MotorPools;
             } foreach units _this;
         };
         
-       [_playerGroup, "drn_villageMarker", A3E_VAR_Side_Opfor, "INS", 5, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _villagePatrolSpawnArea, A3E_Debug] call drn_fnc_InitVillagePatrols;
+       [_playerGroup, "drn_villageMarker", A3E_VAR_Side_Opfor, "INS", 10, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _villagePatrolSpawnArea, A3E_Debug] call drn_fnc_InitVillagePatrols;
 
         switch (_enemyFrequency) do
         {
