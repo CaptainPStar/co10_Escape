@@ -46,6 +46,7 @@ _fnc_createObject = {
 //+ Create a folder "flag" in the root directory of your misson file. Drop in your paa logo & call it logo.paa (jpg might work, PAA is the best).
 
 _obj = ["Flag_CSAT_F",_center,[0.432495,17.1548,0],_rotation,266.77] call _fnc_createObject;
+_obj forceFlagTexture A3E_VAR_Flag_Opfor;
 //_obj forceFlagTexture "mapConfig\logo.paa"; 
 
 _obj = ["Land_DataTerminal_01_F",_center,[-5.43176,0.866699,0],_rotation,357.19] call _fnc_createObject;
