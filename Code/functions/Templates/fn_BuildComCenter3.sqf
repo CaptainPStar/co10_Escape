@@ -11,7 +11,7 @@ _rotation = param[1];
 if (count _this > 2) then { _staticWeaponClasses = _this select 2; } else { _staticWeaponClasses = []; };
 if (count _this > 3) then { _parkedVehicleClasses = _this select 3; } else { _parkedVehicleClasses = []; };
 
-[_center,40] call a3e_fnc_cleanupTerrain;
+[_center,25] call a3e_fnc_cleanupTerrain;
 
 _fnc_createObject = {
     params["_className","_centerPos","_relativePos","_rotateDir","_relativeDir"];
@@ -69,7 +69,7 @@ _obj = ["Land_Bunker_01_blocks_3_F",_center,[9.6012,7.39795,0],_rotation,270.071
 _obj = ["Land_Bunker_01_blocks_3_F",_center,[9.60693,2.23975,0],_rotation,270.071] call _fnc_createObject;
 
 _obj = ["FlagPole_F",_center,[-7.95715,-12.8491,0],_rotation,266.77] call _fnc_createObject;
-_obj setflagtexture A3E_VAR_Flag_Opfor;
+_obj forceFlagTexture A3E_VAR_Flag_Opfor;
 
 _obj = ["Land_DataTerminal_01_F",_center,[7.92371,-3.09668,4.97927],_rotation,269.752] call _fnc_createObject;
 _obj setvariable ["A3E_isTerminal",true,true];

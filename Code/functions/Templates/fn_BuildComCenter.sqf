@@ -10,7 +10,7 @@ _rotateDir = _this select 1;
 if (count _this > 2) then { _staticWeaponClasses = _this select 2; } else { _staticWeaponClasses = []; };
 if (count _this > 3) then { _parkedVehicleClasses = _this select 3; } else { _parkedVehicleClasses = []; };
 
-[_centerPos,40] call a3e_fnc_cleanupTerrain;
+[_centerPos,25] call a3e_fnc_cleanupTerrain;
 
 _fnc_CreateObject = {
     private ["_className", "_relativePos", "_relativeDir", "_centerPos", "_rotateDir"];
@@ -261,7 +261,7 @@ _dir = 90;
 _pos = [0, 10];
 _dir = 0;
 _object = ["FlagPole_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
-_object setflagtexture A3E_VAR_Flag_Opfor;
+_object forceFlagTexture A3E_VAR_Flag_Opfor;
 
 if (count _staticWeaponClasses > 0) then {
     // Statics
