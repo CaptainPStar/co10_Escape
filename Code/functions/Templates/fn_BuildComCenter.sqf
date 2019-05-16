@@ -30,7 +30,7 @@ _fnc_CreateObject = {
     _object
 };
 
-_fnc_CreateVehicle = {
+private _fnc_CreateVehicle = {
     private ["_className", "_relativePos", "_relativeDir", "_centerPos", "_rotateDir"];
     private ["_object", "_realPos", "_realDir"];
     

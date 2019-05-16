@@ -17,23 +17,7 @@ _fnc_createObject = {
     params["_className","_centerPos","_relativePos","_rotateDir","_relativeDir"];
     private["_object", "_realPos", "_realDir"];
 
-    _fnc_rotatePos = {
-        private ["_centerPos", "_pos", "_dir"];
-        private ["_px", "_py", "_mpx", "_mpy", "_ma", "_rpx", "_rpy"];
-        _centerPos = _this select 0;
-        _pos = _this select 1;
-        _dir = _this select 2;
-        _px = _pos select 0;
-        _py = _pos select 1;
-        _mpx = _centerPos select 0;
-        _mpy = _centerPos select 1;
-        _ma = _dir;
-        _rpx = ( (_px - _mpx) * cos(_ma) ) + ( (_py - _mpy) * sin(_ma) ) + _mpx;
-        _rpy = (-(_px - _mpx) * sin(_ma) ) + ( (_py - _mpy) * cos(_ma) ) + _mpy;
-        [_rpx, _rpy, (_pos select 2)];
-    };
-
-    _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1),(_relativePos select 2)], _rotateDir] call _fnc_rotatePos);
+    _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1),(_relativePos select 2)], _rotateDir] call A3E_fnc_rotatePosition);
     _object = createVehicle [_className, _realPos, [], 0, "CAN_COLLIDE"];
     _object setdir (_relativeDir + _rotateDir);
     _object setPosATL _realPos;

@@ -6,7 +6,7 @@
 if(!isserver) exitwith {};
 
 private ["_center", "_staticWeaponClasses", "_parkedVehicleClasses"];
-private ["_object", "_pos", "_marker", "_instanceNo", "_randomNo", "_gun", "_angle", "_car"];
+private ["_obj", "_pos", "_marker", "_instanceNo", "_randomNo", "_gun", "_angle", "_car"];
 _center = _this select 0;
 
 
@@ -25,27 +25,11 @@ else {
 _instanceNo = drn_BuildAmmoDepot_MarkerInstanceNo;
 
 
-_fnc_createObject = {
+private _fnc_createObject = {
     params["_className","_centerPos","_relativePos","_rotateDir","_relativeDir"];
     private["_object", "_realPos", "_realDir"];
 
-    _fnc_rotatePos = {
-        private ["_centerPos", "_pos", "_dir"];
-        private ["_px", "_py", "_mpx", "_mpy", "_ma", "_rpx", "_rpy"];
-        _centerPos = _this select 0;
-        _pos = _this select 1;
-        _dir = _this select 2;
-        _px = _pos select 0;
-        _py = _pos select 1;
-        _mpx = _centerPos select 0;
-        _mpy = _centerPos select 1;
-        _ma = _dir;
-        _rpx = ( (_px - _mpx) * cos(_ma) ) + ( (_py - _mpy) * sin(_ma) ) + _mpx;
-        _rpy = (-(_px - _mpx) * sin(_ma) ) + ( (_py - _mpy) * cos(_ma) ) + _mpy;
-        [_rpx, _rpy, (_pos select 2)];
-    };
-
-    _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1),(_relativePos select 2)], _rotateDir] call _fnc_rotatePos);
+    _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1),(_relativePos select 2)], _rotateDir] call A3E_fnc_rotatePosition);
     _object = createVehicle [_className, _realPos, [], 0, "CAN_COLLIDE"];
     _object setdir (_relativeDir + _rotateDir);
     _object setPosATL _realPos;
@@ -64,7 +48,7 @@ _fnc_createObject = {
         //_object = _car createVehicle _pos;
         //_object = createVehicle [_car, _pos, [], 0, "NONE"];
 		
-		_pos = [_center,_center vectorAdd [-7.52502,-19.5674,4.76837],_rotation] call _fnc_rotatePos;
+		_pos = [_center,_center vectorAdd [-7.52502,-19.5674,4.76837],_rotation] call A3E_fnc_rotatePosition;
 		_obj = createvehicle [_car, _pos, [], 0, "NONE"];
 		_obj setVectorDirAndUp [[1,-0.000440045,0],[0,-0,1]];
 		_obj setdir ((getdir _obj) + _rotation);
@@ -78,7 +62,7 @@ _fnc_createObject = {
     if (count _staticWeaponClasses > 0) then {
         _gun = selectRandom _staticWeaponClasses;
         
-		_pos = [_center,_center vectorAdd [-14.3452,-5.09326,-0.00143909],_rotation] call _fnc_rotatePos;
+		_pos = [_center,_center vectorAdd [-14.3452,-5.09326,-0.00143909],_rotation] call A3E_fnc_rotatePosition;
 		_obj = createVehicle [_gun, _pos, [], 0, "NONE"];
 		_obj setVectorDirAndUp [[-0.999998,0.00176479,0],[0,0,1]];
 		_obj setdir ((getdir _obj) + _rotation);
@@ -88,7 +72,7 @@ _fnc_createObject = {
     if (count _staticWeaponClasses > 0) then {
         _gun = selectRandom _staticWeaponClasses;
         
-		_pos = [_center,_center vectorAdd [15.0289,10.7007,-0.00143814],_rotation] call _fnc_rotatePos;
+		_pos = [_center,_center vectorAdd [15.0289,10.7007,-0.00143814],_rotation] call A3E_fnc_rotatePosition;
 		_obj = createVehicle [_gun, _pos, [], 0, "NONE"];
 		_obj setVectorDirAndUp [[-0.999998,0.00176479,0],[0,0,1]];
 		_obj setdir ((getdir _obj) + _rotation);
@@ -139,7 +123,7 @@ _obj = ["Flag_CSAT_F",_center,[-15.5826,-14.6431,0],_rotation,266.77] call _fnc_
         //_box = "Box_East_Wps_F" createVehicle [(_middlePos select 0) - 3, (_middlePos select 1) + 0, 0];
         //_box = createVehicle ["Box_East_Wps_F", [(_middlePos select 0) - 3, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
 		_box = createVehicle ["Box_East_Wps_F", [(_center select 0) + -4.68042, (_center select 1) + -5.16992, 0], [], 0, "CAN_COLLIDE"];				
-/*		_pos = [_center,_center vectorAdd [-4.68042,-5.16992,0],_rotation] call _fnc_rotatePos;
+/*		_pos = [_center,_center vectorAdd [-4.68042,-5.16992,0],_rotation] call A3E_fnc_rotatePosition;
 		_box = "Box_East_Wps_F" createvehicle _pos;
 		_box setVectorDirAndUp [[-0.999965,0.00837127,0],[0,0,1]];
 		_box setdir ((getdir _box) + _rotation);
@@ -190,7 +174,7 @@ _obj = ["Flag_CSAT_F",_center,[-15.5826,-14.6431,0],_rotation,266.77] call _fnc_
     if (count _weapons > 0 || count _weaponMagazines > 0) then {
         //_box = "Box_East_WpsLaunch_F" createVehicle [(_middlePos select 0) + 3, (_middlePos select 1) + 0, 0];
 		_box = createVehicle ["Box_East_WpsLaunch_F", [(_center select 0) + -4.46521, (_center select 1) + -0.0180664, 0], [], 0, "CAN_COLLIDE"];				
-/*		_pos = [_center,_center vectorAdd [-4.46521,-0.0180664,0],_rotation] call _fnc_rotatePos;
+/*		_pos = [_center,_center vectorAdd [-4.46521,-0.0180664,0],_rotation] call A3E_fnc_rotatePosition;
 		_box = "Box_East_WpsLaunch_F" createvehicle _pos;
 		_box setVectorDirAndUp [[-0.999231,0.0392098,0],[0,0,1]];
 		_box setdir ((getdir _box) + _rotation);
@@ -245,7 +229,7 @@ _obj = ["Flag_CSAT_F",_center,[-15.5826,-14.6431,0],_rotation,266.77] call _fnc_
         //_box = "Box_East_WpsSpecial_F" createVehicle [(_middlePos select 0) + 0, (_middlePos select 1) - 3, 0];
         //_box = createVehicle ["Box_East_WpsSpecial_F", [(_middlePos select 0) + 0, (_middlePos select 1) - 3, 0], [], 0, "CAN_COLLIDE"];
 		_box = createVehicle ["Box_East_WpsSpecial_F", [(_center select 0) + -5.61267, (_center select 1) + -2.32764, 0], [], 0, "CAN_COLLIDE"];				
-/*		_pos = [_center,_center vectorAdd [-5.61267,-2.32764,0],_rotation] call _fnc_rotatePos;
+/*		_pos = [_center,_center vectorAdd [-5.61267,-2.32764,0],_rotation] call A3E_fnc_rotatePosition;
 		_box = "Box_East_WpsSpecial_F" createvehicle _pos;
 		_box setVectorDirAndUp [[-0.999874,-0.0158694,0],[-0,0,1]];
 		_box setdir ((getdir _box) + _rotation);
@@ -315,7 +299,7 @@ _obj = ["Flag_CSAT_F",_center,[-15.5826,-14.6431,0],_rotation,266.77] call _fnc_
         //_box = createVehicle ["Box_NATO_AmmoVeh_F", [(_middlePos select 0) + 0, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
 		_box = createVehicle ["Box_NATO_AmmoVeh_F", [(_center select 0) + -7.30652, (_center select 1) + -4.67676, 0], [], 0, "CAN_COLLIDE"];				
 		/*		
-		_pos = [_center,_center vectorAdd [-7.30652,-4.67676,0],_rotation] call _fnc_rotatePos;
+		_pos = [_center,_center vectorAdd [-7.30652,-4.67676,0],_rotation] call A3E_fnc_rotatePosition;
 		_box = "Box_NATO_AmmoVeh_F" createvehicle _pos;
 		_box setVectorDirAndUp [[-0.999874,-0.0158694,0],[-0,0,1]];
 		_box setdir ((getdir _box) + _rotation);
@@ -365,7 +349,7 @@ _obj = ["Flag_CSAT_F",_center,[-15.5826,-14.6431,0],_rotation,266.77] call _fnc_
         //_box = "Box_East_Wps_F" createVehicle [(_middlePos select 0) + 0, (_middlePos select 1) + 3, 0];
         //_box = createVehicle ["Box_East_Wps_F", [(_middlePos select 0) + 3, (_middlePos select 1) - 3, 0], [], 0, "CAN_COLLIDE"];
 		_box = createVehicle ["Box_East_Wps_F", [(_center select 0) + -7.4679, (_center select 1) + -0.294922, 0], [], 0, "CAN_COLLIDE"];		
-/*		_pos = [_center,_center vectorAdd [-7.4679,-0.294922,0],_rotation] call _fnc_rotatePos;
+/*		_pos = [_center,_center vectorAdd [-7.4679,-0.294922,0],_rotation] call A3E_fnc_rotatePosition;
 		_box = "Box_East_Wps_F" createvehicle _pos;
 		_box setVectorDirAndUp [[-0.0739712,-0.99726,0],[0,0,1]];
 		_box setdir ((getdir _box) + _rotation);
@@ -412,7 +396,7 @@ _obj = ["Flag_CSAT_F",_center,[-15.5826,-14.6431,0],_rotation,266.77] call _fnc_
         //_box = "Box_East_WpsLaunch_F" createVehicle [(_middlePos select 0) - 3, (_middlePos select 1) - 3, 0];
         //_box = createVehicle ["Box_East_WpsLaunch_F", [(_middlePos select 0) - 3, (_middlePos select 1) - 3, 0], [], 0, "CAN_COLLIDE"];
 		_box = createVehicle ["Box_East_WpsLaunch_F", [(_center select 0) + -5.82874, (_center select 1) + 2.37256, 0], [], 0, "CAN_COLLIDE"];				
-/*		_pos = [_center,_center vectorAdd [-5.82874,2.37256,0],_rotation] call _fnc_rotatePos;
+/*		_pos = [_center,_center vectorAdd [-5.82874,2.37256,0],_rotation] call A3E_fnc_rotatePosition;
 		_box = "Box_East_WpsLaunch_F" createvehicle _pos;
 		_box setVectorDirAndUp [[-0.999602,0.0282007,0],[0,0,1]];
 		_box setdir ((getdir _box) + _rotation);
