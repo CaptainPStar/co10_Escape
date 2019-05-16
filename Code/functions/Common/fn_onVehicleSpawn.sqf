@@ -3,7 +3,7 @@ private _lockParam = missionNamespace getvariable["Param_VehicleLock",0];
 
 switch (_lockParam) do {
 	case 1: {
-		if(allTurrets _vehicle > 0) then {
+		if(count (allTurrets _vehicle) > 0) then {
 			_vehicle lock 3;
 		};
 	};

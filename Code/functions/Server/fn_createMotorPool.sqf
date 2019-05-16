@@ -47,12 +47,11 @@ if(isNil("A3E_MotorPoolCount")) then {
         A3E_MotorPoolCount = ((floor random _mpc)+(Param_EnemyFrequency));
     };
 
-while {_createMPcount < A3E_MotorPoolCount} do
-    {
+while {_createMPcount < A3E_MotorPoolCount} do {
     _createMPcount = (_createMPcount + 1);
     _newPosition = [50, 1000, 0.1] call A3E_fnc_findFlatArea;
 	
-	_tooCloseAnotherPos = false;
+	private _tooCloseAnotherPos = false;
 	//Check if too close to another depot, comcenter or start
 	{
         if (_newPosition distance _x < A3E_ClearedPositionDistance) then {
@@ -65,10 +64,9 @@ while {_createMPcount < A3E_MotorPoolCount} do
         _mpPosition pushBack  _newPosition;
 		A3E_Var_ClearedPositions pushBack _newPosition;
     };
+};
 
-    };
-
-_playergroup = [] call A3E_fnc_getPlayerGroup;
+private _playergroup = [] call A3E_fnc_getPlayerGroup;
 {
     // Fixme: hard coding to 180° orientation for now
     [_x, 180, a3e_arr_ComCenStaticWeapons,
