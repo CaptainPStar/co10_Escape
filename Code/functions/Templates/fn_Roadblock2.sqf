@@ -3,19 +3,13 @@
 // Script by NeoArmageddon
 // Call this script by [Position,Rotation] execVM "filename.sqf"
 
-
-private _center = param[0];
-private _rotation = param[1];
-private _static = param[2];
-private _vehicle = param[3];
+params ["_center", "_rotation", ["_static", objNull, [objNull]], ["_vehicle", objNull, [objNull]]];
 
 [_center,25] call a3e_fnc_cleanupTerrain;
-_rotation = _rotation;
 
-
-_fnc_createObject = {
+private _fnc_createObject = {
     params["_className","_centerPos","_relativePos","_rotateDir","_relativeDir",["_align",true]];
-    private["_object", "_realPos", "_realDir"];
+    private["_object", "_realPos"];
     _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1),(_relativePos select 2)], _rotateDir] call A3E_fnc_RotatePosition);
     _object = createVehicle [_className, _realPos, [], 0, "CAN_COLLIDE"];
     _object setdir (_relativeDir + _rotateDir);
@@ -51,12 +45,12 @@ _objects pushBack _obj;
 
 
 if(!(isNull _static)) then {
-	_pos = [_center,_center vectorAdd [6.15918,0.396851,-0.0121169],_rotation] call A3E_FNC_RotatePosition;
+	private _pos = [_center,_center vectorAdd [6.15918,0.396851,-0.0121169],_rotation] call A3E_FNC_RotatePosition;
 	_static setdir (269.87 + _rotation);
     _static setPosATL _pos;
 };
 if(!(isNull _vehicle)) then {
-	_pos = [_center,_center vectorAdd [-9.58679,0.108887,0.0323153],_rotation] call A3E_FNC_RotatePosition;
+	private _pos = [_center,_center vectorAdd [-9.58679,0.108887,0.0323153],_rotation] call A3E_FNC_RotatePosition;
 	_vehicle setdir (89.8637 + _rotation);
 	_vehicle setPosATL _pos;
 };

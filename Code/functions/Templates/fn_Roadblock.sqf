@@ -2,11 +2,7 @@
 // See www.map-builder.info - Map Builder by NeoArmageddon
 // Call this script by [Position,Rotation] execVM "filename.sqf"
 
-
-private _center = param[0];
-private _rotation = param[1];
-private _static = param[2];
-private _vehicle = param[3];
+params ["_center", "_rotation", ["_static", objNull, [objNull]], ["_vehicle", objNull, [objNull]]];
 
 [_center,25] call a3e_fnc_cleanupTerrain;
 
@@ -22,7 +18,7 @@ if(!(isNull _vehicle)) then {
 
 
 _pos = [_center,_center vectorAdd [6.06116,-3.30908,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_BagBunker_Tower_F" createvehicle _pos;
+private _obj = "Land_BagBunker_Tower_F" createvehicle _pos;
 _obj setdir ((getdir _obj) + _rotation + 180);
 _obj setVectorUp surfaceNormal _pos;
 _obj setPosATL _pos;
