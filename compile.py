@@ -25,6 +25,8 @@ data['replace']['VERSION'] += ' dev'+os.environ['BUILD_NUMBER']+' '+datetime.tod
 data['replace']['RELEASE'] = 'Mission'
 data['replace']['COMMIT'] = os.environ['GIT_COMMIT'][:8]
 cpbo = data['cpbo'];
+if not os.path.exists('./Build'):
+    os.mkdir('./Build')
 for the_file in os.listdir(data['BuildDir']):
     file_path = os.path.join(data['BuildDir'], the_file)
     if os.path.isfile(file_path):
