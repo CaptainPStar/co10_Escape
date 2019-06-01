@@ -2,6 +2,8 @@ import json
 import os
 import shutil
 import subprocess
+from datetime import datetime
+
 print("Loading config...") 
 with open('Configs/config.json') as json_data_file:
     data = json.load(json_data_file)
@@ -18,15 +20,21 @@ for scfg in data['Subconfigs']:
         missions = missions + adata['Missions'];
         addons = addons + adata['Addons']
 #Add devbuild number to version
-if os.environ['CI_COMMIT_REF_NAME'] == "develop":
-    data['replace']['VERSION'] += ' dev'+os.environ['CI_PIPELINE_ID']
+#if os.environ['GIT_BRANCH'] == "develop":
+data['replace']['VERSION'] += ' dev'+os.environ['BUILD_NUMBER']+' '+datetime.today().strftime('%Y-%m-%d')
 data['replace']['RELEASE'] = 'Mission'
-data['replace']['COMMIT'] = os.environ['CI_COMMIT_SHORT_SHA']
+data['replace']['COMMIT'] = os.environ['GIT_COMMIT_SHORT']
 cpbo = data['cpbo'];
 for the_file in os.listdir(data['BuildDir']):
     file_path = os.path.join(data['BuildDir'], the_file)
     if os.path.isfile(file_path):
         os.unlink(file_path)
+if not os.path.exists('./Packed'):
+    os.mkdir('./Packed')
+if not os.path.exists('./Packed/Missions'):
+    os.mkdir('./Packed/Missions')
+if not os.path.exists('./Packed/Addons'):
+    os.mkdir('./Packed/Addons')
 for mission in missions:
     modname =  mission['mod']
     islandname = mission['island']
