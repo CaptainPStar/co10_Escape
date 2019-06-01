@@ -23,7 +23,7 @@ for scfg in data['Subconfigs']:
 #if os.environ['GIT_BRANCH'] == "develop":
 data['replace']['VERSION'] += ' dev'+os.environ['BUILD_NUMBER']+' '+datetime.today().strftime('%Y-%m-%d')
 data['replace']['RELEASE'] = 'Mission'
-data['replace']['COMMIT'] = os.environ['GIT_COMMIT_SHORT']
+data['replace']['COMMIT'] = os.environ['GIT_COMMIT'][:8]
 cpbo = data['cpbo'];
 for the_file in os.listdir(data['BuildDir']):
     file_path = os.path.join(data['BuildDir'], the_file)
