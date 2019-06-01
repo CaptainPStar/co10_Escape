@@ -4,12 +4,12 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building Escape'
-        bat 'python compile.py'
+        bat(script: 'python compile.py', returnStatus: true)
       }
     }
     stage('Deploy') {
       steps {
-        archiveArtifacts '*.pbo'
+        archiveArtifacts 'Packed/*/*.pbo'
       }
     }
   }
