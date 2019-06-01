@@ -11,7 +11,8 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        archiveArtifacts 'Packed/*/*.pbo'
+        sh '7z.exe a co10_Escape_dev_%BUILD_NUMBER%_%GIT_COMMIT%.zip ./Packed/*'
+        archiveArtifacts '*.7z'
       }
     }
   }
