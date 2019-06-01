@@ -7,5 +7,10 @@ pipeline {
         bat 'python compile.py'
       }
     }
+    stage('Deploy') {
+      steps {
+        archiveArtifacts '*.pbo'
+      }
+    }
   }
 }
