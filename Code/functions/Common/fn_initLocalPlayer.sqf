@@ -3,7 +3,7 @@ diag_log format["initClient run for %1 (%2)", name player, str _this];
 if(!hasInterface) exitwith {};
 
 
-titleText [localize "STR_NEKO_initLocalPlayer_Loading", "BLACK",0.1];
+titleText [localize "STR_A3E_initLocalPlayer_Loading", "BLACK",0.1];
 
 waituntil {!isnull player};
 
@@ -109,5 +109,5 @@ waituntil{sleep 0.5;!isNil("A3E_EscapeHasStarted")};
 //player setCaptive false;
 [] spawn {
 	waituntil{sleep 0.5;A3E_Task_Prison_Complete};
-	[localize "STR_NEKO_initLocalPlayer_somewhereOn", A3E_WorldName , str (date select 2) + "/" + str (date select 1) + "/" + str (date select 0) + " " + str (date select 3) + ":00"] spawn BIS_fnc_infoText;
+	[localize "STR_A3E_initLocalPlayer_somewhereOn", A3E_WorldName , str (date select 2) + "/" + str (date select 1) + "/" + str (date select 0) + " " + str (date select 3) + ":00"] spawn BIS_fnc_infoText;
 };
