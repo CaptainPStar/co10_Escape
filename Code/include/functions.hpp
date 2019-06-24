@@ -181,9 +181,10 @@ class CfgFunctions
 	{
 		class ace
 		{
-			class HandleDisconnect {};
 			class HandleUnconscious {};
-			class Countdown {};
+			class ATCam {};
+			class CaptiveHandle {};
+			class GroundHandler {};
 		};
 	};
 	class MB

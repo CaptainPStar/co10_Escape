@@ -25,7 +25,12 @@ AT_Revive_Camera = 1;
 
 
 //If no ACE use ATR revive
-if !(isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {call ATR_FNC_ReviveInit};
+if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
+	player setVariable ["ACE_Revive_isUnconscious", false, true];
+}
+else {call ATR_FNC_ReviveInit};
+if ((isClass(configFile >> "CfgPatches" >> "ACE_Medical")) && !(ACE_MedicalServer)) then {systemChat "Player is running ACE on unsupported server! Please deactivate or gameplay could be servilely affected.";};
+if (!(isClass(configFile >> "CfgPatches" >> "ACE_Medical")) && (ACE_MedicalServer)) then {systemChat "Server is running ACE! Please install the compatible version and reconnect to prevent gamebreaking issues.";};
 
 [] call A3E_fnc_addUserActions;
 

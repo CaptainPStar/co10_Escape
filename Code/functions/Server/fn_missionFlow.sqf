@@ -38,17 +38,7 @@ if(isServer) then {
 	_trigger setTriggerArea[0, 0, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", false];
 	_trigger setTriggerTimeout [0, 0, 0, false];
-	_trigger setTriggerStatements["A3E_EscapeHasStarted && ({!(_x getVariable [""AT_Revive_isUnconscious"",false])} count ([] call BIS_fnc_listPlayers) == 0)", "a3e_var_Escape_AllPlayersDead = true;publicVariable ""a3e_var_Escape_AllPlayersDead"";[] spawn A3E_FNC_FailTasks;", ""];
-	
-	//Endtrigger for ACE
-	if(isNil("ACE_allUnconscious")) then {
-		ACE_allUnconscious = false;
-	};
-	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
-	_trigger setTriggerArea[0, 0, 0, false];
-	_trigger setTriggerActivation["NONE", "PRESENT", false];
-	_trigger setTriggerTimeout [0, 0, 0, false];
-	_trigger setTriggerStatements["A3E_EscapeHasStarted && ACE_allUnconscious", "a3e_var_Escape_AllPlayersDead = true;publicVariable ""a3e_var_Escape_AllPlayersDead"";[] spawn A3E_FNC_FailTasks;", ""];
+	_trigger setTriggerStatements["A3E_EscapeHasStarted && (({!(_x getVariable [""AT_Revive_isUnconscious"",false])} count ([] call BIS_fnc_listPlayers) == 0)||({!(_x getVariable [""ACE_Revive_isUnconscious"",false])} count ([] call BIS_fnc_listPlayers) == 0))", "a3e_var_Escape_AllPlayersDead = true;publicVariable ""a3e_var_Escape_AllPlayersDead"";[] spawn A3E_FNC_FailTasks;", ""];
 	
 	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
 	_trigger setTriggerArea[0, 0, 0, false];
