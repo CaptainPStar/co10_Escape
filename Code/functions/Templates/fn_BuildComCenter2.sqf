@@ -2,38 +2,22 @@
 // Export file
 // Script by NeoArmageddon
 // Call this script by [Position,Rotation] execVM "filename.sqf"
-private ["_staticWeaponClasses", "_parkedVehicleClasses"];
+params [
+    ["_center", [], [[]], 3],
+    ["_rotation", 0, [0]],
+    ["_staticWeaponClasses", [],[[]]],
+    ["_parkedVehicleClasses",[],[[]]]
+];
 
-private["_center","_rotation","_obj","_pos"];
-_center = param[0];
-_rotation = param[1];
-
-if (count _this > 2) then { _staticWeaponClasses = _this select 2; } else { _staticWeaponClasses = []; };
-if (count _this > 3) then { _parkedVehicleClasses = _this select 3; } else { _parkedVehicleClasses = []; };
+private ["_obj", "_pos"];
 
 [_center,25] call a3e_fnc_cleanupTerrain;
 
-_fnc_createObject = {
+private _fnc_createObject = {
     params["_className","_centerPos","_relativePos","_rotateDir","_relativeDir"];
     private["_object", "_realPos", "_realDir"];
 
-    _fnc_rotatePos = {
-        private ["_centerPos", "_pos", "_dir"];
-        private ["_px", "_py", "_mpx", "_mpy", "_ma", "_rpx", "_rpy"];
-        _centerPos = _this select 0;
-        _pos = _this select 1;
-        _dir = _this select 2;
-        _px = _pos select 0;
-        _py = _pos select 1;
-        _mpx = _centerPos select 0;
-        _mpy = _centerPos select 1;
-        _ma = _dir;
-        _rpx = ( (_px - _mpx) * cos(_ma) ) + ( (_py - _mpy) * sin(_ma) ) + _mpx;
-        _rpy = (-(_px - _mpx) * sin(_ma) ) + ( (_py - _mpy) * cos(_ma) ) + _mpy;
-        [_rpx, _rpy, (_pos select 2)];
-    };
-
-    _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1),(_relativePos select 2)], _rotateDir] call _fnc_rotatePos);
+    _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1), (_relativePos select 2)], _rotateDir] call A3E_fnc_rotatePosition);
     _object = createVehicle [_className, _realPos, [], 0, "NONE"];
     _object setdir (_relativeDir + _rotateDir);
     _object setPosATL _realPos;

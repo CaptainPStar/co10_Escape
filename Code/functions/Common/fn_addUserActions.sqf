@@ -1,8 +1,8 @@
-player addAction ["<t color=""#cccc00"">" + "Hack Terminal" + "</t>", "_this call A3E_fnc_Hijack;", [], 9, false, true, "", "call at_fnc_checkTerminalHack"];
+player addAction [format ["<t color=""#cccc00"">%1</t>", localize "STR_A3E_action_hackTerminal"], "_this call A3E_fnc_Hijack;", [], 9, false, true, "", "call at_fnc_checkTerminalHack"];
 
 at_fnc_checkTerminalHack = {
-	_return = false;
-	_target = cursorTarget;
+	private _return = false;
+	private _target = cursorTarget;
 	if(isNull _target) exitwith {false;};
 	if((player distance _target)>3) exitwith {false;};
 		if(_target getvariable ["A3E_isTerminal",false]) then {
@@ -11,11 +11,11 @@ at_fnc_checkTerminalHack = {
 	_return;
 };
 
-player addAction ["<t color=""#cc0000"">" + "Heal" + "</t>", "_this call A3E_fnc_HealAtBuilding;", [], 9, false, true, "", "call at_fnc_checkHealAtBuilding"];
+player addAction [format ["<t color=""#cc0000"">%1</t>", localize "STR_A3E_action_heal"], "_this call A3E_fnc_HealAtBuilding;", [], 9, false, true, "", "call at_fnc_checkHealAtBuilding"];
 
 at_fnc_checkHealAtBuilding = {
-	_return = false;
-	_target = cursorTarget;
+	private _return = false;
+	private _target = cursorTarget;
 	if(isNull _target) exitwith {false;};
 	if((player distance _target)>3) exitwith {false;};
 		if(typeof _target == "Land_Medevac_House_V1_F") then {

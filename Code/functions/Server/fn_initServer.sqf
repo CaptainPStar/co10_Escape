@@ -32,7 +32,7 @@ publicVariable "A3E_Debug";
 //##############
 
 
-private ["_villagePatrolSpawnArea","_EnemyCount","_pos","_enemyMinSkill", "_enemyMaxSkill", "_searchChopperSearchTimeMin", "_searchChopperRefuelTimeMin", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency", "_comCenGuardsExist", "_fenceRotateDir", "_scriptHandle"];
+private ["_villagePatrolSpawnArea","_EnemyCount","_enemyMinSkill", "_enemyMaxSkill", "_searchChopperSearchTimeMin", "_searchChopperRefuelTimeMin", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency", "_fenceRotateDir", "_scriptHandle"];
 
 _enemyFrequency = (Param_EnemyFrequency);
 _enemySpawnDistance = (Param_EnemySpawnDistance);
@@ -155,7 +155,7 @@ if(isNil("A3E_ClearedPositionDistance")) then {
 // Build start position
 _fenceRotateDir = random 360;
 
-private _backPack = call compile format["[A3E_StartPos, %1] call %2;",_fenceRotateDir,selectRandom ["a3e_fnc_BuildPrison","a3e_fnc_BuildPrison1","a3e_fnc_BuildPrison2","a3e_fnc_BuildPrison3","a3e_fnc_BuildPrison4","a3e_fnc_BuildPrison5"]];
+private _backPack = [A3E_StartPos, _fenceRotateDir] call selectRandom [a3e_fnc_BuildPrison, a3e_fnc_BuildPrison1, a3e_fnc_BuildPrison2, a3e_fnc_BuildPrison3, a3e_fnc_BuildPrison4, a3e_fnc_BuildPrison5];
 
 A3E_FenceIsCreated = true;
 publicVariable "A3E_FenceIsCreated";
@@ -198,18 +198,11 @@ private _UseMotorPools = Param_MotorPools;
 // Initialize ammo depots
 
 [_enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _playerGroup, _enemyFrequency] spawn {
-	private ["_enemyMinSkill", "_enemyMaxSkill", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency"];
+	params ["_enemyMinSkill", "_enemyMaxSkill", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency"];
 	private ["_playerGroup", "_minEnemies", "_maxEnemies", "_bannedPositions", "_scriptHandle"];
-	
-	_enemyMinSkill = _this select 0;
-	_enemyMaxSkill = _this select 1;
-	_enemySpawnDistance = _this select 2;
-	_playerGroup = _this select 3;
-	_enemyFrequency = _this select 4;
-	
-	_EnemyCount = [2] call A3E_fnc_GetEnemyCount;
-	_minEnemies = _EnemyCount select 0;
-	_maxEnemies = _EnemyCount select 1;
+
+	private _EnemyCount = [2] call A3E_fnc_GetEnemyCount;
+	_EnemyCount params ["_minEnemies", "_maxEnemies"];
 	
 	_bannedPositions = + a3e_var_Escape_communicationCenterPositions + [A3E_StartPos, getMarkerPos "drn_insurgentAirfieldMarker"];
 	a3e_var_Escape_ammoDepotPositions = _bannedPositions call drn_fnc_Escape_FindAmmoDepotPositions;
@@ -226,14 +219,8 @@ private _UseMotorPools = Param_MotorPools;
 // Create motorized search group
 
 [_enemyFrequency, _enemyMinSkill, _enemyMaxSkill] spawn {
-	private ["_enemyFrequency", "_enemyMinSkill", "_enemyMaxSkill"];
-	private ["_spawnSegment"];
-	
-	_enemyFrequency = _this select 0;
-	_enemyMinSkill = _this select 1;
-	_enemyMaxSkill = _this select 2;
-	
-	_spawnSegment = [] call A3E_fnc_FindSpawnRoad;
+	params ["_enemyFrequency", "_enemyMinSkill", "_enemyMaxSkill"];
+	private _spawnSegment = [] call A3E_fnc_FindSpawnRoad;
 	
 	if(!isNull _spawnSegment) then {
 		[getPos _spawnSegment, drn_searchAreaMarkerName, _enemyFrequency, _enemyMinSkill, _enemyMaxSkill, A3E_Debug] execVM "Scripts\Escape\CreateMotorizedSearchGroup.sqf";
@@ -249,15 +236,11 @@ private _UseMotorPools = Param_MotorPools;
 
 // Run initialization for scripts that need the players to be gathered at the start position
 [_enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _enemyFrequency, _villagePatrolSpawnArea] spawn {
-    private ["_useVillagePatrols", "_useMilitaryTraffic", "_useAmbientInfantry", "_enemyMinSkill", "_enemyMaxSkill", "_enemySpawnDistance", "_enemyFrequency"];
+	params ["_enemyMinSkill", "_enemyMaxSkill", "_enemySpawnDistance", "_enemyFrequency", "_villagePatrolSpawnArea"];
+
     private ["_fnc_OnSpawnAmbientInfantryGroup", "_fnc_OnSpawnAmbientInfantryUnit", "_scriptHandle"];
     private ["_playerGroup", "_minEnemiesPerGroup", "_maxEnemiesPerGroup", "_fnc_OnSpawnGroup"];
     
-    _enemyMinSkill = _this select 0;
-    _enemyMaxSkill = _this select 1;
-    _enemySpawnDistance = _this select 2;
-    _enemyFrequency = _this select 3;
-	_villagePatrolSpawnArea = _this select 4;
     
     _playerGroup = [] call A3E_fnc_GetPlayerGroup;
     
@@ -326,7 +309,7 @@ private _UseMotorPools = Param_MotorPools;
 	};
 	
 	_fnc_OnSpawnAmbientInfantryGroup = {
-		private ["_unit", "_enemyUnit", "_i"];
+		private ["_unit", "_enemyUnit"];
 		private ["_scriptHandle"];
 		
 		_unit = units _this select 0;
@@ -335,6 +318,7 @@ private _UseMotorPools = Param_MotorPools;
 			_enemyUnit = _unit findNearestEnemy (getPos _unit);
 			if (!(isNull _enemyUnit)) exitWith {
 				
+				private _i = 0;
 				for [{_i = (count waypoints _this) - 1}, {_i >= 0}, {_i = _i - 1}] do {
 					deleteWaypoint [_this, _i];
 				};
@@ -347,7 +331,6 @@ private _UseMotorPools = Param_MotorPools;
 		};
 	};
 	
-	private ["_infantryTypes"];
 	private ["_infantryGroupsCount", "_radius", "_groupsPerSqkm"];
 
 	switch (_enemyFrequency) do
@@ -379,7 +362,7 @@ private _UseMotorPools = Param_MotorPools;
 
     
     // Initialize the Escape military and civilian traffic
-	private ["_vehiclesPerSqkm", "_radius", "_vehiclesCount", "_fnc_onSpawnCivilian", "_vehicleClasses"];
+	private ["_vehiclesPerSqkm", "_radius", "_vehiclesCount", "_fnc_onSpawnCivilian"];
 	
 	// Civilian traffic
 	
@@ -461,8 +444,8 @@ private _UseMotorPools = Param_MotorPools;
 	
 	_radius = _enemySpawnDistance + 500;
 	_vehiclesCount = round (_vehiclesPerSqkm * (_radius / 1000) * (_radius / 1000) * 3.141592);
-	[_playerGroup,_vehiclesCount,_enemySpawnDistance,_radius,_enemyMinSkill, _enemyMaxSkill] spawn {
-		params["_playerGroup","_vehiclesCount","_enemySpawnDistance","_radius","_enemyMinSkill", "_enemyMaxSkill"];
+	[_vehiclesCount,_enemySpawnDistance,_radius,_enemyMinSkill, _enemyMaxSkill] spawn {
+		params["_vehiclesCount","_enemySpawnDistance","_radius","_enemyMinSkill", "_enemyMaxSkill"];
 		sleep 300;
 		[A3E_VAR_Side_Opfor, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
 		[A3E_VAR_Side_Ind, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
@@ -497,31 +480,30 @@ private _UseMotorPools = Param_MotorPools;
 
 	//Spawn crashsites
 
-	_crashSiteCount = ceil(random(missionNamespace getvariable["CrashSiteCountMax",3]));
-	for [{_x=0},{_x<_crashSiteCount},{_x=_x+1}] do {
-	  _pos = [] call A3E_fnc_findFlatArea;
-	  [_pos] call A3E_fnc_crashSite;
+	private _crashSiteCount = ceil(random(missionNamespace getvariable["CrashSiteCountMax",3]));
+	for "_i" from 1 to _crashSiteCount step 1 do {
+		private _pos = [] call A3E_fnc_findFlatArea;
+		[_pos] call A3E_fnc_crashSite;
 	};
 
-	
-	  switch (_enemyFrequency) do
-        {
-            case 1: // 1-2 players
-            {
-                _minEnemiesPerGroup = 2;
-                _maxEnemiesPerGroup = 4;
-            };
-            case 2: // 3-5 players
-            {
-                _minEnemiesPerGroup = 3;
-                _maxEnemiesPerGroup = 6;
-            };
-            default // 6-8 players
-            {
-                _minEnemiesPerGroup = 4;
-                _maxEnemiesPerGroup = 8;
-            };
-        };
+	switch (_enemyFrequency) do
+	{
+	    case 1: // 1-2 players
+	    {
+	        _minEnemiesPerGroup = 2;
+	        _maxEnemiesPerGroup = 4;
+	    };
+	    case 2: // 3-5 players
+	    {
+	        _minEnemiesPerGroup = 3;
+	        _maxEnemiesPerGroup = 6;
+	    };
+	    default // 6-8 players
+	    {
+	        _minEnemiesPerGroup = 4;
+	        _maxEnemiesPerGroup = 8;
+	    };
+	};
 	
 	
 	
@@ -538,20 +520,16 @@ waitUntil {scriptDone _scriptHandle};
 
 
 // Spawn creation of start position settings
-[A3E_StartPos, _backPack, _enemyFrequency, _fenceRotateDir] spawn {
-    private ["_startPos", "_guardsAreArmed", "_guardsExist", "_guardLivesLong", "_enemyFrequency", "_fenceRotateDir"];
-    private ["_backpack","_debugAllUnits","_i", "_guard", "_guardGroup", "_marker", "_guardCount", "_guardGroups", "_unit", "_createNewGroup"];
+[A3E_StartPos, _backPack, _enemyFrequency] spawn {
+	params ["_startPos", "_backPack", "_enemyFrequency"];
+    private ["_guardGroup", "_marker", "_guardCount", "_guardGroups", "_unit", "_createNewGroup"];
     
-    _startPos = _this select 0;
-    _backPack = _this select 1;
-    _enemyFrequency = _this select 2;
-    _fenceRotateDir = _this select 3;
 	 
     // Spawn guard
 
-	
+	private _i = 0;	
 	for [{_i = 0}, {_i < (Param_EnemyFrequency*2)}, {_i = _i + 1}] do {
-		_weapon = a3e_arr_PrisonBackpackWeapons select floor(random(count(a3e_arr_PrisonBackpackWeapons)));
+		private _weapon = a3e_arr_PrisonBackpackWeapons select floor(random(count(a3e_arr_PrisonBackpackWeapons)));
 		_backpack addWeaponCargoGlobal[(_weapon select 0),1];
 		_backpack addMagazineCargoGlobal[(_weapon select 1),3];
 	};
@@ -631,15 +609,13 @@ waitUntil {scriptDone _scriptHandle};
         
 	//Add an alert trigger to the prison
 	A3E_fnc_revealPlayers = {
-		private ["_guardGroup"];
-		_guardGroup = _this;
+		private _guardGroup = _this;
 		{
 			_guardGroup reveal _x;
 		} foreach call A3E_fnc_GetPlayers;
 	};
 	A3E_fnc_soundAlarm = {
-		private ["_guardGroup"];
-		_guardGroups = _this select 0;
+		params ["_guardGroups"];
 		if(isNil("A3E_SoundPrisonAlarm")) then {
 			A3E_SoundPrisonAlarm = true;
 			publicvariable "A3E_SoundPrisonAlarm";
@@ -652,11 +628,8 @@ waitUntil {scriptDone _scriptHandle};
 		};
 	};
     // Start thread that waits for escape to start
-    [_guardGroups, _startPos] spawn {
-        private ["_guardGroups", "_startPos"];
-        
-        _guardGroups = _this select 0;
-        _startPos = _this select 1;
+    [_guardGroups] spawn {
+        params ["_guardGroups"];
         
         sleep 5;
         
@@ -685,12 +658,10 @@ waitUntil {scriptDone _scriptHandle};
 		//	[[[_x], {(_this select 0) setCaptive false;}], "BIS_fnc_spawn", _x, false] call BIS_fnc_MP;
 		//} foreach call A3E_fnc_GetPlayers;
 	   systemChat "Server: Escape has started.";
-
     };
 	//Spawn alarm watchdog
 	[_guardGroups] spawn {
-	  private ["_guardGroups"];
-        _guardGroups = _this select 0;
+		params ["_guardGroups"];
 		while{isNil("A3E_SoundPrisonAlarm")} do {
 			if(!isNil("A3E_EscapeHasStarted")) then {
 				{

@@ -8,6 +8,7 @@ private _out = [];
 		} else {
 			if(typename _x == "SCALAR") then {
 				if(count _out > 0) then {
+					private _i = 1;
 					for[{_i = 1},{_i < _x},{_i=_i+1}] do {
 						_out append [_out select count(_out)-1];
 					};

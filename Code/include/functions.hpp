@@ -70,7 +70,6 @@ class CfgFunctions
 			class TrackGroup {};
             class debugMsg {};
 			class rptLog {};
-			class systemChat {};
 		};
 		class Server
 		{

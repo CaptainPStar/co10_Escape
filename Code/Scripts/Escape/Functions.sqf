@@ -269,19 +269,6 @@ drn_fnc_Escape_AllPlayersOnStartPos = {
     _allPlayersAtStartPos
 };
 
-A3E_fnc_GetPlayerGroup = {
-    private ["_units", "_unit", "_group"];
-    
-    _units = call A3E_fnc_GetPlayers;
-    if(count _units == 0) exitwith {
-		_group = grpNull;
-		_group;
-	};
-    _unit = _units select 0;
-    _group = group _unit;   
-    _group;
-};
-
 drn_fnc_Escape_CreateExtractionPointServer = {
     private ["_extractionPointNo"];
     

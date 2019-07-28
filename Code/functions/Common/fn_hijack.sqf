@@ -1,6 +1,6 @@
+params["_target","_unit","_id"];
 private ["_isUnconscious","_generatorTrailer"];
 private [ "_count", "_text","_engineer"];
-params["_target","_unit","_id"];
 _generatorTrailer = cursorTarget;
 //BIS_fnc_DataTerminalAnimate
 if((_generatorTrailer getvariable ["A3E_Terminal_Hacked",false])) exitwith {systemchat "Terminal already used!";};
@@ -14,10 +14,10 @@ if (_engineer == 1) then {
 };
 
 
-_stateSteps = floor(_count/3);
-_state1 = _count-(_stateSteps)*0;
-_state2 = _count-(_stateSteps)*1;
-_state3 = _count-(_stateSteps)*2;
+private _stateSteps = floor(_count/3);
+private _state1 = _count-(_stateSteps)*0;
+private _state2 = _count-(_stateSteps)*1;
+private _state3 = _count-(_stateSteps)*2;
 while {(_count > 0) && (_unit distance _generatorTrailer < 3) && !(_unit getVariable ["AT_Revive_isUnconscious",false])} do
 {
 	_text = "Hacking " + str _count;

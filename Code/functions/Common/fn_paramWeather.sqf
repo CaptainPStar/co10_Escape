@@ -10,9 +10,9 @@
 	Returns:
 	NUMBER - overcast
 */
+params [["_template", 0, [0]]];
 
-private ["_overcast"];
-_template = [_this,0,0,[0]] call bis_fnc_param;
+// private ["_overcast"];
 //[_overcast * 0.01] call bis_fnc_setOvercast;
 //_overcast
 //0:Clear,1:Clear + Fog,2:Cloudy,3: Rainy, 4: Storm ,5: Random

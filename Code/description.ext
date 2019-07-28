@@ -41,34 +41,34 @@ wreckRemovalMinTime = 600; //seconds
 wreckRemovalMaxTime = 1800; //seconds
 
 ///////////////////////////////////////////////////////////////////////////////////////////
- class CfgDebriefing
+class CfgDebriefing
 {  
     class End1
     {
-        title = "Escape failed";
-        subtitle = "Everybody is dead";
-        description = "We haven't made it home. Atleast the enemy won't get any intel from us.";
+        title = $STR_A3E_dbrf_failed;
+        subtitle = $STR_A3E_dbrf_everybodyDead_subtitle;
+        description = $STR_A3E_dbrf_everybodyDead_description;
         pictureBackground = "";
     };
     class End2
     {
-        title = "Mission successful";
+        title = $STR_A3E_dbrf_successful;
         subtitle = "";
-        description = "We escaped the enemy and made it back home. Our gathered intel about the enemy forces will be valuable in the upcoming invasion.";
+        description = $STR_A3E_dbrf_successful_description;
         pictureBackground = "";
     };
 	class End3
     {
-        title = "Escape failed";
-        subtitle = "We left somebody behind";
-        description = "We escaped the enemy but not everybody made it home!";
+        title = $STR_A3E_dbrf_failed;
+        subtitle = $STR_A3E_dbrf_leftBehind_subtitle;
+        description = $STR_A3E_dbrf_leftBehind_description;
         pictureBackground = "";
     };
 	class End4
     {
-        title = "Escape successful";
+        title = $STR_A3E_dbrf_successful;
         subtitle = "";
-        description = "We escaped but our actions did not go unnoticed. Members of the squad will be court-martialed.";
+        description = $STR_A3E_dbrf_courtmartial_description;
         pictureBackground = "";
     };
 };
@@ -110,7 +110,7 @@ class RscTitles {
 	class HSC_View {
 			idd = 620000;
 			duration = 15000;
-			name = "Hindsight Cam";
+			name = $STR_A3E_hindsightCam_title;
 			onLoad = "uiNamespace setVariable ['ATHSC_View', _this select 0]";
 			onUnload = "uiNamespace setVariable ['ATHSC_View', displayNull]";
 
@@ -145,7 +145,7 @@ class RscTitles {
 			class controls {
 				class Rsc_TargetText {
 					idc = 170002;
-					text = "<t color='#ffffff' shadow='2'>You are unconscious!</t>";
+					text = $STR_A3E_hindsightCam_unconscious;
 					type = 13;
 					style = 2;
 					  
@@ -172,7 +172,7 @@ class RscTitles {
 				};
 			class Rsc_HelpText {
 					idc = -1;
-					text = "<t color='#cdcdcd' shadow='2'><u>Controls</u><br/>Cycle entities: A or D<br/>1st/3rd Person: NumEnter or V<br/>Rotate: Mouse<br/>Nightvision: N</t>";
+					text = $STR_A3E_hindsightCam_helpText;
 					type = 13;
 					style = 0;
 					  
@@ -209,7 +209,7 @@ class CfgLeaflets
 {
 	class Guer // Configuration for 1Rnd_Leaflets_Guer_F
 	{
-		text = "Please come back!!"; // Text shown when previewing the leaflet full-screen. Ideally should be localized, so even player who cannot read the image can get the information
+		text = $STR_A3E_leaflet_text; // Text shown when previewing the leaflet full-screen. Ideally should be localized, so even player who cannot read the image can get the information
 		texture = "leaflet.paa"; // Leaflet texture shown when previewing the leaflet full-screen
 		//model = "myLeaflet.p3d"; // In-flight model. Generic white leaflet is used when not defined.
 	};

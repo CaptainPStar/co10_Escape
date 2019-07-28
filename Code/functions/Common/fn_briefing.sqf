@@ -1,4 +1,5 @@
 //General mission flow triggerActivated
+private "_trigger";
 
 //waituntil{sleep 0.1;!isNil("A3E_PrisonLoudspeakerObject")};
 _trigger = createTrigger["EmptyDetector", [0,0,0]];

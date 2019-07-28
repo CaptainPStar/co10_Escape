@@ -18,7 +18,7 @@ if(isNil("A3E_MortarSiteCountMin")) then {
 };
 A3E_MortarSiteCountMin = A3E_MortarSiteCountMin * Param_Artillery;
 A3E_MortarSiteCountMax = A3E_MortarSiteCountMax * Param_Artillery;
-_mortarSiteCount = A3E_MortarSiteCountMin + random (A3E_MortarSiteCountMax-A3E_MortarSiteCountMin);
+private _mortarSiteCount = A3E_MortarSiteCountMin + random (A3E_MortarSiteCountMax-A3E_MortarSiteCountMin);
 
 _regionCount = ceil(_mortarSiteCount/4);
 while {count _positions < _mortarSiteCount} do {
@@ -91,13 +91,13 @@ while {count _positions < _mortarSiteCount} do {
 };
 
 {	
-	_blah=floor(random 2);//returns 0 or 1
+	private _blah = floor(random 2);//returns 0 or 1
 	if (_blah == 0) then {
 	[_x] call A3E_fnc_MortarSite;
 	};
 	if (_blah == 1) then {
 	[_x] call A3E_fnc_MortarSite2;
 	};
-	_playergroup = [] call A3E_fnc_getPlayerGroup;
+	private _playergroup = [] call A3E_fnc_getPlayerGroup;
 	[_playergroup, "A3E_MortarSitePatrolMarker", A3E_VAR_Side_Opfor, "INS", 1, 1, 2, Param_EnemySkill, Param_EnemySkill, Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
 } foreach _positions;

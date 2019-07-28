@@ -1,28 +1,28 @@
 //Load default params for SP && Editor
-if (isNil "paramsArray") then
-{
-    private ["_c", "_i", "_paramName"];
+if (isNil "paramsArray") then {
     paramsArray=[];
 
-    if (isClass (missionConfigFile/"Params")) then
-    {
-        _c=count (missionConfigFile/"Params");
+    if (isClass (missionConfigFile/"Params")) then {
+        private _c = count (missionConfigFile/"Params");
+        private _i = 0;
         for [ {_i=0}, {_i<_c}, {_i=_i+1} ] do
         {
-            _paramName = (configName ((missionConfigFile >> "Params") select _i));
+            private _paramName = (configName ((missionConfigFile >> "Params") select _i));
             paramsArray=paramsArray+[ getNumber (missionConfigFile >> "Params" >> _paramName >> "default") ];
         };
     };
 };
+
 AT_fnc_ParamsToVar = {
 	//Compile params into real variables:
 	private["_c","_paramName"];
-	_c=count (missionConfigFile/"Params");
-	for [ {_i=0}, {_i<_c}, {_i=_i+1} ] do
-	{
+	_c = count (missionConfigFile/"Params");
+  private _i = 0;
+	for [ {_i=0}, {_i<_c}, {_i=_i+1} ] do {
 		_paramName = (configName ((missionConfigFile >> "Params") select _i));
-		call compile format["%1 = %2;publicVariable '%1';",_paramName,paramsArray select _i];
 
+    missionNamespace setVariable [_paramName, paramsArray select _i];
+    publicVariable _paramName;
 	};
 };
 	
@@ -60,14 +60,14 @@ switch (_paramLoading) do
 };
 
 
+//FIXME:  This needs to be performed clientside so Localisation can be applied correctly
 //Recompile Params into Variables because they may have changed
 call AT_fnc_ParamsToVar;
 
 private _paramsBriefing = "Parameters:<br/>"; //An string for the briefing entry every player will receive:
-private["_c","_paramName"];
-_c=count (missionConfigFile/"Params");
-for [ {_i=1}, {_i<_c}, {_i=_i+1} ] do
-{
+private _c = count (missionConfigFile/"Params");
+private _i = 1;
+for [ {_i=1}, {_i<_c}, {_i=_i+1} ] do {
 	private _param = ((missionConfigFile >> "Params") select _i);
 	private _name = getText (_param >> "title");
 	private _value = paramsArray select _i;

@@ -4,27 +4,19 @@
 // Relative positions exported thanks too Maca's M3Eden Editor Addon.
 // modified by aussie :)
 
-private _center = param[0];
-private _rotation = param[1];
-private _static = param[2];
-private _vehicle = param[3];
-
+params ["_center", "_rotation", ["_staticWeaponClasses", objNull, [objNull]], ["_vehicle", objNull, [objNull]]];
 [_center,25] call a3e_fnc_cleanupTerrain;
-_rotation = _rotation;
 
-
-_fnc_createObject = {
+private _fnc_createObject = {
     params["_className","_centerPos","_relativePos","_rotateDir","_relativeDir",["_align",true]];
-    private["_object", "_realPos", "_realDir"];
-    _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1),(_relativePos select 2)], _rotateDir] call A3E_fnc_RotatePosition);
-    _object = createVehicle [_className, _realPos, [], 0, "CAN_COLLIDE"];
+    private _realPos = ([_centerPos, [(_centerPos select 0) + (_relativePos select 0), (_centerPos select 1) + (_relativePos select 1),(_relativePos select 2)], _rotateDir] call A3E_fnc_RotatePosition);
+    private _object = createVehicle [_className, _realPos, [], 0, "CAN_COLLIDE"];
     _object setdir (_relativeDir + _rotateDir);
     _object setPosATL _realPos;
 	if(_align) then {
 		_object setVectorUp surfaceNormal _realPos;
-	};
-	
-    _object;
+	};	
+    _object
 };
 
 private _objects = [];
@@ -71,95 +63,96 @@ _obj = ["Land_HBarrier_3_F",_center,[-5.0658,-9.98145,0],_rotation,0] call _fnc_
 _obj = ["Land_HBarrier_3_F",_center,[-8.2229,-10.0518,0],_rotation,0] call _fnc_createObject;
 _obj = ["Land_HBarrier_3_F",_center,[-11.2803,-3.74268,0],_rotation,180] call _fnc_createObject;
 _obj = ["Land_HBarrier_3_F",_center,[-3.65527,-7.49268,0],_rotation,270] call _fnc_createObject;
-call _fnc_createObject;
+
+// call _fnc_createObject;
 //STATIC GUNNER		["B_Soldier_A_F",[13.554,-11.0762,-2.78144],0,[true,false]],
 //STATIC GUNNER	["B_Soldier_A_F",[-8.06909,12.104,-0.00143909],186.127,[true,false]],
 //VEHICLE	["Land_DataTerminal_01_F",[3.79742,36.481,0],90.7022,[true,false]]
 
 
-    if (count _staticWeaponClasses > 0) then {
-        _gun = selectRandom _staticWeaponClasses;
-        
-		_pos = [_center,_center vectorAdd [13.554,-11.0762,2.78144],_rotation] call _fnc_rotatePos;
-		_obj = createVehicle [_gun, _pos, [], 0, "NONE"];
-		_obj setVectorDirAndUp [[-0.999998,0.00176479,0],[0,0,1]];
-		_obj setdir ((getdir _obj) + _rotation);
-		_obj setPosATL _pos;
-		[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
-    };
-    if (count _staticWeaponClasses > 0) then {
-        _gun = selectRandom _staticWeaponClasses;
-        
-		_pos = [_center,_center vectorAdd [-8.06909,12.104,-0.00143909],_rotation] call _fnc_rotatePos;
-		_obj = createVehicle [_gun, _pos, [], 0, "NONE"];
-		_obj setVectorDirAndUp [[-0.999998,0.00176479,0],[0,0,1]];
-		_obj setdir ((getdir _obj) + _rotation);
-		_obj setPosATL _pos;
-		[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
-    };
+if !(isNull _staticWeaponClasses) then {
+    private _gun =_staticWeaponClasses;
+    
+	private _pos = [_center,_center vectorAdd [13.554,-11.0762,2.78144],_rotation] call A3E_fnc_rotatePosition;
+	private _obj = createVehicle [_gun, _pos, [], 0, "NONE"];
+	_obj setVectorDirAndUp [[-0.999998,0.00176479,0],[0,0,1]];
+	_obj setdir ((getdir _obj) + _rotation);
+	_obj setPosATL _pos;
+	[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
+};
 
-if(!(isNull _vehicle)) then {
-	_pos = [_center,_center vectorAdd [3.79742,36.481,0],_rotation] call A3E_FNC_RotatePosition;
+if !(isNull _staticWeaponClasses) then {
+    private _gun = _staticWeaponClasses;
+        
+	private _pos = [_center,_center vectorAdd [-8.06909,12.104,-0.00143909],_rotation] call A3E_fnc_rotatePosition;
+	private _obj = createVehicle [_gun, _pos, [], 0, "NONE"];
+	_obj setVectorDirAndUp [[-0.999998,0.00176479,0],[0,0,1]];
+	_obj setdir ((getdir _obj) + _rotation);
+	_obj setPosATL _pos;
+	[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
+};
+
+if !(isNull _vehicle) then {
+	private _pos = [_center,_center vectorAdd [3.79742,36.481,0],_rotation] call A3E_fnc_rotatePosition;
 	_vehicle setdir (180.256 + _rotation);
 	_vehicle setPosATL _pos;
 };
 
- // Weapons
-    
-    private ["_weapons", "_weaponMagazines", "_box", "_weaponCount"];
+// Weapons
 
-    // Basic Weapon Box
+private ["_box", "_weaponCount"];
+
+// Basic Weapon Box
+private _weapons = [];
+private _weaponMagazines = [];
+
+for "_i" from 0 to (count a3e_arr_AmmoDepotBasicWeapons - 1) do {
+    private ["_handGunItem", "_weaponClassName", "_probabilityOfPrecence", "_minCount", "_maxCount", "_magazines", "_magazinesPerWeapon"];
     
-    _weapons = [];
-    _weaponMagazines = [];
+    _handGunItem = a3e_arr_AmmoDepotBasicWeapons select _i;
     
-    for "_i" from 0 to (count a3e_arr_AmmoDepotBasicWeapons - 1) do {
-        private ["_handGunItem", "_weaponClassName", "_probabilityOfPrecence", "_minCount", "_maxCount", "_magazines", "_magazinesPerWeapon"];
+    _weaponClassName = _handGunItem select 0;
+    _probabilityOfPrecence = _handGunItem select 1;
+    _minCount = _handGunItem select 2;
+    _maxCount = _handGunItem select 3;
+    _magazines = _handGunItem select 4;
+    _magazinesPerWeapon = _handGunItem select 5;
+    
+    if (random 100 <= _probabilityOfPrecence) then {
+        _weaponCount = floor (_minCount + random (_maxCount - _minCount));
+        _weapons pushBack [_weaponClassName, _weaponCount];
         
-        _handGunItem = a3e_arr_AmmoDepotBasicWeapons select _i;
-        
-        _weaponClassName = _handGunItem select 0;
-        _probabilityOfPrecence = _handGunItem select 1;
-        _minCount = _handGunItem select 2;
-        _maxCount = _handGunItem select 3;
-        _magazines = _handGunItem select 4;
-        _magazinesPerWeapon = _handGunItem select 5;
-        
-        if (random 100 <= _probabilityOfPrecence) then {
-            _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
-            
-            for "_j" from 0 to (count _magazines) - 1 do {
-                _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
-            };
+        for "_j" from 0 to (count _magazines) - 1 do {
+            _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
         };
     };
-    
-    if (count _weapons > 0 || count _weaponMagazines > 0) then {
-        //_box = "Box_East_Wps_F" createVehicle [(_middlePos select 0) - 3, (_middlePos select 1) + 0, 0];
-        //_box = createVehicle ["Box_East_Wps_F", [(_middlePos select 0) - 3, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
-			_box = createVehicle ["Box_East_Wps_F", [(_center select 0) + -11.7788, (_center select 1) + 3.81836, 0.1], [], 0, "CAN_COLLIDE"];
-/*			
-		_pos = [_center,_center vectorAdd [-11.7788,3.81836,0],_rotation] call _fnc_rotatePos;
-		_box = "Box_East_Wps_F" createvehicle _pos;
-		_box setVectorDirAndUp [[-0.999965,0.00837127,0],[0,0,1]];
-		_box setdir ((getdir _box) + _rotation);
-		_box setPosATL _pos;
-*/		
-        clearWeaponCargoGlobal _box;
-        clearMagazineCargoGlobal _box;
-        clearItemCargoGlobal _box;
-		clearBackpackCargoGlobal _box;
+};
 
-        
-        {
-            _box addWeaponCargoGlobal _x;
-        } foreach _weapons;
-        
-        {
-            _box addMagazineCargoGlobal _x;
-        } foreach _weaponMagazines;
-    };
+if (count _weapons > 0 || count _weaponMagazines > 0) then {
+    //_box = "Box_East_Wps_F" createVehicle [(_middlePos select 0) - 3, (_middlePos select 1) + 0, 0];
+    //_box = createVehicle ["Box_East_Wps_F", [(_middlePos select 0) - 3, (_middlePos select 1) + 0, 0], [], 0, "CAN_COLLIDE"];
+		_box = createVehicle ["Box_East_Wps_F", [(_center select 0) + -11.7788, (_center select 1) + 3.81836, 0.1], [], 0, "CAN_COLLIDE"];
+/*			
+	_pos = [_center,_center vectorAdd [-11.7788,3.81836,0],_rotation] call A3E_fnc_rotatePosition;
+	_box = "Box_East_Wps_F" createvehicle _pos;
+	_box setVectorDirAndUp [[-0.999965,0.00837127,0],[0,0,1]];
+	_box setdir ((getdir _box) + _rotation);
+	_box setPosATL _pos;
+*/		
+    clearWeaponCargoGlobal _box;
+    clearMagazineCargoGlobal _box;
+    clearItemCargoGlobal _box;
+	clearBackpackCargoGlobal _box;
+
+    
+    {
+        _box addWeaponCargoGlobal _x;
+    } foreach _weapons;
+    
+    {
+        _box addMagazineCargoGlobal _x;
+    } foreach _weaponMagazines;
+};
 
 
 _objects;
