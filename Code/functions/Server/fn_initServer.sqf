@@ -407,7 +407,21 @@ private _UseMotorPools = Param_MotorPools;
 					};
 					(_this select 1) addRating 1000; //Even out the minus score by killing civilians
 					[name (_this select 1) + " has killed a civilian."] call drn_fnc_CL_ShowCommandTextAllClients;
-				}
+				};
+				if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
+					_killer = (_this select 0) getVariable ["ace_medical_lastDamageSource", objNull];
+					if (_killer in (call A3E_fnc_GetPlayers)) then {
+						if(isNil("a3e_var_Escape_SearchLeader_civilianReporting")) then {
+								a3e_var_Escape_SearchLeader_civilianReporting = true;
+								publicVariable "a3e_var_Escape_SearchLeader_civilianReporting";
+								(_killer) addScore -5;
+							} else {
+								(_killer) addScore -1;
+							};
+							(_killer) addRating 1000; //Even out the minus score by killing civilians
+							[name (_killer) + " has killed a civilian."] call drn_fnc_CL_ShowCommandTextAllClients;
+					};
+				};
 			}];
 		} foreach _crew;
 		
@@ -578,7 +592,7 @@ waitUntil {scriptDone _scriptHandle};
 			_unit unlinkItem "ItemMap";
             _unit unlinkItem "ItemCompass";
             _unit unlinkItem "ItemGPS";
-			
+			if (ACE_MedicalServer) then {_unit addItem "ACE_epinephrine"};//Add Epinephrine for each unit
 			removeBackpackGlobal _unit;
 			
 			if(random 100 < 80) then {
