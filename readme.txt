@@ -14,7 +14,7 @@ You will most likely fail at the first try. But the mission is meant to be playe
 
 About the mission
 
-Escape was first devloped by Engima of Östgöta Ops for ArmA2. 
+Escape was first devloped by Engima of Ã–stgÃ¶ta Ops for ArmA2. 
 At that time me (NeoArmageddon) and Scruffy ported the mission to different islands and began customizing the mission.
 When ArmA3 was released, Vormulac and HyperZ made the effort to port the mission over to ArmA3. From that point on Scruffy and me improved and fixed the mission to the current state.
 Most of the scripts are replaced and were updated to A3 standards (but there is still some more room for improvements).
@@ -70,10 +70,13 @@ Diyala
 Kastellorizo
 Valtatie 5
 
-
+Compiling Basics
+- Clone the repo with git
+- run "git submodule update --init --recursive" in the repo folder to fetch the revive submodule
+- run compile_local.py
 
 Credits
-Original Mission (Arma2) by Engima of Östgöta Ops.
+Original Mission (Arma2) by Engima of Ã–stgÃ¶ta Ops.
 Mission ported to Arma3 by Vormulac and HyperZ.
 Continue devlopment by NeoArmageddon and Scruffy.
 Island ports and unit configs by Scruffy.
