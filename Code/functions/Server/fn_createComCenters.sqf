@@ -9,16 +9,16 @@ if (isNil "a3e_communicationCenterMarkers") then {
 	diag_log "Warning: Comcenter Templatearray was empty!";
 };
 
-private _commCentreMarkers = [] + a3e_communicationCenterMarkers;
+private _comCenterMarkers = [] + a3e_communicationCenterMarkers;
 
 if (isNil "A3E_ComCenterCount") then {
 	A3E_ComCenterCount = 4;
 };
 
 //Shuffle comcenters
-private _suffledComCenterMarkers = [];
-while {(count _commCentreMarkers) > 0} do {
-	_suffledComCenterMarkers pushBack (_commCentreMarkers deleteAt floor(random(count(_commCentreMarkers))));
+private _shuffledComCenterMarkers = [];
+while {(count _comCenterMarkers) > 0} do {
+	_shuffledComCenterMarkers pushBack (_comCenterMarkers deleteAt floor(random(count(_comCenterMarkers))));
 };
 
 // iterate over the set of all potential commcenter markers and make commCenters at no more than A3E_ComCenterCount of them.
@@ -30,7 +30,6 @@ private _instanceNo = 0;
 {
 	_x params ["_pos", "_dir"];
 	private _ok = true;
-
 	{
 		if ((_pos distance _x) < A3E_MinComCenterDistance) then {
 			_ok = false;
@@ -65,7 +64,7 @@ private _instanceNo = 0;
 		_comCenPositions pushBack _pos;
 	};
 	if (_createdCount >= A3E_ComCenterCount) exitWith {};
-} forEach _commCentreMarkers;
+} forEach _shuffledComCenterMarkers;
 
 a3e_var_Escape_communicationCenterPositions = _comCenPositions;
 publicVariable "a3e_var_Escape_communicationCenterPositions";
