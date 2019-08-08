@@ -822,7 +822,6 @@ a3e_arr_extraction_chopper = [
     ,"O_Heli_Attack_02_dynamicLoadout_F"];
 	if(Param_UseDLCHelis==1) then {
 	a3e_arr_extraction_chopper pushback "O_Heli_Transport_04_bench_F";
-	a3e_arr_extraction_chopper pushback "O_Heli_Transport_04_covered_F";
 	};
 a3e_arr_extraction_chopper_escort = [
 	"O_Heli_Attack_02_dynamicLoadout_F"];
