@@ -410,12 +410,9 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
-	"CUP_B_MTLB_pk_Winter_CDF"
-	,"CUP_B_BTR60_CDF"
-	,"CUP_B_BRDM2_HQ_CDF"
+	 "CUP_B_BTR60_CDF"
 	,"CUP_B_BRDM2_CDF"
-	,"CUP_B_BMP_HQ_CDF"
-	,"CUP_B_BMP2_CDF"];
+	,"CUP_B_BRDM2_ATGM_CDF"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"CUP_B_ZSU23_CDF"
@@ -519,11 +516,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
-	"CUP_B_Mi24_D_Dynamic_CDF"
-	,"CUP_B_Mi24_D_MEV_Dynamic_CDF"
-	,"CUP_I_Mi24_D_ION"
-	,"CUP_I_Mi24_Mk3_ION"
-	,"CUP_I_Mi24_Mk4_ION"];
+	"CUP_B_Mi24_D_Dynamic_CDF"];
 a3e_arr_O_transport_heli = [
 	"CUP_B_Mi17_CDF"
 	,"CUP_B_Mi17_medevac_CDF"
@@ -790,9 +783,7 @@ a3e_arr_Bipods = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"CUP_O_Mi8_RU"
-	,"CUP_O_Mi8_medevac_RU"
-	,"CUP_O_Ka60_Grey_RU"
-	,"CUP_O_MI6T_RU"];
+	,"CUP_O_Mi24_V_RU"];
 a3e_arr_extraction_chopper_escort = [
 	"CUP_O_Ka52_RU"
 	,"CUP_O_Ka52_Blk_RU"
@@ -822,9 +813,9 @@ a3e_arr_searchChopperHard = [
 	"CUP_I_Ka60_Blk_ION"
 	,"CUP_I_Ka60_GL_Blk_ION"];
 a3e_arr_searchChopper_pilot = [
-	"CUP_I_PMC_Pilot"];
+	"CUP_I_PMC_Winter_Pilot"];
 a3e_arr_searchChopper_crew = [
-	"CUP_I_PMC_Pilot"];
+	"CUP_I_PMC_Winter_Pilot"];
 
 if(Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;

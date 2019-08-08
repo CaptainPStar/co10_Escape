@@ -473,12 +473,12 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 a3e_arr_ComCenDefence_lightArmorClasses = [
 	"O_MRAP_02_gmg_F"
 	,"O_MRAP_02_hmg_F"
-	,"O_APC_Wheeled_02_rcws_F"
-	,"O_APC_Tracked_02_AA_F"];
+	,"O_APC_Wheeled_02_rcws_F"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"O_MBT_02_cannon_F"
-	,"O_APC_Tracked_02_cannon_F"];
+	,"O_APC_Tracked_02_cannon_F"
+	,"O_APC_Tracked_02_AA_F"];
 	if(Param_UseDLCTanks==1) then {
 		a3e_arr_ComCenDefence_heavyArmorClasses pushback "O_MBT_04_cannon_F";
 		a3e_arr_ComCenDefence_heavyArmorClasses pushback "O_MBT_04_command_F";
@@ -581,8 +581,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
 	"O_Heli_Attack_02_F"
-	,"O_Heli_Attack_02_black_F"
-	,"O_Heli_Light_02_F"];
+	,"O_Heli_Attack_02_black_F"];
 a3e_arr_O_transport_heli = [
 	"O_Heli_Light_02_unarmed_F"];
 	if(Param_UseDLCHelis==1) then {
@@ -860,16 +859,9 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"I_Heli_light_03_unarmed_F"
-	,"I_Heli_Transport_02_F"
-	,"O_Heli_Light_02_unarmed_F"];
-	if(Param_UseDLCHelis==1) then {
-	a3e_arr_searchChopperEasy pushback "O_Heli_Transport_04_F";
-	};
+	"I_Heli_light_03_unarmed_F"];
 a3e_arr_searchChopperHard = [
-	"I_Heli_light_03_F"
-	,"O_Heli_Light_02_F"
-	,"O_Heli_Light_02_v2_F"];
+	"I_Heli_light_03_F"];
 a3e_arr_searchChopper_pilot = [
 	"I_helipilot_F"];
 a3e_arr_searchChopper_crew = [

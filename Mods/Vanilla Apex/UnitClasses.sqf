@@ -370,12 +370,12 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 a3e_arr_ComCenDefence_lightArmorClasses = [
 	"O_T_MRAP_02_gmg_ghex_F"
 	,"O_T_MRAP_02_hmg_ghex_F"
-	,"O_T_APC_Wheeled_02_rcws_ghex_F"
-	,"O_T_APC_Tracked_02_AA_ghex_F"];
+	,"O_T_APC_Wheeled_02_rcws_v2_ghex_F"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"O_T_MBT_02_cannon_ghex_F"
-	,"O_T_APC_Tracked_02_cannon_ghex_F"];
+	,"O_T_APC_Tracked_02_cannon_ghex_F"
+	,"O_T_APC_Tracked_02_AA_ghex_F"];
 	if(Param_UseDLCTanks==1) then {
 		a3e_arr_ComCenDefence_heavyArmorClasses pushback "O_T_MBT_04_cannon_F";
 		a3e_arr_ComCenDefence_heavyArmorClasses pushback "O_T_MBT_04_command_F";
@@ -469,7 +469,6 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
 	"O_Heli_Attack_02_black_F"
-	,"O_Heli_Light_02_F"
 	,"O_T_VTOL_02_infantry_F"];
 a3e_arr_O_transport_heli = [
 	"O_Heli_Light_02_unarmed_F"];
@@ -710,7 +709,10 @@ a3e_arr_Bipods = [
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"B_Heli_Transport_03_F"];
+	"B_Heli_Transport_01_F"];
+	 if(Param_UseDLCHelis==1) then {
+	a3e_arr_O_transport_heli pushback "B_Heli_Transport_03_F";
+	};
 a3e_arr_extraction_chopper_escort = [
 	"B_Heli_Attack_01_F"];
 

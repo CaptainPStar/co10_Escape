@@ -426,30 +426,19 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
-	"CUP_B_HMMWV_M2_USA"
-	,"CUP_B_HMMWV_MK19_USA"
-	,"CUP_B_HMMWV_TOW_USA"
-	,"CUP_B_HMMWV_M2_GPK_USA"
-	,"CUP_B_HMMWV_Crows_M2_USA"
-	,"CUP_B_HMMWV_Crows_MK19_USA"
-	,"CUP_B_HMMWV_SOV_M2_USA"
-	,"CUP_B_M113_desert_USA"
-	,"CUP_B_M1126_ICV_M2_Desert"
+	"CUP_B_M1126_ICV_M2_Desert"
 	,"CUP_B_M1126_ICV_MK19_Desert"
-	,"CUP_B_M1128_MGS_Desert"
 	,"CUP_B_M1135_ATGMV_Desert"
-	,"CUP_I_SUV_Armored_ION"
-	,"CUP_I_FENNEK_GMG_ION"
-	,"CUP_I_FENNEK_HMG_ION"
-	,"CUP_I_MATV_GMG_ION"
-	,"CUP_I_MATV_HMG_ION"];
+	,"CUP_B_M113_desert_USA"
+	,"CUP_B_RG31_M2_GC_USA"
+	,"CUP_B_RG31_M2_GC_USA"
+	,"CUP_B_RG31_Mk19_USA"
+	,"CUP_B_RG31_Mk19_USA"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
-	"CUP_B_M2Bradley_USA_D"
-	,"CUP_B_M2A3Bradley_USA_D"
-	,"CUP_B_M7Bradley_USA_D"
-	,"CUP_B_M1A1_Woodland_USMC"
-	,"CUP_B_M1A2_TUSK_MG_USMC"];
+	"CUP_B_M2A3Bradley_USA_D"
+	,"CUP_B_M1A1_DES_US_Army"
+	,"CUP_B_M1A2_TUSK_MG_DES_US_Army"];
 
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
@@ -540,13 +529,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
-	"CUP_B_AH64D_DL_USA"
-	,"CUP_B_AH6J_USA"
-	,"CUP_B_AH6M_USA"
-	,"CUP_B_MH60L_DAP_4x_Multi_US"
-	,"CUP_I_Mi24_D_ION"
-	,"CUP_I_Mi24_Mk3_ION"
-	,"CUP_I_Mi24_Mk4_ION"];
+	"CUP_B_AH64D_DL_USA"];
 a3e_arr_O_transport_heli = [
 	"CUP_B_MH6J_USA"
 	,"CUP_B_MH6M_USA"
@@ -814,9 +797,7 @@ a3e_arr_Bipods = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"CUP_O_Mi8_RU"
-	,"CUP_O_Mi8_medevac_RU"
-	,"CUP_O_Ka60_Grey_RU"
-	,"CUP_O_MI6T_RU"];
+	,"CUP_O_Mi24_V_RU"];
 a3e_arr_extraction_chopper_escort = [
 	"CUP_O_Ka52_RU"
 	,"CUP_O_Ka52_Blk_RU"
@@ -833,8 +814,7 @@ a3e_arr_extraction_chopper_escort = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
 	"CUP_USMC_MQ9"
-	,"CUP_B_AH6X_USA"
-	,"CUP_I_Plane_ION"];
+	,"CUP_B_AH6X_USA"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf

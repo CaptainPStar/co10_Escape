@@ -22,11 +22,12 @@ A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind]; // CUP NAPA
 
 // Random array. Start position guard types around the prison.
 a3e_arr_Escape_StartPositionGuardTypes = [
-	"CUP_I_GUE_Soldier_AKS74"
+    "CUP_I_GUE_Soldier_AKS74"
 	,"CUP_I_GUE_Soldier_AKM"
 	,"CUP_I_GUE_Soldier_AKSU"
 	,"CUP_I_GUE_Soldier_GL"
-	,"CUP_I_GUE_Soldier_AR"];
+	,"CUP_I_GUE_Soldier_AR"
+	,"CUP_I_GUE_Soldier_AKS74"];
 
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
@@ -263,15 +264,15 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
-	"CUP_O_Vodnik_PK_RU"
-	,"CUP_O_Vodnik_hmg_RU"
-	,"CUP_I_BRDM2_NAPA"];
+	"CUP_O_GAZ_Vodnik_BPPU_RU"
+	,"CUP_O_BRDM2_RUS"
+	,"CUP_O_BRDM2_ATGM_RUS"
+	,"CUP_O_BTR60_RU"
+	,"CUP_0_BTR90_RU"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"CUP_O_2S6M_RU"
-	,"CUP_O_BMP2_RU"
-	,"CUP_O_BMP3_RU"
-	,"CUP_O_T72_RU"];
+	,"CUP_O_T90_RU"];
 
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
@@ -374,7 +375,6 @@ a3e_arr_O_attack_heli = [
 	,"CUP_O_Ka52_Blk_RU"
 	,"CUP_O_Mi24_P_RU"
 	,"CUP_O_Mi24_V_RU"
-	,"CUP_O_Ka60_Grey_RU"
 	,"CUP_O_Ka52_RU"
 	,"CUP_O_Ka52_Blk_RU"
 	,"CUP_O_Ka52_GreyCamo_RU"
@@ -384,16 +384,15 @@ a3e_arr_O_transport_heli = [
 	,"CUP_O_MI6T_RU"
 	,"CUP_O_Mi8_RU"
 	,"CUP_O_Mi8_medevac_RU"
-	,"CUP_O_Mi8_VIV_RU"
 	,"CUP_O_Mi8_RU"];
 a3e_arr_O_pilots = [
 	"CUP_O_RU_Pilot_VDV"];
 a3e_arr_I_transport_heli = [
-	"CUP_I_SA330_Puma_HC1_RACS"
-	,"CUP_I_SA330_Puma_HC2_RACS"
-	,"CUP_I_UH60L_FFV_RACS"
-	,"CUP_I_UH60L_Unarmed_FFV_Racs"
-	,"CUP_I_UH60L_Unarmed_FFV_MEV_Racs"];
+	"CUP_O_MI6A_RU"
+	,"CUP_O_MI6T_RU"
+	,"CUP_O_Mi8_RU"
+	,"CUP_O_Mi8_medevac_RU"
+	,"CUP_O_Mi8_RU"];
 a3e_arr_I_pilots = [
 	"CUP_I_GUE_Pilot"];
 
@@ -635,18 +634,15 @@ a3e_arr_Bipods = [
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"CUP_B_MH6J_USA"
+	"CUP_B_MH60L_DAP_2x_USN"
+	,"CUP_B_MH60L_DAP_4x_USN"
 	,"CUP_B_MH60S_FFV_USMC"
-	,"CUP_B_CH47F_USA"
-	,"CUP_B_UH60M_FFV_US"
-	,"CUP_B_UH60M_Unarmed_FFV_US"
-	,"CUP_B_UH60M_Unarmed_FFV_MEV_US"
-	,"CUP_B_CH53E_USMC"
-	,"CUP_B_UH1Y_MEV_USMC",
-	"CUP_B_UH1Y_UNA_USMC"];
+	,"CUP_B_UH60S_USN"
+	,"CUP_B_UH1Y_Gunship_Dynamic_USMC"
+	,"CUP_B_MV22_USMC_RAMPGUN"
+	,"CUP_B_MV22_USMC_RAMPGUN"];
 a3e_arr_extraction_chopper_escort = [
-	"CUP_B_AH1Z_USMC"
-	,"CUP_B_AH64D_MR_USA"];
+	"CUP_B_AH1Z_USMC"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
