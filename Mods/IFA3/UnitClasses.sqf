@@ -328,7 +328,7 @@ a3e_arr_O_transport_heli = [
 a3e_arr_O_pilots = [
 	"LIB_GER_pilot"];
 a3e_arr_I_transport_heli = [
-	"LIB_Ju52";
+	"LIB_Ju52"];
 a3e_arr_I_pilots = [
 	"LIB_GER_pilot"];
 
