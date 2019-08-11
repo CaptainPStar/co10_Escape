@@ -460,10 +460,11 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
-	"B_Heli_Light_01_dynamicLoadout_F"
-	,"B_Heli_Attack_01_dynamicLoadout_F"];
+	"B_Heli_Attack_01_dynamicLoadout_F"];
 a3e_arr_O_transport_heli = [
-	"B_Heli_Transport_01_F"];
+	"B_Heli_Transport_01_F"
+	,"B_Heli_Transport_01_F"
+	,"B_Heli_Light_01_F"];
 	if(Param_UseDLCHelis==1) then {
 	a3e_arr_O_transport_heli pushback "B_Heli_Transport_03_F";
 	a3e_arr_O_transport_heli pushback "B_Heli_Transport_03_unarmed_F";

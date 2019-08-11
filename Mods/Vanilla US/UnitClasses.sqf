@@ -474,16 +474,12 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 	"B_MRAP_01_gmg_F"
 	,"B_MRAP_01_hmg_F"
 	,"B_APC_Wheeled_01_cannon_F"
-	,"B_APC_Tracked_01_AA_F"];
-	if(Param_UseDLCTanks==1) then {
-		a3e_arr_ComCenDefence_LightArmorClasses pushback "B_AFV_Wheeled_01_cannon_F";
-	};
+	,"B_MRAP_01_gmg_F"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"B_MBT_01_cannon_F"
 	,"B_MBT_01_TUSK_F"
-	,"O_MBT_04_cannon_F"
-	,"O_MBT_04_command_F"];
+	,"B_APC_Tracked_01_AA_F"];
 	if(Param_UseDLCTanks==1) then {
 		a3e_arr_ComCenDefence_heavyArmorClasses pushback "B_AFV_Wheeled_01_up_cannon_F";
 	};
@@ -579,8 +575,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	};
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
-	"B_Heli_Attack_01_dynamicLoadout_F"
-	,"B_Heli_Light_01_dynamicLoadout_F"];
+	"B_Heli_Attack_01_dynamicLoadout_F"];
 a3e_arr_O_transport_heli = [
 	"B_Heli_Transport_01_F"
 	,"B_Heli_Transport_01_F"
@@ -823,11 +818,10 @@ a3e_arr_Bipods = [
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"O_Heli_Light_02_dynamicLoadout_F"
-	,"O_Heli_Light_02_unarmed_F"];
+    "O_Heli_Attack_02_dynamicLoadout_F"
+    ,"O_Heli_Attack_02_dynamicLoadout_F"];
 	if(Param_UseDLCHelis==1) then {
 	a3e_arr_extraction_chopper pushback "O_Heli_Transport_04_bench_F";
-	a3e_arr_extraction_chopper pushback "O_Heli_Transport_04_covered_F";
 	};
 a3e_arr_extraction_chopper_escort = [
 	"O_Heli_Attack_02_dynamicLoadout_F"];
@@ -856,13 +850,9 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"I_Heli_light_03_unarmed_F"
-	,"I_Heli_Transport_02_F"
-	,"B_Heli_Light_01_F"];
+	"I_Heli_light_03_unarmed_F"];
 a3e_arr_searchChopperHard = [
-	"I_Heli_light_03_F"
-	,"B_Heli_Transport_01_F"
-	,"B_Heli_Light_01_dynamicLoadout_F"];
+	"I_Heli_light_03_F"];
 a3e_arr_searchChopper_pilot = [
 	"I_helipilot_F"];
 a3e_arr_searchChopper_crew = [

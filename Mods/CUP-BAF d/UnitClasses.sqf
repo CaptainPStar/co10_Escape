@@ -397,15 +397,8 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
-	"CUP_B_LR_MG_GB_W"
-	,"CUP_B_Ridgback_LMG_GB_D"
-	,"CUP_B_Ridgback_HMG_GB_D"
+	 "CUP_B_Ridgback_HMG_GB_D"
 	,"CUP_B_Ridgback_GMG_GB_D"
-	,"CUP_B_Mastiff_LMG_GB_D"
-	,"CUP_B_Jackal2_L2A1_GB_D"
-	,"CUP_B_Jackal2_GMG_GB_D"
-	,"CUP_B_BAF_Coyote_L2A1_D"
-	,"CUP_B_BAF_Coyote_GMG_D"
 	,"CUP_B_FV432_Bulldog_GB_D_RWS"
 	,"CUP_B_FV432_Bulldog_GB_D"];
 // Random array. Heavy armored vehicles guarding the communication centers.
@@ -419,7 +412,7 @@ a3e_arr_ComCenDefence_heavyArmorClasses = [
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
 a3e_arr_ComCenStaticWeapons = [
-	"CUP_B_L111A1_BAF_MPT"];
+	"CUP_B_L111A1_BAF_DDPM"];
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
 	"I_G_Offroad_01_repair_F"
@@ -510,13 +503,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
-	"CUP_B_AH1_DL_BAF"
-	,"CUP_B_AW159_RN_Blackcat"
-	,"CUP_B_AW159_GB"
-	,"CUP_B_AW159_RN_Grey"
-	,"CUP_B_Mi171Sh_ACR"
-	,"CUP_B_Mi35_Dynamic_CZ_Des"
-	,"CUP_B_Mi35_Dynamic_CZ_Tiger"];
+	"CUP_B_AH1_DL_BAF"];
 a3e_arr_O_transport_heli = [
 	"CUP_B_AW159_Unarmed_RN_Blackcat"
 	,"CUP_B_AW159_Unarmed_GB"
@@ -793,9 +780,7 @@ a3e_arr_Bipods = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"CUP_O_Mi8_RU"
-	,"CUP_O_Mi8_medevac_RU"
-	,"CUP_O_Ka60_Grey_RU"
-	,"CUP_O_MI6T_RU"];
+	,"CUP_O_Mi24_V_RU"];
 a3e_arr_extraction_chopper_escort = [
 	"CUP_O_Ka52_RU"
 	,"CUP_O_Ka52_Blk_RU"
@@ -811,8 +796,7 @@ a3e_arr_extraction_chopper_escort = [
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
-	"CUP_USMC_MQ9"
-	,"CUP_B_AH6X_USA"];
+	"CUP_USMC_MQ9"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
@@ -820,13 +804,17 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"CUP_B_Mi171Sh_Unarmed_ACR"];
+	"CUP_B_AW159_Unarmed_RN_Blackcat"
+	,"CUP_B_AW159_Unarmed_RN_Grey"
+	,"CUP_B_AW159_Unarmed_GB"];
 a3e_arr_searchChopperHard = [
-	"CUP_B_Mi171Sh_ACR"];
+	"CUP_B_AW159_GB"
+   ,"CUP_B_AW159_RN_Blackcat"
+   ,"CUP_B_AW159_RN_Grey"];
 a3e_arr_searchChopper_pilot = [
-	"CUP_B_CZ_Pilot_DES"];
+	"CUP_B_BAF_Soldier_Helipilot_MTP"];
 a3e_arr_searchChopper_crew = [
-	"CUP_B_CZ_Pilot_DES"];
+	"CUP_B_BAF_Soldier_Helipilot_MTP"];
 
 if(Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;

@@ -340,16 +340,12 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
-	"CUP_B_HMMWV_M2_USMC"
-	,"CUP_B_HMMWV_MK19_USMC"
-	,"CUP_B_HMMWV_TOW_USMC"
-	,"CUP_B_HMMWV_M1114_USMC"
-	,"CUP_B_HMMWV_Avenger_USMC"
-	,"CUP_B_RG31_M2_OD_USMC"
+	"CUP_B_RG31_M2_OD_GC_USMC"
+	,"CUP_B_RG31_M2_OD_GC_USMC"
+	,"CUP_B_RG31_Mk19_OD_USMC"
 	,"CUP_B_RG31_Mk19_OD_USMC"
 	,"CUP_B_LAV25_USMC"
-	,"CUP_B_LAV25M240_USMC"
-	,"CUP_B_AAV_USMC"];
+	,"CUP_B_LAV25M240_USMC"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"CUP_B_M1A1_Woodland_USMC"
@@ -440,9 +436,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
-	"CUP_B_AH1Z_Dynamic_USMC"
-	,"CUP_B_MH60L_DAP_4x_Multi_USN"
-	,"CUP_B_UH1Y_Gunship_Dynamic_USMC"];
+	"CUP_B_AH1Z_Dynamic_USMC"];
 a3e_arr_O_transport_heli = [
 	"CUP_B_UH1Y_MEV_USMC"
 	,"CUP_B_UH1Y_UNA_USMC"
@@ -455,7 +449,7 @@ a3e_arr_O_transport_heli = [
 a3e_arr_O_pilots = [
 	"CUP_B_USMC_Pilot"];
 a3e_arr_I_transport_heli = [
-	"CUP_B_UH60M_Unarmed_FFV_US"];
+	"CUP_I_UH1H_TK_GUE"];
 a3e_arr_I_pilots = [
 	"CUP_I_GUE_Pilot"];
 
@@ -709,9 +703,8 @@ a3e_arr_Bipods = [
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"CUP_O_Mi8_SLA_1"
-	,"CUP_O_Mi8_SLA_2"
-	,"CUP_O_UH1H_SLA"];
+	"CUP_O_Mi8_SLA_2"
+	,"CUP_O_Mi24_D_Dynamic_SLA"];
 a3e_arr_extraction_chopper_escort = [
 	"CUP_O_Ka50_AA_SLA"
 	,"CUP_O_Ka50_SLA"
@@ -730,20 +723,17 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"CUP_B_UH1Y_UNA_USMC"
-	,"CUP_B_UH1Y_MEV_USMC"
-	,"CUP_B_CH53E_USMC"];
+	"CUP_B_UH1Y_UNA_USMC"];
 a3e_arr_searchChopperHard = [
-	"CUP_B_MH60S_FFV_USMC"
-	,"CUP_B_UH1Y_GUNSHIP_USMC"
-	,"CUP_B_MH60L_DAP_2x_Multi_USN"
-	,"CUP_B_MH60L_DAP_2x_Escort_USN"
-	,"CUP_B_MH60L_DAP_4x_Multi_USN"
-	,"CUP_B_MH60L_DAP_4x_Escort_USN"];
+     "CUP_B_MH60L_DAP_2x_USN"
+	,"CUP_B_MH60L_DAP_4x_USN"
+    ,"CUP_B_MH60S_USMC"
+	,"CUP_B_UH60S_USN"
+	,"CUP_B_UH1Y_Gunship_Dynamic_USMC"];
 a3e_arr_searchChopper_pilot = [
-	"CUP_I_GUE_Pilot"];
+	"CUP_B_USMC_Pilot"];
 a3e_arr_searchChopper_crew = [
-	"CUP_I_GUE_Pilot"];
+	"CUP_B_USMC_Pilot"];
 
 if(Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;

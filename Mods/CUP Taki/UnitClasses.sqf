@@ -382,7 +382,8 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 	"CUP_O_M113_TKA"
 	,"CUP_O_BRDM2_TKA"
 	,"CUP_O_BRDM2_ATGM_TKA"
-	,"CUP_O_BTR60_TK"];
+	,"CUP_O_BTR60_TK"
+	,"CUP_O_BMP2_ZU_TKA"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"CUP_O_ZSU23_TK"
@@ -392,8 +393,7 @@ a3e_arr_ComCenDefence_heavyArmorClasses = [
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
 a3e_arr_ComCenStaticWeapons = [
-	"CUP_I_KORD_high_AAF"
-	,"CUP_I_DSHKM_AAF"];
+	"CUP_O_KORD_high_TK"];
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
 	"I_G_Offroad_01_repair_F"
@@ -492,8 +492,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
-	"CUP_O_Mi24_D_TK"
-	,"CUP_O_Mi17_TK"];
+	"CUP_O_Mi24_D_TK"];
 a3e_arr_O_transport_heli = [
 	"CUP_O_Mi17_TK"
 	,"CUP_O_UH1H_TKA"
@@ -744,16 +743,10 @@ a3e_arr_Bipods = [
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"CUP_B_MH6J_USA"
-	,"CUP_B_MH60S_FFV_USMC"
-	,"CUP_B_CH47F_USA"
-	,"CUP_B_CH47F_VIV_USA"
-	,"CUP_B_UH60M_FFV_US"
-	,"CUP_B_UH60M_Unarmed_FFV_US"
-	,"CUP_B_UH60M_Unarmed_FFV_MEV_US"
-	,"CUP_B_CH53E_USMC"
-	,"CUP_B_UH1Y_MEV_USMC",
-	"CUP_B_UH1Y_UNA_USMC"];
+	 "CUP_B_UH1D_GER_KSK_Des"
+	,"CUP_B_UH1D_armed_GER_KSK_Des"
+	,"CUP_B_UH1D_gunship_GER_KSK_Des"
+	,"CUP_B_UH1D_slick_GER_KSK_Des"];
 a3e_arr_extraction_chopper_escort = [
 	"CUP_B_AH1Z_USMC"
 	,"CUP_B_AH64D_MR_USA"];
@@ -763,10 +756,7 @@ a3e_arr_extraction_chopper_escort = [
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
-	"O_UAV_01_F"
-	,"O_UAV_02_CAS_F"
-	,"O_UAV_02_F"
-	,"O_UAV_02_F"];
+	"CUP_O_Pchela1T_RU"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
