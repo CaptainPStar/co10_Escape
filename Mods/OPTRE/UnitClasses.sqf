@@ -470,7 +470,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"OPTRE_Static_M41"
 	,"OPTRE_Static_ATGM"
 	,"OPTRE_Static_Gauss"
-	,OPTRE_LAU65D_pod];
+	,"OPTRE_LAU65D_pod"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"OPTRE_M12_LRV"
 	,"OPTRE_M12_LRV"
@@ -480,7 +480,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	,"OPTRE_Static_M41"
 	,"OPTRE_Static_ATGM"
 	,"OPTRE_Static_Gauss"
-	,OPTRE_LAU65D_pod];
+	,"OPTRE_LAU65D_pod"];
 
 	
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
@@ -802,7 +802,7 @@ a3e_arr_extraction_boat_escort = [
 a3e_arr_searchdrone = [
 	"B_UAV_01_F"
 	,"B_UAV_02_dynamicLoadout_F"
-	,"B_UAV_05_F];
+	,"B_UAV_05_F"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
