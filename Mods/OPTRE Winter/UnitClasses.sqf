@@ -25,14 +25,14 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 	"OPTRE_UNSC_Army_Soldier_Grenadier_SNO"
 	,"OPTRE_UNSC_Army_Soldier_Rifleman_Light_SNO"
 	,"OPTRE_UNSC_Army_Soldier_Autorifleman_SNO"
-	,"OPTRE_UNSC_Army_Soldier_Radioman_SNO"];
+	,"OPTRE_UNSC_Army_Soldier_Rifleman_AR_SNO"];
 
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
-a3e_arr_PrisonBackpackWeapons pushback ["OPTRE_M6G","OPTRE_8Rnd_127x40_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["OPTRE_M6C","OPTRE_12Rnd_127x40_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["OPTRE_M7","OPTRE_60Rnd_5x23mm_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["OPTRE_M7_Folded","OPTRE_60Rnd_5x23mm_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["OPTRE_MA5K","OPTRE_32Rnd_762x51_Mag"];
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
@@ -649,7 +649,7 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["OPTRE_M45A", 10, 2, 4, ["OPTRE_6Rnd_8
 a3e_arr_AmmoDepotSpecialWeapons pushback ["OPTRE_M45E", 10, 2, 4, ["OPTRE_6Rnd_8Gauge_Pellets","OPTRE_6Rnd_8Gauge_Slugs", "OPTRE_12Rnd_8Gauge_Pellets","OPTRE_12Rnd_8Gauge_Slugs"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["OPTRE_M90A", 10, 2, 4, ["OPTRE_6Rnd_8Gauge_Pellets","OPTRE_6Rnd_8Gauge_Slugs"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["OPTRE_HMG38", 10, 2, 4, ["OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer", "3Rnd_UGL_FlareWhite_F", "3Rnd_HE_Grenade_shell", "3Rnd_Smoke_Grenade_shell"], 9];
-
+a3e_arr_AmmoDepotSpecialWeapons pushback ["OPTRE_M319", 10, 2, 4, ["OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer", "3Rnd_UGL_FlareWhite_F", "3Rnd_HE_Grenade_shell", "3Rnd_Smoke_Grenade_shell"], 9];
 
 
 // Weapons and ammo in the launchers box
