@@ -26,8 +26,20 @@ if(!isNil("Param_Debug")) then {
 };
 publicVariable "A3E_Debug";
 
+//ACE Revive
+AT_Revive_Camera = Param_ReviveView; //Needs to be stored on server now
+ACE_MedicalServer = false;
+if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
+	ACE_MedicalServer = true;
+	["ace_unconscious", {params["_unit", "_isDown"]; [_unit,_isDown] spawn ACE_fnc_HandleUnconscious;}] call CBA_fnc_addEventHandler;
+};
+publicVariable "ACE_MedicalServer";
+
 //Load Statistics
 [] spawn A3E_fnc_LoadStatistics;
+
+
+
 // Add crashsite here
 //##############
 
