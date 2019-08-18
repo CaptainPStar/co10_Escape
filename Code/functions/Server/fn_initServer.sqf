@@ -707,13 +707,13 @@ waitUntil {scriptDone _scriptHandle};
 		while{isNil("A3E_EscapeHasStarted")} do {
 			{
 				if(isNil("A3E_EscapeHasStarted") && !(captive _x)) then {
-					[[[_x], {(_this select 0) setCaptive true;}], "BIS_fnc_spawn", _x, false] call BIS_fnc_MP;
+					[_player, true] remoteExec ["setCaptive", _player, false];
 				};
 			} foreach call A3E_fnc_GetPlayers;
 			sleep 0.5;
 		};
 		{
-			[[[_x], {(_this select 0) setCaptive false;}], "BIS_fnc_spawn", _x, false] call BIS_fnc_MP;
+			[_player, false] remoteExec ["setCaptive", _player, false];
 		} foreach call A3E_fnc_GetPlayers;
 	};
 };

@@ -108,12 +108,13 @@ waituntil{sleep 0.1;(player getvariable["A3E_PlayerInitializedServer",false])};
 
 diag_log format["Escape debug: %1 is now ready (clientside).", name player];
 
-titleFadeOut 0.5;
+sleep 3;
+titleFadeOut 1.0;
 
 
 waituntil{sleep 0.5;!isNil("A3E_EscapeHasStarted")};
 
-//player setCaptive false;
+
 [] spawn {
 	waituntil{sleep 0.5;A3E_Task_Prison_Complete};
 	[localize "STR_A3E_initLocalPlayer_somewhereOn", A3E_WorldName , str (date select 2) + "/" + str (date select 1) + "/" + str (date select 0) + " " + str (date select 3) + ":00"] spawn BIS_fnc_infoText;
