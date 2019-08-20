@@ -24,13 +24,6 @@ AT_Revive_clearedDistance = 0;
 AT_Revive_Camera = 1;
 
 
-//If no ACE use ATR revive
-if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
-	player setVariable ["ACE_Revive_isUnconscious", false, true];
-}
-else {call ATR_FNC_ReviveInit};
-if ((isClass(configFile >> "CfgPatches" >> "ACE_Medical")) && !(ACE_MedicalServer)) then {systemChat "Player is running ACE on unsupported server! Please deactivate or gameplay could be servilely affected.";};
-if (!(isClass(configFile >> "CfgPatches" >> "ACE_Medical")) && (ACE_MedicalServer)) then {systemChat "Server is running ACE! Please install the compatible version and reconnect to prevent gamebreaking issues.";};
 
 [] call A3E_fnc_addUserActions;
 
@@ -89,6 +82,14 @@ if (isMultiplayer) then {
 waituntil{sleep 0.1;!isNil("A3E_ParamsParsed")};
 AT_Revive_Camera = Param_ReviveView;
 
+//If no ACE use ATR revive
+if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
+	player setVariable ["ACE_Revive_isUnconscious", false, true];
+} else {
+	call ATR_FNC_ReviveInit;
+};
+
+
 setTerrainGrid Param_Grass;
 
 if (Param_Magrepack == 1) then {
@@ -108,12 +109,16 @@ waituntil{sleep 0.1;(player getvariable["A3E_PlayerInitializedServer",false])};
 
 diag_log format["Escape debug: %1 is now ready (clientside).", name player];
 
-titleFadeOut 0.5;
+sleep 3;
+titleFadeOut 1.0;
 
 
 waituntil{sleep 0.5;!isNil("A3E_EscapeHasStarted")};
 
-//player setCaptive false;
+//Message delayed to make sure ACE_MedicalServer is broadcasted
+if ((isClass(configFile >> "CfgPatches" >> "ACE_Medical")) && !(ACE_MedicalServer)) then {systemChat "Player is running ACE on unsupported server! Please deactivate or gameplay could be servilely affected.";};
+if (!(isClass(configFile >> "CfgPatches" >> "ACE_Medical")) && (ACE_MedicalServer)) then {systemChat "Server is running ACE! Please install the compatible version and reconnect to prevent gamebreaking issues.";};
+
 [] spawn {
 	waituntil{sleep 0.5;A3E_Task_Prison_Complete};
 	[localize "STR_A3E_initLocalPlayer_somewhereOn", A3E_WorldName , str (date select 2) + "/" + str (date select 1) + "/" + str (date select 0) + " " + str (date select 3) + ":00"] spawn BIS_fnc_infoText;

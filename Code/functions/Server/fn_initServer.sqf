@@ -26,8 +26,20 @@ if(!isNil("Param_Debug")) then {
 };
 publicVariable "A3E_Debug";
 
+//ACE Revive
+AT_Revive_Camera = Param_ReviveView; //Needs to be stored on server now
+ACE_MedicalServer = false;
+if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
+	ACE_MedicalServer = true;
+	["ace_unconscious", {params["_unit", "_isDown"]; [_unit,_isDown] spawn ACE_fnc_HandleUnconscious;}] call CBA_fnc_addEventHandler;
+};
+publicVariable "ACE_MedicalServer";
+
 //Load Statistics
 [] spawn A3E_fnc_LoadStatistics;
+
+
+
 // Add crashsite here
 //##############
 
@@ -707,13 +719,13 @@ waitUntil {scriptDone _scriptHandle};
 		while{isNil("A3E_EscapeHasStarted")} do {
 			{
 				if(isNil("A3E_EscapeHasStarted") && !(captive _x)) then {
-					[[[_x], {(_this select 0) setCaptive true;}], "BIS_fnc_spawn", _x, false] call BIS_fnc_MP;
+					[_x, true] remoteExec ["setCaptive", _x, false];
 				};
 			} foreach call A3E_fnc_GetPlayers;
 			sleep 0.5;
 		};
 		{
-			[[[_x], {(_this select 0) setCaptive false;}], "BIS_fnc_spawn", _x, false] call BIS_fnc_MP;
+			[_x, false] remoteExec ["setCaptive", _x, false];
 		} foreach call A3E_fnc_GetPlayers;
 	};
 };
