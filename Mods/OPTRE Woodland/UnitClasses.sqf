@@ -344,9 +344,9 @@ a3e_arr_Escape_InfantryTypes = [
 	"OPTRE_UNSC_Army_Soldier_Engineer_WDL"
 	,"OPTRE_UNSC_Army_Soldier_Engineer_WDL"
 	,"OPTRE_UNSC_Army_Soldier_Engineer_WDL"
-	,"OPTRE_UNSC_Army_Soldier_Corpsman_WDL"
-	,"OPTRE_UNSC_Army_Soldier_Corpsman_WDL"
-	,"OPTRE_UNSC_Army_Soldier_Corpsman_WDL"
+	,"OPTRE_UNSC_Army_Soldier_Medic_WDL"
+	,"OPTRE_UNSC_Army_Soldier_Medic_WDL"
+	,"OPTRE_UNSC_Army_Soldier_Medic_WDL"
 	,"B_soldier_AA_F"
 	,"B_soldier_AA_F"
 	,"OPTRE_UNSC_Army_Soldier_Autorifleman_WDL"
@@ -390,9 +390,9 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	"OPTRE_UNSC_Army_Soldier_Engineer_WDL"
 	,"OPTRE_UNSC_Army_Soldier_Engineer_WDL"
 	,"OPTRE_UNSC_Army_Soldier_Engineer_WDL"
-	,"OPTRE_UNSC_Army_Soldier_Corpsman_WDL"
-	,"OPTRE_UNSC_Army_Soldier_Corpsman_WDL"
-	,"OPTRE_UNSC_Army_Soldier_Corpsman_WDL"
+	,"OPTRE_UNSC_Army_Soldier_Medic_WDL"
+	,"OPTRE_UNSC_Army_Soldier_Medic_WDL"
+	,"OPTRE_UNSC_Army_Soldier_Medic_WDL"
 	,"B_soldier_AA_F"
 	,"B_soldier_AA_F"
 	,"OPTRE_UNSC_Army_Soldier_Autorifleman_WDL"
@@ -650,6 +650,7 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["OPTRE_M45E", 10, 2, 4, ["OPTRE_6Rnd_8
 a3e_arr_AmmoDepotSpecialWeapons pushback ["OPTRE_M90A", 10, 2, 4, ["OPTRE_6Rnd_8Gauge_Pellets","OPTRE_6Rnd_8Gauge_Slugs"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["OPTRE_HMG38", 10, 2, 4, ["OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer", "3Rnd_UGL_FlareWhite_F", "3Rnd_HE_Grenade_shell", "3Rnd_Smoke_Grenade_shell"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["OPTRE_M319", 10, 2, 4, ["OPTRE_40Rnd_30x06_Mag", "OPTRE_40Rnd_30x06_Mag_Tracer", "3Rnd_UGL_FlareWhite_F", "3Rnd_HE_Grenade_shell", "3Rnd_Smoke_Grenade_shell"], 9];
+
 
 
 // Weapons and ammo in the launchers box
