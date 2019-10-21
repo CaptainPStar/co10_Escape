@@ -2,6 +2,9 @@ import json
 import os
 import shutil
 import subprocess
+from datetime import datetime
+now = datetime.now() # current date and time
+
 print("Loading config...") 
 with open('Configs/config.json') as json_data_file:
     data = json.load(json_data_file)
@@ -19,7 +22,7 @@ for scfg in data['Subconfigs']:
         addons = addons + adata['Addons']
 #Add devbuild number to version
 #if os.environ['CI_COMMIT_REF_NAME'] == "develop": 
-data['replace']['VERSION'] += ' dev local'
+data['replace']['VERSION'] += ' dev ' + now.strftime("%y%m%d %H%M")
 data['replace']['RELEASE'] = 'Mission'
 data['replace']['COMMIT'] = ""
 cpbo = data['cpbo'];
