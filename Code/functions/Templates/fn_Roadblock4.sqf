@@ -4,7 +4,7 @@
 // Relative positions exported thanks too Maca's M3Eden Editor Addon.
 // modified by aussie :)
 
-params ["_center", "_rotation", ["_staticWeaponClasses", objNull, [objNull]], ["_vehicle", objNull, [objNull]]];
+params ["_center", "_rotation", ["_static", objNull, [objNull]], ["_vehicle", objNull, [objNull]]];
 [_center,25] call a3e_fnc_cleanupTerrain;
 
 private _fnc_createObject = {
@@ -69,27 +69,12 @@ _obj = ["Land_HBarrier_3_F",_center,[-3.65527,-7.49268,0],_rotation,270] call _f
 //STATIC GUNNER	["B_Soldier_A_F",[-8.06909,12.104,-0.00143909],186.127,[true,false]],
 //VEHICLE	["Land_DataTerminal_01_F",[3.79742,36.481,0],90.7022,[true,false]]
 
-
-if !(isNull _staticWeaponClasses) then {
-    private _gun =_staticWeaponClasses;
-    
-	private _pos = [_center,_center vectorAdd [13.554,-11.0762,2.78144],_rotation] call A3E_fnc_rotatePosition;
-	private _obj = createVehicle [_gun, _pos, [], 0, "NONE"];
-	_obj setVectorDirAndUp [[-0.999998,0.00176479,0],[0,0,1]];
-	_obj setdir ((getdir _obj) + _rotation);
-	_obj setPosATL _pos;
-	[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
-};
-
-if !(isNull _staticWeaponClasses) then {
-    private _gun = _staticWeaponClasses;
-        
-	private _pos = [_center,_center vectorAdd [-8.06909,12.104,-0.00143909],_rotation] call A3E_fnc_rotatePosition;
-	private _obj = createVehicle [_gun, _pos, [], 0, "NONE"];
-	_obj setVectorDirAndUp [[-0.999998,0.00176479,0],[0,0,1]];
-	_obj setdir ((getdir _obj) + _rotation);
-	_obj setPosATL _pos;
-	[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
+if(!(isNull _static)) then {
+	_pos = [_center,_center vectorAdd [13.554,-11.0762,2.78144],_rotation] call A3E_fnc_rotatePosition;
+	//_static setVectorDirAndUp [[0.0308489,0.999524,0],[0,0,1]];
+	_static setdir ((getdir _static) + _rotation);
+	_static setVectorUp surfaceNormal _pos;
+	_static setPosATL _pos;
 };
 
 if !(isNull _vehicle) then {
