@@ -44,7 +44,7 @@ publicVariable "ACE_MedicalServer";
 //##############
 
 
-private ["_villagePatrolSpawnArea","_EnemyCount","_enemyMinSkill", "_enemyMaxSkill", "_searchChopperSearchTimeMin", "_searchChopperRefuelTimeMin", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency", "_fenceRotateDir", "_scriptHandle"];
+private ["_villagePatrolSpawnArea","_EnemyCount","_enemyMinSkill", "_enemyMaxSkill", "_searchChopperSearchTimeMin", "_searchChopperRefuelTimeMin", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency", "_scriptHandle"];
 
 _enemyFrequency = (Param_EnemyFrequency);
 _enemySpawnDistance = (Param_EnemySpawnDistance);
@@ -164,13 +164,7 @@ if(isNil("A3E_ClearedPositionDistance")) then {
 	A3E_ClearedPositionDistance = 500;
 };
 
-// Build start position
-_fenceRotateDir = random 360;
-
-private _backPack = [A3E_StartPos, _fenceRotateDir] call selectRandom [a3e_fnc_BuildPrison, a3e_fnc_BuildPrison1, a3e_fnc_BuildPrison2, a3e_fnc_BuildPrison3, a3e_fnc_BuildPrison4, a3e_fnc_BuildPrison5];
-
-A3E_FenceIsCreated = true;
-publicVariable "A3E_FenceIsCreated";
+private _backpack = [] call A3E_fnc_createStartpos;
 
 //### The following is a mission function now
 

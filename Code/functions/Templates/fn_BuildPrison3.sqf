@@ -3,168 +3,172 @@
 // Call this script by [Position,Rotation] execVM "filename.sqf"
 // Tin Shed, tin gate off center, tin walls, flag, speakers, burning barrels x 2 and sandbags
 
-private["_center","_rotation","_obj","_pos"];
-_center = param[0];
-_rotation = param[1];
 
-[_center,25] call a3e_fnc_cleanupTerrain;
+private["_obj","_pos"];
+params ["_center","_rotation","_backpack"];
 
-_pos = [_center,_center vectorAdd [-1.49219,1.73438,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_TinWall_01_m_gate_v1_closed_F" createvehicle _pos;
-_obj setVectorDirAndUp [[-0.707107,0.707107,0],[0,0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
-_obj allowDamage false;
+//Stuff that needs to be global
+if(isserver) then {
+	[_center,25] call a3e_fnc_cleanupTerrain;
+	
+	_pos = [_center,_center vectorAdd [-1.49219,1.73438,0],_rotation] call A3E_fnc_rotatePosition;
+	_obj = "Land_TinWall_01_m_gate_v1_closed_F" createVehicle _pos;
+	_obj setVectorDirAndUp [[-0.707107,0.707107,0],[0,0,1]];
+	_obj setdir ((getdir _obj) + _rotation);
+	_obj setPosATL _pos;
+	_obj allowDamage false;
 
-A3E_PrisonGateObject = _obj;
+	A3E_PrisonGateObject = _obj;
+	
+	_pos = [_center,_center vectorAdd [6.80078,2.24219,0.173401],_rotation] call A3E_fnc_rotatePosition;
+	_obj = "Land_Loudspeakers_F" createVehicle _pos;
+	_obj setVectorDirAndUp [[-0.718849,0.695166,0],[0,0,1]];
+	_obj setdir ((getdir _obj) + _rotation);
+	_obj setPosATL _pos;
+
+	A3E_PrisonLoudspeakerObject = _obj;
+	publicvariable "A3E_PrisonLoudspeakerObject";
+	
+	_pos = [_center,_center vectorAdd [random 2.0 - 1, random 2.0 -1,0],_rotation] call A3E_fnc_rotatePosition;
+	_backpack setdir ((getdir _backpack) + _rotation);
+	_backpack setPosATL _pos;
+};
+
+//Stuff that can be local and is created duplicated on each client. This reduces network traffic at start.
+
 
 _pos = [_center,_center vectorAdd [0.0830078,3.98438,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_half_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_half_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[0.707107,-0.707107,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-3.7832,-0.046875,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_half_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_half_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[0.707107,-0.707107,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-1.08496,1.14844,-0.180135],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_Metal_Shed_F" createvehicle _pos;
+_obj = "Land_Metal_Shed_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[-0.707107,0.707107,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 _obj allowDamage false;
 
 _pos = [_center,_center vectorAdd [1,0,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_ClutterCutter_medium_F" createvehicle _pos;
+_obj = "Land_ClutterCutter_medium_F" createVehicleLocal _pos;
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-1,0,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_ClutterCutter_medium_F" createvehicle _pos;
+_obj = "Land_ClutterCutter_medium_F" createVehicleLocal _pos;
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [0,1,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_ClutterCutter_medium_F" createvehicle _pos;
+_obj = "Land_ClutterCutter_medium_F" createVehicleLocal _pos;
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [0,-1,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_ClutterCutter_medium_F" createvehicle _pos;
+_obj = "Land_ClutterCutter_medium_F" createVehicleLocal _pos;
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [1.63184,5.52539,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_half_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_half_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[0.707107,-0.707107,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [2.96387,5.19141,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[0.701474,0.712695,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [1.9209,7.00195,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "MetalBarrel_burning_F" createvehicle _pos;
+_obj = "MetalBarrel_burning_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[0.00220456,0.999998,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [4.33887,3.79297,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[0.701474,0.712695,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [5.70605,2.40234,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[0.701474,0.712695,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
-_pos = [_center,_center vectorAdd [6.80078,2.24219,0.173401],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_Loudspeakers_F" createvehicle _pos;
-_obj setVectorDirAndUp [[-0.718849,0.695166,0],[0,0,1]];
-_obj setdir ((getdir _obj) + _rotation);
-_obj setPosATL _pos;
-
-A3E_PrisonLoudspeakerObject = _obj;
-publicvariable "A3E_PrisonLoudspeakerObject";
 
 _pos = [_center,_center vectorAdd [5.03711,0.808594,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_half_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_half_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[-0.707107,0.707107,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [1.90137,-2.31055,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_half_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_half_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[-0.707107,0.707107,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-5.30078,-1.60547,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_half_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_half_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[0.707107,-0.707107,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-5.33008,-2.66992,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[-0.698328,-0.715778,0],[-0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-6.90527,-2.63086,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "FlagPole_F" createvehicle _pos;
+_obj = "FlagPole_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[-0.673639,-0.739061,0],[-0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [0.40332,-3.78906,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_half_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_half_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[-0.707107,0.707107,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-3.95605,-4.04102,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[-0.698328,-0.715778,0],[-0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-2.57715,-5.4043,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[-0.698328,-0.715778,0],[-0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-1.0957,-5.26367,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_half_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_half_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[-0.707107,0.707107,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-1.67676,-6.93164,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "MetalBarrel_burning_F" createvehicle _pos;
+_obj = "MetalBarrel_burning_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[0.00220456,0.999998,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [3.42969,-0.777344,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Land_SandbagBarricade_01_half_F" createvehicle _pos;
+_obj = "Land_SandbagBarricade_01_half_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[-0.707107,0.707107,0],[0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-
-_pos = [_center,_center vectorAdd [random 2.0 - 1, random 2.0 -1,0],_rotation] call A3E_fnc_rotatePosition;
-private _backpack = "B_AssaultPack_khk" createvehicle _pos;
-_backpack setdir ((getdir _backpack) + _rotation);
-_backpack setPosATL _pos;
-
-_backpack;
