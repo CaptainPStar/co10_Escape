@@ -661,13 +661,11 @@ waitUntil {scriptDone _scriptHandle};
 					if ((_x distance A3E_StartPos) > 15 && (_x distance A3E_StartPos) < 100) exitWith {
 						A3E_EscapeHasStarted = true;
 						publicVariable "A3E_EscapeHasStarted";
-						systemChat "Player ran away!";
 					};
 					// If any player have picked up a weapon, escape has started
 					if (count weapons _x > 0) exitWith {
 						A3E_EscapeHasStarted = true;
 						publicVariable "A3E_EscapeHasStarted";
-						systemChat "Player has weapon!";
 					};
 				};
             } foreach call A3E_FNC_GetPlayers;
@@ -677,7 +675,7 @@ waitUntil {scriptDone _scriptHandle};
         //{
 		//	[[[_x], {(_this select 0) setCaptive false;}], "BIS_fnc_spawn", _x, false] call BIS_fnc_MP;
 		//} foreach call A3E_fnc_GetPlayers;
-	   systemChat "Server: Escape has started.";
+	   diag_log "Server: Escape has started.";
     };
 	//Spawn alarm watchdog
 	[_guardGroups] spawn {
