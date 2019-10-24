@@ -28,7 +28,6 @@ addons[]=
 	"A3_Ui_F",
 	"A3_Modules_F",
 	"A3_Boat_F_Gamma_Boat_Civil_04",
-	"CUP_CAStructures_E_Misc",
 	"A3_Structures_F_Mil_Radar",
 	"A3_Boat_F_Boat_Transport_01"
 };
@@ -36,7 +35,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=6;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -67,17 +66,12 @@ class AddonsMetaData
 		};
 		class Item4
 		{
-			className="CUP_CAStructures_E_Misc";
-			name="CUP_CAStructures_E_Misc";
-		};
-		class Item5
-		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item6
+		class Item5
 		{
 			className="A3_Boat_F";
 			name="Arma 3 Alpha - Boats and Submersibles";
@@ -599,7 +593,7 @@ class Mission
 						isPlayer=1;
 					};
 					id=107;
-					type="CUP_B_US_Soldier_SL";
+					type="{* PLAYERUNIT_1 *}";
 				};
 				class Item1
 				{
@@ -618,7 +612,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=108;
-					type="CUP_B_US_Soldier_MG";
+					type="{* PLAYERUNIT_2 *}";
 				};
 				class Item2
 				{
@@ -637,7 +631,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=109;
-					type="CUP_B_US_Soldier_GL";
+					type="{* PLAYERUNIT_3 *}";
 				};
 				class Item3
 				{
@@ -657,7 +651,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=110;
-					type="CUP_B_US_Soldier_AMG";
+					type="{* PLAYERUNIT_4 *}";
 				};
 				class Item4
 				{
@@ -677,7 +671,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=111;
-					type="CUP_B_US_Soldier_MG";
+					type="{* PLAYERUNIT_5 *}";
 				};
 				class Item5
 				{
@@ -697,7 +691,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=112;
-					type="CUP_B_US_Soldier_GL";
+					type="{* PLAYERUNIT_6 *}";
 				};
 				class Item6
 				{
@@ -716,7 +710,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=113;
-					type="CUP_B_US_Soldier_AMG";
+					type="{* PLAYERUNIT_7 *}";
 				};
 				class Item7
 				{
@@ -735,7 +729,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=114;
-					type="CUP_B_US_Soldier_LAT";
+					type="{* PLAYERUNIT_8 *}";
 				};
 				class Item8
 				{
@@ -753,7 +747,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=117;
-					type="CUP_B_US_Engineer";
+					type="{* PLAYERUNIT_9 *}";
 				};
 				class Item9
 				{
@@ -771,7 +765,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=118;
-					type="CUP_B_US_Medic";
+					type="{* PLAYERUNIT_10 *}";
 				};
 			};
 			class Attributes
