@@ -633,7 +633,7 @@ waitUntil {scriptDone _scriptHandle};
 	A3E_fnc_revealPlayers = {
 		private _guardGroup = _this;
 		{
-			_guardGroup reveal _x;
+			_guardGroup reveal [_x,1.5];
 		} foreach call A3E_fnc_GetPlayers;
 	};
 	A3E_fnc_soundAlarm = {
