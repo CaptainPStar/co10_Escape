@@ -171,6 +171,8 @@ private _backpack = [] call A3E_fnc_createStartpos;
 [true] call drn_fnc_InitVillageMarkers; 
 [true] call drn_fnc_InitAquaticPatrolMarkers; 
 
+//Wait for players to actually arrive ingame. This may be a long time if server is set to persistent
+waituntil{uisleep 1; count([] call A3E_FNC_GetPlayers)>0};
 
 _playerGroup = [] call A3E_fnc_GetPlayerGroup;
 
@@ -639,12 +641,12 @@ waitUntil {scriptDone _scriptHandle};
 		if(isNil("A3E_SoundPrisonAlarm")) then {
 			A3E_SoundPrisonAlarm = true;
 			publicvariable "A3E_SoundPrisonAlarm";
-			sleep 30;
-			A3E_SoundPrisonAlarm = false;
-			publicvariable "A3E_SoundPrisonAlarm";
 			{
 				_x spawn A3E_fnc_revealPlayers;
 			} foreach _guardGroups;
+			sleep 30;
+			A3E_SoundPrisonAlarm = false;
+			publicvariable "A3E_SoundPrisonAlarm";
 		};
 	};
     // Start thread that waits for escape to start
