@@ -4,7 +4,7 @@
 //Slum house small 2 doors and window, flag, speakers, burning barrels x 2 and sandbags
 
 
-private["_obj","_pos","_dir"];
+private["_obj","_pos"];
 params ["_center","_rotation","_backpack"];
 
 //Stuff that needs to be global
@@ -14,9 +14,8 @@ if(isserver) then {
 	_pos = [_center,_center vectorAdd [-1.7373,0.169922,-0.138047],_rotation] call A3E_fnc_rotatePosition;
 	_obj = "Land_Slum_House02_F" createVehicle _pos;
 	_obj setVectorDirAndUp [[0.706483,0.70773,0],[0,0,1]];
-	_dir = ((getdir _obj) + _rotation);
-	[_obj,_dir] remoteExec ["setdir", 0];
-	[_obj,_pos] remoteExec ["setPosATL", 0];
+	_obj setdir ((getdir _obj) + _rotation);
+	_obj setPosATL _pos;
 	_obj allowDamage false;
 
 	A3E_PrisonGateObject = _obj;
@@ -24,17 +23,15 @@ if(isserver) then {
 	_pos = [_center,_center vectorAdd [0.420898,4.25977,-0.318182],_rotation] call A3E_fnc_rotatePosition;
 	_obj = "Land_Loudspeakers_F" createVehicle _pos;
 	_obj setVectorDirAndUp [[-0.689121,0.724646,0],[0,0,1]];
-	_dir = ((getdir _obj) + _rotation);
-	[_obj,_dir] remoteExec ["setdir", 0];
-	[_obj,_pos] remoteExec ["setPosATL", 0];
+	_obj setdir ((getdir _obj) + _rotation);
+	_obj setPosATL _pos;
 
 	A3E_PrisonLoudspeakerObject = _obj;
 	publicvariable "A3E_PrisonLoudspeakerObject";
 
 	_pos = [_center,_center vectorAdd [random 2.0 - 1, random 2.0 -1,0],_rotation] call A3E_fnc_rotatePosition;
-	_dir = ((getdir _backpack) + _rotation);
-	[_backpack,_dir] remoteExec ["setdir", 0];
-	[_backpack,_pos] remoteExec ["setPosATL", 0];
+	_backpack setdir ((getdir _backpack) + _rotation);
+	_backpack setPosATL _pos;
 	
 };
 

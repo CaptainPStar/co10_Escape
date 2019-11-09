@@ -2,7 +2,7 @@
 // See www.map-builder.info - Map Builder by NeoArmageddon
 // Call this script by [Position,Rotation] execVM "filename.sqf"
 
-private["_obj","_pos","_dir"];
+private["_obj","_pos"];
 params ["_center","_rotation","_backpack"];
 
 //Stuff that needs to be global. Normally this is the gate and the Loudspeaker
@@ -10,17 +10,15 @@ if(isserver) then {
 	[_center,25] call a3e_fnc_cleanupTerrain;
 	
 	_pos = [_center,_center vectorAdd [random 2.0 - 1, random 2.0 -1,0],_rotation] call A3E_fnc_rotatePosition;
-	_dir = ((getdir _backpack) + _rotation);
-	[_backpack,_dir] remoteExec ["setdir", 0];
-	[_backpack,_pos] remoteExec ["setPosATL", 0];
+	_backpack setdir ((getdir _backpack) + _rotation);
+	_backpack setPosATL _pos;
 
 	_pos = [_center,_center vectorAdd [-6.79578,8.24268,0],_rotation] call A3E_fnc_rotatePosition;
 	
 	_obj = "Land_Loudspeakers_F" createVehicle  _pos;
 	_obj setVectorDirAndUp [[1,-4.37114e-008,0],[0,-0,1]];
-	_dir = ((getdir _obj) + _rotation);
-	[_obj,_dir] remoteExec ["setdir", 0];
-	[_obj,_pos] remoteExec ["setPosATL", 0];
+	_obj setdir ((getdir _obj) + _rotation);
+	_obj setPosATL _pos;
 
 	A3E_PrisonLoudspeakerObject = _obj;
 	publicvariable "A3E_PrisonLoudspeakerObject";
@@ -28,9 +26,8 @@ if(isserver) then {
 	_pos = [_center,_center vectorAdd [3.08691,7.09082,0],_rotation] call A3E_fnc_rotatePosition;
 	_obj = "Land_City_Gate_F" createVehicle  _pos;
 	_obj setVectorDirAndUp [[0,1,0],[0,0,1]];
-	_dir = ((getdir _obj) + _rotation);
-	[_obj,_dir] remoteExec ["setdir", 0];
-	[_obj,_pos] remoteExec ["setPosATL", 0];
+	_obj setdir ((getdir _obj) + _rotation);
+	_obj setPosATL _pos;
 
 	A3E_PrisonGateObject = _obj;
 
