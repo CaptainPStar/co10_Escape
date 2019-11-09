@@ -1,7 +1,7 @@
 drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	private["_nighttime"];
     _this setVehicleAmmo (0.2 + random 0.4);
-	if(daytime > 20 OR daytime < 8) then {
+	if(daytime > 19 OR daytime < 8) then {
 		_nighttime = true;
 	} else {
 		_nighttime = false;
@@ -53,12 +53,27 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 			_this addPrimaryWeaponItem _scope;
 		};
 	};
+	
+	private["_nvgs"];
+	_nvgs = hmd _this; //NVGoggles
+	if(_nvgs != "") then {
+		if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
+			_this unlinkItem _nvgs;
+		};
+	} else {
+		if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (Param_NoNightvision==0)) then {
+			_this linkItem "NVGoggles_OPFOR";
+		};
+	};
+	
+	
 	//Chance for random attachment
-	if(((random 100 < 15) && (!_nighttime)) OR ((random 100 < 70) && (_nighttime))) then {
-		if(random 100 < 70) then {
+	if((random 100 < 15) OR (_nighttime)) then {
+		if(random 100 < 70 || (Param_NoNightvision>0)) then {
 			_this addPrimaryWeaponItem "acc_flashlight";
 		} else {
 			_this addPrimaryWeaponItem "acc_pointer_IR";
+			_this linkItem "NVGoggles_OPFOR";
 		};
 	};
 	
@@ -98,27 +113,6 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 			//_this additem "ItemGPS";
 		   // _this assignItem "ItemGPS";
 			_this unlinkItem "Rangefinder";
-		};
-	};
-	//if ("NVGoggles_OPFOR" in (assignedItems _this)) then {
-	//		if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
-	//			_this unlinkItem "NVGoggles_OPFOR";
-	//		};
-	//};
-	//if ("NVGoggles_INDEP" in (assignedItems _this)) then {
-	//		if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
-	//			_this unlinkItem "NVGoggles_INDEP";
-	//		};
-	//};
-	private["_nvgs"];
-	_nvgs = hmd _this; //NVGoggles
-	if(_nvgs != "") then {
-		if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
-			_this unlinkItem _nvgs;
-		};
-	} else {
-		if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (Param_NoNightvision==0)) then {
-			_this linkItem "NVGoggles_OPFOR";
 		};
 	};
 
