@@ -87,10 +87,10 @@ switch (Param_TimeOfDay) do {
 		_hour = round(random(24));
 	};
     case 25: {
-		_hour = 6+round(random(12));  //Between 0600 and 1800
+		_hour = 6+round(random(10));  //Between 0600 and 1600
 	};
 	case 26: { 
-		_hour = 20 + round(random(8)); //Between 2000 and 0400
+		_hour = 17 + round(random(11)); //Between 1700 and 0400
 		_hour = _hour % 24;
 	};
     default { _hour = Param_TimeOfDay };
