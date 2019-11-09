@@ -1,6 +1,5 @@
-private["_player","_placed"];
-
-_player = _this select 0;
+params["_player"];
+private["_placed"];
 
 
 diag_log format["fn_initPlayer run for %1", name _player];
@@ -18,11 +17,11 @@ _player addeventhandler["HandleScore","_this call A3E_FNC_handleScore;"];
 diag_log format["Escape debug: %1 is waiting for prison creation.", name _player];
 
 //Wait until most of the mission is loaded and the player is locally ready (means no weapons etc)
-waituntil{sleep 0.5;(!isNil("A3E_FenceIsCreated") && !isNil("A3E_StartPos") && !isNil("A3E_ParamsParsed"))};
+waituntil{uiSleep 0.5;(!isNil("A3E_FenceIsCreated") && !isNil("A3E_StartPos") && !isNil("A3E_ParamsParsed"))};
 
 diag_log format["Escape debug: Player %1 is ready and will be placed by the server.", name _player];
 _placed = false;
-if(time>60) then {
+if(!isNil("A3E_EscapeHasStarted")) then {
 	private _players = [] call A3E_fnc_GetPlayers;
 	//Remove player from list
 	_players deleteAt (_players find _player); 
@@ -55,7 +54,7 @@ if(!_placed) then {
 	_player setdir (random 360);
 	diag_log format["Escape debug: %1 placed at prison.", name _player];
 };
-sleep 0.5;
+uiSleep 0.5;
 diag_log format["Escape debug: %1 is now ready (serverside).", name _player];
 
 //A3E_PlayerInitializedServer means the player was placed in Prison and is ready for the "Intro"
