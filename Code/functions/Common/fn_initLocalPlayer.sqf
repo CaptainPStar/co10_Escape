@@ -2,14 +2,13 @@ diag_log format["initClient run for %1 (%2)", name player, str _this];
 
 if(!hasInterface) exitwith {};
 
-
-titleText [localize "STR_A3E_initLocalPlayer_Loading", "BLACK",0.1];
-
 waituntil {!isnull player};
 
 call A3E_FNC_Briefing;
 
-[player] remoteExec ["a3e_fnc_initPlayer", 2, false];
+sleep 0.5;
+
+[player] remoteExec ["a3e_fnc_initPlayer", 2];
 
 [] spawn {
 	disableSerialization;
@@ -109,22 +108,20 @@ waituntil{sleep 0.1;(player getvariable["A3E_PlayerInitializedServer",false])};
 
 diag_log format["Escape debug: %1 is now ready (clientside).", name player];
 
-sleep 3;
-titleFadeOut 1.0;
+
+[] spawn {
+	waituntil{sleep 0.5;!isNil("A3E_EscapeHasStarted")};
 
 
-waituntil{sleep 0.5;!isNil("A3E_EscapeHasStarted")};
+	//Player needs to be taken out of captivity if they rejoin
+	if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
+	player setCaptive false;
+	};
 
-
-//Player needs to be taken out of captivity if they rejoin
-if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
-player setCaptive false;
+	//Message delayed to make sure ACE_MedicalServer is broadcasted
+	if ((isClass(configFile >> "CfgPatches" >> "ACE_Medical")) && !(ACE_MedicalServer)) then {systemChat "Player is running ACE on unsupported server! Please deactivate or gameplay could be servilely affected.";};
+	if (!(isClass(configFile >> "CfgPatches" >> "ACE_Medical")) && (ACE_MedicalServer)) then {systemChat "Server is running ACE! Please install the compatible version and reconnect to prevent gamebreaking issues.";};
 };
-
-//Message delayed to make sure ACE_MedicalServer is broadcasted
-if ((isClass(configFile >> "CfgPatches" >> "ACE_Medical")) && !(ACE_MedicalServer)) then {systemChat "Player is running ACE on unsupported server! Please deactivate or gameplay could be servilely affected.";};
-if (!(isClass(configFile >> "CfgPatches" >> "ACE_Medical")) && (ACE_MedicalServer)) then {systemChat "Server is running ACE! Please install the compatible version and reconnect to prevent gamebreaking issues.";};
-
 
 [] spawn {
 	waituntil{sleep 0.5;A3E_Task_Prison_Complete};
