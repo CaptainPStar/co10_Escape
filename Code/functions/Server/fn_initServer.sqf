@@ -419,6 +419,10 @@ private _UseMotorPools = Param_MotorPools;
 			}];
 		} foreach _crew;
 		
+		clearitemcargoglobal _vehicle;
+        clearWeaponCargoGlobal _vehicle;
+        clearMagazineCargoGlobal _vehicle;			
+		
 		if (random 100 < 20) then {
 			private ["_weaponItem"];
 			
@@ -426,6 +430,15 @@ private _UseMotorPools = Param_MotorPools;
 			
 			_vehicle addWeaponCargoGlobal [_weaponItem select 0, 1];
 			_vehicle addMagazineCargoGlobal [_weaponItem select 1, _weaponItem select 2];
+		};	
+		if (random 100 < 80) then {
+           _vehicle addItemCargoglobal ["firstaidkit", 3];	
+		};
+		if (random 100 < 80) then {
+           _vehicle addMagazineCargoglobal ["smokeshellRed", 2];	
+		};
+		if (random 100 < 80) then {
+           _vehicle addMagazineCargoglobal ["Chemlight_green", 5];	
 		};
 	};
 	
@@ -600,7 +613,7 @@ waitUntil {scriptDone _scriptHandle};
 					_unit unlinkItem _hmd;
 				};
             };
-            
+	
             //_unit setSkill a3e_var_Escape_enemyMinSkill;
 			//[_unit, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
 			
