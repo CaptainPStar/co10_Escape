@@ -152,7 +152,7 @@ _obj = "Flag_CSAT_F" createvehicle _pos;
 _obj setVectorDirAndUp [[0.0760487,-0.997104,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
-_obj forceFlagTexture "mapConfig\logo.paa"; 
+//_obj forceFlagTexture "mapConfig\logo.paa"; 
 
 _pos = [_center,_center vectorAdd [4.15967,-5.37695,0],_rotation] call A3E_fnc_rotatePosition;
 _obj = "Land_Cargo_House_V2_F" createvehicle _pos;
