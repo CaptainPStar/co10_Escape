@@ -100,7 +100,27 @@
 					"PLAYERUNIT_9" : "O_T_Soldier_M_F",
 					"PLAYERUNIT_10" : "O_T_Medic_F"
 				}
-		}
+		},
+		{
+            "name" : "Vanilla Contact US",
+            "path" : "./Mods/Vanilla Contact US/",
+            "require" : [],
+            "replace" :
+                {
+                    "MOD" : "Contact CSAT vs NATO",
+                    "PLAYERSIDE" : "EAST",
+                    "PLAYERUNIT_1" : "O_R_Soldier_TL_F",
+                    "PLAYERUNIT_2" : "O_R_Soldier_AR_F",
+                    "PLAYERUNIT_3" : "O_T_Soldier_UAV_F",
+                    "PLAYERUNIT_4" : "O_R_Patrol_Soldier_Engineer_F",
+                    "PLAYERUNIT_5" : "O_R_Soldier_GL_F",
+                    "PLAYERUNIT_6" : "O_R_JTAC_F",
+                    "PLAYERUNIT_7" : "O_R_Soldier_LAT_F",
+                    "PLAYERUNIT_8" : "O_R_soldier_exp_F",
+                    "PLAYERUNIT_9" : "O_R_soldier_M_F",
+                    "PLAYERUNIT_10" : "O_R_medic_F"
+                }
+        }
 	],
 	"Islands": [
 		{
@@ -695,6 +715,34 @@
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+				{
+			"island" : "Chernarus",
+			"sqm" : "Chernarus",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Chernarus_Summer",abc
+			"sqm": "Chernarus_Summer",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Livonia",
+			"sqm" : "Enoch",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Podagorsk",
+			"sqm": "FDF_Isle1_a",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		},
 		{
 			"island" : "Panthera",
@@ -1377,6 +1425,11 @@
 		{
 			"name" : "Apex",
 			"mods" : ["Vanilla Apex","Vanilla Apex US"]
+		}
+		,
+		{
+			"name" : "Contact",
+			"mods" : ["Vanilla Contact US"]
 		}
 	]
 	
