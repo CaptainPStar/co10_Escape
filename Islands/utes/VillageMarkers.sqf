@@ -1,0 +1,14 @@
+a3e_villageMarkers = [];
+a3e_villageMarkers set [0, [[3376.51,4348.66,0], 0, "ELLIPSE", [200,140]]];
+a3e_villageMarkers set [1, [[3195.86,4018.16,0], 0, "ELLIPSE", [100,100]]];
+a3e_villageMarkers set [2, [[3575.6,3698.52,0], 0, "ELLIPSE", [100,80]]];
+a3e_villageMarkers set [3, [[3714.76,3492.49,0], 0, "ELLIPSE", [100,80]]];
+a3e_villageMarkers set [4, [[3868.38,3325.32,0], 195.001, "ELLIPSE", [100,80]]];
+a3e_villageMarkers set [5, [[4345.49,3197,0], 0, "ELLIPSE", [100,100]]];
+a3e_villageMarkers set [6, [[4408.41,3538.51,0], 195.001, "ELLIPSE", [80,80]]];
+a3e_villageMarkers set [7, [[2950.01,4508.94,0], 0, "ELLIPSE", [70,70]]];
+a3e_villageMarkers set [8, [[4472.96,3362.64,0], 0, "ELLIPSE", [20,20]]];
+a3e_villageMarkers set [9, [[3553.59,3514.44,0], 0, "ELLIPSE", [40,40]]];
+a3e_villageMarkers set [10, [[3428.36,3698.66,0], 0, "ELLIPSE", [40,40]]];
+a3e_villageMarkers set [11, [[2535.75,3844.4,0], 0, "ELLIPSE", [40,40]]];
+a3e_villageMarkers set [12, [[3228.59,4568.63,0], 0, "ELLIPSE", [40,40]]];
