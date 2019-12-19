@@ -8,7 +8,7 @@ set target=C:\Users\YourName\Documents\Arma 3 - Other Profiles\YourNickname\miss
 
 :: Change this to correct entries from the Configs (in the Git repository Config folder)
 set island=Stratis
-set mod=Vanilla
+set mod=Vanilla US
 
 
 :: Don't change anything below this line except you know what you are doing

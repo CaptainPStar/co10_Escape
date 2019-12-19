@@ -42,80 +42,6 @@ class Mission
 		items=5;
 		class Item0
 		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={3724.0566,186.15697,4496.9702};
-					id=0;
-					side="LOGIC";
-					vehicle="Logic";
-					leader=1;
-					skill=0.60000002;
-					text="server";
-				};
-			};
-		};
-		class Item1
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={3677.1638,183.49065,4527.5928};
-					id=1;
-					side="LOGIC";
-					vehicle="Logic";
-					leader=1;
-					skill=0.60000002;
-					text="center";
-				};
-			};
-		};
-		class Item2
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={1341.3726,0.010637649,277.97607};
-					id=2;
-					side="LOGIC";
-					vehicle="Logic";
-					leader=1;
-					skill=0.60000002;
-					text="SouthWest";
-					description="limits used area of the map, together with NorthEast logic";
-				};
-			};
-		};
-		class Item3
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={6915.2588,4.3660402e-006,7755.0244};
-					id=3;
-					side="LOGIC";
-					vehicle="Logic";
-					leader=1;
-					skill=0.60000002;
-					text="NorthEast";
-					description="limits used area of the map, together with SouthWest logic";
-				};
-			};
-		};
-		class Item4
-		{
 			side="EAST";
 			class Vehicles
 			{
@@ -123,7 +49,7 @@ class Mission
 				class Item0
 				{
 					position[]={7087.1694,7.3961716,5971.9707};
-					id=4;
+					id=0;
 					side="EAST";
 					vehicle="O_Soldier_TL_F";
 					player="PLAYER COMMANDER";
@@ -137,7 +63,7 @@ class Mission
 				{
 					position[]={7085.2866,7.435575,5970.2285};
 					special="NONE";
-					id=5;
+					id=1;
 					side="EAST";
 					vehicle="O_Soldier_AR_F";
 					player="PLAY CDG";
@@ -150,7 +76,7 @@ class Mission
 				{
 					position[]={7084.5796,7.49687,5972.7754};
 					special="NONE";
-					id=6;
+					id=2;
 					side="EAST";
 					vehicle="O_soldier_UAV_F";
 					player="PLAY CDG";
@@ -163,7 +89,7 @@ class Mission
 				{
 					position[]={7084.4937,7.4468932,5971.4082};
 					special="NONE";
-					id=7;
+					id=3;
 					side="EAST";
 					vehicle="O_engineer_F";
 					player="PLAY CDG";
@@ -176,7 +102,7 @@ class Mission
 				{
 					position[]={7086.4053,7.3811903,5969.4683};
 					special="NONE";
-					id=8;
+					id=4;
 					side="EAST";
 					vehicle="O_Soldier_GL_F";
 					player="PLAY CDG";
@@ -189,7 +115,7 @@ class Mission
 				{
 					position[]={7087.8608,7.3455176,5969.5156};
 					special="NONE";
-					id=9;
+					id=5;
 					side="EAST";
 					vehicle="O_Soldier_AR_F";
 					player="PLAY CDG";
@@ -202,7 +128,7 @@ class Mission
 				{
 					position[]={7089.3486,7.3346095,5969.873};
 					special="NONE";
-					id=10;
+					id=6;
 					side="EAST";
 					vehicle="O_Soldier_LAT_F";
 					player="PLAY CDG";
@@ -215,7 +141,7 @@ class Mission
 				{
 					position[]={7090.3921,7.3340101,5970.7129};
 					special="NONE";
-					id=11;
+					id=7;
 					side="EAST";
 					vehicle="O_Soldier_A_F";
 					player="PLAY CDG";
@@ -228,7 +154,7 @@ class Mission
 				{
 					position[]={7091.2124,7.3374276,5971.8066};
 					special="NONE";
-					id=12;
+					id=8;
 					side="EAST";
 					vehicle="O_soldier_M_F";
 					player="PLAY CDG";
@@ -241,7 +167,7 @@ class Mission
 				{
 					position[]={7091.8335,7.3134446,5972.8926};
 					special="NONE";
-					id=13;
+					id=9;
 					side="EAST";
 					vehicle="O_medic_F";
 					player="PLAY CDG";
@@ -249,6 +175,80 @@ class Mission
 					skill=0.60000002;
 					text="p10";
 					init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
+				};
+			};
+		};
+		class Item1
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3724.0566,186.15697,4496.9702};
+					id=10;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="server";
+				};
+			};
+		};
+		class Item2
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3677.1638,183.49065,4527.5928};
+					id=27;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="center";
+				};
+			};
+		};
+		class Item3
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={1341.3726,0.010637649,277.97607};
+					id=28;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="SouthWest";
+					description="limits used area of the map, together with NorthEast logic";
+				};
+			};
+		};
+		class Item4
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={6915.2588,4.3660402e-006,7755.0244};
+					id=29;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="NorthEast";
+					description="limits used area of the map, together with SouthWest logic";
 				};
 			};
 		};
