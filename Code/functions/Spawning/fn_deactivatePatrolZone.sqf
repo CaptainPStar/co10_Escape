@@ -1,6 +1,5 @@
 params["_zoneIndex"];
 
-systemchat format["Deactivating %1",_zoneIndex]; 
 private _zone = a3e_patrolZones select _zoneIndex;
 
 private _active = [_zone,"active"] call BIS_fnc_getFromPairs;
@@ -12,7 +11,11 @@ if(_active && _initialized) then {
 	private _side = [_zone,"side"] call BIS_fnc_getFromPairs;
 	private _groups = [_zone,"patrols"] call BIS_fnc_getFromPairs;
 	_marker setMarkerColor "ColorRed";
-
+	if(A3E_Debug) then {
+		_marker setMarkerAlpha 0.5;
+	} else {
+		_marker setMarkerAlpha 0;
+	};
 	private _grpArray = [];
 	{
 		if(!isNull _x) then {
