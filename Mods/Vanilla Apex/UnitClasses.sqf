@@ -14,7 +14,7 @@ A3E_VAR_Side_Opfor = east;
 A3E_VAR_Side_Ind = resistance;
 
 A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\flag_fd_green_CO.paa"; // Update 3: Placeholder for Syndikat flag.
+A3E_VAR_Flag_Ind = "\a3\data_f_exp\flags\flag_synd_co.paa"; // Update 3: Placeholder for Syndikat flag.
  
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
