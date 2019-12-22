@@ -24,6 +24,8 @@ mklink  "%target%\escape_banner.paa" "%source%\Code\escape_banner.paa"
 mklink  "%target%\icon_noplayer_ca.paa" "%source%\Code\icon_noplayer_ca.paa"
 mklink  "%target%\EscapeLeaflet_USA_co.paa" "%source%\Code\EscapeLeaflet_USA_co.paa"
 mklink  "%target%\cba_settings.sqf" "%source%\Code\cba_settings.sqf"
+mklink  "%target%\StringTable.xml" "%source%\Code\StringTable.xml"
+
 
 if not exist "%target%\Island" mkdir  "%target%\Island"
 mklink  "%target%\Island\CommunicationCenterMarkers.sqf" "%source%\Islands\%island%\CommunicationCenterMarkers.sqf"
