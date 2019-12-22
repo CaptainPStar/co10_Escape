@@ -107,10 +107,11 @@ _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
 
 _pos = [_center,_center vectorAdd [-0.351563,-4.73633,0],_rotation] call A3E_fnc_rotatePosition;
-_obj = "Flag_Altis_F" createVehicleLocal _pos;
+_obj = "FlagPole_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[0.684954,-0.728586,0],[0,-0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
+_obj setflagtexture A3E_VAR_Flag_Ind;
 
 _pos = [_center,_center vectorAdd [-2.76563,-2.06055,0],_rotation] call A3E_fnc_rotatePosition;
 _obj = "MetalBarrel_burning_F" createVehicleLocal _pos;

@@ -109,6 +109,7 @@ _obj = "FlagPole_F" createVehicleLocal _pos;
 _obj setVectorDirAndUp [[-0.749656,-0.661828,0],[-0,0,1]];
 _obj setdir ((getdir _obj) + _rotation);
 _obj setPosATL _pos;
+_obj setflagtexture A3E_VAR_Flag_Ind;
 
 _pos = [_center,_center vectorAdd [2.38574,-1.92578,0],_rotation] call A3E_fnc_rotatePosition;
 _obj = "Land_SandbagBarricade_01_half_F" createVehicleLocal _pos;
