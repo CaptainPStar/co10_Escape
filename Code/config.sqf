@@ -11,7 +11,7 @@ a3e_var_maxSearchRange = 1000;
 a3e_var_investigationChance = 60;
 
 //Debug
-a3e_debug_overwrite = true;
+a3e_debug_overwrite = false;
 //a3e_debug_EnemyPosition = false;
 //a3e_debug_Waypoints = false;
 //a3e_debug_MapAndCompass = false;
