@@ -29,8 +29,11 @@ if(_zoneArea > 5000) then {
 if(isNil("A3E_PatrolsPerSqm")) then {
 	A3E_PatrolsPerSqm = 0.0005;
 };
-
-private _patrolCount = ceil(A3E_PatrolsPerSqm * _zoneArea);
+if(isNil("A3E_PatrolsPerSqmSqrt")) then {
+	A3E_PatrolsPerSqmSqrt = 0.05;
+};
+private _edgeSum2 = ((_zoneSizeXY select 0)+(_zoneSizeXY select 1))/2;
+private _patrolCount = ceil(A3E_PatrolsPerSqmSqrt * sqrt(_zoneArea))+round(_edgeSum2/100);
 
 
 private _name = format["A3E_ZoneMarker%1",_zoneIndex];
