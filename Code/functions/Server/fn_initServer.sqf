@@ -15,10 +15,11 @@ call compile preprocessFileLineNumbers "Scripts\Escape\Functions.sqf";
 call compile preprocessFileLineNumbers "Scripts\Escape\AIskills.sqf";
 
 if(!isNil("Param_Debug")) then {
-	if((Param_Debug)==0) then {
+	if((Param_Debug)==0 && !(missionNamespace getVariable ["a3e_debug_overwrite",false])) then {
 		A3E_Debug = false;
 	} else {
 		A3E_Debug = true;
+		["Debug mode active!."] spawn a3e_fnc_debugmsg;
 	};
 } else {
 	A3E_Debug = true;
