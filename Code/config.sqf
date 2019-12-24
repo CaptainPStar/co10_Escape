@@ -11,14 +11,14 @@ a3e_var_maxSearchRange = 1000;
 a3e_var_investigationChance = 60;
 
 //Debug
-a3e_debug = false;
-a3e_debug_EnemyPosition = false;
-a3e_debug_Waypoints = false;
-a3e_debug_MapAndCompass = false;
-a3e_debug_immortal = false;
-a3e_debug_lastKnownPosition = false;
+a3e_debug_overwrite = false;
+//a3e_debug_EnemyPosition = false;
+//a3e_debug_Waypoints = false;
+//a3e_debug_MapAndCompass = false;
+//a3e_debug_immortal = false;
+//a3e_debug_lastKnownPosition = false;
 a3e_debug_artillery = false;
-a3e_debug_aistate = false;
+//a3e_debug_aistate = false;
 
 A3E_SystemLog = true;
 

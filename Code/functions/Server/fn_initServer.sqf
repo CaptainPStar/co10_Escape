@@ -15,10 +15,11 @@ call compile preprocessFileLineNumbers "Scripts\Escape\Functions.sqf";
 call compile preprocessFileLineNumbers "Scripts\Escape\AIskills.sqf";
 
 if(!isNil("Param_Debug")) then {
-	if((Param_Debug)==0) then {
+	if((Param_Debug)==0 && !(missionNamespace getVariable ["a3e_debug_overwrite",false])) then {
 		A3E_Debug = false;
 	} else {
 		A3E_Debug = true;
+		["Debug mode active!."] spawn a3e_fnc_debugmsg;
 	};
 } else {
 	A3E_Debug = true;
@@ -468,7 +469,7 @@ private _UseMotorPools = Param_MotorPools;
 	_vehiclesCount = round (_vehiclesPerSqkm * (_radius / 1000) * (_radius / 1000) * 3.141592);
 	[_vehiclesCount,_enemySpawnDistance,_radius,_enemyMinSkill, _enemyMaxSkill] spawn {
 		params["_vehiclesCount","_enemySpawnDistance","_radius","_enemyMinSkill", "_enemyMaxSkill"];
-		sleep 300;
+		sleep 60*15; //Wait 15 Minutes before heavy vehicles may arrive 
 		[A3E_VAR_Side_Opfor, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
 		[A3E_VAR_Side_Ind, [], _vehiclesCount/2, _enemySpawnDistance, _radius, _enemyMinSkill, _enemyMaxSkill, drn_fnc_Escape_TrafficSearch, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
     };
