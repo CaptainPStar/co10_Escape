@@ -223,6 +223,13 @@ class Params
 		texts[]={"No", "Yes"};
 		default = 1;
 	};
+	class Param_UseDLCContact
+	{
+		title="Allow usage of units from Contact DLC";
+		values[]={0,1};
+		texts[]={"No", "Yes"};
+		default = 1;
+	};
 	class Param_Spacer6
 	{
             title = "==================== 3rd-party scripts ====================";
