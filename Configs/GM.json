@@ -7,7 +7,7 @@
 			"require" : ["gm_characters_ge_characters","gm_characters_gc_characters"],
 			"replace" :
 				{
-					"MOD" : "GM NVA vs BW",
+					"MOD" : "GM+CUP NVA vs BW",
 					"PLAYERSIDE" : "EAST",
 					"PLAYERUNIT_1" : "gm_gc_army_squadleader_mpiak74n_80_str",
 					"PLAYERUNIT_2" : "gm_gc_army_machinegunner_lmgrpk_80_str",
@@ -39,6 +39,46 @@
 					"PLAYERUNIT_8" : "gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_str",
 					"PLAYERUNIT_9" : "gm_gc_army_marksman_svd_80_str",
 					"PLAYERUNIT_10" : "gm_gc_army_medic_mpiak74n_80_str"
+				}
+		},
+		{
+			"name" : "GM BW CUP w",
+			"path" : "./Mods/GM-BW-CUP w/",
+			"require" : ["gm_characters_ge_characters","gm_characters_gc_characters"],
+			"replace" :
+				{
+					"MOD" : "GM+CUP NVA vs BW",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "gm_gc_army_squadleader_mpiak74n_80_win",
+					"PLAYERUNIT_2" : "gm_gc_army_machinegunner_lmgrpk_80_win",
+					"PLAYERUNIT_3" : "gm_gc_army_demolition_mpiaks74n_80_win",
+					"PLAYERUNIT_4" : "gm_gc_army_engineer_mpiaks74n_80_win",
+					"PLAYERUNIT_5" : "gm_gc_army_rifleman_mpiak74n_80_win",
+					"PLAYERUNIT_6" : "gm_gc_army_machinegunner_pk_80_win",
+					"PLAYERUNIT_7" : "gm_gc_army_antitank_mpiak74n_rpg7_80_win",
+					"PLAYERUNIT_8" : "gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_win",
+					"PLAYERUNIT_9" : "gm_gc_army_marksman_svd_80_win",
+					"PLAYERUNIT_10" : "gm_gc_army_medic_mpiak74n_80_win"
+				}
+		},
+		{
+			"name" : "GM BW w",
+			"path" : "./Mods/GM-BW w/",
+			"require" : ["gm_characters_ge_characters","gm_characters_gc_characters"],
+			"replace" :
+				{
+					"MOD" : "GM NVA vs BW",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "gm_gc_army_squadleader_mpiak74n_80_win",
+					"PLAYERUNIT_2" : "gm_gc_army_machinegunner_lmgrpk_80_win",
+					"PLAYERUNIT_3" : "gm_gc_army_demolition_mpiaks74n_80_win",
+					"PLAYERUNIT_4" : "gm_gc_army_engineer_mpiaks74n_80_win",
+					"PLAYERUNIT_5" : "gm_gc_army_rifleman_mpiak74n_80_win",
+					"PLAYERUNIT_6" : "gm_gc_army_machinegunner_pk_80_win",
+					"PLAYERUNIT_7" : "gm_gc_army_antitank_mpiak74n_rpg7_80_win",
+					"PLAYERUNIT_8" : "gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_win",
+					"PLAYERUNIT_9" : "gm_gc_army_marksman_svd_80_win",
+					"PLAYERUNIT_10" : "gm_gc_army_medic_mpiak74n_80_win"
 				}
 		}
 	],
@@ -103,7 +143,7 @@
 		{
 			"island" : "Chernarus_Winter",
 			"sqm": "Chernarus_Winter",
-			"mod" : "GM BW",
+			"mod" : "GM BW w",
 			"replace" : {},
 			"name" : "co10_Escape_GM_NVA_vs_BW"
 		},
@@ -124,7 +164,7 @@
 		{
 			"island" : "Winter Panthera",
 			"sqm": "Winthera3",
-			"mod" : "GM BW",
+			"mod" : "GM BW w",
 			"replace" : {},
 			"name" : "co10_Escape_GM_NVA_vs_BW"
 		},
@@ -179,7 +219,7 @@
 		},
 		{
 			"island" : "Thirsk Winter",
-			"mod" : "GM BW",
+			"mod" : "GM BW w",
 			"replace" : {},
 			"sqm" : "ThirskW",
 			"name" : "co10_Escape_GM_NVA_vs_BW"
@@ -383,7 +423,7 @@
 		{
 			"island" : "Chernarus_Winter",
 			"sqm": "Chernarus_Winter",
-			"mod" : "GM BW CUP",
+			"mod" : "GM BW CUP w",
 			"replace" : {},
 			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
 		},
@@ -404,7 +444,7 @@
 		{
 			"island" : "Winter Panthera",
 			"sqm": "Winthera3",
-			"mod" : "GM BW CUP",
+			"mod" : "GM BW CUP w",
 			"replace" : {},
 			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
 		},
@@ -459,7 +499,7 @@
 		},
 		{
 			"island" : "Thirsk Winter",
-			"mod" : "GM BW CUP",
+			"mod" : "GM BW CUP w",
 			"replace" : {},
 			"sqm" : "ThirskW",
 			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
@@ -608,7 +648,7 @@
 	"Addons" : [
 		{
 			"name" : "GM",
-			"mods" : ["GM BW","GM BW CUP"]
+			"mods" : ["GM BW","GM BW CUP","GM BW w","GM BW CUP w"]
 		}
 	]
 	
