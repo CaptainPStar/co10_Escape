@@ -26,15 +26,6 @@ private _side = A3E_VAR_Side_Ind;
 if(_zoneArea > 5000) then {
 	_side = A3E_VAR_Side_Opfor;
 };
-if(isNil("A3E_PatrolsPerSqm")) then {
-	A3E_PatrolsPerSqm = 0.0005;
-};
-if(isNil("A3E_PatrolsPerSqmSqrt")) then {
-	A3E_PatrolsPerSqmSqrt = 0.05;
-};
-private _edgeSum2 = ((_zoneSizeXY select 0)+(_zoneSizeXY select 1))/2;
-private _patrolCount = ceil(A3E_PatrolsPerSqmSqrt * sqrt(_zoneArea))+round(_edgeSum2/100);
-
 
 private _name = format["A3E_ZoneMarker%1",_zoneIndex];
 private _marker = createMarker [_name,(_x select 0)];
@@ -47,13 +38,9 @@ _marker setMarkerAlpha 0;
 
 if(A3E_Debug) then {
 	_marker setMarkerAlpha 0.5;
-	private _markerText = createMarker [_name,(_x select 0)];
-	_markerText setMarkerShape "ICON";
-	_markerText setMarkerType "mil_dot";
-	_markerText setMarkerText format["%1/%2sm/%3Grps/%4",_zoneIndex,(_zoneArea),_patrolCount,str _side];
 };
-private _triggerRange = 500; //Temporary
 
+private _triggerRange = missionNamespace getvariable ["Param_EnemySpawnDistance",800];
 
 private _trigger = createTrigger["EmptyDetector", _zonePosition, false];
 //_trigger setTriggerInterval 5;
