@@ -32,11 +32,11 @@ if(!(_active)) then {
 					};
 					case 2: // 3-5 players
 					{
-					   _patrolsPerSqmSqrt = 0.025;
+					   _patrolsPerSqmSqrt = 0.018;
 					};
-					 case 2: // 3-5 players
+					case 3: // 6-8 players
 					{
-					   _patrolsPerSqmSqrt = 0.05;
+					   _patrolsPerSqmSqrt = 0.029;
 					};
 					default // 6-8 players
 					{
