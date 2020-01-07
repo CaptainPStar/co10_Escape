@@ -22,18 +22,48 @@ if(!(_active)) then {
 	private _area = [_zone,"zoneArea"] call BIS_fnc_getFromPairs;
 	
 	if(!_initialized) then {
-		if(isNil("A3E_PatrolsPerSqm")) then {
-			A3E_PatrolsPerSqm = 0.0005;
-		};
-		private _patrolCount = ceil(A3E_PatrolsPerSqm * _area);
+		private _patrolsPerSqmSqrt = 0.01;
+		private _spawnCount = missionNamespace getvariable ["Param_VillageSpawnCount",1];
+		  switch (_spawnCount) do
+				{
+					case 1: // 1-2 players
+					{
+					   _patrolsPerSqmSqrt = 0.01;
+					};
+					case 2: // 3-5 players
+					{
+					   _patrolsPerSqmSqrt = 0.018;
+					};
+					case 3: // 6-8 players
+					{
+					   _patrolsPerSqmSqrt = 0.029;
+					};
+					default // 6-8 players
+					{
+						_patrolsPerSqmSqrt = 0.01;
+					};
+				};
+
+		private _edgeSum2 = ((getMarkerSize _marker # 0)+(getMarkerSize _marker # 1))/2;
+		private _patrolCount = ceil(_patrolsPerSqmSqrt * sqrt(_area))+round(_edgeSum2/100);
+		
+		
 		for "_x" from 1 to _patrolCount do {
 			private _pos = [_marker] call BIS_fnc_randomPosTrigger;
-			private _grp = [_pos,_side,(random 3) + 2] call A3E_FNC_spawnPatrol;
+			private _unitCount = round((missionNamespace getvariable ["Param_EnemyFrequency",1])*2+(random(2)-1));
+			private _grp = [_pos,_side,_unitCount] call A3E_FNC_spawnPatrol;
 			_groups pushBack _grp;
 			_grp setvariable ["A3E_PatrolZone_Index",_zoneIndex];
 			[_grp, _marker] call A3E_fnc_Patrol;
 			[_grp] spawn A3E_fnc_TrackGroup;
 			
+		};
+		if(A3E_Debug) then {
+			_marker setMarkerAlpha 0.5;
+			private _markerText = createMarker [_marker+"_text",getMarkerpos _marker];
+			_markerText setMarkerShape "ICON";
+			_markerText setMarkerType "mil_dot";
+			_markerText setMarkerText format["%1/%2sm/%3Grps/%4",_zoneIndex,(_area),_patrolCount,str _side];
 		};
 		[_zone,"active",true] call BIS_fnc_setToPairs;
 		[_zone,"initialized",true] call BIS_fnc_setToPairs;

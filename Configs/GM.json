@@ -1,0 +1,655 @@
+{
+	"ParsedFiles" : [],
+	"Mods" : [
+		{
+			"name" : "GM BW CUP",
+			"path" : "./Mods/GM-BW-CUP/",
+			"require" : ["gm_characters_ge_characters","gm_characters_gc_characters"],
+			"replace" :
+				{
+					"MOD" : "GM+CUP NVA vs BW",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "gm_gc_army_squadleader_mpiak74n_80_str",
+					"PLAYERUNIT_2" : "gm_gc_army_machinegunner_lmgrpk_80_str",
+					"PLAYERUNIT_3" : "gm_gc_army_demolition_mpiaks74n_80_str",
+					"PLAYERUNIT_4" : "gm_gc_army_engineer_mpiaks74n_80_str",
+					"PLAYERUNIT_5" : "gm_gc_army_rifleman_mpiak74n_80_str",
+					"PLAYERUNIT_6" : "gm_gc_army_machinegunner_pk_80_str",
+					"PLAYERUNIT_7" : "gm_gc_army_antitank_mpiak74n_rpg7_80_str",
+					"PLAYERUNIT_8" : "gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_str",
+					"PLAYERUNIT_9" : "gm_gc_army_marksman_svd_80_str",
+					"PLAYERUNIT_10" : "gm_gc_army_medic_mpiak74n_80_str"
+				}
+		},
+		{
+			"name" : "GM BW",
+			"path" : "./Mods/GM-BW/",
+			"require" : ["gm_characters_ge_characters","gm_characters_gc_characters"],
+			"replace" :
+				{
+					"MOD" : "GM NVA vs BW",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "gm_gc_army_squadleader_mpiak74n_80_str",
+					"PLAYERUNIT_2" : "gm_gc_army_machinegunner_lmgrpk_80_str",
+					"PLAYERUNIT_3" : "gm_gc_army_demolition_mpiaks74n_80_str",
+					"PLAYERUNIT_4" : "gm_gc_army_engineer_mpiaks74n_80_str",
+					"PLAYERUNIT_5" : "gm_gc_army_rifleman_mpiak74n_80_str",
+					"PLAYERUNIT_6" : "gm_gc_army_machinegunner_pk_80_str",
+					"PLAYERUNIT_7" : "gm_gc_army_antitank_mpiak74n_rpg7_80_str",
+					"PLAYERUNIT_8" : "gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_str",
+					"PLAYERUNIT_9" : "gm_gc_army_marksman_svd_80_str",
+					"PLAYERUNIT_10" : "gm_gc_army_medic_mpiak74n_80_str"
+				}
+		},
+		{
+			"name" : "GM BW CUP w",
+			"path" : "./Mods/GM-BW-CUP w/",
+			"require" : ["gm_characters_ge_characters","gm_characters_gc_characters"],
+			"replace" :
+				{
+					"MOD" : "GM+CUP NVA vs BW",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "gm_gc_army_squadleader_mpiak74n_80_win",
+					"PLAYERUNIT_2" : "gm_gc_army_machinegunner_lmgrpk_80_win",
+					"PLAYERUNIT_3" : "gm_gc_army_demolition_mpiaks74n_80_win",
+					"PLAYERUNIT_4" : "gm_gc_army_engineer_mpiaks74n_80_win",
+					"PLAYERUNIT_5" : "gm_gc_army_rifleman_mpiak74n_80_win",
+					"PLAYERUNIT_6" : "gm_gc_army_machinegunner_pk_80_win",
+					"PLAYERUNIT_7" : "gm_gc_army_antitank_mpiak74n_rpg7_80_win",
+					"PLAYERUNIT_8" : "gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_win",
+					"PLAYERUNIT_9" : "gm_gc_army_marksman_svd_80_win",
+					"PLAYERUNIT_10" : "gm_gc_army_medic_mpiak74n_80_win"
+				}
+		},
+		{
+			"name" : "GM BW w",
+			"path" : "./Mods/GM-BW w/",
+			"require" : ["gm_characters_ge_characters","gm_characters_gc_characters"],
+			"replace" :
+				{
+					"MOD" : "GM NVA vs BW",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "gm_gc_army_squadleader_mpiak74n_80_win",
+					"PLAYERUNIT_2" : "gm_gc_army_machinegunner_lmgrpk_80_win",
+					"PLAYERUNIT_3" : "gm_gc_army_demolition_mpiaks74n_80_win",
+					"PLAYERUNIT_4" : "gm_gc_army_engineer_mpiaks74n_80_win",
+					"PLAYERUNIT_5" : "gm_gc_army_rifleman_mpiak74n_80_win",
+					"PLAYERUNIT_6" : "gm_gc_army_machinegunner_pk_80_win",
+					"PLAYERUNIT_7" : "gm_gc_army_antitank_mpiak74n_rpg7_80_win",
+					"PLAYERUNIT_8" : "gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_win",
+					"PLAYERUNIT_9" : "gm_gc_army_marksman_svd_80_win",
+					"PLAYERUNIT_10" : "gm_gc_army_medic_mpiak74n_80_win"
+				}
+		}
+	],
+	"Islands": [],
+	"Missions" : [
+		{
+			"island" : "Altis",
+			"sqm": "Altis",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Stratis",
+			"sqm": "Stratis",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Tanoa",
+			"sqm": "Tanoa",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Livonia",
+			"sqm" : "Enoch",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Malden 2035",
+			"sqm": "Malden",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Bornholm",
+			"sqm": "Bornholm",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Chernarus",
+			"sqm" : "Chernarus",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"sqm": "Chernarus_Summer",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Chernarus_Winter",
+			"sqm": "Chernarus_Winter",
+			"mod" : "GM BW w",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Podagorsk",
+			"sqm": "FDF_Isle1_a",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Panthera",
+			"sqm": "Panthera3",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Winter Panthera",
+			"sqm": "Winthera3",
+			"mod" : "GM BW w",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Abramia",
+			"sqm": "Abramia",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Sahrani",
+			"sqm": "Sara",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "United Sahrani",
+			"sqm": "Sara_dbe1",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Celle",
+			"sqm": "mbg_celle2",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Porto",
+			"sqm": "Porto",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Thirsk",
+			"mod" : "GM BW",
+			"replace" : {},
+			"sqm" : "Thirsk",
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Thirsk Winter",
+			"mod" : "GM BW w",
+			"replace" : {},
+			"sqm" : "ThirskW",
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Capraia",
+			"sqm": "IsolaDiCapraia",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Everon",
+			"sqm": "Eden",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Malden",
+			"sqm": "Abel",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Kolgujev",
+			"sqm": "Cain",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Nogova",
+			"sqm": "Noe",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Esseker",
+			"sqm": "Esseker",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Beketov",
+			"sqm": "Beketov",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Australia",
+			"sqm": "Australia",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "rof_isles_of_cumbrae",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Schwemlitz",
+			"sqm": "Schwemlitz",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Rosche",
+			"sqm": "Rosche",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Kastellorizo",
+			"sqm": "Kastellorizo",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Kerama",
+			"sqm": "Kerama",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Valtatie 5",
+			"sqm": "VT5",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Ruha",
+			"sqm": "Ruha",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Yellowstone",
+			"sqm": "yellowstone",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Utes",
+			"sqm": "utes",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Bukovina",
+			"sqm": "Bootcamp_ACR",
+			"mod" : "GM BW",
+			"replace" : {},
+			"name" : "co10_Escape_GM_NVA_vs_BW"
+		},
+		{
+			"island" : "Altis",
+			"sqm": "Altis",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Stratis",
+			"sqm": "Stratis",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Tanoa",
+			"sqm": "Tanoa",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Livonia",
+			"sqm" : "Enoch",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Malden 2035",
+			"sqm": "Malden",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Bornholm",
+			"sqm": "Bornholm",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Chernarus",
+			"sqm" : "Chernarus",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"sqm": "Chernarus_Summer",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Chernarus_Winter",
+			"sqm": "Chernarus_Winter",
+			"mod" : "GM BW CUP w",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Podagorsk",
+			"sqm": "FDF_Isle1_a",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Panthera",
+			"sqm": "Panthera3",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Winter Panthera",
+			"sqm": "Winthera3",
+			"mod" : "GM BW CUP w",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Abramia",
+			"sqm": "Abramia",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Sahrani",
+			"sqm": "Sara",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "United Sahrani",
+			"sqm": "Sara_dbe1",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Celle",
+			"sqm": "mbg_celle2",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Porto",
+			"sqm": "Porto",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Thirsk",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"sqm" : "Thirsk",
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Thirsk Winter",
+			"mod" : "GM BW CUP w",
+			"replace" : {},
+			"sqm" : "ThirskW",
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Capraia",
+			"sqm": "IsolaDiCapraia",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Everon",
+			"sqm": "Eden",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Malden",
+			"sqm": "Abel",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Kolgujev",
+			"sqm": "Cain",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Nogova",
+			"sqm": "Noe",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Esseker",
+			"sqm": "Esseker",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Beketov",
+			"sqm": "Beketov",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Australia",
+			"sqm": "Australia",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "rof_isles_of_cumbrae",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Schwemlitz",
+			"sqm": "Schwemlitz",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Rosche",
+			"sqm": "Rosche",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Kastellorizo",
+			"sqm": "Kastellorizo",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Kerama",
+			"sqm": "Kerama",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Valtatie 5",
+			"sqm": "VT5",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Ruha",
+			"sqm": "Ruha",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Yellowstone",
+			"sqm": "yellowstone",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Utes",
+			"sqm": "utes",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		},
+		{
+			"island" : "Bukovina",
+			"sqm": "Bootcamp_ACR",
+			"mod" : "GM BW CUP",
+			"replace" : {},
+			"name" : "co10_Escape_GM-CUP_NVA_vs_BW"
+		}
+	],
+	"Addons" : [
+		{
+			"name" : "GM",
+			"mods" : ["GM BW","GM BW CUP","GM BW w","GM BW CUP w"]
+		}
+	]
+	
+}

@@ -25,22 +25,22 @@ class Params
 	{
 		title="Enemy Groupsize";
 		values[]={1,2,3};
-		texts[]={"Few (suitable for 1-3 players)", "Some (suitable for 4-6 players)", "A lot (suitable for 7-8 players)"};
-		default = 1;
+		texts[]={"Few (1-3)", "Some (3-5)", "Large (5-7)"};
+		default = 2;
 	};
 	class Param_EnemySpawnDistance
 	{
 		title="Enemy Spawn Distance";
-		values[]={800,1050,1300};
-		texts[]={"Short (better performance)", "Medium", "Far (for good rigs)"};
-		default = 1300;
+		values[]={500,800,1200};
+		texts[]={"Short (better performance, spawn in view possible)", "Medium", "Far (for good rigs)"};
+		default = 800;
 	};
 	class Param_VillageSpawnCount
 	{
 		title="Village Patrol Spawns";
-		values[]={80000, 40000, 10000};
+		values[]={1, 2, 3};
 		texts[]={"Low (better performance)", "Medium", "High (Very demanding)"};
-		default = 40000;
+		default = 1;
 	};
 	class Param_SearchChopper
 	{
@@ -219,6 +219,13 @@ class Params
 	class Param_UseDLCTanks
 	{
 		title="Allow usage of units from Tanks DLC";
+		values[]={0,1};
+		texts[]={"No", "Yes"};
+		default = 1;
+	};
+	class Param_UseDLCContact
+	{
+		title="Allow usage of units from Contact DLC";
 		values[]={0,1};
 		texts[]={"No", "Yes"};
 		default = 1;
