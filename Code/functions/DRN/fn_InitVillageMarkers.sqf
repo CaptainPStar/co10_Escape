@@ -12,7 +12,7 @@ if (isServer) then {
 	_villageIndex = 0;
 
 	{
-		private ["_marker", "_pos", "_shape", "_dir", "_size"];
+		private ["_marker", "_pos", "_shape", "_dir", "_color", "_size"];
 
 		_markerName = "drn_villageMarker" + str _villageIndex;
 
@@ -20,6 +20,7 @@ if (isServer) then {
 		_dir = _x select 1;
         _shape = _x select 2;
 		_size = _x select 3;
+		_color = _x select 4;
 
 		_marker = createMarkerLocal [_markerName, _pos];
 		
@@ -30,6 +31,7 @@ if (isServer) then {
 		_marker setMarkerShapeLocal _shape;
 		_marker setMarkerDirLocal _dir;
 		_marker setMarkerSizeLocal _size;
+		_marker setMarkerColorLocal _color;
 
 		_villageIndex = _villageIndex + 1;
 	} foreach a3e_villageMarkers;
