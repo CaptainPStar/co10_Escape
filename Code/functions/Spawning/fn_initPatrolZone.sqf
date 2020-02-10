@@ -19,12 +19,24 @@ private _zonePosition = (_zone select 0);
 private _zoneDir = (_x select 1);
 private _zoneShape = (_x select 2);
 private _zoneSizeXY = (_x select 3);
+private _zoneColor = (_x select 4);
 private _zoneArea = (_zoneSizeXY select 0)*(_zoneSizeXY select 1);
 
-//Select the side based on the zone size. Small zones are occupied by locals while large cities are occupied by OPFOR
+//Selects the side based on the zone size. Small zones are occupied by locals while large cities are occupied by OPFOR
+//If param separated zones are on and is supported by terrain side will be spawned according to villagemarker color
 private _side = A3E_VAR_Side_Ind;
-if(_zoneArea > 5000) then {
-	_side = A3E_VAR_Side_Opfor;
+if((Param_Separation>0) && (!isNil ("_zoneColor") )) then {
+	if(_zoneColor == "ColorRed") then {
+		_side = A3E_VAR_Side_Opfor;
+	};
+	if(_zoneColor == "ColorGreen") then {
+		_side = A3E_VAR_Side_Ind;
+	};
+} else {
+	private _side = A3E_VAR_Side_Ind;
+	if(_zoneArea > 5000) then {
+		_side = A3E_VAR_Side_Opfor;
+	};
 };
 
 private _name = format["A3E_ZoneMarker%1",_zoneIndex];
@@ -32,7 +44,7 @@ private _marker = createMarker [_name,(_x select 0)];
 _marker setMarkerDir (_x select 1);
 _marker setMarkerShape (_x select 2);
 _marker setMarkerSize (_x select 3);
-_marker setMarkerColor "ColorBlue";
+_marker setMarkerColor (_x select 4);
 _name = format["A3E_ZoneMarkerText%1",_zoneIndex];
 _marker setMarkerAlpha 0;
 

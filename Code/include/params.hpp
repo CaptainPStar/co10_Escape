@@ -132,6 +132,13 @@ class Params
 		texts[]={"Disabled","Enabled"};
 		default = 0;
 	};
+	class Param_Separation
+	{
+		title="Separate OPFOR and INDFOR zones (on terrains that support it)";
+		values[]={0,1};
+		texts[]={"Disabled","Enabled"};
+		default = 1;
+	};
 	class Param_ReviveView
 	{
 		title="Unconscious View";
