@@ -539,7 +539,7 @@ a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["gm_mine_at_tm46"], 5];
 a3e_arr_AmmoDepotVehicle = [];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["gm_handgrenade_frag_rgd5"], 50];
 //a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["gm_1rnd_67mm_heat_dm22a1_g3"], 20];
-a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["gm_smokeshell_blu_gc", "gm_smokeshell_grn_gc", "gm_smokeshell_org_gc", "gm_smokeshell_red_gc", "gm_smokeshell_wht_gc"^,"gm_smokeshell_yel_gc"], 50];
+a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["gm_smokeshell_blu_gc", "gm_smokeshell_grn_gc", "gm_smokeshell_org_gc", "gm_smokeshell_red_gc", "gm_smokeshell_wht_gc","gm_smokeshell_yel_gc"], 50];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["Chemlight_blue", "Chemlight_green", "Chemlight_red", "Chemlight_yellow"], 50];
 //a3e_arr_AmmoDepotVehicle pushback [objNull, 30, 1, 1, ["gm_handgrenade_conc_dm51"], 5];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["gm_1Rnd_265mm_flare_single_wht_gc", "gm_1Rnd_265mm_flare_single_grn_gc", "gm_1Rnd_265mm_flare_single_red_gc"], 25];
