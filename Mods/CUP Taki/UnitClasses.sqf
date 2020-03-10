@@ -57,6 +57,7 @@ a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_MicroUzi","CUP_30Rnd_9x19_UZI"
 a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_SA61","CUP_20Rnd_B_765x17_Ball_M"];
 a3e_arr_PrisonBackpackWeapons pushback ["CUP_smg_SA61","CUP_20Rnd_B_765x17_Ball_M"];
 
+
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	"CUP_C_Datsun"
@@ -453,6 +454,8 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_armored_M2_TK"
 		,"CUP_I_Hilux_armored_metis_TK"
 		,"CUP_I_Hilux_armored_SPG9_TK"
+		,"CUP_I_Hilux_BMP1_TK"
+		,"CUP_I_Hilux_btr60_TK"
 		//MRAPs  1 set
 		,"CUP_I_BRDM2_TK_Gue" 
 		,"CUP_I_BRDM2_ATGM_TK_Gue"
@@ -464,7 +467,8 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_igla_TK"
 		,"CUP_I_Hilux_armored_igla_TK"
 		,"CUP_I_Hilux_zu23_TK"
-	    ,"CUP_I_Hilux_armored_zu23_TK" 
+	    ,"CUP_I_Hilux_armored_zu23_TK"
+        ,"CUP_I_Datsun_AA_TK_Random"		
 		//Heavily Armed APCs  1 set
 		,"CUP_I_BMP1_TK_GUE"
         ,"CUP_I_BMP1_TK_GUE"
@@ -477,50 +481,7 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_armored_UB32_TK"
         //Tanks 1 set
 		,"CUP_I_T34_TK_GUE"
-		,"CUP_I_T55_TK_GUE"
-		,"CUP_I_Datsun_AA_TK_Random"
-		,"CUP_I_Ural_ZU23_TK_Gue"
-		,"CUP_I_BMP1_TK_GUE"
-		,"CUP_I_BRDM2_TK_Gue"
-		,"CUP_I_BRDM2_ATGM_TK_Gue"
-		,"CUP_I_BRDM2_HQ_TK_Gue"
-		,"CUP_I_BTR40_MG_TKG"
-		,"CUP_I_BTR40_TKG"
-		,"CUP_I_Datsun_PK_TK"
-		,"CUP_I_Datsun_PK_TK_Random"
-		,"CUP_I_Datsun_4seat_TK"
-		,"CUP_I_Hilux_unarmed_TK"
-		,"CUP_I_Hilux_AGS30_TK"
-		,"CUP_I_Hilux_BMP1_TK"
-		,"CUP_I_Hilux_btr60_TK"
-		,"CUP_I_Hilux_DSHKM_TK"
-		,"CUP_I_Hilux_igla_TK"
-		,"CUP_I_Hilux_M2_TK"
-		,"CUP_I_Hilux_metis_TK"
-		,"CUP_I_Hilux_MLRS_TK"
-		,"CUP_I_Hilux_podnos_TK"
-		,"CUP_I_Hilux_SPG9_TK"
-		,"CUP_I_Hilux_UB32_TK"
-		,"CUP_I_Hilux_zu23_TK"
-		,"CUP_I_Hilux_armored_AGS30_TK"
-		,"CUP_I_Hilux_armored_BMP1_TK"
-		,"CUP_I_Hilux_armored_BTR60_TK"
-		,"CUP_I_Hilux_armored_DSHKM_TK"
-		,"CUP_I_Hilux_armored_igla_TK"
-		,"CUP_I_Hilux_armored_M2_TK"
-		,"CUP_I_Hilux_armored_metis_TK"
-		,"CUP_I_Hilux_armored_MLRS_TK"
-		,"CUP_I_Hilux_armored_podnos_TK"
-		,"CUP_I_Hilux_armored_SPG9_TK"
-		,"CUP_I_Hilux_armored_UB32_TK"
-		,"CUP_I_Hilux_armored_zu23_TK"
-		,"CUP_I_Hilux_armored_unarmed_TK"
-		,"CUP_I_V3S_Open_TKG"
-		,"CUP_I_V3S_Covered_TKG"
-		,"CUP_I_V3S_Rearm_TKG"
-		,"CUP_I_V3S_Refuel_TKG"
-		,"CUP_I_V3S_Repair_TKG"
-		];
+		,"CUP_I_T55_TK_GUE"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -703,11 +664,15 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_armored_M2_TK"
 		,"CUP_I_Hilux_armored_metis_TK"
 		,"CUP_I_Hilux_armored_SPG9_TK"
+		,"CUP_I_Hilux_BMP1_TK"
+		,"CUP_I_Hilux_btr60_TK"
 		,"CUP_I_Hilux_armored_AGS30_TK"  //2
 		,"CUP_I_Hilux_armored_DSHKM_TK"
 		,"CUP_I_Hilux_armored_M2_TK"
 		,"CUP_I_Hilux_armored_metis_TK"
 		,"CUP_I_Hilux_armored_SPG9_TK"
+		,"CUP_I_Hilux_BMP1_TK"
+		,"CUP_I_Hilux_btr60_TK"
 		//MRAPs  2 sets
 		,"CUP_I_BRDM2_TK_Gue"  //1
 		,"CUP_I_BRDM2_ATGM_TK_Gue"
@@ -725,11 +690,13 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_armored_igla_TK"
 		,"CUP_I_Hilux_zu23_TK"
 	    ,"CUP_I_Hilux_armored_zu23_TK" 
+		,"CUP_I_Datsun_AA_TK_Random"
 		,"CUP_I_Ural_ZU23_TK_Gue"  //2
 		,"CUP_I_Hilux_igla_TK"
 		,"CUP_I_Hilux_armored_igla_TK"
 		,"CUP_I_Hilux_zu23_TK"
-	    ,"CUP_I_Hilux_armored_zu23_TK" 
+	    ,"CUP_I_Hilux_armored_zu23_TK"
+		,"CUP_I_Datsun_AA_TK_Random"
 		//Heavily Armed APCs  1 set
 		,"CUP_I_BMP1_TK_GUE"
         ,"CUP_I_BMP1_TK_GUE"
@@ -742,56 +709,7 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_armored_UB32_TK"
         //Tanks 1 set
 		,"CUP_I_T34_TK_GUE"
-		,"CUP_I_T55_TK_GUE"
-		,"CUP_I_Datsun_PK_TK_Random"
-		,"CUP_I_BRDM2_TK_Gue"
-		,"CUP_I_BRDM2_ATGM_TK_Gue"
-		,"CUP_I_BRDM2_HQ_TK_Gue"
-		,"CUP_I_BMP1_TK_GUE"
-		,"CUP_I_T34_TK_GUE"
-		,"CUP_I_T55_TK_GUE"
-		,"CUP_I_Datsun_AA_TK_Random"
-		,"CUP_I_Ural_ZU23_TK_Gue"
-		,"CUP_I_BMP1_TK_GUE"
-		,"CUP_I_BRDM2_TK_Gue"
-		,"CUP_I_BRDM2_ATGM_TK_Gue"
-		,"CUP_I_BRDM2_HQ_TK_Gue"
-		,"CUP_I_BTR40_MG_TKG"
-		,"CUP_I_BTR40_TKG"
-		,"CUP_I_Datsun_PK_TK"
-		,"CUP_I_Datsun_PK_TK_Random"
-		,"CUP_I_Datsun_4seat_TK"
-		,"CUP_I_Hilux_unarmed_TK"
-		,"CUP_I_Hilux_AGS30_TK"
-		,"CUP_I_Hilux_BMP1_TK"
-		,"CUP_I_Hilux_btr60_TK"
-		,"CUP_I_Hilux_DSHKM_TK"
-		,"CUP_I_Hilux_igla_TK"
-		,"CUP_I_Hilux_M2_TK"
-		,"CUP_I_Hilux_metis_TK"
-		,"CUP_I_Hilux_MLRS_TK"
-		,"CUP_I_Hilux_podnos_TK"
-		,"CUP_I_Hilux_SPG9_TK"
-		,"CUP_I_Hilux_UB32_TK"
-		,"CUP_I_Hilux_zu23_TK"
-		,"CUP_I_Hilux_armored_AGS30_TK"
-		,"CUP_I_Hilux_armored_BMP1_TK"
-		,"CUP_I_Hilux_armored_BTR60_TK"
-		,"CUP_I_Hilux_armored_DSHKM_TK"
-		,"CUP_I_Hilux_armored_igla_TK"
-		,"CUP_I_Hilux_armored_M2_TK"
-		,"CUP_I_Hilux_armored_metis_TK"
-		,"CUP_I_Hilux_armored_MLRS_TK"
-		,"CUP_I_Hilux_armored_podnos_TK"
-		,"CUP_I_Hilux_armored_SPG9_TK"
-		,"CUP_I_Hilux_armored_UB32_TK"
-		,"CUP_I_Hilux_armored_zu23_TK"
-		,"CUP_I_Hilux_armored_unarmed_TK"
-		,"CUP_I_V3S_Open_TKG"
-		,"CUP_I_V3S_Covered_TKG"
-		,"CUP_I_V3S_Rearm_TKG"
-		,"CUP_I_V3S_Refuel_TKG"
-		,"CUP_I_V3S_Repair_TKG"];
+		,"CUP_I_T55_TK_GUE"];
     };
     default {//A lot (7-8)
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -985,11 +903,15 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_armored_M2_TK"
 		,"CUP_I_Hilux_armored_metis_TK"
 		,"CUP_I_Hilux_armored_SPG9_TK"
+		,"CUP_I_Hilux_BMP1_TK"
+		,"CUP_I_Hilux_btr60_TK"
 		,"CUP_I_Hilux_armored_AGS30_TK"  //2
 		,"CUP_I_Hilux_armored_DSHKM_TK"
 		,"CUP_I_Hilux_armored_M2_TK"
 		,"CUP_I_Hilux_armored_metis_TK"
 		,"CUP_I_Hilux_armored_SPG9_TK"
+		,"CUP_I_Hilux_BMP1_TK"
+		,"CUP_I_Hilux_btr60_TK"
 		//MRAPs  2 sets
 		,"CUP_I_BRDM2_TK_Gue"  //1
 		,"CUP_I_BRDM2_ATGM_TK_Gue"
@@ -1006,12 +928,14 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_igla_TK"
 		,"CUP_I_Hilux_armored_igla_TK"
 		,"CUP_I_Hilux_zu23_TK"
-	    ,"CUP_I_Hilux_armored_zu23_TK" 
+		,"CUP_I_Hilux_armored_zu23_TK" 
+		,"CUP_I_Datsun_AA_TK_Random"
 		,"CUP_I_Ural_ZU23_TK_Gue"  //2
 		,"CUP_I_Hilux_igla_TK"
 		,"CUP_I_Hilux_armored_igla_TK"
 		,"CUP_I_Hilux_zu23_TK"
 	    ,"CUP_I_Hilux_armored_zu23_TK" 
+		,"CUP_I_Datsun_AA_TK_Random"
 		//Heavily Armed APCs  2 sets
 		,"CUP_I_BMP1_TK_GUE"  //1
         ,"CUP_I_BMP1_TK_GUE"
@@ -1029,7 +953,6 @@ switch (_enemyFrequency) do {
 		,"CUP_I_T55_TK_GUE"
 		,"CUP_I_T34_TK_GUE"  //2
 		,"CUP_I_T55_TK_GUE"];
-
     };
 };	
 
@@ -1129,24 +1052,34 @@ a3e_arr_recon_I_InfantryTypes = [
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"CUP_O_LR_MG_TKA"
-	,"CUP_O_SPG9_TKA"
 	,"CUP_O_UAZ_MG_TKA"
 	,"CUP_O_UAZ_AGS30_TKA"
 	,"CUP_O_UAZ_MG_TKA"
 	,"CUP_O_UAZ_METIS_TKA"
 	,"CUP_O_UAZ_SPG9_TKA"
 	,"CUP_O_BTR60_TK"
+	,"CUP_O_BTR80_TK"
+	,"CUP_O_BTR80A_TK"
 	,"CUP_O_BRDM2_TKA"
 	,"CUP_O_BRDM2_ATGM_TKA"
-	,"CUP_O_M113_TKA"
-	,"CUP_O_ZU23_TK"];
+	,"CUP_O_M113_TKA"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
-	"CUP_I_Datsun_PK_TK_Random"
-	,"CUP_I_Datsun_PK_TK_Random"
-	,"CUP_I_BTR40_MG_TKG"
+    "CUP_I_Hilux_AGS30_TK"
+	,"CUP_I_Hilux_DSHKM_TK"
+	,"CUP_I_Hilux_M2_TK"
+	,"CUP_I_Hilux_metis_TK"
+	,"CUP_I_Hilux_SPG9_TK"
+	,"CUP_I_Hilux_zu23_TK"
+	,"CUP_I_Hilux_armored_AGS30_TK"
+	,"CUP_I_Hilux_armored_DSHKM_TK"
+	,"CUP_I_Hilux_armored_M2_TK"
+	,"CUP_I_Hilux_armored_metis_TK"
+	,"CUP_I_Hilux_armored_SPG9_TK"
+	,"CUP_I_Hilux_armored_zu23_TK"
+    ,"CUP_I_Hilux_armored_BMP1_TK"
+    ,"CUP_I_Hilux_armored_btr60_TK"	
 	,"CUP_I_BRDM2_TK_Gue"
-	,"CUP_I_BRDM2_ATGM_TK_Gue"
-	,"CUP_I_ZU23_TK_GUE"];
+	,"CUP_I_BRDM2_ATGM_TK_Gue"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
@@ -1184,6 +1117,8 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 	,"CUP_O_BRDM2_TKA"
 	,"CUP_O_BRDM2_ATGM_TKA"
 	,"CUP_O_BTR60_TK"
+	,"CUP_O_BTR80_TK"
+	,"CUP_O_BTR80A_TK"
 	,"CUP_O_BMP2_ZU_TKA"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
@@ -1196,7 +1131,9 @@ a3e_arr_ComCenStaticWeapons = [
 	"CUP_O_KORD_high_TK"];
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
-    "CUP_O_Ural_ZU23_TKA"
+    "CUP_O_LR_AA_TKA"
+	,"CUP_O_UAZ_AA_TKA"
+	,"CUP_O_Ural_ZU23_TKA"
     ,"CUP_O_LR_Ambulance_TKA"
     ,"CUP_O_LR_MG_TKA"
 	,"CUP_O_LR_SPG9_TKA"
@@ -1217,40 +1154,7 @@ a3e_arr_ComCenParkedVehicles = [
 	,"CUP_O_Ural_Reammo_TKA"
 	,"CUP_O_Ural_Open_TKA"
 	,"CUP_O_Ural_Refuel_TKA"
-	,"CUP_O_Ural_Repair_TKA"
-	,"CUP_O_Ural_ZU23_TKA"
-	,"I_G_Offroad_01_armed_F"
-	,"CUP_O_LR_AA_TKM"
-	,"CUP_O_Ural_ZU23_TKM"
-	,"CUP_O_BTR40_MG_TKM"
-	,"CUP_O_BTR40_TKM"
-	,"CUP_O_MTLB_pk_TK_MILITIA"
-	,"CUP_O_Hilux_unarmed_TK_INS"
-	,"CUP_O_Hilux_AGS30_TK_INS"
-	,"CUP_O_Hilux_BMP1_TK_INS"
-	,"CUP_O_Hilux_btr60_TK_INS"
-	,"CUP_O_Hilux_DSHKM_TK_INS"
-	,"CUP_O_Hilux_igla_TK_INS"
-	,"CUP_O_Hilux_M2_TK_INS"
-	,"CUP_O_Hilux_metis_TK_INS"
-	,"CUP_O_Hilux_MLRS_TK_INS"
-	,"CUP_O_Hilux_podnos_TK_INS"
-	,"CUP_O_Hilux_SPG9_TK_INS"
-	,"CUP_O_Hilux_UB32_TK_INS"
-	,"CUP_O_Hilux_zu23_TK_INS"
-	,"CUP_O_Hilux_armored_AGS30_TK_INS"
-	,"CUP_O_Hilux_armored_BMP1_TK_INS"
-	,"CUP_O_Hilux_armored_BTR60_TK_INS"
-	,"CUP_O_Hilux_armored_DSHKM_TK_INS"
-	,"CUP_O_Hilux_armored_igla_TK_INS"
-	,"CUP_O_Hilux_armored_M2_TK_INS"
-	,"CUP_O_Hilux_armored_metis_TK_INS"
-	,"CUP_O_Hilux_armored_MLRS_TK_INS"
-	,"CUP_O_Hilux_armored_podnos_TK_INS"
-	,"CUP_O_Hilux_armored_SPG9_TK_INS"
-	,"CUP_O_Hilux_armored_UB32_TK_INS"
-	,"CUP_O_Hilux_armored_zu23_TK_INS"
-	,"CUP_O_Hilux_armored_unarmed_TK_INS"];
+	,"CUP_O_Ural_Repair_TKA"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
@@ -1468,63 +1372,8 @@ a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	,"CUP_O_KORD_high_TK"
 	,"CUP_O_Igla_AA_pod_TK"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
-a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
-    "CUP_O_Ural_ZU23_TKA"
-    ,"CUP_O_LR_Ambulance_TKA"
-    ,"CUP_O_LR_MG_TKA"
-	,"CUP_O_LR_SPG9_TKA"
-	,"CUP_O_LR_Transport_TKA"
-	,"CUP_O_UAZ_Unarmed_TKA"
-	,"CUP_O_V3S_Open_TKA"
-	,"CUP_O_V3S_Covered_TKA"
-	,"CUP_O_V3S_Rearm_TKA"
-	,"CUP_O_V3S_Refuel_TKA"
-	,"CUP_O_V3S_Repair_TKA"
-	,"CUP_O_UAZ_Unarmed_TKA"
-	,"CUP_O_UAZ_AGS30_TKA"
-	,"CUP_O_UAZ_MG_TKA"
-	,"CUP_O_UAZ_METIS_TKA"
-	,"CUP_O_UAZ_Open_TKA"
-	,"CUP_O_UAZ_SPG9_TKA"
-	,"CUP_O_Ural_TKA"
-	,"CUP_O_Ural_Reammo_TKA"
-	,"CUP_O_Ural_Open_TKA"
-	,"CUP_O_Ural_Refuel_TKA"
-	,"CUP_O_Ural_Repair_TKA"
-	,"CUP_O_Ural_Reammo_TKA"
-	,"CUP_O_Ural_ZU23_TKA"
-	,"I_G_Offroad_01_armed_F"
-	,"CUP_O_LR_AA_TKM"
-	,"CUP_O_Ural_ZU23_TKM"
-	,"CUP_O_BTR40_MG_TKM"
-	,"CUP_O_BTR40_TKM"
-	,"CUP_O_MTLB_pk_TK_MILITIA"
-	,"CUP_O_Hilux_unarmed_TK_INS"
-	,"CUP_O_Hilux_AGS30_TK_INS"
-	,"CUP_O_Hilux_BMP1_TK_INS"
-	,"CUP_O_Hilux_btr60_TK_INS"
-	,"CUP_O_Hilux_DSHKM_TK_INS"
-	,"CUP_O_Hilux_igla_TK_INS"
-	,"CUP_O_Hilux_M2_TK_INS"
-	,"CUP_O_Hilux_metis_TK_INS"
-	,"CUP_O_Hilux_MLRS_TK_INS"
-	,"CUP_O_Hilux_podnos_TK_INS"
-	,"CUP_O_Hilux_SPG9_TK_INS"
-	,"CUP_O_Hilux_UB32_TK_INS"
-	,"CUP_O_Hilux_zu23_TK_INS"
-	,"CUP_O_Hilux_armored_AGS30_TK_INS"
-	,"CUP_O_Hilux_armored_BMP1_TK_INS"
-	,"CUP_O_Hilux_armored_BTR60_TK_INS"
-	,"CUP_O_Hilux_armored_DSHKM_TK_INS"
-	,"CUP_O_Hilux_armored_igla_TK_INS"
-	,"CUP_O_Hilux_armored_M2_TK_INS"
-	,"CUP_O_Hilux_armored_metis_TK_INS"
-	,"CUP_O_Hilux_armored_MLRS_TK_INS"
-	,"CUP_O_Hilux_armored_podnos_TK_INS"
-	,"CUP_O_Hilux_armored_SPG9_TK_INS"
-	,"CUP_O_Hilux_armored_UB32_TK_INS"
-	,"CUP_O_Hilux_armored_zu23_TK_INS"
-	,"CUP_O_Hilux_armored_unarmed_TK_INS"];
+a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
+
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
@@ -1742,15 +1591,11 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"CUP_O_Mi17_VIV_TK"
-	,"CUP_I_UH1H_slick_TK_GUE"];
+	"CUP_O_Mi17_VIV_TK"];
 a3e_arr_searchChopperHard = [
 	"CUP_O_UH1H_TKA"
 	,"CUP_O_UH1H_slick_TKA"
-	,"CUP_O_Mi17_TK"
-	,"CUP_I_UH1H_armed_TK_GUE"
-	,"CUP_I_UH1H_gunship_TK_GUE"
-	,"CUP_I_UH1H_slick_TK_GUE"];
+	,"CUP_O_Mi17_TK"];
 a3e_arr_searchChopper_pilot = [
 	"CUP_O_TK_Pilot"];
 a3e_arr_searchChopper_crew = [
