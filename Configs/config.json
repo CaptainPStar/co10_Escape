@@ -194,6 +194,26 @@
 				"ISLANDNAME" : "Livonia"
 				}
 		},
+        {
+			"name" : "Weferlingen",
+			"class" : "gm_weferlingen_summer",
+			"path" : "./Islands/Weferlingen/",
+			"replace" :
+				{
+				"ISLAND" : "gm_weferlingen_summer",
+				"ISLANDNAME" : "Weferlingen"
+				}
+		},
+        {
+			"name" : "WeferlingenWinter",
+			"class" : "gm_weferlingen_winter",
+			"path" : "./Islands/WeferlingenW/",
+			"replace" :
+				{
+				"ISLAND" : "gm_weferlingen_winter",
+				"ISLANDNAME" : "Weferlingen"
+				}
+		},
 		{
 			"name" : "Chernarus_Summer",
 			"class" : "Chernarus_Summer",
@@ -742,6 +762,27 @@
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
+        {
+			"island" : "Livonia",
+			"sqm" : "Enoch",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Weferlingen",
+			"sqm" : "gm_weferlingen_summer",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "WeferlingenWinter",
+			"sqm" : "gm_weferlingen_winter",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
 		{
 			"island" : "Bornholm",
 			"sqm": "Bornholm",
@@ -764,46 +805,11 @@
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
 		{
-			"island" : "Livonia",
-			"sqm" : "Enoch",
-			"mod" : "Vanilla",
-			"replace" : {},
-			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
-		},
-		{
 			"island" : "Podagorsk",
 			"sqm": "FDF_Isle1_a",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
-		},
-				{
-			"island" : "Chernarus",
-			"sqm" : "Chernarus",
-			"mod" : "Vanilla Contact US",
-			"replace" : {},
-			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
-		},
-		{
-			"island" : "Chernarus_Summer",
-			"sqm": "Chernarus_Summer",
-			"mod" : "Vanilla Contact US",
-			"replace" : {},
-			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
-		},
-		{
-			"island" : "Livonia",
-			"sqm" : "Enoch",
-			"mod" : "Vanilla Contact US",
-			"replace" : {},
-			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
-		},
-		{
-			"island" : "Podagorsk",
-			"sqm": "FDF_Isle1_a",
-			"mod" : "Vanilla Contact US",
-			"replace" : {},
-			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		},
 		{
 			"island" : "Panthera",
@@ -1190,12 +1196,54 @@
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
 		},
+        {
+			"island" : "Livonia",
+			"sqm" : "Enoch",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Livonia",
+			"sqm" : "Enoch",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Weferlingen",
+			"sqm" : "gm_weferlingen_summer",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Weferlingen",
+			"sqm" : "gm_weferlingen_summer",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "WeferlingenWinter",
+			"sqm" : "gm_weferlingen_winter",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
 		{
 			"island" : "Bornholm",
 			"sqm": "Bornholm",
 			"mod" : "Vanilla US",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Bornholm",
+			"sqm": "Bornholm",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		},
 		{
 			"island" : "Chernarus",
@@ -1204,12 +1252,12 @@
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
 		},
-		{
-			"island" : "Livonia",
-			"sqm" : "Enoch",
-			"mod" : "Vanilla US",
+        {
+			"island" : "Chernarus",
+			"sqm" : "Chernarus",
+			"mod" : "Vanilla Contact US",
 			"replace" : {},
-			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		},
 		{
 			"island" : "Chernarus_Summer",
@@ -1218,12 +1266,26 @@
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
 		},
+        {
+			"island" : "Chernarus_Summer",
+			"sqm": "Chernarus_Summer",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
 		{
 			"island" : "Podagorsk",
 			"sqm": "FDF_Isle1_a",
 			"mod" : "Vanilla US",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Podagorsk",
+			"sqm": "FDF_Isle1_a",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		},
 		{
 			"island" : "Panthera",
@@ -1252,6 +1314,13 @@
 			"mod" : "Vanilla US",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
 		},
 		{
 			"island" : "Dingor",
@@ -1421,12 +1490,26 @@
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
 		},
-		{
+        {
+			"island" : "Schwemlitz",
+			"sqm": "Schwemlitz",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
 			"island" : "Rosche",
 			"sqm": "Rosche",
 			"mod" : "Vanilla US",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Rosche",
+			"sqm": "Rosche",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		},
 		{
 			"island" : "Diyala",
@@ -1462,6 +1545,13 @@
 			"mod" : "Vanilla US",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Ruha",
+			"sqm": "Ruha",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		},
 		{
 			"island" : "Prei Khmaoch Luong",
