@@ -367,7 +367,7 @@ private _UseMotorPools = Param_MotorPools;
 			
 			_x addeventhandler ["killed",{
 				if ((_this select 1) in (call A3E_fnc_GetPlayers)) then {
-					if(isNil("a3e_var_Escape_SearchLeader_civilianReporting")) then {
+					if((isNil("a3e_var_Escape_SearchLeader_civilianReporting"))||!a3e_var_Escape_SearchLeader_civilianReporting) then {
 						a3e_var_Escape_SearchLeader_civilianReporting = true;
 						publicVariable "a3e_var_Escape_SearchLeader_civilianReporting";
 						(_this select 1) addScore -5;
@@ -380,7 +380,7 @@ private _UseMotorPools = Param_MotorPools;
 				if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
 					_killer = (_this select 0) getVariable ["ace_medical_lastDamageSource", objNull];
 					if (_killer in (call A3E_fnc_GetPlayers)) then {
-						if(isNil("a3e_var_Escape_SearchLeader_civilianReporting")) then {
+						if((isNil("a3e_var_Escape_SearchLeader_civilianReporting"))||!a3e_var_Escape_SearchLeader_civilianReporting) then {
 								a3e_var_Escape_SearchLeader_civilianReporting = true;
 								publicVariable "a3e_var_Escape_SearchLeader_civilianReporting";
 								(_killer) addScore -5;
