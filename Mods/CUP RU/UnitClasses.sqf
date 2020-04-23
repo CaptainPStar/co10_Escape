@@ -638,7 +638,8 @@ a3e_arr_extraction_chopper = [
 	,"CUP_B_MH60L_DAP_4x_USN"
 	,"CUP_B_MH60S_FFV_USMC"
 	,"CUP_B_UH60S_USN"
-	,"CUP_B_UH1Y_Gunship_Dynamic_USMC"
+	,"CUP_B_UH1Y_UNA_USMC"
+	,"CUP_B_UH1Y_MEV_USMC"
 	,"CUP_B_MV22_USMC_RAMPGUN"
 	,"CUP_B_MV22_USMC_RAMPGUN"];
 a3e_arr_extraction_chopper_escort = [
