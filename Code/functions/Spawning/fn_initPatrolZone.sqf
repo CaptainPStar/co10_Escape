@@ -43,7 +43,7 @@ if(A3E_Debug) then {
 private _triggerRange = missionNamespace getvariable ["Param_EnemySpawnDistance",800];
 
 private _trigger = createTrigger["EmptyDetector", _zonePosition, false];
-//_trigger setTriggerInterval 5;
+_trigger setTriggerInterval 5;
 private _playerGroup = [] call a3e_fnc_getPlayerGroup;
 _trigger triggerAttachVehicle [vehicle (units _playerGroup select 0)];
 _trigger setTriggerActivation["MEMBER", "PRESENT", true];

@@ -49,11 +49,13 @@ if (A3E_Debug) then {
 // Create detection trigger
 
 _trigger = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
+_trigger setTriggerInterval 2;
 _trigger setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
 _trigger setTriggerActivation[A3E_VAR_Side_Blufor_Str, A3E_VAR_Side_Opfor_Str+" D", false];
 _trigger setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 
 _trigger2 = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
+_trigger2 setTriggerInterval 2;
 _trigger2 setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
 _trigger2 setTriggerActivation[A3E_VAR_Side_Blufor_Str, A3E_VAR_Side_Ind_Str+" D", false];
 _trigger2 setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
@@ -171,11 +173,13 @@ while {true} do {
 			a3e_var_SearchLeader_Detected = false;
 
 			_trigger = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
+			_trigger setTriggerInterval 2;
 			_trigger setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
 			_trigger setTriggerActivation[A3E_VAR_Side_Blufor_Str, A3E_VAR_Side_Opfor_Str+" D", false];
 			_trigger setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];
 			
 			_trigger2 = createTrigger["EmptyDetector", [_worldSizeXY / 2, _worldSizeXY / 2, 0]];
+			_trigger2 setTriggerInterval 2;
 			_trigger2 setTriggerArea[_worldSizeXY, _worldSizeXY, 0, true];
 			_trigger2 setTriggerActivation[A3E_VAR_Side_Blufor_Str, A3E_VAR_Side_Ind_Str+" D", false];
 			_trigger2 setTriggerStatements["this", "a3e_var_SearchLeader_Detected = true;", ""];

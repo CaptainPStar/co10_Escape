@@ -3,6 +3,7 @@ private "_trigger";
 
 //waituntil{sleep 0.1;!isNil("A3E_PrisonLoudspeakerObject")};
 _trigger = createTrigger["EmptyDetector", [0,0,0]];
+_trigger setTriggerInterval 2;
 _trigger setTriggerArea[25, 25, 0, false];
 _trigger setTriggerActivation["NONE", "PRESENT", true];
 _trigger setTriggerStatements["A3E_SoundPrisonAlarm", "thisTrigger setposASL ((getposASL A3E_PrisonLoudspeakerObject) vectorAdd [0,0,4]);", ""];
@@ -12,6 +13,7 @@ _trigger setSoundEffect ["$NONE$", "", "", "AlarmSfx"];
 
 //Exit HSC cam because missions is ending
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerInterval 2;
 _trigger setTriggerArea[0, 0, 0, false];
 _trigger setTriggerActivation["NONE", "PRESENT", false];
 _trigger setTriggerTimeout [1, 1, 1, false];
@@ -40,12 +42,14 @@ if(isNil("A3E_Task_Prison_Failed")) then {
 };
 
 _trigger = createTrigger["EmptyDetector", [0,0,0]];
+_trigger setTriggerInterval 2;
 _trigger setTriggerArea[0, 0, 0, false];
 _trigger setTriggerActivation["NONE", "PRESENT", false];
 _trigger setTriggerTimeout [1, 1, 1, false];
 _trigger setTriggerStatements["A3E_Task_Prison_Complete", "A3E_Task_Prison setTaskState ""Succeeded"";", ""];
 	
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerInterval 2;
 _trigger setTriggerArea[0, 0, 0, false];
 _trigger setTriggerActivation["NONE", "PRESENT", false];
 _trigger setTriggerTimeout [1, 1, 1, false];
@@ -70,12 +74,14 @@ if(isNil("A3E_Task_Map_Failed")) then {
 };
 
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerInterval 2;
 _trigger setTriggerArea[0, 0, 0, false];
 _trigger setTriggerActivation["NONE", "PRESENT", false];
 _trigger setTriggerTimeout [1, 1, 1, false];
 _trigger setTriggerStatements["A3E_Task_Map_Complete", "A3E_Task_Map setTaskState ""Succeeded"";", ""];
 	
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerInterval 2;
 _trigger setTriggerArea[0, 0, 0, false];
 _trigger setTriggerActivation["NONE", "PRESENT", false];
 _trigger setTriggerTimeout [1, 1, 1, false];
@@ -101,12 +107,14 @@ if(isNil("A3E_Task_ComCenter_Failed")) then {
 };
 
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerInterval 2;
 _trigger setTriggerArea[0, 0, 0, false];
 _trigger setTriggerActivation["NONE", "PRESENT", false];
 _trigger setTriggerTimeout [1, 1, 1, false];
 _trigger setTriggerStatements["A3E_Task_ComCenter_Complete", "A3E_Task_ComCenter setTaskState ""Succeeded"";", ""];
 	
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerInterval 2;
 _trigger setTriggerArea[0, 0, 0, false];
 _trigger setTriggerActivation["NONE", "PRESENT", false];
 _trigger setTriggerTimeout [1, 1, 1, false];
@@ -131,12 +139,14 @@ if(isNil("A3E_Task_Exfil_Failed")) then {
 };
 
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerInterval 2;
 _trigger setTriggerArea[0, 0, 0, false];
 _trigger setTriggerActivation["NONE", "PRESENT", false];
 _trigger setTriggerTimeout [1, 1, 1, false];
 _trigger setTriggerStatements["A3E_Task_Exfil_Complete", "A3E_Task_Exfil setTaskState ""Succeeded"";", ""];
 	
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerInterval 2;
 _trigger setTriggerArea[0, 0, 0, false];
 _trigger setTriggerActivation["NONE", "PRESENT", false];
 _trigger setTriggerTimeout [1, 1, 1, false];

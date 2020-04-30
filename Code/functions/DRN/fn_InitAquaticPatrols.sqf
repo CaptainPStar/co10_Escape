@@ -57,6 +57,7 @@ _aquaticPatrolZoneNo = 0;
 	//#### We should add two trigger, one for population one for depopulation ######
 
 	_trigger = createTrigger["EmptyDetector", _aquaticPatrolZonePos, false];
+	_trigger setTriggerInterval 5;
 	_trigger triggerAttachVehicle [vehicle _referenceUnit];
 	_trigger setTriggerArea[_spawnRadius, _spawnRadius, 0, false];
 	_trigger setTriggerActivation["MEMBER", "PRESENT", true];

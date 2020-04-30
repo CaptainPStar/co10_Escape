@@ -597,6 +597,7 @@ drn_fnc_Escape_InitializeComCenArmor = {
         };
         
         _trigger = createTrigger["EmptyDetector", _pos];
+		_trigger setTriggerInterval 2;
         _trigger triggerAttachVehicle [units _referenceGroup select 0];
         _trigger setTriggerArea[_enemySpawnDistance + 50, _enemySpawnDistance + 50, 0, false];
         _trigger setTriggerActivation["MEMBER", "PRESENT", true];
