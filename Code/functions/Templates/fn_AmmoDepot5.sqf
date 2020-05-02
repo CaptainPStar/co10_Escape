@@ -439,7 +439,6 @@ _obj = ["Flag_CSAT_F",_center,[-16.4143,-1.93066,0],_rotation,266.77] call _fnc_
 	["Land_TTowerSmall_2_F",_center,[-15.7585,4.91602,0],_rotation,0] call _fnc_createObject;
 	["Land_Shed_Big_F",_center,[6.64624,1.66602,4.76837e-007],_rotation,0] call _fnc_createObject;
 	["Land_Cargo_HQ_V1_F",_center,[3.64636,1.44727,-4.76837e-007],_rotation,0] call _fnc_createObject;
-	["CamoNet_BLUFOR_F",_center,[-5.32703,1.60596,0],_rotation,90] call _fnc_createObject;
 	["Land_HBarrier_Big_F",_center,[-18.8104,2.74414,0],_rotation,270] call _fnc_createObject;
 	["Land_HBarrier_Big_F",_center,[-18.5604,-1.50586,0],_rotation,270] call _fnc_createObject;
 	["Land_HBarrier_Big_F",_center,[-15.8107,7.74414,0],_rotation,0] call _fnc_createObject;
