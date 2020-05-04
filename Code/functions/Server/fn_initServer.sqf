@@ -416,7 +416,15 @@ private _UseMotorPools = Param_MotorPools;
            _vehicle addMagazineCargoglobal ["Chemlight_green", 5];	
 		};
 	};
-	
+
+	a3e_arr_Escape_MilitaryTraffic_CivilianCrewClasses = '
+			configName _x isKindOf "CAManBase"
+			&& {getNumber (_x >> "scope") == 2}
+			&& {getText (_x >> "vehicleClass") != "MenVR"}
+			&& {getNumber (_x >> "side") == 3}
+			&& {-1 == toLower (getArray (_x >> "hiddenSelectionsTextures") param [0, ""]) find "c_poloshirt_3_co.paa"}
+		' configClasses (configFile >> "CfgVehicles") apply {configName _x};
+
 	[civilian, [], _vehiclesCount, _enemySpawnDistance, _radius, 0.5, 0.5, _fnc_onSpawnCivilian, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
 
 	

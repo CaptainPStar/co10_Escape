@@ -1,4 +1,4 @@
-private ["_activeVehiclesAndGroup", "_vehiclesGroup", "_spawnSegment", "_vehicle", "_group", "_result", "_possibleVehicles", "_vehicleType", "_vehiclesCrew", "_skill", "_minDistance", "_tries", "_trafficLocation"];
+private ["_activeVehiclesAndGroup", "_spawnSegment", "_group", "_possibleVehicles", "_vehicleType", "_skill", "_minDistance", "_tries", "_trafficLocation"];
 private ["_currentEntityNo", "_vehicleVarName", "_tempVehiclesAndGroup", "_deletedVehiclesCount", "_firstIteration", "_roadSegments", "_destinationSegment", "_destinationPos", "_direction"];
 private ["_roadSegmentDirection", "_testDirection", "_facingAway", "_posX", "_posY", "_pos"];
 private ["_fnc_OnSpawnVehicle", "_fnc_FindSpawnSegment"];
@@ -307,12 +307,27 @@ while {true} do {
                 _possibleVehicles = a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses;
             };
             _vehicleType = _possibleVehicles select floor (random count _possibleVehicles);
-            _result = [_pos, _direction + 90, _vehicleType, _side] call BIS_fnc_spawnVehicle;
-            _vehicle = _result select 0;
-			[_vehicle] call a3e_fnc_onVehicleSpawn;
-            _vehiclesCrew = _result select 1;
-            _vehiclesGroup = _result select 2;
+            private _result = [_pos, _direction + 90, _vehicleType, _side] call BIS_fnc_spawnVehicle;
+            _result params ["_vehicle", "_vehiclesCrew", "_vehiclesGroup"];
+            [_vehicle] call a3e_fnc_onVehicleSpawn;
             
+            if (_side == civilian) then {
+                private _class = selectRandom a3e_arr_Escape_MilitaryTraffic_CivilianCrewClasses;
+                private _newDriver = _vehiclesGroup createUnit [_class, _pos, [] , 0, "NONE"];
+                private _driver = driver _vehicle;
+                moveOut _driver;
+                deleteVehicle _driver;
+                _newDriver moveInDriver _vehicle;
+                if (random 10 < 2 && {0 < _vehicle emptyPositions "Cargo"}) then {
+                    _class = selectRandom a3e_arr_Escape_MilitaryTraffic_CivilianCrewClasses;
+                    _vehiclesGroup createUnit [_class, _pos, [] , 0, "CARGO"];
+                };
+                _vehiclesCrew = crew _vehicle;
+                _vehiclesGroup addVehicle _vehicle;
+                _vehiclesGroup selectLeader commander _vehicle;
+                _result = [_vehicle, _vehiclesCrew, _vehiclesGroup];
+            };
+
             // Name vehicle
             sleep random 0.05;
             if (isNil "drn_MilitaryTraffic_CurrentEntityNo") then {
@@ -361,9 +376,7 @@ while {true} do {
         {
             private ["_debugMarkerColor"];
             
-            _vehicle = _x select 0;
-            _group = _x select 1;
-            _debugMarkerName = _x select 3;
+            _x params ["_vehicle", "_group", "", "_debugMarkerName"];
             _side = side _group;
             
             _debugMarkerColor = "Default";
@@ -392,11 +405,7 @@ while {true} do {
         private ["_closestUnitDistance", "_distance", "_crewUnits"];
         private ["_scriptHandle"];
         
-        _vehicle = _x select 0;
-        _group = _x select 1;
-        _crewUnits = _x select 2;
-        _debugMarkerName = _x select 3;
-		_scriptHandle = _x select 4;
+        _x params ["_vehicle", "_group", "_crewUnits", "_debugMarkerName", "_scriptHandle"];
         
         _closestUnitDistance = 1000000;
         
