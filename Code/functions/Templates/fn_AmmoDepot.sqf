@@ -157,7 +157,7 @@
     // Statics
     
     if (count _staticWeaponClasses > 0) then {
-        _gun = selectRandom _staticWeaponClasses;
+        _gun = _staticWeaponClasses call A3E_fnc_selectRandomWeightedFromSet;
         
         _randomNo = random 100;
         _pos = [(_middlePos select 0) + 10, (_middlePos select 1) + 10, 0];
@@ -186,7 +186,7 @@
     // Cars
     
     if (random 10 > 1 && count _parkedVehicleClasses > 0) then {
-        _car = selectRandom _parkedVehicleClasses;
+        _car = _parkedVehicleClasses call A3E_fnc_selectRandomWeightedFromSet;
     }
     else {
         _car = "";

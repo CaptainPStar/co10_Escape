@@ -1,7 +1,7 @@
 /*
  * Description: This file contains the vehicle types and unit types for the units spawned in the mission, and the weapons and magazines found in ammo boxes/cars.
- * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain 
- * many elements of the same type, so the example array ["Offroad_DSHKM_INS", "Pickup_PK_INS", "Pickup_PK_INS"] will spawn an Offroad with 1/3 probability, and a 
+ * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain
+ * many elements of the same type, so the example array ["Offroad_DSHKM_INS", "Pickup_PK_INS", "Pickup_PK_INS"] will spawn an Offroad with 1/3 probability, and a
  * Pickup with 2/3 probability.
  */
 
@@ -96,234 +96,92 @@ a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_MicroUzi_snds","CUP_30Rnd_9x19
 
 
 
-// Random array. Civilian vehicle classes for ambient traffic.
-a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
-	"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_camo_Civ"
-	,"CUP_C_Golf4_camodark_Civ"
-	,"CUP_C_Golf4_camodigital_Civ"
-	,"CUP_C_Golf4_crowe_Civ"
-	,"CUP_C_Golf4_kitty_Civ"
-	,"CUP_C_Golf4_reptile_Civ"
-	,"CUP_C_Golf4_whiteblood_Civ"
+// Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
+a3e_arr_Escape_EnemyCivilianCarTypes = [
+	[
+		"CUP_C_Datsun"
+		,"CUP_C_Datsun_4seat"
+		,"CUP_C_Datsun_Covered"
+		,"CUP_C_Datsun_Plain"
+		,"CUP_C_Datsun_Tubeframe"
+	]
+	,[
+		["CUP_C_Golf4_random_Civ", 5]
+		,"CUP_C_Golf4_camo_Civ"
+		,"CUP_C_Golf4_camodark_Civ"
+		,"CUP_C_Golf4_camodigital_Civ"
+		,"CUP_C_Golf4_crowe_Civ"
+		,"CUP_C_Golf4_kitty_Civ"
+		,"CUP_C_Golf4_reptile_Civ"
+		,"CUP_C_Golf4_whiteblood_Civ"
+	]
 	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_TT650_CIV"
-	,"CUP_C_TT650_CIV"
-	,"CUP_C_TT650_CIV"
-	,"CUP_C_TT650_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Tubeframe"
-	,"CUP_C_Datsun_Tubeframe"
-	,"CUP_C_Datsun_Tubeframe"
+	,[
+		"CUP_C_Skoda_Blue_CIV"
+		,"CUP_C_Skoda_Green_CIV"
+		,"CUP_C_Skoda_Red_CIV"
+		,"CUP_C_Skoda_White_CIV"
+	]
 	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_SUV_CIV"
-	,"CUP_C_SUV_CIV"
-	,"CUP_C_SUV_CIV"
-	,"CUP_C_SUV_CIV"
-	,"CUP_C_Tractor_CIV"
-	,"CUP_C_Tractor_CIV"
-	,"CUP_C_Tractor_Old_CIV"
-	,"CUP_C_Tractor_Old_CIV"
-	,"CUP_C_Ural_Civ_03"
-	,"CUP_C_Ural_Civ_03"
-	,"CUP_C_Ural_Civ_03"
-	,"CUP_C_Ural_Open_Civ_03"
-	,"CUP_C_Ural_Open_Civ_03"
-	,"CUP_C_Ural_Open_Civ_03"
-    ,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_TT650_TK_CIV"
-	,"CUP_C_TT650_TK_CIV"
-	,"CUP_C_TT650_TK_CIV"
-	,"CUP_C_TT650_TK_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
+	,[
+		"CUP_C_Lada_GreenTK_CIV"
+		,"CUP_C_Lada_Red_CIV"
+		,"CUP_C_Lada_White_CIV"
+		,"CUP_LADA_LM_CIV"
+	]
 	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"];
+	,[
+		"CUP_C_S1203_CIV"
+		,"CUP_C_S1203_Militia_CIV"
+	]
+	,[
+		"CUP_C_SUV_CIV"
+		,"CUP_C_SUV_TK"
+	]
+	,[
+		"CUP_C_UAZ_Open_TK_CIV"
+		,"CUP_C_UAZ_Unarmed_TK_CIV"
+	]
+	,[
+		"CUP_C_Ural_Civ_01"
+		,"CUP_C_Ural_Civ_02"
+		,"CUP_C_Ural_Civ_03"
+		,"CUP_C_Ural_Open_Civ_01"
+		,"CUP_C_Ural_Open_Civ_02"
+		,"CUP_C_Ural_Open_Civ_03"
+	]
+	,[
+		"CUP_C_V3S_Covered_TKC"
+		,"CUP_C_V3S_Open_TKC"
+	]
+	,[
+		"CUP_C_Volha_Blue_TKCIV"
+		,"CUP_C_Volha_Gray_TKCIV"
+		,"CUP_C_Volha_Limo_TKCIV"
+	]];
 	if(Param_UseDLCApex==1) then {
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
+		a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
 	};
 	if(Param_UseDLCLaws==1) then {
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
+		a3e_arr_Escape_EnemyCivilianCarTypes append [
+			[
+				"C_Van_02_medevac_F"
+				,"C_Van_02_vehicle_F"
+				,"C_Van_02_service_F"
+				,"C_Van_02_transport_F"
+			]]
 	};
+
+// Random array. Civilian vehicle classes for ambient traffic.
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = a3e_arr_Escape_EnemyCivilianCarTypes + [
+	[
+		"CUP_C_Tractor_CIV"
+		,"CUP_C_Tractor_Old_CIV"
+	]
+	,[
+		"CUP_C_TT650_CIV"
+		,"CUP_C_TT650_TK_CIV"
+	]];
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -400,7 +258,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_M1A1_Woodland_USMC"
 		,"CUP_B_M1A2_TUSK_MG_USMC"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		//Unarmed Cars  1 set 
+		//Unarmed Cars  1 set
 		"CUP_I_LR_Ambulance_RACS"
 		,"CUP_I_LR_Ambulance_RACS"
 		,"CUP_I_LR_Ambulance_RACS"
@@ -516,7 +374,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_LAV25_HQ_USMC"
 		,"CUP_B_LAV25_HQ_USMC"
 		,"CUP_B_LAV25_HQ_USMC"
-		//Heavily Armed APCs or AA  1 set  
+		//Heavily Armed APCs or AA  1 set
 		,"CUP_B_AAV_USMC"
 		,"CUP_B_LAV25_USMC"
 		,"CUP_B_LAV25M240_USMC"
@@ -561,10 +419,10 @@ switch (_enemyFrequency) do {
 		,"CUP_I_M113_RACS_URB"
 		,"CUP_I_LAV25_HQ_RACS"  //2
 		,"CUP_I_M113_RACS"
-		,"CUP_I_M113_RACS_URB"  
+		,"CUP_I_M113_RACS_URB"
 		,"CUP_I_LAV25_HQ_RACS"  //3
 		,"CUP_I_M113_RACS"
-		,"CUP_I_M113_RACS_URB"  
+		,"CUP_I_M113_RACS_URB"
 		,"CUP_I_LAV25_HQ_RACS"  //4
 		,"CUP_I_M113_RACS"
 		,"CUP_I_M113_RACS_URB"
@@ -647,7 +505,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_LAV25_HQ_USMC"
 		,"CUP_B_LAV25_HQ_USMC"
 		,"CUP_B_LAV25_HQ_USMC"
-		//Heavily Armed APCs or AA  2 sets 
+		//Heavily Armed APCs or AA  2 sets
 		,"CUP_B_AAV_USMC"  //1
 		,"CUP_B_LAV25_USMC"
 		,"CUP_B_LAV25M240_USMC"
@@ -725,71 +583,42 @@ switch (_enemyFrequency) do {
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
 a3e_arr_Escape_InfantryTypes = [
-	"CUP_B_USMC_Soldier"
-	,"CUP_B_USMC_Soldier"
-	,"CUP_B_USMC_Soldier"
-	,"CUP_B_USMC_Soldier"
-	,"CUP_B_USMC_Soldier_GL"
-	,"CUP_B_USMC_Soldier_GL"
+	["CUP_B_USMC_Soldier", 4]
+	,["CUP_B_USMC_Soldier_GL", 2]
 	,"CUP_B_USMC_Officer"
-	,"CUP_B_USMC_Soldier_SL"
-	,"CUP_B_USMC_Soldier_SL"
-	,"CUP_B_USMC_Soldier_TL"
-	,"CUP_B_USMC_Soldier_TL"
-	,"CUP_B_USMC_Soldier_LAT"
-	,"CUP_B_USMC_Soldier_LAT"
+	,["CUP_B_USMC_Soldier_SL", 2]
+	,["CUP_B_USMC_Soldier_TL", 2]
+	,["CUP_B_USMC_Soldier_LAT", 2]
 	,"CUP_B_USMC_Soldier_HAT"
-	,"CUP_B_USMC_Soldier_AA"
-	,"CUP_B_USMC_Soldier_AA"
-	,"CUP_B_USMC_Medic"
-	,"CUP_B_USMC_Medic"
-	,"CUP_B_USMC_Soldier_AR"
-	,"CUP_B_USMC_Soldier_AR"
-	,"CUP_B_USMC_Soldier_AR"
+	,["CUP_B_USMC_Soldier_AA", 2]
+	,["CUP_B_USMC_Medic", 2]
+	,["CUP_B_USMC_Soldier_AR", 3]
 	,"CUP_B_USMC_Spotter"
 	,"CUP_B_USMC_Sniper_M40A3"
 	,"CUP_B_USMC_Sniper_M107"
 	,"CUP_B_USMC_Soldier_Marksman"
-	,"CUP_B_USMC_Engineer"
-	,"CUP_B_USMC_Engineer"
+	,["CUP_B_USMC_Engineer", 2]
 	,"CUP_B_USMC_Soldier_AT"
-	,"CUP_B_USMC_Soldier_MG"
-	,"CUP_B_USMC_Soldier_MG"
+	,["CUP_B_USMC_Soldier_MG", 2]
 	,"CUP_B_USMC_Soldier_UAV"
 	,"CUP_B_USMC_SpecOps"
 	,"CUP_B_USMC_SpecOps_SD"];
 a3e_arr_Escape_InfantryTypes_Ind = [
-	"CUP_I_RACS_Soldier_AA_wdl"
-	,"CUP_I_RACS_Soldier_AA_wdl"
+	["CUP_I_RACS_Soldier_AA_wdl", 2]
 	,"CUP_I_RACS_Soldier_AAT_wdl"
-	,"CUP_I_RACS_Soldier_AMG_wdl"
-	,"CUP_I_RACS_Soldier_AMG_wdl"
-	,"CUP_I_RACS_Soldier_MAT_wdl"
-	,"CUP_I_RACS_Soldier_MAT_wdl"
-	,"CUP_I_RACS_AR_wdl"
-	,"CUP_I_RACS_AR_wdl"
-	,"CUP_I_RACS_Engineer_wdl"
-	,"CUP_I_RACS_Engineer_wdl"
-	,"CUP_I_RACS_GL_wdl"
-	,"CUP_I_RACS_GL_wdl"
+	,["CUP_I_RACS_Soldier_AMG_wdl", 2]
+	,["CUP_I_RACS_Soldier_MAT_wdl", 2]
+	,["CUP_I_RACS_AR_wdl", 2]
+	,["CUP_I_RACS_Engineer_wdl", 2]
+	,["CUP_I_RACS_GL_wdl", 2]
 	,"CUP_I_RACS_Soldier_HAT_wdl"
-	,"CUP_I_RACS_MMG_wdl"
-	,"CUP_I_RACS_MMG_wdl"
+	,["CUP_I_RACS_MMG_wdl", 2]
 	,"CUP_I_RACS_M_wdl"
-	,"CUP_I_RACS_Medic_wdl"
-	,"CUP_I_RACS_Medic_wdl"
-	,"CUP_I_RACS_Officer_wdl"
-	,"CUP_I_RACS_Officer_wdl"
-	,"CUP_I_RACS_Soldier_wdl"
-	,"CUP_I_RACS_Soldier_wdl"
-	,"CUP_I_RACS_Soldier_wdl"
-	,"CUP_I_RACS_Soldier_wdl"
-	,"CUP_I_RACS_Soldier_Light_wdl"
-	,"CUP_I_RACS_Soldier_Light_wdl"
-	,"CUP_I_RACS_Soldier_Light_wdl"
-	,"CUP_I_RACS_Soldier_Light_wdl"
-	,"CUP_I_RACS_Soldier_LAT_wdl"
-	,"CUP_I_RACS_Soldier_LAT_wdl"
+	,["CUP_I_RACS_Medic_wdl", 2]
+	,["CUP_I_RACS_Officer_wdl", 2]
+	,["CUP_I_RACS_Soldier_wdl", 4]
+	,["CUP_I_RACS_Soldier_Light_wdl", 4]
+	,["CUP_I_RACS_Soldier_LAT_wdl", 2]
 	,"CUP_I_RACS_Sniper_wdl"
 	,"CUP_I_RACS_SL_wdl"];
 a3e_arr_recon_InfantryTypes = [
@@ -812,14 +641,16 @@ a3e_arr_recon_I_InfantryTypes = [
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
-    "CUP_B_HMMWV_Avenger_USMC"
-	,"CUP_B_M1151_Deploy_USMC"   
-	,"CUP_B_M1151_Mk19_USMC"
-	,"CUP_B_M1165_GMV_USMC"
-	,"CUP_B_M1167_USMC"
-	,"CUP_B_RG31_Mk19_OD_USMC"
-	,"CUP_B_RG31_M2_OD_USMC"
-	,"CUP_B_RG31_M2_OD_GC_USMC"];
+    [
+		"CUP_B_HMMWV_Avenger_USMC"
+		,"CUP_B_M1151_Deploy_USMC"
+		,"CUP_B_M1151_Mk19_USMC"
+		,"CUP_B_M1165_GMV_USMC"
+		,"CUP_B_M1167_USMC"]
+	,[
+		"CUP_B_RG31_Mk19_OD_USMC"
+		,"CUP_B_RG31_M2_OD_USMC"
+		,"CUP_B_RG31_M2_OD_GC_USMC"]];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"CUP_I_LR_MG_RACS"
 	,"CUP_I_LR_MG_RACS"
@@ -844,7 +675,7 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 
 
-// A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
+// A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random
 // light *and* a random heavy armor.
 
 // Random array. Light armored vehicles guarding the communication centers.
@@ -890,223 +721,6 @@ a3e_arr_ComCenParkedVehicles = [
 	,"CUP_B_RG31_M2_OD_GC_USMC"
 	,"CUP_B_HMMWV_Avenger_USMC"
 	,"CUP_B_AAV_USMC"];
-
-// Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
-a3e_arr_Escape_EnemyCivilianCarTypes = [
-	"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_camo_Civ"
-	,"CUP_C_Golf4_camodark_Civ"
-	,"CUP_C_Golf4_camodigital_Civ"
-	,"CUP_C_Golf4_crowe_Civ"
-	,"CUP_C_Golf4_kitty_Civ"
-	,"CUP_C_Golf4_reptile_Civ"
-	,"CUP_C_Golf4_whiteblood_Civ"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Tubeframe"
-	,"CUP_C_Datsun_Tubeframe"
-	,"CUP_C_Datsun_Tubeframe"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_SUV_CIV"
-	,"CUP_C_SUV_CIV"
-	,"CUP_C_SUV_CIV"
-	,"CUP_C_SUV_CIV"
-	,"CUP_C_Ural_Civ_03"
-	,"CUP_C_Ural_Civ_03"
-	,"CUP_C_Ural_Civ_03"
-	,"CUP_C_Ural_Open_Civ_03"
-	,"CUP_C_Ural_Open_Civ_03"
-	,"CUP_C_Ural_Open_Civ_03"
-    ,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"];
-	if(Param_UseDLCApex==1) then {
-		a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
-	};
-	if(Param_UseDLCLaws==1) then {
-	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
-	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
-	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_service_F";
-	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_transport_F";
-	};
 
 
 // Vehicles, weapons and ammo at ammo depots

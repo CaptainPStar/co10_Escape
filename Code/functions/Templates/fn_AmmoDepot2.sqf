@@ -60,7 +60,7 @@ _obj setPosATL _pos;
     // Cars
     
     if (random 10 > 1 && count _parkedVehicleClasses > 0) then {
-        _car = selectRandom _parkedVehicleClasses;
+        _car = _parkedVehicleClasses call A3E_fnc_selectRandomWeightedFromSet;
     }
 else {
     _car = "";
@@ -109,7 +109,7 @@ if (_car != "") then {
  // Statics
 
  if (count _staticWeaponClasses > 0) then {
-    _gun = selectRandom _staticWeaponClasses;
+    _gun = _staticWeaponClasses call A3E_fnc_selectRandomWeightedFromSet;
 
     _pos = [_center,_center vectorAdd [-11.7528,-6.52271,0.0750003],_rotation] call A3E_fnc_rotatePosition;
     _obj = createVehicle [_gun, _pos, [], 0, "NONE"];

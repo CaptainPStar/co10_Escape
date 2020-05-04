@@ -78,7 +78,7 @@ while {_locationExists} do {
     
 	_soldiers = [];
 	for [{_i = 0}, {_i < _soldierCount}, {_i = _i + 1}] do {
-		_soldierType = _possibleInfantryTypes select (floor (random (count _possibleInfantryTypes)));
+		_soldierType = _possibleInfantryTypes call A3E_fnc_selectRandomWeightedFromSet;
 
 		// soldier: [type, skill, spawned, damage, obj, scriptHandle, hasScript]
 		_soldier = [_soldierType, (_minSkill + random (_maxSkill - _minSkill)), false, 0, objNull, objNull, false];

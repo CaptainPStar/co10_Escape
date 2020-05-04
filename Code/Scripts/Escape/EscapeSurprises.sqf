@@ -144,7 +144,7 @@ while {true} do {
                     _dropUnits = [];
                     
                     for [{_i = 0}, {_i < _noOfDropUnits}, {_i = _i + 1}] do {
-                        _soldierType = A3E_arr_recon_InfantryTypes select floor (random count A3E_arr_recon_InfantryTypes);
+                        _soldierType = A3E_arr_recon_InfantryTypes call A3E_fnc_selectRandomWeightedFromSet;
                         _soldier = _dropGroup createUnit [_soldierType, [0,0,30], [], 0, "FORM"];
                         //_soldier setSkill (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill));
 						//[_soldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
@@ -164,8 +164,8 @@ while {true} do {
                         //[_group, drn_searchAreaMarkerName, _dropPos, a3e_var_Escape_DebugSearchGroup] execVM "Scripts\DRN\SearchGroup\SearchGroup.sqf";
                         [_group, drn_searchAreaMarkerName, _dropPos, A3E_Debug] spawn DRN_fnc_SearchGroup;
                     };
-                    _helitype = a3e_arr_O_transport_heli select floor(random(count(a3e_arr_O_transport_heli)));
-					_crewtype = a3e_arr_O_pilots select floor(random(count(a3e_arr_O_pilots)));
+                    _helitype = a3e_arr_O_transport_heli call A3E_fnc_selectRandomWeightedFromSet;
+					_crewtype = a3e_arr_O_pilots call A3E_fnc_selectRandomWeightedFromSet;
                     [getMarkerPos "drn_dropChopperStartPosMarker", A3E_VAR_Side_Opfor, _helitype, _crewtype, _dropUnits, _dropPosition, _minEnemySkill, _maxEnemySkill, _onGroupDropped, A3E_Debug] execVM "Scripts\Escape\CreateDropChopper.sqf";
                     
                     // Create next drop chopper
@@ -189,7 +189,7 @@ while {true} do {
                     _dropUnits = [];
                     
                     for [{_i = 0}, {_i < _noOfDropUnits}, {_i = _i + 1}] do {
-                        _soldierType = a3e_arr_Escape_InfantryTypes_Ind select floor (random count a3e_arr_Escape_InfantryTypes_Ind);
+                        _soldierType = a3e_arr_Escape_InfantryTypes_Ind call A3E_fnc_selectRandomWeightedFromSet;
                         _soldier = _dropGroup createUnit [_soldierType, [0,0,30], [], 0, "FORM"];
                         //_soldier setSkill (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill));
 						//[_soldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
@@ -209,8 +209,8 @@ while {true} do {
                         //[_group, drn_searchAreaMarkerName, _dropPos, a3e_var_Escape_DebugSearchGroup] execVM "Scripts\DRN\SearchGroup\SearchGroup.sqf";
                         [_group, drn_searchAreaMarkerName, _dropPos, A3E_Debug] spawn DRN_fnc_SearchGroup;
                     };
-                    _helitype = a3e_arr_I_transport_heli select floor(random(count(a3e_arr_I_transport_heli)));
-					_crewtype = a3e_arr_I_pilots select floor(random(count(a3e_arr_I_pilots)));
+                    _helitype = a3e_arr_I_transport_heli call A3E_fnc_selectRandomWeightedFromSet;
+					_crewtype = a3e_arr_I_pilots call A3E_fnc_selectRandomWeightedFromSet;
                     [getMarkerPos "drn_dropChopperStartPosMarker", A3E_VAR_Side_Ind, _helitype, _crewtype, _dropUnits, _dropPosition, _minEnemySkill, _maxEnemySkill, _onGroupDropped, A3E_Debug] execVM "Scripts\Escape\CreateDropChopper.sqf";
                     
                     // Create next drop chopper
@@ -225,8 +225,8 @@ while {true} do {
 				
                 if (_surpriseID == "RUSSIANSEARCHCHOPPER") then {
                     private ["_chopper", "_result", "_group","_helitype","_crewtype"];
-                    _helitype = a3e_arr_O_attack_heli select floor(random(count(a3e_arr_O_attack_heli)));
-					_crewtype = a3e_arr_O_pilots select floor(random(count(a3e_arr_O_pilots)));
+                    _helitype = a3e_arr_O_attack_heli call A3E_fnc_selectRandomWeightedFromSet;
+					_crewtype = a3e_arr_O_pilots call A3E_fnc_selectRandomWeightedFromSet;
                     //_chopper = "O_Heli_Light_02_F" createVehicle getMarkerPos "drn_russianSearchChopperStartPosMarker";
                     _chopper = createVehicle [_helitype, (getMarkerPos "drn_russianSearchChopperStartPosMarker"), [], 0, "FLY"];
                     _chopper lock false;
@@ -267,7 +267,7 @@ while {true} do {
 				if (_surpriseID == "SEARCHDRONE") then {
                     private ["_chopper", "_result"];
 
-					_chopper = createVehicle [selectRandom a3e_arr_searchdrone, getMarkerPos "drn_russianSearchChopperStartPosMarker", [], random 360, "FLY"];
+					_chopper = createVehicle [a3e_arr_searchdrone call A3E_fnc_selectRandomWeightedFromSet, getMarkerPos "drn_russianSearchChopperStartPosMarker", [], random 360, "FLY"];
 					createVehicleCrew _chopper;
 					
 					_chopper lock false;

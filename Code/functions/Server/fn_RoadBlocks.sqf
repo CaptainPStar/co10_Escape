@@ -98,7 +98,7 @@ _fnc_CreateRoadBlock = {
     };
 		
 	
-    private _result = [_pos, _dir, selectRandom _possibleVehicles, _side] call BIS_fnc_spawnVehicle;
+    private _result = [_pos, _dir, _possibleVehicles call A3E_fnc_selectRandomWeightedFromSet, _side] call BIS_fnc_spawnVehicle;
     private _vehicle = _result select 0;
 	[_vehicle] call a3e_fnc_onVehicleSpawn;
     private _crew = _result select 1;
@@ -109,7 +109,7 @@ _fnc_CreateRoadBlock = {
 	
 	_result spawn _fnc_OnSpawnMannedVehicle;
 	
-    private _gun = selectRandom a3e_arr_ComCenStaticWeapons;
+    private _gun = a3e_arr_ComCenStaticWeapons call A3E_fnc_selectRandomWeightedFromSet;
    // private _static = [_gun, (_pos vectoradd [10,0,0]), _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 	private _static = createVehicle [_gun, (_pos vectoradd [10,0,0]), [], 0, "NONE"];
 	[_static] call a3e_fnc_onVehicleSpawn;
@@ -127,10 +127,10 @@ _fnc_CreateRoadBlock = {
         _guardTypes = a3e_arr_Escape_InfantryTypes_Ind;
     };
     
-    _group createUnit [selectRandom _guardTypes, _pos, [], 0, "FORM"];
-    _group createUnit [selectRandom _guardTypes, _pos, [], 0, "FORM"];
-    _group createUnit [selectRandom _guardTypes, _pos, [], 0, "FORM"];
-    _group createUnit [selectRandom _guardTypes, _pos, [], 0, "FORM"];
+    _group createUnit [_guardTypes call A3E_fnc_selectRandomWeightedFromSet, _pos, [], 0, "FORM"];
+    _group createUnit [_guardTypes call A3E_fnc_selectRandomWeightedFromSet, _pos, [], 0, "FORM"];
+    _group createUnit [_guardTypes call A3E_fnc_selectRandomWeightedFromSet, _pos, [], 0, "FORM"];
+    _group createUnit [_guardTypes call A3E_fnc_selectRandomWeightedFromSet, _pos, [], 0, "FORM"];
     
     {
         _x setUnitRank "LIEUTENANT";

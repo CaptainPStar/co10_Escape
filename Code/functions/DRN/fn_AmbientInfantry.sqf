@@ -124,7 +124,7 @@ while {true} do {
         _group = createGroup _faction;
         
         for [{_i = 0}, {_i < _unitsInGroup}, {_i = _i + 1}] do {
-            _infantryType = _possibleInfantryTypes select floor (random count _possibleInfantryTypes);
+            _infantryType = _possibleInfantryTypes call A3E_fnc_selectRandomWeightedFromSet;
             //_infantryType createUnit [_spawnPos, _group,"", _skill, "PRIVATE"];
 			_group createUnit [_infantryType, _spawnPos, [], 0, "FORM"];
         };

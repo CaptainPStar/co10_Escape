@@ -11,18 +11,18 @@ _extractionMarkerName2 = "A3E_ExtractionPos" + str _extractionPointNo + "_1";
 private _spawnVector = (getMarkerPos _spawnMarkerName) vectorDiff (getMarkerPos _extractionMarkerName);
 private _dir = (getMarkerPos _spawnMarkerName) getDir (getMarkerPos _extractionMarkerName);
 private _pos = ((getMarkerPos _extractionMarkerName) vectorAdd _spawnVector) vectorAdd [0,0,40];
-private _result = [_pos,_dir, selectRandom a3e_arr_extraction_chopper, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+private _result = [_pos,_dir, a3e_arr_extraction_chopper call A3E_fnc_selectRandomWeightedFromSet, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 private _boat1 = _result select 0;
 private _group1 = _result select 2;
 
 
 _pos = ((getMarkerPos _extractionMarkerName2) vectorAdd (_spawnVector vectorMultiply 1.2)) vectorAdd [0,0,40];
-_result = [_pos,_dir, selectRandom a3e_arr_extraction_chopper, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+_result = [_pos,_dir, a3e_arr_extraction_chopper call A3E_fnc_selectRandomWeightedFromSet, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 private _boat2 = _result select 0;
 private _group2 = _result select 2;
 
 _pos = ((getMarkerPos _extractionMarkerName) vectorAdd (_spawnVector vectorMultiply 0.8)) vectorAdd [0,0,60];
-_result = [_pos,_dir, selectRandom a3e_arr_extraction_chopper_escort, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+_result = [_pos,_dir, a3e_arr_extraction_chopper_escort call A3E_fnc_selectRandomWeightedFromSet, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 private _boat3 = _result select 0;
 private _group3 = _result select 2;
 

@@ -12,7 +12,7 @@ _unitTypes = _this select 4;
 _enemyFrequency = _this select 5;
 if (count _this > 6) then {_debug = _this select 6;} else {_debug = false;};
 
-_vehicleClass = selectRandom _vehicleTypes;
+_vehicleClass = _vehicleTypes call A3E_fnc_selectRandomWeightedFromSet;
 _vehicle = createVehicle [_vehicleClass, _spawnPos, [], 0, "NONE"];
 
 // Find a free vehicle variable name

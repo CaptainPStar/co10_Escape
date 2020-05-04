@@ -9,7 +9,7 @@ private _extractionMarkerName = "A3E_ExtractionPos" + str _extractionPointNo;
 //_extractionMarkerName2 = "A3E_ExtractionPos" + str _extractionPointNo + "_1";
 
 private _dir = (getMarkerPos _spawnMarkerName) getDir (getMarkerPos _extractionMarkerName);
-private _result = [[((getMarkerPos _spawnMarkerName) select 0) + 80, ((getMarkerPos _spawnMarkerName) select 1), 50],_dir, (a3e_arr_extraction_chopper select floor (random count a3e_arr_extraction_chopper)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+private _result = [[((getMarkerPos _spawnMarkerName) select 0) + 80, ((getMarkerPos _spawnMarkerName) select 1), 50],_dir, a3e_arr_extraction_chopper call A3E_fnc_selectRandomWeightedFromSet, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 private _boat1 = _result select 0;
 private _group1 = _result select 2;
 
@@ -21,7 +21,7 @@ _waypoint setWaypointStatements ["true", ""];
 
 sleep 5;
 
-_result = [[((getMarkerPos _spawnMarkerName) select 0), ((getMarkerPos _spawnMarkerName) select 1) + 80, 200], _dir, (a3e_arr_extraction_chopper_escort select floor (random count a3e_arr_extraction_chopper_escort)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+_result = [[((getMarkerPos _spawnMarkerName) select 0), ((getMarkerPos _spawnMarkerName) select 1) + 80, 200], _dir, a3e_arr_extraction_chopper_escort call A3E_fnc_selectRandomWeightedFromSet, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 private _boat3 = _result select 0;
 private _group3 = _result select 2;
 
@@ -34,7 +34,7 @@ _waypoint setWaypointLoiterRadius 100;
 
 sleep 5;
 
-_result = [[((getMarkerPos _spawnMarkerName) select 0) - 80, ((getMarkerPos _spawnMarkerName) select 1), 100], _dir, (a3e_arr_extraction_chopper select floor (random count a3e_arr_extraction_chopper)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+_result = [[((getMarkerPos _spawnMarkerName) select 0) - 80, ((getMarkerPos _spawnMarkerName) select 1), 100], _dir, a3e_arr_extraction_chopper call A3E_fnc_selectRandomWeightedFromSet, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 private _boat2 = _result select 0;
 private _group2 = _result select 2;
 

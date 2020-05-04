@@ -37,7 +37,7 @@ private _fnc_createObject = {
     // Cars
     
     if (random 10 > 1 && count _parkedVehicleClasses > 0) then {
-        _car = selectRandom _parkedVehicleClasses;
+        _car = _parkedVehicleClasses call A3E_fnc_selectRandomWeightedFromSet;
     }
     else {
         _car = "";
@@ -59,7 +59,7 @@ private _fnc_createObject = {
 	// Statics
     
     if (count _staticWeaponClasses > 0) then {
-        _gun = selectRandom _staticWeaponClasses;
+        _gun = _staticWeaponClasses call A3E_fnc_selectRandomWeightedFromSet;
         
 		_pos = [_center,_center vectorAdd [-7.66699,-5.83887,-0.00143909],_rotation] call A3E_fnc_rotatePosition;
 		_obj = createVehicle [_gun, _pos, [], 0, "NONE"];
@@ -69,7 +69,7 @@ private _fnc_createObject = {
 		[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
     };
     if (count _staticWeaponClasses > 0) then {
-        _gun = selectRandom _staticWeaponClasses;
+        _gun = _staticWeaponClasses call A3E_fnc_selectRandomWeightedFromSet;
         
 		_pos = [_center,_center vectorAdd [-13.532,13.2534,-0.00143814],_rotation] call A3E_fnc_rotatePosition;
 		_obj = createVehicle [_gun, _pos, [], 0, "NONE"];

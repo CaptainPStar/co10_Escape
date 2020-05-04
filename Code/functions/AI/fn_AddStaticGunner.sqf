@@ -9,7 +9,7 @@ switch (_side) do {
     case A3E_VAR_Side_Ind: {_possibleInfantryTypes = a3e_arr_Escape_InfantryTypes_Ind;};
 };
 if(!(isNull _static)) then {
-	_infantryType = _possibleInfantryTypes select floor (random count _possibleInfantryTypes);
+	_infantryType = _possibleInfantryTypes call A3E_fnc_selectRandomWeightedFromSet;
 	_unit = _group createUnit [_infantryType, getpos _static, [], 0, "FORM"];    
 	_unit assignAsGunner _static;
 	_unit moveInGunner _static;

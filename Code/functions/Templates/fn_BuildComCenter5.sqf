@@ -41,22 +41,22 @@ _obj allowDamage false;
 if (count _staticWeaponClasses > 0) then {
     // Statics
 
-    _gun = selectRandom _staticWeaponClasses;
+    _gun = _staticWeaponClasses call A3E_fnc_selectRandomWeightedFromSet;
 	_obj = [_gun,_center,[-2.85498,1.03955,2.78144],_rotation,271.186] call _fnc_createObject;
 	[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner;
 	
-	_gun = selectRandom _staticWeaponClasses;
+	_gun = _staticWeaponClasses call A3E_fnc_selectRandomWeightedFromSet;
 	_obj = [_gun,_center,[18.1477,3.35449,-0.00143814],_rotation,326.452] call _fnc_createObject;
 	[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner;
 };
 
 if (count _parkedVehicleClasses > 0) then {
     // Cars
-    _vehicle = selectRandom _parkedVehicleClasses;
+    _vehicle = _parkedVehicleClasses call A3E_fnc_selectRandomWeightedFromSet;
 	_obj = [_vehicle,_center,[-17.0812,1.57861,4.76837],_rotation,269.625] call _fnc_createObject;
     
     
-    _vehicle = selectRandom _parkedVehicleClasses;
+    _vehicle = _parkedVehicleClasses call A3E_fnc_selectRandomWeightedFromSet;
 	_obj = [_vehicle,_center,[-17.1572,5.45752,4.76837],_rotation,0.0176632] call _fnc_createObject;
 };
 

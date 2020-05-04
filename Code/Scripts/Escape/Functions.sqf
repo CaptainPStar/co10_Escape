@@ -49,7 +49,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 			if(_nighttime) then {
 				_scopes = _scopes + A3E_arr_NightScopes;
 			};
-			_scope = selectRandom _scopes;
+			_scope = _scopes call A3E_fnc_selectRandomWeightedFromSet;
 			_this addPrimaryWeaponItem _scope;
 		};
 	};
@@ -79,7 +79,7 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 	
 	//Bipod chance
 	if((random 100 < 20)) then {
-		_this addPrimaryWeaponItem (selectRandom a3e_arr_Bipods);
+		_this addPrimaryWeaponItem (a3e_arr_Bipods call A3E_fnc_selectRandomWeightedFromSet);
 	};
 	
 	//Chance for silencers
@@ -584,15 +584,15 @@ drn_fnc_Escape_InitializeComCenArmor = {
         {
             case 1:
             {
-                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [selectRandom a3e_arr_ComCenDefence_lightArmorClasses], []]];
+                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [a3e_arr_ComCenDefence_lightArmorClasses call A3E_fnc_selectRandomWeightedFromSet], []]];
             };
             case 2:
             {
-                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [selectRandom a3e_arr_ComCenDefence_heavyArmorClasses], []]];
+                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [a3e_arr_ComCenDefence_heavyArmorClasses call A3E_fnc_selectRandomWeightedFromSet], []]];
             };
             default
             {
-                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [selectRandom a3e_arr_ComCenDefence_lightArmorClasses, selectRandom a3e_arr_ComCenDefence_heavyArmorClasses], []]];
+                a3e_arr_Escape_ComCenArmors set [count a3e_arr_Escape_ComCenArmors, [_pos, [a3e_arr_ComCenDefence_lightArmorClasses call A3E_fnc_selectRandomWeightedFromSet, a3e_arr_ComCenDefence_heavyArmorClasses call A3E_fnc_selectRandomWeightedFromSet], []]];
             };
         };
         
@@ -625,7 +625,7 @@ drn_fnc_Escape_PopulateVehicle = {
     // Driver
     _continue = true;
     while {_continue && (_soldierCount <= _maxSoldiersCount)} do {
-        _unitType = selectRandom _unitTypes;
+        _unitType = _unitTypes call A3E_fnc_selectRandomWeightedFromSet;
         _insurgentSoldier = _group createUnit [_unitType, [0,0,0], [], 0, "FORM"];
         
         _insurgentSoldier setRank "LIEUTENANT";
@@ -644,7 +644,7 @@ drn_fnc_Escape_PopulateVehicle = {
     // Gunner
     _continue = true;
     while {_continue && _soldierCount <= _maxSoldiersCount} do {
-        _unitType = selectRandom _unitTypes;
+        _unitType = _unitTypes call A3E_fnc_selectRandomWeightedFromSet;
         _insurgentSoldier = _group createUnit [_unitType, [0,0,0], [], 0, "FORM"];
         
         _insurgentSoldier setRank "LIEUTENANT";
@@ -663,7 +663,7 @@ drn_fnc_Escape_PopulateVehicle = {
     // Commander
     _continue = true;
     while {_continue && _soldierCount <= _maxSoldiersCount} do {
-        _unitType = selectRandom _unitTypes;
+        _unitType = _unitTypes call A3E_fnc_selectRandomWeightedFromSet;
         _insurgentSoldier = _group createUnit [_unitType, [0,0,0], [], 0, "FORM"];
         
         _insurgentSoldier setRank "LIEUTENANT";
@@ -682,7 +682,7 @@ drn_fnc_Escape_PopulateVehicle = {
     // Cargo
     _continue = true;
     while {_continue && _soldierCount <= _maxSoldiersCount} do {
-        _unitType = selectRandom _unitTypes;
+        _unitType = _unitTypes call A3E_fnc_selectRandomWeightedFromSet;
         _insurgentSoldier = _group createUnit [_unitType, [0,0,0], [], 0, "FORM"];
         
         _insurgentSoldier setRank "LIEUTENANT";

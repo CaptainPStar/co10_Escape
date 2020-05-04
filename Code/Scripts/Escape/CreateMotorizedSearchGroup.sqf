@@ -11,7 +11,7 @@ if (count _this > 4) then {_maxSkill = _this select 4;} else {_maxSkill = 0.6;};
 if (count _this > 5) then {_debug = _this select 5;} else {_debug = false;};
 
 // Vehicle classes have following cargo capacity [7, 5, 7, 10]
-_vehicleClass = selectRandom a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses;
+_vehicleClass = a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses call A3E_fnc_selectRandomWeightedFromSet;
 
 _vehicleMaxCargo = (configfile >> "CfgVehicles" >> _vehicleClass >>  "transportSoldier") call BIS_fnc_getCfgData;
 
@@ -46,7 +46,7 @@ if (_enemyFrequency == 2) then {
 
 _infantryTypes = a3e_arr_Escape_InfantryTypes;
 for "_i" from 1 to _soldiersCount do {
-    _infantryType = selectRandom _infantryTypes;
+    _infantryType = _infantryTypes call A3E_fnc_selectRandomWeightedFromSet;
     _insurgentSoldier = _group createUnit [_infantryType, [0,0,30], [], 0, "FORM"];
     //_insurgentSoldier setSkill (_minSkill + random (_maxSkill - _minSkill));
 //	[_insurgentsoldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;

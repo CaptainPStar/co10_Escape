@@ -46,7 +46,7 @@ while {!(isNil _vehicleVarName)} do {
 
 //_chopper = "O_Heli_Light_02_F" createVehicle _homePos;
 //_chopper = createVehicle ["RHS_Mi8AMTSh_vvsc", _homePos, [], 0, "NONE"];
-private _type =  selectRandom a3e_arr_searchChopper;
+private _type = a3e_arr_searchChopper call A3E_fnc_selectRandomWeightedFromSet;
 
 _homePos = _homePos vectorAdd [0,0,100];
 

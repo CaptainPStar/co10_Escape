@@ -22,7 +22,7 @@ if (count a3e_arr_CrashSiteWrecksCar >0) then {
 
 //Create a crashed object
 _dir = random 360;
-_object = createVehicle [_TypeOfWreck select(floor(random(count(_TypeOfWreck)))), _position, [], 0, "NONE"];
+_object = createVehicle [_TypeOfWreck call A3E_fnc_selectRandomWeightedFromSet, _position, [], 0, "NONE"];
 _object setPos _position;
 _object setDir _dir;
 
@@ -104,9 +104,9 @@ _boxpos = _position findEmptyPosition [3,15,_boxType];
 
 	
 	_grp = createGroup A3E_VAR_Side_Blufor;
-	_deadcrew = _grp createUnit [_typeOfUnit select(floor(random(count(_typeOfUnit)))), getpos _box, [], 15, "FORM"] ;   
+	_deadcrew = _grp createUnit [_typeOfUnit call A3E_fnc_selectRandomWeightedFromSet, getpos _box, [], 15, "FORM"] ;   
 	_deadcrew setdammage 1;
-	_deadcrew = _grp createUnit [_typeOfUnit select(floor(random(count(_typeOfUnit)))), getpos _box, [], 15, "FORM"] ;   
+	_deadcrew = _grp createUnit [_typeOfUnit call A3E_fnc_selectRandomWeightedFromSet, getpos _box, [], 15, "FORM"] ;   
 	_deadcrew setdammage 1;
 	
 	diag_log format["fn_CrashSite: Camp created at %1", getpos _box];

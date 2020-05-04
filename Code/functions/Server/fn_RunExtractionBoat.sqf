@@ -9,7 +9,7 @@ _extractionMarkerName = "A3E_ExtractionPos" + str _extractionPointNo;
 _extractionMarkerName2 = "A3E_ExtractionPos" + str _extractionPointNo + "_1";
 
 private _dir = (getMarkerPos _spawnMarkerName) getDir (getMarkerPos _extractionMarkerName);
-_result = [[((getMarkerPos _spawnMarkerName) select 0) + 80, ((getMarkerPos _spawnMarkerName) select 1), 0],_dir, (a3e_arr_extraction_boat select floor (random count a3e_arr_extraction_boat)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+_result = [[((getMarkerPos _spawnMarkerName) select 0) + 80, ((getMarkerPos _spawnMarkerName) select 1), 0],_dir, a3e_arr_extraction_boat call A3E_fnc_selectRandomWeightedFromSet, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 _boat1 = _result select 0;
 _group1 = _result select 2;
 
@@ -21,7 +21,7 @@ _waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
 
 sleep 1;
 
-_result = [[((getMarkerPos _spawnMarkerName) select 0), ((getMarkerPos _spawnMarkerName) select 1) + 80, 0], _dir, (a3e_arr_extraction_boat_escort select floor (random count a3e_arr_extraction_boat_escort)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+_result = [[((getMarkerPos _spawnMarkerName) select 0), ((getMarkerPos _spawnMarkerName) select 1) + 80, 0], _dir, a3e_arr_extraction_boat_escort call A3E_fnc_selectRandomWeightedFromSet, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 _boat3 = _result select 0;
 _group3 = _result select 2;
 
@@ -34,7 +34,7 @@ _waypoint setWaypointFormation "WEDGE";
 
 sleep 1;
 
-_result = [[((getMarkerPos _spawnMarkerName) select 0) - 80, ((getMarkerPos _spawnMarkerName) select 1), 0], _dir, (a3e_arr_extraction_boat select floor (random count a3e_arr_extraction_boat)), A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
+_result = [[((getMarkerPos _spawnMarkerName) select 0) - 80, ((getMarkerPos _spawnMarkerName) select 1), 0], _dir, a3e_arr_extraction_boat call A3E_fnc_selectRandomWeightedFromSet, A3E_VAR_Side_Blufor] call BIS_fnc_spawnVehicle;
 _boat2 = _result select 0;
 _group2 = _result select 2;
 

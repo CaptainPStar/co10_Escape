@@ -32,13 +32,14 @@ class CfgFunctions
 		};
 		class InitLocalPlayer {
 			postInit = 0;
-		};			
+		};
 		class cleanupTerrain {};
 		class handleRating {};
 		class handleScore {};
 		class CheckCampDistance {};
 		class FireSmokeFX {};
 		class OnVehicleSpawn {};
+		class selectRandomWeightedFromSet {};
 
 		};
 		class AI
@@ -78,7 +79,7 @@ class CfgFunctions
             };
 			class initPlayer {};
 			class watchKnownPosition {};
-			class parameterInit {}; 
+			class parameterInit {};
             class createComCenters {};
             class createMotorPool {};
             class createAmmoDepots {};
@@ -123,14 +124,14 @@ class CfgFunctions
 			class AmmoDepot2 {};
 			class AmmoDepot3 {};
 			class AmmoDepot4 {};
-			class AmmoDepot5 {};			
+			class AmmoDepot5 {};
 			class CrashSite {};
 			class MortarSite {};
 			class MortarSite2 {};
 			class Roadblock {};
 			class Roadblock2 {};
 			class Roadblock3 {};
-			class Roadblock4 {};			
+			class Roadblock4 {};
 		};
 		class Chronos
 		{
@@ -151,8 +152,8 @@ class CfgFunctions
 	{
 		class DRN
 		{
-			class AmbientInfantry {}; 
-			class MoveInfantryGroup {}; 
+			class AmbientInfantry {};
+			class MoveInfantryGroup {};
 			class MonitorEmptyGroups {};
 			class PopulateLocation {};
 			class DepopulateLocation {};
@@ -161,7 +162,7 @@ class CfgFunctions
 			class InsertionTruck {};
 			class MilitaryTraffic {};
 			class MoveVehicle {};
-			class MotorizedSearchGroup {};	
+			class MotorizedSearchGroup {};
 			class SearchChopper {};
 			class SearchGroup {};
 			class InitVillageMarkers{};

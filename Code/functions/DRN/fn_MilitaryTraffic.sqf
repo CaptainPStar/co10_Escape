@@ -306,7 +306,7 @@ while {true} do {
 			if(_side == civilian) then {
                 _possibleVehicles = a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses;
             };
-            _vehicleType = _possibleVehicles select floor (random count _possibleVehicles);
+            _vehicleType = _possibleVehicles call A3E_fnc_selectRandomWeightedFromSet;
             _result = [_pos, _direction + 90, _vehicleType, _side] call BIS_fnc_spawnVehicle;
             _vehicle = _result select 0;
 			[_vehicle] call a3e_fnc_onVehicleSpawn;

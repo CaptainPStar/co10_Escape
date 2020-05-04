@@ -10,7 +10,7 @@ if (count _this > 2) then {_maxSkill = _this select 2;} else {_maxSkill = 0.6;};
 if (count _this > 3) then {_enemyFrequency = _this select 3;} else {_enemyFrequency = 3;};
 if (count _this > 4) then {_debug = _this select 4;} else {_debug = false;};
 
-_vehicleClass = selectRandom a3e_arr_Escape_ReinforcementTruck_vehicleClasses;
+_vehicleClass = a3e_arr_Escape_ReinforcementTruck_vehicleClasses call A3E_fnc_selectRandomWeightedFromSet;
 
 _vehicleMaxCargo = (configfile >> "CfgVehicles" >> _vehicleClass >>  "transportSoldier") call BIS_fnc_getCfgData;
 
@@ -54,7 +54,7 @@ if (_soldiersCount > _vehicleMaxCargo) then {
 };
 
 for "_i" from 1 to _soldiersCount do {
-    _infantryType = selectRandom a3e_arr_Escape_InfantryTypes;
+    _infantryType = a3e_arr_Escape_InfantryTypes call A3E_fnc_selectRandomWeightedFromSet;
     _insurgentSoldier = _cargoGroup createUnit [_infantryType, [0,0,30], [], 0, "FORM"];
     //_insurgentSoldier setSkill (_minSkill + random (_maxSkill - _minSkill));
 	//[_insurgentSoldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;

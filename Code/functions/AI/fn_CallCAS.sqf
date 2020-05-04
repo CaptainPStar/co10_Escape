@@ -7,7 +7,7 @@ diag_log ("Calling CAS to "+ str _position);
 
 _cas = "Logic" createVehicleLocal getpos player;
 _cas setDir (random 360);
-_cas setVariable ["vehicle",selectRandom a3e_arr_CASplane];
+_cas setVariable ["vehicle", a3e_arr_CASplane call A3E_fnc_selectRandomWeightedFromSet];
  //0=guns	1=missiles	2=both, 3=bomb
 _cas setVariable ["type", selectRandom[0,0,1,2,3]];
 

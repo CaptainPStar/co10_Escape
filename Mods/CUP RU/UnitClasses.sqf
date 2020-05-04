@@ -369,16 +369,21 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
-	"CUP_O_Ka50_AA_RU"
-	,"CUP_O_Ka50_RU"
-	,"CUP_O_Ka52_RU"
-	,"CUP_O_Ka52_Blk_RU"
-	,"CUP_O_Mi24_P_RU"
-	,"CUP_O_Mi24_V_RU"
-	,"CUP_O_Ka52_RU"
-	,"CUP_O_Ka52_Blk_RU"
-	,"CUP_O_Ka52_GreyCamo_RU"
-	,"CUP_O_Ka52_Grey_RU"];
+	[
+		"CUP_O_Ka50_AA_RU",
+		"CUP_O_Ka50_RU"
+	]
+	,[
+		"CUP_O_Ka52_Blk_RU"
+		,"CUP_O_Ka52_Grey_RU"
+		,"CUP_O_Ka52_GreyCamo_RU"
+		,"CUP_O_Ka52_RU"
+	]
+	,[
+		"CUP_O_Mi24_P_RU"
+		,"CUP_O_Mi24_V_RU"
+	]
+];
 a3e_arr_O_transport_heli = [
 	"CUP_O_MI6A_RU"
 	,"CUP_O_MI6T_RU"

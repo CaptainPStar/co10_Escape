@@ -268,14 +268,14 @@ if (count _staticWeaponClasses > 0) then {
     _pos = [-17, 13.5];
     _dir = 0;
     
-    _gun = selectRandom _staticWeaponClasses;
+    _gun = _staticWeaponClasses call A3E_fnc_selectRandomWeightedFromSet;
     _static = [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 	[_static,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
     
     _pos = [17, -9.5];
     _dir = 135;
     
-    _gun = selectRandom _staticWeaponClasses;
+    _gun = _staticWeaponClasses call A3E_fnc_selectRandomWeightedFromSet;
     _static = [_gun, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 	[_static,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
 };
@@ -285,13 +285,13 @@ if (count _parkedVehicleClasses > 0) then {
     _pos = [11.5, 12];
     _dir = 270;
     
-    _vehicle = selectRandom _parkedVehicleClasses;
+    _vehicle = _parkedVehicleClasses call A3E_fnc_selectRandomWeightedFromSet;
     [_vehicle, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateVehicle;
     //_object = _vehicle createVehicle [_realPos, [], 0, "CAN_COLLIDE"];
 	
     _pos = [11.5, 6.5];
     _dir = 270;
     
-    _vehicle = selectRandom _parkedVehicleClasses;
+    _vehicle = _parkedVehicleClasses call A3E_fnc_selectRandomWeightedFromSet;
     [_vehicle, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 };

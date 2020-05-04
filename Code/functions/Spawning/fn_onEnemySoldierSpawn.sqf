@@ -39,7 +39,7 @@ if(random 100 < 70) then {
 		if(_nighttime) then {
 			_scopes = _scopes + A3E_arr_NightScopes;
 		};
-		_scope = selectRandom _scopes;
+		_scope = _scopes call A3E_fnc_selectRandomWeightedFromSet;
 		_unit addPrimaryWeaponItem _scope;
 	};
 };
@@ -69,7 +69,7 @@ if((random 100 < 15) OR (_nighttime)) then {
 
 //Bipod chance
 if((random 100 < 20)) then {
-	_unit addPrimaryWeaponItem (selectRandom a3e_arr_Bipods);
+	_unit addPrimaryWeaponItem (a3e_arr_Bipods call A3E_fnc_selectRandomWeightedFromSet);
 };
 
 //Chance for silencers
