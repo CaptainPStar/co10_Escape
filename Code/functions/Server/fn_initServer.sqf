@@ -52,6 +52,8 @@ _enemySpawnDistance = (Param_EnemySpawnDistance);
 
 [_enemyFrequency] call compile preprocessFileLineNumbers "Units\UnitClasses.sqf";
 
+// prison is created locally, clients need flag texture path
+publicVariable "A3E_VAR_Flag_Ind";
 
 // Developer Variables
 
