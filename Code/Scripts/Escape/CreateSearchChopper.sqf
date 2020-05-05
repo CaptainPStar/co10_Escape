@@ -66,7 +66,7 @@ private _classList = [a3e_arr_Escape_InfantryTypes_Ind, a3e_arr_Escape_InfantryT
 		private _soldier = _group createUnit [selectRandom _classList, [0,0,0], [], 0, "NONE"];
 		_soldier moveInTurret [_chopper, _x];
 	};
-} forEach (allTurrets [_chopper, true] - allTurrets [_chopper, false]);
+} forEach (fullCrew [_chopper, "turret", true] select {_x#4} apply {_x#3});
 
 _chopper lock 0;
 _chopper setVehicleVarName _vehicleVarName;
