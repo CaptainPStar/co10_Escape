@@ -966,6 +966,7 @@ a3e_arr_AmmoDepotItems pushback ["optic_Arco_blk_F", 25, 1, 2];  //CSAT
 a3e_arr_AmmoDepotItems pushback ["optic_Arco_ghex_F", 25, 1, 2];  //CSAT
 a3e_arr_AmmoDepotItems pushback ["optic_DMS", 15, 1, 2];  //CSAT
 a3e_arr_AmmoDepotItems pushback ["optic_DMS_ghex_F", 15, 1, 2];  //CSAT
+a3e_arr_AmmoDepotItems pushback ["optic_NVS", 10, 1, 2];
 if(Param_UseDLCMarksmen==1) then {
 	a3e_arr_AmmoDepotItems pushback ["optic_KHS_blk", 10, 1, 3];  //Cyrus (DMR_05) and Navid (MMG_01)
 	};
@@ -973,7 +974,6 @@ a3e_arr_AmmoDepotItems pushback ["optic_LRPS_ghex_F", 10, 1, 1];  //CSAT
 if(Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["optic_tws", 10, 1, 1];
 	a3e_arr_AmmoDepotItems pushback ["optic_tws_mg", 10, 1, 1];
-	a3e_arr_AmmoDepotItems pushback ["optic_NVS", 10, 1, 2];
 	a3e_arr_AmmoDepotItems pushback ["optic_Nightstalker", 10, 1, 1];
 };
 a3e_arr_AmmoDepotItems pushback ["O_UavTerminal", 10, 1, 2];

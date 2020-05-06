@@ -1252,6 +1252,7 @@ a3e_arr_AmmoDepotItems pushback ["optic_Arco", 10, 1, 2];  //CSAT
 a3e_arr_AmmoDepotItems pushback ["optic_Arco_blk", 10, 1, 2];  //CSAT
 a3e_arr_AmmoDepotItems pushback ["optic_MRCO", 10, 1, 2];  //AAF and FIA
 a3e_arr_AmmoDepotItems pushback ["optic_DMS", 10, 1, 2];  //CSAT
+a3e_arr_AmmoDepotItems pushback ["optic_NVS", 10, 1, 2];
 if(Param_UseDLCMarksmen==1) then {
 	a3e_arr_AmmoDepotItems pushback ["optic_KHS_blk", 10, 1, 1];  //CSAT
 	a3e_arr_AmmoDepotItems pushback ["optic_KHS_hex", 10, 1, 1];  //CSAT
@@ -1261,7 +1262,6 @@ a3e_arr_AmmoDepotItems pushback ["optic_LRPS", 10, 1, 2];  //CSAT, NATO, AND AAF
 if(Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["optic_tws", 10, 1, 1];
 	a3e_arr_AmmoDepotItems pushback ["optic_tws_mg", 10, 1, 1];
-	a3e_arr_AmmoDepotItems pushback ["optic_NVS", 10, 1, 2];
 	a3e_arr_AmmoDepotItems pushback ["optic_Nightstalker", 10, 1, 1];
     };
 a3e_arr_AmmoDepotItems pushback ["O_UavTerminal", 10, 1, 2];
