@@ -748,11 +748,11 @@ a3e_arr_Escape_InfantryTypes = [
 	,"O_Soldier_M_F"
 	,"O_Soldier_M_F"
 	//Snipers
-	,"B_sniper_F"
-	,"B_ghillie_ard_F"
-	,"B_ghillie_lsh_F"
-	,"B_ghillie_sard_F"
-	,"B_spotter_F"
+	,"O_sniper_F"
+	,"O_ghillie_ard_F"
+	,"O_ghillie_lsh_F"
+	,"O_ghillie_sard_F"
+	,"O_spotter_F"
 	//UAV
 	,"O_soldier_UAV_F"
 	,"O_soldier_UAV_F"
