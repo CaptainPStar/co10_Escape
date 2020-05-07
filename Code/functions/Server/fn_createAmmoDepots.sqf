@@ -87,10 +87,7 @@ while {count _positions < A3E_AmmoDepotCount} do {
     [_x, a3e_arr_Escape_AmmoDepot_StaticWeaponClasses, a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses] call 
         selectRandom [
             A3E_fnc_AmmoDepot,
-            A3E_fnc_AmmoDepot2,
-            A3E_fnc_AmmoDepot3,
-            A3E_fnc_AmmoDepot4,
-            A3E_fnc_AmmoDepot5
+			A3E_fnc_AmmoDepot2	
         ];
 } foreach _positions;
 

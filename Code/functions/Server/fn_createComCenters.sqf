@@ -44,11 +44,9 @@ private _instanceNo = 0;
 		// pick one of the BuildComCenter methods at random
 		[_pos, _dir, a3e_arr_ComCenStaticWeapons, a3e_arr_ComCenParkedVehicles] call 
 			selectRandom [
-				a3e_fnc_BuildComCenter, 
+				a3e_fnc_BuildComCenter,
 				a3e_fnc_BuildComCenter2,
-				a3e_fnc_BuildComCenter3,
-				a3e_fnc_BuildComCenter4,
-				a3e_fnc_BuildComCenter5
+				a3e_fnc_BuildComCenter3
 			];
 
 		A3E_Var_ClearedPositions pushBack _pos;
