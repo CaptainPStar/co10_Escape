@@ -1,0 +1,262 @@
+version=52;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=15;
+	};
+	class MarkerIDProvider
+	{
+		nextID=10;
+	};
+	class Camera
+	{
+		pos[]={1736.9812,95.076309,5317.9971};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Ui_F",
+	"A3_Characters_F"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+	};
+};
+randomSeed=2951997;
+class ScenarioData
+{
+	author="Scruffy";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Entities
+	{
+		items=12;
+		class Item0
+		{
+			dataType="Marker";
+			position[]={4460.6636,9.2479639,15411.471};
+			name="a3e_boatmarker";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=1000;
+			b=1000;
+			id=0;
+		};
+		class Item1
+		{
+			dataType="Marker";
+			position[]={4709.293,1.2854004,13283.969};
+			name="abc123";
+			text="copy this one, so it adds _number";
+			type="hd_arrow";
+			id=1;
+			atlOffset=-10.307959;
+		};
+		class Item2
+		{
+			dataType="Marker";
+			position[]={7625.9453,0,31345.273};
+			name="a3e_boatmarker_1";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=7000;
+			b=2000;
+			angle=142.92798;
+			id=2;
+			atlOffset=30.071268;
+		};
+		class Item3
+		{
+			dataType="Marker";
+			position[]={35689.352,-4.2747688e-029,30964.734};
+			name="a3e_boatmarker_2";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=10000;
+			b=2000;
+			angle=55.988995;
+			id=3;
+			atlOffset=36.756111;
+		};
+		class Item4
+		{
+			dataType="Marker";
+			position[]={37992.176,0,9061.5469};
+			name="a3e_boatmarker_3";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=8000;
+			b=1000;
+			angle=106.95339;
+			id=4;
+			atlOffset=20.211771;
+		};
+		class Item5
+		{
+			dataType="Marker";
+			position[]={1047.348,0,14967.074};
+			name="a3e_boatmarker_4";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=7000;
+			b=1000;
+			angle=258.81625;
+			id=5;
+			atlOffset=37;
+		};
+		class Item6
+		{
+			dataType="Marker";
+			position[]={26084.543,0,34979.336};
+			name="a3e_boatmarker_5";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=4000;
+			b=1800;
+			angle=266.69101;
+			id=6;
+			atlOffset=22.903969;
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={18266.254,0,38702.809};
+			name="a3e_boatmarker_6";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=5000;
+			b=1000;
+			id=7;
+			atlOffset=37;
+		};
+		class Item8
+		{
+			dataType="Marker";
+			position[]={18777.617,-4.3437942e-029,8301.2197};
+			name="a3e_boatmarker_7";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=10000;
+			b=2000;
+			angle=194.71498;
+			id=9;
+			atlOffset=37;
+		};
+		class Item9
+		{
+			dataType="Trigger";
+			position[]={4883.0684,23.013023,12011.756};
+			class Attributes
+			{
+				text="Export Boatmarkers to .rpt file";
+				onActivation="_nil = [] execVM ""PositionGenerator.sqf"";";
+				interuptable=1;
+				activationBy="ALPHA";
+			};
+			id=10;
+			type="EmptyDetector";
+			atlOffset=5.5458679;
+		};
+		class Item10
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4889.5259,10.795151,11960.843};
+						angles[]={6.1055584,0,6.2418714};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						skill=0.59999996;
+						rank="MAJOR";
+						name="drn_player1";
+						isPlayer=1;
+						isPlayable=1;
+					};
+					id=12;
+					type="B_Soldier_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=11;
+		};
+		class Item11
+		{
+			dataType="Marker";
+			position[]={31569.512,0,6780.979};
+			name="a3e_boatmarker_8";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=2000;
+			b=600;
+			angle=219.60199;
+			id=14;
+			atlOffset=4.2721529;
+		};
+	};
+};

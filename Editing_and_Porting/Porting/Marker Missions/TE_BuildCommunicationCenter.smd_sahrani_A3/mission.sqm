@@ -1,0 +1,713 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"aia_sara_config",
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"aia_sara_config"
+	};
+	randomSeed=16412411;
+	class Intel
+	{
+		briefingName="co08 Escape Chernarus [1.2beta]";
+		resistanceEast=1;
+		startWeather=0.2605564;
+		startFog=0.12567772;
+		startWind=0.1;
+		forecastWeather=0.3805666;
+		forecastFog=0.1205344;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=8;
+		minute=0;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+	class Groups
+	{
+		items=1;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11134.741,7.132154,16943.256};
+					azimut=-114.13547;
+					id=0;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+	class Markers
+	{
+		items=53;
+		class Item0
+		{
+			position[]={9621.3701,139.995,9974.6221};
+			name="drn_var_communicationCenter1";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=270;
+		};
+		class Item1
+		{
+			position[]={13527.35,13.66008,8775.4932};
+			name="drn_var_communicationCenter2";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=180;
+		};
+		class Item2
+		{
+			position[]={9180.0156,17.959732,5267.3677};
+			name="drn_var_communicationCenter3";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=562.28638;
+		};
+		class Item3
+		{
+			position[]={11122.073,10.945973,16937.725};
+			name="drn_var_communicationCenter4";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=65.864601;
+		};
+		class Item4
+		{
+			position[]={14105.171,39.959999,12538.312};
+			name="drn_var_communicationCenter5";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=90;
+		};
+		class Item5
+		{
+			position[]={12537.514,30.959999,17702.291};
+			name="drn_var_communicationCenter6";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=270.91455;
+		};
+		class Item6
+		{
+			position[]={11434.615,26.614826,6277.7251};
+			name="drn_var_communicationCenter7";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=447.78552;
+		};
+		class Item7
+		{
+			position[]={10996.731,301.92584,14140.967};
+			name="drn_var_communicationCenter8";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=344.487;
+		};
+		class Item8
+		{
+			position[]={15093.103,31.235023,8685.6875};
+			name="drn_var_communicationCenter9";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=150.17238;
+		};
+		class Item9
+		{
+			position[]={14132.517,58.698299,11817.978};
+			name="drn_var_communicationCenter10";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=411.51971;
+		};
+		class Item10
+		{
+			position[]={15404.705,35.559101,13409.748};
+			name="drn_var_communicationCenter11";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=635.63348;
+		};
+		class Item11
+		{
+			position[]={13317.702,13.995,6866.9595};
+			name="drn_var_communicationCenter12";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+		};
+		class Item12
+		{
+			position[]={8148.5186,11.706995,8966.2539};
+			name="drn_var_communicationCenter13";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=831.05823;
+		};
+		class Item13
+		{
+			position[]={13780.93,34.965,11545.138};
+			name="drn_var_communicationCenter14";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=180;
+		};
+		class Item14
+		{
+			position[]={12422.493,31.251814,8522.0928};
+			name="drn_var_communicationCenter15";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=180;
+		};
+		class Item15
+		{
+			position[]={8233.3223,6.3753157,9554.2002};
+			name="drn_var_communicationCenter16";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1081.8308;
+		};
+		class Item16
+		{
+			position[]={11732.029,235.28352,14353.625};
+			name="drn_var_communicationCenter17";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=880.59448;
+		};
+		class Item17
+		{
+			position[]={14612.186,31.476107,8495.9902};
+			name="drn_var_communicationCenter18";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=898.89502;
+		};
+		class Item18
+		{
+			position[]={11979.402,153,15441.522};
+			name="drn_var_communicationCenter19";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=909.68353;
+		};
+		class Item19
+		{
+			position[]={17379.484,13.199074,14131.587};
+			name="drn_var_communicationCenter20";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=270;
+		};
+		class Item20
+		{
+			position[]={14202.617,37.977211,12898.063};
+			name="drn_var_communicationCenter21";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=610.82776;
+		};
+		class Item21
+		{
+			position[]={10133.956,61.003532,6413.6548};
+			name="drn_var_communicationCenter22";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+		};
+		class Item22
+		{
+			position[]={10615.168,17.255693,5212.6587};
+			name="drn_var_communicationCenter23";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=917.23425;
+		};
+		class Item23
+		{
+			position[]={13984.651,27.910679,9799.7305};
+			name="drn_var_communicationCenter24";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1022.9718;
+		};
+		class Item24
+		{
+			position[]={14304.579,43.383446,10650.579};
+			name="drn_var_communicationCenter25";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1191.6873;
+		};
+		class Item25
+		{
+			position[]={13162.606,19.964561,11038.095};
+			name="drn_var_communicationCenter26";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=421.42191;
+		};
+		class Item26
+		{
+			position[]={10293.52,51.433243,7313.9316};
+			name="drn_var_communicationCenter27";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=270;
+		};
+		class Item27
+		{
+			position[]={11419.998,5.8244896,5356.4771};
+			name="drn_var_communicationCenter28";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1050.9862;
+		};
+		class Item28
+		{
+			position[]={7150.2793,5.569387,8356.7559};
+			name="drn_var_communicationCenter29";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=874.09698;
+		};
+		class Item29
+		{
+			position[]={12106.505,25.965,17750.502};
+			name="drn_var_communicationCenter30";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=90;
+		};
+		class Item30
+		{
+			position[]={12380.699,24.207209,6744.1763};
+			name="drn_var_communicationCenter31";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=10.735016;
+		};
+		class Item31
+		{
+			position[]={17305.684,16.18704,9563.875};
+			name="drn_var_communicationCenter32";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=509.75693;
+		};
+		class Item32
+		{
+			position[]={12413.88,182.06102,14893.972};
+			name="drn_var_communicationCenter33";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=490.21017;
+		};
+		class Item33
+		{
+			position[]={9043.9268,164.26671,8301.5};
+			name="drn_var_communicationCenter34";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+		};
+		class Item34
+		{
+			position[]={8455.7939,34.965,6354.9038};
+			name="drn_var_communicationCenter35";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=180;
+		};
+		class Item35
+		{
+			position[]={18827.256,38.584209,13708.102};
+			name="drn_var_communicationCenter36";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=113.667;
+		};
+		class Item36
+		{
+			position[]={15166.826,135.01248,12418.537};
+			name="drn_var_communicationCenter37";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=530.96594;
+		};
+		class Item37
+		{
+			position[]={10838.777,155.74875,9082.21};
+			name="drn_var_communicationCenter38";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=422.45667;
+		};
+		class Item38
+		{
+			position[]={15649.99,73.228836,9952.2705};
+			name="drn_var_communicationCenter39";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=82.325401;
+		};
+		class Item39
+		{
+			position[]={9812.5146,139.995,10064.188};
+			name="drn_var_communicationCenter40";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=180;
+		};
+		class Item40
+		{
+			position[]={8790.0518,171.68094,7704.8135};
+			name="drn_var_communicationCenter42";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=502.79758;
+		};
+		class Item41
+		{
+			position[]={4918.2788,56.970001,15461.792};
+			name="drn_var_communicationCenter41";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=350;
+		};
+		class Item42
+		{
+			position[]={14263.193,51.282108,9373.1191};
+			name="drn_var_communicationCenter43";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=674.12775;
+		};
+		class Item43
+		{
+			position[]={15271.19,32.306053,14011.564};
+			name="drn_var_communicationCenter44";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=372.78586;
+		};
+		class Item44
+		{
+			position[]={19322.299,11.830969,13907.706};
+			name="drn_var_communicationCenter45";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=-50.901005;
+		};
+		class Item45
+		{
+			position[]={8445.7803,11.526786,9388.6172};
+			name="drn_var_communicationCenter46";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=121.28801;
+		};
+		class Item46
+		{
+			position[]={7733.8037,20.035446,15734.005};
+			name="drn_var_communicationCenter47";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=-50.465797;
+		};
+		class Item47
+		{
+			position[]={8101.9771,176.985,7867.8384};
+			name="drn_var_communicationCenter48";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=90;
+		};
+		class Item48
+		{
+			position[]={13393.261,16.234316,7390.3433};
+			name="drn_var_communicationCenter49";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=633.66669;
+		};
+		class Item49
+		{
+			position[]={13280.868,6.48,9126.748};
+			name="drn_var_communicationCenter50";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=270;
+		};
+		class Item50
+		{
+			position[]={14903.882,45.294991,13908.563};
+			name="drn_var_communicationCenter51";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=326.76889;
+		};
+		class Item51
+		{
+			position[]={14239.584,21.958469,16219.553};
+			name="drn_var_communicationCenter52";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=320.28442;
+		};
+		class Item52
+		{
+			position[]={12475.382,227.57454,13686.467};
+			name="drn_var_communicationCenter53";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=307.61703;
+		};
+	};
+	class Sensors
+	{
+		items=3;
+		class Item0
+		{
+			position[]={10074.119,134.28246,9875.3984};
+			a=0;
+			b=0;
+			activationBy="JULIET";
+			interruptable=1;
+			age="UNKNOWN";
+			text="build";
+			expActiv="drn_comCen = ""drn_var_communicationCenter1"";_nil = [getMarkerPos drn_comCen, markerDir drn_comCen] execVM ""Scripts\Escape\BuildCommunicationCenter.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={10060.469,109.30334,10467.978};
+			activationBy="BRAVO";
+			interruptable=1;
+			age="UNKNOWN";
+			text="generate";
+			expActiv="_nil = [] execVM ""PositionGenerator.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item2
+		{
+			position[]={10189.683,139.995,10150.13};
+			activationBy="ALPHA";
+			interruptable=1;
+			age="UNKNOWN";
+			text="build all";
+			expActiv="TotalComCenterCount = 53;  _nil = [TotalComCenterCount] execVM ""buildall.sqf"";";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"aia_sara_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_sara_config"
+	};
+	randomSeed=2542017;
+	class Intel
+	{
+		startWeather=0.25;
+		startWind=0.1;
+		forecastWeather=0.25;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"aia_sara_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_sara_config"
+	};
+	randomSeed=11993212;
+	class Intel
+	{
+		startWeather=0.25;
+		startWind=0.1;
+		forecastWeather=0.25;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"aia_sara_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_sara_config"
+	};
+	randomSeed=13922257;
+	class Intel
+	{
+		startWeather=0.25;
+		startWind=0.1;
+		forecastWeather=0.25;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
