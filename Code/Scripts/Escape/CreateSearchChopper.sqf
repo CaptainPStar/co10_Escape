@@ -17,7 +17,7 @@
 if (!isServer) exitWith {};
 
 private ["_homePos", "_side", "_searchAreaMarker", "_searchTimeMin", "_refuelTimeMin", "_minSkill", "_maxSkill", "_unitArray", "_debug"];
-private ["_chopper", "_chopperspawn", "_group", "_pilot", "_copilot", "_gunner1", "_gunner2", "_gunner3"];
+private ["_chopper", "_chopperspawn"];
 private ["_vehicleVarName", "_vehicleVarNameBase", "_vehicleVarNameNo"];
 
 _homePos = _this select 0;
@@ -53,10 +53,21 @@ _homePos = _homePos vectorAdd [0,0,100];
 //_chopperspawn = [_homePos, random 360, _type, A3E_VAR_Side_Opfor] call BIS_fnc_spawnVehicle;
 _chopper = createVehicle [_type, _homePos, [], random 360, "FLY"];
 [_chopper] call a3e_fnc_onVehicleSpawn;
-createVehicleCrew _chopper;
+private _group = createVehicleCrew _chopper;
+
 {
 	_x call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
 } foreach crew _chopper;
+
+// populate FFV turrets
+private _classList = [a3e_arr_Escape_InfantryTypes_Ind, a3e_arr_Escape_InfantryTypes] select (side _group == A3E_VAR_Side_Opfor);
+{
+	if !(_chopper lockedTurret _x) then {
+		private _soldier = _group createUnit [selectRandom _classList, [0,0,0], [], 0, "NONE"];
+		_soldier moveInTurret [_chopper, _x];
+	};
+} forEach (fullCrew [_chopper, "turret", true] select {_x#4} apply {_x#3});
+
 _chopper lock 0;
 _chopper setVehicleVarName _vehicleVarName;
 _chopper call compile format ["%1=_this;", _vehicleVarName];
