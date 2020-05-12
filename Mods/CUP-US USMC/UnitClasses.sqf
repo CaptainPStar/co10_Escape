@@ -788,6 +788,39 @@ a3e_arr_AquaticPatrols = [
 //////////////////////////////////////////////////////////////////
 a3e_additional_weapon_box_1 = "CUP_USBasicWeaponsBox";
 a3e_additional_weapon_box_2 = "CUP_USSpecialWeaponsBox";
+a3e_additional_weapon_box_arsenal_cfgPatches = [
+	"CUP_Weapons_AA12",
+	"CUP_Weapons_ACR",
+	"CUP_Weapons_AS50",
+	"CUP_Weapons_AWM",
+	"CUP_Weapons_CZ750",
+	"CUP_Weapons_CZ805",
+	"CUP_Weapons_EVO",
+	"CUP_Weapons_G36",
+	"CUP_Weapons_HK416",
+	"CUP_Weapons_L129",
+	"CUP_Weapons_L85",
+	"CUP_Weapons_M1014",
+	"CUP_Weapons_M107",
+	"CUP_Weapons_M110",
+	"CUP_Weapons_M14",
+	"CUP_Weapons_M14_DMR",
+	"CUP_Weapons_M16",
+	"CUP_Weapons_M24",
+	"CUP_Weapons_M240",
+	"CUP_Weapons_M249",
+	"CUP_Weapons_M60E4",
+	"CUP_Weapons_Mk48",
+	"CUP_Weapons_RSASS",
+	"CUP_Weapons_Sa58",
+	"CUP_Weapons_SCAR",
+	"CUP_Weapons_Steyr",
+	"CUP_Weapons_West_Attachments",
+	"CUP_Weapons_XM8"];
+a3e_additional_weapon_box_arsenal_weapons = [
+	"CUP_glaunch_M32",
+	"CUP_glaunch_M79",
+	"CUP_glaunch_Mk13"];
 
 //////////////////////////////////////////////////////////////////
 // fn_MortarSite

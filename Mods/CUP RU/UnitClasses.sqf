@@ -718,6 +718,17 @@ a3e_arr_AquaticPatrols = [
 //////////////////////////////////////////////////////////////////
 a3e_additional_weapon_box_1 = "CUP_RUBasicWeaponsBox";
 a3e_additional_weapon_box_2 = "CUP_RUSpecialWeaponsBox";
+a3e_additional_weapon_box_arsenal_cfgPatches = [
+	"CUP_Weapons_AK",
+	"CUP_Weapons_Bizon",
+	"CUP_Weapons_East_Attachments",
+	"CUP_Weapons_GROZA",
+	"CUP_Weapons_KSVK",
+	"CUP_Weapons_PK",
+	"CUP_Weapons_SVD",
+	"CUP_Weapons_VSS"];
+a3e_additional_weapon_box_arsenal_weapons = [
+	"CUP_glaunch_6G30"];
 
 //////////////////////////////////////////////////////////////////
 // fn_MortarSite
