@@ -39,6 +39,7 @@ class CfgFunctions
 		class CheckCampDistance {};
 		class FireSmokeFX {};
 		class OnVehicleSpawn {};
+		class initArsenal {};
 
 		};
 		class AI
