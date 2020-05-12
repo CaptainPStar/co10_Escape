@@ -25,59 +25,57 @@ _fnc_createObject = {
 };
 
 private _obj = objNull;
-_obj = ["Land_SandbagBarricade_01_F",_center,[9.9585,-10.6621,0],_rotation,268.474] call _fnc_createObject;
-_obj = ["Land_SandbagBarricade_01_half_F",_center,[-12.3207,-13.0791,-0.0999999],_rotation,89.775] call _fnc_createObject;
-_obj = ["Land_SandbagBarricade_01_half_F",_center,[-10.7937,-14.4932,-0.0999999],_rotation,358.665] call _fnc_createObject;
-_obj = ["Land_Bunker_01_blocks_1_F",_center,[-8.875,-10.938,0],_rotation,90.7497] call _fnc_createObject;
-_obj = ["Land_Bunker_01_blocks_1_F",_center,[-8.90588,-12.6616,0],_rotation,90.7497] call _fnc_createObject;
-_obj = ["Land_Bunker_01_blocks_1_F",_center,[-8.75488,-14.3672,0],_rotation,0] call _fnc_createObject;
-_obj = ["Land_SandbagBarricade_01_hole_F",_center,[9.87732,-8.4917,0],_rotation,268.784] call _fnc_createObject;
-_obj = ["Land_Bunker_01_tall_F",_center,[8.11548,-3.84229,0],_rotation,269.456] call _fnc_createObject;
-_obj allowDamage false;
-_obj = ["Land_Bunker_01_small_F",_center,[6.03345,-13.6006,0],_rotation,359.472] call _fnc_createObject;
-_obj = ["Land_Bunker_01_blocks_3_F",_center,[-0.138062,-14.3682,0],_rotation,0] call _fnc_createObject;
-_obj = ["Land_Bunker_01_blocks_3_F",_center,[-5.29395,-14.3638,0],_rotation,0] call _fnc_createObject;
-_obj = ["Land_Bunker_01_blocks_3_F",_center,[-8.76709,-2.43945,0],_rotation,89.7881] call _fnc_createObject;
-_obj = ["Land_TTowerSmall_1_F",_center,[6.98938,-4.75049,10.4077],_rotation,0] call _fnc_createObject;
-_obj = ["Land_SandbagBarricade_01_half_F",_center,[-12.7303,10.3848,0],_rotation,88.6579] call _fnc_createObject;
-_obj = ["Land_SandbagBarricade_01_half_F",_center,[-12.7457,12.7349,-0.0999999],_rotation,88.658] call _fnc_createObject;
-_obj = ["Land_SandbagBarricade_01_half_F",_center,[-12.6832,5.58984,0],_rotation,88.6579] call _fnc_createObject;
-_obj = ["Land_SandbagBarricade_01_half_F",_center,[-9.01892,14.2583,0],_rotation,179.769] call _fnc_createObject;
-_obj = ["Land_SandbagBarricade_01_half_F",_center,[-11.3326,14.2607,-0.0999999],_rotation,179.769] call _fnc_createObject;
-_obj = ["Land_Bunker_01_blocks_1_F",_center,[3.00427,10.0005,0],_rotation,180.006] call _fnc_createObject;
-_obj = ["Land_Bunker_01_blocks_1_F",_center,[1.27979,10.0073,0],_rotation,180.006] call _fnc_createObject;
-_obj = ["Land_Bunker_01_blocks_1_F",_center,[9.58594,10.8198,0],_rotation,269.295] call _fnc_createObject;
-_obj = ["Land_SandbagBarricade_01_hole_F",_center,[-12.7317,7.98828,0],_rotation,89.7316] call _fnc_createObject;
-_obj = ["Land_Bunker_01_HQ_F",_center,[-4.80273,6.13574,0.230144],_rotation,269.295] call _fnc_createObject;
-_obj = ["Land_Bunker_01_blocks_3_F",_center,[9.6012,7.39795,0],_rotation,270.071] call _fnc_createObject;
-_obj = ["Land_Bunker_01_blocks_3_F",_center,[9.60693,2.23975,0],_rotation,270.071] call _fnc_createObject;
-
-_obj = ["FlagPole_F",_center,[-7.95715,-12.8491,0],_rotation,266.77] call _fnc_createObject;
+_obj = ["Land_SandbagBarricade_01_half_F",_center,[-10.3904,-12.7241,0],_rotation,358.693] call _fnc_createObject;
+_obj = ["Land_SandbagBarricade_01_half_F",_center,[-14.2667,-11.3242,-0.0999999],_rotation,89.804] call _fnc_createObject;
+_obj = ["Land_SandbagBarricade_01_half_F",_center,[-14.2626,-9.01123,0],_rotation,89.8037] call _fnc_createObject;
+_obj = ["Land_SandbagBarricade_01_half_F",_center,[-12.7402,-12.7383,-0.0999999],_rotation,358.693] call _fnc_createObject;
+_obj = ["Land_SandbagBarricade_01_half_F",_center,[-5.59692,-12.6797,0],_rotation,358.693] call _fnc_createObject;
+_obj = ["Land_Bunker_01_blocks_1_F",_center,[-10.8129,9.59375,0],_rotation,179.331] call _fnc_createObject;
+_obj = ["Land_Bunker_01_blocks_1_F",_center,[-9.99683,3.01025,0],_rotation,90.0414] call _fnc_createObject;
+_obj = ["Land_Bunker_01_blocks_1_F",_center,[-10.0046,1.28564,0],_rotation,90.0414] call _fnc_createObject;
+_obj = ["Land_Bunker_01_blocks_3_F",_center,[-7.38989,9.60645,0],_rotation,180.108] call _fnc_createObject;
+_obj = ["Land_Bunker_01_blocks_3_F",_center,[-2.23352,9.60938,0],_rotation,180.108] call _fnc_createObject;
+_obj = ["Land_Bunker_01_HQ_F",_center,[-6.13794,-4.7998,0.230144],_rotation,179.331] call _fnc_createObject;
+_obj = ["Land_SandbagBarricade_01_hole_F",_center,[-7.995,-12.7256,0],_rotation,359.767] call _fnc_createObject;
+_obj = ["Land_TTowerSmall_1_F",_center,[4.75586,6.98535,12.4077],_rotation,270.036] call _fnc_createObject;
+_obj = ["FlagPole_F",_center,[12.8467,-7.96338,0],_rotation,176.806] call _fnc_createObject;
 _obj forceFlagTexture A3E_VAR_Flag_Opfor;
-
-_obj = ["Land_DataTerminal_01_F",_center,[7.92371,-3.09668,4.97927],_rotation,269.752] call _fnc_createObject;
+_obj = ["Land_DataTerminal_01_F",_center,[3.10437,7.92236,4.97927],_rotation,179.788] call _fnc_createObject;
 _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
 [_obj,"green","green","green"] call BIS_fnc_DataTerminalColor;
+_obj = ["Land_SandbagBarricade_01_half_F",_center,[13.0726,-12.3271,-0.0999999],_rotation,359.81] call _fnc_createObject;
+_obj = ["Land_SandbagBarricade_01_half_F",_center,[14.4888,-10.8018,-0.0999999],_rotation,268.701] call _fnc_createObject;
+_obj = ["Land_Bunker_01_blocks_1_F",_center,[14.3628,-8.76367,0],_rotation,270.036] call _fnc_createObject;
+_obj = ["Land_Bunker_01_blocks_1_F",_center,[12.6566,-8.91309,0],_rotation,0.784823] call _fnc_createObject;
+_obj = ["Land_Bunker_01_blocks_1_F",_center,[10.9343,-8.88232,0],_rotation,0.784823] call _fnc_createObject;
+_obj = ["Land_Bunker_01_blocks_3_F",_center,[14.3622,-5.30273,0],_rotation,270.036] call _fnc_createObject;
+_obj = ["Land_Bunker_01_blocks_3_F",_center,[2.43689,-8.76953,0],_rotation,359.823] call _fnc_createObject;
+_obj = ["Land_Bunker_01_blocks_3_F",_center,[14.3689,-0.145508,0],_rotation,270.036] call _fnc_createObject;
+_obj = ["Land_Bunker_01_small_F",_center,[13.6061,6.02637,0],_rotation,269.507] call _fnc_createObject;
+_obj = ["Land_SandbagBarricade_01_F",_center,[10.6691,9.95264,0],_rotation,178.51] call _fnc_createObject;
+_obj = ["Land_SandbagBarricade_01_hole_F",_center,[8.50049,9.87305,0],_rotation,178.82] call _fnc_createObject;
+_obj = ["Land_Bunker_01_tall_F",_center,[3.84802,8.1123,0],_rotation,179.492] call _fnc_createObject;
+_obj allowDamage false;
 
 if (count _staticWeaponClasses > 0) then {
     // Statics
 
     _gun = selectRandom _staticWeaponClasses;
-	_obj = [_gun,_center,[-10.9712,-12.5483,-0.0121183],_rotation,271.186] call _fnc_createObject;
+	_obj = [_gun,_center,[-13.0974,-11.251,-0.0121183],_rotation,236.488] call _fnc_createObject;
 	[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner;
 	
 	_gun = selectRandom _staticWeaponClasses;
-	_obj = [_gun,_center,[-11.2578,13.0923,-0.0121183],_rotation,326.452] call _fnc_createObject;
+	_obj = [_gun,_center,[12.5444,-10.979,-0.0131187],_rotation,181.226] call _fnc_createObject;
 	[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner;
 };
 
 if (count _parkedVehicleClasses > 0) then {
     // Cars
     _vehicle = selectRandom _parkedVehicleClasses;
-	_obj = [_vehicle,_center,[-4.02551,-7.95752,-0.00933647],_rotation,269.625] call _fnc_createObject;
+	_obj = [_vehicle,_center,[7.95679,-4.03076,0.0232229],_rotation,179.661] call _fnc_createObject;
     
     
     _vehicle = selectRandom _parkedVehicleClasses;
-	_obj = [_vehicle,_center,[6.86597,6.07422,-0.00949287],_rotation,0.0176632] call _fnc_createObject;
+	_obj = [_vehicle,_center,[-6.07373,6.87354,0.0213032],_rotation,270.053] call _fnc_createObject;
 };
