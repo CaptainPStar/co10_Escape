@@ -1,0 +1,668 @@
+version=53;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=513;
+	class ItemIDProvider
+	{
+		nextID=242;
+	};
+	class MarkerIDProvider
+	{
+		nextID=74;
+	};
+	class Camera
+	{
+		pos[]={2963.6514,82.304131,3985.0947};
+		dir[]={0.96957111,-0.23870388,-0.056143813};
+		up[]={0.238369,0.97108483,-0.013802064};
+		aside[]={-0.057816204,-1.8653373e-006,-0.99841124};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Ui_F",
+	"A3_Characters_F"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=11702210;
+class ScenarioData
+{
+	author="Elitehunter34";
+};
+class Intro
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Entities
+	{
+		items=42;
+		class Item0
+		{
+			dataType="Marker";
+			position[]={3444.5117,18.930279,3553.0278};
+			name="a3e_var_communicationCenter_1";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=359.01831;
+			id=183;
+		};
+		class Item1
+		{
+			dataType="Marker";
+			position[]={493.96094,-69.208893,2563.3638};
+			name="tip1";
+			text="0-0-1: Builds 1 ComCenter. Change markername in activation field to build another specific ComCenter";
+			type="Empty";
+			id=192;
+			atlOffset=29.791107;
+		};
+		class Item2
+		{
+			dataType="Marker";
+			position[]={505.66187,-69.428497,2427.9663};
+			name="tip2";
+			text="0-0-2: Exports all ComCenter positions to the .rpt file";
+			type="Empty";
+			id=193;
+			atlOffset=29.571503;
+		};
+		class Item3
+		{
+			dataType="Marker";
+			position[]={512.34814,-69.349609,2247.4365};
+			name="tip3";
+			text="Radio 0-0-0: Builds all ComCenters.";
+			type="Empty";
+			id=194;
+			atlOffset=29.650391;
+		};
+		class Item4
+		{
+			dataType="Marker";
+			position[]={502.31885,-69.308289,2367.7891};
+			name="tip2_1";
+			text="marker name has to be ""a3e_var_communicationCenter_1"" with rising number";
+			type="Empty";
+			id=195;
+			atlOffset=29.691711;
+		};
+		class Item5
+		{
+			dataType="Marker";
+			position[]={354.92407,-62.238201,1560.3296};
+			name="tip4";
+			text="Place markers where you think a ComCenter should be";
+			type="Empty";
+			id=196;
+			atlOffset=36.761799;
+		};
+		class Item6
+		{
+			dataType="Marker";
+			position[]={349.52112,-61.97493,1460.3789};
+			name="tip4_1";
+			text="Hit ""Preview"" and create ComCenters using Radio 0-0-0";
+			type="Empty";
+			id=197;
+			atlOffset=37.02507;
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={327.91016,-61.433365,1352.3223};
+			name="tip4_2";
+			text="Hit Escape and start BIS ""Camera""";
+			type="Empty";
+			id=198;
+			atlOffset=37.566635;
+		};
+		class Item8
+		{
+			dataType="Marker";
+			position[]={314.4032,-60.952972,1225.3574};
+			name="tip4_3";
+			text="Check if the positions work with the flying cam";
+			type="Empty";
+			id=199;
+			atlOffset=38.047028;
+		};
+		class Item9
+		{
+			dataType="Marker";
+			position[]={295.49329,-60.21701,1109.1978};
+			name="tip4_4";
+			text="Get back to the editor and push around markers";
+			type="Empty";
+			id=200;
+			atlOffset=38.78299;
+		};
+		class Item10
+		{
+			dataType="Marker";
+			position[]={279.28491,-59.84082,987.63477};
+			name="tip4_5";
+			text="Repeat until finished...";
+			type="Empty";
+			id=201;
+			atlOffset=39.15918;
+		};
+		class Item11
+		{
+			dataType="Marker";
+			position[]={1788.9363,-24.942883,3770.6406};
+			name="a3e_var_communicationCenter";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			id=202;
+			atlOffset=30.033787;
+		};
+		class Item12
+		{
+			dataType="Marker";
+			position[]={1803.436,4.9396801,3682.2588};
+			name="tip";
+			text="copy these two";
+			type="hd_arrow";
+			id=203;
+			atlOffset=30.131248;
+		};
+		class Item13
+		{
+			dataType="Marker";
+			position[]={1788.9363,-24.942883,3770.6406};
+			name="area";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			id=204;
+			atlOffset=30.033787;
+		};
+		class Item14
+		{
+			dataType="Marker";
+			position[]={3444.5117,18.930279,3553.0278};
+			name="area_1";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=359.01831;
+			id=205;
+		};
+		class Item15
+		{
+			dataType="Marker";
+			position[]={1804.6023,0,3627.769};
+			name="tip_1";
+			text="the area marker just helps with placement, isn't needed";
+			type="Empty";
+			id=214;
+			atlOffset=30.101265;
+		};
+		class Item16
+		{
+			dataType="Trigger";
+			position[]={424.95142,-69.146927,2563.4971};
+			class Attributes
+			{
+				text="Build ComCenter1";
+				onActivation="drn_comCen = ""a3e_var_communicationCenter_1"";_nil = [getMarkerPos drn_comCen, markerDir drn_comCen] execVM ""Scripts\Escape\BuildCommunicationCenter.sqf"";";
+				interuptable=1;
+				activationBy="ALPHA";
+				isRectangle=1;
+			};
+			id=215;
+			type="EmptyDetector";
+			atlOffset=29.853073;
+		};
+		class Item17
+		{
+			dataType="Trigger";
+			position[]={421.99866,-69.127396,2425.3628};
+			class Attributes
+			{
+				text="Export all ComCenter positions to .rpt";
+				onActivation="_nil = [] execVM ""PositionGenerator.sqf"";";
+				interuptable=1;
+				activationBy="BRAVO";
+				isRectangle=1;
+			};
+			id=216;
+			type="EmptyDetector";
+			atlOffset=29.872604;
+		};
+		class Item18
+		{
+			dataType="Trigger";
+			position[]={425.02954,-69.097504,2250.1938};
+			class Attributes
+			{
+				text="Build all ComCenters";
+				onActivation="_nil = [] execVM ""buildall.sqf"";";
+				interuptable=1;
+				activationBy="JULIET";
+				isRectangle=1;
+			};
+			id=217;
+			type="EmptyDetector";
+			atlOffset=29.902496;
+		};
+		class Item19
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3629.9983,19.001438,3603.6951};
+						angles[]={-0,1.9198622,0};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						isPlayer=1;
+						isPlayable=1;
+					};
+					id=219;
+					type="B_Soldier_SL_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=218;
+		};
+		class Item20
+		{
+			dataType="Marker";
+			position[]={3984.2039,19,3549.7231};
+			name="a3e_var_communicationCenter_2";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=359.01831;
+			id=220;
+		};
+		class Item21
+		{
+			dataType="Marker";
+			position[]={3984.2039,19,3549.7231};
+			name="area_2";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=359.01831;
+			id=221;
+		};
+		class Item22
+		{
+			dataType="Marker";
+			position[]={3924.564,19,3547.916};
+			name="a3e_var_communicationCenter_3";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=359.01831;
+			id=222;
+		};
+		class Item23
+		{
+			dataType="Marker";
+			position[]={3924.564,19,3547.916};
+			name="area_3";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=359.01831;
+			id=223;
+		};
+		class Item24
+		{
+			dataType="Marker";
+			position[]={3389.8557,19,3551.3613};
+			name="a3e_var_communicationCenter_4";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=359.01831;
+			id=224;
+		};
+		class Item25
+		{
+			dataType="Marker";
+			position[]={3389.8557,19,3551.3613};
+			name="area_4";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=359.01831;
+			id=225;
+		};
+		class Item26
+		{
+			dataType="Marker";
+			position[]={4049.6611,28.941736,3846.4092};
+			name="a3e_var_communicationCenter_5";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=359.01831;
+			id=226;
+		};
+		class Item27
+		{
+			dataType="Marker";
+			position[]={4049.6611,28.941736,3846.4092};
+			name="area_5";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=359.01831;
+			id=227;
+		};
+		class Item28
+		{
+			dataType="Marker";
+			position[]={3198.4473,8.0784149,4525.0527};
+			name="a3e_var_communicationCenter_6";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=0.5729844;
+			id=228;
+		};
+		class Item29
+		{
+			dataType="Marker";
+			position[]={3198.4473,8.0784149,4525.0527};
+			name="area_6";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=0.5729844;
+			id=229;
+		};
+		class Item30
+		{
+			dataType="Marker";
+			position[]={3743.7747,54.799999,3902.9011};
+			name="a3e_var_communicationCenter_7";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=180;
+			id=230;
+		};
+		class Item31
+		{
+			dataType="Marker";
+			position[]={3743.7747,54.799999,3902.9011};
+			name="area_7";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=180;
+			id=231;
+		};
+		class Item32
+		{
+			dataType="Marker";
+			position[]={4048.2612,26.868597,3089.613};
+			name="a3e_var_communicationCenter_8";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=180;
+			id=232;
+		};
+		class Item33
+		{
+			dataType="Marker";
+			position[]={4048.2612,26.868597,3089.613};
+			name="area_8";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=180;
+			id=233;
+		};
+		class Item34
+		{
+			dataType="Marker";
+			position[]={4156.4248,18.929634,3657.0366};
+			name="a3e_var_communicationCenter_9";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=180;
+			id=234;
+			atlOffset=1.9073486e-006;
+		};
+		class Item35
+		{
+			dataType="Marker";
+			position[]={4156.4248,18.929632,3657.0366};
+			name="area_9";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=180;
+			id=235;
+		};
+		class Item36
+		{
+			dataType="Marker";
+			position[]={3863.6775,34.038296,4027.5535};
+			name="a3e_var_communicationCenter_10";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=227.12117;
+			id=236;
+			atlOffset=3.8146973e-006;
+		};
+		class Item37
+		{
+			dataType="Marker";
+			position[]={3863.6775,34.038292,4027.5535};
+			name="area_10";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=227.12117;
+			id=237;
+		};
+		class Item38
+		{
+			dataType="Marker";
+			position[]={3233.0039,37.989574,4172.0078};
+			name="a3e_var_communicationCenter_11";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=248.93393;
+			id=238;
+			atlOffset=3.8146973e-006;
+		};
+		class Item39
+		{
+			dataType="Marker";
+			position[]={3233.0039,37.989571,4172.0078};
+			name="area_11";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=248.93393;
+			id=239;
+		};
+		class Item40
+		{
+			dataType="Marker";
+			position[]={3117.2688,38.293011,3943.0803};
+			name="a3e_var_communicationCenter_12";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=359.77698;
+			id=240;
+		};
+		class Item41
+		{
+			dataType="Marker";
+			position[]={3117.2688,38.293011,3943.0803};
+			name="area_12";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=359.77698;
+			id=241;
+		};
+	};
+};
+class OutroLoose
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
