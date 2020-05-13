@@ -815,11 +815,7 @@ a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	,"O_static_AA_F"];
 	
 // An ammo depot have one parked and empty vehicle of the following possible types.
-a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
-    "O_T_MRAP_02_gmg_ghex_F"
-	,"O_T_MRAP_02_hmg_ghex_F"
-	,"O_T_MRAP_02_hmg_ghex_F"
-	,"O_LSV_02_armed_F"];
+a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 
 
 //Random array. Types of helicopters to spawn
