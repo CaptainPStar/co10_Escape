@@ -9,12 +9,12 @@ private ["_enemyFrequency"];
 
 _enemyFrequency = _this select 0;
 
-A3E_VAR_Side_Blufor = west;
-A3E_VAR_Side_Opfor = east;
-A3E_VAR_Side_Ind = resistance;
+A3E_VAR_Side_Blufor = west; //CUP GER KSK
+A3E_VAR_Side_Opfor = east; //CUP Takistani Army
+A3E_VAR_Side_Ind = resistance; //CUP 
 
-A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_red_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_green_CO.paa";
+A3E_VAR_Flag_Opfor = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_tka_co";
+A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_tkg_co";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];

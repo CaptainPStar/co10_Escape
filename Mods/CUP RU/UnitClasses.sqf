@@ -13,8 +13,8 @@ A3E_VAR_Side_Blufor = west;
 A3E_VAR_Side_Opfor = east;
 A3E_VAR_Side_Ind = resistance;
 
-A3E_VAR_Flag_Opfor = "\ca\misc\data\sever_vlajka.paa";
-A3E_VAR_Flag_Ind = "\ca\misc\data\jih_vlajka.paa";
+A3E_VAR_Flag_Opfor = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_rus_co";
+A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_napa_co";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor]; // CUP USMC
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor]; // CUP RU

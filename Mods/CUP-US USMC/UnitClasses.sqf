@@ -16,7 +16,7 @@ A3E_VAR_Side_Opfor = west;//Enemy side CUP USMC woodland
 A3E_VAR_Side_Ind = resistance;//Independent side CUP NAPA
 
 A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_us_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_green_CO.paa";
+A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_napa_co";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];

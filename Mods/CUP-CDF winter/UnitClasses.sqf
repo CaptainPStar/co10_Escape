@@ -15,7 +15,7 @@ A3E_VAR_Side_Blufor = east;//Player side CUP RU
 A3E_VAR_Side_Opfor = west;//Enemy side CUP CDF winter
 A3E_VAR_Side_Ind = resistance;//Independent side CUP ION PMC winter
 
-A3E_VAR_Flag_Opfor = "\ca\Ca_E\data\flag_cdf_co.paa";
+A3E_VAR_Flag_Opfor = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_cdf_co";
 A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\flag_ion_CO.paa";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
