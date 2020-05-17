@@ -24,6 +24,12 @@ EscapeVersion = VERSION;
 EscapeRelease = RELEASE;
 cba_settings_hasSettingsFile = 1;
 
+class Extended_PreInit_EventHandlers {
+    class a3e {
+        init = "call compile preprocessFileLineNumbers 'XEH_preInit.sqf'";
+    };
+};
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 Respawn = "INSTANT";
 RespawnDelay = 60;

@@ -106,9 +106,9 @@ class Params
 	};
     class Param_MotorPools
 	{
-        title="Enable Motor Pools";
+        title="Motor Pools";
         values[]={0,1};
-        texts[]={"Disabled - No motor pools","Random - Spawns motor pools, works for all maps"};
+        texts[]={"Disabled", "Enabled"};
         default = 1;
 	};
 	class Param_VehicleLock
