@@ -1,8 +1,9 @@
-private _paramNames = 'true' configClasses (missionConfigFile >> "Params") apply {configName _x};
+private _cfgParams = missionConfigFile >> "Params";
+private _paramNames = 'true' configClasses _cfgParams apply {configName _x};
 
 //Load default params for SP && Editor
 if (isNil "paramsArray") then {
-    paramsArray = _paramNames apply {getNumber (missionConfigFile >> "Params" >> _x >> "default")};
+    paramsArray = _paramNames apply {getNumber (_cfgParams >> _x >> "default")};
 };
 
 private _paramLoading = "Param_Loadparams" call BIS_fnc_getParamValue;
@@ -43,7 +44,7 @@ switch _paramLoading do {
 //Recompile Params into Variables because they may have changed
 private _paramsBriefing = "Parameters:<br/>"; //An string for the briefing entry every player will receive:
 {
-    private _param = missionConfigFile >> "Params" >> _x;
+    private _param = _cfgParams >> _x;
     private _name = getText (_param >> "title");
     private _value = paramsArray select _forEachIndex;
     missionNamespace setVariable [_x, _value, true];
