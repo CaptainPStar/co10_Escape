@@ -572,8 +572,8 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_CZ750", 10, 2, 4, ["CUP_10
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_M60E4", 30, 1, 2, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_M4A1_desert", 25, 1, 2, ["CUP_30Rnd_556x45_Stanag"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_M4A1_BUIS_desert_GL", 25, 1, 2, ["CUP_30Rnd_556x45_Stanag","CUP_1Rnd_HE_M203"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_CZ805_B", 25, 1, 2, ["CUP_20Rnd_762x51_CZ805B"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_CZ805_B_GL", 25, 1, 2, ["CUP_20Rnd_TE1_White_Tracer_762x51_CZ805B","CUP_1Rnd_HEDP_M203"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_CZ_BREN2_762_14", 25, 1, 2, ["CUP_30Rnd_762x39_CZ807"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_CZ_BREN2_762_14_GL", 25, 1, 2, ["CUP_30Rnd_TE1_Yellow_Tracer_762x39_CZ807","CUP_1Rnd_HEDP_M203"], 6];
 
 // Weapons and ammo in the launchers box
 a3e_arr_AmmoDepotLaunchers = [];
@@ -932,13 +932,13 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"Mi8Wreck"];
+	"CUP_Mi8Wreck"];
 a3e_arr_CrashSiteCrew = [
 	"CUP_O_RU_Pilot"];
 a3e_arr_CrashSiteWrecksCar = [
 	"Land_Wreck_BMP2_F"
 	,"Land_Wreck_BRDM2_F"
-	,"T72Wreck"];
+];
 a3e_arr_CrashSiteCrewCar = [
 	"CUP_O_RU_Crew_VDV"
 	,"CUP_O_RU_Soldier_Saiga_VDV"];
