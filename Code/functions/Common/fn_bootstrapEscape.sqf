@@ -1,5 +1,8 @@
 diag_log "Escape: Bootstrapping mission...";
 
+call compile preprocessFileLineNumbers "config.sqf";
+call compile preprocessFileLineNumbers "Island\WorldConfig.sqf";
+
 if(isServer) then {
 	[] spawn a3e_fnc_missionFlow;
 	[] spawn a3e_fnc_initServer;

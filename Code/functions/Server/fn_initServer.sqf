@@ -5,8 +5,6 @@ if(isNil("a3e_var_commonLibInitialized")) then {
 	call compile preprocessFileLineNumbers "Scripts\DRN\CommonLib\CommonLib.sqf";
 };
 
-call compile preprocessFileLineNumbers "config.sqf";
-call compile preprocessFileLineNumbers ("Island\WorldConfig.sqf");
 
 //Parse the parameters
 call a3e_fnc_parameterInit;
