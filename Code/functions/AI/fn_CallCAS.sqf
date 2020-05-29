@@ -1,15 +1,14 @@
-private["_success","_cas"];
+private["_success"];
 params["_position"];
 
 
 _success = false;
 diag_log ("Calling CAS to "+ str _position);
-
-_cas = "Logic" createVehicle _position;
+private _cas = "Logic" createVehicleLocal _position;
 _cas setDir (random 360);
-_cas setVariable ["vehicle",selectRandom a3e_arr_CASplane];
- //0=guns	1=missiles	2=both, 3=bomb
-_cas setVariable ["type", selectRandom[0,0,1,2,3]];
+_cas setVariable ["vehicle",selectRandom a3e_arr_CASplane,true];
+_cas setVariable ["bis_fnc_initModules_disableAutoActivation", false, !isServer ];
+_cas setVariable ["type", selectRandom[0,0,1,2,3],true];
 
 
 [_position,_cas] spawn {
@@ -26,8 +25,10 @@ _cas setVariable ["type", selectRandom[0,0,1,2,3]];
 				[_group,_fleepos] spawn a3e_fnc_Flee;
 			};
 		};
-	} foreach AllGroups;	
-	[_cas,nil,true] call BIS_fnc_moduleCAS;
+	} foreach AllGroups;
+	[_cas,nil,true] spawn BIS_fnc_moduleCAS;
+	deletevehicle _cas;
 };
+
 _success = true;
 _success;
