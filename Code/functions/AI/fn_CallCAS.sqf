@@ -4,11 +4,11 @@ params["_position"];
 
 _success = false;
 diag_log ("Calling CAS to "+ str _position);
-private _cas = "Logic" createVehicleLocal _position;
+
+_cas = createGroup sideLogic createUnit ["Logic", _position, [], 0, "NONE"];
 _cas setDir (random 360);
-_cas setVariable ["vehicle",selectRandom a3e_arr_CASplane,true];
-_cas setVariable ["bis_fnc_initModules_disableAutoActivation", false, !isServer ];
-_cas setVariable ["type", selectRandom[0,0,1,2,3],true];
+_cas setVariable ["vehicle",selectRandom a3e_arr_CASplane];
+_cas setVariable ["type", selectRandom[0,0,1,2,3]];
 
 
 [_position,_cas] spawn {
@@ -25,8 +25,8 @@ _cas setVariable ["type", selectRandom[0,0,1,2,3],true];
 				[_group,_fleepos] spawn a3e_fnc_Flee;
 			};
 		};
-	} foreach AllGroups;
-	[_cas,nil,true] spawn BIS_fnc_moduleCAS;
+	} foreach AllGroups;	
+	[_cas,nil,true] call BIS_fnc_moduleCAS;
 	deletevehicle _cas;
 };
 
