@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_village", "_markerName", "_debug", "_soldiers", "_soldier", "_skill", "_soldierType", "_spawned", "_damage", "_soldierObj"];
 private ["_villagePos", "_script", "_groups", "_newGroup", "_soldierPos", "_rank", "_villageSide"];
 

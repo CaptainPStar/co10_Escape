@@ -19,8 +19,6 @@
  * Dependencies: CommonLib v1.01
  */
 
-if (!isServer) exitWith {};
-
 private ["_referenceGroup", "_side", "_groupsCount", "_minSpawnDistance", "_maxSpawnDistance", "_infantryClasses", "_minSkill", "_maxSkill", "_garbageCollectDistance"];
 private ["_activeGroups", "_activeUnits", "_spawnPos", "_group", "_possibleInfantryTypes", "_infantryType", "_minDistance", "_skill", "_vehicleVarName", "_factionsArray"];
 private ["_minUnitsInGroup", "_maxUnitsInGroup", "_i", "_atScriptStartUp", "_currentEntityNo", "_DebugMsg", "_farAwayUnits", "_farAwayUnitsCount", "_unitsToDeleteCount", "_groupsToDeleteCount"];

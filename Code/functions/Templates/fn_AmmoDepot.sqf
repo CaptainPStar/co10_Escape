@@ -1,5 +1,3 @@
-	if(!isserver) exitwith {};
-	
 	private ["_middlePos", "_staticWeaponClasses", "_parkedVehicleClasses"];
     private ["_object", "_pos", "_marker", "_instanceNo", "_randomNo", "_gun", "_angle", "_car"];
     

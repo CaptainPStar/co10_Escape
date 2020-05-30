@@ -1,18 +1,8 @@
-// Initialization for server
-if (!isServer) exitWith {};
-
 private ["_referenceUnit", "_side", "_infantryClasses", "_minSkill", "_maxSkill", "_debug", "_spawnRadius", "_aquaticPatrolZonePos", "_minSoldiersPerGroup", "_maxSoldiersPerGroup", "_areaPerGroup"];
 private ["_village", "_possibleInfantryTypes", "_soldierType", "_soldierCount", "_soldier", "_soldiers", "_i", "_isFaction"];
 private ["_aquaticPatrolZoneNo", "_aquaticPatrolZoneSize", "_maxGroupsCount", "_groupsCount", "_groups", "_groupIndex", "_damage", "_spawned", "_soldierObj"];
 private ["_script", "_skill", "_ammo", "_trigger", "_soldierPos", "_rank", "_hasScript", "_groupPos", "_roadSegments", "_roadSegment"];
 private ["_message", "_aquaticPatrolZoneName", "_fnc_onSpawnGroup"];
-
-if (isNil "a3e_var_villageMarkersInitialized") exitWith {
-    [] spawn {
-        player sideChat "Scripts\DRN\VillageMarkers\InitVillageMarkers.sqf must be called before call to Scripts/DRN/VillagePatrols/InitVillagePatrols.sqf.";
-        sleep 10;
-    };
-};
 
 _referenceUnit = _this select 0;
 _side = _this select 1;

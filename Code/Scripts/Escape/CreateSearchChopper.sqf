@@ -14,8 +14,6 @@
 		_debug: Optional. true if you want to monitor the chopper's different states through the player's side chat.
 */
 
-if (!isServer) exitWith {};
-
 private ["_homePos", "_side", "_searchAreaMarker", "_searchTimeMin", "_refuelTimeMin", "_minSkill", "_maxSkill", "_unitArray", "_debug"];
 private ["_chopper", "_chopperspawn"];
 private ["_vehicleVarName", "_vehicleVarNameBase", "_vehicleVarNameNo"];

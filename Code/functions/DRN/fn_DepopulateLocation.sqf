@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_location", "_markerName", "_soldierObjects", "_spawned", "_damage", "_soldier", "_script"];
 
 _location = _this select 0;

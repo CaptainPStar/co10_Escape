@@ -112,7 +112,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=297;
+		items=300;
 		class Item0
 		{
 			dataType="Marker";
@@ -4770,6 +4770,45 @@ class Mission
 			};
 			id=476;
 			type="EmptyDetectorAreaR50";
+		};
+		class Item297
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1745.5551,2.8046227,12217.551};
+			};
+			name="hc1";
+			isPlayable=1;
+			id=416;
+			type="HeadlessClient_F";
+			atlOffset=-4.7683716e-007;
+		};
+		class Item298
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1745.54,2.570406,12219.064};
+			};
+			name="hc2";
+			isPlayable=1;
+			id=417;
+			type="HeadlessClient_F";
+			atlOffset=-4.7683716e-007;
+		};
+		class Item299
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1743.7437,2.6221762,12220.216};
+				angles[]={0.15475266,0,6.1550908};
+			};
+			name="hc3";
+			isPlayable=1;
+			id=418;
+			type="HeadlessClient_F";
 		};
 	};
 };

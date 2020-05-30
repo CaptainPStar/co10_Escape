@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_extractionPointNo"];
 private ["_spawnMarkerName", "_extractionMarkerName", "_extractionMarkerName2", "_result", "_boat1", "_boat2", "_boat3", "_group1", "_group2", "_group3", "_waypoint"];
 
@@ -17,7 +15,7 @@ _waypoint = _group1 addWaypoint [getMarkerPos _extractionMarkerName, 0];
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointFormation "WEDGE";
-_waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
+_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; vehicle this land 'GET IN'"];
 
 sleep 1;
 
@@ -42,7 +40,7 @@ _waypoint = _group2 addWaypoint [getMarkerPos _extractionMarkerName2, 0];
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointFormation "WEDGE";
-_waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
+_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; vehicle this land 'GET IN'"];
 
 diag_log format["fn_RunExtractionBoat: Extraction boats spawned: %1, %2 and %3",_boat1,_boat2,_boat3];
 

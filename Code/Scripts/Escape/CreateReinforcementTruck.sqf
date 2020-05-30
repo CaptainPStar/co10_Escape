@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_spawnPos", "_minSkill", "_maxSkill", "_enemyFrequency", "_debug"];
 private ["_group","_vehicle","_insurgentSoldier","_insurgentSoldiers", "_index", "_vehicleClass", "_vehicleMaxCargo", "_result", "_crew", "_soldiersCount", "_infantryType"];
 private ["_fnc_OnDroppingGroup", "_cargoGroup", "_vehicleVarNameBase", "_vehicleVarNameNo", "_vehicleVarName"];

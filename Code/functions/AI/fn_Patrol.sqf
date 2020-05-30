@@ -1,5 +1,4 @@
 private["_group","_markername","_searchRange","_oncomplete","_destinationPos","_waypoint","_leader","_players"];
-if(!isserver) exitwith {};
 
 _group = _this select 0;
 _markerName = _this select 1;

@@ -90,6 +90,19 @@ for [ {_i=1}, {_i<_c}, {_i=_i+1} ] do {
 _paramsBriefing remoteExec ["A3E_fnc_WriteParamBriefing", 0, true]; 
 diag_log _paramsBriefing;
 
+if(!isNil("Param_Debug")) then {
+	if((Param_Debug)==0 && !(missionNamespace getVariable ["a3e_debug_overwrite",false])) then {
+		A3E_Debug = false;
+	} else {
+		A3E_Debug = true;
+		["Debug mode active!."] spawn a3e_fnc_debugmsg;
+	};
+} else {
+	A3E_Debug = true;
+	["Warning! Debug was set to true because of missing param!."] spawn a3e_fnc_debugmsg;
+};
+publicVariable "A3E_Debug";
+
 A3E_ParamsParsed = true;
 publicVariable "A3E_ParamsParsed";
 

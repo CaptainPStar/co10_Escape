@@ -37,7 +37,7 @@ _success = false;
 						_rotation = [_position,getposATL((units _group) select 0)] call bis_fnc_DirTo;
 						_rotation = _rotation;
 						_fleepos = [(_pos select 0)+sin(_rotation)*2*a3e_var_artillery_fleeingDistance,(_pos select 1)+cos(_rotation)*2*a3e_var_artillery_fleeingDistance,0];
-						[_group,_fleepos] spawn a3e_fnc_Flee;
+						[_group,_fleepos] remoteExec ["a3e_fnc_Flee", _group];
 					};
 				};
 			} foreach AllGroups;	

@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_minEnemySkill", "_maxEnemySkill", "_debug"];
 private ["_surprises", "_surprise", "_executedSurprises", "_surpriseID", "_surpriseTimeSec", "_condition", "_isExecuted", "_surpriseArgs", "_timeInSek", "_enemyFrequency", "_spawnSegment"];
 

@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_searchAreaMarkerName"];
 private ["_trigger","_trigger2","_marker", "_state", "_timeUntilMarkerSizeMediumMin", "_timeUntilMarkerSizeLargeMin", "_searchStartTimeSek", "_markerState", "_lostContactTimeSek", "_maxKnowledge", "_detectedUnit"];
 private ["_unitIsDetected", "_enemyUnit", "_knowledge", "_detectedUnitsPosition", "_unitThatDetected", "_unitThatDetectedPositionAccuracy", "_minTimeUntilReportToHQSec", "_maxTimeUntilReportToHQSec", "_timeUntilReportToHQSec"];
@@ -202,7 +200,7 @@ while {true} do {
 			if (_searchAreaMarkerCreated) then {
 
 				_markerState = "MEDIUM";
-				_marker setMarkerSizeLocal [_searchAreaDiamMedium / 2, _searchAreaDiamMedium / 2];
+				_marker setMarkerSize [_searchAreaDiamMedium / 2, _searchAreaDiamMedium / 2];
 
 				if (A3E_Debug) then {
 					_DebugMsg = "Search area has expanded to size MEDIUM.";
@@ -218,7 +216,7 @@ while {true} do {
 		if (diag_tickTime > _lostContactTimeSek + _timeUntilMarkerSizeLargeMin * 60 && _markerState == "MEDIUM") then {
             if (_searchAreaMarkerCreated) then {
                 _markerState = "LARGE";
-                _marker setMarkerSizeLocal [_searchAreaDiamLarge / 2, _searchAreaDiamLarge / 2];
+                _marker setMarkerSize [_searchAreaDiamLarge / 2, _searchAreaDiamLarge / 2];
                 
                 if (A3E_Debug) then {
                     _DebugMsg = "Search area has expanded to size LARGE.";
@@ -256,7 +254,7 @@ while {true} do {
 					_knownPosition setvariable["A3E_Accuracy",_unitThatDetectedPositionAccuracy,true];
 					_knownPosition setvariable["A3E_FirstSight",diag_tickTime,true];
 					[_knownPosition] spawn A3E_fnc_watchKnownPosition;
-					[_knownPosition] spawn a3e_fnc_OrderSearch;
+					[_knownPosition] remoteExec ["a3e_fnc_OrderSearch", a3e_searchTargets];
 				} else {
 					_list = _detectedUnitsPosition nearObjects [_knownPositionHelperObject, _knownPositionMinDistance];
 					_knownPosition = (_list select 0);					
@@ -303,18 +301,18 @@ while {true} do {
                 
 				// If search area marker is not yet created, create it.
 				if (!_searchAreaMarkerCreated) then {
-					_marker = createMarkerLocal [_searchAreaMarkerName, _detectedUnitsPosition];
-					_marker setMarkerShapeLocal "RECTANGLE";
-					_marker setMarkerSizeLocal [_searchAreaDiamSmall, _searchAreaDiamSmall];
+					_marker = createMarker [_searchAreaMarkerName, _detectedUnitsPosition];
+					_marker setMarkerShape "RECTANGLE";
+					_marker setMarkerSize [_searchAreaDiamSmall, _searchAreaDiamSmall];
 					_searchAreaMarkerCreated = true;
 
 					if (!A3E_Debug) then {
-						_marker setMarkerAlphaLocal 0;
+						_marker setMarkerAlpha 0;
 					};
 				};
-				_marker setMarkerPosLocal _detectedUnitsPosition;
+				_marker setMarkerPos _detectedUnitsPosition;
 				_markerState = "SMALL";
-				_marker setMarkerSizeLocal [_searchAreaDiamSmall / 2, _searchAreaDiamSmall / 2];
+				_marker setMarkerSize [_searchAreaDiamSmall / 2, _searchAreaDiamSmall / 2];
 
 				if (A3E_Debug) then {
 					_DebugMsg = name _reportingUnit + " has reported in to HQ.";

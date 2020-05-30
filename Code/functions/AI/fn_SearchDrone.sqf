@@ -1,8 +1,6 @@
 // Search Chopper v1.0
 // Author: Engima of Östgöta Ops
 
-if (!isServer) exitWith {};
-
 private ["_chopper", "_searchAreaMarker", "_searchTimeMin", "_refuelTimeMin", "_group", "_side", "_state", "_exitScript", "_position", "_waypoint", "_moveOutTimeSek", "_refuelStartTimeSek"];
 private ["_oldGroup", "_homePos"];
 
@@ -64,7 +62,7 @@ while {!_exitScript} do {
 			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointBehaviour "SAFE";
 			_waypoint setWaypointSpeed "NORMAL";
-			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
+			_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; " + vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 
 			if (A3E_Debug) then {
 				//"SmokeShellBlue" createVehicle _position;
@@ -85,7 +83,7 @@ while {!_exitScript} do {
 			_waypoint setWaypointSpeed "LIMITED";
 			//_waypoint setWaypointLoiterType "CIRCLE";
 			//_waypoint setWaypointLoiterRadius ((random 75) + 75);
-			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
+			_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; " + vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 
 			_chopper flyInHeight 120;
 
@@ -110,7 +108,7 @@ while {!_exitScript} do {
 			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointBehaviour "SAFE";
 			_waypoint setWaypointSpeed "NORMAL";
-			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
+			_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; " + vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 
 			if (A3E_Debug) then {
 				//"SmokeShellBlue" createVehicle _homePos;

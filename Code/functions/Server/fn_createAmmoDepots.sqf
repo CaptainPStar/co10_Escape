@@ -1,5 +1,3 @@
-if(!isserver) exitwith {};
-
 private ["_positions", "_i", "_j", "_tooCloseAnotherPos", "_pos", "_countNW", "_countNE", "_countSE", "_countSW", "_isOk","_regionCount"];
 
 _positions = [];

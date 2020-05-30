@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_referenceGroup", "_spawnPos", "_side", "_vehicleTypes", "_unitTypes", "_enemyFrequency", "_debug"];
 private ["_group","_vehicle", "_vehicleClass"];
 private ["_fnc_OnDroppingGroup", "_vehicleVarNameBase", "_vehicleVarNameNo", "_vehicleVarName"];

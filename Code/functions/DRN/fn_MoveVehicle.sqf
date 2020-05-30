@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_vehicle", "_firstDestinationPos", "_debug"];
 private ["_speed", "_roadSegments", "_destinationSegment"];
 private ["_destinationPos"];
@@ -52,6 +50,6 @@ _waypoint = group _vehicle addWaypoint [_destinationPos, 10];
 _waypoint setWaypointBehaviour "SAFE";
 _waypoint setWaypointSpeed _speed;
 _waypoint setWaypointCompletionRadius 10;
-_waypoint setWaypointStatements ["true", "_nil = [" + vehicleVarName _vehicle + ", [], " + str _debug + "] spawn drn_fnc_MoveVehicle;"];
+_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; private _nil = [" + vehicleVarName _vehicle + ", [], " + str _debug + "] spawn drn_fnc_MoveVehicle;"];
 
 

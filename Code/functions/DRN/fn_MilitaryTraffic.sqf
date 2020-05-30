@@ -100,7 +100,7 @@ if (isNil "drn_fnc_MilitaryTraffic_MoveVehicle") then {
         _waypoint setWaypointBehaviour "SAFE";
         _waypoint setWaypointSpeed _speed;
         _waypoint setWaypointCompletionRadius 10;
-        _waypoint setWaypointStatements ["true", "_nil = [" + vehicleVarName _vehicle + ", [], " + str _debug + "] spawn drn_fnc_MilitaryTraffic_MoveVehicle;"];
+        _waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; private _nil = [" + vehicleVarName _vehicle + ", [], " + str _debug + "] spawn drn_fnc_MilitaryTraffic_MoveVehicle;"];
     };
 };
 

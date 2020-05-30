@@ -1,5 +1,3 @@
-if(!isserver) exitwith {};
-
 if (isNil "A3E_MinComCenterDistance") then {
 	A3E_MinComCenterDistance = 2000;
 };
