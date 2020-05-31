@@ -12,7 +12,7 @@ while {alive _heli && !_extract} do {
 			_waypoint setWaypointSpeed "FULL";
 			_waypoint setWaypointBehaviour "CARELESS";
 			_waypoint setWaypointFormation "WEDGE";
-			_waypoint setWaypointStatements ["true", "(vehicle this) setvariable [""State"",""Land""];"];
+			_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; (vehicle this) setvariable [""State"",""Land""];"];
 		};
 		case "Approach": { 
 			systemchat "Approaching";

@@ -37,7 +37,7 @@ if(count (waypoints _group) <= 1) then {
 [_group, 1] setWaypointFormation _formation;
 [_group, 1] setWaypointType _type;
 [_group, 1] setWaypointCompletionRadius 10;
-[_group, 1] setWaypointStatements ["true", _onComplete];
+[_group, 1] setWaypointStatements ["true", "if (!local this) exitWith {}; " + _onComplete];
 _group setCurrentWaypoint [_group, 1];
 //Return Waypoint
 [_group, 1];

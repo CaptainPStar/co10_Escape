@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_vehicle", "_searchAreaMarker"];
 private ["_maxStationaryTimeSec", "_maxWalkDistanceMeters", "_state", "_searchAreaExists", "_shownMissingSearchAreaMsg", "_searchGroupExists", "_destinationPos", "_group", "_soldiers"];
 private ["_side", "_garbageGroup", "_lastPos", "_stationaryTimeSec", "_useVehicle", "_enemyPos", "_enemySighted", "_waypoint", "_currentEntityNo"];

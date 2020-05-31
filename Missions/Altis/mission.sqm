@@ -42,7 +42,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=5;
+		items=8;
 		class Item0
 		{
 			side="{* PLAYERSIDE *}";
@@ -260,6 +260,63 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="NorthEast";
+				};
+			};
+		};
+		class Item5
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12941.107,27.394241,18897.008};
+					id=14;
+					side="LOGIC";
+					vehicle="HeadlessClient_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="hc1";
+				};
+			};
+		};
+		class Item6
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12944.58,27.228813,18896.732};
+					id=15;
+					side="LOGIC";
+					vehicle="HeadlessClient_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="hc2";
+				};
+			};
+		};
+		class Item7
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12948.328,27.196495,18896.598};
+					id=16;
+					side="LOGIC";
+					vehicle="HeadlessClient_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="hc3";
 				};
 			};
 		};

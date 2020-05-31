@@ -1,6 +1,3 @@
-//Don't do this! Will make HC compatibility a pain! We can rely on calling this function serverside only
-//if (!isServer) exitWith {};
-
 private ["_group", "_markerName","_cityradius"];
 private ["_in_combat","_knows_enemy","_currentPos", "_destinationPos", "_time", "_leader","_Debugmarker1","_Debugmarker2","_Debugmarkername","_search_for_group","_reportedPositions"];
 

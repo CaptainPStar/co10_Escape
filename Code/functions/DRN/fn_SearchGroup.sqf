@@ -9,8 +9,6 @@
  * Dependencies: CommonLib v1.01
  */
 
-if (!isServer) exitWith {};
-
 private ["_group", "_searchAreaMarkerName", "_firstPos", "_debug"];
 private ["_position", "_side", "_state", "_moveCompleted", "_moveToFirstPos", "_exitScript", "_soldiers", "_garbageGroup", "_enemyPos", "_firstUnit", "_enemyUnit"];
 private ["_subAreaSearchTimeSec", "_subAreaSize", "_defaultSearchAreaMarkerName", "_subAreaCreatedTime", "_stationaryMaxTimeSec", "_currentPos", "_lastPos", "_lastMoveTime"];

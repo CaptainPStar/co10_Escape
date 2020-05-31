@@ -9,8 +9,6 @@
  *   _debug: true to output debug information, else false.
  */
 
-if (!isServer) exitWith {};
-
 private ["_truck", "_cargoGroup", "_dropMarker", "_attackOnSight", "_fncOnUnloadGroup", "_debug"];
 private ["_crewGroup", "_waypoint", "_startPos", "_cargoUnits", "_currentEntityNo", "_dropPos"];
 private ["_fnc_GetDropPosition", "_fnc_ClearAllWaypoints"];
@@ -179,7 +177,7 @@ _truck setVariable ["missionCompleted", false];
     _waypoint setWaypointType "MOVE";
     _waypoint setWaypointBehaviour "SAFE";
     _waypoint setWaypointSpeed "FULL";
-    _waypoint setWaypointStatements ["true", vehicleVarName _truck + " setVariable [""missionCompleted"", true];"];
+    _waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; " + vehicleVarName _truck + " setVariable [""missionCompleted"", true];"];
     _waypoint setWaypointCombatMode "BLUE";
 
 	while {!(_truck getVariable "missionCompleted")} do {
@@ -243,7 +241,7 @@ if (count _dropPos > 0) then {
         _waypoint setWaypointType "MOVE";
         _waypoint setWaypointBehaviour "SAFE";
         _waypoint setWaypointSpeed "NORMAL";
-        _waypoint setWaypointStatements ["true", vehicleVarName _truck + " setVariable [""waypointFulfilled"", true];"];
+        _waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; " + vehicleVarName _truck + " setVariable [""waypointFulfilled"", true];"];
         _waypoint setWaypointCombatMode "BLUE";
         
         sleep 1;

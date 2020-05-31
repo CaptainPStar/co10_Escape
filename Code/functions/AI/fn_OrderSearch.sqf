@@ -3,7 +3,7 @@ _position = _this select 0;
 
 {
 	_group = _x;
-	if((side _group) == A3E_VAR_Side_Ind  || (side _group) == A3E_VAR_Side_Opfor) then {
+	if(local _group && {(side _group) == A3E_VAR_Side_Ind  || (side _group) == A3E_VAR_Side_Opfor}) then {
 		if((((units _group) select 0) distance _position)<a3e_var_maxSearchRange) then {
 			_state = [_group] call a3e_fnc_GetTaskState;
 			if(_state == "PATROL" || _state == "SAD") then {

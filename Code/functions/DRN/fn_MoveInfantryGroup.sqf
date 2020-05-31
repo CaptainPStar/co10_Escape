@@ -1,4 +1,3 @@
-if (!isServer) exitWith {};
 //This file is obsolete now!
 private ["_unit", "_debug"];
 private ["_destinationPos", "_worldSizeX", "_worldSizeY", "_group"];
@@ -27,4 +26,4 @@ _waypoint setWaypointBehaviour "SAFE";
 _waypoint setWaypointSpeed "LIMITED";
 _waypoint setWaypointFormation _formation;
 _waypoint setWaypointCompletionRadius 10;
-_waypoint setWaypointStatements ["true", "_nil = [" + vehicleVarName _unit + ", " + str _debug + "] execVM ""Scripts\DRN\AmbientInfantry\MoveInfantryGroup.sqf"";"];
+_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; private _nil = [" + vehicleVarName _unit + ", " + str _debug + "] execVM ""Scripts\DRN\AmbientInfantry\MoveInfantryGroup.sqf"";"];

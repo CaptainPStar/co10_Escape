@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_chopper", "_dropPosition", "_onGroupDropped", "_debug", "_group", "_waypoint", "_dropUnits"];
 
 _chopper = _this select 0;
@@ -122,14 +120,14 @@ _waypoint = _group addWaypoint [_dropPosition, 0];
 _waypoint setWaypointType "MOVE";
 _waypoint setWaypointBehaviour "SAFE";
 _waypoint setWaypointSpeed "FULL";
-_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
+_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; " + vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 
 
 _waypoint = _group addWaypoint [getPos _chopper, 0];
 _waypoint setWaypointType "MOVE";
 _waypoint setWaypointBehaviour "SAFE";
 _waypoint setWaypointSpeed "FULL";
-_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""missionCompleted"", true];"];
+_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; " + vehicleVarName _chopper + " setVariable [""missionCompleted"", true];"];
 
 
 

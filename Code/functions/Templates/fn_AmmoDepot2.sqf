@@ -3,8 +3,6 @@
 // Call this script by [Position,Rotation] execVM "filename.sqf"
 params ["_center", "_staticWeaponClasses", "_parkedVehicleClasses"];
 
-if(!isserver) exitwith {};
-
 private ["_obj", "_pos", "_marker", "_instanceNo", "_gun", "_car"];
 private _rotation = random 360;
 

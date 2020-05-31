@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_spawnPos", "_side", "_minSkill", "_maxSkill", "_onGroupDropped", "_dropUnits", "_debug", "_chopper", "_group", "_pilot", "_gunner1", "_gunner2", "_currentInstanceNo", "_crewType", "_chopperType", "_dropPosition"];
 private ["_vehicleVarName"];
 

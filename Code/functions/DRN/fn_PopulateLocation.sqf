@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_locationObject", "_side", "_maxGroupsCount", "_debug"];
 private ["_markerName", "_soldierObjects", "_skill", "_soldierType", "_spawned", "_damage", "_group"];
 private ["_script", "_groupMemberCount", "_fortify", "_noFollow", "_locationPos", "_maxGroupSize"];

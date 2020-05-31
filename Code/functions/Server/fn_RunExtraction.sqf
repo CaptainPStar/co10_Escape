@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 params["_extractionPointNo",["_isWater",false]];
 
 private _extraction = (A3E_ExtractionPositions select {_x select 0 == _extractionPointNo}) select 0;

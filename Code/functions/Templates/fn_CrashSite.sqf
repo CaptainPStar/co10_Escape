@@ -1,5 +1,3 @@
-if(!isserver) exitwith {};
-
 private ["_object", "_position", "_marker", "_instanceNo", "_randomNo", "_gun", "_angle", "_car","_dir","_boxpos","_boxType","_TypeOfWreck"];
 
 _position = [_this,0] call bis_fnc_param;

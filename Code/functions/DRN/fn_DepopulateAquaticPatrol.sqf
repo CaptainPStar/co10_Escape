@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 private ["_village", "_markerName", "_soldiers", "_soldier", "_spawned", "_damage", "_soldierObj"];
 private ["_groups", "_soldierPos", "_group", "_hasScript", "_boats"];
 private ["_deleteGroupDelayed","_flag"];

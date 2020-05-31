@@ -77,6 +77,7 @@ class CfgFunctions
                     postInit = 0; // 1 to call the function upon mission start, after objects are initialized. Passed arguments are ["postInit"]
                     recompile = 0; // 1 to recompile the function upon mission start
             };
+			class initServerHC {};
 			class initPlayer {};
 			class watchKnownPosition {};
 			class parameterInit {}; 
@@ -105,6 +106,11 @@ class CfgFunctions
 			class deactivatePatrolZone {};
 			class onEnemySoldierSpawn {};
 			class spawnPatrol {};
+			class prepareAquaticPatrols {};
+			class initAmbientInfantry {};
+			class initCivilianTraffic {};
+			class initMilitaryTraffic {};
+			class initRoadBlocks {};
 		};
 		class Templates
 		{

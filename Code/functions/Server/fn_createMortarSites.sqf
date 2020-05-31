@@ -1,5 +1,3 @@
-if(!isserver) exitwith {};
-
 private ["_positions", "_i", "_j", "_tooCloseAnotherPos", "_pos", "_countNW", "_countNE", "_countSE", "_countSW", "_isOk","_regionCount"];
 
 _positions = [];
@@ -98,6 +96,4 @@ while {count _positions < _mortarSiteCount} do {
 	if (_blah == 1) then {
 	[_x] call A3E_fnc_MortarSite2;
 	};
-	private _playergroup = [] call A3E_fnc_getPlayerGroup;
-	[_playergroup, "A3E_MortarSitePatrolMarker", A3E_VAR_Side_Opfor, "INS", 1, 1, 2, Param_EnemySkill, Param_EnemySkill, Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
 } foreach _positions;

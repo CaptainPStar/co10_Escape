@@ -2,8 +2,6 @@
  * Transports a group to a position with a civilian vehicle.
  */
 
-if (!isServer) exitWith {};
-
 private ["_referenceGroup", "_vehicle", "_fncOnUnloadGroup", "_debug"];
 private ["_group", "_waypoint", "_currentEntityNo", "_destinationPos"];
 private ["_fnc_GetDestinationPos"];
@@ -74,7 +72,7 @@ while {!_enemySighted} do {
     _waypoint setWaypointType "MOVE";
     _waypoint setWaypointBehaviour "SAFE";
     _waypoint setWaypointSpeed "NORMAL";
-    _waypoint setWaypointStatements ["true", vehicleVarName _vehicle + " setVariable [""waypointFulfilled"", true];"];
+    _waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; " + vehicleVarName _vehicle + " setVariable [""waypointFulfilled"", true];"];
     _waypoint setWaypointCombatMode "BLUE";
     
     _vehicle setFuel 0.3 + random 0.6;
@@ -162,7 +160,7 @@ if (count _dropPos > 0) then {
         _waypoint setWaypointType "MOVE";
         _waypoint setWaypointBehaviour "SAFE";
         _waypoint setWaypointSpeed "NORMAL";
-        _waypoint setWaypointStatements ["true", vehicleVarName _truck + " setVariable [""waypointFulfilled"", true];"];
+        _waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; " + vehicleVarName _truck + " setVariable [""waypointFulfilled"", true];"];
         _waypoint setWaypointCombatMode "BLUE";
         
         sleep 1;

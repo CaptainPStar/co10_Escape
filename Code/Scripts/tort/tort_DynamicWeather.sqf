@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 /*
 tort_DynamicWeather
 Version: 1.08

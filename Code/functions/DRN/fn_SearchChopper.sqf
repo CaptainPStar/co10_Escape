@@ -86,7 +86,7 @@ while {!_exitScript} do {
 			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointBehaviour "SAFE";
 			_waypoint setWaypointSpeed "FULL";
-			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
+			_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; " + vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 			_group setCurrentWaypoint _waypoint;
 			if (_debug) then {
 				//"SmokeShellBlue" createVehicle _position;
@@ -131,7 +131,7 @@ while {!_exitScript} do {
 			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointBehaviour "SAFE";
 			_waypoint setWaypointSpeed "NORMAL";
-			_waypoint setWaypointStatements ["true", vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
+			_waypoint setWaypointStatements ["true", "if (!local this) exitWith {}; " + vehicleVarName _chopper + " setVariable [""waypointFulfilled"", true];"];
 			_group setCurrentWaypoint _waypoint;
 			if (_debug) then {
 				//"SmokeShellBlue" createVehicle _homePos;

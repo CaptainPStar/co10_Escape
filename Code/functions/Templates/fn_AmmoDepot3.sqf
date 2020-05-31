@@ -3,7 +3,6 @@
 // Thanks to Zec Building Compositions for helping make this :) 
 // Relative positions exported thanks too Maca's M3Eden Editor Addon.
 // modified by aussie :)
-if(!isserver) exitwith {};
 
 private ["_center", "_staticWeaponClasses", "_parkedVehicleClasses"];
 private ["_object", "_pos", "_marker", "_instanceNo", "_randomNo", "_gun", "_angle", "_car"];

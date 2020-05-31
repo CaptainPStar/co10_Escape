@@ -1,5 +1,4 @@
 private["_group","_targetposition","_searchRange","_oncomplete","_destinationPos","_waypoint","_homeMarker"];
-if(!isserver) exitwith {};
 
 _group = _this select 0;
 _targetposition = _this select 1;
