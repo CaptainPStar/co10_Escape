@@ -9,9 +9,9 @@ private ["_enemyFrequency"];
 
 _enemyFrequency = _this select 0;
 
-A3E_VAR_Side_Blufor = west;
-A3E_VAR_Side_Opfor = east;
-A3E_VAR_Side_Ind = resistance;
+A3E_VAR_Side_Blufor = west;	//player side GM BW
+A3E_VAR_Side_Opfor = east;	//GM NVA
+A3E_VAR_Side_Ind = resistance;	//GM Poland
 
 A3E_VAR_Flag_Opfor = "\gm\gm_core\data\flags\gm_flag_gc_co.paa";
 A3E_VAR_Flag_Ind = "\gm\gm_core\data\flags\gm_flag_pl_co.paa";
@@ -36,6 +36,7 @@ a3e_arr_PrisonBackpackWeapons pushback ["gm_pm_blk","gm_8rnd_9x18mm_b_pst_pm_blk
 a3e_arr_PrisonBackpackWeapons pushback ["gm_p1_blk","gm_8rnd_9x19mm_b_dm11_p1_blk"];
 a3e_arr_PrisonBackpackWeapons pushback ["gm_pm_blk","gm_8rnd_9x18mm_b_pst_pm_blk"];
 a3e_arr_PrisonBackpackWeapons pushback ["gm_mp2a1_blk", "gm_32rnd_9x19mm_b_dm51_mp2_blk"];
+a3e_arr_PrisonBackpackWeapons pushback ["gm_pm63_blk", "gm_25Rnd_9x18mm_B_pst_pm63_blk"];
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
@@ -239,6 +240,8 @@ a3e_arr_Escape_InfantryTypes = [
 	,"gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_str"
 	,"gm_gc_army_antitank_mpiak74n_fagot_80_str"
 	,"gm_gc_army_antitank_mpiak74n_fagot_80_str"
+	,"gm_gc_army_antiair_mpiak74n_9k32m_80_str"
+	,"gm_gc_army_antiair_mpiak74n_9k32m_80_str"
 	,"gm_gc_army_rifleman_mpiak74n_80_str"
 	,"gm_gc_army_rifleman_mpiak74n_80_str"
 	,"gm_gc_army_rifleman_mpiak74n_80_str"
@@ -277,6 +280,8 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"gm_pl_army_antitank_akm_rpg7_80_moro"
 	,"gm_pl_army_antitank_akm_rpg7_80_moro"
 	,"gm_pl_army_antitank_akm_rpg7_80_moro"
+	,"gm_pl_army_antiair_akm_9k32m_80_moro"
+	,"gm_pl_army_antiair_akm_9k32m_80_moro"
 	,"gm_pl_army_marksman_svd_80_moro"
 	,"gm_pl_army_marksman_svd_80_moro"
 	,"gm_pl_army_marksman_svd_80_moro"
@@ -285,64 +290,27 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"gm_pl_army_squadleader_akm_80_moro"
 	,"gm_pl_army_squadleader_akm_80_moro"];
 a3e_arr_recon_InfantryTypes = [
-	"gm_gc_army_engineer_mpiaks74n_80_str"
-	,"gm_gc_army_engineer_mpiaks74n_80_str"
-	,"gm_gc_army_engineer_mpiaks74n_80_str"
-	,"gm_gc_army_medic_mpiak74n_80_str"
-	,"gm_gc_army_medic_mpiak74n_80_str"
-	,"gm_gc_army_medic_mpiak74n_80_str"
-	,"gm_gc_army_machinegunner_assistant_mpiak74n_lmgrpk_80_str"
-	,"gm_gc_army_machinegunner_assistant_mpiak74n_lmgrpk_80_str"
-	,"gm_gc_army_machinegunner_assistant_mpiak74n_pk_80_str"
-	,"gm_gc_army_machinegunner_assistant_mpiak74n_pk_80_str"
-	,"gm_gc_army_machinegunner_lmgrpk_80_str"
-	,"gm_gc_army_machinegunner_lmgrpk_80_str"
-	,"gm_gc_army_machinegunner_lmgrpk_80_str"
-	,"gm_gc_army_antitank_mpiak74n_rpg7_80_str"
-	,"gm_gc_army_antitank_mpiak74n_rpg7_80_str"
-	,"gm_gc_army_demolition_mpiaks74n_80_str"
-	,"gm_gc_army_demolition_mpiaks74n_80_str"
-	,"gm_gc_army_rifleman_mpiak74n_80_str"
-	,"gm_gc_army_rifleman_mpiak74n_80_str"
-	,"gm_gc_army_rifleman_mpiak74n_80_str"
-	,"gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_str"
-	,"gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_str"
-	,"gm_gc_army_antitank_mpiak74n_fagot_80_str"
-	,"gm_gc_army_antitank_mpiak74n_fagot_80_str"
-	,"gm_gc_army_rifleman_mpiak74n_80_str"
-	,"gm_gc_army_rifleman_mpiak74n_80_str"
-	,"gm_gc_army_rifleman_mpiak74n_80_str"
-	,"gm_gc_army_machinegunner_pk_80_str"
-	,"gm_gc_army_machinegunner_pk_80_str"
-	,"gm_gc_army_machinegunner_pk_80_str"
-	,"gm_gc_army_marksman_svd_80_str"
-	,"gm_gc_army_marksman_svd_80_str"
-	,"gm_gc_army_squadleader_mpiak74n_80_str"
-	,"gm_gc_army_squadleader_mpiak74n_80_str"];
+	"gm_gc_army_sf_antiair_pm63_9k32m_80_str"
+	,"gm_gc_army_sf_antitank_mpikms72_rpg7_80_str"
+	,"gm_gc_army_sf_antitank_mpikms72_fagot_80_str"
+	,"gm_gc_army_sf_demolition_pm63_80_str"
+	,"gm_gc_army_sf_machinegunner_lmgrpk_80_str"
+	,"gm_gc_army_sf_marksman_svd_80_str"
+	,"gm_gc_army_sf_engineer_mpikms72_80_str"
+	,"gm_gc_army_sf_rifleman_mpikms72_80_str"
+	,"gm_gc_army_sf_rifleman_pm63_80_str"
+	,"gm_gc_army_sf_squadleader_mpikms72_80_str"];
 a3e_arr_recon_I_InfantryTypes = [
-	"gm_pl_army_antitank_akm_rpg7_80_autumn_moro"
-	,"gm_pl_army_antitank_akm_rpg7_80_autumn_moro"
-	,"gm_pl_army_antitank_assistant_akm_rpg7_80_autumn_moro"
-	,"gm_pl_army_antitank_akm_fagot_80_autumn_moro"
-	,"gm_pl_army_demolition_akm_80_autumn_moro"
-	,"gm_pl_army_demolition_akm_80_autumn_moro"
-	,"gm_pl_army_machinegunner_rpk_80_autumn_moro"
-	,"gm_pl_army_machinegunner_rpk_80_autumn_moro"
-	,"gm_pl_army_machinegunner_assistant_akm_rpk_80_autumn_moro"
-	,"gm_pl_army_machinegunner_pk_80_autumn_moro"
-	,"gm_pl_army_machinegunner_pk_80_autumn_moro"
-	,"gm_pl_army_machinegunner_assistant_akm_pk_80_autumn_moro"
-	,"gm_pl_army_marksman_svd_80_autumn_moro"
-	,"gm_pl_army_marksman_svd_80_autumn_moro"
-	,"gm_pl_army_medic_akm_80_autumn_moro"
-	,"gm_pl_army_medic_akm_80_autumn_moro"
-	,"gm_pl_army_engineer_akm_80_autumn_moro"
-	,"gm_pl_army_engineer_akm_80_autumn_moro"
-	,"gm_pl_army_rifleman_akm_80_autumn_moro"
-	,"gm_pl_army_rifleman_akm_80_autumn_moro"
-	,"gm_pl_army_rifleman_akm_80_autumn_moro"
-	,"gm_pl_army_squadleader_akm_80_autumn_moro"
-	,"gm_pl_army_squadleader_akm_80_autumn_moro"];
+	"gm_pl_army_sf_antiair_pm63_9k32m_80_moro"
+	,"gm_pl_army_sf_antitank_akmn_rpg7_80_moro"
+	,"gm_pl_army_sf_antitank_akmn_fagot_80_moro"
+	,"gm_pl_army_sf_demolition_pm63_80_moro"
+	,"gm_pl_army_sf_machinegunner_rpk_80_moro"
+	,"gm_pl_army_sf_marksman_svd_80_moro"
+	,"gm_pl_army_sf_engineer_pm63_80_moro"
+	,"gm_pl_army_sf_rifleman_akmn_80_moro"
+	,"gm_pl_army_sf_rifleman_pm63_80_moro"
+	,"gm_pl_army_sf_squadleader_akmn_80_moro"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
@@ -399,7 +367,7 @@ a3e_arr_ComCenDefence_heavyArmorClasses = [
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
 a3e_arr_ComCenStaticWeapons = [
-	"O_HMG_01_high_F"];
+	"O_G_HMG_02_high_F"];
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
 	"gm_gc_army_p601"
@@ -438,8 +406,8 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 // Random array. An ammo depot contains one static weapon of the following types:
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	"gm_gc_army_fagot_launcher_tripod"
-	,"O_HMG_01_high_F"
-	,"O_HMG_01_high_F"
+	,"O_G_HMG_02_high_F"
+	,"O_G_HMG_02_high_F"
 	];
 // An ammo depot have one parked and empty vehicle of the following possible types.
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
@@ -465,18 +433,20 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
-	"O_Heli_Attack_02_F"
-	,"O_Heli_Attack_02_black_F"];
+	"gm_gc_airforce_mi2urn"
+	,"gm_gc_airforce_mi2us"];
 a3e_arr_O_transport_heli = [
-	"O_Heli_Light_02_unarmed_F"];
+	"gm_gc_airforce_mi2p"
+	,"gm_gc_airforce_mi2p"
+	,"gm_gc_airforce_mi2t"];
 a3e_arr_O_pilots = [
-	"gm_gc_army_crew_mpiaks74nk_80_blk"];
+	"gm_gc_airforce_pilot_pm_80_blu"];
 a3e_arr_I_transport_heli = [
-	"I_Heli_Transport_02_F"
-	,"I_Heli_light_03_F"
-	,"I_Heli_light_03_unarmed_F"];
+	"gm_pl_airforce_mi2p"
+	,"gm_pl_airforce_mi2p"
+	,"gm_pl_airforce_mi2t"];
 a3e_arr_I_pilots = [
-	"gm_pl_army_crew_pm_80_moro"];
+	"gm_pl_airforce_pilot_pm_80_gry"];
 
 
 // The following arrays define weapons and ammo contained at the ammo depots
@@ -658,10 +628,10 @@ a3e_arr_medkits = [
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"B_Heli_Transport_01_F"
-	,"B_Heli_Transport_01_F"];
+	"gm_ge_army_bo105p1m_vbh_swooper"
+	,"gm_ge_army_ch53gs"];
 a3e_arr_extraction_chopper_escort = [
-	"B_Heli_Attack_01_F"];
+	"gm_ge_army_bo105p_pah1a1"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtractionBoat.sqf
@@ -677,7 +647,7 @@ a3e_arr_extraction_boat_escort = [
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
-	"O_UAV_01_F"];
+	"gm_gc_airforce_l410t"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
@@ -685,13 +655,19 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"I_Heli_light_03_unarmed_F"];
+	"gm_pl_airforce_mi2p"
+	,"gm_pl_airforce_mi2ch"];
 a3e_arr_searchChopperHard = [
-	"I_Heli_light_03_F"];
+	"gm_pl_airforce_mi2us"
+	,"gm_pl_airforce_mi2urn"
+	,"gm_pl_airforce_mi2urp"
+	,"gm_pl_airforce_mi2urpg"
+	,"gm_pl_airforce_mi2urs"
+	,"gm_pl_airforce_mi2platan"];
 a3e_arr_searchChopper_pilot = [
-	"gm_pl_army_crew_pm_80_moro"];
+	"gm_pl_airforce_pilot_pm_80_gry"];
 a3e_arr_searchChopper_crew = [
-	"gm_pl_army_crew_pm_80_moro"];
+	"gm_pl_airforce_pilot_pm_80_gry"];
 
 if(Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
