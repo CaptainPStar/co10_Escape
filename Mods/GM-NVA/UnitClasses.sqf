@@ -473,6 +473,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["gm_akmn_wud", 40, 1, 3, ["gm_30Rnd_762x
 // Weapons and ammo in the special weapons box
 a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
+a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_pm63_blk", 50, 1, 2, ["gm_15Rnd_9x18mm_B_pst_pm63_blk", "gm_25Rnd_9x18mm_B_pst_pm63_blk"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_svd_wud_pso1", 40, 2, 4, ["gm_10Rnd_762x54mmR_AP_7N1_svd_blk"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_hmgpkm_prp", 50, 1, 2, ["gm_100Rnd_762x54mm_B_T_t46_pk_grn"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_lp1_blk", 50, 2, 4, ["gm_1Rnd_265mm_flare_single_wht_gc", "gm_1Rnd_265mm_flare_multi_red_gc"], 5];
@@ -486,10 +487,13 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_wz78_blk", 40, 2, 4, ["gm_1Rnd_265
 a3e_arr_AmmoDepotLaunchers = [];
 // CSAT weapons
 a3e_arr_AmmoDepotLaunchers pushback ["gm_rpg7_prp", 50, 3, 5, ["gm_1Rnd_40mm_heat_pg7v_rpg7"], 2];
+a3e_arr_AmmoDepotLaunchers pushback ["gm_rpg7_prp", 30, 1, 3, ["gm_1Rnd_40mm_heat_pg7vl_rpg7"], 2];
+a3e_arr_AmmoDepotLaunchers pushback ["gm_9k32m_oli", 50, 1, 2, ["gm_1Rnd_72mm_he_9m32m"], 2];
 //a3e_arr_AmmoDepotLaunchers pushback ["gm_pzf84_oli", 50, 1, 2, ["gm_1rnd_84x245mm_heat_t_dm12a1_carlgustaf"], 3];
 //a3e_arr_AmmoDepotLaunchers pushback ["gm_pzf84_oli", 50, 1, 2, ["gm_1rnd_84x245mm_heat_t_dm22_carlgustaf", "gm_1rnd_84x245mm_illum_dm16_carlgustaf"], 2];
 // non-CSAT weapons
 a3e_arr_AmmoDepotLaunchers pushback ["gm_rpg7_wud", 20, 1, 2, ["gm_1rnd_40mm_heat_pg7v_rpg7"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["gm_rpg7_wud", 10, 1, 2, ["gm_1Rnd_40mm_heat_pg7vl_rpg7"], 2];
 //a3e_arr_AmmoDepotLaunchers pushback ["launch_I_Titan_F", 100, 1, 1, ["Titan_AA"], 3];
 //a3e_arr_AmmoDepotLaunchers pushback ["launch_I_Titan_short_F", 100, 1, 1, ["Titan_AP", "Titan_AT"], 3];
 //a3e_arr_AmmoDepotLaunchers pushback ["launch_B_Titan_F", 100, 1, 1, ["Titan_AA"], 3];
@@ -543,9 +547,12 @@ a3e_arr_AmmoDepotItems pushback ["gm_watch_kosei_80", 50, 1, 10];
 //a3e_arr_AmmoDepotItems pushback ["acc_flashlight", 50, 1, 5];
 //a3e_arr_AmmoDepotItems pushback ["acc_pointer_IR", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_B", 10, 1, 2]; //G3
+a3e_arr_AmmoDepotItems pushback ["gm_suppressor_safloryt_blk", 40, 1, 2]; //PM63
 a3e_arr_AmmoDepotItems pushback ["gm_feroz24_blk", 2, 1, 2]; //G3
 a3e_arr_AmmoDepotItems pushback ["gm_c79a1_blk", 2, 1, 2]; //C7
 a3e_arr_AmmoDepotItems pushback ["gm_pso1_gry", 40, 1, 3]; //SVD
+a3e_arr_AmmoDepotItems pushback ["gm_zvn64_front", 75, 1, 5]; //AKs
+a3e_arr_AmmoDepotItems pushback ["gm_zvn64_rear_ak", 75, 1, 5]; //AKs
 a3e_arr_AmmoDepotItems pushback ["gm_zfk4x25_blk", 30, 1, 3]; //AK
 a3e_arr_AmmoDepotItems pushback ["gm_feroz2x17_pzf44_2_blk", 2, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["gm_feroz2x17_pzf84_blk", 2, 1, 2];
@@ -656,7 +663,8 @@ a3e_arr_searchdrone = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
 	"gm_pl_airforce_mi2p"
-	,"gm_pl_airforce_mi2ch"];
+	,"gm_pl_airforce_mi2ch"
+	,"gm_pl_airforce_mi2platan"];
 a3e_arr_searchChopperHard = [
 	"gm_pl_airforce_mi2us"
 	,"gm_pl_airforce_mi2urn"
@@ -775,6 +783,8 @@ a3e_arr_CrashSiteWeapons pushback ["gm_g3a4_oli", 25, 1, 2, ["gm_20rnd_762x51mm_
 a3e_arr_CrashSiteWeapons pushback ["gm_g3a3_oli", 75, 2, 4, ["gm_20rnd_762x51mm_b_t_dm21a1_g3_blk"], 6];
 a3e_arr_CrashSiteWeapons pushback ["gm_p2a1_blk", 50, 2, 4, ["gm_1Rnd_265mm_flare_multi_red_gc", "gm_1Rnd_265mm_flare_para_yel_DM16", "gm_1Rnd_265mm_smoke_single_vlt_DM24"], 6];
 a3e_arr_CrashSiteWeapons pushback ["gm_mp2a1_blk", 30, 1, 2, ["gm_32rnd_9x19mm_b_dm51_mp2_blk"], 6];
+a3e_arr_CrashSiteWeapons pushback ["gm_mp5a2_blk", 30, 1, 2, ["gm_30Rnd_9x19mm_B_DM11_mp5_blk"], 6];
+a3e_arr_CrashSiteWeapons pushback ["gm_mp5sd3_blk", 30, 1, 2, ["gm_30Rnd_9x19mm_B_DM51_mp5a3_blk"], 6];
 a3e_arr_CrashSiteWeapons pushback ["gm_mg3_blk", 25, 1, 2, ["gm_120rnd_762x51mm_b_t_dm21_mg3_grn"], 4];
 // Attachments and other items in crash site box
 a3e_arr_CrashSiteItems = [];

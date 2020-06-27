@@ -419,7 +419,8 @@ a3e_arr_O_attack_heli = [
 	//,"O_T_VTOL_02_infantry_F"];
 a3e_arr_O_transport_heli = [
 	"gm_ge_army_ch53g"
-	,"gm_ge_army_ch53gs"];
+	,"gm_ge_army_ch53gs"
+	,"gm_ge_army_bo105p1m_vbh_swooper"];
 	//"CUP_B_UH1D_GER_KSK"];
 	//"O_Heli_Light_02_unarmed_F"];
 a3e_arr_O_pilots = [
@@ -471,7 +472,7 @@ a3e_arr_AmmoDepotLaunchers = [];
 a3e_arr_AmmoDepotLaunchers pushback ["gm_pzf44_2_oli", 50, 3, 5, ["gm_1rnd_44x537mm_heat_dm32_pzf44_2"], 2];
 a3e_arr_AmmoDepotLaunchers pushback ["gm_pzf84_oli", 50, 1, 2, ["gm_1rnd_84x245mm_heat_t_dm12a1_carlgustaf"], 3];
 a3e_arr_AmmoDepotLaunchers pushback ["gm_pzf84_oli", 50, 1, 2, ["gm_1rnd_84x245mm_heat_t_dm22_carlgustaf", "gm_1rnd_84x245mm_illum_dm16_carlgustaf"], 2];
-a3e_arr_AmmoDepotLaunchers pushback ["gm_fim43_oli", 50, 1, 1, ["gm_1Rnd_70mm_he_m585_fim43"], 2];
+a3e_arr_AmmoDepotLaunchers pushback ["gm_fim43_oli", 50, 1, 2, ["gm_1Rnd_70mm_he_m585_fim43"], 2];
 // non-CSAT weapons
 a3e_arr_AmmoDepotLaunchers pushback ["gm_rpg7_prp", 20, 1, 2, ["gm_1rnd_40mm_heat_pg7v_rpg7"], 3];
 a3e_arr_AmmoDepotLaunchers pushback ["gm_rpg7_prp", 10, 1, 2, ["gm_1Rnd_40mm_heat_pg7vl_rpg7"], 2];
@@ -535,6 +536,9 @@ a3e_arr_AmmoDepotItems pushback ["gm_zfk4x25_blk", 20, 1, 3]; //AK
 a3e_arr_AmmoDepotItems pushback ["gm_feroz2x17_pzf44_2_blk", 25, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["gm_feroz2x17_pzf84_blk", 25, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["gm_pgo7v_blk", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["gm_suppressor_safloryt_blk", 10, 1, 2]; //PM63
+a3e_arr_AmmoDepotItems pushback ["gm_zvn64_front", 50, 1, 3]; //AKs
+a3e_arr_AmmoDepotItems pushback ["gm_zvn64_rear_ak", 50, 1, 3]; //AKs
 /*if(Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["optic_tws", 10, 1, 1];
 	a3e_arr_AmmoDepotItems pushback ["optic_tws_mg", 10, 1, 1];
