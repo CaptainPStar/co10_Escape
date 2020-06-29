@@ -1,3 +1,7 @@
+// GM
+// NVA vs BW
+
+
 /*
  * Description: This file contains the vehicle types and unit types for the units spawned in the mission, and the weapons and magazines found in ammo boxes/cars.
  * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain 
@@ -9,12 +13,12 @@ private ["_enemyFrequency"];
 
 _enemyFrequency = _this select 0;
 
-A3E_VAR_Side_Blufor = east;
-A3E_VAR_Side_Opfor = west;
-A3E_VAR_Side_Ind = resistance;
+A3E_VAR_Side_Blufor = east;	//player side GM NVA
+A3E_VAR_Side_Opfor = west; //GM BW
+A3E_VAR_Side_Ind = resistance; //GM Denmark
 
 A3E_VAR_Flag_Opfor = "\gm\gm_core\data\flags\gm_flag_ge_co.paa";
-A3E_VAR_Flag_Ind = "\gm\gm_core\data\flags\gm_flag_dk_co.paa"; // Update 3: Placeholder for Syndikat flag.
+A3E_VAR_Flag_Ind = "\gm\gm_core\data\flags\gm_flag_dk_co.paa";
  
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
@@ -272,6 +276,7 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"gm_dk_army_machinegunner_assistant_gvm95_mg3_90_m84"
 	,"gm_dk_army_antitank_gvm95_pzf84_90_m84"
 	,"gm_dk_army_antitank_assistant_gvm95_pzf84_90_m84"
+	,"gm_dk_army_antiair_gvm95_fim43_90_m84"
 	,"gm_dk_army_demolition_gvm95_90_m84"];
 a3e_arr_recon_InfantryTypes = [
 	"gm_ge_army_sf_squadleader_mp5sd3_p2a1_80_wdl"
@@ -385,7 +390,7 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	"gm_ge_army_mg3_aatripod"
 	,"gm_ge_army_mg3_aatripod"
-	,"B_T_HMG_01_F"
+	,"B_G_HMG_02_high_F"
 	,"gm_ge_army_milan_launcher_tripod"
 	,"B_T_Static_AA_F"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
@@ -426,7 +431,7 @@ a3e_arr_O_transport_heli = [
 a3e_arr_O_pilots = [
 	"gm_ge_army_pilot_p1_80_oli"];
 a3e_arr_I_transport_heli = [
-	"gm_ge_army_bo105m_vbh"];
+	"gm_ge_bgs_bo105_vbh"];
 	//"CUP_B_UH1D_GER_KSK"];
 a3e_arr_I_pilots = [
 	"gm_ge_bgs_pilot_p1_80_grn"];
@@ -607,6 +612,7 @@ a3e_arr_extraction_chopper = [
 	];
 a3e_arr_extraction_chopper_escort = [
 	"gm_gc_airforce_mi2us"
+	,"gm_gc_airforce_mi2urn"
 	];
 
 //////////////////////////////////////////////////////////////////
@@ -623,7 +629,7 @@ a3e_arr_extraction_boat_escort = [
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
-	"gm_ge_airforce_do28d2"];
+	"gm_ge_airforce_do28d2_n84"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
@@ -755,3 +761,5 @@ a3e_arr_CrashSiteItems = [];
 a3e_arr_CrashSiteItems pushback ["gm_pso1_gry", 20, 1, 3];
 a3e_arr_CrashSiteItems pushback ["gm_zfk4x25_blk", 20, 1, 3];
 a3e_arr_CrashSiteItems pushback ["gm_pgo7v_blk", 20, 1, 3];
+a3e_arr_CrashSiteItems pushback ["gm_zvn64_front", 50, 1, 3];
+a3e_arr_CrashSiteItems pushback ["gm_zvn64_rear_ak", 50, 1, 3];

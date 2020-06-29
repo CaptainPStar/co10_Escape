@@ -1,3 +1,7 @@
+// GM
+// BW vs NVA
+
+
 /*
  * Description: This file contains the vehicle types and unit types for the units spawned in the mission, and the weapons and magazines found in ammo boxes/cars.
  * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain 
@@ -581,6 +585,7 @@ a3e_arr_CivilianCarWeapons pushback ["gm_wz78_blk", "gm_1Rnd_265mm_flare_multi_n
 a3e_arr_CivilianCarWeapons pushback ["gm_m16a1_blk", "gm_20Rnd_556x45mm_b_M855_stanag_gry", 6];
 a3e_arr_CivilianCarWeapons pushback ["gm_mp2a1_blk", "gm_32rnd_9x19mm_b_dm11_mp2_blk", 6];
 a3e_arr_CivilianCarWeapons pushback ["gm_rpg7_prp", "gm_1rnd_40mm_heat_pg7v_rpg7", 2];
+a3e_arr_CivilianCarWeapons pushback ["gm_mp5a2_blk", "gm_30Rnd_9x19mm_B_DM11_mp5_blk", 6];
 //a3e_arr_CivilianCarWeapons pushback ["arifle_MXM_SOS_pointer_F", "30Rnd_65x39_caseless_mag_Tracer", 7];
 //a3e_arr_CivilianCarWeapons pushback ["arifle_Katiba_C_F", "30Rnd_65x39_caseless_green", 5];
 //a3e_arr_CivilianCarWeapons pushback ["arifle_Mk20_GL_ACO_F", "UGL_FlareWhite_F", 8];
@@ -600,7 +605,8 @@ a3e_arr_CivilianCarWeapons pushback [objNull, "gm_smokeshell_wht_dm25", 5];
 // Here is a list of scopes, might get randomly added to enemy patrols:
 a3e_arr_Scopes = [
 	"gm_zfk4x25_blk"
-	,"gm_pso1_gry"];
+	,"gm_pso1_gry"
+	,"gm_zvn64_rear_ak"];
 //	"optic_Aco"
 //	"optic_ACO_grn"
 //	,"optic_Arco"
