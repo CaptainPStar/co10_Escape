@@ -225,10 +225,6 @@ _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
 [_obj,"green","green","green"] call BIS_fnc_DataTerminalColor;
 
-_pos = [0, -9];
-_dir = 180;
-_obj = ["HeliHEmpty", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
-
 _pos = [13, 1];
 _dir = 90;
 _obj = ["Land_Medevac_House_V1_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;

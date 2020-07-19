@@ -9,12 +9,12 @@ private ["_enemyFrequency"];
 
 _enemyFrequency = _this select 0;
 
-A3E_VAR_Side_Blufor = west;
-A3E_VAR_Side_Opfor = east;
-A3E_VAR_Side_Ind = resistance;
+A3E_VAR_Side_Blufor = west; //CUP USMC
+A3E_VAR_Side_Opfor = east; //CUP SLA
+A3E_VAR_Side_Ind = resistance; //CUP RACS
 
-A3E_VAR_Flag_Opfor = "\ca\misc\data\sever_vlajka.paa";
-A3E_VAR_Flag_Ind = "\ca\misc\data\jih_vlajka.paa";
+A3E_VAR_Flag_Opfor = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_sla_co";
+A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_racs_co";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
@@ -251,7 +251,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"CUP_O_BRDM2_SLA"
 	,"CUP_O_BRDM2_SLA"
 	,"CUP_O_BRDM2_ATGM_SLA"
-	,"CUP_I_DSHkM_Mini_TriPod"
+	,"CUP_I_DSHKM_MiniTriPod_AAF"
 	,"CUP_I_KORD_high_AAF"
 	,"CUP_I_AGS_AAF"
 	,"CUP_I_Metis_AAF"
@@ -263,7 +263,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	,"CUP_I_LR_MG_RACS"
 	,"CUP_I_M113_RACS"
 	,"CUP_I_M113_RACS"
-	,"CUP_I_DSHkM_Mini_TriPod"
+	,"CUP_I_DSHKM_MiniTriPod_AAF"
 	,"CUP_I_KORD_high_AAF"
 	,"CUP_I_AGS_AAF"
 	,"CUP_I_Metis_AAF"
@@ -378,7 +378,7 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 // Random array. An ammo depot contains one static weapon of the followin types:
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	"CUP_I_DSHKM_AAF"
-	,"CUP_I_DSHkM_Mini_TriPod"
+	,"CUP_I_DSHKM_MiniTriPod_AAF"
 	,"CUP_I_KORD_AAF"
 	,"CUP_I_KORD_high_AAF"
 	,"CUP_I_AGS_AAF"
@@ -445,7 +445,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_SVD_des_ghillie_pso", 10, 1,
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_sgun_Saiga12K", 50, 2, 4, ["CUP_8Rnd_B_Saiga12_74Slug_M","CUP_8Rnd_B_Saiga12_74Pellets_M"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_AKM", 50, 1, 3, ["CUP_30Rnd_762x39_AK47_M"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_AK74M_GL", 50, 1, 3, ["CUP_30Rnd_545x39_AK_M","CUP_1Rnd_HE_GP25_M"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_RPK74", 30, 1, 2, ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_RPK74", 30, 1, 2, ["CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_FNFAL5062", 10, 1, 2, ["CUP_20Rnd_762x51_FNFAL_M"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_FNFAL", 10, 1, 2, ["CUP_20Rnd_762x51_FNFAL_M"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_AK107_GL_kobra", 10, 1, 2, ["CUP_30Rnd_545x39_AK_M", "CUP_1Rnd_HE_GP25_M"], 4];
@@ -772,8 +772,7 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"BlackhawkWreck"
-	,"Land_UWreck_MV22_F"
+	"Land_UWreck_MV22_F"
 	,"Land_Wreck_Plane_Transport_01_F"
 	,"Land_Wreck_Heli_Attack_01_F"];
 a3e_arr_CrashSiteCrew = [
@@ -783,7 +782,7 @@ a3e_arr_CrashSiteWrecksCar = [
 	"Land_Wreck_HMMWV_F"
 	,"Land_Wreck_Hunter_F"
 	,"Land_Wreck_Slammer_F"
-	,"M113Wreck"];
+];
 a3e_arr_CrashSiteCrewCar = [
 	"CUP_B_USMC_Crew"
 	,"CUP_B_USMC_SpecOps_SD"];

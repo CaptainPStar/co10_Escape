@@ -1,0 +1,716 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"aia_takistan_config",
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"aia_takistan_config"
+	};
+	randomSeed=16412411;
+	class Intel
+	{
+		briefingName="co08 Escape Chernarus [1.2beta]";
+		resistanceEast=1;
+		startWeather=0.2605564;
+		startFog=0.12567772;
+		startWind=0.1;
+		forecastWeather=0.3805666;
+		forecastFog=0.1205344;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=8;
+		minute=0;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+	class Groups
+	{
+		items=1;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3509.4463,161.36855,8375.123};
+					azimut=136.23822;
+					id=0;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+	class Markers
+	{
+		items=53;
+		class Item0
+		{
+			position[]={3527.9395,161.5762,8355.9258};
+			name="drn_var_communicationCenter1";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=313.84326;
+		};
+		class Item1
+		{
+			position[]={875.87231,544.3996,10480.014};
+			name="drn_var_communicationCenter2";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=199.89301;
+		};
+		class Item2
+		{
+			position[]={1498.468,181.73006,11993.119};
+			name="drn_var_communicationCenter3";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=434.13199;
+		};
+		class Item3
+		{
+			position[]={2161.1221,76.918434,12144.076};
+			name="drn_var_communicationCenter4";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=425.31;
+		};
+		class Item4
+		{
+			position[]={3259.9749,95.159393,9831.3438};
+			name="drn_var_communicationCenter5";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=487.55099;
+		};
+		class Item5
+		{
+			position[]={4685.4077,103.49815,9898.251};
+			name="drn_var_communicationCenter6";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=406.63101;
+		};
+		class Item6
+		{
+			position[]={3733.4172,77.040787,11213.509};
+			name="drn_var_communicationCenter7";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=470.00101;
+		};
+		class Item7
+		{
+			position[]={5870.4658,83.040001,11563.671};
+			name="drn_var_communicationCenter8";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=315.76901;
+		};
+		class Item8
+		{
+			position[]={5685.5151,83.043175,11176.942};
+			name="drn_var_communicationCenter9";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=318.681;
+		};
+		class Item9
+		{
+			position[]={6603.4551,93.073212,10770.006};
+			name="drn_var_communicationCenter10";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=635.71997;
+		};
+		class Item10
+		{
+			position[]={8159.9932,235.22,11114.519};
+			name="drn_var_communicationCenter11";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=723.37299;
+		};
+		class Item11
+		{
+			position[]={10173.23,153.0495,11105.415};
+			name="drn_var_communicationCenter12";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=774.591;
+		};
+		class Item12
+		{
+			position[]={8765.8779,193.37486,10084.707};
+			name="drn_var_communicationCenter13";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=851.80603;
+		};
+		class Item13
+		{
+			position[]={9409.8115,164.07874,10029.041};
+			name="drn_var_communicationCenter14";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=927.66998;
+		};
+		class Item14
+		{
+			position[]={10607.513,166.57494,10214.018};
+			name="drn_var_communicationCenter15";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1063.88;
+		};
+		class Item15
+		{
+			position[]={11697.8,166.01605,10889.646};
+			name="drn_var_communicationCenter16";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1106.88;
+		};
+		class Item16
+		{
+			position[]={11548.64,275.11136,8175.1011};
+			name="drn_var_communicationCenter17";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1010.19;
+		};
+		class Item17
+		{
+			position[]={10796.843,283.30307,6402.5781};
+			name="drn_var_communicationCenter18";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=898.89502;
+		};
+		class Item18
+		{
+			position[]={8501.1133,187.23067,7545.792};
+			name="drn_var_communicationCenter19";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=942.64099;
+		};
+		class Item19
+		{
+			position[]={7950.2231,180.93535,9535.9424};
+			name="drn_var_communicationCenter20";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=835.38397;
+		};
+		class Item20
+		{
+			position[]={5056.7456,125.19397,9395.0879};
+			name="drn_var_communicationCenter21";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=745.97302;
+		};
+		class Item21
+		{
+			position[]={816.59967,534.1181,7947.2915};
+			name="drn_var_communicationCenter22";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=858.76202;
+		};
+		class Item22
+		{
+			position[]={5744.6328,98.390594,8686.8115};
+			name="drn_var_communicationCenter23";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=795.63;
+		};
+		class Item23
+		{
+			position[]={9795.4541,239.0127,8879.4199};
+			name="drn_var_communicationCenter24";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1057.9399;
+		};
+		class Item24
+		{
+			position[]={10151.925,310.01746,6181.4434};
+			name="drn_var_communicationCenter25";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1163.61;
+		};
+		class Item25
+		{
+			position[]={8764.835,291.37579,4837.7158};
+			name="drn_var_communicationCenter26";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=988.41998;
+		};
+		class Item26
+		{
+			position[]={11812.172,374.14038,2540.522};
+			name="drn_var_communicationCenter27";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1125.1899;
+		};
+		class Item27
+		{
+			position[]={11167.591,416.93539,2266.1208};
+			name="drn_var_communicationCenter28";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1020.83;
+		};
+		class Item28
+		{
+			position[]={7006.0815,170.36667,9413.0352};
+			name="drn_var_communicationCenter29";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=875.43903;
+		};
+		class Item29
+		{
+			position[]={6626.9722,159.32919,7389.186};
+			name="drn_var_communicationCenter30";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=898.159;
+		};
+		class Item30
+		{
+			position[]={6598.667,295.45419,7025.5483};
+			name="drn_var_communicationCenter31";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=898.159;
+		};
+		class Item31
+		{
+			position[]={5520.5313,142.00934,6322.6196};
+			name="drn_var_communicationCenter32";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=691.29901;
+		};
+		class Item32
+		{
+			position[]={5843.9019,190.54314,6248.7051};
+			name="drn_var_communicationCenter33";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=460.07401;
+		};
+		class Item33
+		{
+			position[]={6453.7603,354.02011,5953.769};
+			name="drn_var_communicationCenter34";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=364.875;
+		};
+		class Item34
+		{
+			position[]={6553.6885,343.50375,5647.5547};
+			name="drn_var_communicationCenter35";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=349.85901;
+		};
+		class Item35
+		{
+			position[]={6409.3945,328.41367,4989.0195};
+			name="drn_var_communicationCenter36";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=346.40302;
+		};
+		class Item36
+		{
+			position[]={6581.2095,371.0683,4528.5825};
+			name="drn_var_communicationCenter37";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=378.17099;
+		};
+		class Item37
+		{
+			position[]={8286.9873,462.60001,3620.0825};
+			name="drn_var_communicationCenter38";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=253.287;
+		};
+		class Item38
+		{
+			position[]={9042.4756,349.89539,2619.2698};
+			name="drn_var_communicationCenter39";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=262.16;
+		};
+		class Item39
+		{
+			position[]={8468.5635,402.69577,2860.9846};
+			name="drn_var_communicationCenter40";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=345.88;
+		};
+		class Item40
+		{
+			position[]={8343.1094,296.04001,2000.5518};
+			name="drn_var_communicationCenter42";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=510.41699;
+		};
+		class Item41
+		{
+			position[]={7976.0273,296.04001,1983.2708};
+			name="drn_var_communicationCenter41";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=425.63;
+		};
+		class Item42
+		{
+			position[]={7086.8765,280.95291,1126.9766};
+			name="drn_var_communicationCenter43";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=421.59698;
+		};
+		class Item43
+		{
+			position[]={6647.8882,319.33783,1672.0082};
+			name="drn_var_communicationCenter44";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=355.68201;
+		};
+		class Item44
+		{
+			position[]={7018.8745,321.59558,2311.9646};
+			name="drn_var_communicationCenter45";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=120.21;
+		};
+		class Item45
+		{
+			position[]={5538.3213,386.47513,2093.4963};
+			name="drn_var_communicationCenter46";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=144.058;
+		};
+		class Item46
+		{
+			position[]={6134.8066,336.47812,1392.7806};
+			name="drn_var_communicationCenter47";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=1.90355;
+		};
+		class Item47
+		{
+			position[]={5085.0332,358.58948,1508.2604};
+			name="drn_var_communicationCenter48";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=250.394;
+		};
+		class Item48
+		{
+			position[]={4436.3721,344.82999,703.49017};
+			name="drn_var_communicationCenter49";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=314.504;
+		};
+		class Item49
+		{
+			position[]={3201.5884,391.20108,931.86597};
+			name="drn_var_communicationCenter50";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=153.119;
+		};
+		class Item50
+		{
+			position[]={3565.7964,457.71457,2008.9558};
+			name="drn_var_communicationCenter51";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=227.019;
+		};
+		class Item51
+		{
+			position[]={1392.603,275.50482,2971.6406};
+			name="drn_var_communicationCenter52";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=330.57001;
+		};
+		class Item52
+		{
+			position[]={2419.9863,197.32959,4918.957};
+			name="drn_var_communicationCenter53";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=476.733;
+		};
+	};
+	class Sensors
+	{
+		items=3;
+		class Item0
+		{
+			position[]={4412.7949,233.45695,8221.1885};
+			a=0;
+			b=0;
+			activationBy="JULIET";
+			interruptable=1;
+			age="UNKNOWN";
+			text="build";
+			expActiv="drn_comCen = ""drn_var_communicationCenter1"";_nil = [getMarkerPos drn_comCen, markerDir drn_comCen] execVM ""Scripts\Escape\BuildCommunicationCenter.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={4394.9834,182.44455,8799.2012};
+			activationBy="BRAVO";
+			interruptable=1;
+			age="UNKNOWN";
+			text="generate";
+			expActiv="_nil = [] execVM ""PositionGenerator.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item2
+		{
+			position[]={4528.3594,178.98822,8495.9189};
+			activationBy="ALPHA";
+			interruptable=1;
+			age="UNKNOWN";
+			text="build all";
+			expActiv="TotalComCenterCount = 53;  _nil = [TotalComCenterCount] execVM ""buildall.sqf"";";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"aia_takistan_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_takistan_config"
+	};
+	randomSeed=2542017;
+	class Intel
+	{
+		startWeather=0.25;
+		startWind=0.1;
+		forecastWeather=0.25;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"aia_takistan_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_takistan_config"
+	};
+	randomSeed=11993212;
+	class Intel
+	{
+		startWeather=0.25;
+		startWind=0.1;
+		forecastWeather=0.25;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"aia_takistan_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_takistan_config"
+	};
+	randomSeed=13922257;
+	class Intel
+	{
+		startWeather=0.25;
+		startWind=0.1;
+		forecastWeather=0.25;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};

@@ -565,7 +565,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_smg_EVO", 50, 2, 4, ["CUP_30Rnd_9x1
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_M4A1_BUIS_GL", 75, 2, 4, ["CUP_30Rnd_556x45_Stanag","CUP_1Rnd_HEDP_M203"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_lmg_M240", 20, 1, 2, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_M24_des", 20, 1, 2, ["CUP_5Rnd_762x51_M24"], 8];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_DMR", 10, 1, 2, ["CUP_20Rnd_762x51_DMR"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_M14_DMR", 10, 1, 2, ["CUP_20Rnd_762x51_DMR"], 6];
 // non-CSAT weapons
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_xm8_SAW", 50, 2, 4, ["CUP_100Rnd_556x45_BetaCMag"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_M4A1", 50, 1, 3, ["CUP_30Rnd_556x45_Stanag"], 6];
@@ -946,13 +946,13 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"Mi8Wreck"];
+	"CUP_Mi8Wreck"];
 a3e_arr_CrashSiteCrew = [
 	"CUP_O_RU_Pilot"];
 a3e_arr_CrashSiteWrecksCar = [
 	"Land_Wreck_BMP2_F"
 	,"Land_Wreck_BRDM2_F"
-	,"T72Wreck"];
+];
 a3e_arr_CrashSiteCrewCar = [
 	"CUP_O_RU_Crew_VDV"
 	,"CUP_O_RU_Soldier_Saiga_VDV"];

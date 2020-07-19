@@ -15,8 +15,8 @@ A3E_VAR_Side_Blufor = east;//Player side CUP RU
 A3E_VAR_Side_Opfor = west;//Enemy side CUP BAF woodland
 A3E_VAR_Side_Ind = resistance;//Independent side CUP ION PMC
 
-A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_us_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\flag_ion_CO.paa";
+A3E_VAR_Flag_Opfor = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_unionjack_co";
+A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_ion_black_co";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
@@ -957,13 +957,13 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"Mi8Wreck"];
+	"CUP_Mi8Wreck"];
 a3e_arr_CrashSiteCrew = [
 	"CUP_O_RU_Pilot"];
 a3e_arr_CrashSiteWrecksCar = [
 	"Land_Wreck_BMP2_F"
 	,"Land_Wreck_BRDM2_F"
-	,"T72Wreck"];
+];
 a3e_arr_CrashSiteCrewCar = [
 	"CUP_O_RU_Crew_VDV"
 	,"CUP_O_RU_Soldier_Saiga_VDV"];

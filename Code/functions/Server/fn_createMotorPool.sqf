@@ -70,7 +70,7 @@ private _playergroup = [] call A3E_fnc_getPlayerGroup;
 {
     // Fixme: hard coding to 180° orientation for now
     [_x, 180, a3e_arr_ComCenStaticWeapons,
-     a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses, 
+     a3e_arr_ComCenParkedVehicles, 
      a3e_arr_ComCenDefence_lightArmorClasses + a3e_arr_ComCenDefence_heavyArmorClasses]
      call A3E_fnc_BuildMotorPool;
 

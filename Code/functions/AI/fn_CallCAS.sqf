@@ -1,4 +1,4 @@
-private["_success","_cas"];
+private["_success"];
 params["_position"];
 
 
@@ -29,5 +29,6 @@ _cas setVariable ["type", selectRandom[0,0,1,2,3]];
 	[_cas,nil,true] call BIS_fnc_moduleCAS;
 	deletevehicle _cas;
 };
+
 _success = true;
 _success;

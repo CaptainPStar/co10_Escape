@@ -1,5 +1,15 @@
 if (!isServer) exitWith {};
 
+//backup for unitclasses without boat classnames
+if ((count a3e_arr_extraction_boat <1) && (A3E_VAR_Side_Blufor == west)) then {
+a3e_arr_extraction_boat = ["B_Boat_Armed_01_minigun_F"];
+a3e_arr_extraction_boat_escort = ["B_Boat_Armed_01_minigun_F"];
+};
+if ((count a3e_arr_extraction_boat <1) && (A3E_VAR_Side_Blufor == east)) then {
+a3e_arr_extraction_boat = ["O_T_Boat_Armed_01_hmg_F"];
+a3e_arr_extraction_boat_escort = ["O_T_Boat_Armed_01_hmg_F"];
+};
+
 private ["_extractionPointNo"];
 private ["_spawnMarkerName", "_extractionMarkerName", "_extractionMarkerName2", "_result", "_boat1", "_boat2", "_boat3", "_group1", "_group2", "_group3", "_waypoint"];
 
@@ -17,7 +27,7 @@ _waypoint = _group1 addWaypoint [getMarkerPos _extractionMarkerName, 0];
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointFormation "WEDGE";
-_waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
+//_waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
 
 sleep 1;
 
@@ -42,7 +52,7 @@ _waypoint = _group2 addWaypoint [getMarkerPos _extractionMarkerName2, 0];
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointFormation "WEDGE";
-_waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
+//_waypoint setWaypointStatements ["true", "vehicle this land 'GET IN'"];
 
 diag_log format["fn_RunExtractionBoat: Extraction boats spawned: %1, %2 and %3",_boat1,_boat2,_boat3];
 

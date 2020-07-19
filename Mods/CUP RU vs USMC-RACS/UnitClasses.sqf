@@ -16,7 +16,7 @@ A3E_VAR_Side_Opfor = west;//Enemy side CUP USMC woodland
 A3E_VAR_Side_Ind = resistance;//Independent side CUP RACS woodland
 
 A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_us_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_green_CO.paa";
+A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_racs_co";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
@@ -873,7 +873,7 @@ a3e_arr_ComCenParkedVehicles = [
 	,"CUP_B_MTVR_Repair_USMC"
 	,"CUP_B_HMMWV_Unarmed_USMC"
 	,"CUP_B_M1151_USMC"
-	,"CUP_B_M1152"
+	,"CUP_B_M1152_USMC"
 	,"CUP_B_HMMWV_M1114_USMC"
 	,"CUP_B_HMMWV_MK19_USMC"
 	,"CUP_B_HMMWV_TOW_USMC"
@@ -1185,9 +1185,9 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_G36A", 75, 3, 5, ["CUP_30Rnd
 a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_M240", 20, 1, 2, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M","CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M","CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M","CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M"], 4];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_M249", 50, 2, 4, ["CUP_200Rnd_TE4_Red_Tracer_556x45_M249","CUP_200Rnd_TE4_Green_Tracer_556x45_M249","CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_m249_pip1", 50, 2, 4, ["CUP_200Rnd_TE4_Red_Tracer_556x45_M249","CUP_200Rnd_TE4_Green_Tracer_556x45_M249","CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_Mk12SPR", 50, 2, 4, ["CUP_20Rnd_556x45_Stanag"], 9];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_DMR", 50, 2, 4, ["CUP_20Rnd_762x51_DMR"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_M14_DMR", 50, 2, 4, ["CUP_20Rnd_762x51_DMR"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_M24_wdl", 50, 2, 4, ["CUP_5Rnd_762x51_M24"], 10];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_M24_blk", 50, 2, 4, ["CUP_5Rnd_762x51_M24"], 10];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_M40A3", 50, 2, 4, ["CUP_5Rnd_762x51_M24"], 10];
@@ -1283,7 +1283,7 @@ a3e_arr_AmmoDepotItems pushback ["CUP_optic_Elcan_reflex_OD", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_HoloBlack", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_HoloWdl", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_Eotech553_Black", 10, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["CUP_optic_Eotech553_Grey", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["cup_optic_eotech533grey", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_Eotech553_OD", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_G33_HWS_BLK", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_G33_HWS_OD", 10, 1, 3];
@@ -1329,8 +1329,8 @@ if(Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_10_black", 10, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_10_od", 10, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_4", 10, 1, 3];
-	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_M14", 10, 1, 3];
-	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_M16", 10, 1, 3];
+	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_4_M14", 10, 1, 3];
+	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_4_M16", 10, 1, 3];
 };
 a3e_arr_AmmoDepotItems pushback ["CUP_bipod_VLTOR_Modpod_black", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["CUP_bipod_VLTOR_Modpod_OD", 20, 1, 2];
@@ -1347,7 +1347,7 @@ a3e_arr_CivilianCarWeapons pushback ["CUP_arifle_AK47_Early", "CUP_30Rnd_762x39_
 a3e_arr_CivilianCarWeapons pushback ["CUP_hgun_PB6P9_snds", "CUP_8Rnd_9x18_MakarovSD_M", 5];
 a3e_arr_CivilianCarWeapons pushback ["CUP_arifle_FNFAL_railed", "CUP_20Rnd_762x51_FNFAL_M", 7];
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_AA12", "CUP_20Rnd_B_AA12_Pellets", 11];
-a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_AA12", "CUP_20Rnd_B_AA12_Slug", 9];
+a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_AA12", "CUP_20Rnd_B_AA12_74Slug", 9];
 a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ550", "CUP_5x_22_LR_17_HMR_M", 10];
 a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_M14", "CUP_20Rnd_762x51_DMR", 8];
 a3e_arr_CivilianCarWeapons pushback ["CUP_hgun_MicroUzi_snds", "CUP_30Rnd_9x19_UZI", 4];
@@ -1379,8 +1379,8 @@ a3e_arr_Scopes_Sniper = [
 a3e_arr_NightScopes = [
 	"CUP_optic_AN_PVS_10_black"
 	,"CUP_optic_AN_PVS_4"
-	,"CUP_optic_AN_PVS_M14"
-	,"CUP_optic_AN_PVS_M16"];
+	,"CUP_optic_AN_PVS_4_M14"
+	,"CUP_optic_AN_PVS_4_M16"];
 a3e_arr_TWSScopes = [
      "CUP_optic_AN_PAS_13c1"];
 
@@ -1542,14 +1542,13 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"Mi8Wreck"];
+	"CUP_Mi8Wreck"];
 a3e_arr_CrashSiteCrew = [
 	"CUP_O_RU_Pilot_EMR"];
 a3e_arr_CrashSiteWrecksCar = [
 	"Land_Wreck_BMP2_F"
 	,"Land_Wreck_BRDM2_F"
-	,"T72Wreck"
-	,"BDRMWreck"];
+];
 a3e_arr_CrashSiteCrewCar = [
 	"CUP_O_RU_Crew_EMR"];
 // Weapons and ammo in crash site box
@@ -1562,7 +1561,7 @@ a3e_arr_CrashSiteWeapons pushback ["CUP_launch_RPG7V", 10, 1, 2, ["CUP_PG7V_M"],
 a3e_arr_CrashSiteWeapons pushback ["CUP_launch_RPG7V", 10, 1, 2, ["CUP_PG7V_M", "CUP_PG7VM_M", "CUP_PG7VL_M", "CUP_PG7VR_M", "CUP_OG7_M", "CUP_TBG7V_M"], 2];
 a3e_arr_CrashSiteWeapons pushback ["CUP_launch_RPG18", 10, 2, 4, ["CUP_RPG18_M"], 0];
 a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_RPK74_45", 25, 1, 2, ["CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 5];
-a3e_arr_CrashSiteWeapons pushback ["CUP_SVD", 25, 1, 2, ["CUP_10Rnd_762x54_SVD_M"], 8];
+a3e_arr_CrashSiteWeapons pushback ["CUP_srifle_SVD_pso", 25, 1, 2, ["CUP_10Rnd_762x54_SVD_M"], 8];
 a3e_arr_CrashSiteWeapons pushback ["CUP_srifle_VSSVintorez_pso", 10, 1, 2, ["CUP_20Rnd_9x39_SP5_VSS_M"], 8];
 a3e_arr_CrashSiteWeapons pushback ["CUP_smg_bizon", 10, 1, 2, ["CUP_64Rnd_9x19_Bizon_M"], 8];
 a3e_arr_CrashSiteWeapons pushback ["CUP_lmg_Pecheneg", 25, 1, 2, ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"], 6];

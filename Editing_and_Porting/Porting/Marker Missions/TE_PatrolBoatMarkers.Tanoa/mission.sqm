@@ -1,0 +1,1189 @@
+version=52;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=408;
+	};
+	class MarkerIDProvider
+	{
+		nextID=136;
+	};
+	class LayerIndexProvider
+	{
+		nextID=2;
+	};
+	class Camera
+	{
+		pos[]={1963.8993,48.54364,6222.2197};
+		dir[]={0.055828348,-0.69754833,0.71436113};
+		up[]={0.054348741,0.71653771,0.69542903};
+		aside[]={0.99696159,-4.4237822e-009,-0.077913873};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Ui_F",
+	"A3_Characters_F",
+	"A3_Missions_F_Curator",
+	"A3_Modules_F_Curator_Curator"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=4;
+		class Item0
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Missions_F_Curator";
+			name="Arma 3 Zeus Update - Playable Content";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+	};
+};
+randomSeed=16082690;
+class ScenarioData
+{
+	author="Phantom";
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="Enh_randomMusic";
+			expression="				if (!is3DEN && !(_value isEqualTo [])) then				{					(selectRandom _value) remoteExec ['playMusic',[0,-2] select (isMultiplayer && isDedicated)];				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="EnableDebugConsole";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="'Enh_line2'";
+			expression="missionNamespace setVariable ['Enh_introLine2',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="by Phantom";
+				};
+			};
+		};
+		class Attribute3
+		{
+			property="Enh_centerPosition";
+			expression="missionNamespace setVariable ['Enh_centerPosition',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=3;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute4
+		{
+			property="Enh_directionCamera";
+			expression="missionNamespace setVariable ['Enh_directionCamera',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute5
+		{
+			property="Enh_advancedEnding_endingNameLose";
+			expression="				if (!(_value == '') && !is3DEN) then				{					_value spawn					{						_music = missionNamespace getVariable 'Enh_advancedEnding_playMusic';						_tasks = missionNamespace getVariable 'Enh_advancedEnding_cancelTasks';						_win = compileFinal (missionNamespace getVariable 'Enh_advancedEnding_ConditionWin');						_lose = compileFinal (missionNamespace getVariable 'Enh_advancedEnding_ConditionLose');												waitUntil {sleep 10; (call _lose)};						[_this,false,nil,_music,_tasks] remoteExec ['BIS_fnc_endMission',0];					};				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="";
+				};
+			};
+		};
+		class Attribute6
+		{
+			property="Enh_establisingShot_activate";
+			expression="				if (!is3DEN && _value) then				{					[] spawn					{						waitUntil {time > 0.005};						[							missionNamespace getVariable 'Enh_centerPosition',							missionNamespace getVariable 'Enh_displayText',							missionNamespace getVariable 'Enh_altitude',							missionNamespace getVariable 'Enh_radius',							missionNamespace getVariable 'Enh_viewingAngle',							missionNamespace getVariable 'Enh_directionCamera'						]						remoteExec ['BIS_fnc_establishingShot',[0,-2] select (isMultiplayer && isDedicated),true];					}				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute7
+		{
+			property="Enh_advancedEnding_conditionWin";
+			expression="missionNamespace setVariable ['Enh_advancedEnding_ConditionWin',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="false";
+				};
+			};
+		};
+		class Attribute8
+		{
+			property="Enh_soundVolume";
+			expression="				if (!is3DEN) then				{					[0,_value] remoteExec ['fadeSound',[0,-2] select (isMultiplayer && isDedicated),true];				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute9
+		{
+			property="Enh_advancedEnding_conditionLose";
+			expression="missionNamespace setVariable ['Enh_advancedEnding_ConditionLose',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="false";
+				};
+			};
+		};
+		class Attribute10
+		{
+			property="Enh_ambientFlyby_iterations";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_iterations',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute11
+		{
+			property="Enh_advancedEnding_playMusic";
+			expression="missionNamespace setVariable ['Enh_advancedEnding_playMusic',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute12
+		{
+			property="Enh_ambientFlyby_startPos";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_startPos',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=3;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute13
+		{
+			property="Enh_ambientFlyby_side";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_side',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute14
+		{
+			property="Enh_ambientFlyby_Delay";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_delay',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=360;
+				};
+			};
+		};
+		class Attribute15
+		{
+			property="Enh_introDelay";
+			expression="				if ((_value > 0) && !is3DEN) then				{					_value spawn					{						waitUntil {time > _this};						[							parseText format							[								""<t align='right' size='1.6'><t font='PuristaBold' size='1.8'>%1<br/></t>%2<br/>%3</t>"",								(missionNamespace getVariable 'Enh_introLine1'),								(missionNamespace getVariable 'Enh_introLine2'),								(missionNamespace getVariable 'Enh_introLine3')							],							true						] remoteExec ['BIS_fnc_textTiles',[0,-2] select (isMultiplayer && isDedicated),true];					}				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=-1;
+				};
+			};
+		};
+		class Attribute16
+		{
+			property="Enh_ambientFlyby_altitude";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_altitude',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=100;
+				};
+			};
+		};
+		class Attribute17
+		{
+			property="'Enh_line3'";
+			expression="missionNamespace setVariable ['Enh_introLine3',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="15:30:00";
+				};
+			};
+		};
+		class Attribute18
+		{
+			property="Enh_displayText";
+			expression="missionNamespace setVariable ['Enh_displayText',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="tanoa";
+				};
+			};
+		};
+		class Attribute19
+		{
+			property="Enh_ambientFlyby_type";
+			expression="				if (!(_value isEqualTo []) && !is3DEN) then				{					_value spawn					{						waitUntil {time > 0.2};												_startPos = missionNamespace getVariable 'Enh_ambientFlyby_startPos',						_endPos = missionNamespace getVariable 'Enh_ambientFlyby_endPos',						_alt = missionNamespace getVariable 'Enh_ambientFlyby_altitude',						_speed = missionNamespace getVariable 'Enh_ambientFlyby_speed',						_side = ([EAST,WEST,INDEPENDENT,CIVILIAN] select (missionNamespace getVariable 'Enh_ambientFlyby_side'));						_delay = (missionNamespace getVariable 'Enh_ambientFlyby_delay');												for '_i' from 0 to (missionNamespace getVariable 'Enh_ambientFlyby_iterations') do						{							sleep _delay;							[_startPos,_endPos,_alt,_speed,selectRandom _this,_side] call BIS_fnc_ambientFlyby;						};					};				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute20
+		{
+			property="Enh_ambientFlyby_speed";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_speed',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="normal";
+				};
+			};
+		};
+		class Attribute21
+		{
+			property="Enh_musicVolume";
+			expression="				if (!is3DEN) then				{					[0,_value] remoteExec ['fadeMusic',[0,-2] select (isMultiplayer && isDedicated),true];				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute22
+		{
+			property="Enh_advancedEnding_endingNameWin";
+			expression="				if (!(_value == '') && !is3DEN) then				{					_value spawn					{						_music = missionNamespace getVariable 'Enh_advancedEnding_playMusic';						_tasks = missionNamespace getVariable 'Enh_advancedEnding_cancelTasks';						_win = compileFinal (missionNamespace getVariable 'Enh_advancedEnding_ConditionWin');												waitUntil {sleep 10; (call _win)};						[_this,true,nil,_music,_tasks] remoteExec ['BIS_fnc_endMission',0];					};				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="";
+				};
+			};
+		};
+		class Attribute23
+		{
+			property="Enh_radius";
+			expression="missionNamespace setVariable ['Enh_radius',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=100;
+				};
+			};
+		};
+		class Attribute24
+		{
+			property="Enh_firstLine";
+			expression="missionNamespace setVariable ['Enh_introLine1',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="TE_PatrolBoatMarkers";
+				};
+			};
+		};
+		class Attribute25
+		{
+			property="Enh_ambientFlyby_endPos";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_endPos',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=3;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1000;
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1000;
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute26
+		{
+			property="Enh_advancedEnding_cancelTasks";
+			expression="missionNamespace setVariable ['Enh_advancedEnding_cancelTasks',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute27
+		{
+			property="Enh_radioVolume";
+			expression="				if (!is3DEN) then				{					[0,_value] remoteExec ['fadeRadio',[0,-2] select (isMultiplayer && isDedicated),true];				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute28
+		{
+			property="'Enh_altitude'";
+			expression="missionNamespace setVariable ['Enh_altitude',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=300;
+				};
+			};
+		};
+		class Attribute29
+		{
+			property="Enh_viewingAngle";
+			expression="missionNamespace setVariable ['Enh_viewingAngle',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=45;
+				};
+			};
+		};
+		nAttributes=30;
+	};
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Entities
+	{
+		items=17;
+		class Item0
+		{
+			dataType="Marker";
+			position[]={1431.7748,-0.099211901,6676.5396};
+			name="a3e_boatmarker";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=150;
+			b=150;
+			id=389;
+			atlOffset=1.0676533;
+		};
+		class Item1
+		{
+			dataType="Marker";
+			position[]={1450.9272,0.062506095,6505.5898};
+			name="abc123";
+			text="copy this one, so it adds _number";
+			type="hd_arrow";
+			id=390;
+			atlOffset=1.9238415;
+		};
+		class Item2
+		{
+			dataType="Marker";
+			position[]={5324.0229,1.15848e+027,10540.598};
+			name="a3e_boatmarker_1";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=300;
+			b=450;
+			angle=24.273998;
+			id=391;
+			atlOffset=1.15848e+027;
+		};
+		class Item3
+		{
+			dataType="Marker";
+			position[]={4983.1489,0,7904.5488};
+			name="a3e_boatmarker_2";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=200;
+			b=500;
+			angle=335.53766;
+			id=392;
+			atlOffset=20.526405;
+		};
+		class Item4
+		{
+			dataType="Marker";
+			position[]={6254.6782,-20.196617,13308.385};
+			name="a3e_boatmarker_3";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=500;
+			b=200;
+			angle=293.84793;
+			id=393;
+		};
+		class Item5
+		{
+			dataType="Marker";
+			position[]={13238.949,0,7030.8882};
+			name="a3e_boatmarker_4";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=400;
+			b=400;
+			angle=277.91193;
+			id=394;
+			atlOffset=20.015661;
+		};
+		class Item6
+		{
+			dataType="Trigger";
+			position[]={1948.8503,6.1771269,6343.751};
+			class Attributes
+			{
+				text="Export Boatmarkers to .rpt file";
+				onActivation="_nil = [] execVM ""PositionGenerator.sqf"";";
+				interuptable=1;
+				activationBy="ALPHA";
+			};
+			id=395;
+			type="EmptyDetector";
+			atlOffset=3.5137968;
+		};
+		class Item7
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1955.3081,2.727284,6292.8384};
+						angles[]={0,0,6.2805333};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						skill=0.59999996;
+						rank="MAJOR";
+						name="drn_player1";
+						isPlayer=1;
+						isPlayable=1;
+					};
+					id=397;
+					type="B_Soldier_F";
+					atlOffset=2.3841858e-007;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=396;
+			atlOffset=2.3841858e-007;
+		};
+		class Item8
+		{
+			dataType="Marker";
+			position[]={13633.27,0,12645.298};
+			name="a3e_boatmarker_5";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=200;
+			b=200;
+			id=398;
+			atlOffset=26.085115;
+		};
+		class Item9
+		{
+			dataType="Marker";
+			position[]={9650.5117,-0.92944336,13912.214};
+			name="a3e_boatmarker_6";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=200;
+			b=400;
+			angle=98.332962;
+			id=400;
+			atlOffset=7.038281;
+		};
+		class Item10
+		{
+			dataType="Marker";
+			position[]={11925.153,-16.945072,13466.349};
+			name="a3e_boatmarker_7";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=200;
+			b=400;
+			angle=105.64704;
+			id=401;
+			atlOffset=8.3941746;
+		};
+		class Item11
+		{
+			dataType="Marker";
+			position[]={14782.048,-12.407104,8704.127};
+			name="a3e_boatmarker_8";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=200;
+			b=400;
+			angle=17.156187;
+			id=402;
+			atlOffset=5.3940697;
+		};
+		class Item12
+		{
+			dataType="Marker";
+			position[]={14311.2,1.159075e+027,8168.4624};
+			name="a3e_boatmarker_9";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=200;
+			b=200;
+			angle=277.91193;
+			id=403;
+			atlOffset=1.159075e+027;
+		};
+		class Item13
+		{
+			dataType="Marker";
+			position[]={12118.102,-4.9372559,5981.6128};
+			name="a3e_boatmarker_10";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=400;
+			b=400;
+			angle=277.91193;
+			id=404;
+			atlOffset=15.615404;
+		};
+		class Item14
+		{
+			dataType="Marker";
+			position[]={7998.3574,-0.86584473,6007.5308};
+			name="a3e_boatmarker_11";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=200;
+			b=1000;
+			angle=289.92484;
+			id=405;
+			atlOffset=23.111263;
+		};
+		class Item15
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2000.4359,3.2753296,6298.6362};
+			};
+			id=406;
+			type="ModuleMPTypeGameMaster_F";
+			atlOffset=-0.00015377998;
+		};
+		class Item16
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1971.1466,2.7335892,6266.376};
+			};
+			id=407;
+			type="ModuleCurator_F";
+			atlOffset=-1.9788742e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleInfo";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=2;
+		};
+		class Links
+		{
+			items=2;
+			class Item0
+			{
+				linkID=0;
+				item0=406;
+				item1=407;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item1
+			{
+				linkID=1;
+				item0=407;
+				item1=397;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+		};
+	};
+};

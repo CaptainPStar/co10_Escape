@@ -15,8 +15,8 @@ A3E_VAR_Side_Blufor = west;//player side IFA GER Wehrmacht
 A3E_VAR_Side_Opfor = east;//enemy side IFA SOV
 A3E_VAR_Side_Ind = resistance;//independent side IFA US
 
-A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_AAF_CO.paa";
+A3E_VAR_Flag_Opfor = "\WW2\Core_t\IF_Decals_t\US\flag_USA_co.paa";
+A3E_VAR_Flag_Ind = "\WW2\Core_t\IF_Decals_t\Ussr\flag_SU_co.paa";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
