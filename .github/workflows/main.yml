@@ -14,6 +14,6 @@ jobs:
       - uses: actions/checkout@master
 
       - uses: arma-actions/sqflint@v1.0
-        name: Validate with SQFLint
+        name: Validate with SQFLint (deppencheck)
         with:
           args: --exit e --directory Code
