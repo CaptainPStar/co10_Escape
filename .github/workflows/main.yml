@@ -1,0 +1,17 @@
+# main.yml
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request: ~
+
+jobs:
+  test-sqflint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - uses: arma-actions/sqflint@v1.0
+        name: Validate with SQFLint
