@@ -151,19 +151,32 @@ _villagePatrolSpawnArea = (Param_VillageSpawnCount);
 
 drn_searchAreaMarkerName = "drn_searchAreaMarker";
 
+//Getting exclusion zones
+if(isNil("A3E_ExclusionZones")) then {
+  A3E_ExclusionZones = [];
+  {
+    if("A3E_ExclusionZone" in _x && _x != "A3E_ExclusionZone_") then {
+      A3E_ExclusionZones pushback _x;
+	  if(!A3E_Debug) then {_x setMarkerAlpha 0;};
+    };
+  } foreach allMapMarkers;
+};
+
 // Choose a start position
+if(isNil("A3E_ClearedPositionDistance")) then {
+	A3E_ClearedPositionDistance = 500;
+};
 
 A3E_StartPos = [] call a3e_fnc_findFlatArea;
+while {{A3E_StartPos inArea _x} count A3E_ExclusionZones > 0} do {
+	A3E_StartPos = [] call a3e_fnc_findFlatArea;
+};
 publicVariable "A3E_StartPos";
 
 
 A3E_Var_ClearedPositions = [];
 A3E_Var_ClearedPositions pushBack A3E_StartPos;
 A3E_Var_ClearedPositions pushBack (getMarkerPos "drn_insurgentAirfieldMarker");
-
-if(isNil("A3E_ClearedPositionDistance")) then {
-	A3E_ClearedPositionDistance = 500;
-};
 
 private _backpack = [] call A3E_fnc_createStartpos;
 
