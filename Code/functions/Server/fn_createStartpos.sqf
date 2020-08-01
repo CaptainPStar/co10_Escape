@@ -1,8 +1,7 @@
 // Build start position
 private _fenceRotateDir = random 360;
 
-if(isNil "a3e_arr_PrisonBackpacks") then {a3e_arr_PrisonBackpacks = ["B_AssaultPack_khk"];};
-private _backPack = (selectRandom a3e_arr_PrisonBackpacks) createvehicle A3E_StartPos;
+private _backPack = (selectRandom (missionNamespace getVariable ["a3e_arr_PrisonBackpacks", ["B_AssaultPack_khk"]])) createvehicle A3E_StartPos;
 
 private _template = selectRandom(["a3e_fnc_BuildPrison", "a3e_fnc_BuildPrison1", "a3e_fnc_BuildPrison2", "a3e_fnc_BuildPrison3", "a3e_fnc_BuildPrison4", "a3e_fnc_BuildPrison5"]);
 
