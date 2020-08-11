@@ -55,4 +55,5 @@ cutText ["", "Plain", 1];
 if(_count == 0) then {
 	[getpos _generatorTrailer] remoteExec ["A3E_fnc_SelectExtractionZone",2];
 	_generatorTrailer setvariable ["A3E_Terminal_Hacked",true,true];
+	diag_log format["fn_hijack: Comcenter was hacked by %1",_unit];
 };

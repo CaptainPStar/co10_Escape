@@ -1115,10 +1115,22 @@ a3e_arr_Bipods = [
 	,"bipod_03_F_blk"
 	,"bipod_03_F_oli"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air",
+	"land",
+	"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
+// always the fallback option, use BIS units if mod has no helicopters
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"B_Heli_Transport_01_F"];
@@ -1136,6 +1148,24 @@ a3e_arr_extraction_boat = [
 	"B_Boat_Armed_01_minigun_F"];
 a3e_arr_extraction_boat_escort = [
 	"B_Boat_Armed_01_minigun_F"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"B_Truck_01_transport_F",	//17
+	"B_Truck_01_covered_F",	//17
+	"B_APC_Tracked_01_rcws_F",	//8
+	"B_APC_Wheeled_01_cannon_F"];	//8
+	if(Param_UseDLCApex==1) then {
+	a3e_arr_extraction_car pushback "B_T_LSV_01_unarmed_F";	//6
+	};
+a3e_arr_extraction_car_escort = [
+	"B_APC_Tracked_01_AA_F",
+	"B_APC_Wheeled_01_cannon_F",
+	"B_MBT_01_cannon_F",
+	"B_MBT_01_TUSK_F"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf

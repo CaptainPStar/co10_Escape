@@ -6,26 +6,60 @@ params[["_hackPos",[0,0,0]],["_select",-1]];
 
 private _mode = Param_ExtractionSelection;
 
+private _findMarkers = {
+	params["_name","_type"];
+	private _array = [];
+	{
+		if(_name in _x && !("_1" in _x)) then {
+			private _markerNo = parseNumber (_x select[count _name,count _x]);
+			private _pos = getMarkerPos _x;
+			private _clear = [_pos,250,"all"] call A3E_fnc_CheckCampDistance;
+			_array pushback [_markerNo,_pos,_clear,false,"",_type];
+			if(!A3E_Debug) then {_x setMarkerAlpha 0;};
+		};
+	} foreach allMapMarkers;
+	_array;
+};
 
+//Fallback for old markers, will use heli extraction
+if(isNil("A3E_OldExtractionPositions")) then {
+	A3E_OldExtractionPositions = [];
+	A3E_OldExtractionPositions = ["A3E_ExtractionPos","air"] call _findMarkers;
+};
+diag_log format["fn_SelectExtractionZone: Fallback Extraction markers: %1",A3E_OldExtractionPositions];
+//New marker types
+if(isNil("A3E_HeliExtractionPositions")) then {
+	A3E_HeliExtractionPositions = [];
+	A3E_HeliExtractionPositions = ["A3E_HeliExtractionPos","air"] call _findMarkers;
+};
+diag_log format["fn_SelectExtractionZone: Heli Extraction markers: %1",A3E_HeliExtractionPositions];
+if(isNil("A3E_BoatExtractionPositions")) then {
+	A3E_BoatExtractionPositions = [];
+	A3E_BoatExtractionPositions = ["A3E_BoatExtractionPos","sea"] call _findMarkers;
+};
+diag_log format["fn_SelectExtractionZone: Boat Extraction markers: %1",A3E_BoatExtractionPositions];
+if(isNil("A3E_CarExtractionPositions")) then {
+	A3E_CarExtractionPositions = [];
+	A3E_CarExtractionPositions = ["A3E_CarExtractionPos","land"] call _findMarkers;
+};
+diag_log format["fn_SelectExtractionZone: Car Extraction markers: %1",A3E_CarExtractionPositions];
 
 if(isNil("A3E_ExtractionPositions")) then {
-	//check for number of extraction markers and sort them
-	_markerBaseName = "A3E_ExtractionPos";
 	A3E_ExtractionPositions = [];
-
-	private _markerNo = 1;
-	private _markerName = _markerBaseName + str _markerNo;
-	private _j = 0;
-	while {markerType _markerName != ""} do {
-		//sorting
-		private _pos = getMarkerPos _markerName;
-		private _clear = [_pos,250,"all"] call A3E_fnc_CheckCampDistance;
-		A3E_ExtractionPositions pushback [_markerNo,_pos,_clear,false,""];
-		_markerNo = _markerNo + 1;
-		_markerName = _markerBaseName + str _markerNo;
-		_j = _j + 1;
-	};
 };
+if ("air" in a3e_arr_extractiontypes && (count A3E_HeliExtractionPositions > 0)) then {
+	A3E_ExtractionPositions append A3E_HeliExtractionPositions;
+	};
+if ("land" in a3e_arr_extractiontypes && (count A3E_CarExtractionPositions > 0)) then {
+	A3E_ExtractionPositions append A3E_CarExtractionPositions;
+	};
+if ("sea" in a3e_arr_extractiontypes && (count A3E_BoatExtractionPositions > 0)) then {
+	A3E_ExtractionPositions append A3E_BoatExtractionPositions;
+	};
+if(isNil("a3e_arr_extractiontypes") || (count A3E_ExtractionPositions <6)) then {
+	A3E_ExtractionPositions = A3E_OldExtractionPositions;
+	};
+
 
 private _extractions = A3E_ExtractionPositions select {(_x select 2) && ! (_x select 3)};
 if(count _extractions == 0) then {
@@ -62,7 +96,7 @@ if(_select > 0) then {
 };
 _extraction set [3,true]; //Set zone as used
 missionNamespace setvariable ["a3e_var_Escape_ExtractionMarkerPos",_extraction select 1,true];
-diag_log format["fn_hijack: Extraction marker number %1 selected, at position %2",_extraction select 0,_extraction select 1];
+diag_log format["fn_SelectExtractionZone: Extraction marker number %1 selected, at position %2",_extraction select 0,_extraction select 1];
 
 if(_extraction select 4 == "") then {
 	private _extractGoalMarker = createMarker [format["a3e_extractionGoalMarker%1",_extraction select 0], _extraction select 1];
@@ -76,7 +110,7 @@ if(_extraction select 4 == "") then {
 	(_extraction select 4) setMarkerText "Evac";
 };
 
-[(_extraction select 0)] call A3E_fnc_CreateExtractionPoint;
+[(_extraction select 0),(_extraction select 5)] call A3E_fnc_CreateExtractionPoint;
 
 missionNamespace setvariable ["A3E_Task_ComCenter_Complete",true,true];
 

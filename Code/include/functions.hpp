@@ -60,6 +60,8 @@ class CfgFunctions
 			class GetTaskState {};
 			class AquaticPatrol {};
 			class AddStaticGunner {};
+			class ExtractionBoat {};
+			class ExtractionCar {};
 			class ExtractionChopper {};
 		};
 		class Debug
@@ -88,6 +90,7 @@ class CfgFunctions
 			class createExtractionPoint {};
 			class runExtraction {};
 			class runExtractionBoat {};
+			class runExtractionCar {};
 			class firedNearExtraction {};
 			class weather {};
 			class FindSpawnRoad {};

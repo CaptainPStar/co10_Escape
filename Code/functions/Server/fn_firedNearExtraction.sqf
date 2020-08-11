@@ -1,6 +1,7 @@
 diag_log ("fn_firedNearExtraction: Extraction smoke handler: " + str _this);
-params ["_markerNo","_isWater","_handler"];
+params ["_markerNo","_extractionType","_handler"];
 diag_log ("fn_firedNearExtraction: Extraction Markernr: " + str _markerNo);
+diag_log ("fn_firedNearExtraction: Extraction Type: " + str _extractionType);
 _handler params ["_unit","_firer","_distance","_weapon","_muzzle","_mode","_ammo"];
 
 
@@ -10,12 +11,19 @@ _handler params ["_unit","_firer","_distance","_weapon","_muzzle","_mode","_ammo
 private _parents = ([(configFile >> "CfgAmmo" >> _ammo),true] call BIS_fnc_returnParents);
 private _allowed = ["SmokeShell","Chemlight_base","FlareBase","SmokeLauncherAmmo"];
 if(count(_allowed arrayIntersect _parents) > 0 ) then {
-	if (_isWater) then {
-		[_markerNo] spawn A3E_fnc_RunExtractionBoat;
-		diag_log format["fn_firedNearExtraction: marker in water, calling boats to marker number %1",_markerNo];
-	} else {
-		[_markerNo] spawn A3E_fnc_RunExtraction;
-		diag_log format["fn_firedNearExtraction: marker on land, calling helicopters to marker number %1",_markerNo];
+	switch (_extractionType) do {
+		case "air": {
+			[_markerNo] spawn A3E_fnc_RunExtraction;
+			diag_log format["fn_firedNearExtraction: air extraction marker, calling helicopters to marker number %1",_markerNo];
+		};
+		case "sea": {
+			[_markerNo] spawn A3E_fnc_RunExtractionBoat;
+			diag_log format["fn_firedNearExtraction: sea extraction marker, calling boats to marker number %1",_markerNo];
+		};
+		case "land": {
+			[_markerNo] spawn A3E_fnc_RunExtractionCar;
+			diag_log format["fn_firedNearExtraction: land extraction marker, calling cars to marker number %1",_markerNo];
+		};
 	};
 
 	deletevehicle _unit;
