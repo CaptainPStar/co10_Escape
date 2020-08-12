@@ -473,10 +473,21 @@ a3e_arr_TWSScopes = [""];
 // Here is a list of bipods, might get randomly added to enemy patrols:
 a3e_arr_Bipods = [""];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
+// always the fallback option, use BIS units if mod has no helicopters
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"B_Heli_Transport_01_F"];
@@ -491,6 +502,24 @@ a3e_arr_extraction_boat = [
 	"LIB_LCM3_Armed"];
 a3e_arr_extraction_boat_escort = [
 	"LIB_LCM3_Armed"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Cars/APCs that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"LIB_Scout_M3"	//7
+	,"LIB_US6_Open"	//11
+	,"LIB_US6_Tent"	//11
+	,"LIB_Zis5v_Med"	//7
+	,"LIB_Zis5v"	//13
+	,"LIB_SdKfz251_captured"	//10
+	,"LIB_SOV_M3_Halftrack"];	//10
+a3e_arr_extraction_car_escort = [
+	"LIB_SU85"
+	,"LIB_T34_76"
+	,"LIB_T34_85"
+	,"LIB_JS2_43"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
