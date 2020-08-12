@@ -72,50 +72,50 @@ switch (_enemyFrequency) do {
 		,"gm_gc_army_p601"
 		,"gm_gc_army_bicycle_01_oli"
 		,"gm_gc_army_bicycle_01_oli"
-		,"gm_gc_army_ural4320_reammo"
-		,"gm_gc_army_ural375d_refuel"
-		,"gm_gc_army_ural375d_medic"
-		,"gm_gc_army_ural4320_repair"
-		,"gm_gc_army_ural44202"
-		,"gm_gc_army_ural4320_cargo"
-		,"gm_gc_army_ural4320_cargo"
-		,"gm_gc_army_ural4320_cargo"
-		,"gm_gc_army_pt76b"
-		,"gm_gc_army_pt76b"
-		,"gm_gc_army_t55"
-		,"gm_gc_army_t55a"
-		,"gm_gc_army_t55ak"
-		,"gm_gc_army_t55am2"
-		,"gm_gc_army_t55am2b"
-		,"gm_gc_army_zsu234v1"
-		,"gm_gc_army_bmp1sp2"
-		,"gm_gc_army_bmp1sp2"
-		,"gm_gc_army_brdm2"
-		,"gm_gc_army_brdm2"
-		,"gm_gc_army_brdm2um"
-		,"gm_gc_army_btr60pa"
-		,"gm_gc_army_btr60pb"
-		,"gm_gc_army_btr60pu12"];
+		,"gm_gc_army_ural4320_reammo_win"
+		,"gm_gc_army_ural375d_refuel_win"
+		,"gm_gc_army_ural375d_medic_win"
+		,"gm_gc_army_ural4320_repair_win"
+		,"gm_gc_army_ural44202_win"
+		,"gm_gc_army_ural4320_cargo_win"
+		,"gm_gc_army_ural4320_cargo_win"
+		,"gm_gc_army_ural4320_cargo_win"
+		,"gm_gc_army_pt76b_win"
+		,"gm_gc_army_pt76b_win"
+		,"gm_gc_army_t55_win"
+		,"gm_gc_army_t55a_win"
+		,"gm_gc_army_t55ak_win"
+		,"gm_gc_army_t55am2_win"
+		,"gm_gc_army_t55am2b_win"
+		,"gm_gc_army_zsu234v1_win"
+		,"gm_gc_army_bmp1sp2_win"
+		,"gm_gc_army_bmp1sp2_win"
+		,"gm_gc_army_brdm2_win"
+		,"gm_gc_army_brdm2_win"
+		,"gm_gc_army_brdm2um_win"
+		,"gm_gc_army_btr60pa_win"
+		,"gm_gc_army_btr60pb_win"
+		,"gm_gc_army_btr60pu12_win"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"gm_pl_army_ural4320_cargo"
-		,"gm_pl_army_ural4320_cargo"
-		,"gm_pl_army_ural4320_cargo"
-		,"gm_pl_army_ural4320_reammo"
-		,"gm_pl_army_ural375d_refuel"
-		,"gm_pl_army_ural375d_medic"
-		,"gm_pl_army_ural4320_repair"
-		,"gm_pl_army_brdm2"
-		,"gm_pl_army_brdm2"
-		,"gm_pl_army_ot64a"
-		,"gm_pl_army_ot64a"
-		,"gm_pl_army_pt76b"
-		,"gm_pl_army_pt76b"
-		,"gm_pl_army_bmp1sp2"
-		,"gm_pl_army_bmp1sp2"
-		,"gm_pl_army_zsu234v1"
-		,"gm_pl_army_t55"
-		,"gm_pl_army_t55a"
-		,"gm_pl_army_t55ak"];
+		"gm_pl_army_ural4320_cargo_olw"
+		,"gm_pl_army_ural4320_cargo_olw"
+		,"gm_pl_army_ural4320_cargo_olw"
+		,"gm_pl_army_ural4320_reammo_olw"
+		,"gm_pl_army_ural375d_refuel_olw"
+		,"gm_pl_army_ural375d_medic_olw"
+		,"gm_pl_army_ural4320_repair_olw"
+		,"gm_pl_army_brdm2_olw"
+		,"gm_pl_army_brdm2_olw"
+		,"gm_pl_army_ot64a_olw"
+		,"gm_pl_army_ot64a_olw"
+		,"gm_pl_army_pt76b_olw"
+		,"gm_pl_army_pt76b_olw"
+		,"gm_pl_army_bmp1sp2_olw"
+		,"gm_pl_army_bmp1sp2_olw"
+		,"gm_pl_army_zsu234v1_win"
+		,"gm_pl_army_t55_olw"
+		,"gm_pl_army_t55a_olw"
+		,"gm_pl_army_t55ak_olw"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -124,50 +124,50 @@ switch (_enemyFrequency) do {
 		,"gm_gc_army_p601"
 		,"gm_gc_army_bicycle_01_oli"
 		,"gm_gc_army_bicycle_01_oli"
-		,"gm_gc_army_ural4320_reammo"
-		,"gm_gc_army_ural375d_refuel"
-		,"gm_gc_army_ural375d_medic"
-		,"gm_gc_army_ural4320_repair"
-		,"gm_gc_army_ural44202"
-		,"gm_gc_army_ural4320_cargo"
-		,"gm_gc_army_ural4320_cargo"
-		,"gm_gc_army_ural4320_cargo"
-		,"gm_gc_army_pt76b"
-		,"gm_gc_army_pt76b"
-		,"gm_gc_army_t55"
-		,"gm_gc_army_t55a"
-		,"gm_gc_army_t55ak"
-		,"gm_gc_army_t55am2"
-		,"gm_gc_army_t55am2b"
-		,"gm_gc_army_zsu234v1"
-		,"gm_gc_army_bmp1sp2"
-		,"gm_gc_army_bmp1sp2"
-		,"gm_gc_army_brdm2"
-		,"gm_gc_army_brdm2"
-		,"gm_gc_army_brdm2um"
-		,"gm_gc_army_btr60pa"
-		,"gm_gc_army_btr60pb"
-		,"gm_gc_army_btr60pu12"];
+		,"gm_gc_army_ural4320_reammo_win"
+		,"gm_gc_army_ural375d_refuel_win"
+		,"gm_gc_army_ural375d_medic_win"
+		,"gm_gc_army_ural4320_repair_win"
+		,"gm_gc_army_ural44202_win"
+		,"gm_gc_army_ural4320_cargo_win"
+		,"gm_gc_army_ural4320_cargo_win"
+		,"gm_gc_army_ural4320_cargo_win"
+		,"gm_gc_army_pt76b_win"
+		,"gm_gc_army_pt76b_win"
+		,"gm_gc_army_t55_win"
+		,"gm_gc_army_t55a_win"
+		,"gm_gc_army_t55ak_win"
+		,"gm_gc_army_t55am2_win"
+		,"gm_gc_army_t55am2b_win"
+		,"gm_gc_army_zsu234v1_win"
+		,"gm_gc_army_bmp1sp2_win"
+		,"gm_gc_army_bmp1sp2_win"
+		,"gm_gc_army_brdm2_win"
+		,"gm_gc_army_brdm2_win"
+		,"gm_gc_army_brdm2um_win"
+		,"gm_gc_army_btr60pa_win"
+		,"gm_gc_army_btr60pb_win"
+		,"gm_gc_army_btr60pu12_win"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"gm_pl_army_ural4320_cargo"
-		,"gm_pl_army_ural4320_cargo"
-		,"gm_pl_army_ural4320_cargo"
-		,"gm_pl_army_ural4320_reammo"
-		,"gm_pl_army_ural375d_refuel"
-		,"gm_pl_army_ural375d_medic"
-		,"gm_pl_army_ural4320_repair"
-		,"gm_pl_army_brdm2"
-		,"gm_pl_army_brdm2"
-		,"gm_pl_army_ot64a"
-		,"gm_pl_army_ot64a"
-		,"gm_pl_army_pt76b"
-		,"gm_pl_army_pt76b"
-		,"gm_pl_army_bmp1sp2"
-		,"gm_pl_army_bmp1sp2"
-		,"gm_pl_army_zsu234v1"
-		,"gm_pl_army_t55"
-		,"gm_pl_army_t55a"
-		,"gm_pl_army_t55ak"];
+		"gm_pl_army_ural4320_cargo_olw"
+		,"gm_pl_army_ural4320_cargo_olw"
+		,"gm_pl_army_ural4320_cargo_olw"
+		,"gm_pl_army_ural4320_reammo_olw"
+		,"gm_pl_army_ural375d_refuel_olw"
+		,"gm_pl_army_ural375d_medic_olw"
+		,"gm_pl_army_ural4320_repair_olw"
+		,"gm_pl_army_brdm2_olw"
+		,"gm_pl_army_brdm2_olw"
+		,"gm_pl_army_ot64a_olw"
+		,"gm_pl_army_ot64a_olw"
+		,"gm_pl_army_pt76b_olw"
+		,"gm_pl_army_pt76b_olw"
+		,"gm_pl_army_bmp1sp2_olw"
+		,"gm_pl_army_bmp1sp2_olw"
+		,"gm_pl_army_zsu234v1_win"
+		,"gm_pl_army_t55_olw"
+		,"gm_pl_army_t55a_olw"
+		,"gm_pl_army_t55ak_olw"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -176,50 +176,50 @@ switch (_enemyFrequency) do {
 		,"gm_gc_army_p601"
 		,"gm_gc_army_bicycle_01_oli"
 		,"gm_gc_army_bicycle_01_oli"
-		,"gm_gc_army_ural4320_reammo"
-		,"gm_gc_army_ural375d_refuel"
-		,"gm_gc_army_ural375d_medic"
-		,"gm_gc_army_ural4320_repair"
-		,"gm_gc_army_ural44202"
-		,"gm_gc_army_ural4320_cargo"
-		,"gm_gc_army_ural4320_cargo"
-		,"gm_gc_army_ural4320_cargo"
-		,"gm_gc_army_pt76b"
-		,"gm_gc_army_pt76b"
-		,"gm_gc_army_t55"
-		,"gm_gc_army_t55a"
-		,"gm_gc_army_t55ak"
-		,"gm_gc_army_t55am2"
-		,"gm_gc_army_t55am2b"
-		,"gm_gc_army_zsu234v1"
-		,"gm_gc_army_bmp1sp2"
-		,"gm_gc_army_bmp1sp2"
-		,"gm_gc_army_brdm2"
-		,"gm_gc_army_brdm2"
-		,"gm_gc_army_brdm2um"
-		,"gm_gc_army_btr60pa"
-		,"gm_gc_army_btr60pb"
-		,"gm_gc_army_btr60pu12"];
+		,"gm_gc_army_ural4320_reammo_win"
+		,"gm_gc_army_ural375d_refuel_win"
+		,"gm_gc_army_ural375d_medic_win"
+		,"gm_gc_army_ural4320_repair_win"
+		,"gm_gc_army_ural44202_win"
+		,"gm_gc_army_ural4320_cargo_win"
+		,"gm_gc_army_ural4320_cargo_win"
+		,"gm_gc_army_ural4320_cargo_win"
+		,"gm_gc_army_pt76b_win"
+		,"gm_gc_army_pt76b_win"
+		,"gm_gc_army_t55_win"
+		,"gm_gc_army_t55a_win"
+		,"gm_gc_army_t55ak_win"
+		,"gm_gc_army_t55am2_win"
+		,"gm_gc_army_t55am2b_win"
+		,"gm_gc_army_zsu234v1_win"
+		,"gm_gc_army_bmp1sp2_win"
+		,"gm_gc_army_bmp1sp2_win"
+		,"gm_gc_army_brdm2_win"
+		,"gm_gc_army_brdm2_win"
+		,"gm_gc_army_brdm2um_win"
+		,"gm_gc_army_btr60pa_win"
+		,"gm_gc_army_btr60pb_win"
+		,"gm_gc_army_btr60pu12_win"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"gm_pl_army_ural4320_cargo"
-		,"gm_pl_army_ural4320_cargo"
-		,"gm_pl_army_ural4320_cargo"
-		,"gm_pl_army_ural4320_reammo"
-		,"gm_pl_army_ural375d_refuel"
-		,"gm_pl_army_ural375d_medic"
-		,"gm_pl_army_ural4320_repair"
-		,"gm_pl_army_brdm2"
-		,"gm_pl_army_brdm2"
-		,"gm_pl_army_ot64a"
-		,"gm_pl_army_ot64a"
-		,"gm_pl_army_pt76b"
-		,"gm_pl_army_pt76b"
-		,"gm_pl_army_bmp1sp2"
-		,"gm_pl_army_bmp1sp2"
-		,"gm_pl_army_zsu234v1"
-		,"gm_pl_army_t55"
-		,"gm_pl_army_t55a"
-		,"gm_pl_army_t55ak"];
+		"gm_pl_army_ural4320_cargo_olw"
+		,"gm_pl_army_ural4320_cargo_olw"
+		,"gm_pl_army_ural4320_cargo_olw"
+		,"gm_pl_army_ural4320_reammo_olw"
+		,"gm_pl_army_ural375d_refuel_olw"
+		,"gm_pl_army_ural375d_medic_olw"
+		,"gm_pl_army_ural4320_repair_olw"
+		,"gm_pl_army_brdm2_olw"
+		,"gm_pl_army_brdm2_olw"
+		,"gm_pl_army_ot64a_olw"
+		,"gm_pl_army_ot64a_olw"
+		,"gm_pl_army_pt76b_olw"
+		,"gm_pl_army_pt76b_olw"
+		,"gm_pl_army_bmp1sp2_olw"
+		,"gm_pl_army_bmp1sp2_olw"
+		,"gm_pl_army_zsu234v1_win"
+		,"gm_pl_army_t55_olw"
+		,"gm_pl_army_t55a_olw"
+		,"gm_pl_army_t55ak_olw"];
     };
 };
 
@@ -323,55 +323,55 @@ a3e_arr_recon_I_InfantryTypes = [
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
-	"gm_gc_army_brdm2"
-	,"gm_gc_army_brdm2"
-	,"gm_gc_army_btr60pb"
-	,"gm_gc_army_bmp1sp2"
+	"gm_gc_army_brdm2_win"
+	,"gm_gc_army_brdm2_win"
+	,"gm_gc_army_btr60pb_win"
+	,"gm_gc_army_bmp1sp2_win"
 	//,"O_HMG_01_high_F"
 	,"gm_gc_army_fagot_launcher_tripod"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
-	"gm_pl_army_brdm2"
-	,"gm_pl_army_brdm2"
-	,"gm_pl_army_ot64a"
-	,"gm_pl_army_ot64a"
+	"gm_pl_army_brdm2_olw"
+	,"gm_pl_army_brdm2_olw"
+	,"gm_pl_army_ot64a_olw"
+	,"gm_pl_army_ot64a_olw"
 	//,"I_HMG_01_high_f"
 	,"gm_pl_army_fagot_launcher_tripod"
-	,"gm_pl_army_bmp1sp2"];
+	,"gm_pl_army_bmp1sp2_olw"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	"gm_gc_army_p601"
-	,"gm_gc_army_ural4320_cargo"
-	,"gm_gc_army_ural4320_cargo"
-	,"gm_gc_army_ural4320_cargo"
-	,"gm_gc_army_brdm2um"
-	,"gm_gc_army_btr60pa"];
+	,"gm_gc_army_ural4320_cargo_win"
+	,"gm_gc_army_ural4320_cargo_win"
+	,"gm_gc_army_ural4320_cargo_win"
+	,"gm_gc_army_brdm2um_win"
+	,"gm_gc_army_btr60pa_win"];
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
-	"gm_pl_army_ural4320_cargo"];
+	"gm_pl_army_ural4320_cargo_olw"];
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
-	"gm_gc_army_brdm2"
-	,"gm_gc_army_brdm2"
-	,"gm_gc_army_brdm2um"
-	,"gm_gc_army_btr60pb"];
+	"gm_gc_army_brdm2_win"
+	,"gm_gc_army_brdm2_win"
+	,"gm_gc_army_brdm2um_win"
+	,"gm_gc_army_btr60pb_win"];
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
 // light *and* a random heavy armor.
 
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
-	"gm_gc_army_brdm2"
-	,"gm_gc_army_btr60pb"
-	,"gm_gc_army_bmp1sp2"
-	,"gm_gc_army_pt76b"];
+	"gm_gc_army_brdm2_win"
+	,"gm_gc_army_btr60pb_win"
+	,"gm_gc_army_bmp1sp2_win"
+	,"gm_gc_army_pt76b_win"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
-	"gm_gc_army_t55"
-	,"gm_gc_army_t55a"
-	,"gm_gc_army_t55ak"
-	,"gm_gc_army_t55am2"
-	,"gm_gc_army_t55am2b"];
+	"gm_gc_army_t55_win"
+	,"gm_gc_army_t55a_win"
+	,"gm_gc_army_t55ak_win"
+	,"gm_gc_army_t55am2_win"
+	,"gm_gc_army_t55am2b_win"];
 
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
@@ -382,22 +382,22 @@ a3e_arr_ComCenParkedVehicles = [
 	"gm_gc_army_p601"
 	,"gm_gc_army_p601"
 	,"gm_gc_army_bicycle_01_oli"
-	,"gm_gc_army_ural4320_reammo"
-	,"gm_gc_army_ural375d_refuel"
-	,"gm_gc_army_ural375d_medic"
-	,"gm_gc_army_ural4320_repair"
-	,"gm_gc_army_ural4320_cargo"
-	,"gm_gc_army_ural4320_cargo"
-	,"gm_gc_army_brdm2um"
-	,"gm_gc_army_brdm2"
-	,"gm_gc_army_brdm2"
-	,"gm_gc_army_btr60pa"
-	,"gm_gc_army_btr60pb"
-	,"gm_gc_army_btr60pu12"
-	,"gm_gc_army_bmp1sp2"
-	,"gm_gc_army_zsu234v1"
-	,"gm_gc_army_pt76b"
-	,"gm_gc_army_t55"];
+	,"gm_gc_army_ural4320_reammo_win"
+	,"gm_gc_army_ural375d_refuel_win"
+	,"gm_gc_army_ural375d_medic_win"
+	,"gm_gc_army_ural4320_repair_win"
+	,"gm_gc_army_ural4320_cargo_win"
+	,"gm_gc_army_ural4320_cargo_win"
+	,"gm_gc_army_brdm2um_win"
+	,"gm_gc_army_brdm2_win"
+	,"gm_gc_army_brdm2_win"
+	,"gm_gc_army_btr60pa_win"
+	,"gm_gc_army_btr60pb_win"
+	,"gm_gc_army_btr60pu12_win"
+	,"gm_gc_army_bmp1sp2_win"
+	,"gm_gc_army_zsu234v1_win"
+	,"gm_gc_army_pt76b_win"
+	,"gm_gc_army_t55_win"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
@@ -423,22 +423,22 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	"gm_gc_army_p601"
 	,"gm_gc_army_p601"
 	,"gm_gc_army_bicycle_01_oli"
-	,"gm_gc_army_ural4320_reammo"
-	,"gm_gc_army_ural375d_refuel"
-	,"gm_gc_army_ural375d_medic"
-	,"gm_gc_army_ural4320_repair"
-	,"gm_gc_army_ural4320_cargo"
-	,"gm_gc_army_ural4320_cargo"
-	,"gm_gc_army_brdm2um"
-	,"gm_gc_army_brdm2"
-	,"gm_gc_army_brdm2"
-	,"gm_gc_army_btr60pa"
-	,"gm_gc_army_btr60pb"
-	,"gm_gc_army_btr60pu12"
-	,"gm_pl_army_ot64a"
-	,"gm_pl_army_ot64a"
-	,"gm_pl_army_brdm2"
-	,"gm_pl_army_ural4320_cargo"];
+	,"gm_gc_army_ural4320_reammo_win"
+	,"gm_gc_army_ural375d_refuel_win"
+	,"gm_gc_army_ural375d_medic_win"
+	,"gm_gc_army_ural4320_repair_win"
+	,"gm_gc_army_ural4320_cargo_win"
+	,"gm_gc_army_ural4320_cargo_win"
+	,"gm_gc_army_brdm2um_win"
+	,"gm_gc_army_brdm2_win"
+	,"gm_gc_army_brdm2_win"
+	,"gm_gc_army_btr60pa_win"
+	,"gm_gc_army_btr60pb_win"
+	,"gm_gc_army_btr60pu12_win"
+	,"gm_pl_army_ot64a_olw"
+	,"gm_pl_army_ot64a_olw"
+	,"gm_pl_army_brdm2_olw"
+	,"gm_pl_army_ural4320_cargo_olw"];
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
@@ -640,10 +640,22 @@ a3e_arr_faks = [
 	,"gm_ge_army_gauzeCompress"];
 a3e_arr_medkits = [
 	"gm_ge_army_medkit_80"];
-	
+
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air",
+	"land"];
+
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
+// always the fallback option, use BIS units if mod has no helicopters
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"gm_ge_army_bo105p1m_vbh_swooper_un"
@@ -659,6 +671,21 @@ a3e_arr_extraction_boat = [
 	"B_Boat_Armed_01_minigun_F"];
 a3e_arr_extraction_boat_escort = [
 	"B_Boat_Armed_01_minigun_F"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Cars/APCs that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"gm_ge_army_kat1_451_cargo_win",	//
+	"gm_ge_army_u1300l_cargo_win",	//
+	"gm_ge_army_fuchsa0_command_win",	//
+	"gm_ge_army_m113a1g_apc_win"];	//
+a3e_arr_extraction_car_escort = [
+	"gm_ge_army_gepard1a1_win",
+	"gm_ge_army_luchsa2_win",
+	"gm_ge_army_Leopard1a3a2_win",
+	"gm_ge_army_Leopard1a5_win"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf

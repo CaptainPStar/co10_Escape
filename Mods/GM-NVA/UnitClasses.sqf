@@ -635,10 +635,22 @@ a3e_arr_faks = [
 	,"gm_ge_army_gauzeCompress"];
 a3e_arr_medkits = [
 	"gm_ge_army_medkit_80"];
-	
+
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air",
+	"land"];
+
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
+// always the fallback option, use BIS units if mod has no helicopters
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"gm_ge_army_bo105p1m_vbh_swooper"
@@ -654,6 +666,21 @@ a3e_arr_extraction_boat = [
 	"B_Boat_Armed_01_minigun_F"];
 a3e_arr_extraction_boat_escort = [
 	"B_Boat_Armed_01_minigun_F"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Cars/APCs that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"gm_ge_army_kat1_451_cargo",	//
+	"gm_ge_army_u1300l_cargo",	//
+	"gm_ge_army_fuchsa0_command",	//
+	"gm_ge_army_m113a1g_apc"];	//
+a3e_arr_extraction_car_escort = [
+	"gm_ge_army_gepard1a1",
+	"gm_ge_army_luchsa2",
+	"gm_ge_army_Leopard1a3a2",
+	"gm_ge_army_Leopard1a5"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
