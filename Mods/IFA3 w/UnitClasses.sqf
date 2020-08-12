@@ -50,106 +50,105 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 switch (_enemyFrequency) do {
     case 1: {//Few (1-3)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"LIB_Kfz1"
-		,"LIB_Kfz1_Hood"
+		"LIB_Kfz1_w"
+		,"LIB_Kfz1_Hood_w"
 		,"LIB_Kfz1_MG42"
-		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_tent_y_camo"
-		,"LIB_opelblitz_parm"
-		,"LIB_opelblitz_ambulance"
-		,"LIB_opelblitz_ammo"
-		,"LIB_opelblitz_fuel"
-		,"LIB_SdKfz251"
-		,"LIB_SdKfz_7"
-		,"LIB_SdKfz_7_AA"
-		,"LIB_SdKfz251_FFV"
-		,"LIB_FlakPanzerIV_Wirbelwind"
-		,"LIB_StuG_III_G"
-		,"LIB_PzKpfwIV_H"];
+		,"LIB_OpelBlitz_Open_Y_Camo_w"
+		,"LIB_OpelBlitz_Tent_Y_Camo_w"
+		,"LIB_OpelBlitz_Parm_w"
+		,"LIB_OpelBlitz_Ambulance_w"
+		,"LIB_OpelBlitz_Ammo_w"
+		,"LIB_OpelBlitz_Fuel_w"
+		,"LIB_Sdkfz251_w"
+		,"LIB_SdKfz_7_w"
+		,"LIB_SdKfz_7_AA_w"
+		,"LIB_SdKfz251_FFV_w"
+		,"LIB_FlakPanzerIV_Wirbelwind_w"
+		,"LIB_StuG_III_G_w"
+		,"LIB_PzKpfwIV_H_w"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"LIB_Kfz1"
-		,"LIB_Kfz1_Hood"
+		"LIB_Kfz1_w"
+		,"LIB_Kfz1_Hood_w"
 		,"LIB_Kfz1_MG42"
-		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_tent_y_camo"
-		,"LIB_opelblitz_parm"
-		,"LIB_SdKfz251"
-		,"LIB_SdKfz_7"
-		,"LIB_SdKfz_7_AA"
-		,"LIB_SdKfz251_FFV"
-		,"LIB_FlakPanzerIV_Wirbelwind"];
+		,"LIB_OpelBlitz_Open_Y_Camo_w"
+		,"LIB_OpelBlitz_Tent_Y_Camo_w"
+		,"LIB_OpelBlitz_Parm_w"
+		,"LIB_Sdkfz251_w"
+		,"LIB_SdKfz_7_w"
+		,"LIB_SdKfz_7_AA_w"
+		,"LIB_SdKfz251_FFV_w"
+		,"LIB_FlakPanzerIV_Wirbelwind_w"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"LIB_Kfz1"
-		,"LIB_Kfz1_Hood"
+		"LIB_Kfz1_w"
+		,"LIB_Kfz1_Hood_w"
 		,"LIB_Kfz1_MG42"
-		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_tent_y_camo"
-		,"LIB_opelblitz_parm"
-		,"LIB_opelblitz_ambulance"
-		,"LIB_opelblitz_ammo"
-		,"LIB_opelblitz_fuel"
-		,"LIB_SdKfz251"
-		,"LIB_SdKfz_7"
-		,"LIB_SdKfz_7_AA"
-		,"LIB_SdKfz251_FFV"
-		,"LIB_FlakPanzerIV_Wirbelwind"
-		,"LIB_StuG_III_G"
-		,"LIB_PzKpfwIV_H"
-		,"LIB_PzKpfwV"
-		,"LIB_PzKpfwVI_B"];
+		,"LIB_OpelBlitz_Open_Y_Camo_w"
+		,"LIB_OpelBlitz_Tent_Y_Camo_w"
+		,"LIB_OpelBlitz_Parm_w"
+		,"LIB_OpelBlitz_Ambulance_w"
+		,"LIB_OpelBlitz_Ammo_w"
+		,"LIB_OpelBlitz_Fuel_w"
+		,"LIB_Sdkfz251_w"
+		,"LIB_SdKfz_7_w"
+		,"LIB_SdKfz_7_AA_w"
+		,"LIB_SdKfz251_FFV_w"
+		,"LIB_FlakPanzerIV_Wirbelwind_w"
+		,"LIB_StuG_III_G_w"
+		,"LIB_PzKpfwIV_H_w"
+		,"LIB_PzKpfwV_w"
+		,"LIB_PzKpfwVI_B_w"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"LIB_Kfz1"
-		,"LIB_Kfz1_Hood"
+		"LIB_Kfz1_w"
+		,"LIB_Kfz1_Hood_w"
 		,"LIB_Kfz1_MG42"
-		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_tent_y_camo"
-		,"LIB_opelblitz_parm"
-		,"LIB_SdKfz251"
-		,"LIB_SdKfz_7"
-		,"LIB_SdKfz_7_AA"
-		,"LIB_SdKfz251_FFV"
-		,"LIB_FlakPanzerIV_Wirbelwind"
-		,"LIB_StuG_III_G"];
+		,"LIB_OpelBlitz_Open_Y_Camo_w"
+		,"LIB_OpelBlitz_Tent_Y_Camo_w"
+		,"LIB_OpelBlitz_Parm_w"
+		,"LIB_Sdkfz251_w"
+		,"LIB_SdKfz_7_w"
+		,"LIB_SdKfz_7_AA_w"
+		,"LIB_SdKfz251_FFV_w"
+		,"LIB_FlakPanzerIV_Wirbelwind_w"
+		,"LIB_StuG_III_G_w"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"LIB_Kfz1"
-		,"LIB_Kfz1_Hood"
+		"LIB_Kfz1_w"
+		,"LIB_Kfz1_Hood_w"
 		,"LIB_Kfz1_MG42"
-		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_tent_y_camo"
-		,"LIB_opelblitz_parm"
-		,"LIB_opelblitz_ambulance"
-		,"LIB_opelblitz_ammo"
-		,"LIB_opelblitz_fuel"
-		,"LIB_SdKfz251"
-		,"LIB_SdKfz_7"
-		,"LIB_SdKfz_7_AA"
-		,"LIB_SdKfz251_FFV"
-		,"LIB_FlakPanzerIV_Wirbelwind"
-		,"LIB_StuG_III_G"
-		,"LIB_PzKpfwIV_H"
-		,"LIB_PzKpfwV"
-		,"LIB_PzKpfwVI_B"
-		,"LIB_PzKpfwVI_E"
-		,"LIB_PzKpfwVI_E_1"
-		,"LIB_PzKpfwVI_E_2"];
+		,"LIB_OpelBlitz_Open_Y_Camo_w"
+		,"LIB_OpelBlitz_Tent_Y_Camo_w"
+		,"LIB_OpelBlitz_Parm_w"
+		,"LIB_OpelBlitz_Ambulance_w"
+		,"LIB_OpelBlitz_Ammo_w"
+		,"LIB_OpelBlitz_Fuel_w"
+		,"LIB_Sdkfz251_w"
+		,"LIB_SdKfz_7_w"
+		,"LIB_SdKfz_7_AA_w"
+		,"LIB_SdKfz251_FFV_w"
+		,"LIB_FlakPanzerIV_Wirbelwind_w"
+		,"LIB_StuG_III_G_w"
+		,"LIB_PzKpfwIV_H_w"
+		,"LIB_PzKpfwV_w"
+		,"LIB_PzKpfwVI_B_w"
+		,"LIB_PzKpfwVI_E_w"
+		,"LIB_PzKpfwVI_E_w"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"LIB_Kfz1"
-		,"LIB_Kfz1_Hood"
+		"LIB_Kfz1_w"
+		,"LIB_Kfz1_Hood_w"
 		,"LIB_Kfz1_MG42"
-		,"LIB_opelblitz_open_y_camo"
-		,"LIB_opelblitz_tent_y_camo"
-		,"LIB_opelblitz_parm"
-		,"LIB_SdKfz251"
-		,"LIB_SdKfz_7"
-		,"LIB_SdKfz_7_AA"
-		,"LIB_SdKfz251_FFV"
-		,"LIB_FlakPanzerIV_Wirbelwind"
-		,"LIB_StuG_III_G"
-		,"LIB_PzKpfwIV_H"];
+		,"LIB_OpelBlitz_Open_Y_Camo_w"
+		,"LIB_OpelBlitz_Tent_Y_Camo_w"
+		,"LIB_OpelBlitz_Parm_w"
+		,"LIB_Sdkfz251_w"
+		,"LIB_SdKfz_7_w"
+		,"LIB_SdKfz_7_AA_w"
+		,"LIB_SdKfz251_FFV_w"
+		,"LIB_FlakPanzerIV_Wirbelwind_w"
+		,"LIB_StuG_III_G_w"
+		,"LIB_PzKpfwIV_H_w"];
     };
 };
 
@@ -171,36 +170,37 @@ a3e_arr_Escape_InfantryTypes = [
 	,"LIB_GER_Stggunner_w"
 	,"LIB_GER_Unequip_w"];
 a3e_arr_Escape_InfantryTypes_Ind = [
-	"SG_sturmtrooper_AT_soldier"
-	,"SG_sturmtrooper_AT_grenadier"
-	,"SG_sturmtrooper_smgunner"
-	,"SG_sturmtrooper_mgunner"
-	,"SG_sturmtrooper_medic"
-	,"SG_sturmtrooper_radioman"
-	,"SG_sturmtrooper_ober_rifleman"
-	,"SG_sturmtrooper_rifleman"
-	,"SG_sturmtrooper_sapper"
-	,"SG_sturmtrooper_sapper_gefr"
-	,"SG_sturmtrooper_lieutenant"
-	,"SG_sturmtrooper_unterofficer"
-	,"SG_sturmtrooper_sniper"
-	,"SG_sturmtrooper_stggunner"];
+	"SG_Sturmtrooper_AT_soldier_w"
+	,"SG_Sturmtrooper_AT_grenadier_w"
+	,"SG_Sturmtrooper_Smgunner_w"
+	,"SG_Sturmtrooper_Mgunner_w"
+	,"SG_Sturmtrooper_Medic_w"
+	,"SG_Sturmtrooper_Radioman_w"
+	,"SG_sturmtrooper_ober_grenadier_w"
+	,"SG_Sturmtrooper_Ober_rifleman_w"
+	,"SG_Sturmtrooper_Rifleman_w"
+	,"SG_Sturmtrooper_Rifleman_ADS_w"
+	,"SG_Sturmtrooper_Sapper_w"
+	,"SG_Sturmtrooper_Sapper_gefr_w"
+	,"SG_Sturmtrooper_Lieutenant_w"
+	,"SG_Sturmtrooper_Unterofficer_w"
+	,"SG_Sturmtrooper_Sniper_w"
+	,"SG_Sturmtrooper_Stggunner_w"];
 a3e_arr_recon_InfantryTypes = [
-	"LIB_GER_scout_smgunner"
-	,"LIB_GER_scout_lieutenant"
-	,"LIB_GER_scout_mgunner"
-	,"LIB_GER_radioman"
-	,"LIB_GER_scout_ober_rifleman"
-	,"LIB_GER_soldier_camo_base"
-	,"LIB_GER_soldier_camo2_base"
-	,"LIB_GER_soldier_camo3_base"
-	,"LIB_GER_soldier_camo4_base"
-	,"LIB_GER_soldier_camo5_base"
-	,"LIB_GER_scout_rifleman"
-	,"LIB_GER_sapper"
-	,"LIB_GER_sapper_gefr"
-	,"LIB_GER_scout_unterofficer"
-	,"LIB_GER_scout_sniper"];
+	"LIB_GER_Scout_smgunner_w"
+	,"LIB_GER_Scout_lieutenant_w"
+	,"LIB_GER_Scout_mgunner_w"
+	,"LIB_GER_Radioman_w"
+	,"LIB_GER_Scout_ober_rifleman_w"
+	,"LIB_GER_Scout_ober_grenadier_w"
+	,"LIB_GER_Rifleman_ADS_w"
+	,"LIB_GER_Scout_rifleman_w"
+	,"LIB_GER_Medic_w"
+	,"LIB_GER_Sapper_w"
+	,"LIB_GER_Sapper_gefr_w"
+	,"LIB_GER_Scout_unterofficer_w"
+	,"LIB_GER_Scout_sniper_w"
+	,"LIB_GER_Scout_sniper_2_w"];
 a3e_arr_recon_I_InfantryTypes = [
 	"LNRD_Luftwaffe_AT_soldier"
 	,"LNRD_Luftwaffe_AT_grenadier"
@@ -216,46 +216,46 @@ a3e_arr_recon_I_InfantryTypes = [
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
-	"LIB_SdKfz251"
-	,"LIB_SdKfz251_FFV"
+	"LIB_Sdkfz251_w"
+	,"LIB_SdKfz251_FFV_w"
 	,"LIB_Kfz1_MG42"
-	,"LIB_Pak40"
+	,"LIB_Pak40_w"
 	,"LIB_MG34_Lafette_Deployed"
-	,"LIB_FlaK_30"
+	,"LIB_FlaK_30_w"
 	,"LIB_GER_SearchLight"
 	,"LIB_MG42_Lafette_Deployed"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
-	"LIB_SdKfz251"
-	,"LIB_SdKfz251_FFV"
+	"LIB_Sdkfz251_w"
+	,"LIB_SdKfz251_FFV_w"
 	,"LIB_Kfz1_MG42"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
-	"LIB_Kfz1"
-	,"LIB_Kfz1_hood"
-	,"LIB_SdKfz251_FFV"
-	,"LIB_SdKfz251"
-	,"LIB_opelblitz_tent_y_camo"
-	,"LIB_opelblitz_open_y_camo"];
+	"LIB_Kfz1_w"
+	,"LIB_Kfz1_Hood_w"
+	,"LIB_SdKfz251_FFV_w"
+	,"LIB_Sdkfz251_w"
+	,"LIB_OpelBlitz_Tent_Y_Camo_w"
+	,"LIB_OpelBlitz_Open_Y_Camo_w"];
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
-	"LIB_Kfz1"
-	,"LIB_Kfz1_hood"
-	,"LIB_SdKfz251_FFV"
-	,"LIB_SdKfz251"
-	,"LIB_opelblitz_tent_y_camo"
-	,"LIB_opelblitz_open_y_camo"];
+	"LIB_Kfz1_w"
+	,"LIB_Kfz1_Hood_w"
+	,"LIB_SdKfz251_FFV_w"
+	,"LIB_Sdkfz251_w"
+	,"LIB_OpelBlitz_Tent_Y_Camo_w"
+	,"LIB_OpelBlitz_Open_Y_Camo_w"];
 
 
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
-	"LIB_Kfz1"
-	,"LIB_Kfz1_hood"
-	,"LIB_SdKfz251_FFV"
-	,"LIB_SdKfz251"
-	,"LIB_opelblitz_tent_y_camo"
-	,"LIB_opelblitz_open_y_camo"];
+	"LIB_Kfz1_w"
+	,"LIB_Kfz1_Hood_w"
+	,"LIB_SdKfz251_FFV_w"
+	,"LIB_Sdkfz251_w"
+	,"LIB_OpelBlitz_Tent_Y_Camo_w"
+	,"LIB_OpelBlitz_Open_Y_Camo_w"];
 
 
 
@@ -264,18 +264,17 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
-	"LIB_SdKfz251"
-	,"LIB_SdKfz251_FFV"
+	"LIB_Sdkfz251_w"
+	,"LIB_SdKfz251_FFV_w"
 	,"LIB_SdKfz_7_AA"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
-	"LIB_PzKpfwIV_H"
-	,"LIB_PzKpfwV"
-	,"LIB_PzKpfwVI_B"
-	,"LIB_PzKpfwVI_E"
-	,"LIB_PzKpfwVI_E_2"
-	,"LIB_PzKpfwVI_E_1"
-	,"LIB_StuG_III_G"];
+	"LIB_PzKpfwIV_H_w"
+	,"LIB_PzKpfwV_w"
+	,"LIB_PzKpfwVI_B_w"
+	,"LIB_PzKpfwVI_E_w"
+	,"LIB_PzKpfwVI_E_w"
+	,"LIB_StuG_III_G_w"];
 
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
@@ -283,17 +282,17 @@ a3e_arr_ComCenStaticWeapons = [
 	"LIB_MG42_Lafette_Deployed"];
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
-	"LIB_opelblitz_ambulance"
-	,"LIB_opelblitz_fuel"
-	,"LIB_opelblitz_ammo"
-	,"LIB_SdKfz251"
-	,"LIB_opelblitz_parm"
-	,"LIB_Kfz1"
-	,"LIB_Kfz1_hood"
-	,"LIB_SdKfz251_FFV"
-	,"LIB_SdKfz251"
-	,"LIB_opelblitz_tent_y_camo"
-	,"LIB_opelblitz_open_y_camo"];
+	"LIB_OpelBlitz_Ambulance_w"
+	,"LIB_OpelBlitz_Fuel_w"
+	,"LIB_OpelBlitz_Ammo_w"
+	,"LIB_Sdkfz251_w"
+	,"LIB_OpelBlitz_Parm_w"
+	,"LIB_Kfz1_w"
+	,"LIB_Kfz1_Hood_w"
+	,"LIB_SdKfz251_FFV_w"
+	,"LIB_Sdkfz251_w"
+	,"LIB_OpelBlitz_Tent_Y_Camo_w"
+	,"LIB_OpelBlitz_Open_Y_Camo_w"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
@@ -305,9 +304,9 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 // Random array. An ammo depot contains one static weapon of the followin types:
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	"LIB_Kfz1_MG42"
-	,"LIB_Pak40"
+	,"LIB_Pak40_w"
 	,"LIB_MG34_Lafette_Deployed"
-	,"LIB_FlaK_30"
+	,"LIB_FlaK_30_w"
 	,"LIB_GER_SearchLight"
 	,"LIB_MG42_Lafette_Deployed"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
@@ -315,14 +314,11 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
-	"LIB_FW190F8"
-	,"LIB_FW190F8_4"
-	,"LIB_FW190F8_5"
-	,"LIB_FW190F8_2"
-	,"LIB_FW190F8_3"
-	,"LIB_Ju87"
-	,"LIB_Ju87"
-	,"LIB_Ju87"];
+	"LIB_FW190F8_w"
+	,"LIB_FW190F8_2_W"
+	,"LIB_FW190F8_3_W"
+	,"LIB_Ju87_w"
+	,"LIB_Ju87_w"];
 a3e_arr_O_transport_heli = [
 	"LIB_Ju52"];
 a3e_arr_O_pilots = [
@@ -525,7 +521,7 @@ a3e_arr_extraction_car_escort = [
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
-a3e_arr_searchdrone = ["LIB_FW190F8"];
+a3e_arr_searchdrone = ["LIB_FW190F8_w"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
@@ -533,10 +529,10 @@ a3e_arr_searchdrone = ["LIB_FW190F8"];
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"LIB_FW190F8"];
+	"LIB_FW190F8_w"];
 a3e_arr_searchChopperHard = [
-	"LIB_FW190F8"
-	,"LIB_FW190F8_4"];
+	"LIB_FW190F8_w"
+	,"LIB_FW190F8_3_W"];
 a3e_arr_searchChopper_pilot = [
 	"LIB_GER_pilot"];
 a3e_arr_searchChopper_crew = [
@@ -607,8 +603,7 @@ a3e_arr_MortarSite = [
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
-	"LIB_Ju87_Italy"
-	,"LIB_Ju87"];
+	"LIB_Ju87_w"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
