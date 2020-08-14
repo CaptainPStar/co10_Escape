@@ -801,10 +801,22 @@ a3e_arr_Bipods = [
 	,"bipod_03_F_blk"
 	,"bipod_03_F_oli"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
+// always the fallback option, use BIS units if mod has no helicopters
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"CUP_O_Mi8_RU"
@@ -818,6 +830,38 @@ a3e_arr_extraction_chopper_escort = [
 	,"CUP_O_Mi24_V_RU"
 	,"CUP_O_Ka50_RU"
 	,"CUP_O_Ka50_AA_RU"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"O_Boat_Armed_01_hmg_F"];
+a3e_arr_extraction_boat_escort = [
+	"O_Boat_Armed_01_hmg_F"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"CUP_O_Ural_RU"	//14
+	,"CUP_O_Ural_Open_RU"	//14
+	,"CUP_O_Kamaz_RU"	//16
+	,"CUP_O_Kamaz_Open_RU"	//16
+	,"CUP_O_GAZ_Vodnik_PK_RU"	//10
+	,"CUP_O_GAZ_Vodnik_AGS_RU"	//10
+	,"CUP_O_BMP2_RU"	//11
+	,"CUP_O_BTR60_RU"	//14
+	,"CUP_O_BTR80_CAMO_RU"	//15
+	,"CUP_O_BTR80A_CAMO_RU"	//14
+	,"CUP_O_MTLB_pk_Green_RU"	//9
+	,"CUP_O_BTR90_RU"];	//15
+a3e_arr_extraction_car_escort = [
+	"CUP_O_2S6M_RU"
+	,"CUP_O_BMP3_RU"
+	,"CUP_O_T72_RU"
+	,"CUP_O_T90_RU"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
