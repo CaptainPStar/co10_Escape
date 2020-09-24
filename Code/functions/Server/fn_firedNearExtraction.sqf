@@ -24,6 +24,10 @@ if(count(_allowed arrayIntersect _parents) > 0 ) then {
 			[_markerNo] spawn A3E_fnc_RunExtractionCar;
 			diag_log format["fn_firedNearExtraction: land extraction marker, calling cars to marker number %1",_markerNo];
 		};
+		case "old": {
+			[_markerNo] spawn A3E_fnc_RunExtraction;
+			diag_log format["fn_firedNearExtraction: old air extraction marker, calling helicopters to marker number %1",_markerNo];
+		};
 	};
 
 	deletevehicle _unit;

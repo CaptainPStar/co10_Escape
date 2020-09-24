@@ -24,7 +24,7 @@ private _findMarkers = {
 //Fallback for old markers, will use heli extraction
 if(isNil("A3E_OldExtractionPositions")) then {
 	A3E_OldExtractionPositions = [];
-	A3E_OldExtractionPositions = ["A3E_ExtractionPos","air"] call _findMarkers;
+	A3E_OldExtractionPositions = ["A3E_ExtractionPos","old"] call _findMarkers;
 };
 diag_log format["fn_SelectExtractionZone: Fallback Extraction markers: %1",A3E_OldExtractionPositions];
 //New marker types

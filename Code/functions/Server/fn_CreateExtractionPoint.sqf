@@ -12,6 +12,9 @@ switch (_extractionType) do {
 		case "land": {
 			_markertype = "A3E_CarExtractionPos";
 		};
+		case "old": {
+			_markertype = "A3E_ExtractionPos";
+		};
 };
 	
 private _markerName = _markertype + str _markerNo;
