@@ -33,7 +33,7 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 
 // Prison backpacks
 a3e_arr_PrisonBackpacks = [
-	"gm_pl_backpack_at_80_gry"
+	"gm_pl_army_backpack_at_80_gry"
 	,"gm_pl_army_backpack_80_oli"
 	,"gm_ge_backpack_satchel_80_blk"];
 // Prison backpack secondary weapon (and corresponding magazine type).

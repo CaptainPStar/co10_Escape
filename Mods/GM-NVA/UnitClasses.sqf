@@ -31,6 +31,11 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 	"gm_pl_army_squadleader_akm_80_moro",
 	"gm_pl_army_rifleman_akm_80_moro"];
 
+// Prison backpacks
+a3e_arr_PrisonBackpacks = [
+	"gm_pl_army_backpack_at_80_gry"
+	,"gm_pl_army_backpack_80_oli"
+	,"gm_ge_backpack_satchel_80_blk"];
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
 a3e_arr_PrisonBackpackWeapons pushback ["gm_p1_blk","gm_8rnd_9x19mm_b_dm11_p1_blk"];
