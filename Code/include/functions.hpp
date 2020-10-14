@@ -91,6 +91,7 @@ class CfgFunctions
 			class runExtraction {};
 			class runExtractionBoat {};
 			class runExtractionCar {};
+			class runExtractionHeli {};
 			class firedNearExtraction {};
 			class weather {};
 			class FindSpawnRoad {};

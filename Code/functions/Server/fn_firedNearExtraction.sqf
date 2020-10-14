@@ -13,7 +13,7 @@ private _allowed = ["SmokeShell","Chemlight_base","FlareBase","SmokeLauncherAmmo
 if(count(_allowed arrayIntersect _parents) > 0 ) then {
 	switch (_extractionType) do {
 		case "air": {
-			[_markerNo] spawn A3E_fnc_RunExtraction;
+			[_markerNo] spawn A3E_fnc_RunExtractionHeli;
 			diag_log format["fn_firedNearExtraction: air extraction marker, calling helicopters to marker number %1",_markerNo];
 		};
 		case "sea": {
