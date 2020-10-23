@@ -47,6 +47,10 @@ diag_log format["fn_SelectExtractionZone: Car Extraction markers: %1",A3E_CarExt
 if(isNil("A3E_ExtractionPositions")) then {
 	A3E_ExtractionPositions = [];
 };
+if(isNil("a3e_arr_extractiontypes") ) then {
+	A3E_ExtractionPositions = A3E_OldExtractionPositions;
+	A3E_ExtractionPositions append A3E_HeliExtractionPositions;
+	};
 if ("air" in a3e_arr_extractiontypes && (count A3E_HeliExtractionPositions > 0)) then {
 	A3E_ExtractionPositions append A3E_HeliExtractionPositions;
 	};
@@ -56,8 +60,8 @@ if ("land" in a3e_arr_extractiontypes && (count A3E_CarExtractionPositions > 0))
 if ("sea" in a3e_arr_extractiontypes && (count A3E_BoatExtractionPositions > 0)) then {
 	A3E_ExtractionPositions append A3E_BoatExtractionPositions;
 	};
-if(isNil("a3e_arr_extractiontypes") || (count A3E_ExtractionPositions <6)) then {
-	A3E_ExtractionPositions = A3E_OldExtractionPositions;
+if(count A3E_ExtractionPositions <6) then {
+	A3E_ExtractionPositions append A3E_OldExtractionPositions;
 	};
 
 
