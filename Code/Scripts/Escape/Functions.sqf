@@ -54,11 +54,19 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 		};
 	};
 	
-	private["_nvgs"];
-	_nvgs = hmd _this; //NVGoggles
+	private _nvgs = hmd _this; //NVGoggles
+    if (_nvgs isEqualTo "") then {
+        private _cfgWeapons = configFile >> "CfgWeapons";
+        {
+            if (616 == getNumber (_cfgWeapons >> _x >> "ItemInfo" >> "type")) exitWith {
+                _nvgs = _x;
+            };
+        } forEach items _this;
+    };
 	if(_nvgs != "") then {
 		if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
 			_this unlinkItem _nvgs;
+            _this removeItem _nvgs;
 		};
 	} else {
 		if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (Param_NoNightvision==0)) then {

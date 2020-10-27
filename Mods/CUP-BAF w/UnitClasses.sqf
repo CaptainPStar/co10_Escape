@@ -15,8 +15,8 @@ A3E_VAR_Side_Blufor = east;//Player side CUP RU
 A3E_VAR_Side_Opfor = west;//Enemy side CUP BAF woodland
 A3E_VAR_Side_Ind = resistance;//Independent side CUP ION PMC
 
-A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_us_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\flag_ion_CO.paa";
+A3E_VAR_Flag_Opfor = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_unionjack_co";
+A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_ion_black_co";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
@@ -801,10 +801,22 @@ a3e_arr_Bipods = [
 	,"bipod_03_F_blk"
 	,"bipod_03_F_oli"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
+// always the fallback option, use BIS units if mod has no helicopters
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"CUP_O_Mi8_RU"
@@ -818,6 +830,38 @@ a3e_arr_extraction_chopper_escort = [
 	,"CUP_O_Mi24_V_RU"
 	,"CUP_O_Ka50_RU"
 	,"CUP_O_Ka50_AA_RU"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"O_Boat_Armed_01_hmg_F"];
+a3e_arr_extraction_boat_escort = [
+	"O_Boat_Armed_01_hmg_F"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"CUP_O_Ural_RU"	//14
+	,"CUP_O_Ural_Open_RU"	//14
+	,"CUP_O_Kamaz_RU"	//16
+	,"CUP_O_Kamaz_Open_RU"	//16
+	,"CUP_O_GAZ_Vodnik_PK_RU"	//10
+	,"CUP_O_GAZ_Vodnik_AGS_RU"	//10
+	,"CUP_O_BMP2_RU"	//11
+	,"CUP_O_BTR60_RU"	//14
+	,"CUP_O_BTR80_CAMO_RU"	//15
+	,"CUP_O_BTR80A_CAMO_RU"	//14
+	,"CUP_O_MTLB_pk_Green_RU"	//9
+	,"CUP_O_BTR90_RU"];	//15
+a3e_arr_extraction_car_escort = [
+	"CUP_O_2S6M_RU"
+	,"CUP_O_BMP3_RU"
+	,"CUP_O_T72_RU"
+	,"CUP_O_T90_RU"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -895,6 +939,39 @@ a3e_arr_AquaticPatrols = [
 //////////////////////////////////////////////////////////////////
 a3e_additional_weapon_box_1 = "CUP_USBasicWeaponsBox";
 a3e_additional_weapon_box_2 = "CUP_USSpecialWeaponsBox";
+a3e_additional_weapon_box_arsenal_cfgPatches = [
+	"CUP_Weapons_AA12",
+	"CUP_Weapons_ACR",
+	"CUP_Weapons_AS50",
+	"CUP_Weapons_AWM",
+	"CUP_Weapons_CZ750",
+	"CUP_Weapons_CZ805",
+	"CUP_Weapons_EVO",
+	"CUP_Weapons_G36",
+	"CUP_Weapons_HK416",
+	"CUP_Weapons_L129",
+	"CUP_Weapons_L85",
+	"CUP_Weapons_M1014",
+	"CUP_Weapons_M107",
+	"CUP_Weapons_M110",
+	"CUP_Weapons_M14",
+	"CUP_Weapons_M14_DMR",
+	"CUP_Weapons_M16",
+	"CUP_Weapons_M24",
+	"CUP_Weapons_M240",
+	"CUP_Weapons_M249",
+	"CUP_Weapons_M60E4",
+	"CUP_Weapons_Mk48",
+	"CUP_Weapons_RSASS",
+	"CUP_Weapons_Sa58",
+	"CUP_Weapons_SCAR",
+	"CUP_Weapons_Steyr",
+	"CUP_Weapons_West_Attachments",
+	"CUP_Weapons_XM8"];
+a3e_additional_weapon_box_arsenal_weapons = [
+	"CUP_glaunch_M32",
+	"CUP_glaunch_M79",
+	"CUP_glaunch_Mk13"];
 
 //////////////////////////////////////////////////////////////////
 // fn_MortarSite
@@ -924,13 +1001,13 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"Mi8Wreck"];
+	"CUP_Mi8Wreck"];
 a3e_arr_CrashSiteCrew = [
 	"CUP_O_RU_Pilot"];
 a3e_arr_CrashSiteWrecksCar = [
 	"Land_Wreck_BMP2_F"
 	,"Land_Wreck_BRDM2_F"
-	,"T72Wreck"];
+];
 a3e_arr_CrashSiteCrewCar = [
 	"CUP_O_RU_Crew_VDV"
 	,"CUP_O_RU_Soldier_Saiga_VDV"];

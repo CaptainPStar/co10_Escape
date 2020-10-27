@@ -698,19 +698,26 @@ a3e_arr_Bipods = [
 	,"bipod_03_F_oli"];
 
 //////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air",
+	"land",
+	"sea"];
+
+//////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
+// always the fallback option, use BIS units if mod has no helicopters
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"O_T_VTOL_02_infantry_dynamicLoadout_F"
-	//,"O_Heli_Light_02_unarmed_F"
-	//,"O_Heli_Transport_04_bench_F"
-	//,"O_Heli_Transport_04_covered_F"
-	];
+    "O_T_VTOL_02_infantry_dynamicLoadout_F"];
 a3e_arr_extraction_chopper_escort = [
-	"O_T_VTOL_02_infantry_dynamicLoadout_F"
-	//,"O_Heli_Attack_02_dynamicLoadout_F"
-	];
+	"O_T_VTOL_02_infantry_dynamicLoadout_F"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtractionBoat.sqf
@@ -720,6 +727,23 @@ a3e_arr_extraction_boat = [
 	"O_T_Boat_Armed_01_hmg_F"];
 a3e_arr_extraction_boat_escort = [
 	"O_T_Boat_Armed_01_hmg_F"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"O_T_Truck_03_transport_ghex_F",	//13
+	"O_T_Truck_03_covered_ghex_F",	//13
+	"O_APC_Tracked_02_cannon_F",	//8
+	"O_APC_Wheeled_02_rcws_v2_F",	//8
+	"O_T_LSV_02_unarmed_F"];	//6
+a3e_arr_extraction_car_escort = [
+	"O_T_APC_Tracked_02_AA_ghex_F",
+	"O_T_APC_Tracked_02_cannon_ghex_F",
+	"O_T_APC_Wheeled_02_rcws_ghex_F",
+	"O_T_MBT_02_cannon_ghex_F",
+	"O_T_MBT_02_cannon_ghex_F"];
 	
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf

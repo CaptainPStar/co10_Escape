@@ -1,0 +1,663 @@
+version=11;
+class Mission
+{
+	addOns[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"chernarus"
+	};
+	randomSeed=16412411;
+	class Intel
+	{
+		briefingName="co08 Escape Chernarus [1.2beta]";
+		briefingDescription="Caught in enemy territory trying to escape!";
+		resistanceEast=1;
+		startWeather=0.2605564;
+		startFog=0.12567772;
+		forecastWeather=0.3805666;
+		forecastFog=0.1205344;
+		year=2008;
+		month=10;
+		day=11;
+		hour=8;
+		minute=0;
+	};
+	class Groups
+	{
+		items=3;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3884.6992,298.49838,7845.2041};
+					azimut=-77.835899;
+					id=0;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item1
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11622.013,169.00345,12418.772};
+					azimut=-146.57994;
+					id=1;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item2
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11624.244,168.96469,12411.874};
+					azimut=-146.57994;
+					id=2;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+	class Markers
+	{
+		items=46;
+		class Item0
+		{
+			position[]={6043.394,266.99786,10398.306};
+			name="drn_var_communicationCenter2";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=302.69501;
+		};
+		class Item1
+		{
+			position[]={9526.1104,312.03363,8943.2178};
+			name="drn_var_communicationCenter3";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=302.939;
+		};
+		class Item2
+		{
+			position[]={11240.371,189.14468,12175.693};
+			name="drn_var_communicationCenter4";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=305;
+		};
+		class Item3
+		{
+			position[]={12734.162,6,9530.1191};
+			name="drn_var_communicationCenter5";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=101.829;
+		};
+		class Item4
+		{
+			position[]={9587.3174,201.03024,6650.4429};
+			name="drn_var_communicationCenter6";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=-110;
+		};
+		class Item5
+		{
+			position[]={7140.5986,293.71167,7761.8364};
+			name="drn_var_communicationCenter7";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=-15;
+		};
+		class Item6
+		{
+			position[]={3866.7722,310.987,8789.0049};
+			name="drn_var_communicationCenter8";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=111.8685;
+		};
+		class Item7
+		{
+			position[]={8714.1123,213.99339,11620.424};
+			name="drn_var_communicationCenter1";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=275;
+		};
+		class Item8
+		{
+			position[]={13147.104,6.3025861,6931.3286};
+			name="drn_var_communicationCenter9";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=80.510597;
+		};
+		class Item9
+		{
+			position[]={1912.2472,261,7443.6748};
+			name="drn_var_communicationCenter10";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=71.230698;
+		};
+		class Item10
+		{
+			position[]={2612.7148,214.03773,5484.9609};
+			name="drn_var_communicationCenter11";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=215.56299;
+		};
+		class Item11
+		{
+			position[]={1737.6429,143.7,3747.4089};
+			name="drn_var_communicationCenter12";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=270;
+		};
+		class Item12
+		{
+			position[]={4808.9468,264.45041,6737.2607};
+			name="drn_var_communicationCenter13";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=260;
+		};
+		class Item13
+		{
+			position[]={4889.1445,318.78049,5709.7588};
+			name="drn_var_communicationCenter14";
+			type="Empty";
+			colorName="ColorRed";
+			a=1.25;
+			b=0.75;
+			angle=245;
+		};
+		class Item14
+		{
+			position[]={4977.5996,181.10001,12583.486};
+			name="drn_var_communicationCenter15";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=260;
+		};
+		class Item15
+		{
+			position[]={12597.164,181.02039,4354.3037};
+			name="drn_var_communicationCenter16";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=-16.029499;
+		};
+		class Item16
+		{
+			position[]={11867.514,6.066977,3484.9534};
+			name="drn_var_communicationCenter17";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=167.79601;
+		};
+		class Item17
+		{
+			position[]={7425.4893,216.64886,5128.6216};
+			name="drn_var_communicationCenter18";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=46.715199;
+		};
+		class Item18
+		{
+			position[]={9116.0078,223.97266,3811.012};
+			name="drn_var_communicationCenter19";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=109.157;
+		};
+		class Item19
+		{
+			position[]={10249.485,5.5,2161.3445};
+			name="drn_var_communicationCenter20";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=165.246;
+		};
+		class Item20
+		{
+			position[]={7943.561,4.2375669,3327.1323};
+			name="drn_var_communicationCenter21";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=186.914;
+		};
+		class Item21
+		{
+			position[]={6093.6846,5.7352295,2138.5618};
+			name="drn_var_communicationCenter22";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=325;
+		};
+		class Item22
+		{
+			position[]={3543.0935,5.7765265,2407.0559};
+			name="drn_var_communicationCenter23";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=340;
+		};
+		class Item23
+		{
+			position[]={6305.0977,305.02396,7803.9067};
+			name="drn_var_communicationCenter24";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=37;
+		};
+		class Item24
+		{
+			position[]={5337.1226,335.82166,8734.5527};
+			name="drn_var_communicationCenter25";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=18.928499;
+		};
+		class Item25
+		{
+			position[]={10488.985,112.2,9837.4746};
+			name="drn_var_communicationCenter26";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=-304.76599;
+		};
+		class Item26
+		{
+			position[]={8103.5703,470.14471,9256.7295};
+			name="drn_var_communicationCenter27";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=77.5718;
+		};
+		class Item27
+		{
+			position[]={10631.025,221.892,8322.3604};
+			name="drn_var_communicationCenter28";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=81.753799;
+		};
+		class Item28
+		{
+			position[]={4462.4893,229.61136,4581.6904};
+			name="drn_var_communicationCenter29";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=88.848701;
+		};
+		class Item29
+		{
+			position[]={2560.5591,260.53864,9835.4355};
+			name="drn_var_communicationCenter30";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=141.646;
+		};
+		class Item30
+		{
+			position[]={6157.8589,41.816704,3573.2747};
+			name="drn_var_communicationCenter31";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=62;
+		};
+		class Item31
+		{
+			position[]={3480.8564,199.28008,4009.3457};
+			name="drn_var_communicationCenter32";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=202;
+		};
+		class Item32
+		{
+			position[]={12262.742,100.5,10776.186};
+			name="drn_var_communicationCenter33";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=101.277;
+		};
+		class Item33
+		{
+			position[]={11405.636,254.16913,5525.9287};
+			name="drn_var_communicationCenter34";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=40;
+		};
+		class Item34
+		{
+			position[]={10068.078,244.99411,5440.5225};
+			name="drn_var_communicationCenter35";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=0.52527773;
+		};
+		class Item35
+		{
+			position[]={6527.7583,321.9758,6156.3354};
+			name="drn_var_communicationCenter36";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=-133.77589;
+		};
+		class Item36
+		{
+			position[]={4597.7891,9.4953575,2521.1096};
+			name="drn_var_communicationCenter37";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=-48.462002;
+		};
+		class Item37
+		{
+			position[]={4844.4644,26.092667,2806.0959};
+			name="drn_var_communicationCenter38";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=-124.472;
+		};
+		class Item38
+		{
+			position[]={3310.572,239.04329,4985.8813};
+			name="drn_var_communicationCenter39";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=-228.78902;
+		};
+		class Item39
+		{
+			position[]={11328.346,71.347481,6542.3525};
+			name="drn_var_communicationCenter40";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=355;
+		};
+		class Item40
+		{
+			position[]={13141.967,4.2953281,6255.1182};
+			name="drn_var_communicationCenter41";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=180;
+		};
+		class Item41
+		{
+			position[]={11787.163,62.680847,9235.627};
+			name="drn_var_communicationCenter42";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=179.9473;
+		};
+		class Item42
+		{
+			position[]={8328.2607,358.75739,6676.7988};
+			name="drn_var_communicationCenter43";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=-2.1899583;
+		};
+		class Item43
+		{
+			position[]={9841.7393,169.27612,10466.383};
+			name="drn_var_communicationCenter44";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=215;
+		};
+		class Item44
+		{
+			position[]={2404.8381,310.76761,6327.8901};
+			name="drn_var_communicationCenter45";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=40;
+		};
+		class Item45
+		{
+			position[]={3119.7026,298.99234,7954.4175};
+			name="drn_var_communicationCenter46";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=30;
+		};
+	};
+	class Sensors
+	{
+		items=3;
+		class Item0
+		{
+			position[]={14018.662,0.42039257,9090.418};
+			a=0;
+			b=0;
+			activationBy="ALPHA";
+			interruptable=1;
+			age="UNKNOWN";
+			text="build";
+			expActiv="drn_comCen = ""drn_var_communicationCenter46"";_nil = [getMarkerPos drn_comCen, markerDir drn_comCen] execVM ""Scripts\Escape\BuildCommunicationCenter.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={14000.851,0.37606385,9668.4307};
+			activationBy="BRAVO";
+			interruptable=1;
+			age="UNKNOWN";
+			text="generate";
+			expActiv="_nil = [] execVM ""PositionGenerator.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item2
+		{
+			position[]={14355.941,0.23861185,9049.5156};
+			activationBy="ALPHA";
+			interruptable=1;
+			age="UNKNOWN";
+			text="build all";
+			expActiv="TotalComCenterCount = 54;  _nil = [TotalComCenterCount] execVM ""buildall.sqf"";";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=2542017;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=11993212;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=13922257;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};

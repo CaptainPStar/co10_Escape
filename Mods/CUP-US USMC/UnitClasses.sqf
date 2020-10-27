@@ -16,7 +16,7 @@ A3E_VAR_Side_Opfor = west;//Enemy side CUP USMC woodland
 A3E_VAR_Side_Ind = resistance;//Independent side CUP NAPA
 
 A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_us_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_green_CO.paa";
+A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_napa_co";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
@@ -472,7 +472,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_smg_EVO", 50, 2, 4, ["CUP_30Rnd_9x1
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_M4A1_BUIS_camo_GL", 75, 2, 4, ["CUP_30Rnd_556x45_Stanag","CUP_1Rnd_HEDP_M203"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_lmg_M240", 20, 1, 2, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_M24_wdl", 10, 1, 2, ["CUP_5Rnd_762x51_M24"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_DMR", 10, 1, 2, ["CUP_20Rnd_762x51_DMR"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_M14_DMR", 10, 1, 2, ["CUP_20Rnd_762x51_DMR"], 6];
 // non-CSAT weapons
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_lmg_M249_para", 50, 2, 4, ["CUP_200Rnd_TE4_Red_Tracer_556x45_M249"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_M16A4_Base", 50, 1, 3, ["CUP_30Rnd_556x45_Stanag"], 6];
@@ -492,7 +492,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_sgun_M1014", 10, 1, 2, ["CUP_8Rnd_B
 a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_Mk12SPR", 50, 2, 4, ["CUP_20Rnd_556x45_Stanag"], 9];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_DMR", 10, 2, 4, ["CUP_20Rnd_762x51_DMR"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_M14_DMR", 10, 2, 4, ["CUP_20Rnd_762x51_DMR"], 9];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_M24_wdl", 50, 2, 4, ["CUP_5Rnd_762x51_M24"], 10];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_Mk48_wdl", 50, 1, 2, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_M240", 50, 1, 3, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], 4];
@@ -788,6 +788,39 @@ a3e_arr_AquaticPatrols = [
 //////////////////////////////////////////////////////////////////
 a3e_additional_weapon_box_1 = "CUP_USBasicWeaponsBox";
 a3e_additional_weapon_box_2 = "CUP_USSpecialWeaponsBox";
+a3e_additional_weapon_box_arsenal_cfgPatches = [
+	"CUP_Weapons_AA12",
+	"CUP_Weapons_ACR",
+	"CUP_Weapons_AS50",
+	"CUP_Weapons_AWM",
+	"CUP_Weapons_CZ750",
+	"CUP_Weapons_CZ805",
+	"CUP_Weapons_EVO",
+	"CUP_Weapons_G36",
+	"CUP_Weapons_HK416",
+	"CUP_Weapons_L129",
+	"CUP_Weapons_L85",
+	"CUP_Weapons_M1014",
+	"CUP_Weapons_M107",
+	"CUP_Weapons_M110",
+	"CUP_Weapons_M14",
+	"CUP_Weapons_M14_DMR",
+	"CUP_Weapons_M16",
+	"CUP_Weapons_M24",
+	"CUP_Weapons_M240",
+	"CUP_Weapons_M249",
+	"CUP_Weapons_M60E4",
+	"CUP_Weapons_Mk48",
+	"CUP_Weapons_RSASS",
+	"CUP_Weapons_Sa58",
+	"CUP_Weapons_SCAR",
+	"CUP_Weapons_Steyr",
+	"CUP_Weapons_West_Attachments",
+	"CUP_Weapons_XM8"];
+a3e_additional_weapon_box_arsenal_weapons = [
+	"CUP_glaunch_M32",
+	"CUP_glaunch_M79",
+	"CUP_glaunch_Mk13"];
 
 //////////////////////////////////////////////////////////////////
 // fn_MortarSite
@@ -816,13 +849,13 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"Mi8Wreck"];
+	"CUP_Mi8Wreck"];
 a3e_arr_CrashSiteCrew = [
 	"CUP_O_sla_Pilot"];
 a3e_arr_CrashSiteWrecksCar = [
 	"Land_Wreck_BMP2_F"
 	,"Land_Wreck_BRDM2_F"
-	,"T72Wreck"];
+];
 a3e_arr_CrashSiteCrewCar = [
 	"CUP_O_sla_Soldier"];
 // Weapons and ammo in crash site box

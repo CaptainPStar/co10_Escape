@@ -15,8 +15,8 @@ A3E_VAR_Side_Blufor = west;//player side IFA GER Wehrmacht
 A3E_VAR_Side_Opfor = east;//enemy side IFA SOV
 A3E_VAR_Side_Ind = resistance;//independent side IFA US
 
-A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_AAF_CO.paa";
+A3E_VAR_Flag_Opfor = "\WW2\Core_t\IF_Decals_t\US\flag_USA_co.paa";
+A3E_VAR_Flag_Ind = "\WW2\Core_t\IF_Decals_t\Ussr\flag_SU_co.paa";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
@@ -518,10 +518,21 @@ a3e_arr_TWSScopes = [""];
 // Here is a list of bipods, might get randomly added to enemy patrols:
 a3e_arr_Bipods = [""];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
+// always the fallback option, use BIS units if mod has no helicopters
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"B_Heli_Transport_01_F"];
@@ -536,6 +547,24 @@ a3e_arr_extraction_boat = [
 	"LIB_LCVP"];
 a3e_arr_extraction_boat_escort = [
 	"LIB_LCVP"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Cars/APCs that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"LIB_OpelBlitz_Open_G_Camo"	//12
+	,"LIB_OpelBlitz_Open_Y_Camo"	//12
+	,"LIB_OpelBlitz_Tent_Y_Camo"	//12
+	,"LIB_SdKfz_7"	//11
+	,"LIB_OpelBlitz_Ambulance"	//8
+	,"LIB_SdKfz251"	//10
+	,"LIB_SdKfz234_1"];	//7
+a3e_arr_extraction_car_escort = [
+	"LIB_FlakPanzerIV_Wirbelwind"
+	,"LIB_StuG_III_G"
+	,"LIB_PzKpfwIV_H"
+	,"LIB_PzKpfwVI_E"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
