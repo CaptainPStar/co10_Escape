@@ -13,8 +13,8 @@ A3E_VAR_Side_Blufor = west;
 A3E_VAR_Side_Opfor = east;
 A3E_VAR_Side_Ind = resistance;
 
-A3E_VAR_Flag_Opfor = "\ca\misc\data\sever_vlajka.paa";
-A3E_VAR_Flag_Ind = "\ca\misc\data\jih_vlajka.paa";
+A3E_VAR_Flag_Opfor = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_rus_co";
+A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_napa_co";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor]; // CUP USMC
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor]; // CUP RU
@@ -289,10 +289,12 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_O_BMP2_RU"
 	,"CUP_O_BMP_HQ_RU"
 	,"CUP_O_BMP3_RU"
+	,"CUP_O_BTR80_CAMO_RU"
+	,"CUP_O_BTR80A_CAMO_RU"
 	,"CUP_O_BTR90_RU"
 	,"CUP_O_BTR90_HQ_RU"
-	,"CUP_O_Vodnik_PK_RU"
-	,"CUP_O_Vodnik_hmg_RU"
+	,"CUP_O_GAZ_Vodnik_PK_RU"
+	,"CUP_O_GAZ_Vodnik_BPPU_RU"
 	,"CUP_O_T72_RU"
 	,"CUP_O_BM21_RU"
 	,"CUP_O_UAZ_Unarmed_RU"
@@ -305,8 +307,8 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_O_Ural_Open_RU"
 	,"CUP_O_Ural_ZU23_RU"
 	,"CUP_O_BMP2_AMB_RU"
-	,"CUP_O_Vodnik_AGS_RU"
-	,"CUP_O_Vodnik_MedEvac_RU"
+	,"CUP_O_GAZ_Vodnik_AGS_RU"
+	,"CUP_O_GAZ_Vodnik_MedEvac_RU"
 	,"CUP_O_UAZ_AMB_RU"
 	,"CUP_O_Ural_Reammo_RU"
 	,"CUP_O_Ural_Refuel_RU"
@@ -396,15 +398,17 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"CUP_O_BMP2_RU"
 	,"CUP_O_BMP_HQ_RU"
 	,"CUP_O_BMP3_RU"
+	,"CUP_O_BTR80_CAMO_RU"
+	,"CUP_O_BTR80A_CAMO_RU"
 	,"CUP_O_BTR90_RU"
-	,"CUP_O_Vodnik_PK_RU"
-	,"CUP_O_Vodnik_hmg_RU"
+	,"CUP_O_GAZ_Vodnik_PK_RU"
+	,"CUP_O_GAZ_Vodnik_BPPU_RU"
 	,"CUP_O_UAZ_Unarmed_RU"
 	,"CUP_O_UAZ_AGS30_RU"
 	,"CUP_O_UAZ_MG_RU"
 	,"CUP_O_UAZ_METIS_RU"
 	,"CUP_O_UAZ_SPG9_RU"
-	,"CUP_O_Vodnik_AGS_RU"
+	,"CUP_O_GAZ_Vodnik_AGS_RU"
 	,"CUP_O_AGS_RU"
 	,"CUP_O_KORD_high_RU"
 	,"CUP_O_KORD_RU"
@@ -423,6 +427,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	"CUP_O_BTR90_RU"	//3
+	,"CUP_O_BTR80A_CAMO_RU"
 	,"CUP_O_Ural_RU"	//12
 	,"CUP_O_Ural_Open_RU"];	//12
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
@@ -434,6 +439,7 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	"CUP_O_BTR90_RU"
+	,"CUP_O_BTR80A_CAMO_RU"
 	,"CUP_O_Ural_RU"
 	,"CUP_O_Ural_Open_RU"
 	,"CUP_I_BMP2_NAPA",
@@ -450,7 +456,9 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 	,"CUP_O_BRDM2_RUS"
 	,"CUP_O_BRDM2_ATGM_RUS"
 	,"CUP_O_BTR60_RU"
-	,"CUP_0_BTR90_RU"];
+	,"CUP_O_BTR80_CAMO_RU"
+	,"CUP_O_BTR80A_CAMO_RU"
+	,"CUP_O_BTR90_RU"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"CUP_O_2S6M_RU"
@@ -471,7 +479,7 @@ a3e_arr_ComCenParkedVehicles = [
 	,"CUP_O_UAZ_SPG9_RU"
 	,"CUP_O_Ural_Empty_RU"
 	,"CUP_O_Ural_Open_RU"
-	,"CUP_O_Vodnik_MedEvac_RU"
+	,"CUP_O_GAZ_Vodnik_MedEvac_RU"
 	,"CUP_O_Ural_Reammo_RU"
 	,"CUP_O_Ural_Refuel_RU"
 	,"CUP_O_Ural_Repair_RU"
@@ -713,7 +721,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"CUP_O_UAZ_SPG9_RU"
 	,"CUP_O_Ural_Empty_RU"
 	,"CUP_O_Ural_Open_RU"
-	,"CUP_O_Vodnik_MedEvac_RU"
+	,"CUP_O_GAZ_Vodnik_MedEvac_RU"
 	,"CUP_O_Ural_Reammo_RU"
 	,"CUP_O_Ural_Refuel_RU"
 	,"CUP_O_Ural_Repair_RU"
@@ -773,7 +781,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_SVD_des_ghillie_pso", 10, 1,
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_sgun_Saiga12K", 50, 2, 4, ["CUP_8Rnd_B_Saiga12_74Slug_M","CUP_8Rnd_B_Saiga12_74Pellets_M"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_AKM", 50, 1, 3, ["CUP_30Rnd_762x39_AK47_M"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_AK74M_GL", 50, 1, 3, ["CUP_30Rnd_545x39_AK_M","CUP_1Rnd_HE_GP25_M"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_RPK74", 30, 1, 2, ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_RPK74", 30, 1, 2, ["CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_FNFAL5062", 10, 1, 2, ["CUP_20Rnd_762x51_FNFAL_M"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_FNFAL", 10, 1, 2, ["CUP_20Rnd_762x51_FNFAL_M"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_AK107_GL_kobra", 10, 1, 2, ["CUP_30Rnd_545x39_AK_M", "CUP_1Rnd_HE_GP25_M"], 4];
@@ -1067,6 +1075,17 @@ a3e_arr_AquaticPatrols = [
 //////////////////////////////////////////////////////////////////
 a3e_additional_weapon_box_1 = "CUP_RUBasicWeaponsBox";
 a3e_additional_weapon_box_2 = "CUP_RUSpecialWeaponsBox";
+a3e_additional_weapon_box_arsenal_cfgPatches = [
+	"CUP_Weapons_AK",
+	"CUP_Weapons_Bizon",
+	"CUP_Weapons_East_Attachments",
+	"CUP_Weapons_GROZA",
+	"CUP_Weapons_KSVK",
+	"CUP_Weapons_PK",
+	"CUP_Weapons_SVD",
+	"CUP_Weapons_VSS"];
+a3e_additional_weapon_box_arsenal_weapons = [
+	"CUP_glaunch_6G30"];
 
 //////////////////////////////////////////////////////////////////
 // fn_MortarSite
@@ -1096,8 +1115,7 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"BlackhawkWreck"
-	,"Land_UWreck_MV22_F"
+	"Land_UWreck_MV22_F"
 	,"Land_Wreck_Plane_Transport_01_F"
 	,"Land_Wreck_Heli_Attack_01_F"];
 a3e_arr_CrashSiteCrew = [
@@ -1107,7 +1125,7 @@ a3e_arr_CrashSiteWrecksCar = [
 	"Land_Wreck_HMMWV_F"
 	,"Land_Wreck_Hunter_F"
 	,"Land_Wreck_Slammer_F"
-	,"M113Wreck"];
+];
 a3e_arr_CrashSiteCrewCar = [
 	"CUP_B_USMC_Crew"
 	,"CUP_B_USMC_SpecOps_SD"];

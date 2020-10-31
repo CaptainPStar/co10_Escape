@@ -1,0 +1,617 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"a3_map_stratis",
+		"australia"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"australia"
+	};
+	randomSeed=3969745;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Groups
+	{
+		items=1;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21193.99,11.870857,18791.428};
+					azimut=110;
+					id=0;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+	class Markers
+	{
+		items=42;
+		class Item0
+		{
+			position[]={28921.91,8.8031025,36702.883};
+			name="a3e_var_communicationCenter_1";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=-73.847351;
+		};
+		class Item1
+		{
+			position[]={12256.369,91.030426,18693.902};
+			name="a3e_var_communicationCenter_2";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=65.768669;
+		};
+		class Item2
+		{
+			position[]={10331.988,6.0803823,29829.975};
+			name="a3e_var_communicationCenter_3";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=899.79285;
+		};
+		class Item3
+		{
+			position[]={13807.033,101.19978,25180.766};
+			name="a3e_var_communicationCenter_4";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=219.31253;
+		};
+		class Item4
+		{
+			position[]={16486.045,6.29107,33643.578};
+			name="a3e_var_communicationCenter_5";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=540.17761;
+		};
+		class Item5
+		{
+			position[]={5837.0483,12.81771,18371.57};
+			name="a3e_var_communicationCenter_6";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=629.75061;
+		};
+		class Item6
+		{
+			position[]={31336.314,3.5392797,10216.843};
+			name="a3e_var_communicationCenter_7";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=359.94373;
+		};
+		class Item7
+		{
+			position[]={25259.123,7.4310384,12546.416};
+			name="a3e_var_communicationCenter_8";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=359.9296;
+		};
+		class Item8
+		{
+			position[]={36395.363,4.0415301,13191.527};
+			name="a3e_var_communicationCenter_9";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=180.53206;
+		};
+		class Item9
+		{
+			position[]={20697.502,13.079658,19759.563};
+			name="a3e_var_communicationCenter";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+		};
+		class Item10
+		{
+			position[]={20712.002,13.496322,19671.182};
+			name="tip";
+			text="copy these two";
+			type="hd_arrow";
+		};
+		class Item11
+		{
+			position[]={20697.502,13.079658,19759.563};
+			name="area";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+		};
+		class Item12
+		{
+			position[]={28921.91,8.8031025,36702.883};
+			name="area_1";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=-73.847351;
+		};
+		class Item13
+		{
+			position[]={12256.369,91.030426,18693.902};
+			name="area_2";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=65.768669;
+		};
+		class Item14
+		{
+			position[]={10331.988,6.0803823,29829.975};
+			name="area_3";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=899.79285;
+		};
+		class Item15
+		{
+			position[]={13807.033,101.19978,25180.766};
+			name="area_4";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=219.31253;
+		};
+		class Item16
+		{
+			position[]={16486.045,6.29107,33643.578};
+			name="area_5";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=540.17761;
+		};
+		class Item17
+		{
+			position[]={5837.0483,12.81771,18371.57};
+			name="area_6";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=629.75061;
+		};
+		class Item18
+		{
+			position[]={31336.314,3.5392797,10216.843};
+			name="area_7";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=359.94373;
+		};
+		class Item19
+		{
+			position[]={25259.123,7.4310384,12546.416};
+			name="area_8";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=359.9296;
+		};
+		class Item20
+		{
+			position[]={36395.363,4.0415301,13191.527};
+			name="area_9";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=180.53206;
+		};
+		class Item21
+		{
+			position[]={20713.168,13.615258,19616.691};
+			name="tip_1";
+			text="the area marker just helps with placement, isn't needed";
+			type="Empty";
+		};
+		class Item22
+		{
+			position[]={31400.824,197.71249,25112.877};
+			name="a3e_var_communicationCenter_10";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=61.083656;
+		};
+		class Item23
+		{
+			position[]={31400.824,197.71249,25112.877};
+			name="area_10";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=61.083656;
+		};
+		class Item24
+		{
+			position[]={21743.557,16.416243,25705.361};
+			name="a3e_var_communicationCenter_11";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+		};
+		class Item25
+		{
+			position[]={21743.557,16.416243,25705.361};
+			name="area_11";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+		};
+		class Item26
+		{
+			position[]={10574.387,77.809708,25202.869};
+			name="a3e_var_communicationCenter_12";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+		};
+		class Item27
+		{
+			position[]={10574.387,77.809708,25202.869};
+			name="area_12";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+		};
+		class Item28
+		{
+			position[]={33800.621,6.2184048,3515.4863};
+			name="a3e_var_communicationCenter_13";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=39.623348;
+		};
+		class Item29
+		{
+			position[]={33800.621,6.2184048,3515.4863};
+			name="area_13";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=39.623348;
+		};
+		class Item30
+		{
+			position[]={28786.051,32.660294,19133.188};
+			name="a3e_var_communicationCenter_14";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=55.32399;
+		};
+		class Item31
+		{
+			position[]={28786.051,32.660294,19133.188};
+			name="area_14";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=55.32399;
+		};
+		class Item32
+		{
+			position[]={6989.6055,43.617157,25375.602};
+			name="a3e_var_communicationCenter_15";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+		};
+		class Item33
+		{
+			position[]={6989.6055,43.617157,25375.602};
+			name="area_15";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+		};
+		class Item34
+		{
+			position[]={8036.6064,65.540627,24157.57};
+			name="a3e_var_communicationCenter_16";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+		};
+		class Item35
+		{
+			position[]={8036.6064,65.540627,24157.57};
+			name="area_16";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+		};
+		class Item36
+		{
+			position[]={37841.48,12.218261,21668.039};
+			name="a3e_var_communicationCenter_17";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=450.22134;
+		};
+		class Item37
+		{
+			position[]={37841.48,12.218261,21668.039};
+			name="area_17";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=450.22134;
+		};
+		class Item38
+		{
+			position[]={10143.134,87.059875,13948};
+			name="a3e_var_communicationCenter_18";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=50.602665;
+		};
+		class Item39
+		{
+			position[]={10143.134,87.059875,13948};
+			name="area_18";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=50.602665;
+		};
+		class Item40
+		{
+			position[]={26164.75,2.2098241,29263.715};
+			name="a3e_var_communicationCenter_19";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+		};
+		class Item41
+		{
+			position[]={26164.75,2.2098241,29263.715};
+			name="area_19";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+		};
+	};
+	class Sensors
+	{
+		items=3;
+		class Item0
+		{
+			position[]={19323.82,15.861062,20229.996};
+			rectangular=1;
+			activationBy="ALPHA";
+			interruptable=1;
+			age="UNKNOWN";
+			text="Build ComCenter1";
+			expActiv="drn_comCen = ""a3e_var_communicationCenter_1"";_nil = [getMarkerPos drn_comCen, markerDir drn_comCen] execVM ""Scripts\Escape\BuildCommunicationCenter.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={19320.867,15.77887,20091.861};
+			rectangular=1;
+			activationBy="BRAVO";
+			interruptable=1;
+			age="UNKNOWN";
+			text="Export all ComCenter positions to .rpt";
+			expActiv="_nil = [] execVM ""PositionGenerator.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item2
+		{
+			position[]={19323.898,14.22719,19916.691};
+			rectangular=1;
+			activationBy="JULIET";
+			interruptable=1;
+			age="UNKNOWN";
+			text="Build all ComCenters";
+			expActiv="_nil = [] execVM ""buildall.sqf"";";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"australia"
+	};
+	addOnsAuto[]=
+	{
+		"australia"
+	};
+	randomSeed=15840941;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"australia"
+	};
+	addOnsAuto[]=
+	{
+		"australia"
+	};
+	randomSeed=2132935;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"australia"
+	};
+	addOnsAuto[]=
+	{
+		"australia"
+	};
+	randomSeed=2000517;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};

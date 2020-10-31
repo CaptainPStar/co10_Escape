@@ -5,8 +5,6 @@ if(isNil("a3e_var_commonLibInitialized")) then {
 	call compile preprocessFileLineNumbers "Scripts\DRN\CommonLib\CommonLib.sqf";
 };
 
-call compile preprocessFileLineNumbers "config.sqf";
-call compile preprocessFileLineNumbers ("Island\WorldConfig.sqf");
 
 //Parse the parameters
 call a3e_fnc_parameterInit;
@@ -52,6 +50,8 @@ _enemySpawnDistance = (Param_EnemySpawnDistance);
 
 [_enemyFrequency] call compile preprocessFileLineNumbers "Units\UnitClasses.sqf";
 
+// prison is created locally, clients need flag texture path
+publicVariable "A3E_VAR_Flag_Ind";
 
 // Developer Variables
 
@@ -151,19 +151,32 @@ _villagePatrolSpawnArea = (Param_VillageSpawnCount);
 
 drn_searchAreaMarkerName = "drn_searchAreaMarker";
 
+//Getting exclusion zones
+if(isNil("A3E_ExclusionZones")) then {
+  A3E_ExclusionZones = [];
+  {
+    if("A3E_ExclusionZone" in _x && _x != "A3E_ExclusionZone_") then {
+      A3E_ExclusionZones pushback _x;
+	  if(!A3E_Debug) then {_x setMarkerAlpha 0;};
+    };
+  } foreach allMapMarkers;
+};
+
 // Choose a start position
+if(isNil("A3E_ClearedPositionDistance")) then {
+	A3E_ClearedPositionDistance = 500;
+};
 
 A3E_StartPos = [] call a3e_fnc_findFlatArea;
+while {{A3E_StartPos inArea _x} count A3E_ExclusionZones > 0} do {
+	A3E_StartPos = [] call a3e_fnc_findFlatArea;
+};
 publicVariable "A3E_StartPos";
 
 
 A3E_Var_ClearedPositions = [];
 A3E_Var_ClearedPositions pushBack A3E_StartPos;
 A3E_Var_ClearedPositions pushBack (getMarkerPos "drn_insurgentAirfieldMarker");
-
-if(isNil("A3E_ClearedPositionDistance")) then {
-	A3E_ClearedPositionDistance = 500;
-};
 
 private _backpack = [] call A3E_fnc_createStartpos;
 
@@ -581,13 +594,20 @@ waitUntil {scriptDone _scriptHandle};
 				removeAllPrimaryWeaponItems _unit;
 				
 			};
-			private["_hmd"];
-			_hmd = hmd _unit;
-            if ((random 100 > 20) || (Param_NoNightvision==1)) then {
-				if(_hmd != "") then {
-					_unit unlinkItem _hmd;
-				};
-            };
+
+			private _hmd = hmd _unit;
+			if (_hmd isEqualTo "") then {
+				private _cfgWeapons = configFile >> "CfgWeapons";
+				{
+					if (616 == getNumber (_cfgWeapons >> _x >> "ItemInfo" >> "type")) exitWith {
+						_hmd = _x;
+					};
+				} forEach items _unit;
+			};
+			if (!(_hmd isEqualTo "") && {random 100 > 20 || {Param_NoNightvision == 1}}) then {
+				_unit unlinkItem _hmd;
+				_unit removeItem _hmd;
+			};
 	
             //_unit setSkill a3e_var_Escape_enemyMinSkill;
 			//[_unit, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;

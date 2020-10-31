@@ -1,0 +1,605 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"a3_map_stratis",
+		"isoladicapraia"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"isoladicapraia"
+	};
+	randomSeed=3651801;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Groups
+	{
+		items=1;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={1247.3413,5,9113.8076};
+					special="NONE";
+					id=0;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="MAJOR";
+					skill=0.59999996;
+					text="drn_player1";
+				};
+			};
+		};
+	};
+	class Markers
+	{
+		items=42;
+		class Item0
+		{
+			position[]={1695.4589,-0.0061287484,9615.4395};
+			name="a3e_village";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=150;
+			b=150;
+		};
+		class Item1
+		{
+			position[]={1714.6115,-0.0022689346,9444.4893};
+			name="tip1";
+			text="copy this one, so it adds _number";
+			type="hd_arrow";
+		};
+		class Item2
+		{
+			position[]={5758.0269,42.868465,9554.5596};
+			name="a3e_village_1";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=110;
+			b=50;
+			angle=41.1936;
+		};
+		class Item3
+		{
+			position[]={5579.0996,190.92546,9250.0596};
+			name="a3e_village_2";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=50;
+			b=20;
+		};
+		class Item4
+		{
+			position[]={5319.0684,261.16785,8926.1768};
+			name="a3e_village_3";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=60;
+			b=60;
+		};
+		class Item5
+		{
+			position[]={5086.0044,261.81104,8489.3994};
+			name="a3e_village_4";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=35;
+			b=45;
+			angle=-26.322409;
+		};
+		class Item6
+		{
+			position[]={4652.8564,393.06244,7702.2798};
+			name="a3e_village_5";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=50;
+			b=45;
+		};
+		class Item7
+		{
+			position[]={5153.0244,275.41101,7563.4214};
+			name="a3e_village_6";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=60;
+			b=30;
+			angle=36.526009;
+		};
+		class Item8
+		{
+			position[]={5958.4805,180.74332,7115.4805};
+			name="a3e_village_7";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=110;
+			b=60;
+			angle=-35.110321;
+		};
+		class Item9
+		{
+			position[]={6454.4717,127.92163,7406.5225};
+			name="a3e_village_8";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=90;
+			b=110;
+		};
+		class Item10
+		{
+			position[]={6511.9819,3,6802.6289};
+			name="a3e_village_9";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=100;
+			b=40;
+			angle=-113.03848;
+		};
+		class Item11
+		{
+			position[]={6445.605,44.853287,6329.6323};
+			name="a3e_village_10";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=80;
+			b=120;
+			angle=21.455862;
+		};
+		class Item12
+		{
+			position[]={7061.3687,75.865791,6280.9565};
+			name="a3e_village_11";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=70;
+			b=55;
+			angle=71.153801;
+		};
+		class Item13
+		{
+			position[]={7324.9351,57.287678,6323.2573};
+			name="a3e_village_14";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=80;
+			b=100;
+		};
+		class Item14
+		{
+			position[]={7543.4609,23.565823,6142.0493};
+			name="a3e_village_15";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=30;
+			b=30;
+			angle=-30.857241;
+		};
+		class Item15
+		{
+			position[]={7385.1514,44.303917,6546.5479};
+			name="a3e_village_16";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=20;
+			b=20;
+		};
+		class Item16
+		{
+			position[]={7267.7749,13.603348,6938.417};
+			name="a3e_village_17";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=35;
+			b=25;
+		};
+		class Item17
+		{
+			position[]={6690.4839,108.31182,6307.5454};
+			name="a3e_village_18";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=35;
+			b=20;
+			angle=-125.27954;
+		};
+		class Item18
+		{
+			position[]={6722.355,89.347656,6034.3193};
+			name="a3e_village_19";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=55;
+			b=35;
+			angle=-137.96928;
+		};
+		class Item19
+		{
+			position[]={6916.1812,121.68375,5989.5723};
+			name="a3e_village_20";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=20;
+			b=20;
+		};
+		class Item20
+		{
+			position[]={5728.6099,159.83975,6851.1411};
+			name="a3e_village_12";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=30;
+			b=20;
+			angle=-11.768579;
+		};
+		class Item21
+		{
+			position[]={3990.0291,414.77914,6315.9824};
+			name="a3e_village_13";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=35;
+			b=25;
+		};
+		class Item22
+		{
+			position[]={3631.9395,225.07321,6506.21};
+			name="a3e_village_21";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=25;
+			b=40;
+		};
+		class Item23
+		{
+			position[]={3357.4028,65.393646,5890.0747};
+			name="a3e_village_22";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=110;
+			b=80;
+			angle=16.871426;
+		};
+		class Item24
+		{
+			position[]={3331.7898,3.0987566,5639.4194};
+			name="a3e_village_23";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=10;
+			b=50;
+		};
+		class Item25
+		{
+			position[]={3908.313,304.01151,4784.7871};
+			name="a3e_village_24";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=40;
+			b=30;
+		};
+		class Item26
+		{
+			position[]={5968.5508,132.3912,5017.1953};
+			name="a3e_village_25";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=60;
+			b=35;
+		};
+		class Item27
+		{
+			position[]={6128.2803,134.86546,4888.6885};
+			name="a3e_village_26";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=40;
+			b=40;
+		};
+		class Item28
+		{
+			position[]={6664.4688,264.61755,4591.3052};
+			name="a3e_village_27";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=30;
+			b=30;
+		};
+		class Item29
+		{
+			position[]={7205.2471,90.801003,5320.46};
+			name="a3e_village_28";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=30;
+			b=35;
+		};
+		class Item30
+		{
+			position[]={4170.1289,379.21915,3904.1304};
+			name="a3e_village_29";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=50;
+			b=70;
+			angle=-167.50215;
+		};
+		class Item31
+		{
+			position[]={4134.6201,355.58408,3694.9248};
+			name="a3e_village_30";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=90;
+			b=40;
+			angle=-11.56104;
+		};
+		class Item32
+		{
+			position[]={3808.9602,350.44489,3556.658};
+			name="a3e_village_31";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=80;
+			b=40;
+		};
+		class Item33
+		{
+			position[]={2737.3835,120.77654,3361.0457};
+			name="a3e_village_32";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=40;
+			b=40;
+		};
+		class Item34
+		{
+			position[]={3822.2036,403.56412,2953.3271};
+			name="a3e_village_33";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=60;
+			b=120;
+		};
+		class Item35
+		{
+			position[]={4350.8364,71.642029,1134.8602};
+			name="a3e_village_34";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=50;
+			b=50;
+		};
+		class Item36
+		{
+			position[]={5648.7852,110.30965,9450.4043};
+			name="a3e_village_35";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=80;
+			b=30;
+			angle=34.546101;
+		};
+		class Item37
+		{
+			position[]={6463.2349,30.14628,6516.9072};
+			name="a3e_village_36";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=100;
+			b=50;
+			angle=41.40583;
+		};
+		class Item38
+		{
+			position[]={6757.957,21.746868,6648.853};
+			name="a3e_village_37";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=110;
+			b=60;
+		};
+		class Item39
+		{
+			position[]={6637.6875,3,6700.0356};
+			name="a3e_village_38";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=170;
+			b=55;
+			angle=-25;
+		};
+		class Item40
+		{
+			position[]={6668.7373,5.5052414,7067.6987};
+			name="a3e_village_39";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=100;
+			b=30;
+			angle=-31.259626;
+		};
+		class Item41
+		{
+			position[]={6677.4043,72.032135,7380.1279};
+			name="a3e_village_40";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=20;
+			b=20;
+		};
+	};
+	class Sensors
+	{
+		items=1;
+		class Item0
+		{
+			position[]={1236.5291,5,9172.0264};
+			activationBy="ALPHA";
+			interruptable=1;
+			age="UNKNOWN";
+			text="Export Village markers to .rpt";
+			expActiv="_nil = [] execVM ""PositionGenerator.sqf"";";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"isoladicapraia"
+	};
+	addOnsAuto[]=
+	{
+		"isoladicapraia"
+	};
+	randomSeed=11538662;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"isoladicapraia"
+	};
+	addOnsAuto[]=
+	{
+		"isoladicapraia"
+	};
+	randomSeed=914852;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"isoladicapraia"
+	};
+	addOnsAuto[]=
+	{
+		"isoladicapraia"
+	};
+	randomSeed=7945035;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};

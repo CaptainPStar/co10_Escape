@@ -581,13 +581,10 @@ if (count _parkedArmorClasses > 0) then {
     _dir = 180;
     
     _sarmor = [_armor, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateVehicle;
-	_sarmor setdamage (random [0, 0.2, 0.5]);
 	
-    if (["ammo", "fuel"] call BIS_fnc_selectRandom == "ammo") then {
-        _sarmor setFuel 0.01;
-    } else {
-        _sarmor setFuel 0.01;
-    };
+	_sarmor setfuel random [0.05, 0.10, 0.15];
+	_sarmor setdamage random [0.25, 0.5, 0.9];
+	_sarmor setVehicleAmmo random [0, 0.5, 1];
 
 };
 // setVehicleAmmo cannot be used until Ammo Depots rearm all vehicles
@@ -602,29 +599,33 @@ if (count _parkedVehicleClasses > 0) then {
     _vehicle = selectRandom _parkedVehicleClasses;
     _stupidvehicle = [_vehicle, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateVehicle;
 	
-	_stupidvehicle setfuel (random 1);
-	_stupidvehicle setdamage (random [0, 0.2, 0.5]);
+	_stupidvehicle setfuel random 1;
+	_stupidvehicle setdamage random [0, 0.2, 0.5];
+	_stupidvehicle setVehicleAmmo random [0, 0.5, 1];
 };
 
 _random = random 1;
-if (_random < .3 ) then {
+if (_random > .5 ) then {
     _pos = [-20.35, -1.202];
     _dir = 100;
     
     _vehicle = selectRandom _parkedVehicleClasses;
     _stupidvehicle = [_vehicle, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 	
-	_stupidvehicle setfuel (random 1);
-	_stupidvehicle setdamage (random [0, 0.2, 0.5]);
+	_stupidvehicle setfuel random 1;
+	_stupidvehicle setdamage random [0, 0.2, 0.5];
+	_stupidvehicle setVehicleAmmo random [0, 0.5, 1];
 };
-if (_random > .9) then {
+if (_random > .75) then {
     _pos = [-15.247, 12.6];
     _dir = 144;
    
-    _stupidvehicle = ["B_G_Offroad_01_armed_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+     _vehicle = selectRandom _parkedVehicleClasses;
+    _stupidvehicle = [_vehicle, _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 	
 	_stupidvehicle setfuel random 1;
 	_stupidvehicle setdamage random [0, 0.2, 0.5];
+	_stupidvehicle setVehicleAmmo random [0, 0.5, 1];
 };
 
 ["A3E_MotorPoolMapMarker" + str _mNumber,_centerPos,"o_service"] call A3E_fnc_createLocationMarker;

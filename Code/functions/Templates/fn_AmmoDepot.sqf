@@ -308,7 +308,9 @@
 
 	if((Param_Waffelbox)==1) then {
 		_box = createVehicle [a3e_additional_weapon_box_1, [(_middlePos select 0) + 0, (_middlePos select 1) + 3, 0], [], 0, "CAN_COLLIDE"];
+        _box call A3E_fnc_initArsenal;
 		_box = createVehicle [a3e_additional_weapon_box_2, [(_middlePos select 0) + 3, (_middlePos select 1) + 3, 0], [], 0, "CAN_COLLIDE"];
+        _box call A3E_fnc_initArsenal;
 	 };
     // Ordnance
     

@@ -1,0 +1,267 @@
+version=52;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=209;
+	};
+	class MarkerIDProvider
+	{
+		nextID=38;
+	};
+	class Camera
+	{
+		pos[]={1739.407,70.478546,5373.9058};
+		dir[]={0,-0.70710683,0.70710671};
+		up[]={0,0.70710665,0.70710677};
+		aside[]={0.99999994,0,-0};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Ui_F",
+	"A3_Characters_F"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+	};
+};
+randomSeed=2192801;
+class ScenarioData
+{
+	author="Scruffy";
+};
+class Intro
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Entities
+	{
+		items=8;
+		class Item0
+		{
+			dataType="Marker";
+			position[]={1431.7748,-0.099211901,6676.5396};
+			name="a3e_boatmarker";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=150;
+			b=150;
+			id=193;
+			atlOffset=43.696125;
+		};
+		class Item1
+		{
+			dataType="Marker";
+			position[]={1450.9272,0.062506095,6505.5898};
+			name="abc123";
+			text="copy this one, so it adds _number";
+			type="hd_arrow";
+			id=194;
+			atlOffset=23.36141;
+		};
+		class Item2
+		{
+			dataType="Trigger";
+			position[]={1732.9492,5.5,5449.8682};
+			class Attributes
+			{
+				text="Export Boatmarkers to .rpt file";
+				onActivation="_nil = [] execVM ""PositionGenerator.sqf"";";
+				interuptable=1;
+				activationBy="ALPHA";
+			};
+			id=199;
+			type="EmptyDetector";
+			atlOffset=-49.757877;
+		};
+		class Item3
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1739.407,45.47998,5398.9556};
+						angles[]={6.2172856,0,0.20026524};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						skill=0.59999996;
+						rank="MAJOR";
+						name="drn_player1";
+						isPlayer=1;
+						isPlayable=1;
+					};
+					id=201;
+					type="B_Soldier_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=200;
+		};
+		class Item4
+		{
+			dataType="Marker";
+			position[]={3107.0549,6.5195189e+037,8512.8232};
+			name="a3e_boatmarker_1";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=500;
+			b=1000;
+			id=205;
+			atlOffset=6.5195189e+037;
+		};
+		class Item5
+		{
+			dataType="Marker";
+			position[]={5480.9697,1.5175711,2679.637};
+			name="a3e_boatmarker_2";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=400;
+			b=700;
+			angle=118.19813;
+			id=206;
+			atlOffset=51.259972;
+		};
+		class Item6
+		{
+			dataType="Marker";
+			position[]={10847.196,6.5195189e+037,948.38098};
+			name="a3e_boatmarker_3";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=700;
+			b=400;
+			angle=201.88705;
+			id=207;
+			atlOffset=6.5195189e+037;
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={6199.2236,1.541388,11253.873};
+			name="a3e_boatmarker_4";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=800;
+			b=400;
+			angle=61.002724;
+			id=208;
+			atlOffset=50.959602;
+		};
+	};
+};
+class OutroLoose
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};

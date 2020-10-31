@@ -39,6 +39,7 @@ class CfgFunctions
 		class CheckCampDistance {};
 		class FireSmokeFX {};
 		class OnVehicleSpawn {};
+		class initArsenal {};
 
 		};
 		class AI
@@ -59,6 +60,8 @@ class CfgFunctions
 			class GetTaskState {};
 			class AquaticPatrol {};
 			class AddStaticGunner {};
+			class ExtractionBoat {};
+			class ExtractionCar {};
 			class ExtractionChopper {};
 		};
 		class Debug
@@ -87,6 +90,8 @@ class CfgFunctions
 			class createExtractionPoint {};
 			class runExtraction {};
 			class runExtractionBoat {};
+			class runExtractionCar {};
+			class runExtractionHeli {};
 			class firedNearExtraction {};
 			class weather {};
 			class FindSpawnRoad {};

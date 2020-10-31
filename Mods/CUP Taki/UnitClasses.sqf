@@ -9,12 +9,12 @@ private ["_enemyFrequency"];
 
 _enemyFrequency = _this select 0;
 
-A3E_VAR_Side_Blufor = west;
-A3E_VAR_Side_Opfor = east;
-A3E_VAR_Side_Ind = resistance;
+A3E_VAR_Side_Blufor = west; //CUP GER KSK
+A3E_VAR_Side_Opfor = east; //CUP Takistani Army
+A3E_VAR_Side_Ind = resistance; //CUP 
 
-A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_red_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_green_CO.paa";
+A3E_VAR_Flag_Opfor = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_tka_co";
+A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_tkg_co";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
@@ -179,9 +179,9 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_C_Lada_White_CIV"
 	,"CUP_C_Lada_White_CIV"
 	,"CUP_C_Lada_White_CIV"
-	,"CUP_Lada_TK2_CIV"
-	,"CUP_Lada_TK2_CIV"
-	,"CUP_Lada_TK2_CIV"
+	,"CUP_C_Lada_TK2_CIV"
+	,"CUP_C_Lada_TK2_CIV"
+	,"CUP_C_Lada_TK2_CIV"
 	,"CUP_C_Lada_Red_CIV"
 	,"CUP_C_Lada_Red_CIV"
 	,"CUP_C_Lada_Red_CIV"
@@ -1273,9 +1273,9 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"CUP_C_Lada_White_CIV"
 	,"CUP_C_Lada_White_CIV"
 	,"CUP_C_Lada_White_CIV"
-	,"CUP_Lada_TK2_CIV"
-	,"CUP_Lada_TK2_CIV"
-	,"CUP_Lada_TK2_CIV"
+	,"CUP_C_Lada_TK2_CIV"
+	,"CUP_C_Lada_TK2_CIV"
+	,"CUP_C_Lada_TK2_CIV"
 	,"CUP_C_Lada_Red_CIV"
 	,"CUP_C_Lada_Red_CIV"
 	,"CUP_C_Lada_Red_CIV"
@@ -1419,14 +1419,14 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_AKS", 75, 2, 4, ["CUP_30Rnd_
 // Weapons and ammo in the special weapons box
 a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_RPK74", 50, 2, 4, ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_lmg_PKM", 30, 1, 2, ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_SVD", 25, 1, 4, ["CUP_10Rnd_762x54_SVD_M"], 9];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_ksvk", 10, 1, 2, ["CUP_5Rnd_127x108_KSVK_M"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_RPK74", 50, 2, 4, ["CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M","CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_PKM", 30, 1, 2, ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_SVD_pso", 25, 1, 4, ["CUP_10Rnd_762x54_SVD_M"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_ksvk", 10, 1, 2, ["CUP_5Rnd_127x108_KSVK_M"], 9];
 // non-CAST weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_RPK74_45", 50, 2, 4, ["CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_lmg_PKM", 30, 1, 2, ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_SVD", 25, 1, 4, ["CUP_10Rnd_762x54_SVD_M"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_PKM", 30, 1, 2, ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_SVD_pso", 25, 1, 4, ["CUP_10Rnd_762x54_SVD_M"], 9];
 
 
 
@@ -1652,7 +1652,7 @@ a3e_arr_AquaticPatrols = [
 // use to add boxes from mods to the ammo depots
 //////////////////////////////////////////////////////////////////
 a3e_additional_weapon_box_1 = "CUP_TKBasicWeapons_EP1";
-a3e_additional_weapon_box_2 = "CUP_TKSpecialWeaponsEP1";
+a3e_additional_weapon_box_2 = "CUP_TKSpecialWeapons_EP1";
 
 //////////////////////////////////////////////////////////////////
 // fn_MortarSite
@@ -1681,8 +1681,7 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"BlackhawkWreck"
-	,"Land_UWreck_MV22_F"
+	"Land_UWreck_MV22_F"
 	,"Land_Wreck_Plane_Transport_01_F"
 	,"Land_Wreck_Heli_Attack_01_F"];
 a3e_arr_CrashSiteCrew = [

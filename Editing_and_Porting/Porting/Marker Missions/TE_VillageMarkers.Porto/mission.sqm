@@ -1,0 +1,255 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"aia_desert2_config"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"aia_desert2_config"
+	};
+	randomSeed=3651801;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Groups
+	{
+		items=1;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2201.0623,8.7674379,2377.343};
+					special="NONE";
+					id=0;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="MAJOR";
+					skill=0.59999996;
+					text="drn_player1";
+				};
+			};
+		};
+	};
+	class Markers
+	{
+		items=9;
+		class Item0
+		{
+			position[]={1837.1547,-0.0049528778,2713.2346};
+			name="drn_village";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=150;
+			b=150;
+		};
+		class Item1
+		{
+			position[]={2586.8201,5.0293379,2364.6135};
+			name="drn_village_1";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=120;
+			b=240;
+		};
+		class Item2
+		{
+			position[]={2844.3872,5.0293379,2381.384};
+			name="drn_village_2";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=30;
+			b=60;
+		};
+		class Item3
+		{
+			position[]={2851.1248,6.9168501,2163.6606};
+			name="drn_village_3";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=25;
+			b=25;
+		};
+		class Item4
+		{
+			position[]={3237.8291,4,2909.7288};
+			name="drn_village_4";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=55;
+			b=40;
+			angle=-5;
+		};
+		class Item5
+		{
+			position[]={2327.406,10.713983,2442.6155};
+			name="drn_village_5";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=30;
+			b=20;
+		};
+		class Item6
+		{
+			position[]={2092.3264,3.1968942,2185.9541};
+			name="drn_village_6";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=30;
+			b=65;
+			angle=30;
+		};
+		class Item7
+		{
+			position[]={1415.9158,6.4751935,2285.043};
+			name="drn_village_7";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			a=15;
+			b=25;
+		};
+		class Item8
+		{
+			position[]={1856.3071,0.0052105603,2542.2844};
+			name="abc123";
+			text="copy this one, so it adds _number";
+			type="hd_arrow";
+		};
+	};
+	class Sensors
+	{
+		items=1;
+		class Item0
+		{
+			position[]={2194.6045,9.9970846,2428.3052};
+			activationBy="ALPHA";
+			interruptable=1;
+			age="UNKNOWN";
+			text="Generate";
+			expActiv="_nil = [] execVM ""PositionGenerator.sqf"";";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"aia_desert2_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_desert2_config"
+	};
+	randomSeed=11538662;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"aia_desert2_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_desert2_config"
+	};
+	randomSeed=914852;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"aia_desert2_config"
+	};
+	addOnsAuto[]=
+	{
+		"aia_desert2_config"
+	};
+	randomSeed=7945035;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.1;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.1;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};

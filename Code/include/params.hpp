@@ -2,7 +2,7 @@ class Params
 {
     class Param_Loadparams
     {
-            title = "Parameter Load and Save (save params between sessions)";
+            title = "Parameter Load and Save (save params between sessions, see readme!)";
             values[] = {0, 1, 2};
             texts[] = {"Use settings below and save (settings will be restored on mission restart)", "Load previously saved settings (Use below if none found)", "Use settings below without saving"};
             default = 1;
@@ -61,7 +61,7 @@ class Params
 	    title="Time Of Day";
 		values[]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26};
 		texts[]={"00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00","Random","Daytime","Nighttime"};
-		default = 25;
+		default = 8;
 		//function = "A3E_fnc_paramDaytime"; // (Optional) Function called when player joins, selected value is passed as an argument
 	};
 	class Param_TimeMultiplier	
@@ -253,7 +253,7 @@ class Params
 	};
 	class Param_Debug
 	{
-		title="Debug";
+		title="Debug (you should keep this off)";
 		values[]={0,1};
 		texts[]={"Off","On"};
 		default = 0;
