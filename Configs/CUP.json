@@ -149,16 +149,16 @@
 				{
 					"MOD" : "CUP RU vs CDF",
 					"PLAYERSIDE" : "EAST",
-					"PLAYERUNIT_1" : "CUP_O_RU_Soldier_SL_EMR",
-					"PLAYERUNIT_2" : "CUP_O_RU_Soldier_HAT_EMR",
-					"PLAYERUNIT_3" : "CUP_O_RU_Soldier_AA_EMR",
-					"PLAYERUNIT_4" : "CUP_O_RU_Engineer_EMR",
-					"PLAYERUNIT_5" : "CUP_O_RU_Soldier_GL_EMR",
-					"PLAYERUNIT_6" : "CUP_O_RU_Soldier_MG_EMR",
-					"PLAYERUNIT_7" : "CUP_O_RU_Soldier_AT_EMR",
-					"PLAYERUNIT_8" : "CUP_O_RU_Soldier_EMR",
-					"PLAYERUNIT_9" : "CUP_O_RU_Soldier_Marksman_EMR",
-					"PLAYERUNIT_10" : "CUP_O_RU_Medic_EMR"
+					"PLAYERUNIT_1" : "CUP_O_RU_Soldier_SL_Ratnik_Winter",
+					"PLAYERUNIT_2" : "CUP_O_RU_Soldier_LAT_Ratnik_Winter",
+					"PLAYERUNIT_3" : "CUP_O_RU_Soldier_AA_Ratnik_Winter",
+					"PLAYERUNIT_4" : "CUP_O_RU_Soldier_Engineer_Ratnik_Winter",
+					"PLAYERUNIT_5" : "CUP_O_RU_Soldier_GL_Ratnik_Winter",
+					"PLAYERUNIT_6" : "CUP_O_RU_Soldier_MG_Ratnik_Winter",
+					"PLAYERUNIT_7" : "CUP_O_RU_Soldier_AT_Ratnik_Winter",
+					"PLAYERUNIT_8" : "CUP_O_RU_Soldier_Ratnik_Winter",
+					"PLAYERUNIT_9" : "CUP_O_RU_Soldier_Marksman_Ratnik_Winter",
+					"PLAYERUNIT_10" : "CUP_O_RU_Soldier_Medic_Ratnik_Winter"
 				}
 		},
 		{
@@ -179,6 +179,46 @@
 					"PLAYERUNIT_8" : "CUP_O_RU_Soldier_EMR",
 					"PLAYERUNIT_9" : "CUP_O_RU_Soldier_Marksman_EMR",
 					"PLAYERUNIT_10" : "CUP_O_RU_Medic_EMR"
+				}
+		},
+		{
+			"name" : "CUP RU vs US Army-Taki GUE",
+			"path" : "./Mods/CUP RU vs US Army-Taki GUE/",
+			"require" : ["CUP_Creatures_Military_RACS","CUP_Creatures_Military_USMC","CUP_Creatures_Military_Russia"],
+			"replace" :
+				{
+					"MOD" : "CUP RU vs US Army and Taki Rebels",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "CUP_O_RU_Soldier_SL_Ratnik_Desert",
+					"PLAYERUNIT_2" : "CUP_O_RU_Soldier_LAT_Ratnik_Desert",
+					"PLAYERUNIT_3" : "CUP_O_RU_Soldier_AA_Ratnik_Desert",
+					"PLAYERUNIT_4" : "CUP_O_RU_Soldier_Engineer_Ratnik_Desert",
+					"PLAYERUNIT_5" : "CUP_O_RU_Soldier_GL_Ratnik_Desert",
+					"PLAYERUNIT_6" : "CUP_O_RU_Soldier_MG_Ratnik_Desert",
+					"PLAYERUNIT_7" : "CUP_O_RU_Soldier_AT_Ratnik_Desert",
+					"PLAYERUNIT_8" : "CUP_O_RU_Soldier_Ratnik_Desert",
+					"PLAYERUNIT_9" : "CUP_O_RU_Soldier_Marksman_Ratnik_Desert",
+					"PLAYERUNIT_10" : "CUP_O_RU_Soldier_Medic_Ratnik_Desert"
+				}
+		},
+		{
+			"name" : "CUP SLA vs HIL-RACS",
+			"path" : "./Mods/CUP SLA vs HIL-RACS/",
+			"require" : ["CUP_Creatures_Military_RACS","CUP_Creatures_Military_USMC","CUP_Creatures_Military_Russia"],
+			"replace" :
+				{
+					"MOD" : "CUP SLA vs HIL and RACS",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "CUP_O_sla_Soldier_SL",
+					"PLAYERUNIT_2" : "CUP_O_sla_Soldier_HAT",
+					"PLAYERUNIT_3" : "CUP_O_sla_Soldier_AA",
+					"PLAYERUNIT_4" : "CUP_O_sla_Engineer",
+					"PLAYERUNIT_5" : "CUP_O_sla_Soldier_GL",
+					"PLAYERUNIT_6" : "CUP_O_sla_Soldier_MG",
+					"PLAYERUNIT_7" : "CUP_O_sla_Soldier_AT",
+					"PLAYERUNIT_8" : "CUP_O_sla_Soldier",
+					"PLAYERUNIT_9" : "CUP_O_sla_Sniper",
+					"PLAYERUNIT_10" : "CUP_O_sla_Medic"
 				}
 		}
 	],
@@ -267,6 +307,13 @@
 			"mod" : "CUP RU vs USMC-RACS",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_RU_vs_USMC_and_RACS"
+		},
+		{
+			"island" : "Tanoa",
+			"sqm": "Tanoa",
+			"mod" : "CUP SLA vs HIL-RACS",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_HIL_and_RACS"
 		},
 		{
 			"island" : "Malden 2035",
@@ -598,6 +645,13 @@
 			"name" : "co10_Escape_CUP_RU_vs_USMC_and_RACS"
 		},
 		{
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "CUP SLA vs HIL-RACS",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_HIL_and_RACS"
+		},
+		{
 			"island" : "Dingor",
 			"sqm": "Dingor",
 			"mod" : "CUP-US Army d",
@@ -617,6 +671,13 @@
 			"mod" : "CUP Taki",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_Ger_vs_Taki"
+		},
+		{
+			"island" : "Dingor",
+			"sqm": "Dingor",
+			"mod" : "CUP RU vs US Army-Taki GUE",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_Army_and_Taki_Rebels"
 		},
 		{
 			"island" : "Abramia",
@@ -822,6 +883,13 @@
 			"name" : "co10_Escape_CUP_USMC_vs_RU"
 		},
 		{
+			"island" : "Isla Duala",
+			"sqm": "IslaDuala3",
+			"mod" : "CUP RU vs US Army-Taki GUE",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_Army_and_Taki_Rebels"
+		},
+		{
 			"island" : "Takistan",
 			"sqm": "Takistan",
 			"mod" : "CUP Taki",
@@ -843,6 +911,13 @@
 			"name" : "co10_Escape_CUP_RU_vs_BAF"
 		},
 		{
+			"island" : "Takistan",
+			"sqm": "Takistan",
+			"mod" : "CUP RU vs US Army-Taki GUE",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_Army_and_Taki_Rebels"
+		},
+		{
 			"island" : "Zargabad",
 			"sqm": "Zargabad",
 			"mod" : "CUP Taki",
@@ -862,6 +937,13 @@
 			"mod" : "CUP-BAF d",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Zargabad",
+			"sqm": "Zargabad",
+			"mod" : "CUP RU vs US Army-Taki GUE",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_Army_and_Taki_Rebels"
 		},
 		{
 			"island" : "Capraia",
@@ -1165,6 +1247,13 @@
 			"name" : "co10_Escape_CUP_USMC_vs_RU"
 		},
 		{
+			"island" : "Al Rayak",
+			"sqm": "pja310",
+			"mod" : "CUP RU vs US Army-Taki GUE",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_Army_and_Taki_Rebels"
+		},
+		{
 			"island" : "Lythium",
 			"sqm": "Lythium",
 			"mod" : "CUP Taki",
@@ -1186,6 +1275,13 @@
 			"name" : "co10_Escape_CUP_RU_vs_BAF"
 		},
 		{
+			"island" : "Lythium",
+			"sqm": "Lythium",
+			"mod" : "CUP RU vs US Army-Taki GUE",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_Army_and_Taki_Rebels"
+		},
+		{
 			"island" : "Fallujah",
 			"sqm": "Fallujah",
 			"mod" : "CUP Taki",
@@ -1205,6 +1301,13 @@
 			"mod" : "CUP-BAF d",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Fallujah",
+			"sqm": "Fallujah",
+			"mod" : "CUP RU vs US Army-Taki GUE",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_Army_and_Taki_Rebels"
 		},
 		{
 			"island" : "Sahrani",
@@ -1228,6 +1331,13 @@
 			"name" : "co10_Escape_CUP_RU_vs_USMC_and_RACS"
 		},
 		{
+			"island" : "Sahrani",
+			"sqm": "Sara",
+			"mod" : "CUP SLA vs HIL-RACS",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_HIL_and_RACS"
+		},
+		{
 			"island" : "United Sahrani",
 			"sqm": "Sara_dbe1",
 			"mod" : "CUP SLA",
@@ -1249,6 +1359,13 @@
 			"name" : "co10_Escape_CUP_RU_vs_USMC_and_RACS"
 		},
 		{
+			"island" : "United Sahrani",
+			"sqm": "Sara_dbe1",
+			"mod" : "CUP SLA vs HIL-RACS",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_HIL_and_RACS"
+		},
+		{
 			"island" : "Diyala",
 			"sqm": "DYA",
 			"mod" : "CUP-US Army d",
@@ -1270,6 +1387,13 @@
 			"name" : "co10_Escape_CUP_Ger_vs_Taki"
 		},
 		{
+			"island" : "Diyala",
+			"sqm": "DYA",
+			"mod" : "CUP RU vs US Army-Taki GUE",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_Army_and_Taki_Rebels"
+		},
+		{
 			"island" : "Kastellorizo",
 			"sqm": "Kastellorizo",
 			"mod" : "CUP-US USMC",
@@ -1410,76 +1534,6 @@
 			"name" : "co10_Escape_CUP_RU_vs_USMC_and_RACS"
 		},
         {
-			"island" : "Cham",
-			"sqm": "Cham",
-			"mod" : "CUP-US USMC",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_SLA_vs_USMC"
-		},
-		{
-			"island" : "Cham",
-			"sqm": "Cham",
-			"mod" : "CUP-BAF w",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_RU_vs_BAF"
-		},
-		{
-			"island" : "Cham",
-			"sqm": "Cham",
-			"mod" : "CUP RU",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_USMC_vs_RU"
-		},
-		{
-			"island" : "Cham",
-			"sqm": "Cham",
-			"mod" : "CUP RU vs USMC-RACS",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_RU_vs_USMC_and_RACS"
-		},
-        {
-			"island" : "ChamW",
-			"sqm": "ChamW",
-			"mod" : "CUP-CDF Winter",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_RU_vs_CDF"
-		},
-        {
-			"island" : "Summa",
-			"sqm": "Summa",
-			"mod" : "CUP-US USMC",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_SLA_vs_USMC"
-		},
-		{
-			"island" : "Summa",
-			"sqm": "Summa",
-			"mod" : "CUP-BAF w",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_RU_vs_BAF"
-		},
-		{
-			"island" : "Summa",
-			"sqm": "Summa",
-			"mod" : "CUP RU",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_USMC_vs_RU"
-		},
-		{
-			"island" : "Summa",
-			"sqm": "Summa",
-			"mod" : "CUP RU vs USMC-RACS",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_RU_vs_USMC_and_RACS"
-		},
-        {
-			"island" : "SummaW",
-			"sqm": "SummaW",
-			"mod" : "CUP-CDF Winter",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_RU_vs_CDF"
-		},
-        {
 			"island" : "Mull of Kintyre",
 			"sqm": "rof_mok",
 			"mod" : "CUP-US USMC",
@@ -1508,60 +1562,39 @@
 			"name" : "co10_Escape_CUP_RU_vs_USMC_and_RACS"
 		},
 		{
-			"island" : "Prei Khmaoch Luong Legacy",
+			"island" : "Prei Khmaoch Luong",
 			"sqm": "prei_khmaoch_luong",
 			"mod" : "CUP-US USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_SLA_vs_USMC"
 		},
 		{
-			"island" : "Prei Khmaoch Luong Legacy",
+			"island" : "Prei Khmaoch Luong",
 			"sqm": "prei_khmaoch_luong",
 			"mod" : "CUP-BAF w",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_RU_vs_BAF"
 		},
 		{
-			"island" : "Prei Khmaoch Luong Legacy",
+			"island" : "Prei Khmaoch Luong",
 			"sqm": "prei_khmaoch_luong",
 			"mod" : "CUP RU",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_USMC_vs_RU"
 		},
 		{
-			"island" : "Prei Khmaoch Luong Legacy",
+			"island" : "Prei Khmaoch Luong",
 			"sqm": "prei_khmaoch_luong",
 			"mod" : "CUP RU vs USMC-RACS",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_RU_vs_USMC_and_RACS"
 		},
-        {
-			"island" : "Prei Khmaoch Luong RHS",
-			"sqm": "rhspkl",
-			"mod" : "CUP-US USMC",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_SLA_vs_USMC"
-		},
 		{
-			"island" : "Prei Khmaoch Luong RHS",
-			"sqm": "rhspkl",
-			"mod" : "CUP-BAF w",
+			"island" : "Prei Khmaoch Luong",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "CUP SLA vs HIL-RACS",
 			"replace" : {},
-			"name" : "co10_Escape_CUP_RU_vs_BAF"
-		},
-		{
-			"island" : "Prei Khmaoch Luong RHS",
-			"sqm": "rhspkl",
-			"mod" : "CUP RU",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_USMC_vs_RU"
-		},
-		{
-			"island" : "Prei Khmaoch Luong RHS",
-			"sqm": "rhspkl",
-			"mod" : "CUP RU vs USMC-RACS",
-			"replace" : {},
-			"name" : "co10_Escape_CUP_RU_vs_USMC_and_RACS"
+			"name" : "co10_Escape_CUP_SLA_vs_HIL_and_RACS"
 		},
 		{
 			"island" : "Porto",
@@ -1583,6 +1616,13 @@
 			"mod" : "CUP-BAF d",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Porto",
+			"sqm": "Porto",
+			"mod" : "CUP RU vs US Army-Taki GUE",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_Army_and_Taki_Rebels"
 		},
 		{
 			"island" : "Southeast Angola",
@@ -1662,6 +1702,13 @@
 			"name" : "co10_Escape_CUP_RU_vs_USMC_and_RACS"
 		},
 		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
+			"mod" : "CUP SLA vs HIL-RACS",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_SLA_vs_HIL_and_RACS"
+		},
+		{
 			"island" : "Kujari",
 			"sqm": "Kujari",
 			"mod" : "CUP-US Army d",
@@ -1681,6 +1728,13 @@
 			"mod" : "CUP Taki",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_Ger_vs_Taki"
+		},
+		{
+			"island" : "Kujari",
+			"sqm": "Kujari",
+			"mod" : "CUP RU vs US Army-Taki GUE",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_Army_and_Taki_Rebels"
 		},
 	    {
 			"island" : "Utes",
@@ -1877,12 +1931,19 @@
 			"mod" : "CUP-BAF d",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_RU_vs_BAF"
+		},
+		{
+			"island" : "Anizay",
+			"sqm": "tem_anizay",
+			"mod" : "CUP RU vs US Army-Taki GUE",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_RU_vs_US_Army_and_Taki_Rebels"
 		}
 	],
 	"Addons" : [
 		{
 			"name" : "CUP",
-			"mods" : ["CUP SLA","CUP-US Army d","CUP-BAF d","CUP-BAF w","CUP RU","CUP Taki","CUP-US USMC","CUP-CDF Winter","CUP RU vs USMC-RACS"]
+			"mods" : ["CUP SLA","CUP-US Army d","CUP-BAF d","CUP-BAF w","CUP RU","CUP Taki","CUP-US USMC","CUP-CDF Winter","CUP RU vs USMC-RACS","CUP RU vs US Army-Taki GUE","CUP SLA vs HIL-RACS"]
 		}
 	]
 	
