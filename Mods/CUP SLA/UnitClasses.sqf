@@ -653,6 +653,17 @@ a3e_arr_Bipods = [
 	,"bipod_03_F_blk"
 	,"bipod_03_F_oli"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
@@ -668,6 +679,34 @@ a3e_arr_extraction_chopper = [
 	,"CUP_B_MV22_USMC_RAMPGUN"];
 a3e_arr_extraction_chopper_escort = [
 	"CUP_B_AH1Z_USMC"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"CUP_B_RHIB_USMC"
+	,"CUP_B_RHIB2Turret_USMC"
+	,"CUP_B_LCU1600_USMC"];
+a3e_arr_extraction_boat_escort = [
+	"CUP_B_RHIB_USMC"
+	,"CUP_B_RHIB2Turret_USMC"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"CUP_B_MTVR_USMC"	//12
+	,"CUP_B_RG31E_M2_OD_USMC"	//8
+	,"CUP_B_AAV_Unarmed_USMC"	//14
+	,"CUP_B_AAV_USMC"];	//14
+a3e_arr_extraction_car_escort = [
+	"CUP_B_LAV25_USMC"
+	,"CUP_B_LAV25_green"
+	,"CUP_B_M60A3_USMC"
+	,"CUP_B_M1A1_Woodland_USMC"
+	,"CUP_B_M1A2_TUSK_MG_USMC"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf

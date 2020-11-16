@@ -12,10 +12,10 @@ _enemyFrequency = _this select 0;
 //Sides
 
 A3E_VAR_Side_Blufor = east;//Player side CUP RU MSV - EMR
-A3E_VAR_Side_Opfor = west;//Enemy side CUP USMC woodland
-A3E_VAR_Side_Ind = resistance;//Independent side CUP RACS woodland
+A3E_VAR_Side_Opfor = west;//Enemy side CUP Horizon Islands Legion
+A3E_VAR_Side_Ind = resistance;//Independent side CUP RACS jungle
 
-A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_us_CO.paa";
+A3E_VAR_Flag_Opfor = "\A3\Data_F_Exp\Flags\flag_Tanoa_CO.paa";
 A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_racs_co";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
@@ -1454,6 +1454,17 @@ a3e_arr_Bipods = [
 	"CUP_bipod_VLTOR_Modpod_black"
 	,"CUP_bipod_Harris_1A2_L"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
@@ -1469,6 +1480,33 @@ a3e_arr_extraction_chopper = [
 a3e_arr_extraction_chopper_escort = [
 	"CUP_O_Mi24_D_Dynamic_SLA"
 	,"CUP_O_Ka50_DL_SLA"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"CUP_O_LCVP_SLA"];
+a3e_arr_extraction_boat_escort = [
+	"CUP_O_LCVP_SLA"
+	,"CUP_O_LCVP_SLA"
+	,"CUP_O_ZUBR_SLA"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"CUP_O_Ural_SLA"	//10+
+	,"CUP_O_BTR60_SLA"
+	,"CUP_O_BTR80_SLA"	//10+
+	,"CUP_O_BTR80A_SLA"	//10+
+	,"CUP_O_MTLB_pk_SLA"];	//9
+a3e_arr_extraction_car_escort = [
+	"CUP_O_BMP2_SLA"
+	,"CUP_O_ZSU23_SLA"
+	,"CUP_O_T55_SLA"
+	,"CUP_O_T72_SLA"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf

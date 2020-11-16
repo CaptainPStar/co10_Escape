@@ -836,9 +836,13 @@ a3e_arr_extraction_chopper_escort = [
 // Boats that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_boat = [
-	"O_Boat_Armed_01_hmg_F"];
+	"O_Boat_Armed_01_hmg_F"
+	,"O_Boat_Armed_01_hmg_F"
+	,"CUP_O_PBX_RU"];
 a3e_arr_extraction_boat_escort = [
-	"O_Boat_Armed_01_hmg_F"];
+	"O_Boat_Armed_01_hmg_F"
+	,"O_Boat_Armed_01_hmg_F"
+	,"CUP_O_ZUBR_RU"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtractionLand.sqf
