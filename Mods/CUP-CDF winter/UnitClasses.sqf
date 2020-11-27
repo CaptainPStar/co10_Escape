@@ -1155,6 +1155,17 @@ a3e_arr_TWSScopes = [
 // Here is a list of bipods, might get randomly added to enemy patrols:
 a3e_arr_Bipods = [];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
@@ -1172,6 +1183,36 @@ a3e_arr_extraction_chopper_escort = [
 	,"CUP_O_Mi24_V_RU"
 	,"CUP_O_Ka50_RU"
 	,"CUP_O_Ka50_AA_RU"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"O_Boat_Armed_01_hmg_F"
+	,"O_Boat_Armed_01_hmg_F"
+	,"CUP_O_PBX_RU"];
+a3e_arr_extraction_boat_escort = [
+	"O_Boat_Armed_01_hmg_F"
+	,"O_Boat_Armed_01_hmg_F"
+	,"CUP_O_ZUBR_RU"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"CUP_O_Kamaz_RU"	//10+
+	,"CUP_O_GAZ_Vodnik_PK_RU"
+	,"CUP_O_BTR60_Winter_RU"	//10+
+	,"CUP_O_BTR80_WINTER_RU"	//10+
+	,"CUP_O_MTLB_pk_Winter_RU"];	//9
+a3e_arr_extraction_car_escort = [
+	"CUP_O_BTR80_WINTER_RU"
+	,"CUP_O_BTR80A_WINTER_RU"
+	,"CUP_O_BTR90_RU"
+	,"CUP_O_T72_RU"
+	,"CUP_O_T90_RU"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf

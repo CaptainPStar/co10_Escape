@@ -1389,6 +1389,17 @@ a3e_arr_Bipods = [
 	"CUP_bipod_VLTOR_Modpod_black"
 	,"CUP_bipod_Harris_1A2_L"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
@@ -1402,6 +1413,36 @@ a3e_arr_extraction_chopper_escort = [
 	,"CUP_O_Mi24_P_Dynamic_RU"
 	,"CUP_O_Ka50_DL_RU"
 	,"CUP_O_Ka52_RU"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"O_Boat_Armed_01_hmg_F"
+	,"O_Boat_Armed_01_hmg_F"
+	,"CUP_O_PBX_RU"];
+a3e_arr_extraction_boat_escort = [
+	"O_Boat_Armed_01_hmg_F"
+	,"O_Boat_Armed_01_hmg_F"
+	,"CUP_O_ZUBR_RU"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"CUP_O_Kamaz_RU"	//10+
+	,"CUP_O_GAZ_Vodnik_PK_RU"
+	,"CUP_O_BTR80_GREEN_RU"	//10+
+	,"CUP_O_BTR80_CAMO_RU"	//10+
+	,"CUP_O_MTLB_pk_WDL_RU"];	//9
+a3e_arr_extraction_car_escort = [
+	"CUP_O_BTR80A_GREEN_RU"
+	,"CUP_O_BTR80A_CAMO_RU"
+	,"CUP_O_BTR90_RU"
+	,"CUP_O_T72_RU"
+	,"CUP_O_T90_RU"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf

@@ -11,7 +11,7 @@ _enemyFrequency = _this select 0;
 
 A3E_VAR_Side_Blufor = west; //CUP GER KSK
 A3E_VAR_Side_Opfor = east; //CUP Takistani Army
-A3E_VAR_Side_Ind = resistance; //CUP 
+A3E_VAR_Side_Ind = resistance; //CUP Takistani Locals
 
 A3E_VAR_Flag_Opfor = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_tka_co";
 A3E_VAR_Flag_Ind = "\CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_tkg_co";
@@ -1562,8 +1562,20 @@ a3e_arr_TWSScopes = [
 	"CUP_optic_GOSHAWK"];
 
 // Here is a list of bipods, might get randomly added to enemy patrols:
-a3e_arr_Bipods = [];
+a3e_arr_Bipods = [
+	"CUP_bipod_FNFAL"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
@@ -1577,6 +1589,30 @@ a3e_arr_extraction_chopper = [
 a3e_arr_extraction_chopper_escort = [
 	"CUP_B_AH1Z_USMC"
 	,"CUP_B_AH64D_MR_USA"];
+	
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"CUP_B_RHIB_USMC"
+	,"CUP_B_RHIB2Turret_USMC"];
+a3e_arr_extraction_boat_escort = [
+	"CUP_B_RHIB_USMC"
+	,"CUP_B_RHIB2Turret_USMC"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"CUP_B_Boxer_GMG_GER_DES"	//6
+	,"CUP_B_Boxer_HMG_GER_DES"];	//6
+a3e_arr_extraction_car_escort = [
+	"CUP_B_Dingo_GL_GER_Des"		//4
+	,"CUP_B_Dingo_GER_Des"		//4
+	,"CUP_B_Leopard2A6DST_GER"
+	,"CUP_B_Leopard2A6DST_GER"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf

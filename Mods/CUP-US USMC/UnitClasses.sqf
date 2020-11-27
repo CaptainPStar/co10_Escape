@@ -697,6 +697,17 @@ a3e_arr_Bipods = [
 	,"bipod_03_F_blk"
 	,"bipod_03_F_oli"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
@@ -709,6 +720,33 @@ a3e_arr_extraction_chopper_escort = [
 	"CUP_O_Ka50_AA_SLA"
 	,"CUP_O_Ka50_SLA"
 	,"CUP_O_Mi24_D_SLA"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"CUP_O_LCVP_SLA"];
+a3e_arr_extraction_boat_escort = [
+	"CUP_O_LCVP_SLA"
+	,"CUP_O_LCVP_SLA"
+	,"CUP_O_ZUBR_SLA"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"CUP_O_Ural_SLA"	//10+
+	,"CUP_O_BTR60_SLA"
+	,"CUP_O_BTR80_SLA"	//10+
+	,"CUP_O_BTR80A_SLA"	//10+
+	,"CUP_O_MTLB_pk_SLA"];	//9
+a3e_arr_extraction_car_escort = [
+	"CUP_O_BMP2_SLA"
+	,"CUP_O_ZSU23_SLA"
+	,"CUP_O_T55_SLA"
+	,"CUP_O_T72_SLA"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
