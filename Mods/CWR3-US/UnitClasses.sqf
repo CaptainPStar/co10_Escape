@@ -22,10 +22,10 @@ A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
 // Random array. Start position guard types around the prison
 a3e_arr_Escape_StartPositionGuardTypes = [
-	"cwr3_i_militia_ak",
-	"cwr3_i_militia_fal",
-	"cwr3_i_militia_g3",
-	"cwr3_i_soldier_hunter"];
+	"cwr3_i_commander"
+	,"cwr3_i_soldier_fal"
+	,"cwr3_i_soldier_sks"
+	,"cwr3_i_soldier_hunter"];
 
 // Prison backpacks
 a3e_arr_PrisonBackpacks = [
@@ -33,17 +33,17 @@ a3e_arr_PrisonBackpacks = [
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
 //Pistols
-a3e_arr_PrisonBackpackWeapons pushback ["cwr3_hgun_m1911a1","cwr3_7rnd_m1911_m"];
-a3e_arr_PrisonBackpackWeapons pushback ["cup_hgun_hipower","cwr3_13rnd_hipower_m"];
-a3e_arr_PrisonBackpackWeapons pushback ["cwr3_hgun_cz75","cwr3_16rnd_cz75_m"];
-a3e_arr_PrisonBackpackWeapons pushback ["cwr3_hgun_glock17","cwr3_17rnd_glock17_m"];
-a3e_arr_PrisonBackpackWeapons pushback ["cwr3_hgun_m9","cwr3_15rnd_m9_m"];
-a3e_arr_PrisonBackpackWeapons pushback ["cwr3_hgun_mac10","cwr3_30rnd_mac10_m"];
-a3e_arr_PrisonBackpackWeapons pushback ["cwr3_hgun_makarov","cwr3_8rnd_makarov_m"];
-a3e_arr_PrisonBackpackWeapons pushback ["cwr3_hgun_microuzi","cwr3_30rnd_uzi_m"];
-a3e_arr_PrisonBackpackWeapons pushback ["cwr3_hgun_revolver","cwr3_6rnd_revolver_m"];
-a3e_arr_PrisonBackpackWeapons pushback ["cwr3_hgun_sa61","cwr3_10rnd_skorpion_m"];
-a3e_arr_PrisonBackpackWeapons pushback ["cwr3_hgun_tokarev","cwr3_8rnd_tokarev_m"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Colt1911","CUP_7Rnd_45ACP_1911"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Browning_HP","CUP_13Rnd_9x19_Browning_HP"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_CZ75","CUP_16Rnd_9x19_cz75"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Glock17","CUP_17Rnd_9x19_glock17"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_M9","CUP_15Rnd_9x19_M9"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Mac10","CUP_30Rnd_45ACP_MAC10_M"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_MicroUzi","CUP_30Rnd_9x19_UZI"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TaurusTracker455","CUP_6Rnd_45ACP_M"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_SA61","CUP_10Rnd_B_765x17_Ball_M"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TT","CUP_8Rnd_762x25_TT"];
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
@@ -763,60 +763,60 @@ a3e_arr_I_pilots = [
 // Weapons and ammo in the basic weapons box
 a3e_arr_AmmoDepotBasicWeapons = [];
 // CSAT weapons
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_hgun_m1911a1", 50, 4, 8, ["cwr3_7rnd_m1911_m"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_hgun_m9", 50, 4, 8, ["cwr3_15rnd_m9_m"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_smg_m3a1", 30, 1, 3, ["cwr3_30rnd_m3a1_m"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_arifle_m16a2", 100, 2, 4, ["cwr3_30rnd_m16_m"], 8];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_arifle_m14", 30, 2, 4, ["cwr3_20rnd_m14_m"], 8];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_smg_mp5a5", 30, 2, 4, ["cwr3_30rnd_mp5_m"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_smg_uzi", 30, 2, 4, ["cwr3_30rnd_uzi_m"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_arifle_m16a2_gl", 75, 2, 4, ["cwr3_30rnd_m16_m", "CUP_1Rnd_HE_M203"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_hgun_Colt1911", 50, 4, 8, ["CUP_7Rnd_45ACP_1911"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_hgun_M9", 50, 4, 8, ["CUP_15Rnd_9x19_M9"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_smg_M3A1", 30, 1, 3, ["CUP_30Rnd_45ACP_M3A1_M"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_M16A2", 100, 2, 4, ["CUP_30Rnd_556x45_Stanag"], 8];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_M14", 30, 2, 4, ["CUP_20Rnd_762x51_DMR"], 8];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_smg_MP5A5", 30, 2, 4, ["CUP_30Rnd_9x19_MP5"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_smg_uzi", 30, 2, 4, ["CUP_30Rnd_9x19_UZI"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_M16A2_GL", 75, 2, 4, ["CUP_30Rnd_556x45_Stanag", "CUP_1Rnd_HE_M203"], 4];
 // non-CSAT weapons
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_smg_uzi", 20, 4, 8, ["cwr3_30rnd_uzi_m"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_hgun_cz75", 20, 4, 8, ["cwr3_16rnd_cz75_m"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_arifle_akm", 50, 2, 4, ["cwr3_30rnd_akm_m"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_arifle_akm_gl", 50, 2, 4, ["cwr3_30rnd_akm_m", "CUP_1Rnd_HE_GP25_M"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_arifle_akms", 50, 2, 4, ["cwr3_30rnd_akm_m"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_arifle_aks74u", 25, 2, 4, ["cwr3_30rnd_ak74_m"], 10];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_arifle_fnfal", 25, 2, 4, ["cwr3_20rnd_fal_m"], 10];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_arifle_g3a3", 25, 2, 4, ["cwr3_20rnd_g3_m"], 10];
-a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_arifle_sks", 25, 2, 4, ["cwr3_10rnd_sks_m"], 12];
+a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_smg_uzi", 20, 4, 8, ["CUP_30Rnd_9x19_UZI"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_hgun_CZ75", 20, 4, 8, ["CUP_16Rnd_9x19_cz75"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_AKM_Early", 50, 2, 4, ["CUP_30Rnd_762x39_AK47_bakelite_M"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_AKM_GL_Early", 50, 2, 4, ["CUP_30Rnd_762x39_AK47_bakelite_M", "CUP_1Rnd_HE_GP25_M"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_AKMS", 50, 2, 4, ["CUP_30Rnd_762x39_AK47_bakelite_M"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_AKS74U", 25, 2, 4, ["CUP_30Rnd_545x39_AK_M"], 10];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_FNFAL5061_wooden", 25, 2, 4, ["CUP_20Rnd_762x51_FNFAL_M"], 10];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_G3A3_ris", 25, 2, 4, ["CUP_20Rnd_762x51_G3"], 10];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_SKS", 25, 2, 4, ["CUP_10Rnd_762x39_SKS_M"], 12];
 
 // Weapons and ammo in the special weapons box
 a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_smg_mp5sd6", 20, 2, 4, ["cwr3_30rnd_mp5_m"], 8];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_arifle_xm177e2", 20, 2, 4, ["cwr3_30rnd_m16_m"], 8];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_lmg_m249e1", 50, 2, 4, ["cwr3_200rnd_m249_rt_m"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_smg_MP5SD6", 20, 2, 4, ["CUP_30Rnd_9x19_MP5"], 8];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_arifle_xm177e2", 20, 2, 4, ["CUP_30Rnd_556x45_Stanag"], 8];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_M249_E1", 50, 2, 4, ["CUP_200Rnd_TE4_Red_Tracer_556x45_M249"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_glaunch_mm1", 50, 2, 4, ["cwr3_12rnd_mm1_m"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_lmg_m60", 50, 1, 1, ["cwr3_100rnd_m60_wt_m"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_srifle_m21", 30, 1, 1, ["cwr3_20rnd_m14_m"], 9];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_arifle_g36", 30, 1, 1, ["cwr3_30rnd_g36_m"], 9];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_arifle_steyr", 30, 1, 1, ["cwr3_30rnd_steyr_m"], 9];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_arifle_xms", 30, 1, 1, ["cwr3_30rnd_m16_m"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_M60", 50, 1, 1, ["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_M21", 30, 1, 1, ["CUP_20Rnd_762x51_DMR"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_G36E", 30, 1, 1, ["CUP_30Rnd_556x45_G36"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_AUG_A1", 30, 1, 1, ["CUP_30Rnd_556x45_AUG"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_arifle_xms", 30, 1, 1, ["CUP_30Rnd_556x45_Stanag"], 9];
 
 // non-CAST weapons
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_arifle_rpk", 20, 2, 4, ["cwr3_75rnd_rpk_gt_m"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_lmg_pkm", 20, 2, 4, ["cwr3_100rnd_pkm_gt_m"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_glaunch_6g30", 10, 2, 4, ["cwr3_6rnd_6g30_m"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_srifle_cz550", 10, 2, 4, ["cwr3_5rnd_cz550_m"], 12];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["cwr3_srifle_svd", 10, 2, 4, ["cwr3_10rnd_svd_m"], 12];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_RPK74", 20, 2, 4, ["CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_PKMN", 20, 2, 4, ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_glaunch_6G30", 10, 2, 4, ["CUP_6Rnd_HE_GP25_M"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_CZ550", 10, 2, 4, ["CUP_5x_22_LR_17_HMR_M"], 12];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_SVD", 10, 2, 4, ["CUP_10Rnd_762x54_SVD_M"], 12];
 
 
 // Weapons and ammo in the launchers box
 a3e_arr_AmmoDepotLaunchers = [];
 // CSAT weapons
-a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_m47", 30, 3, 5, ["cwr3_m47_m"], 2];
-a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_stinger", 50, 1, 1, ["cwr3_stinger_m"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_M47", 30, 3, 5, ["CUP_Dragon_EP1_M"], 2];
+a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_FIM92Stinger", 50, 1, 1, [objNull], 3];
 a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_carlgustaf", 40, 1, 1, ["cwr3_carlgustaf_heat_m", "cwr3_carlgustaf_hedp_m"], 2];
-a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_m72", 50, 1, 1, ["cwr3_m72_m"], 2];
+a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_M72A6", 50, 1, 1, [objNull], 2];
 // non-CSAT weapons
-a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_rpg7v", 30, 3, 5, ["cwr3_pg7v_m","cwr3_pg7vm_m"], 3];
-a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_rpg7v", 10, 1, 2, ["cwr3_pg7vl_m","cwr3_pg7vr_m"], 3];
-a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_rpg7v", 20, 1, 2, ["cwr3_og7_m","cwr3_tbg7v_m"], 3];
-a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_at4", 20, 1, 1, ["cwr3_at4_heat_m", "cwr3_at4_thermobaric_m"], 2];
-a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_strela", 20, 1, 1, ["cwr3_strela_m"], 3];
-a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_rpg75", 50, 1, 1, ["objNull"], 0];
+a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_RPG7V", 10, 3, 5, ["CUP_PG7V_M","CUP_PG7VM_M"], 2];
+a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_RPG7V", 10, 1, 2, ["CUP_PG7VL_M","CUP_PG7VR_M"], 2];
+a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_RPG7V", 10, 1, 2, ["CUP_OG7_M","CUP_TBG7V_M"], 2];
+a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_at4", 10, 1, 1, ["cwr3_at4_heat_m", "cwr3_at4_thermobaric_m"], 2];
+a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_9K32Strela", 10, 1, 1, [objNull], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["cwr3_launch_rpg75", 25, 1, 1, [objNull], 0];
 
 
 // Weapons and ammo in the ordnance box
@@ -887,18 +887,18 @@ a3e_arr_AmmoDepotItems pushback ["CUP_bipod_Harris_1A2_L_BLK", 25, 1, 2];
 // Index 1: Magazine classname.
 // Index 2: Number of magazines.
 a3e_arr_CivilianCarWeapons = [];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_hgun_revolver", "cwr3_6rnd_revolver_m", 6];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_hgun_sa61", "cwr3_10rnd_skorpion_m", 6];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_hgun_cz75", "cwr3_16rnd_cz75_m", 6];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_hgun_microuzi", "cwr3_30rnd_uzi_m", 6];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_sgun_kozlice", "CUP_1Rnd_762x51_CZ584", 36];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_smg_uzi_sd", "cwr3_30rnd_uzi_m", 6];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_srifle_enfield", "cwr3_10rnd_enfield_m", 12];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_arifle_m16a1", "cwr3_20rnd_m16_m", 6];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_arifle_m16a1_gl", "CUP_1Rnd_HE_M203", 8];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_lmg_mg3", "cwr3_120rnd_mg3_wt_m", 5];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_arifle_xr47", "cwr3_30rnd_akm_m", 5];
-a3e_arr_CivilianCarWeapons pushback ["cwr3_launch_rpg75", "objNull", 0];
+a3e_arr_CivilianCarWeapons pushback ["CUP_hgun_TaurusTracker455", "CUP_6Rnd_45ACP_M", 6];
+a3e_arr_CivilianCarWeapons pushback ["CUP_hgun_SA61", "CUP_10Rnd_B_765x17_Ball_M", 6];
+a3e_arr_CivilianCarWeapons pushback ["CUP_hgun_CZ75", "CUP_16Rnd_9x19_cz75", 6];
+a3e_arr_CivilianCarWeapons pushback ["CUP_hgun_MicroUzi", "CUP_30Rnd_9x19_UZI", 6];
+a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_CZ584", "CUP_1Rnd_762x51_CZ584", 36];
+a3e_arr_CivilianCarWeapons pushback ["cwr3_smg_uzi_sd", "CUP_30Rnd_9x19_UZI", 6];
+a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_LeeEnfield", "CUP_10x_303_M", 12];
+a3e_arr_CivilianCarWeapons pushback ["CUP_arifle_M16A1", "CUP_20Rnd_556x45_Stanag", 8];
+a3e_arr_CivilianCarWeapons pushback ["CUP_arifle_M16A1GL_USA", "CUP_1Rnd_HE_M203", 8];
+a3e_arr_CivilianCarWeapons pushback ["CUP_lmg_mg3", "CUP_120Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M", 5];
+a3e_arr_CivilianCarWeapons pushback ["cwr3_arifle_xr47", "CUP_30Rnd_762x39_AK47_bakelite_M", 5];
+a3e_arr_CivilianCarWeapons pushback ["cwr3_launch_rpg75", objNull, 0];
 a3e_arr_CivilianCarWeapons pushback ["CUP_NVG_PVS7", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Medikit", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Toolkit", objNull, 0];
@@ -909,7 +909,12 @@ a3e_arr_CivilianCarWeapons pushback [objNull, "SmokeShell", 5];
 
 
 // Here is a list of scopes, might get randomly added to enemy patrols:
-a3e_arr_Scopes = [];
+a3e_arr_Scopes = [
+	"CUP_optic_PSO_1"
+	,"CUP_optic_PSO_1_AK"
+	,"cwr3_optic_xms"
+	,"CUP_optic_G36Optics"
+	,"CUP_optic_artel_m14"];
 a3e_arr_Scopes_SMG = [];
 a3e_arr_Scopes_Sniper = [
 	"CUP_optic_PSO_1"
@@ -1096,14 +1101,14 @@ a3e_arr_CrashSiteCrewCar = [
 	,"cwr3_o_soldier_crew_apc"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
-a3e_arr_CrashSiteWeapons pushback ["cwr3_smg_bizon_sd", 50, 1, 2, ["cwr3_64rnd_bizon_m"], 8];
-a3e_arr_CrashSiteWeapons pushback ["cwr3_launch_rpg18", 30, 1, 2, ["cwr3_rpg18_m"], 2];
-a3e_arr_CrashSiteWeapons pushback ["cwr3_launch_rpg7v", 25, 1, 1, ["cwr3_pg7v_m","cwr3_pg7vl_m"], 2];
-a3e_arr_CrashSiteWeapons pushback ["cwr3_arifle_ak74", 75, 2, 4, ["cwr3_30rnd_ak74_m"], 8];
-a3e_arr_CrashSiteWeapons pushback ["cwr3_arifle_rpk74", 75, 2, 4, ["cwr3_45rnd_rpk74_gt_m"], 6];
-a3e_arr_CrashSiteWeapons pushback ["cwr3_arifle_ak74_gl", 75, 2, 4, ["cwr3_30rnd_ak74_m", "CUP_1Rnd_HE_GP25_M"], 6];
-a3e_arr_CrashSiteWeapons pushback ["cwr3_lmg_pkm", 60, 1, 3, ["cwr3_100rnd_pkm_gt_m"], 4];
-a3e_arr_CrashSiteWeapons pushback ["cwr3_srifle_svd", 40, 1, 2, ["cwr3_10rnd_svd_m"], 10];
+a3e_arr_CrashSiteWeapons pushback ["cwr3_smg_bizon_sd", 50, 1, 2, ["CUP_64Rnd_9x19_Bizon_M"], 8];
+a3e_arr_CrashSiteWeapons pushback ["cwr3_launch_rpg18", 30, 1, 2, [objNull], 2];
+a3e_arr_CrashSiteWeapons pushback ["CUP_launch_RPG7V", 25, 1, 1, ["CUP_PG7V_M","CUP_PG7VL_M"], 2];
+a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_AK74", 75, 2, 4, ["CUP_30Rnd_545x39_AK_M"], 8];
+a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_RPK74_45", 75, 2, 4, ["CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 6];
+a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_AK74_GL", 75, 2, 4, ["CUP_30Rnd_545x39_AK_M", "CUP_1Rnd_HE_GP25_M"], 6];
+a3e_arr_CrashSiteWeapons pushback ["CUP_lmg_PKMN", 60, 1, 3, ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"], 4];
+a3e_arr_CrashSiteWeapons pushback ["CUP_srifle_SVD", 40, 1, 2, ["CUP_10Rnd_762x54_SVD_M"], 10];
 // Attachments and other items in crash site box
 a3e_arr_CrashSiteItems = [];
 a3e_arr_CrashSiteItems pushback ["CUP_optic_PSO_1_AK", 30, 1, 3];
