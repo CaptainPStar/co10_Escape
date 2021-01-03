@@ -453,7 +453,6 @@ _obj = ["Flag_CSAT_F",_center,[-15.5826,-14.6431,0],_rotation,266.77] call _fnc_
 	["Land_BagFence_End_F",_center,[17.2416,10.3989,0],_rotation,300] call _fnc_createObject;
 	["Land_GarbageBags_F",_center,[15.3663,-1.72607,0],_rotation,0] call _fnc_createObject;
 	["Land_HBarrier_5_F",_center,[14.4913,-11.1011,0],_rotation,270] call _fnc_createObject;
-	["CamoNet_OPFOR_F",_center,[-6.21301,8.35596,0],_rotation,165] call _fnc_createObject;
 	["Land_Cargo_House_V3_F",_center,[7.11633,3.27393,0],_rotation,225] call _fnc_createObject;
 	["Land_Cargo20_brick_red_F",_center,[-15.3837,7.27393,0],_rotation,90] call _fnc_createObject;
 	["Land_HBarrier_5_F",_center,[-9.87659,10.7598,0],_rotation,165] call _fnc_createObject;
@@ -495,7 +494,8 @@ _obj = ["Flag_CSAT_F",_center,[-15.5826,-14.6431,0],_rotation,266.77] call _fnc_
 	["Land_MetalBarrel_F",_center,[7.28625,-14.1245,0],_rotation,224.974] call _fnc_createObject;
 	["Land_MetalBarrel_F",_center,[8.11633,-14.4761,0],_rotation,359.966] call _fnc_createObject;
 	["Land_MetalBarrel_F",_center,[7.36633,-15.2261,0],_rotation,224.974] call _fnc_createObject;
-	["Land_Cargo_House_V3_F",_center,[-11.2587,-10.1011,0],_rotation,0] call _fnc_createObject;
+	["CamoNet_OPFOR_F",_center,[-6.21301,8.35596,0],_rotation,165] call _fnc_createObject;	
+	["Land_Cargo_House_V3_F",_center,[-11.2587,-10.1011,0],_rotation,270] call _fnc_createObject;
 /*
 ];
 
