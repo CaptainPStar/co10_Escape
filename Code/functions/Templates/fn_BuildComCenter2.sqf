@@ -24,6 +24,9 @@ private _fnc_createObject = {
     _object;
 };
 
+//Fix rotation
+_rotation = _rotation + 180;
+
 private _obj = objNull;
 _obj = ["Land_Mil_WallBig_Corner_F",_center,[-11.6926,-11.2622,-0.438],_rotation,0.118369] call _fnc_createObject;
 _obj = ["Land_Mil_WallBig_4m_F",_center,[-11.9059,-0.509766,-0.438],_rotation,90.1229] call _fnc_createObject;
