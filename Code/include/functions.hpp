@@ -83,7 +83,7 @@ class CfgFunctions
 			class watchKnownPosition {};
 			class parameterInit {}; 
             class createComCenters {};
-            class createMotorPool {};
+            class createMotorPools {};
             class createAmmoDepots {};
 			class createMortarSites {};
 			class createLocationMarker {};

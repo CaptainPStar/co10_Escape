@@ -205,7 +205,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 
 
 // Initialize Motor Pools
-[] call A3E_fnc_createMotorPool;
+[] call A3E_fnc_createMotorPools;
 
 
 // Initialize ammo depots
