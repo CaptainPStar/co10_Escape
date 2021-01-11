@@ -201,20 +201,11 @@ _playerGroup = [] call A3E_fnc_GetPlayerGroup;
 _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 
 [_playerGroup, "drn_CommunicationCenterPatrolMarker", A3E_VAR_Side_Opfor, "INS", 4, _EnemyCount select 0, _EnemyCount select 1, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance] call drn_fnc_InitGuardedLocations;
-
-// Initialize Motor Pools
-
-private _UseMotorPools = Param_MotorPools;
-    if (_UseMotorPools == 1) then {
-        [] call A3E_fnc_createMotorPool;
-    };
-
-
-// Initialize armor defence at communication centers
-
-
 [_playerGroup, a3e_var_Escape_communicationCenterPositions, _enemySpawnDistance, _enemyFrequency] call drn_fnc_Escape_InitializeComCenArmor;
 
+
+// Initialize Motor Pools
+[] call A3E_fnc_createMotorPool;
 
 
 // Initialize ammo depots
