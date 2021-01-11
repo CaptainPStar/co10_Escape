@@ -46,18 +46,18 @@ if (count _staticWeaponClasses > 0) then {
 	[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner;
 	
 	_gun = selectRandom _staticWeaponClasses;
-	_obj = [_gun,_center,[18.1477,3.35449,-0.00143814],_rotation,326.452] call _fnc_createObject;
+	_obj = [_gun,_center,[-27,10.5,-0.00143814],_rotation,326.452] call _fnc_createObject;
 	[_obj,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner;
 };
 
 if (count _parkedVehicleClasses > 0) then {
     // Cars
     _vehicle = selectRandom _parkedVehicleClasses;
-	_obj = [_vehicle,_center,[-17.0812,1.57861,4.76837],_rotation,269.625] call _fnc_createObject;
+	_obj = [_vehicle,_center,[0.432495,13.1548,0],_rotation,268] call _fnc_createObject;
     
     
     _vehicle = selectRandom _parkedVehicleClasses;
-	_obj = [_vehicle,_center,[-17.1572,5.45752,4.76837],_rotation,0.0176632] call _fnc_createObject;
+	_obj = [_vehicle,_center,[-17.1572,3.0,4.76837],_rotation,94] call _fnc_createObject;
 };
 
 //private _objects = [
@@ -98,7 +98,7 @@ if (count _parkedVehicleClasses > 0) then {
 	["Land_BagFence_Long_F",_center,[31.0803,-3.13184,0],_rotation,90] call _fnc_createObject;
 	["Land_BagFence_Long_F",_center,[28.2053,12.8682,0],_rotation,1.00179e-005] call _fnc_createObject;
 	["Land_BagFence_Long_F",_center,[6.45532,6.74316,0],_rotation,270] call _fnc_createObject;
-	["Land_Sign_WarningMilitaryArea_F",_center,[32.2054,11.2437,0],_rotation,90.7835] call _fnc_createObject;
+	["Land_Sign_WarningMilitaryArea_F",_center,[32.2054,11.2437,0],_rotation,270] call _fnc_createObject;
 	["Land_Cargo10_grey_F",_center,[12.7053,10.4932,0],_rotation,165.001] call _fnc_createObject;
 	["Land_Cargo20_military_green_F",_center,[12.4553,-6.88184,0],_rotation,270] call _fnc_createObject;
 	["Land_Wall_IndCnc_4_F",_center,[17.3303,-11.8813,0],_rotation,270] call _fnc_createObject;
@@ -132,11 +132,6 @@ if (count _parkedVehicleClasses > 0) then {
 	["Land_HBarrier_5_F",_center,[-6.79456,6.36865,0],_rotation,270] call _fnc_createObject;
 	["Land_HBarrier_5_F",_center,[2.95532,0.618164,0],_rotation,0] call _fnc_createObject;
 	["Land_CratesWooden_F",_center,[-8.66968,5.99316,0],_rotation,90] call _fnc_createObject;
-	["Land_CampingChair_V2_F",_center,[1.95508,13.2773,0],_rotation,210.008] call _fnc_createObject;
-	["Land_CampingChair_V2_F",_center,[-16.5514,-10.8311,0],_rotation,285.008] call _fnc_createObject;
-	["Land_CampingChair_V2_F",_center,[2.27124,11.6519,0],_rotation,29.9804] call _fnc_createObject;
-	["Land_CampingChair_V2_F",_center,[2.90027,13.1641,0],_rotation,105.008] call _fnc_createObject;
-	["Land_CampingChair_V2_F",_center,[1.42163,11.853,0],_rotation,345.005] call _fnc_createObject;
 	["Land_Mil_WiredFence_F",_center,[-22.1053,-12.7788,0],_rotation,270.784] call _fnc_createObject;
 	["Land_Mil_WiredFence_F",_center,[-21.9803,12.5962,0],_rotation,270.784] call _fnc_createObject;
 	["Land_Mil_WiredFence_F",_center,[-21.9803,-5.0293,0],_rotation,270.784] call _fnc_createObject;
@@ -147,7 +142,6 @@ if (count _parkedVehicleClasses > 0) then {
 	["Land_BagFence_Long_F",_center,[-23.1696,11.2432,0],_rotation,270] call _fnc_createObject;
 	["Land_BagFence_Long_F",_center,[-25.9197,-4.50684,0],_rotation,180] call _fnc_createObject;
 	["Land_BagFence_Long_F",_center,[5.08032,8.36816,0],_rotation,1.00179e-005] call _fnc_createObject;
-	["Land_WoodenTable_large_F",_center,[2.08032,12.4932,0],_rotation,300.001] call _fnc_createObject;
 	["Land_WoodenTable_small_F",_center,[-17.4197,-10.7568,0],_rotation,0.000379845] call _fnc_createObject;
 	["Land_Wall_IndCnc_4_F",_center,[-18.2947,-6.00635,0],_rotation,270] call _fnc_createObject;
 	["Land_Wall_IndCnc_4_F",_center,[-17.7947,11.3682,0],_rotation,90] call _fnc_createObject;
@@ -160,7 +154,7 @@ if (count _parkedVehicleClasses > 0) then {
 	["Land_New_WiredFence_5m_F",_center,[-5.66968,-6.50684,0],_rotation,0] call _fnc_createObject;
 	["Land_BarrelTrash_grey_F",_center,[-5.41968,8.36816,0],_rotation,359.989] call _fnc_createObject;
 	["Land_Net_Fence_Gate_F",_center,[4.70532,-11.0068,0],_rotation,0] call _fnc_createObject;
-	["Land_CratesShabby_F",_center,[1.20532,2.86768,0],_rotation,195] call _fnc_createObject;
+	["Land_Communication_F",_center,[1.20532,2.86768,0],_rotation,180] call _fnc_createObject;
 	["Land_WaterBarrel_F",_center,[-5.16968,7.24316,0],_rotation,359.995] call _fnc_createObject;
 	["Land_Bench_01_F",_center,[-14.7947,-19.2568,0],_rotation,0] call _fnc_createObject;
 	["Land_Bench_01_F",_center,[-5.6698,-19.1318,0],_rotation,0] call _fnc_createObject;
@@ -180,7 +174,7 @@ if (count _parkedVehicleClasses > 0) then {
 	["Land_Wall_IndCnc_4_F",_center,[-18.2947,-18.0063,0],_rotation,270] call _fnc_createObject;
 	["Land_BagFence_Long_F",_center,[-27.1697,12.8682,0],_rotation,180] call _fnc_createObject;
 	["Land_BagFence_Long_F",_center,[-27.2948,-2.88184,0],_rotation,90] call _fnc_createObject;
-	["Land_Sign_WarningMilitaryArea_F",_center,[-29.9197,-2.88184,0],_rotation,270.784] call _fnc_createObject;
+	["Land_Sign_WarningMilitaryArea_F",_center,[-29.9197,-2.88184,0],_rotation,90] call _fnc_createObject;
 	["Land_BagFence_Long_F",_center,[-28.7946,11.4932,0],_rotation,270] call _fnc_createObject;
 	//["Land_DataTerminal_01_F",_center,[-5.43176,0.866699,0],_rotation,180,_center,[true,false]]
 	/*
