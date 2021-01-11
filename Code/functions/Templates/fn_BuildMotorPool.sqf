@@ -72,6 +72,8 @@ _fnc_CreateVehicle = {
     _object
 };
 
+[_centerPos,50] call a3e_fnc_cleanupTerrain;
+
 //// Objects!
 /// (Barbed Wire)
 // North wire
@@ -285,10 +287,6 @@ _pos = [10.238, -21.471];
 _dir = 90;
 ["Land_HBarrierBig_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 
-_pos = [0.773000000001, -17.508];
-_dir = 180;
-["Land_BarGate_F", _pos, _dir, _centerPos, _rotateDir, true] call _fnc_CreateObject;
-
 _pos = [-1.873, -26.09];
 _dir = 0;
 ["Land_Sign_WarningMilitaryVehicles_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
@@ -329,9 +327,6 @@ _pos = [15.39, -19.588];
 _dir = 180;
 ["Land_Cargo_House_V1_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
 
-_pos = [21.685, -9.118];
-_dir = 270;
-["Land_Cargo20_military_green_F", _pos, _dir, _centerPos, _rotateDir, true] call _fnc_CreateObject;
 
 _pos = [24.183, -8.204];
 _dir = 90;
