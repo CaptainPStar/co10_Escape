@@ -5,9 +5,11 @@ class CfgFunctions
     class Common
     {
 		class BootstrapEscape {
+#ifndef A3E_EDITOR
 			preInit = 0; // 1 to call the function upon mission start, before objects are initialized. Passed arguments are ["preInit"]
 			postInit = 1; // 1 to call the function upon mission start, after objects are initialized. Passed arguments are ["postInit"]
 			recompile = 0;
+#endif
 		};
 		class RandomMarkerPos {};
 		class GetSideColor {};
@@ -31,7 +33,9 @@ class CfgFunctions
 		//	postInit = 1;
 		};
 		class InitLocalPlayer {
+#ifndef A3E_EDITOR
 			postInit = 0;
+#endif
 		};			
 		class cleanupTerrain {};
 		class handleRating {};
@@ -123,6 +127,7 @@ class CfgFunctions
 			class BuildComCenter3 {};
 			class BuildComCenter4 {};
 			class BuildComCenter5 {};
+			class BuildComCenter6 {};
             class BuildMotorPool {};
 			class AmmoDepot {};
 			class AmmoDepot2 {};
@@ -135,7 +140,9 @@ class CfgFunctions
 			class Roadblock {};
 			class Roadblock2 {};
 			class Roadblock3 {};
-			class Roadblock4 {};			
+			class Roadblock4 {};	
+			class isoTemplateStore {};		
+			class isoTemplateRestore {};	
 		};
 		class Chronos
 		{
@@ -183,16 +190,20 @@ class CfgFunctions
 	{
 		class Revive
 		{
+#ifndef A3E_EDITOR
 			file = "Revive\functions\revive";
 			#include "..\Revive\functions\revive\revive.hpp"
+#endif
 		};
 	};
 	class ATHSC
 	{
 		class HSC
 		{
+#ifndef A3E_EDITOR
 			file = "Revive\functions\HSC";
 			#include "..\Revive\functions\HSC\hsc.hpp"
+#endif
 		};
 	};
 	class ace
