@@ -41,5 +41,9 @@ A3E_ListOfCreatedObj = [];
 				_this setvelocity [0,0,100];
 			};
 		};
+		if([_atr,"Inflame",false] call _getAttribute) then {
+			_obj inflame true;
+		};
+		_fireplaceOne inflame true;
 	};
 } foreach A3E_TempTemplate;
