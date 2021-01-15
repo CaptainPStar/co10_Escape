@@ -24,6 +24,9 @@ _fnc_createObject = {
     _object;
 };
 
+//Fix rotation
+_rotation = _rotation + 180;
+
 private _obj = objNull;
 _obj = ["Land_SandbagBarricade_01_half_F",_center,[-10.3904,-12.7241,0],_rotation,358.693] call _fnc_createObject;
 _obj = ["Land_SandbagBarricade_01_half_F",_center,[-14.2667,-11.3242,-0.0999999],_rotation,89.804] call _fnc_createObject;

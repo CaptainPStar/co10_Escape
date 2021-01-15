@@ -9,11 +9,11 @@ private ["_enemyFrequency"];
 
 _enemyFrequency = _this select 0;
 
-A3E_VAR_Side_Blufor = west;
-A3E_VAR_Side_Opfor = east;
-A3E_VAR_Side_Ind = resistance;
+A3E_VAR_Side_Blufor = west;//Player side, RHS USMC-W
+A3E_VAR_Side_Opfor = east;//RHS AFRF, VDV
+A3E_VAR_Side_Ind = resistance;//RHS ???
 
-A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_red_CO.paa";
+A3E_VAR_Flag_Opfor = "\rhsafrf\addons\rhs_main\data\Flag_rus_CO.paa";
 A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_green_CO.paa";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
@@ -27,20 +27,23 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 	,"rhs_g_Soldier_F2"
 	,"rhs_g_Soldier_F3"];
 
+// Prison backpacks
+a3e_arr_PrisonBackpacks = [
+	"rhsusf_falconii_mc"
+	,"rhsusf_falconii_mc"
+	,"rhsusf_assault_eagleaiii_ocp"];
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
-a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pya","rhs_mag_9x19_17"];
-a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_pya","rhs_mag_9x19_17"];
-a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_makarov_pmm","rhs_mag_9x18_12_57N181S"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_FMJ"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m1911a1","rhsusf_mag_7x45acp_MHP"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m1911a1","rhsusf_mag_7x45acp_MHP"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_glock17g4","rhsusf_mag_17Rnd_9x19_JHP"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_glock17g4","rhsusf_mag_17Rnd_9x19_FMJ"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_PDW2000_F","30Rnd_9x21_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
-a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_FMJ"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_snds_F","30Rnd_9x21_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_Rook40_snds_F","30Rnd_9x21_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_MP7A2","rhsusf_mag_40Rnd_46x30_FMJ"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_m3a1","rhsgref_30rnd_1143x23_M1911B_SMG"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_M320","rhs_mag_m576"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_M590_5RD","rhsusf_5Rnd_00Buck"];
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
@@ -657,6 +660,8 @@ a3e_arr_O_attack_heli = [
 	,"RHS_Mi24V_UPK23_vvsc"
 	,"RHS_Ka52_vvs"
 	,"RHS_Ka52_vvsc"
+	,"rhs_mi28n_vvs"
+	,"rhs_mi28n_vvsc"
 	,"RHS_Mi8AMTSh_vvsc"
 	,"RHS_Mi8AMTSh_UPK23_vvsc"
 	,"RHS_Mi8MTV3_vvsc"
@@ -858,6 +863,7 @@ a3e_arr_CivilianCarWeapons pushback ["rhs_weap_m16a4_grip_acog_usmc", "rhs_mag_3
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_XM2010_wd_leu", "rhsusf_5Rnd_300winmag_xm2010", 10];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_sr25_sup_marsoc", "rhsusf_20Rnd_762x51_m118_special_Mag", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_rshg2","rhs_rshg2_mag", 2];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_MP44", "rhsgref_30Rnd_792x33_SmE_StG", 12];
 a3e_arr_CivilianCarWeapons pushback ["MineDetector", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Medikit", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Toolkit", objNull, 0];
@@ -917,18 +923,60 @@ a3e_arr_Bipods = [
 	,"bipod_03_F_blk"
 	,"bipod_03_F_oli"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"rhs_uh60m"
-	,"rhs_ch_47f"
+	"RHS_UH1Y"
+	,"RHS_UH1Y_FFAR"
 	,"rhsusf_CH53E_USMC"];
 a3e_arr_extraction_chopper_escort = [
-	"RHS_AH64DGrey"
-	,"RHS_AH1Z"];
+	"RHS_AH1Z_wd"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"rhsusf_mkvsoc"];
+a3e_arr_extraction_boat_escort = [
+	"rhsusf_mkvsoc"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"rhsusf_M1078A1P2_B_WD_fmtv_usarmy"	//14
+	,"rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy"	//13
+	,"rhsusf_M1083A1P2_B_WD_fmtv_usarmy"	//14
+	,"rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy"	//13
+	,"rhsusf_m998_w_s_2dr_fulltop"	//7
+	,"rhsusf_M1232_MC_M2_usmc_wd"	//10
+	,"rhsusf_M1232_MC_M2_usmc_wd"];	//10
+a3e_arr_extraction_car_escort = [
+	"rhsusf_M1117_W"	//6
+	,"rhsusf_M1220_M153_M2_usarmy_wd"	//8
+	,"rhsusf_stryker_m1126_m2_wd"	//9
+	,"rhsusf_stryker_m1126_mk19_wd"
+	,"rhsusf_stryker_m1132_m2_np_wd"
+	,"rhsusf_stryker_m1132_m2_wd"
+	,"rhsusf_m1a1fep_wd"
+	,"rhsusf_m1a1fep_od"
+	,"rhsusf_m1a1hc_wd"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -1025,8 +1073,15 @@ a3e_arr_MortarSite = [
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
-	"RHS_Su25SM_vvs"
-	,"RHS_T50_vvs_generic"];
+	"rhs_mig29s_vvsc"
+	,"rhs_mig29sm_vvsc"
+	,"RHS_Su25SM_vvsc"
+	,"rhs_mig29s_vvs"
+	,"rhs_mig29sm_vvs"
+	,"RHS_Su25SM_vvs"
+	,"RHS_T50_vvs_generic"
+	,"RHS_T50_vvs_generic_ext"
+	,"RHS_T50_vvs_blueonblue"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite

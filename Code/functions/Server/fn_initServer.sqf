@@ -5,8 +5,6 @@ if(isNil("a3e_var_commonLibInitialized")) then {
 	call compile preprocessFileLineNumbers "Scripts\DRN\CommonLib\CommonLib.sqf";
 };
 
-call compile preprocessFileLineNumbers "config.sqf";
-call compile preprocessFileLineNumbers ("Island\WorldConfig.sqf");
 
 //Parse the parameters
 call a3e_fnc_parameterInit;
@@ -153,19 +151,32 @@ _villagePatrolSpawnArea = (Param_VillageSpawnCount);
 
 drn_searchAreaMarkerName = "drn_searchAreaMarker";
 
+//Getting exclusion zones
+if(isNil("A3E_ExclusionZones")) then {
+  A3E_ExclusionZones = [];
+  {
+    if("A3E_ExclusionZone" in _x && _x != "A3E_ExclusionZone_") then {
+      A3E_ExclusionZones pushback _x;
+	  if(!A3E_Debug) then {_x setMarkerAlpha 0;};
+    };
+  } foreach allMapMarkers;
+};
+
 // Choose a start position
+if(isNil("A3E_ClearedPositionDistance")) then {
+	A3E_ClearedPositionDistance = 500;
+};
 
 A3E_StartPos = [] call a3e_fnc_findFlatArea;
+while {{A3E_StartPos inArea _x} count A3E_ExclusionZones > 0} do {
+	A3E_StartPos = [] call a3e_fnc_findFlatArea;
+};
 publicVariable "A3E_StartPos";
 
 
 A3E_Var_ClearedPositions = [];
 A3E_Var_ClearedPositions pushBack A3E_StartPos;
 A3E_Var_ClearedPositions pushBack (getMarkerPos "drn_insurgentAirfieldMarker");
-
-if(isNil("A3E_ClearedPositionDistance")) then {
-	A3E_ClearedPositionDistance = 500;
-};
 
 private _backpack = [] call A3E_fnc_createStartpos;
 
@@ -190,20 +201,11 @@ _playerGroup = [] call A3E_fnc_GetPlayerGroup;
 _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 
 [_playerGroup, "drn_CommunicationCenterPatrolMarker", A3E_VAR_Side_Opfor, "INS", 4, _EnemyCount select 0, _EnemyCount select 1, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance] call drn_fnc_InitGuardedLocations;
-
-// Initialize Motor Pools
-
-private _UseMotorPools = Param_MotorPools;
-    if (_UseMotorPools == 1) then {
-        [] call A3E_fnc_createMotorPool;
-    };
-
-
-// Initialize armor defence at communication centers
-
-
 [_playerGroup, a3e_var_Escape_communicationCenterPositions, _enemySpawnDistance, _enemyFrequency] call drn_fnc_Escape_InitializeComCenArmor;
 
+
+// Initialize Motor Pools
+[] call A3E_fnc_createMotorPools;
 
 
 // Initialize ammo depots

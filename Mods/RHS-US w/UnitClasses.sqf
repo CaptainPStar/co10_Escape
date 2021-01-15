@@ -15,8 +15,8 @@ A3E_VAR_Side_Blufor = east; // playerside, RHS AFRF, Russian VDV flora
 A3E_VAR_Side_Opfor = west; // RHS USAF, US-Army OCP and USMC woodland
 A3E_VAR_Side_Ind = resistance; // RHS SAF, KOF Oakleaf and Airborne
 
-A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_nato_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_green_CO.paa";
+A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_us_CO.paa";
+A3E_VAR_Flag_Ind = "\rhssaf\addons\rhssaf_main\data\flags\flag_serbia_co.paa";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
@@ -47,6 +47,8 @@ a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_tt33","rhs_mag_762x25_8"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_6p53","rhs_18rnd_9x21mm_7N28"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_6p53","rhs_18rnd_9x21mm_7N29"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_type94_new","rhs_mag_6x8mm_mhp"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_Izh18","rhsgref_1Rnd_00Buck"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_cz99","rhssaf_mag_15Rnd_9x19_FMJ"];
 
 /* US pistols
 a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
@@ -808,9 +810,11 @@ a3e_arr_CivilianCarWeapons pushback ["rhs_weap_sr25_sup_marsoc", "rhsusf_20Rnd_7
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_rshg2","rhs_rshg2_mag", 2];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_kar98k", "rhsgref_5Rnd_792x57_kar98k", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_m1garand_sa43", "rhsgref_8Rnd_762x63_M2B_M1rifle", 12];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_m38", "rhsgref_5Rnd_762x54_m38", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_mosin_sbr", "rhsgref_5Rnd_762x54_m38", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_Izh18", "rhsgref_1Rnd_00Buck", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_Izh18", "rhsgref_1Rnd_Slug", 12];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_MP44", "rhsgref_30Rnd_792x33_SmE_StG", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_panzerfaust60", objNull, 0];
 a3e_arr_CivilianCarWeapons pushback ["MineDetector", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Medikit", objNull, 0];
@@ -873,19 +877,61 @@ a3e_arr_Bipods = [
 	,"rhsusf_acc_tdstubby_blk"
 	,"rhsusf_acc_tacsac_blk"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"rhs_ka60_c"
-	,"RHS_Mi8mt_vvs"];
+	"rhs_ka60_grey"
+	,"RHS_Mi8mt_vvs"
+	,"RHS_Mi8MTV3_vvs"];
 a3e_arr_extraction_chopper_escort = [
 	"RHS_Ka52_vvs"
 	,"rhs_mi28n_vvs"
 	,"RHS_Mi24P_vvs"
 	,"RHS_Mi24V_vvs"];
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"O_Boat_Armed_01_hmg_F"];
+a3e_arr_extraction_boat_escort = [
+	"O_Boat_Armed_01_hmg_F"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"rhsusf_M1078A1P2_B_WD_fmtv_usarmy"	//14
+	,"rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy"	//13
+	,"rhsusf_M1083A1P2_B_WD_fmtv_usarmy"	//14
+	,"rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy"	//13
+	,"rhsusf_m998_w_s_2dr_fulltop"	//7
+	,"rhsusf_M1232_MC_M2_usmc_wd"	//10
+	,"rhsusf_M1232_MC_M2_usmc_wd"];	//10
+a3e_arr_extraction_car_escort = [
+	"rhsusf_M1117_W"	//6
+	,"rhsusf_M1220_M153_M2_usarmy_wd"	//8
+	,"rhsusf_stryker_m1126_m2_wd"	//9
+	,"rhsusf_stryker_m1126_mk19_wd"
+	,"rhsusf_stryker_m1132_m2_np_wd"
+	,"rhsusf_stryker_m1132_m2_wd"
+	,"rhsusf_m1a1fep_wd"
+	,"rhsusf_m1a1fep_od"
+	,"rhsusf_m1a1hc_wd"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf

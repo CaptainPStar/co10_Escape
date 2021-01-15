@@ -7,6 +7,7 @@
 		"./Configs/subconfig_example.json",
 		"./Configs/RHS.json",
 		"./Configs/CUP.json",
+		"./Configs/CWR3.json",
 		"./Configs/IFA3.json",
 		"./Configs/Massi.json",
 		"./Configs/UNS.json",
@@ -112,7 +113,7 @@
                     "PLAYERSIDE" : "EAST",
                     "PLAYERUNIT_1" : "O_R_Soldier_TL_F",
                     "PLAYERUNIT_2" : "O_R_Soldier_LAT_F",
-                    "PLAYERUNIT_3" : "O_T_Patrol_Soldier_A_F",
+                    "PLAYERUNIT_3" : "O_R_Patrol_Soldier_A_F",
                     "PLAYERUNIT_4" : "O_R_Patrol_Soldier_Engineer_F",
                     "PLAYERUNIT_5" : "O_R_Soldier_GL_F",
                     "PLAYERUNIT_6" : "O_R_Soldier_AR_F",
@@ -606,9 +607,19 @@
 				}
 		},
 		{
-			"name" : "Prei Khmaoch Luong",
+			"name" : "Prei Khmaoch Luong Legacy",
 			"class" : "prei_khmaoch_luong",
 			"path" : "./Islands/prei_khmaoch_luong/",
+			"replace" :
+				{
+				"ISLAND" : "Prei Khmaoch Luong",
+				"ISLANDNAME" : "Prei Khmaoch Luong"
+				}
+		},
+        {
+			"name" : "Prei Khmaoch Luong RHS",
+			"class" : "rhspkl",
+			"path" : "./Islands/rhspkl/",
 			"replace" :
 				{
 				"ISLAND" : "Prei Khmaoch Luong",
@@ -743,6 +754,66 @@
 				{
 				"ISLAND" : "Vinjesvingen",
 				"ISLANDNAME" : "Vinjesvingen"
+				}
+		},
+        {
+			"name" : "Cham",
+			"class" : "tem_cham",
+			"path" : "./Islands/cham/",
+			"replace" :
+				{
+				"ISLAND" : "Cham",
+				"ISLANDNAME" : "Cham"
+				}
+		},
+        {
+			"name" : "ChamW",
+			"class" : "tem_chamw",
+			"path" : "./Islands/chamw/",
+			"replace" :
+				{
+				"ISLAND" : "Cham",
+				"ISLANDNAME" : "Cham"
+				}
+		},
+        {
+			"name" : "Summa",
+			"class" : "tem_summa",
+			"path" : "./Islands/summa/",
+			"replace" :
+				{
+				"ISLAND" : "Summa",
+				"ISLANDNAME" : "Summa"
+				}
+		},
+        {
+			"name" : "SummaW",
+			"class" : "tem_summawcup",
+			"path" : "./Islands/SummaW/",
+			"replace" :
+				{
+				"ISLAND" : "Summa",
+				"ISLANDNAME" : "Summa"
+				}
+		},
+        {
+			"name" : "Mull of Kintyre",
+			"class" : "rof_mok",
+			"path" : "./Islands/rof_mok/",
+			"replace" :
+				{
+				"ISLAND" : "Mull of Kintyre",
+				"ISLANDNAME" : "Mull of Kintyre"
+				}
+		},
+        {
+			"name" : "Fapovo",
+			"class" : "fapovo",
+			"path" : "./Islands/Fapovo/",
+			"replace" :
+				{
+				"ISLAND" : "Fapovo Island",
+				"ISLANDNAME" : "Fapovo Island"
 				}
 		}
 	],
@@ -881,13 +952,6 @@
 			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
 		},
 		{
-			"island" : "Lingor",
-			"sqm": "Lingor3",
-			"mod" : "Vanilla Apex US",
-			"replace" : {},
-			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
-		},
-		{
 			"island" : "Dingor",
 			"sqm": "Dingor",
 			"mod" : "Vanilla",
@@ -1098,15 +1162,29 @@
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
 		{
-			"island" : "Prei Khmaoch Luong",
+			"island" : "Prei Khmaoch Luong Legacy",
 			"sqm": "prei_khmaoch_luong",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
 		{
-			"island" : "Prei Khmaoch Luong",
+			"island" : "Prei Khmaoch Luong Legacy",
 			"sqm": "prei_khmaoch_luong",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Prei Khmaoch Luong RHS",
+			"sqm": "rhspkl",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Prei Khmaoch Luong RHS",
+			"sqm": "rhspkl",
 			"mod" : "Vanilla Apex",
 			"replace" : {},
 			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
@@ -1198,6 +1276,48 @@
         {
 			"island" : "Vinjesvingen",
 			"sqm": "vinjesvingen",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Cham",
+			"sqm": "Cham",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "ChamW",
+			"sqm": "ChamW",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Summa",
+			"sqm": "Summa",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "SummaW",
+			"sqm": "SummaW",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Mull of Kintyre",
+			"sqm": "rof_mok",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Fapovo",
+			"sqm": "Fapovo",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
@@ -1623,15 +1743,29 @@
 			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		},
 		{
-			"island" : "Prei Khmaoch Luong",
+			"island" : "Prei Khmaoch Luong Legacy",
 			"sqm": "prei_khmaoch_luong",
 			"mod" : "Vanilla US",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
 		},
 		{
-			"island" : "Prei Khmaoch Luong",
+			"island" : "Prei Khmaoch Luong Legacy",
 			"sqm": "prei_khmaoch_luong",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Prei Khmaoch Luong RHS",
+			"sqm": "rhspkl",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Prei Khmaoch Luong RHS",
+			"sqm": "rhspkl",
 			"mod" : "Vanilla Apex US",
 			"replace" : {},
 			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
@@ -1730,6 +1864,90 @@
         {
 			"island" : "Vinjesvingen",
 			"sqm": "vinjesvingen",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Cham",
+			"sqm": "Cham",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Cham",
+			"sqm": "Cham",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "ChamW",
+			"sqm": "ChamW",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "ChamW",
+			"sqm": "ChamW",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Summa",
+			"sqm": "Summa",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Summa",
+			"sqm": "Summa",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "SummaW",
+			"sqm": "SummaW",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "SummaW",
+			"sqm": "SummaW",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Mull of Kintyre",
+			"sqm": "rof_mok",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Mull of Kintyre",
+			"sqm": "rof_mok",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Fapovo",
+			"sqm": "Fapovo",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Fapovo",
+			"sqm": "Fapovo",
 			"mod" : "Vanilla Contact US",
 			"replace" : {},
 			"name" : "co10_Escape_Contact_CSAT_vs_NATO"

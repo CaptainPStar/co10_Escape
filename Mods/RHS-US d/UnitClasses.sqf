@@ -15,8 +15,8 @@ A3E_VAR_Side_Blufor = east;//Player side RHS AFRF, VDV desert
 A3E_VAR_Side_Opfor = west;//RHS USAF, USMC-D and US Army-D
 A3E_VAR_Side_Ind = resistance;//RHS SAF, UN Peacekeepers desert
 
-A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_nato_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_green_CO.paa";
+A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_us_CO.paa";
+A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\Flag_uno_CO.paa";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
@@ -46,6 +46,9 @@ a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_tt33","rhs_mag_762x25_8"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_6p53","rhs_18rnd_9x21mm_7N28"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_6p53","rhs_18rnd_9x21mm_7N29"];
 a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_type94_new","rhs_mag_6x8mm_mhp"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_Izh18","rhsgref_1Rnd_00Buck"];
+a3e_arr_PrisonBackpackWeapons pushback ["rhs_weap_cz99","rhssaf_mag_15Rnd_9x19_FMJ"];
+
 
 /* US pistols
 a3e_arr_PrisonBackpackWeapons pushback ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
@@ -598,6 +601,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m240B", 20, 1, 2, ["rhsusf_100
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_XM2010_d", 10, 1, 2, ["rhsusf_5Rnd_300winmag_xm2010"], 10];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_M107_d", 10, 1, 2, ["rhsusf_mag_10Rnd_STD_50BMG_M33"], 6];
 // non-CSAT weapons
+a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_cz99", 40, 2, 4, ["rhssaf_mag_15Rnd_9x19_FMJ"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m249_pip", 50, 2, 4, ["rhsusf_100Rnd_556x45_soft_pouch"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m16a4_grip", 50, 1, 3, ["rhs_mag_30Rnd_556x45_M855A1_Stanag"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["rhs_weap_m16a4_carryhandle_M203", 50, 1, 3, ["rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_M441_HE"], 4];
@@ -766,6 +770,7 @@ a3e_arr_CivilianCarWeapons pushback ["rhs_weap_savz58p_rail", "rhs_30Rnd_762x39m
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_kar98k", "rhsgref_5Rnd_792x57_kar98k", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_Izh18", "rhsgref_1Rnd_00Buck", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_Izh18", "rhsgref_1Rnd_Slug", 12];
+a3e_arr_CivilianCarWeapons pushback ["rhs_weap_MP44", "rhsgref_30Rnd_792x33_SmE_StG", 12];
 a3e_arr_CivilianCarWeapons pushback ["rhs_weap_panzerfaust60", objNull, 0];
 a3e_arr_CivilianCarWeapons pushback ["MineDetector", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Medikit", objNull, 0];
@@ -824,6 +829,16 @@ a3e_arr_Bipods = [
 	,"rhsusf_acc_tacsac_tan"
 	,"rhsusf_acc_tdstubby_tan"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
@@ -838,6 +853,37 @@ a3e_arr_extraction_chopper_escort = [
 	,"rhs_mi28n_vvs"
 	,"RHS_Mi24P_vvs"
 	,"RHS_Mi24V_vvs"];
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"O_Boat_Armed_01_hmg_F"];
+a3e_arr_extraction_boat_escort = [
+	"O_Boat_Armed_01_hmg_F"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"rhsusf_M1078A1P2_B_WD_fmtv_usarmy"	//14
+	,"rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy"	//13
+	,"rhsusf_M1083A1P2_B_WD_fmtv_usarmy"	//14
+	,"rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy"	//13
+	,"rhsusf_m998_w_s_2dr_fulltop"	//7
+	,"rhsusf_M1232_MC_M2_usmc_wd"	//10
+	,"rhsusf_M1232_MC_M2_usmc_wd"];	//10
+a3e_arr_extraction_car_escort = [
+	"rhsusf_M1117_W"	//6
+	,"rhsusf_M1220_M153_M2_usarmy_wd"	//8
+	,"rhsusf_stryker_m1126_m2_wd"	//9
+	,"rhsusf_stryker_m1126_mk19_wd"
+	,"rhsusf_stryker_m1132_m2_np_wd"
+	,"rhsusf_stryker_m1132_m2_wd"
+	,"rhsusf_m1a1fep_wd"
+	,"rhsusf_m1a1fep_od"
+	,"rhsusf_m1a1hc_wd"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
