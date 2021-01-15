@@ -1,7 +1,7 @@
 #include "include\defines.hpp"
 
 // create CBA settings from mission parameters
-private _category = MISSIONNAME;
+private _category = "co10 Escape";
 private _settingCategory = _category;
 {
     private _title = getText (_x >> "title");
@@ -15,6 +15,10 @@ private _settingCategory = _category;
         private _name = configName _x;
         private _texts = getArray (_x >> "texts");
         private _default = getNumber (_x >> "default");
+		private _tooltip = [(_x),"tooltip",""] call BIS_fnc_returnConfigEntry;
+		if(_tooltip == "") then {
+			_tooltip = _title;
+		};
         private _type = "LIST";
         private _valueInfo = [_values, _texts, _values find _default];
         if (_name == "Param_Loadparams") then {
@@ -32,10 +36,11 @@ private _settingCategory = _category;
                 _valueInfo = [false, true] select _default;
             };
         };
+		//private _varname = [(_x),"varname","a3e_" + _name] call BIS_fnc_returnConfigEntry;
         [
             "a3e_" + _name,
             _type,
-            [_title, _title],
+            [_title, _tooltip],
             _settingCategory,
             _valueInfo,
             true,

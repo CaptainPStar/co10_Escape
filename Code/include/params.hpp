@@ -103,6 +103,14 @@ class Params
 		values[]={0,1};
 		texts[]={"Disabled","Enabled"};
 		default = 1;
+		tooltip = "This will enable the collection of intel from enemies. Intel will reveal locations on the map.";
+	};
+	class Param_IntelChance
+	{
+		title="Chance an enemy carries intel";
+		values[]={5,10,20,30,40,50};
+		texts[]={"5%","10%","20%","30%","40%","50%"};
+		default = 10;
 	};
 	class Param_RevealMarkers
 	{
