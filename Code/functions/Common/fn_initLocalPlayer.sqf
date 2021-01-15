@@ -60,6 +60,8 @@ if(hmd player != "") then {
 
 player addeventhandler["HandleRating","_this call A3E_FNC_handleRating;"];
 
+player addeventhandler["InventoryClosed","_this call A3E_FNC_collectIntel;"];
+
 
 drn_fnc_Escape_DisableLeaderSetWaypoints = {
 	if (!visibleMap) exitwith {};

@@ -123,6 +123,9 @@ drn_fnc_Escape_OnSpawnGeneralSoldierUnit = {
 			_this unlinkItem "Rangefinder";
 		};
 	};
+	if(Param_UseIntel==1) then {
+		[_this] call A3E_fnc_AddIntel;
+	};
 
 };
 

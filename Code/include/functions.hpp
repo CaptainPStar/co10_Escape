@@ -76,6 +76,12 @@ class CfgFunctions
             class debugMsg {};
 			class rptLog {};
 		};
+		class Intel
+		{
+			class AddIntel {};
+			class CollectIntel {};
+			class RevealPOI {};
+		};
 		class Server
 		{
 			class initServer {
@@ -91,6 +97,7 @@ class CfgFunctions
             class createAmmoDepots {};
 			class createMortarSites {};
 			class createLocationMarker {};
+			class UpdateLocationMarker {};
 			class createExtractionPoint {};
 			class runExtraction {};
 			class runExtractionBoat {};

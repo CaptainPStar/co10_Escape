@@ -97,12 +97,19 @@ class Params
             texts[] = {""};
             default = 0;
 	};
+	class Param_UseIntel
+	{
+		title="Collect intel to reveal markers on map";
+		values[]={0,1};
+		texts[]={"Disabled","Enabled"};
+		default = 1;
+	};
 	class Param_RevealMarkers
 	{
 		title="Display of markers on map";
 		values[]={0,1,2,3};
 		texts[]={"Always show (with type)","Always show marker but hide type (questionmark)","Show marker upon discovery","Never show markers"};
-		default = 1;
+		default = 2;
 	};
 	class Param_VehicleLock
 	{
