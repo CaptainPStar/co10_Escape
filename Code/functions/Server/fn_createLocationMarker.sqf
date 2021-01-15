@@ -27,7 +27,7 @@ if(Param_RevealMarkers == 1 && !_hidden) then {
 if(Param_RevealMarkers == 2 || _hidden) then {
 		_hidden = true; //true for all markers when reveal == 2 or hidden from param (wrecks)
 		_marker setMarkerType "hd_unknown";
-		_marker setMarkerAlpha 0.2;
+		_marker setMarkerAlpha 0;
 		_trigger = createTrigger["EmptyDetector", _markerPosition, false];
 		_trigger setTriggerInterval 5;
 		_trigger setTriggerArea[200, 200, 0, false];
