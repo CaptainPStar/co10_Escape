@@ -22,7 +22,7 @@ if(_numIntel==1) then {
 			format["Intel revealed the location of wreckage of an allied vehicle."] remoteexec ["systemchat",0];
 		};
 		case "o_installation": { 
-			format["Intel revealed the location of a ammo depot."] remoteexec ["systemchat",0];
+			format["Intel revealed the location of an ammo depot."] remoteexec ["systemchat",0];
 		};
 		case "o_mortar": { 
 			format["Intel revealed the location of a mortar site."] remoteexec ["systemchat",0];
