@@ -129,3 +129,8 @@ diag_log format["Escape debug: %1 is now ready (clientside).", name player];
 	waituntil{sleep 0.5;A3E_Task_Prison_Complete};
 	[localize "STR_A3E_initLocalPlayer_somewhereOn", A3E_WorldName , str (date select 2) + "/" + str (date select 1) + "/" + str (date select 0) + " " + str (date select 3) + ":00"] spawn BIS_fnc_infoText;
 };
+
+[] spawn {
+    disableSerialization;
+    ["A3E Earplugs", "toggle_earplugs_key", localize "STR_A3E_initLocalPlayer_toggleEarplugs", {_this call A3E_fnc_toggleEarplugs}, ""] call CBA_fnc_addKeybind;
+}
