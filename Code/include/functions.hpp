@@ -134,7 +134,6 @@ class CfgFunctions
 			class BuildComCenter3 {};
 			class BuildComCenter4 {};
 			class BuildComCenter5 {};
-			class BuildComCenter6 {};
             class BuildMotorPool {};
 			class AmmoDepot {};
 			class AmmoDepot2 {};
