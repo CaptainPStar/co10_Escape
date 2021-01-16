@@ -105,3 +105,6 @@ if ("Rangefinder" in (assignedItems _unit)) then {
 		_unit unlinkItem "Rangefinder";
 	};
 };
+if(Param_UseIntel==1) then {
+	[_unit] call A3E_fnc_AddIntel;
+};
