@@ -21,22 +21,19 @@ for scfg in data['Subconfigs']:
         addons = addons + adata['Addons']
 #Add devbuild number to version
 #if os.environ['GIT_BRANCH'] == "develop":
-data['replace']['VERSION'] += ' dev'+os.environ['BUILD_NUMBER']+' '+datetime.today().strftime('%Y-%m-%d')
+data['replace']['VERSION'] += ' dev'+os.getenv('BUILD_NUMBER', '')+' '+datetime.today().strftime('%Y-%m-%d')
 data['replace']['RELEASE'] = 'Mission'
-data['replace']['COMMIT'] = os.environ['GIT_COMMIT'][:8]
+data['replace']['COMMIT'] = os.getenv('GIT_COMMIT', '')[:8]
 cpbo = data['cpbo'];
-if not os.path.exists('./Build'):
-    os.mkdir('./Build')
+
+for directory in [data['BuildDir'], data['PackedDir']+'/Addons', data['PackedDir']+'/Missions']:
+    if not os.path.exists('./Build'):
+        os.mkdir(directory)
+
 for the_file in os.listdir(data['BuildDir']):
     file_path = os.path.join(data['BuildDir'], the_file)
     if os.path.isfile(file_path):
         os.unlink(file_path)
-if not os.path.exists('./Packed'):
-    os.mkdir('./Packed')
-if not os.path.exists('./Packed/Missions'):
-    os.mkdir('./Packed/Missions')
-if not os.path.exists('./Packed/Addons'):
-    os.mkdir('./Packed/Addons')
 for mission in missions:
     modname =  mission['mod']
     islandname = mission['island']
@@ -85,7 +82,7 @@ for mission in missions:
                     f.flush()
                     f.close()
     subprocess.call(["cpbo.exe", "-p", missiondir])
-    shutil.copyfile(missiondir + ".pbo", './Packed/Missions/'+mission['name']+'.'+ missionIsland['class']+'.pbo') #Copy build artifact
+    shutil.copyfile(missiondir + ".pbo", data['PackedDir']+'/Missions/'+mission['name']+'.'+ missionIsland['class']+'.pbo') #Copy build artifact
 t = []
 for m in missions:
     t.append(m['name'].lower())
@@ -152,6 +149,6 @@ for addon in addons:
                 if os.path.exists(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0]):
                     os.remove(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0])
                 shutil.copyfile(data['BuildDir'] + '/addons/' + pbo[0], data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name']+'/addons/'+pbo[0]) #Copy build artifact
-        if os.path.exists('./Packed/Addons/'+ '@'+data['Missionname']+'_'+addon['name']):
-            shutil.rmtree('./Packed/Addons/'+ '@'+data['Missionname']+'_'+addon['name'])
-        shutil.copytree(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name'],'./Packed/Addons/'+ '@'+data['Missionname']+'_'+addon['name'])
+        if os.path.exists(data['PackedDir']+'/Addons/'+ '@'+data['Missionname']+'_'+addon['name']):
+            shutil.rmtree(data['PackedDir']+'/Addons/'+ '@'+data['Missionname']+'_'+addon['name'])
+        shutil.copytree(data['BuildDir']+'/addons/' + '@'+data['Missionname']+'_'+addon['name'],data['PackedDir']+'/Addons/'+ '@'+data['Missionname']+'_'+addon['name'])
