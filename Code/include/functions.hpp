@@ -44,7 +44,7 @@ class CfgFunctions
 		class FireSmokeFX {};
 		class OnVehicleSpawn {};
 		class initArsenal {};
-
+		class toggleEarplugs {};
 		};
 		class AI
 		{
