@@ -4,7 +4,7 @@ private _chance = missionnamespace getvariable ["A3E_Param_IntelChance",10];
 
 if(_chance >= random 100) then {
 	_unit addMagazine selectRandom _intelItems;
-}
+};
 
 
 
