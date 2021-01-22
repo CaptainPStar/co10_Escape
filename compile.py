@@ -21,9 +21,8 @@ for scfg in data['Subconfigs']:
         addons = addons + adata['Addons']
 #Add devbuild number to version
 #if os.environ['GIT_BRANCH'] == "develop":
-data['replace']['VERSION'] += ' dev'+os.getenv('BUILD_NUMBER', '')+' '+datetime.today().strftime('%Y-%m-%d')
+data['replace']['VERSION'] += ' dev ' + datetime.today().strftime("%y%m%d %H%M")
 data['replace']['RELEASE'] = 'Mission'
-data['replace']['COMMIT'] = os.getenv('GIT_COMMIT', '')[:8]
 cpbo = data['cpbo'];
 
 for directory in [data['BuildDir'], data['PackedDir']+'/Addons', data['PackedDir']+'/Missions']:
