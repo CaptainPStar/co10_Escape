@@ -80,7 +80,7 @@ for mission in missions:
                     f.write(s)
                     f.flush()
                     f.close()
-    subprocess.call(["cpbo.exe", "-p", missiondir])
+    subprocess.call(["cpbo.exe", "-y", "-p", missiondir])
     shutil.copyfile(missiondir + ".pbo", data['PackedDir']+'/Missions/'+mission['name']+'.'+ missionIsland['class']+'.pbo') #Copy build artifact
 t = []
 for m in missions:
@@ -133,7 +133,7 @@ for s in addonFolders:
     toFile += "\t};\n};"
     cfgFile.write(toFile)
     cfgFile.close()
-    subprocess.call(["cpbo.exe", "-p", data['BuildDir'] + '/addons/' + s]) #Pack folder to pbo
+    subprocess.call(["cpbo.exe", "-y", "-p", data['BuildDir'] + '/addons/' + s]) #Pack folder to pbo
     print("Done packing pbo of "+data['replace']['MISSION_FULL']+" "+missionMod['replace']['MOD'])  
     pbos.append([s + '.pbo',missionMod['name']])
 print("Done packing pbos. Start collecting...")    
