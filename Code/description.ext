@@ -102,12 +102,12 @@ class CfgRemoteExec
                mode = 2;
                // Ability to send jip messages: 0-disabled, 1-enabled (default)
                jip = 1;
+			   class a3e_fnc_initPlayer { allowedTargets=2; jip=0; };
        };        
        // List of script commands allowed to be sent from client via remoteExec
        class Commands
        {
               class moveInAny { allowedTargets=0; jip=0; }; // can target anyone, sending jip is turned off (overrides settings in the Commands class)
-			  class a3e_fnc_initPlayer { allowedTargets=2; jip=0; };
 	};
 };
 
