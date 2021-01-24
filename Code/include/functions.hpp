@@ -164,6 +164,16 @@ class CfgFunctions
 			class SaveStatistics {};
 			class ParseStatistics {};
 		};
+		class Searchleader
+		{
+			class PlayerDetection {};
+			class recordSighting {};
+			class ReportToHQ {};
+			class SearchLeader {};
+			class SearchLeaderInit {};
+			class CreateKnownPosition {};
+			
+		};
 	};
 	class drn
 	{
