@@ -1,14 +1,16 @@
 private["_group","_markername","_searchRange","_oncomplete","_destinationPos","_waypoint","_leader","_players"];
-if(!isserver) exitwith {};
+params["_group",["_markerName","noMarker"]];
 
-_group = _this select 0;
-_markerName = _this select 1;
 
 _oncomplete = "";
 
+if(_markerName == "noMarker") then {
+	_markerName = _group getvariable ["a3e_homeMarker","noMarker"];
+};
+
 [_group,"PATROL"] call a3e_fnc_SetTaskState;
 
-if(!isNil("_markerName")) then {
+if(_markerName != "noMarker") then {
 	_destinationPos = [_markerName] call a3e_fnc_RandomMarkerPos;
 	while {surfaceIsWater [_destinationPos select 0, _destinationPos select 1]} do {
 		_destinationPos = [_markerName] call a3e_fnc_RandomMarkerPos;

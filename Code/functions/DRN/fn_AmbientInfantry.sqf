@@ -269,6 +269,15 @@ while {true} do {
 				terminate _script;
 			};
 		};
+		
+		private _grouplist = missionNamespace getvariable ["A3E_StatusOfPatrols",[]];
+		private _grp = _x;
+		{
+			if(_grp==_x#0) exitwith {
+				_x set [3,true]; //set despawn flag, so searchleader will not miss this group
+			};
+		} foreach _grouplist;
+		
         deleteGroup _x;
     } foreach _groupsToDelete;
     

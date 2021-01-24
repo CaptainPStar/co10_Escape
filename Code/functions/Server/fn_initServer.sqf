@@ -228,6 +228,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 
 // Initialize search leader
 //[drn_searchAreaMarkerName, A3E_Debug] execVM "Scripts\Escape\SearchLeader.sqf"; //depreciated
+[] call A3E_fnc_SearchleaderInit;
 
 //Start the player detection script
 [] call A3E_fnc_PlayerDetection;

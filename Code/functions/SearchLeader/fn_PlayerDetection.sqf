@@ -1,5 +1,5 @@
 private _worldCenter = worldSize / 2;
-systemchat "Reset detection triggers";
+//systemchat "Reset detection triggers";
 
 
 missionNamespace setvariable ["A3E_var_PlayerCanBeDetected",true];

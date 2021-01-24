@@ -1,5 +1,5 @@
 params["_side"];
-systemchat ("Trigger for "+_side);
+//systemchat ("Trigger for "+_side);
 
 missionnamespace setvariable ["A3E_var_PlayerCanBeDetected",false];
 

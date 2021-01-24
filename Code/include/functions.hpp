@@ -171,6 +171,7 @@ class CfgFunctions
 			class ReportToHQ {};
 			class SearchLeader {};
 			class SearchLeaderInit {};
+			class SearchLeaderRadio {};
 			class CreateKnownPosition {};
 			
 		};

@@ -10,12 +10,9 @@ _oncomplete = "";
 [_group,"FLEE"] call a3e_fnc_SetTaskState;
 
 
-	_homeMarker = _group getvariable "a3e_homeMarker";
-	if(!isNil("_homeMarker")) then {
-		_oncomplete = format["[group this,""%1""] spawn a3e_fnc_Patrol;",_homeMarker];
-	} else {
-		_oncomplete = "[group this,nil] spawn a3e_fnc_Patrol;";
-	};
+	
+_oncomplete = "[group this] spawn a3e_fnc_Patrol;";
+
 
 
 _waypoint = [_group,_targetposition,"MOVE","LINE","FULL","AWARE",_oncomplete] call a3e_fnc_move;
