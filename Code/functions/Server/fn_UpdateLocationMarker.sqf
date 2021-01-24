@@ -20,6 +20,10 @@ if(!_hidden && _unknown || _reveal) then {
 	_poi set [5, false];
 	_marker setmarkerPos (_markerPosition);
 	_marker setMarkerType _markerType;
+	if(_markerType == "o_hq") then {
+		//Update the task to find a comcenter marker
+		missionNamespace setvariable ["A3E_Task_LocateComcenter_Complete",true,true];
+	};
 	_what = _markerType;
 	_marker setMarkerColor _color;
 	_marker setMarkerAlpha 1;

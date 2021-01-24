@@ -88,6 +88,38 @@ _trigger setTriggerTimeout [1, 1, 1, false];
 _trigger setTriggerStatements["A3E_Task_Map_Failed", "A3E_Task_Map setTaskState ""Failed"";", ""];
 
 
+// Locate  comcenter
+private _text =  "Locate an enemy communication center. You may need to gather information from enemy patrols or check points of interest on the map to reveal the location of a comcenter.";
+
+A3E_Task_LocateComcenter= player createSimpleTask ["Locate enemy communication center"];
+A3E_Task_LocateComcenter setSimpleTaskDescription [
+   _text,
+   "Locate enemy communication center",
+   "Locate enemy communication center"
+];
+A3E_Task_LocateComcenter setTaskState "CREATED";
+
+
+if(isNil("A3E_Task_LocateComcenter_Complete")) then {
+	A3E_Task_LocateComcenter_Complete = false;
+};
+if(isNil("A3E_Task_LocateComcenter_Failed")) then {
+	A3E_Task_LocateComcenter_Failed = false;
+};
+
+_trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerInterval 2;
+_trigger setTriggerArea[0, 0, 0, false];
+_trigger setTriggerActivation["NONE", "PRESENT", false];
+_trigger setTriggerTimeout [1, 1, 1, false];
+_trigger setTriggerStatements["A3E_Task_LocateComcenter_Complete", "A3E_Task_LocateComcenter setTaskState ""Succeeded"";", ""];
+	
+_trigger = createTrigger["EmptyDetector", [0,0,0], false];
+_trigger setTriggerInterval 2;
+_trigger setTriggerArea[0, 0, 0, false];
+_trigger setTriggerActivation["NONE", "PRESENT", false];
+_trigger setTriggerTimeout [1, 1, 1, false];
+_trigger setTriggerStatements["A3E_Task_LocateComcenter_Failed", "A3E_Task_LocateComcenter setTaskState ""Failed"";", ""];
 
 // Task Hack Commcenter
 A3E_Task_ComCenter = player createSimpleTask ["Hack Communication Center"];
