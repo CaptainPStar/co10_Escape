@@ -19,6 +19,7 @@ class Params
             title = "Enemy Skill";
             values[] = {0, 1, 2, 3, 4};
             texts[] = {"Cadet", "Easy", "Normal", "Hard", "Extreme"};
+			livechanges = 1;
             default = 1;
 	};
 	class A3E_Param_EnemyFrequency
@@ -26,6 +27,7 @@ class Params
 		title="Enemy Groupsize";
 		values[]={1,2,3};
 		texts[]={"Few (1-3)", "Some (3-5)", "Large (5-7)"};
+		livechanges = 1;
 		default = 2;
 	};
 	class A3E_Param_EnemySpawnDistance
@@ -40,6 +42,7 @@ class Params
 		title="Village Patrol Spawns";
 		values[]={1, 2, 3};
 		texts[]={"Low (better performance)", "Medium", "High (Very demanding)"};
+		livechanges = 1;
 		default = 1;
 	};
 	class A3E_Param_SearchChopper
@@ -69,6 +72,8 @@ class Params
 	    title="Time Multiplier (Fasttime)";
 		values[]={1,6,12,24,36};
 		texts[]={"1:1 (Normal)","1:6 (Day = 4 Hours)","1:12 (Day = 2 Hours)","1:24 (Day = 1 Hour)","1:36 (Day = 40 Minutes)"};
+		livechanges = 1;
+		code = "if(isserver) then {setTimeMultiplier _this;};";
 		default = 6;
 	};
 	class A3E_Param_Weather {
@@ -110,6 +115,7 @@ class Params
 		title="Chance an enemy carries intel";
 		values[]={5,10,20,30,40,50};
 		texts[]={"5%","10%","20%","30%","40%","50%"};
+		livechanges = 1;
 		default = 10;
 	};
 	class A3E_Param_RevealMarkers
@@ -131,6 +137,7 @@ class Params
 		title="Artillery";
 		values[]={0.5,1,2};
 		texts[]={"Reduced","Default","Death in fire"};
+		livechanges = 1;
 		default = 1;
 	};
 	class A3E_Param_War_Torn
@@ -152,6 +159,7 @@ class Params
 		title="Extraction Points";
 		values[]={0, 1, 2};
 		texts[]={"Random", "Close", "Far"};
+		livechanges = 1;
 		default = 0;
 	};
 	class A3E_Param_Waffelbox
@@ -166,6 +174,7 @@ class Params
 		title="NVG-Goggles and TWS Scopes";
 		values[]={0,1};
 		texts[]={"All", "No Goggles and TWS"};
+		livechanges = 1;
 		default = 0;
 	};
 	class A3E_Param_Spacer4
@@ -264,6 +273,7 @@ class Params
 		title="Debug (you should keep this off)";
 		values[]={0,1};
 		texts[]={"Off","On"};
+		livechanges = 1;
 		default = 0;
 	};
 };

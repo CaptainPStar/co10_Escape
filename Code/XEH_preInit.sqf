@@ -16,6 +16,8 @@ private _settingCategory = _category;
         private _texts = getArray (_x >> "texts");
         private _default = getNumber (_x >> "default");
 		private _tooltip = [(_x),"tooltip",""] call BIS_fnc_returnConfigEntry;
+		private _livechanges = [(_x),"livechanges",0] call BIS_fnc_returnConfigEntry;
+		private _code = [(_x),"code",""] call BIS_fnc_returnConfigEntry;
 		if(_tooltip == "") then {
 			_tooltip = _title;
 		};
@@ -44,8 +46,8 @@ private _settingCategory = _category;
             _settingCategory,
             _valueInfo,
             1,
-            {},
-            true
+            compile _code,
+            ([true, false] select _livechanges)
         ] call CBA_fnc_addSetting;
     };
 } forEach ('true' configClasses (missionConfigFile >> "Params"));
