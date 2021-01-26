@@ -121,8 +121,8 @@ mb_fnc_UpdateWeather = {
 	
 	if (rw2Debug == 1) then {hint format ["Debug Updating Weather - %1\nOvercast: %2\nRain/Snow: %3\nFog: %4\nWind EW/NS: %5|%6",weatherNextName,_weatherNextOvercast,_weatherNextRainSnow,_weatherNextFog,_weatherNextWindEW,_weatherNextWindNS];};
 };
-if(isNil("Param_Weather")) then {
-	Param_Weather = 4;
+if(isNil("A3E_Param_Weather")) then {
+	A3E_Param_Weather = 4;
 };
 if(isNil("rw2_Current_Weather")) then {
 	rw2_Current_Weather = 0;
@@ -136,7 +136,7 @@ private ["_weatherUpdateArray","_weatherUpdateForecasts"];
       if(isNil('paramsArray')) then {
         rw2_Current_Weather = floor(random(count(weatherTemplates)));
 		} else {
-        initialWeatherParam = (paramsArray select Param_Weather);
+        initialWeatherParam = (paramsArray select A3E_Param_Weather);
 		switch (initialWeatherParam) do{
 			case 0: {rw2_Current_Weather = 0;};    										// Clear
             case 1: {rw2_Current_Weather = 1;};    										// Overcast

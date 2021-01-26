@@ -40,7 +40,7 @@ if(A3E_Debug) then {
 	_marker setMarkerAlpha 0.5;
 };
 
-private _triggerRange = missionNamespace getvariable ["Param_EnemySpawnDistance",800];
+private _triggerRange = missionNamespace getvariable ["A3E_Param_EnemySpawnDistance",800];
 
 private _trigger = createTrigger["EmptyDetector", _zonePosition, false];
 _trigger setTriggerInterval 5;

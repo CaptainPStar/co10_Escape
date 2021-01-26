@@ -60,10 +60,10 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"C_Truck_02_fuel_F"
 	,"C_Truck_02_box_F"
 	,"C_Truck_02_transport_F"];
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	};
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
@@ -549,10 +549,10 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"C_Van_01_box_F"
 	,"C_Van_01_transport_F"
 	,"C_Van_01_fuel_F"];
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 		a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
 	};
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_service_F";
@@ -693,7 +693,7 @@ a3e_arr_AmmoDepotVehicleBackpacks = ["OPTRE_S12_SOLA_Jetpack"];
 
 a3e_arr_AmmoDepotItems = [];
 a3e_arr_AmmoDepotItems pushback ["OPTRE_Smartfinder", 10, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["OPTRE_NVG", 10, 1, 3];
 };
 a3e_arr_AmmoDepotItems pushback ["OPTRE_Binoculars", 50, 2, 3, [], 0];
@@ -716,7 +716,7 @@ a3e_arr_AmmoDepotItems pushback ["OPTRE_M7_Sight", 50, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["OPTRE_M6C_Scope", 50, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["OPTRE_M6G_Scope", 50, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["OPTRE_HMG38_CarryHandle", 50, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["OPTRE_BR55HB_Scope", 50, 1, 2];
 	a3e_arr_AmmoDepotItems pushback ["OPTRE_M393_Scope", 50, 1, 2];
 	a3e_arr_AmmoDepotItems pushback ["OPTRE_M392_Scope", 50, 1, 2];
@@ -824,13 +824,13 @@ a3e_arr_searchChopper_pilot = [
 a3e_arr_searchChopper_crew = [
 	"OPTRE_UNSC_Airforce_Soldier_Airman"];
 
-if(Param_SearchChopper==0) then {
+if(A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
 };
-if(Param_SearchChopper==1) then {
+if(A3E_Param_SearchChopper==1) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
 };
-if(Param_SearchChopper==2) then {
+if(A3E_Param_SearchChopper==2) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperHard;
 };
 

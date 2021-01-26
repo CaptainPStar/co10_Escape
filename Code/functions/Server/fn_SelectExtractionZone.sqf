@@ -4,7 +4,7 @@
 //### mode 2: try to pick a extraction far away 
 params[["_hackPos",[0,0,0]],["_select",-1]];
 
-private _mode = Param_ExtractionSelection;
+private _mode = A3E_Param_ExtractionSelection;
 
 private _findMarkers = {
 	params["_name","_type"];

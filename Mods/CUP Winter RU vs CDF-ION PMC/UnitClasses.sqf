@@ -302,10 +302,10 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_C_Volha_Gray_TKCIV"
 	,"CUP_C_Volha_Limo_TKCIV"
 	,"CUP_C_Volha_Limo_TKCIV"];
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	};
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
@@ -385,12 +385,12 @@ switch (_enemyFrequency) do {
         ,"CUP_I_RG31_Mk19_W_ION"
 		,"CUP_I_RG31E_M2_W_ION"
 		,"CUP_I_RG31_M2_W_GC_ION"];
-		if(Param_UseDLCApex==1) then {
+		if(A3E_Param_UseDLCApex==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_AT_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_LMG_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_unarmed_ION";
 		};
-		if(Param_UseDLCLaws==1) then {
+		if(A3E_Param_UseDLCLaws==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_ammo_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_Cargo_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_Repair_ION";
@@ -479,12 +479,12 @@ switch (_enemyFrequency) do {
 		,"CUP_I_RG31_Mk19_W_ION"  //2
 		,"CUP_I_RG31E_M2_W_ION"
 		,"CUP_I_RG31_M2_W_GC_ION"];
-		if(Param_UseDLCApex==1) then {
+		if(A3E_Param_UseDLCApex==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_AT_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_LMG_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_unarmed_ION";
 		};
-		if(Param_UseDLCLaws==1) then {
+		if(A3E_Param_UseDLCLaws==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_ammo_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_Cargo_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_Repair_ION";
@@ -579,12 +579,12 @@ switch (_enemyFrequency) do {
 		,"CUP_I_RG31_Mk19_W_ION"  //2
 		,"CUP_I_RG31E_M2_W_ION"
 		,"CUP_I_RG31_M2_W_GC_ION"];
-		if(Param_UseDLCApex==1) then {
+		if(A3E_Param_UseDLCApex==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_AT_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_LMG_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_unarmed_ION";
 		};
-		if(Param_UseDLCLaws==1) then {
+		if(A3E_Param_UseDLCLaws==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_ammo_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_Cargo_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_Repair_ION";
@@ -681,7 +681,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
     ,"CUP_I_RG31_Mk19_W_ION"
     ,"CUP_I_RG31E_M2_W_ION"
     ,"CUP_I_RG31_M2_W_GC_ION"];
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 	a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_AT_ION";
 	a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_LMG_ION";
 	a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_unarmed_ION";
@@ -695,7 +695,7 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	,"CUP_B_Kamaz_Open_CDF"];
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	"CUP_I_SUV_ION"];
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind pushback "CUP_I_Van_Transport_ION";
 	};
 
@@ -747,12 +747,12 @@ a3e_arr_ComCenParkedVehicles = [
 	,"CUP_I_SUV_ION"
 	,"CUP_I_SUV_Armored_ION"
 	,"CUP_I_SUV_Armored_ION"];
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 	a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_AT_ION";
 	a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_LMG_ION";
 	a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_unarmed_ION";
 	};
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_ComCenParkedVehicles pushback "CUP_I_Van_ammo_ION";
 	a3e_arr_ComCenParkedVehicles pushback "CUP_I_Van_Cargo_ION";
 	a3e_arr_ComCenParkedVehicles pushback "CUP_I_Van_Repair_ION";
@@ -967,10 +967,10 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"CUP_C_Volha_Gray_TKCIV"
 	,"CUP_C_Volha_Limo_TKCIV"
 	,"CUP_C_Volha_Limo_TKCIV"];
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 		a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
 	};
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_service_F";
@@ -1099,7 +1099,7 @@ a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_1_AK", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_1_AK_open", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_3", 10, 1, 1];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_3_open", 10, 1, 1];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
     a3e_arr_AmmoDepotItems pushback ["CUP_NVG_PVS7", 10, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_GOSHAWK", 10, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_NSPU", 10, 1, 3];
@@ -1237,13 +1237,13 @@ a3e_arr_searchChopper_pilot = [
 a3e_arr_searchChopper_crew = [
 	"CUP_I_PMC_Winter_Pilot"];
 
-if(Param_SearchChopper==0) then {
+if(A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
 };
-if(Param_SearchChopper==1) then {
+if(A3E_Param_SearchChopper==1) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
 };
-if(Param_SearchChopper==2) then {
+if(A3E_Param_SearchChopper==2) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperHard;
 };
 

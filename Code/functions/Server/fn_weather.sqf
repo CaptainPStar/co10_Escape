@@ -42,21 +42,21 @@ _weatherTemplates pushBack [0.4,0,0,0];
 //Cloudy
 _weatherTemplates pushBack [0.4,0,0,0];
 //Make sure all used vars are initialised
-if(isNil("Param_Weather")) then {
-	Param_Weather = -1;
+if(isNil("A3E_Param_Weather")) then {
+	A3E_Param_Weather = -1;
 };
-if(isNil("Param_DynamicWeather")) then {
-	Param_DynamicWeather = 1;
+if(isNil("A3E_Param_DynamicWeather")) then {
+	A3E_Param_DynamicWeather = 1;
 };
-if(isNil("Param_TimeMultiplier")) then {
-	Param_TimeMultiplier = 1;
+if(isNil("A3E_Param_TimeMultiplier")) then {
+	A3E_Param_TimeMultiplier = 1;
 };
 private _currentTemplate = [];
-if(Param_Weather<0) then {
+if(A3E_Param_Weather<0) then {
 	_currentTemplate = _weatherTemplates select floor(random(count(_weatherTemplates)));
 } else {
-	if(Param_Weather<count(_weatherTemplates)) then {
-		_currentTemplate = _weatherTemplates select Param_Weather;
+	if(A3E_Param_Weather<count(_weatherTemplates)) then {
+		_currentTemplate = _weatherTemplates select A3E_Param_Weather;
 	} else {
 		_currentTemplate = _weatherTemplates select floor(random(count(_weatherTemplates)));
 	};
@@ -68,8 +68,8 @@ private _rainDelay = 120; //Delay rainchange
 if(_initial) then {
 	_weatherTransitionTime = 0;
 };
-if(Param_DynamicWeather == 0) then {
-	_weatherWaitTime = 60*60*24*Param_TimeMultiplier;
+if(A3E_Param_DynamicWeather == 0) then {
+	_weatherWaitTime = 60*60*24*A3E_Param_TimeMultiplier;
 };
 
 //Transition in _weatherTransitionTime ingame seconds
@@ -78,7 +78,7 @@ if(abs(rain-(_currentTemplate select 1))<0.2 || _initial) then {
 	_weatherTransitionTime setrain (_currentTemplate select 1);
 } else {
 	//Delay rain a bit of rainchange is to heavy. Otherwise rain will start before clouds appear or vice versa
-	[(_currentTemplate select 1),_rainDelay/Param_TimeMultiplier,_weatherTransitionTime-(_rainDelay/Param_TimeMultiplier)] spawn {
+	[(_currentTemplate select 1),_rainDelay/A3E_Param_TimeMultiplier,_weatherTransitionTime-(_rainDelay/A3E_Param_TimeMultiplier)] spawn {
 		systemchat ("Delaying rain by "+str _time + " seconds");
 		params["_rain","_time","_change"];
 		sleep _time;
@@ -96,20 +96,20 @@ if(_initial) then {
 	forceWeatherChange;
 };
 //Sleep _weatherTransitionTime ingame seconds
-systemchat ("Weatherchange in "+str (_weatherTransitionTime/Param_TimeMultiplier) + " seconds");
-sleep (_weatherTransitionTime/Param_TimeMultiplier);
+systemchat ("Weatherchange in "+str (_weatherTransitionTime/A3E_Param_TimeMultiplier) + " seconds");
+sleep (_weatherTransitionTime/A3E_Param_TimeMultiplier);
 
 //Keep the weather 10 realtime minutes
-_weatherWaitTime*Param_TimeMultiplier setovercast (_currentTemplate select 0);
-_weatherWaitTime*Param_TimeMultiplier setrain (_currentTemplate select 1);
-_weatherWaitTime*Param_TimeMultiplier setfog (_currentTemplate select 2);
-_weatherWaitTime*Param_TimeMultiplier setlightnings (_currentTemplate select 3);
+_weatherWaitTime*A3E_Param_TimeMultiplier setovercast (_currentTemplate select 0);
+_weatherWaitTime*A3E_Param_TimeMultiplier setrain (_currentTemplate select 1);
+_weatherWaitTime*A3E_Param_TimeMultiplier setfog (_currentTemplate select 2);
+_weatherWaitTime*A3E_Param_TimeMultiplier setlightnings (_currentTemplate select 3);
 
 //Keep the weather 10 minutes
 systemchat ("Keeping weather for "+str (_weatherWaitTime) + " seconds");
 sleep _weatherWaitTime;
 
-if(Param_DynamicWeather == 1) then {
+if(A3E_Param_DynamicWeather == 1) then {
 	systemchat "Restarting weather script";
 	[false] spawn A3E_fnc_Weather;
 } else {

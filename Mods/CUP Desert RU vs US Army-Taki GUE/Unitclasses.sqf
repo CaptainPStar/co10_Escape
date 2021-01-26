@@ -372,10 +372,10 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_C_TT650_TK_CIV"
 	,"CUP_C_TT650_TK_CIV"
 	,"CUP_C_TT650_TK_CIV"];  //21
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	};
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
@@ -1730,10 +1730,10 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"CUP_C_Bus_City_TKCIV"
 	,"CUP_C_Bus_City_TKCIV"
 	,"CUP_C_Bus_City_TKCIV"];  //16
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 		a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
 	};
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_service_F";
@@ -1937,7 +1937,7 @@ a3e_arr_AmmoDepotVehicleBackpacks = ["CUP_B_US_IIID_UCP"];
 a3e_arr_AmmoDepotItems = [];
 //General Equipment
 a3e_arr_AmmoDepotItems pushback ["Laserdesignator", 10, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["NVGoggles", 10, 1, 3];
 };
 a3e_arr_AmmoDepotItems pushback ["Rangefinder", 10, 1, 2];
@@ -1993,7 +1993,7 @@ a3e_arr_AmmoDepotItems pushback ["CUP_optic_ACOG_TA31_KF", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_ACOG_TA31_KF_Desert", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_ACOG", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_ACOG_Reflex_Desert", 10, 1, 3];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PAS_13c1", 10, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PAS_13c2", 5, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_10", 10, 1, 3];
@@ -2041,7 +2041,7 @@ a3e_arr_AmmoDepotItems pushback ["CUP_bipod_VLTOR_Modpod_black", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["CUP_bipod_VLTOR_Modpod", 20, 1, 2];
 //INDEP Equipment 
 //SCOPES
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_4", 20, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_4_M14", 20, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_4_M16", 20, 1, 3];
@@ -2237,13 +2237,13 @@ a3e_arr_searchChopper_pilot = [
 a3e_arr_searchChopper_crew = [
 	"CUP_B_US_Pilot"];
 
-if(Param_SearchChopper==0) then {
+if(A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
 };
-if(Param_SearchChopper==1) then {
+if(A3E_Param_SearchChopper==1) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
 };
-if(Param_SearchChopper==2) then {
+if(A3E_Param_SearchChopper==2) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperHard;
 };
 

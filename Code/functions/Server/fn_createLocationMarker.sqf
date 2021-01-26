@@ -12,10 +12,10 @@ if(isNil("A3E_POIs")) then {
 //private _hidden = true;
 private _unknown = true;
 private _accuracy = 0;
-if(Param_RevealMarkers == 0) then {
+if(A3E_Param_RevealMarkers == 0) then {
 		_marker setMarkerType _markerType;
 };
-if(Param_RevealMarkers == 1 && !_hidden) then {
+if(A3E_Param_RevealMarkers == 1 && !_hidden) then {
 		_marker setMarkerType "hd_unknown";
 		_trigger = createTrigger["EmptyDetector", _markerPosition, false];
 		_trigger setTriggerInterval 5;
@@ -24,7 +24,7 @@ if(Param_RevealMarkers == 1 && !_hidden) then {
 		_activation = format["[%1,true] spawn A3E_fnc_UpdateLocationMarker;",str _marker];
 		_trigger setTriggerStatements["this",_activation ,""];
 	};
-if(Param_RevealMarkers == 2 || _hidden) then {
+if(A3E_Param_RevealMarkers == 2 || _hidden) then {
 		_hidden = true; //true for all markers when reveal == 2 or hidden from param (wrecks)
 		_marker setMarkerType "hd_unknown";
 		_marker setMarkerAlpha 0;
@@ -36,12 +36,12 @@ if(Param_RevealMarkers == 2 || _hidden) then {
 		_activation = format["[%1,true] spawn A3E_fnc_UpdateLocationMarker;",str _marker];
 		_trigger setTriggerStatements["this",_activation ,""];
 	};
-if(Param_RevealMarkers == 3) then {
+if(A3E_Param_RevealMarkers == 3) then {
 		_marker setMarkerType "Empty";
 		_marker setMarkerAlpha 0;
 	};
-if(Param_RevealMarkers>3) then {
-	diag_log "Unknown type of Param_RevealMarkers";
+if(A3E_Param_RevealMarkers>3) then {
+	diag_log "Unknown type of A3E_Param_RevealMarkers";
 };
 
 A3E_POIs pushBack [_marker,_markerType,_color,_markerPosition,_hidden,_unknown,_accuracy];

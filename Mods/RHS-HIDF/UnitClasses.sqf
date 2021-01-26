@@ -82,10 +82,10 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"C_Truck_02_fuel_F"
 	,"C_Truck_02_box_F"
 	,"C_Truck_02_transport_F"];
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	};
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
@@ -339,10 +339,10 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"C_Truck_02_box_F"
 	,"C_Truck_02_transport_F"
 	,"C_Truck_02_covered_F"];
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 		a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
 	};
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_service_F";
@@ -466,7 +466,7 @@ a3e_arr_AmmoDepotVehicleBackpacks = ["rhsgref_hidf_alicepack"];
 // Index 3: Maximum amount.
 a3e_arr_AmmoDepotItems = [];
 a3e_arr_AmmoDepotItems pushback ["Laserdesignator", 10, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["NVGoggles", 10, 1, 3];
 };
 a3e_arr_AmmoDepotItems pushback ["Rangefinder", 10, 1, 2];
@@ -498,7 +498,7 @@ a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_m24_silencer_wd", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_LEUPOLDMK4_wd", 30, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsusf_acc_LEUPOLDMK4", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["rhsgref_acc_l1a1_l2a2", 30, 1, 3];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["rhsgref_acc_l1a1_anpvs2", 20, 1, 3];
 };
 a3e_arr_AmmoDepotItems pushback ["O_UavTerminal", 10, 1, 3];
@@ -681,13 +681,13 @@ a3e_arr_searchChopper_pilot = [
 a3e_arr_searchChopper_crew = [
 	"rhsusf_usmc_marpat_wd_helicrew"];
 
-if(Param_SearchChopper==0) then {
+if(A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
 };
-if(Param_SearchChopper==1) then {
+if(A3E_Param_SearchChopper==1) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
 };
-if(Param_SearchChopper==2) then {
+if(A3E_Param_SearchChopper==2) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperHard;
 };
 

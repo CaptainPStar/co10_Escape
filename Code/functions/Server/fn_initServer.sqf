@@ -12,8 +12,8 @@ call a3e_fnc_parameterInit;
 call compile preprocessFileLineNumbers "Scripts\Escape\Functions.sqf";
 call compile preprocessFileLineNumbers "Scripts\Escape\AIskills.sqf";
 
-if(!isNil("Param_Debug")) then {
-	if((Param_Debug)==0 && !(missionNamespace getVariable ["a3e_debug_overwrite",false])) then {
+if(!isNil("A3E_Param_Debug")) then {
+	if((A3E_Param_Debug)==0 && !(missionNamespace getVariable ["a3e_debug_overwrite",false])) then {
 		A3E_Debug = false;
 	} else {
 		A3E_Debug = true;
@@ -26,7 +26,7 @@ if(!isNil("Param_Debug")) then {
 publicVariable "A3E_Debug";
 
 //ACE Revive
-AT_Revive_Camera = Param_ReviveView; //Needs to be stored on server now
+AT_Revive_Camera = A3E_Param_ReviveView; //Needs to be stored on server now
 ACE_MedicalServer = false;
 if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
 	ACE_MedicalServer = true;
@@ -45,8 +45,8 @@ publicVariable "ACE_MedicalServer";
 
 private ["_villagePatrolSpawnArea","_EnemyCount","_enemyMinSkill", "_enemyMaxSkill", "_searchChopperSearchTimeMin", "_searchChopperRefuelTimeMin", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency", "_scriptHandle"];
 
-_enemyFrequency = (Param_EnemyFrequency);
-_enemySpawnDistance = (Param_EnemySpawnDistance);
+_enemyFrequency = (A3E_Param_EnemyFrequency);
+_enemySpawnDistance = (A3E_Param_EnemySpawnDistance);
 
 [_enemyFrequency] call compile preprocessFileLineNumbers "Units\UnitClasses.sqf";
 
@@ -60,8 +60,8 @@ publicVariable "A3E_VAR_Flag_Ind";
 createCenter A3E_VAR_Side_Opfor;
 createCenter A3E_VAR_Side_Ind;
 
-if(isNil("Param_War_Torn")) then {
-	Param_War_Torn = 0;
+if(isNil("A3E_Param_War_Torn")) then {
+	A3E_Param_War_Torn = 0;
 };
 A3E_VAR_Side_Blufor setFriend [A3E_VAR_Side_Ind, 0];
 A3E_VAR_Side_Ind setFriend [A3E_VAR_Side_Blufor, 0];
@@ -69,7 +69,7 @@ A3E_VAR_Side_Ind setFriend [A3E_VAR_Side_Blufor, 0];
 A3E_VAR_Side_Blufor setFriend [A3E_VAR_Side_Opfor, 0];
 A3E_VAR_Side_Opfor setFriend [A3E_VAR_Side_Blufor, 0];
 	
-if(Param_War_Torn == 0) then {
+if(A3E_Param_War_Torn == 0) then {
 	A3E_VAR_Side_Opfor Setfriend [A3E_VAR_Side_Ind, 1];
 	A3E_VAR_Side_Ind setFriend [A3E_VAR_Side_Opfor, 1];
 } else {
@@ -82,8 +82,8 @@ if(Param_War_Torn == 0) then {
 [] spawn A3E_fnc_weather;
 
 private ["_hour","_date"];
-_hour = Param_TimeOfDay;
-switch (Param_TimeOfDay) do {
+_hour = A3E_Param_TimeOfDay;
+switch (A3E_Param_TimeOfDay) do {
     case 24: { 
 		_hour = round(random(24));
 	};
@@ -94,7 +94,7 @@ switch (Param_TimeOfDay) do {
 		_hour = 17 + round(random(11)); //Between 1700 and 0400
 		_hour = _hour % 24;
 	};
-    default { _hour = Param_TimeOfDay };
+    default { _hour = A3E_Param_TimeOfDay };
 };
 _date = date;
 _date set [3,_hour];
@@ -106,7 +106,7 @@ publicVariable "a3e_var_Escape_hoursSkipped";
 [_date] call bis_fnc_setDate;
 
 
-setTimeMultiplier Param_TimeMultiplier;
+setTimeMultiplier A3E_Param_TimeMultiplier;
 call compile preprocessFileLineNumbers ("Island\CommunicationCenterMarkers.sqf");
 
 
@@ -119,8 +119,8 @@ publicVariable "a3e_var_Escape_MissionComplete";
 
 a3e_var_GrpNumber = 0;
 
-if(isNil("Param_EnemySkill")) then {
-	Param_EnemySkill = 1;
+if(isNil("A3E_Param_EnemySkill")) then {
+	A3E_Param_EnemySkill = 1;
 };
 
 _enemyMinSkill = 0.40;
@@ -128,7 +128,7 @@ _enemyMaxSkill = 0.60;
 
 //Kudos to Semiconductor
 
-switch (Param_EnemySkill) do { 
+switch (A3E_Param_EnemySkill) do { 
     // Convert value from params.hpp into acceptable range 
     case 0: { _enemyMinSkill = 0.10; _enemyMaxSkill = 0.30; }; 
     case 1: { _enemyMinSkill = 0.30; _enemyMaxSkill = 0.50; }; 
@@ -147,7 +147,7 @@ _searchChopperSearchTimeMin = (5 + random 10);
 _searchChopperRefuelTimeMin = (5 + random 10);
 
 
-_villagePatrolSpawnArea = (Param_VillageSpawnCount);
+_villagePatrolSpawnArea = (A3E_Param_VillageSpawnCount);
 
 drn_searchAreaMarkerName = "drn_searchAreaMarker";
 
@@ -532,7 +532,7 @@ waitUntil {scriptDone _scriptHandle};
     // Spawn guard
 
 	private _i = 0;	
-	for [{_i = 0}, {_i < (Param_EnemyFrequency*2)}, {_i = _i + 1}] do {
+	for [{_i = 0}, {_i < (A3E_Param_EnemyFrequency*2)}, {_i = _i + 1}] do {
 		private _weapon = a3e_arr_PrisonBackpackWeapons select floor(random(count(a3e_arr_PrisonBackpackWeapons)));
 		_backpack addWeaponCargoGlobal[(_weapon select 0),1];
 		_backpack addMagazineCargoGlobal[(_weapon select 1),3];
@@ -599,7 +599,7 @@ waitUntil {scriptDone _scriptHandle};
 					};
 				} forEach items _unit;
 			};
-			if (!(_hmd isEqualTo "") && {random 100 > 20 || {Param_NoNightvision == 1}}) then {
+			if (!(_hmd isEqualTo "") && {random 100 > 20 || {A3E_Param_NoNightvision == 1}}) then {
 				_unit unlinkItem _hmd;
 				_unit removeItem _hmd;
 			};

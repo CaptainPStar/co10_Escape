@@ -15,7 +15,7 @@ if(!_statisticsCollected) then {
 	missionNamespace setvariable ["A3E_EndStatistics",[_statistics] call A3E_fnc_parseStatistics,true];
 	saveProfileNamespace;
 
-	if(Param_SendStatistics == 1) then {
+	if(A3E_Param_SendStatistics == 1) then {
 		"DummyLayer" cutRsc ["RscTitleDisplayEmpty", "PLAIN"];
 		private _emptyDisplay = uiNamespace getVariable "RscTitleDisplayEmpty";
 		private _html = _emptyDisplay ctrlCreate ["RscHTML", -1]; 

@@ -1,9 +1,9 @@
 // call compile preprocessFileLineNumbers "functions\Common\fn_checkUnitClasses.sqf"
 
-Param_UseDLCApex = 1;
-Param_UseDLCLaws = 1;
-Param_NoNightvision = 0;
-Param_SearchChopper = 2;
+A3E_Param_UseDLCApex = 1;
+A3E_Param_UseDLCLaws = 1;
+A3E_Param_NoNightvision = 0;
+A3E_Param_SearchChopper = 2;
 [3] call compile preprocessFileLineNumbers "Units\UnitClasses.sqf";
 
 private _arraysVehicle = [

@@ -81,7 +81,7 @@ if (isMultiplayer) then {
 };
 
 waituntil{sleep 0.1;!isNil("A3E_ParamsParsed")};
-AT_Revive_Camera = Param_ReviveView;
+AT_Revive_Camera = A3E_Param_ReviveView;
 
 //If no ACE use ATR revive
 if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
@@ -91,9 +91,9 @@ if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
 };
 
 
-setTerrainGrid Param_Grass;
+setTerrainGrid A3E_Param_Grass;
 
-if (Param_Magrepack == 1) then {
+if (A3E_Param_Magrepack == 1) then {
 	[] execVM "Scripts\outlw_magRepack\MagRepack_init_sv.sqf";
 };
 

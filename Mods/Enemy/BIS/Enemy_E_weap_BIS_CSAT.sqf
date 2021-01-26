@@ -125,12 +125,12 @@ a3e_arr_AmmoDepotItems append [
 	,["bipod_02_F_blk", 10, 1, 2]//CSAT
 	,["bipod_02_F_hex", 10, 1, 2]//CSAT
 	];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems append [
 		["NVGoggles_OPFOR", 10, 1, 3]
 		];
 };
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems append [
 		["optic_tws", 10, 1, 1]//
 		,["optic_tws_mg", 10, 1, 1]//

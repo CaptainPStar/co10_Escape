@@ -6,7 +6,7 @@ if (isNil "paramsArray") then {
     paramsArray = _paramNames apply {getNumber (_cfgParams >> _x >> "default")};
 };
 
-private _paramLoading = "Param_Loadparams" call BIS_fnc_getParamValue;
+private _paramLoading = "A3E_Param_Loadparams" call BIS_fnc_getParamValue;
 switch _paramLoading do {
     case 0: {
         ["Saving parameters."] call a3e_fnc_rptLog;
@@ -17,7 +17,7 @@ switch _paramLoading do {
         if (missionNamespace getVariable ["a3e_UseCBASettings", false]) then {
             "Using CBA settings" call a3e_fnc_rptLog;
             paramsArray = _paramNames apply {
-                private _value = missionNamespace getVariable ["a3e_" + _x, 0];
+                private _value = missionNamespace getVariable [_x, 0];
                 if (_value isEqualType false) then {
                     _value = [0, 1] select _value;
                 };

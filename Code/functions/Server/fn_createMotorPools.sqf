@@ -44,7 +44,7 @@ if (_mapsize < 5000) then
 	};
 
 if(isNil("A3E_MotorPoolCount")) then {
-        A3E_MotorPoolCount = ((floor random _mpc)+(Param_EnemyFrequency));
+        A3E_MotorPoolCount = ((floor random _mpc)+(A3E_Param_EnemyFrequency));
     };
 private _sites = [] + a3e_communicationCenterMarkers;
 
@@ -82,7 +82,7 @@ private _playergroup = [] call A3E_fnc_getPlayerGroup;
      a3e_arr_ComCenDefence_lightArmorClasses + a3e_arr_ComCenDefence_heavyArmorClasses]
      call A3E_fnc_BuildMotorPool;
 
-    [_playergroup, "A3E_MotorPoolPatrolMarker", A3E_VAR_Side_Opfor, "INS", 5, 5, 8, Param_EnemySkill, Param_EnemySkill, Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
+    [_playergroup, "A3E_MotorPoolPatrolMarker", A3E_VAR_Side_Opfor, "INS", 5, 5, 8, A3E_Param_EnemySkill, A3E_Param_EnemySkill, A3E_Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
 	 a3e_var_Escape_MotorPoolPositions pushBack (_x select 0);
 } foreach _mpPosition;
 

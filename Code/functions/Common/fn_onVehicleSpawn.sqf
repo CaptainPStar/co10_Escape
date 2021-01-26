@@ -1,5 +1,5 @@
 params["_vehicle"];
-private _lockParam = missionNamespace getvariable["Param_VehicleLock",0];
+private _lockParam = missionNamespace getvariable["A3E_Param_VehicleLock",0];
 
 switch (_lockParam) do {
 	case 1: {

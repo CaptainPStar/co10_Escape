@@ -21,7 +21,7 @@ private _settingCategory = _category;
 		};
         private _type = "LIST";
         private _valueInfo = [_values, _texts, _values find _default];
-        if (_name == "Param_Loadparams") then {
+        if (_name == "A3E_Param_Loadparams") then {
             _name = "UseCBASettings";
             _title = "Use CBA settings";
             _type = "CHECKBOX";
@@ -38,12 +38,12 @@ private _settingCategory = _category;
         };
 		//private _varname = [(_x),"varname","a3e_" + _name] call BIS_fnc_returnConfigEntry;
         [
-            "a3e_" + _name,
+            _name,
             _type,
             [_title, _tooltip],
             _settingCategory,
             _valueInfo,
-            true,
+            1,
             {},
             true
         ] call CBA_fnc_addSetting;

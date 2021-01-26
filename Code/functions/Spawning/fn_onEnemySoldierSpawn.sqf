@@ -9,7 +9,7 @@ if(daytime > 19 OR daytime < 8) then {
 
 //Hopefully fixing BIS broken scripts:
 private _AISkill = 0.1;
-switch (Param_EnemySkill) do {
+switch (A3E_Param_EnemySkill) do {
 	case 0: { _AISkill = 0.1; };
 	case 1: { _AISkill = 0.2; };
 	case 2: { _AISkill = 0.3; };
@@ -33,7 +33,7 @@ if(random 100 < 70) then {
 	removeAllPrimaryWeaponItems _unit;
 	if((random 100 < 30)) then {
 		_scopes = A3E_arr_Scopes;
-		if(Param_NoNightvision==0) then {
+		if(A3E_Param_NoNightvision==0) then {
 			_scopes = _scopes + A3E_arr_TWSScopes;
 		};
 		if(_nighttime) then {
@@ -47,11 +47,11 @@ if(random 100 < 70) then {
 private["_nvgs"];
 _nvgs = hmd _unit; //NVGoggles
 if(_nvgs != "") then {
-	if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (Param_NoNightvision>0)) then {
+	if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (A3E_Param_NoNightvision>0)) then {
 		_unit unlinkItem _nvgs;
 	};
 } else {
-	if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (Param_NoNightvision==0)) then {
+	if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (A3E_Param_NoNightvision==0)) then {
 		_unit linkItem "NVGoggles_OPFOR";
 	};
 };
@@ -59,7 +59,7 @@ if(_nvgs != "") then {
 
 //Chance for random attachment
 if((random 100 < 15) OR (_nighttime)) then {
-	if(random 100 < 70 || (Param_NoNightvision>0)) then {
+	if(random 100 < 70 || (A3E_Param_NoNightvision>0)) then {
 		_unit addPrimaryWeaponItem "acc_flashlight";
 	} else {
 		_unit addPrimaryWeaponItem "acc_pointer_IR";
@@ -105,6 +105,6 @@ if ("Rangefinder" in (assignedItems _unit)) then {
 		_unit unlinkItem "Rangefinder";
 	};
 };
-if(Param_UseIntel==1) then {
+if(A3E_Param_UseIntel==1) then {
 	[_unit] call A3E_fnc_AddIntel;
 };

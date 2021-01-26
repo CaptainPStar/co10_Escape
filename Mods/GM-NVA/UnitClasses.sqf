@@ -58,7 +58,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"gm_gc_pol_p601"
 	,"gm_gc_dp_p601"
 	,"gm_xx_civ_bicycle_01"];
-	if(Param_UseDLCContact==1) then {
+	if(A3E_Param_UseDLCContact==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Tractor_01_F";
 	};
 	
@@ -543,7 +543,7 @@ a3e_arr_AmmoDepotVehicleBackpacks = ["gm_gc_army_backpack_80_assaultpack_str"];
 
 a3e_arr_AmmoDepotItems = [];
 //a3e_arr_AmmoDepotItems pushback ["Laserdesignator_02_ghex_F", 10, 1, 2];
-/*if(Param_NoNightvision==0) then {
+/*if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["O_NVGoggles_ghex_F", 10, 1, 3];
 };*/
 a3e_arr_AmmoDepotItems pushback ["gm_df7x40_blk", 50, 2, 3, [], 0];
@@ -568,7 +568,7 @@ a3e_arr_AmmoDepotItems pushback ["gm_feroz2x17_pzf84_blk", 2, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["gm_pgo7v_blk", 30, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["gm_bayonet_6x3_wud", 30, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["gm_bayonet_6x3_blk", 30, 1, 2];
-/*if(Param_NoNightvision==0) then {
+/*if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["optic_tws", 10, 1, 1];
 	a3e_arr_AmmoDepotItems pushback ["optic_tws_mg", 10, 1, 1];
 	a3e_arr_AmmoDepotItems pushback ["optic_NVS", 10, 1, 2];
@@ -715,13 +715,13 @@ a3e_arr_searchChopper_pilot = [
 a3e_arr_searchChopper_crew = [
 	"gm_pl_airforce_pilot_pm_80_gry"];
 
-if(Param_SearchChopper==0) then {
+if(A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
 };
-if(Param_SearchChopper==1) then {
+if(A3E_Param_SearchChopper==1) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
 };
-if(Param_SearchChopper==2) then {
+if(A3E_Param_SearchChopper==2) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperHard;
 };
 

@@ -886,7 +886,7 @@ a3e_arr_AmmoDepotVehicleBackpacks = ["cwr3_o_backpack_rd54"];
 
 a3e_arr_AmmoDepotItems = [];
 a3e_arr_AmmoDepotItems pushback ["CUP_SOFLAM", 10, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["CUP_NVG_PVS7", 20, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["cwr3_nvgoggles_npo1", 20, 1, 3];
 };
@@ -900,7 +900,7 @@ a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_PBS4", 50, 1, 5];
 a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_TGPA", 30, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_Bizon", 30, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PGO7V", 50, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_NSPU", 25, 1, 1];
 };
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_1_AK", 30, 1, 2];
@@ -1026,13 +1026,13 @@ a3e_arr_searchChopper_pilot = [
 a3e_arr_searchChopper_crew = [
 	"cwr3_i_soldier_pilot"];
 
-if(Param_SearchChopper==0) then {
+if(A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
 };
-if(Param_SearchChopper==1) then {
+if(A3E_Param_SearchChopper==1) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
 };
-if(Param_SearchChopper==2) then {
+if(A3E_Param_SearchChopper==2) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperHard;
 };
 
