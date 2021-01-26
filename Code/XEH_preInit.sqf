@@ -29,14 +29,14 @@ private _settingCategory = _category;
             _type = "CHECKBOX";
             _valueInfo = false;
         } else {
-            if (
-                _values isEqualTo [0,1]
-                && {toLower (_texts#0) in ["disabled", "off", "no"]}
-                && {toLower (_texts#1) in ["enabled", "on", "yes"]}
-            ) then {
-                _type = "CHECKBOX";
-                _valueInfo = [false, true] select _default;
-            };
+            //if (
+            //    _values isEqualTo [0,1]
+            //    && {toLower (_texts#0) in ["disabled", "off", "no"]}
+            //    && {toLower (_texts#1) in ["enabled", "on", "yes"]}
+            //) then {
+            //    _type = "CHECKBOX";
+             //   _valueInfo = [false, true] select _default;
+           // };
         };
 		//private _varname = [(_x),"varname","a3e_" + _name] call BIS_fnc_returnConfigEntry;
         [
