@@ -74,8 +74,8 @@ else {
 while {_locationExists} do {
 	_locationPos = getMarkerPos _locationFullName;
 
-	_soldierCount = _minSoldierCount + floor (random (_maxSoldierCount - _minSoldierCount + 1));
-    
+	//_soldierCount = _minSoldierCount + floor (random (_maxSoldierCount - _minSoldierCount + 1));
+    _soldierCount = [] call a3e_fnc_getDynamicSquadSize;
 	_soldiers = [];
 	for [{_i = 0}, {_i < _soldierCount}, {_i = _i + 1}] do {
 		_soldierType = _possibleInfantryTypes select (floor (random (count _possibleInfantryTypes)));

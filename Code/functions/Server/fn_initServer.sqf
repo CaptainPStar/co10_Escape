@@ -490,27 +490,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 		[_pos] call A3E_fnc_crashSite;
 	};
 
-	switch (_enemyFrequency) do
-	{
-	    case 1: // 1-2 players
-	    {
-	        _minEnemiesPerGroup = 2;
-	        _maxEnemiesPerGroup = 4;
-	    };
-	    case 2: // 3-5 players
-	    {
-	        _minEnemiesPerGroup = 3;
-	        _maxEnemiesPerGroup = 6;
-	    };
-	    default // 6-8 players
-	    {
-	        _minEnemiesPerGroup = 4;
-	        _maxEnemiesPerGroup = 8;
-	    };
-	};
-	
-	
-	
+
 	//Spawn mortar sites
 	[] call A3E_fnc_createMortarSites;
 };
@@ -530,9 +510,9 @@ waitUntil {scriptDone _scriptHandle};
     
 	 
     // Spawn guard
-
+	_guardCount = [-1,-1,3,8] call a3e_fnc_getDynamicSquadSize;
 	private _i = 0;	
-	for [{_i = 0}, {_i < (A3E_Param_EnemyFrequency*2)}, {_i = _i + 1}] do {
+	for [{_i = 0}, {_i < (_guardCount)}, {_i = _i + 1}] do {
 		private _weapon = a3e_arr_PrisonBackpackWeapons select floor(random(count(a3e_arr_PrisonBackpackWeapons)));
 		_backpack addWeaponCargoGlobal[(_weapon select 0),1];
 		_backpack addMagazineCargoGlobal[(_weapon select 1),3];
@@ -544,7 +524,7 @@ waitUntil {scriptDone _scriptHandle};
     _marker setMarkerShapeLocal "ELLIPSE";
     _marker setMarkerSizeLocal [50, 50];
     
-    _guardCount = (2 + (_enemyFrequency)) + floor (random 2);
+    //_guardCount = (2 + (_enemyFrequency)) + floor (random 2);
 
     _guardGroups = [];
     _createNewGroup = true;

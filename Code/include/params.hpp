@@ -24,11 +24,27 @@ class Params
 	};
 	class A3E_Param_EnemyFrequency
 	{
-		title="Enemy Groupsize";
+		title="Enemy Groupsize (depreciated)";
 		values[]={1,2,3};
 		texts[]={"Few (1-3)", "Some (3-5)", "Large (5-7)"};
 		livechanges = 1;
 		default = 2;
+	};
+	class A3E_Param_EnemyGroupSize
+	{
+		title="Enemy Squadsize: Base";
+		values[]={2,4,6,8};
+		texts[]={"Few (2-3)", "Some (3-5)", "Large (5-7)", "Max (7-9)"};
+		livechanges = 1;
+		default = 2;
+	};
+	class A3E_Param_DynamicGroupSizeMultiplier
+	{
+		title="Enemy Squadsize: Per # of players";
+		values[]={0,0.25,0.5,1.0,1.5};
+		texts[]={"No additional units", "~0.25 per player", "~0.5 per player","~1 per player","~1.5 per player"};
+		livechanges = 1;
+		default = 0.5;
 	};
 	class A3E_Param_EnemySpawnDistance
 	{

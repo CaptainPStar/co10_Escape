@@ -50,7 +50,8 @@ if(!(_active)) then {
 		
 		for "_x" from 1 to _patrolCount do {
 			private _pos = [_marker] call BIS_fnc_randomPosTrigger;
-			private _unitCount = round((missionNamespace getvariable ["A3E_Param_EnemyFrequency",1])*2+(random(2)-1));
+			//private _unitCount = round((missionNamespace getvariable ["A3E_Param_EnemyFrequency",1])*2+(random(2)-1));
+			private _unitCount = [] call a3e_fnc_getDynamicSquadSize;
 			private _grp = [_pos,_side,_unitCount] call A3E_FNC_spawnPatrol;
 			_groups pushBack _grp;
 			_grp setvariable ["A3E_PatrolZone_Index",_zoneIndex];

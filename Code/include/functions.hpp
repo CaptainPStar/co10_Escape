@@ -120,6 +120,7 @@ class CfgFunctions
 			class deactivatePatrolZone {};
 			class onEnemySoldierSpawn {};
 			class spawnPatrol {};
+			class getDynamicSquadsize {};
 		};
 		class Templates
 		{
