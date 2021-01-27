@@ -68,10 +68,10 @@ if(count(_knownPositions)==0) then {
 	
 	//Check if we need to call an arti strike
 	private _lastStrike = missionNamespace getvariable ["A3E_var_LastArtilleryStrike",0];
-	private _strikeCooldown = missionNamespace getvariable ["a3e_var_artillery_cooldown",300];
+	private _strikeCooldown = missionNamespace getvariable ["a3e_var_artillery_cooldown",200];
 	private _strikeTimeThreshold = missionNamespace getvariable ["a3e_var_artilleryTimeThreshold",300];
 	if(diag_TickTime > (_lastStrike+_strikeCooldown)) then {
-		private _strikeCandidates = _knownPositions select {((_x getVariable ["A3E_LastUpdated",0]) - (_x getVariable ["A3E_FirstSight",0])) >= _strikeTimeThreshold};
+		private _strikeCandidates = _knownPositions select {(((_x getVariable ["A3E_LastUpdated",0]) - (_x getVariable ["A3E_FirstSight",0])) >= _strikeTimeThreshold) && ((diag_tickTime -(_x getVariable ["A3E_LastUpdated",0])) < 60)};
 		if(count(_strikeCandidates) > 0) then {
 			private _strikePos = getpos selectRandom(_strikeCandidates);
 			
@@ -87,9 +87,9 @@ if(count(_knownPositions)==0) then {
 				_strikesuccess = [_strikePos] call a3e_fnc_CallCAS;
 			};
 			
-			if(_strikesuccess) then {
-				 missionNamespace setvariable ["A3E_var_LastArtilleryStrike",diag_tickTime];
-			};
+			//if(_strikesuccess) then {
+			missionNamespace setvariable ["A3E_var_LastArtilleryStrike",diag_tickTime];
+			//};
 		};
 	};
 };
@@ -105,7 +105,7 @@ private _grouplist = missionNamespace getvariable ["A3E_StatusOfPatrols",[]];
 		} foreach (_patrols select {(leader _x distance _pos) < _maxInvestigationRange && _x getvariable ["a3e_homeMarker","noMarker"] == "noMarker"});
 		if(!isNull _send) then {
 			[_send,_pos] call A3E_fnc_Search;
-			["Sending squad " + str(_send) +" to investigate missing squad!"] call A3E_fnc_SearchLeaderRadio;
+			["Sending squad " + str(_send) +" to inve stigate missing squad!"] call A3E_fnc_SearchLeaderRadio;
 		};
 	};
 	
