@@ -1,6 +1,6 @@
 private _zoneIndex = _this select 0;
 ["Activating zone " + str _zoneIndex] call a3e_fnc_debugmsg;
-//[_zoneIndex,[_trigger,_marker,_side,_zoneArea,false,false,[],[]]];
+´
 _zone = a3e_patrolZones select _zoneIndex;
 
 private _active = [_zone,"active"] call BIS_fnc_getFromPairs;
@@ -16,7 +16,6 @@ if(!(_active)) then {
 	};
 
 	
-	private _trigger = [_zone,"trigger"] call BIS_fnc_getFromPairs;
 	private _side = [_zone,"side"] call BIS_fnc_getFromPairs;
 	private _groups = [_zone,"patrols"] call BIS_fnc_getFromPairs;
 	private _area = [_zone,"zoneArea"] call BIS_fnc_getFromPairs;

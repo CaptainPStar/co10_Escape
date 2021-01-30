@@ -55,12 +55,26 @@ _trigger setTriggerArea[(_zoneSizeXY select 0)+_triggerRange, (_zoneSizeXY selec
 _trigger setTriggerTimeout [1, 1, 1, true];
 private _activation = format["[%1] call A3E_FNC_activatePatrolZone;",_zoneIndex];
 private _deactivation = format["[%1] call A3E_FNC_deactivatePatrolZone;",_zoneIndex];
-_trigger setTriggerStatements["this",_activation,_deactivation];
+_trigger setTriggerStatements["this",_activation,""];
 
+private _deactivationTrigger = createTrigger["EmptyDetector", _zonePosition, false];
+_deactivationTrigger setTriggerInterval 5;
+_deactivationTrigger triggerAttachVehicle [vehicle (units _playerGroup select 0)];
+_deactivationTrigger setTriggerActivation["MEMBER", "PRESENT", true];
+private _rectangle = false;
+if(_zoneShape == "RECTANGLE") then {
+	_rectangle = true;
+};
 
+//Deactivation trigger is 50m larger than activation, to prevent spawn/despawn oscillation
+_deactivationTrigger setTriggerArea[(_zoneSizeXY select 0)+_triggerRange+50, (_zoneSizeXY select 1)+_triggerRange+50, _zoneDir, _rectangle];
+_deactivationTrigger setTriggerTimeout [1, 1, 1, true];
+
+_deactivationTrigger setTriggerStatements["this","",_deactivation];
 
 private _zoneArray = [
 			["trigger",_trigger],
+			["deactivationtrigger",_deactivationTrigger],
 			["marker",_marker],
 			["side",_side],
 			["zoneArea",_zoneArea],
