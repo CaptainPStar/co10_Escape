@@ -1,6 +1,6 @@
 private _zoneIndex = _this select 0;
 ["Activating zone " + str _zoneIndex] call a3e_fnc_debugmsg;
-´
+
 _zone = a3e_patrolZones select _zoneIndex;
 
 private _active = [_zone,"active"] call BIS_fnc_getFromPairs;
