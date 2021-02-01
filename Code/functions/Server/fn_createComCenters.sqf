@@ -24,6 +24,7 @@ while {(count _comCenterMarkers) > 0} do {
 // iterate over the set of all potential commcenter markers and make commCenters at no more than A3E_ComCenterCount of them.
 //
 // This ensures that the Comm Centres are never any less than A3E_MinComCenterDistance from each other or the starting point.
+
 private _createdCount = 0;
 private _comCenPositions = [];
 private _instanceNo = 0;
@@ -42,15 +43,27 @@ private _instanceNo = 0;
 
 	if _ok then {
 		// pick one of the BuildComCenter methods at random
-		[_pos, _dir, a3e_arr_ComCenStaticWeapons, a3e_arr_ComCenParkedVehicles] call 
-			selectRandom [
-				a3e_fnc_BuildComCenter, 
-				a3e_fnc_BuildComCenter2,
-				a3e_fnc_BuildComCenter3,
-				a3e_fnc_BuildComCenter4,
-				a3e_fnc_BuildComCenter5
-			];
 
+		private _specialLists =	[_pos,_dir,"Test Camp"] call A3E_fnc_isoTemplateRestore;
+		
+		private _vehicles = [_specialLists,"ParkedVehicles",[]] call BIS_fnc_getFromPairs;
+		{
+			_x params["_type","_realPos","_dir","_code"];
+		   private _veh = createVehicle [selectRandom a3e_arr_ComCenParkedVehicles, _realPos, [], 0, "NONE"];
+			_veh setDir _dir;
+			[_veh,_code] spawn {(_this#0) call compile (_this#1);};
+		} foreach _vehicles;
+		
+		private _statics = [_specialLists,"Statics",[]] call BIS_fnc_getFromPairs;
+		{
+			_x params["_type","_realPos","_dir","_code"];
+		   private _static = createVehicle [selectRandom a3e_arr_ComCenStaticWeapons, _realPos, [], 0, "NONE"];
+			_static setDir _dir;
+			[_static,_code] spawn {(_this#0) call compile (_this#1);};
+			[_static,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
+		} foreach _statics;
+
+		
 		A3E_Var_ClearedPositions pushBack _pos;
 		[format ["drn_CommunicationCenterMapMarker%1", _instanceNo], _pos, "o_hq"] call A3E_fnc_createLocationMarker;
 
@@ -65,6 +78,9 @@ private _instanceNo = 0;
 	};
 	if (_createdCount >= A3E_ComCenterCount) exitWith {};
 } forEach _shuffledComCenterMarkers;
+if (_createdCount < A3E_ComCenterCount) then  {
+	diag_log ("Escape Warning: Could only create "+str(_createdCount)+"/"+str(A3E_ComCenterCount)+" comcenters");
 
+};
 a3e_var_Escape_communicationCenterPositions = _comCenPositions;
 publicVariable "a3e_var_Escape_communicationCenterPositions";

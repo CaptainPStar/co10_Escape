@@ -150,6 +150,7 @@ class CfgFunctions
 			class Roadblock4 {};	
 			class isoTemplateStore {};		
 			class isoTemplateRestore {};	
+			class testCamp {  postInit = 1;  };
 		};
 		class Chronos
 		{
