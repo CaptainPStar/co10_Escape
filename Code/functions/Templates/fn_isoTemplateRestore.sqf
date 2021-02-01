@@ -70,6 +70,9 @@ private _flags = [];
 		if([_atr,"Inflame",false] call _getAttribute) then {
 			_obj inflame true;
 		};
+		if([_atr,"Flag",false] call _getAttribute) then {
+			_flags pushBack _obj;
+		};
 		private _init = [_atr,"Init",""] call _getAttribute;
 		_obj call compile _init;
 	} else {

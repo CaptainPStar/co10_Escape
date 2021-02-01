@@ -44,7 +44,7 @@ private _instanceNo = 0;
 	if _ok then {
 		// pick one of the BuildComCenter methods at random
 
-		private _specialLists =	[_pos,_dir,"Test Camp"] call A3E_fnc_isoTemplateRestore;
+		private _specialLists =	[_pos,_dir,"BK Comcenter"] call A3E_fnc_isoTemplateRestore;
 		
 		private _vehicles = [_specialLists,"ParkedVehicles",[]] call BIS_fnc_getFromPairs;
 		{
@@ -62,6 +62,11 @@ private _instanceNo = 0;
 			[_static,_code] spawn {(_this#0) call compile (_this#1);};
 			[_static,A3E_VAR_Side_Opfor] spawn A3E_fnc_AddStaticGunner; 
 		} foreach _statics;
+
+		private _flags = [_specialLists,"Flags",[]] call BIS_fnc_getFromPairs;
+		{
+			_x forceFlagTexture A3E_VAR_Flag_Opfor;
+		} foreach _flags;
 
 		
 		A3E_Var_ClearedPositions pushBack _pos;
