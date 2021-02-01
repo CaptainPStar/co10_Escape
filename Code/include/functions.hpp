@@ -177,6 +177,7 @@ class CfgFunctions
 			class CreateKnownPosition {};
 			
 		};
+		#include "..\Templates\templates.hpp"
 	};
 	class drn
 	{
@@ -205,6 +206,7 @@ class CfgFunctions
 			class GarrisonUnits {};
 		};
 	};
+	
 	class ATR
 	{
 		class Revive
