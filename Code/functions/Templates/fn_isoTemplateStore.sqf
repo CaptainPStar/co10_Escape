@@ -1,6 +1,15 @@
-private _obj = (allMissionObjects "") inAreaArray templateArea;
+//private _obj = (allMissionObjects "") inAreaArray templateArea;
+params["_exportName"];
+private _allTrigger = (allMissionObjects "EmptyDetector");
+private _areaIndex =  _allTrigger findIf { (triggerText _x) == _exportName;};
+if(_areaIndex < 0) exitWith {systemchat ("Can't find a trigger with name "+_exportName);};
+private _area = _allTrigger select _areaIndex;
+
+private _obj = (allMissionObjects "") inAreaArray _area;
 private _export = [];
-private _center = getposATL templateArea;
+private _options = [];
+private _center = getposATL _area;
+private _clearanceZone = triggerArea _area; 
 _center set  [2,0];
 
 private _getAttributes = {
@@ -28,4 +37,6 @@ private _hasAttribute = {
 	private _atr = _x call _getAttributes;
 	_export pushBack [typeof _x, (getposATL _x) vectorDiff  _center, getdir _x, _atr];
 } foreach _obj;
-A3E_TempTemplate = _export;
+
+private _result = [["Name",_exportName],["Clearance",_clearanceZone],["Objects",_export]];
+copyToClipboard str(_result);
