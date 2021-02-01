@@ -5,6 +5,8 @@ if(_templateIndex <0) exitWith {
 };
 private _template = A3E_Templates select _templateIndex;
 
+//Convert center to ASL
+_center = AGLtoASL _center;
 
 private _hasAttribute = {
 	params["_atr","_key"];
@@ -51,7 +53,7 @@ private _flags = [];
 	if([_atr,"Spawn",true] call _getAttribute) then {
 		private _obj = _type createvehicle _realPos;
 		_obj setdir (_dir+_rotation);
-		_obj setPosATL _realPos;
+		_obj setPosASL _realPos;
 		//A3E_ListOfCreatedObj pushback _obj;
 		if([_atr,"Terminal",false] call _getAttribute) then {
 			_obj allowdamage false;
