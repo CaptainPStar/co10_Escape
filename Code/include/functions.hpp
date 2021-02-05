@@ -161,10 +161,12 @@ class CfgFunctions
 		};
 		class Statistics
 		{
+			class StartStatistics {};
 			class LoadStatistics {};
 			class WriteStatisticsToBriefing {};
 			class SaveStatistics {};
 			class ParseStatistics {};
+			class PingStatistics {};
 		};
 		class Searchleader
 		{

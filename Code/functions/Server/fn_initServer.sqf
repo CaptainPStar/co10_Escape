@@ -495,6 +495,11 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 	[] call A3E_fnc_createMortarSites;
 };
 
+//Start local and remote statistic tracking
+[] spawn {
+	sleep 1;
+	[] call A3E_fnc_startStatistics;
+};
 
 // Create search chopper
 

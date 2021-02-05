@@ -1,10 +1,13 @@
 private ["_trigger"];
+
+a3e_var_Escape_AllPlayersDead = false;
+a3e_var_Escape_SearchLeader_civilianReporting = false;
+a3e_var_Escape_MissionComplete = false;
+a3e_var_Escape_MissionFailed_LeftBehind = false;
+	
 if(isServer) then {
 
-	a3e_var_Escape_AllPlayersDead = false;
-	a3e_var_Escape_SearchLeader_civilianReporting = false;
-	a3e_var_Escape_MissionComplete = false;
-	a3e_var_Escape_MissionFailed_LeftBehind = false;
+
 	//Win mission server
 	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
 	_trigger setTriggerInterval 2;
@@ -43,7 +46,15 @@ if(isServer) then {
 	_trigger setTriggerArea[0, 0, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", false];
 	_trigger setTriggerTimeout [0, 0, 0, false];
-	_trigger setTriggerStatements["A3E_EscapeHasStarted && (({!(_x getVariable [""AT_Revive_isUnconscious"",false])} count ([] call BIS_fnc_listPlayers) == 0)||({!(_x getVariable [""ACE_Revive_isUnconscious"",false])} count ([] call BIS_fnc_listPlayers) == 0))", "a3e_var_Escape_AllPlayersDead = true;publicVariable ""a3e_var_Escape_AllPlayersDead"";[] spawn A3E_FNC_FailTasks;", ""];
+	A3E_fnc_InlineEverybodyUnconscious = {
+		private _return = 	(
+								((([] call A3E_fnc_GetPlayers) findIf {!(_x getVariable ["AT_Revive_isUnconscious",false]);}) == -1) 
+							OR 	((([] call A3E_fnc_GetPlayers) findIf {!(_x getVariable ["ACE_Revive_isUnconscious",false]);}) == -1)
+							);
+		_return;
+	
+	};
+	_trigger setTriggerStatements["A3E_EscapeHasStarted && ([] call A3E_fnc_InlineEverybodyUnconscious)", "missionNamespace setvariable [""a3e_var_Escape_AllPlayersDead"",true,true];[] spawn A3E_FNC_FailTasks;", ""];
 	
 	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
 	_trigger setTriggerInterval 2;
