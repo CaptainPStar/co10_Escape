@@ -165,6 +165,7 @@ class CfgFunctions
 			class WriteStatisticsToBriefing {};
 			class SaveStatistics {};
 			class ParseStatistics {};
+			class PingStatistics {};
 		};
 		class Searchleader
 		{
