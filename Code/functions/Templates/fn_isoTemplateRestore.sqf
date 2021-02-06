@@ -1,12 +1,15 @@
-params["_center","_rotation",["_templateName",""]];
-private _templateIndex = A3E_Templates findIf {([_x,"Name",""] call BIS_fnc_getFromPairs) == _templateName};
-if(_templateIndex <0) exitWith {
-	diag_log ("Escape Error: Could not find template with name "+_templateName);
+params["_center","_rotation",["_templateType","Undefined"]];
+//private _templateIndex = A3E_Templates findIf {([_x,"Name",""] call BIS_fnc_getFromPairs) == _templateName};
+private _templates = A3E_Templates select {([_x,"Type",""] call BIS_fnc_getFromPairs) == _templateType};
+
+
+if(count _templates == 0) exitWith {
+	diag_log ("Escape Error: Could not find as signgle template of type "+_templateType);
 };
-private _template = A3E_Templates select _templateIndex;
+private _template = selectRandom _templates;
 
 //Convert center to ASL
-_center = AGLtoASL _center;
+//_center = AGLtoASL _center;
 
 private _hasAttribute = {
 	params["_atr","_key"];
@@ -50,10 +53,17 @@ private _flags = [];
 {
 	_x params ["_type","_pos","_dir","_atr"];
 	private _realPos = [_center,_center vectorAdd _pos,_rotation] call A3E_fnc_rotatePosition;
+	
+	
 	if([_atr,"Spawn",true] call _getAttribute) then {
 		private _obj = _type createvehicle _realPos;
 		_obj setdir (_dir+_rotation);
-		_obj setPosASL _realPos;
+		if([_atr,"AbsoluteHeight",false] call _getAttribute) then {
+			private _height = ((AGLtoASL _center) #2) + (_realPos # 2);
+			_obj setPosASL [_realPos # 0, _realPos # 1,_height];
+		} else {
+			_obj setPosATL _realPos;
+		};
 		//A3E_ListOfCreatedObj pushback _obj;
 		if([_atr,"Terminal",false] call _getAttribute) then {
 			_obj allowdamage false;

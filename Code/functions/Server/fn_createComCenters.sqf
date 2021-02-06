@@ -45,8 +45,8 @@ private _instanceNo = 0;
 	if _ok then {
 		// pick one of the BuildComCenter methods at random
 
-		private _specialLists =	[_pos,_rotation,"com_cup_bk"] call A3E_fnc_isoTemplateRestore;
-		
+		private _specialLists =	[_pos,_rotation,"comcenter"] call A3E_fnc_isoTemplateRestore;
+
 		private _vehicles = [_specialLists,"ParkedVehicles",[]] call BIS_fnc_getFromPairs;
 		{
 			_x params["_type","_realPos","_dir","_code"];
