@@ -1,6 +1,6 @@
 private["_group","_markername","_searchRange","_oncomplete","_destinationPos","_waypoint","_leader","_players"];
 params["_group",["_markerName","noMarker"]];
-
+if(!isserver) exitwith {};
 
 _oncomplete = "";
 
