@@ -11,7 +11,7 @@ _oncomplete = "";
 
 
 	
-_oncomplete = "[group this] spawn a3e_fnc_Patrol;";
+_oncomplete = "if(isserver) then {[group this] spawn a3e_fnc_Patrol;};";
 
 
 
