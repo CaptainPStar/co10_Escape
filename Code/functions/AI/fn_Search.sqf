@@ -9,7 +9,7 @@ _oncomplete = "";
 
 [_group,"SAD"] call a3e_fnc_SetTaskState;
 
-_oncomplete = format["[group this] spawn a3e_fnc_Patrol;"];
+_oncomplete = format["if(isserver) then {[group this] spawn a3e_fnc_Patrol;};"];
 
 
 
