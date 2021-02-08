@@ -35,10 +35,10 @@ A3E_Task_Prison setTaskState "CREATED";
 
 
 if(isNil("A3E_Task_Prison_Complete")) then {
-	A3E_Task_Prison_Complete = false;
+	missionnamespace setvariable ["A3E_Task_Prison_Complete",false, true];
 };
 if(isNil("A3E_Task_Prison_Failed")) then {
-	A3E_Task_Prison_Failed = false;
+	missionnamespace setvariable ["A3E_Task_Prison_Failed",false, true];
 };
 
 _trigger = createTrigger["EmptyDetector", [0,0,0]];
@@ -67,10 +67,10 @@ A3E_Task_Map setTaskState "CREATED";
 
 
 if(isNil("A3E_Task_Map_Complete")) then {
-	A3E_Task_Map_Complete = false;
+	missionnamespace setvariable ["A3E_Task_Map_Complete",false, true];
 };
 if(isNil("A3E_Task_Map_Failed")) then {
-	A3E_Task_Map_Failed = false;
+	missionnamespace setvariable ["A3E_Task_Map_Failed",false, true];
 };
 
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
@@ -101,10 +101,11 @@ A3E_Task_LocateComcenter setTaskState "CREATED";
 
 
 if(isNil("A3E_Task_LocateComcenter_Complete")) then {
-	A3E_Task_LocateComcenter_Complete = false;
+	missionnamespace setvariable ["A3E_Task_LocateComcenter_Complete",false, true];
 };
 if(isNil("A3E_Task_LocateComcenter_Failed")) then {
-	A3E_Task_LocateComcenter_Failed = false;
+
+	missionnamespace setvariable ["A3E_Task_LocateComcenter_Failed",false, true];
 };
 
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
@@ -132,10 +133,10 @@ A3E_Task_ComCenter setTaskState "CREATED";
 
 
 if(isNil("A3E_Task_ComCenter_Complete")) then {
-	A3E_Task_ComCenter_Complete = false;
+	missionnamespace setvariable ["A3E_Task_ComCenter_Complete",false, true];
 };
 if(isNil("A3E_Task_ComCenter_Failed")) then {
-	A3E_Task_ComCenter_Failed = false;
+	missionnamespace setvariable ["A3E_Task_ComCenter_Failed",false, true];
 };
 
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
@@ -164,10 +165,10 @@ A3E_Task_Exfil setSimpleTaskDescription [
 A3E_Task_Exfil setTaskState "CREATED";
 
 if(isNil("A3E_Task_Exfil_Complete")) then {
-	A3E_Task_Exfil_Complete = false;
+	missionnamespace setvariable ["A3E_Task_Exfil_Complete",false, true];
 };
 if(isNil("A3E_Task_Exfil_Failed")) then {
-	A3E_Task_Exfil_Failed = false;
+	missionnamespace setvariable ["A3E_Task_Exfil_Failed",false, true];
 };
 
 _trigger = createTrigger["EmptyDetector", [0,0,0], false];
