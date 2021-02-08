@@ -20,6 +20,6 @@ if(A3E_Param_SendStatistics == 1) then {
 	_trigger setTriggerInterval 300;
 	_trigger setTriggerActivation["NONE","PRESENT",true];
 	_trigger setTriggerArea[0, 0, 0, false];
-
-	_trigger setTriggerStatements["this", "[] spawn A3E_fnc_PingStatistics;", ""];
+	missionnamespace setvariable ["A3E_var_PingTrg",true,false];
+	_trigger setTriggerStatements["A3E_var_PingTrg", "[] spawn A3E_fnc_PingStatistics;A3E_var_PingTrg = false;", "A3E_var_PingTrg=true;"];
 };
