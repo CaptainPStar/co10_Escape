@@ -22,7 +22,8 @@ if(!_statisticsCollected) then {
 		_html ctrlSetBackgroundColor [0,0,0,1]; 
 		_html ctrlSetPosition [0,0,0,0]; 
 		_html ctrlCommit 0; 
-		private _uri = "http://escape.anzp.de/track.php?event=endmission&map=" + _island + "&mod=" + _mod + "&version=" + _version + "&players="+str count(call BIS_fnc_listPlayers)+"&end="+_endType+"&t1="+str A3E_Task_Prison_Complete+"&t2="+str A3E_Task_Map_Complete+"&t3="+str A3E_Task_ComCenter_Complete+"&t4="+str A3E_Task_Exfil_Complete+"&server="+serverName+"&time="+str round(time)+"&release="+ _release;
+		private _uri = "http://escape.anzp.de/track.php?event=endmission&map=" + _island + "&mod=" + _mod + "&version=" + _version + "&players="+str count(call A3E_fnc_GetPlayers)+"&end="+_endType+"&t1="+str A3E_Task_Prison_Complete+"&t2="+str A3E_Task_Map_Complete+"&t3="+str A3E_Task_ComCenter_Complete+"&t4="+str A3E_Task_Exfil_Complete+"&server="+serverName+"&time="+str round(time)+"&release="+ _release;
+		diag_log(_uri);
 		_html htmlLoad _uri;
 		_emptyDisplay closeDisplay 1;
 	};
