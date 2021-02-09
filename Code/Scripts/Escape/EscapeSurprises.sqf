@@ -19,6 +19,7 @@ _surprises = [];
 
 _surpriseArgs = [(_enemyFrequency + 2) + floor random (_enemyFrequency * 2)]; // [NoOfDropUnits]
 _timeInSek = 5 * 60 + random (60 * 60);
+//_timeInSek = 10;
 _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
 _condition = {true};
 _surprise = ["DROPCHOPPER", _timeInSek, _condition, false, _surpriseArgs];
@@ -28,6 +29,7 @@ diag_log ("ESCAPE SURPRISE: " + str _surprise);
 
 _surpriseArgs = [(_enemyFrequency + 2) + floor random (_enemyFrequency * 2)]; // [NoOfDropUnits]
 _timeInSek = 5 * 60 + random (60 * 60);
+//_timeInSek = 15;
 _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
 _condition = {true};
 _surprise = ["DROPCHOPPER_I", _timeInSek, _condition, false, _surpriseArgs];
@@ -150,7 +152,7 @@ while {true} do {
 						//[_soldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
                         _soldier setRank "CAPTAIN";
                         _soldier call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
-                        _dropUnits set [_i, _soldier];
+                        _dropUnits pushBack _soldier;
                     };
                     
                     _dropPosition = [drn_searchAreaMarkerName] call drn_fnc_CL_GetRandomMarkerPos;
@@ -171,6 +173,7 @@ while {true} do {
                     // Create next drop chopper
                     _surpriseArgs = [(_enemyFrequency + 2) + floor random (_enemyFrequency * 2)]; // [NoOfDropUnits]
                     _timeInSek = random (45 * 60);
+					//_timeInSek = 15;
                     _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
                     _condition = {true};
                     _surprise = ["DROPCHOPPER", _timeInSek, _condition, false, _surpriseArgs];
@@ -189,13 +192,13 @@ while {true} do {
                     _dropUnits = [];
                     
                     for [{_i = 0}, {_i < _noOfDropUnits}, {_i = _i + 1}] do {
-                        _soldierType = a3e_arr_Escape_InfantryTypes_Ind select floor (random count a3e_arr_Escape_InfantryTypes_Ind);
+                        _soldierType = a3e_arr_recon_I_InfantryTypes select floor (random count a3e_arr_recon_I_InfantryTypes);
                         _soldier = _dropGroup createUnit [_soldierType, [0,0,30], [], 0, "FORM"];
                         //_soldier setSkill (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill));
 						//[_soldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
                         _soldier setRank "CAPTAIN";
                         _soldier call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
-                        _dropUnits set [_i, _soldier];
+                        _dropUnits pushBack _soldier;
                     };
                     
                     _dropPosition = [drn_searchAreaMarkerName] call drn_fnc_CL_GetRandomMarkerPos;
@@ -216,6 +219,7 @@ while {true} do {
                     // Create next drop chopper
                     _surpriseArgs = [(_enemyFrequency + 2) + floor random (_enemyFrequency * 2)]; // [NoOfDropUnits]
                     _timeInSek = random (45 * 60);
+					//_timeInSek =  15;
                     _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
                     _condition = {true};
                     _surprise = ["DROPCHOPPER_I", _timeInSek, _condition, false, _surpriseArgs];

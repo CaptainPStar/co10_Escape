@@ -17,7 +17,9 @@ if (count _this > 9) then {_debug = _this select 9;} else {_debug = false;};
 if (_debug) then {
     player sideChat "Creating drop chopper...";
 };
-
+systemchat (str _dropUnits);
+_dropUnits = _dropUnits select {!isNull _x}; //Remove all null units from list as a workaround
+systemchat (str _dropUnits);
 if (isNil "drn_CreateDropChopper_CurrentInstanceNo") then {
 	drn_CreateDropChopper_CurrentInstanceNo = 0
 };
