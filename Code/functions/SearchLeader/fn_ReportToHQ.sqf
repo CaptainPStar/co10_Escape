@@ -12,12 +12,12 @@ switch(_side) do {
 };
 private _knowledgeThreshold = missionnamespace getvariable ["A3E_var_DetectionKnowledgeThreshold",2.5];
 private _players = [] call A3E_fnc_GetPlayers;
-if(({(_side knowsAbout _x) >= _knowledgeThreshold} count _players)==0) exitWith {
+if(({(_side knowsAbout (vehicle _x)) >= _knowledgeThreshold} count _players)==0) exitWith {
 	//Side does not know enough about any player, all units "decided" they are not ready to report any strange sightings
 	sleep 5;
 	[] call A3E_fnc_PlayerDetection; //Refresh triggers
 };
-private _knownPlayers = (_players select {(_side knowsAbout _x) >= _knowledgeThreshold}); //All known players to _side
+private _knownPlayers = (_players select {(_side knowsAbout (vehicle _x)) >= _knowledgeThreshold}); //All known players to _side
 private _groups = allGroups select {side _x == _side};
 
 private _reported = false;
@@ -25,7 +25,7 @@ scopeName "main";
 {
 	private _grp = _x;
 	{
-		if((_grp knowsAbout _x) >= _knowledgeThreshold && {alive _x} count (units _grp)>0) then {
+		if((_grp knowsAbout (vehicle _x)) >= _knowledgeThreshold && {alive _x} count (units _grp)>0) then {
 			//We found a group that knows about a player.
 			[_grp,_x] call {
 				//This is the actual reporting code!
@@ -51,7 +51,6 @@ scopeName "main";
 				if(alive _reporter && _reportTime == 0) then {
 						[_reporter,false] remoteexec ["setRandomLip",0];
 					if(vehicle _reporter == _reporter) then {
-						//systemchat (animationState _reporter);
 						if((animationState _reporter) in ["acts_listeningtoradio_in","acts_listeningtoradio_loop","acts_listeningtoradio_out"]) then  {
 							[_reporter,"acts_listeningtoradio_out"] remoteExec ["playmovenow", _reporter];
 							[_reporter,_player] call A3E_fnc_recordSighting;
