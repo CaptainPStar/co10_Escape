@@ -44,11 +44,19 @@ if(random 100 < 70) then {
 	};
 };
 
-private["_nvgs"];
-_nvgs = hmd _unit; //NVGoggles
+	private _nvgs = hmd _unit; //NVGoggles
+    if (_nvgs isEqualTo "") then {
+        private _cfgWeapons = configFile >> "CfgWeapons";
+        {
+            if (616 == getNumber (_cfgWeapons >> _x >> "ItemInfo" >> "type")) exitWith {
+                _nvgs = _x;
+            };
+        } forEach items _unit;
+    };
 if(_nvgs != "") then {
 	if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (A3E_Param_NoNightvision>0)) then {
 		_unit unlinkItem _nvgs;
+		_unit removeItem _nvgs;
 	};
 } else {
 	if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (A3E_Param_NoNightvision==0)) then {
