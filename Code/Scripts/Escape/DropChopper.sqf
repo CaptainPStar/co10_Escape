@@ -43,44 +43,38 @@ _chopper setVariable ["missionCompleted", false];
 
    for "_i" from 0 to ((count _dropUnits - 1)) step 1 do{
 		_dropUnit = _dropUnits select _i;
-		
+		removeBackpack _dropUnit;
 		unassignVehicle _dropUnit;
+		 _dropUnit action ["eject", _chopper]; 
+		 
+		_dropUnit setdir ((direction _chopper)-25+(random 50));
 		_dropUnit setPos [(getPos _chopper) select 0,(getPos _chopper) select 1, ((getPos _chopper) select 2) - 5];
 		
 		// _dropUnit action ["eject", _chopper]; 
         // waitUntil {vehicle _dropUnit != _chopper};
 		
-		[_dropUnit,_chopper,50,false,true,false] spawn{
-			private ["_man2","_chopper","_openHeight","_para","_smokes","_flares","_chems","_smoke","_flare","_chem"];
-			_man2 = _this select 0;
-			_chopper = _this select 1;
-			_openHeight = _this select 2;
-			_smokes = _this select 3;
-			_flares = _this select 4;
-			_chems = _this select 5;
-			waitUntil{((getPos _man2)select 2)<_openHeight};
-			_para = createVehicle ["NonSteerable_Parachute_F", position _man2, [], ((direction _chopper)-25+(random 50)), 'NONE'];
-			_para setPos (getPos _man2);
-			_man2 moveInDriver _para;
+		[_dropUnit,_chopper,85+(random 10),false,true,false] spawn {
+			params ["_unit","_chopper","_openHeight","_para","_smokes","_flares","_chems"];
+			private ["_smoke","_flare","_chem"];
 			
-			if(_smokes)then{
-				waitUntil{((getPos _man2)select 2)<10};
-				//_smoke = "SmokeShell" createVehicle (getPos _man2);
-				_smoke = createVehicle ["SmokeShell", (getPos _man2), [], 0, "NONE"];
+			if(isNull _unit || !alive _unit) exitwith {};
+			while {((getPos _unit)# 2)>_openHeight} do {
+				if(isNull _unit || !alive _unit) exitwith {diag_log "Escape Error: Dropunit empty or dead. Breaking loop";};
+				sleep 0.1;
 			};
-			if(_flares)then{
-				waitUntil{((getPos _man2)select 2)<5};
-				//_flare = "F_40mm_Red" createVehicle [(getPos _man2) select 0,(getPos _man2) select 1,0]; //Chemlight_red
-				_flare = createVehicle ["F_40mm_Red", [(getPos _man2) select 0,(getPos _man2) select 1,0], [], 0, "NONE"];
-			};
-			if(_chems)then{
-				waitUntil{((getPos _man2)select 2)<2};
-				//_chem = "Chemlight_red" createVehicle (getPos _man2);
-				_chem = createVehicle ["Chemlight_red", (getPos _man2), [], 0, "NONE"];
-			};
+			
+			_unit addBackPackGlobal "B_parachute";
+			/*private _vel = velocity _unit;
+			_para = createVehicle ["Steerable_Parachute_F", [0,0,0], [], direction _unit, 'CAN_COLLIDE'];
+			_para disableCollisionWith _unit;
+			_para setPos (getPos _unit);
+			_unit moveInDriver _para;
+			_para setvelocity _vel;*/
+	
+
 		};
 		
-		sleep .3;
+		sleep (selectRandom[0.3,0.3,0.35,0.4]);
 	};
 	
 	
