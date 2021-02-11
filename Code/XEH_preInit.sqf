@@ -24,7 +24,7 @@ private _settingCategory = _category;
         private _type = "LIST";
         private _valueInfo = [_values, _texts, _values find _default];
         if (_name == "A3E_Param_Loadparams") then {
-            _name = "UseCBASettings";
+            _name = "A3E_UseCBASettings";
             _title = "Use CBA settings";
             _type = "CHECKBOX";
             _valueInfo = false;
