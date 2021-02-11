@@ -18,9 +18,9 @@ switch _paramLoading do {
             "Using CBA settings" call a3e_fnc_rptLog;
             paramsArray = _paramNames apply {
                 private _value = missionNamespace getVariable [_x, 0];
-                if (_value isEqualType false) then {
-                    _value = [0, 1] select _value;
-                };
+                //if (_value isEqualType false) then {
+                //    _value = [0, 1] select _value;
+                //};
                 _value
             };
             publicVariable "paramsArray";
