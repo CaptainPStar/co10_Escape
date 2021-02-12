@@ -124,7 +124,7 @@ class Params
 		values[]={5,10,20,30,40,50};
 		texts[]={"5%","10%","20%","30%","40%","50%"};
 		livechanges = 1;
-		default = 10;
+		default = 20;
 	};
 	class A3E_Param_RevealMarkers
 	{
