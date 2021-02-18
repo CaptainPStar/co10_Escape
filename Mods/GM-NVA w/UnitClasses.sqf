@@ -33,8 +33,7 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 
 // Prison backpacks
 a3e_arr_PrisonBackpacks = [
-	"gm_pl_army_backpack_at_80_gry"
-	,"gm_pl_army_backpack_80_oli"
+	"gm_pl_army_backpack_80_oli"
 	,"gm_ge_backpack_satchel_80_blk"];
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
@@ -631,15 +630,20 @@ a3e_arr_Bipods = [];
 //////////////////////////////////////////////////////////////////
 // revive/functions/revive/fn_Check_Revive_FAK.sqf and fn_HandleRevive
 // additional types of FAKs or Medkits that should work for revives
+// arrays have to be global, because check is performed on client
 //////////////////////////////////////////////////////////////////
-a3e_arr_faks = [
-	"gm_gc_army_gauzeBandage"
+private _faks = [
+	"FirstAidKit"
+	,"gm_gc_army_gauzeBandage"
 	,"gm_gc_army_medkit"
 	,"gm_ge_army_burnBandage"
 	,"gm_ge_army_gauzeBandage"
 	,"gm_ge_army_gauzeCompress"];
-a3e_arr_medkits = [
-	"gm_ge_army_medkit_80"];
+missionNamespace setvariable ["a3e_arr_faks",_faks,true];
+_medkits = [
+	"Medikit"
+	,"gm_ge_army_medkit_80"];
+missionNamespace setvariable ["a3e_arr_medkits",_medkits,true];
 
 //////////////////////////////////////////////////////////////////
 // SelectExtractionZone.sqf

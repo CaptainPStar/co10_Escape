@@ -602,6 +602,24 @@ a3e_arr_TWSScopes = [];
 a3e_arr_Bipods = [];
 
 //////////////////////////////////////////////////////////////////
+// revive/functions/revive/fn_Check_Revive_FAK.sqf and fn_HandleRevive
+// additional types of FAKs or Medkits that should work for revives
+// arrays have to be global, because check is performed on client
+//////////////////////////////////////////////////////////////////
+private _faks = [
+	"FirstAidKit"
+	,"gm_gc_army_gauzeBandage"
+	,"gm_gc_army_medkit"
+	,"gm_ge_army_burnBandage"
+	,"gm_ge_army_gauzeBandage"
+	,"gm_ge_army_gauzeCompress"];
+missionNamespace setvariable ["a3e_arr_faks",_faks,true];
+_medkits = [
+	"Medikit"
+	,"gm_ge_army_medkit_80"];
+missionNamespace setvariable ["a3e_arr_medkits",_medkits,true];
+
+//////////////////////////////////////////////////////////////////
 // SelectExtractionZone.sqf
 // Which type of extractions are supported/preferred by this unitclasses version?
 // Only if supported by terrain, so if corresponding markers are placed

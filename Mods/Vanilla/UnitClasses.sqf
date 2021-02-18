@@ -738,6 +738,9 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 		a3e_arr_Escape_InfantryTypes_Ind pushback "I_soldier_UAV_06_F";
 		a3e_arr_Escape_InfantryTypes_Ind pushback "I_soldier_UAV_06_medical_F";
 	};
+	if(A3E_Param_UseDLCTanks==1) then {
+		a3e_arr_Escape_InfantryTypes_Ind pushback "I_Soldier_LAT2_F";
+	};
 a3e_arr_recon_InfantryTypes = [
 	"O_recon_exp_F"
 	,"O_recon_JTAC_F"
@@ -746,6 +749,9 @@ a3e_arr_recon_InfantryTypes = [
 	,"O_recon_F"
 	,"O_recon_LAT_F"
 	,"O_recon_TL_F"];
+	if(A3E_Param_UseDLCMarksmen==1) then {
+		a3e_arr_recon_InfantryTypes pushback "O_Pathfinder_F";
+	};
 a3e_arr_recon_I_InfantryTypes = [
 	"I_G_Soldier_A_F"
 	,"I_G_Soldier_LAT_F"
@@ -1114,6 +1120,19 @@ a3e_arr_Bipods = [
 	,"bipod_02_F_hex"
 	,"bipod_03_F_blk"
 	,"bipod_03_F_oli"];
+
+//////////////////////////////////////////////////////////////////
+// revive/functions/revive/fn_Check_Revive_FAK.sqf and fn_HandleRevive
+// additional types of FAKs or Medkits that should work for revives
+// arrays have to be global, because check is performed on client
+// obviously not needed here, script has fallback for these vanilla baseclasses, but as an example
+//////////////////////////////////////////////////////////////////
+private _faks = [
+	"FirstAidKit"];
+missionNamespace setvariable ["a3e_arr_faks",_faks,true];
+_medkits = [
+	"Medikit"];
+missionNamespace setvariable ["a3e_arr_medkits",_medkits,true];
 
 //////////////////////////////////////////////////////////////////
 // SelectExtractionZone.sqf
