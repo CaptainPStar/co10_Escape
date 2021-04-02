@@ -46,6 +46,7 @@ a3e_arr_PrisonBackpackWeapons pushback ["gm_pm63_blk", "gm_25Rnd_9x18mm_B_pst_pm
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	"gm_ge_civ_u1300l"
 	,"gm_ge_civ_u1300l"
+	,"gm_ge_ff_u1300l_firefighter"
 	,"gm_ge_civ_typ1200"
 	,"gm_ge_civ_typ1200"
 	,"gm_ge_civ_typ1200"
@@ -79,6 +80,7 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_u1300l_repair_win"
 		,"gm_ge_army_u1300l_cargo_win"
 		,"gm_ge_army_u1300l_cargo_win"
+		,"gm_ge_army_u1300l_firefighter_win"
 		,"gm_ge_army_kat1_451_reammo_win"
 		,"gm_ge_army_kat1_451_container_win"
 		,"gm_ge_army_kat1_451_refuel_win"
@@ -97,6 +99,9 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_luchsa1_olw"
 		,"gm_ge_army_luchsa2_win"
 		,"gm_ge_army_bpz2a0_win"
+		,"gm_ge_army_marder1a1a_win"
+		,"gm_ge_army_marder1a1plus_win"
+		,"gm_ge_army_marder1a2_win"
 		,"gm_ge_army_Leopard1a1_olw"
 		,"gm_ge_army_Leopard1a1a1_win"
 		,"gm_ge_army_Leopard1a1a2_win"
@@ -132,6 +137,7 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_u1300l_repair_win"
 		,"gm_ge_army_u1300l_cargo_win"
 		,"gm_ge_army_u1300l_cargo_win"
+		,"gm_ge_army_u1300l_firefighter_win"
 		,"gm_ge_army_kat1_451_reammo_win"
 		,"gm_ge_army_kat1_451_container_win"
 		,"gm_ge_army_kat1_451_refuel_win"
@@ -151,6 +157,9 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_luchsa1_olw"
 		,"gm_ge_army_luchsa2_win"
 		,"gm_ge_army_bpz2a0_win"
+		,"gm_ge_army_marder1a1a_win"
+		,"gm_ge_army_marder1a1plus_win"
+		,"gm_ge_army_marder1a2_win"
 		,"gm_ge_army_Leopard1a1_olw"
 		,"gm_ge_army_Leopard1a1a1_win"
 		,"gm_ge_army_Leopard1a1a2_win"
@@ -186,12 +195,14 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_u1300l_repair_win"
 		,"gm_ge_army_u1300l_cargo_win"
 		,"gm_ge_army_u1300l_cargo_win"
+		,"gm_ge_army_u1300l_firefighter_win"
 		,"gm_ge_army_kat1_451_reammo_win"
 		,"gm_ge_army_kat1_451_container_win"
 		,"gm_ge_army_kat1_451_refuel_win"
 		,"gm_ge_army_kat1_451_cargo_win"
 		,"gm_ge_army_kat1_451_cargo_win"
 		,"gm_ge_army_typ1200_cargo_olw"
+		,"gm_ge_army_gepard1a1_win"
 		,"gm_ge_army_gepard1a1_win"
 		,"gm_ge_army_m113a1g_apc_win"
 		,"gm_ge_army_m113a1g_apc_milan_win"
@@ -204,6 +215,9 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_luchsa1_olw"
 		,"gm_ge_army_luchsa2_win"
 		,"gm_ge_army_bpz2a0_win"
+		,"gm_ge_army_marder1a1a_win"
+		,"gm_ge_army_marder1a1plus_win"
+		,"gm_ge_army_marder1a2_win"
 		,"gm_ge_army_Leopard1a1_olw"
 		,"gm_ge_army_Leopard1a1a1_win"
 		,"gm_ge_army_Leopard1a1a2_win"
@@ -253,6 +267,7 @@ a3e_arr_Escape_InfantryTypes = [
 	,"gm_ge_army_grenadier_g3a3_parka_80_win"
 	,"gm_ge_army_grenadier_g3a3_parka_80_win"
 	,"gm_ge_army_grenadier_g3a3_parka_80_win"
+	,"gm_ge_army_grenadier_hk69a1_parka_80_win"
 	,"gm_ge_army_antitank_g3a3_pzf84_parka_80_win"
 	,"gm_ge_army_antitank_g3a3_pzf84_parka_80_win"
 	,"gm_ge_army_machinegunner_mg3_parka_80_win"
@@ -260,6 +275,7 @@ a3e_arr_Escape_InfantryTypes = [
 	,"gm_ge_army_machinegunner_mg3_parka_80_win"
 	,"gm_ge_army_antitank_g3a3_pzf44_parka_80_win"
 	,"gm_ge_army_antitank_g3a3_pzf44_parka_80_win"
+	,"gm_ge_army_radioman_g3a3_parka_80_win"
 	,"gm_ge_army_squadleader_g3a3_p2a1_parka_80_win"
 	,"gm_ge_army_squadleader_g3a3_p2a1_parka_80_win"];
 a3e_arr_Escape_InfantryTypes_Ind = [
@@ -276,7 +292,8 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"gm_dk_army_antitank_gvm95_pzf84_90_win"
 	,"gm_dk_army_antitank_assistant_gvm95_pzf84_90_win"
 	,"gm_dk_army_antiair_gvm95_fim43_90_win"
-	,"gm_dk_army_demolition_gvm95_90_win"];
+	,"gm_dk_army_demolition_gvm95_90_win"
+	,"gm_dk_army_radioman_gvm95_90_win"];
 a3e_arr_recon_InfantryTypes = [
 	"gm_ge_army_sf_squadleader_mp5sd3_p2a1_parka_80_win"
 	,"gm_ge_army_sf_antiair_mp5a3_fim43_parka_80_win"
@@ -286,7 +303,9 @@ a3e_arr_recon_InfantryTypes = [
 	,"gm_ge_army_sf_antitank_assistant_mp5a3_pzf84_parka_80_win"
 	,"gm_ge_army_sf_marksman_g3a3_parka_80_win"
 	,"gm_ge_army_sf_rifleman_g3a4_parka_80_win"
-	,"gm_ge_army_sf_rifleman_mp5a3_parka_80_win"];
+	,"gm_ge_army_sf_rifleman_mp5a3_parka_80_win"
+	,"gm_ge_army_sf_radioman_mp5a3_parka_80_win"
+	,"gm_ge_army_sf_grenadier_hk69a1_parka_80_win"];
 a3e_arr_recon_I_InfantryTypes = [
 	"gm_dk_army_sf_squadleader_mp5a3_p2a1_84_win"
 	,"gm_dk_army_sf_demolition_mp5a3_84_win"
@@ -295,7 +314,8 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"gm_dk_army_sf_antiair_mp5a3_fim43_84_win"
 	,"gm_dk_army_sf_rifleman_mp5a3_84_win"
 	,"gm_dk_army_sf_marksman_g3a3_84_win"
-	,"gm_dk_army_sf_rifleman_g3a4_84_win"];
+	,"gm_dk_army_sf_rifleman_g3a4_84_win"
+	,"gm_dk_army_sf_radioman_g3a4_84_m84"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
@@ -303,6 +323,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"gm_ge_army_iltis_mg3_win"
 	,"gm_ge_army_fuchsa0_reconnaissance_win"	
 	,"gm_ge_army_luchsa1_olw"
+	,"gm_ge_army_marder1a1a_win"
 	,"gm_ge_army_m113a1g_apc_win"
 	,"gm_ge_army_m113a1g_apc_milan_win"
 	,"gm_ge_army_milan_launcher_tripod"];
@@ -327,6 +348,7 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	"gm_ge_army_fuchsa0_reconnaissance_win"
 	,"gm_ge_army_luchsa1_olw"
 	,"gm_ge_army_luchsa2_win"
+	,"gm_ge_army_marder1a1a_win"
 	,"gm_ge_army_m113a1g_apc_milan_win"
 	,"gm_ge_army_iltis_milan_win"];
 
@@ -343,6 +365,7 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"gm_ge_army_gepard1a1_win"
+	,"gm_ge_army_marder1a2_win"
 	,"gm_ge_army_Leopard1a1a1_win"
 	,"gm_ge_army_Leopard1a3_win"
 	,"gm_ge_army_Leopard1a5_win"];
@@ -362,6 +385,7 @@ a3e_arr_ComCenParkedVehicles = [
 	,"gm_ge_army_u1300l_container_win"
 	,"gm_ge_army_u1300l_medic_win_rc"
 	,"gm_ge_army_u1300l_repair_win"
+	,"gm_ge_army_u1300l_firefighter_win"
 	,"gm_ge_army_m113a1g_apc_milan_win"
 	,"gm_ge_army_m113a1g_medic_win_rc"
 	,"gm_ge_army_kat1_451_cargo_win"
@@ -374,6 +398,7 @@ a3e_arr_ComCenParkedVehicles = [
 a3e_arr_Escape_EnemyCivilianCarTypes = [
 	"gm_ge_civ_u1300l"
 	,"gm_ge_civ_u1300l"
+	,"gm_ge_ff_u1300l_firefighter"
 	,"gm_ge_civ_typ1200"
 	,"gm_ge_civ_typ1200"
 	,"gm_ge_civ_typ1200"
@@ -405,6 +430,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"gm_ge_army_u1300l_medic_win_rc"
 	,"gm_ge_army_u1300l_repair_win"
 	,"gm_ge_army_u1300l_cargo_win"
+	,"gm_ge_army_u1300l_firefighter_win"
 	,"gm_ge_army_kat1_451_reammo_win"
 	,"gm_ge_army_kat1_451_container_win"
 	,"gm_ge_army_kat1_451_refuel_win"
@@ -467,7 +493,8 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_mp5a2_blk", 40, 2, 4, ["gm_30Rnd_9
 a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_mp5a3_blk", 30, 2, 4, ["gm_30Rnd_9x19mm_B_DM51_mp5a3_blk", "gm_30Rnd_9x19mm_B_DM11_mp5a3_blk"], 5];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_mp5sd2_blk", 20, 2, 4, ["gm_30Rnd_9x19mm_B_DM51_mp5_blk", "gm_30Rnd_9x19mm_B_DM11_mp5_blk"], 5];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_mp5sd3_blk", 10, 2, 4, ["gm_30Rnd_9x19mm_B_DM51_mp5a3_blk", "gm_30Rnd_9x19mm_B_DM11_mp5a3_blk"], 5];
-
+a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_g36a1_blk", 10, 2, 4, ["gm_30Rnd_556x45mm_B_DM11_g36_blk"], 12];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_hk69a1_blk", 10, 2, 4, ["1Rnd_HE_Grenade_shell", "UGL_FlareWhite_F","1Rnd_Smoke_Grenade_shell"], 5];
 // non-CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["gm_c7a1_oli", 40, 2, 4, ["gm_20Rnd_556x45mm_b_t_M856_stanag_gry"], 6];
 
@@ -481,6 +508,7 @@ a3e_arr_AmmoDepotLaunchers pushback ["gm_fim43_oli", 50, 1, 2, ["gm_1Rnd_70mm_he
 // non-CSAT weapons
 a3e_arr_AmmoDepotLaunchers pushback ["gm_rpg7_prp", 20, 1, 2, ["gm_1rnd_40mm_heat_pg7v_rpg7"], 3];
 a3e_arr_AmmoDepotLaunchers pushback ["gm_rpg7_prp", 10, 1, 2, ["gm_1Rnd_40mm_heat_pg7vl_rpg7"], 2];
+a3e_arr_AmmoDepotLaunchers pushback ["gm_m72a3_oli", 10, 1, 2, ["gm_1Rnd_66mm_heat_m72a3"], 1];
 //a3e_arr_AmmoDepotLaunchers pushback ["launch_I_Titan_F", 100, 1, 1, ["Titan_AA"], 3];
 //a3e_arr_AmmoDepotLaunchers pushback ["launch_I_Titan_short_F", 100, 1, 1, ["Titan_AP", "Titan_AT"], 3];
 //a3e_arr_AmmoDepotLaunchers pushback ["launch_B_Titan_F", 100, 1, 1, ["Titan_AA"], 3];
@@ -502,6 +530,7 @@ a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["gm_1rnd_67mm_heat_dm22a1
 a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["gm_smokeshell_grn_dm21", "gm_smokeshell_red_dm23", "gm_smokeshell_yel_dm26", "gm_smokeshell_org_dm32", "gm_smokeshell_wht_dm25"], 50];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["Chemlight_blue", "Chemlight_green", "Chemlight_red", "Chemlight_yellow"], 50];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 30, 1, 1, ["gm_handgrenade_conc_dm51"], 5];
+a3e_arr_AmmoDepotVehicle pushback [objNull, 30, 1, 1, ["1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","1Rnd_Smoke_Grenade_shell"], 5];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["gm_1Rnd_265mm_flare_para_yel_DM16", "gm_1Rnd_265mm_flare_single_wht_DM15", "gm_1Rnd_265mm_flare_single_red_DM13", "gm_1Rnd_265mm_flare_single_grn_DM11", "gm_1Rnd_265mm_flare_single_yel_DM10"], 25];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 10, 1, 1, ["gm_1Rnd_265mm_flare_multi_wht_DM25", "gm_1Rnd_265mm_flare_multi_red_DM23", "gm_1Rnd_265mm_flare_multi_grn_DM21", "gm_1Rnd_265mm_flare_multi_yel_DM20"], 5];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 10, 1, 1, ["gm_1Rnd_265mm_smoke_single_yel_DM19", "gm_1Rnd_265mm_smoke_single_org_DM22", "gm_1Rnd_265mm_smoke_single_vlt_DM24"], 5];
@@ -536,6 +565,7 @@ a3e_arr_AmmoDepotItems pushback ["gm_watch_kosei_80", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_B", 10, 1, 2]; //G3
 a3e_arr_AmmoDepotItems pushback ["gm_feroz24_blk", 30, 1, 2]; //G3
 a3e_arr_AmmoDepotItems pushback ["gm_c79a1_blk", 10, 1, 2]; //C7
+a3e_arr_AmmoDepotItems pushback ["gm_c79a1_oli", 10, 1, 2]; //C7
 a3e_arr_AmmoDepotItems pushback ["gm_pso1_gry", 20, 1, 3]; //SVD
 a3e_arr_AmmoDepotItems pushback ["gm_zfk4x25_blk", 20, 1, 3]; //AK
 a3e_arr_AmmoDepotItems pushback ["gm_feroz2x17_pzf44_2_blk", 25, 1, 2];
@@ -584,7 +614,8 @@ a3e_arr_CivilianCarWeapons pushback [objNull, "gm_smokeshell_wht_dm25", 5];
 // Here is a list of scopes, might get randomly added to enemy patrols:
 a3e_arr_Scopes = [
 	"gm_feroz24_blk"
-	,"gm_c79a1_blk"];
+	,"gm_c79a1_blk"
+	,"gm_c79a1_oli"];
 //	"optic_Aco"
 //	"optic_ACO_grn"
 //	,"optic_Arco"
@@ -616,7 +647,8 @@ private _faks = [
 missionNamespace setvariable ["a3e_arr_faks",_faks,true];
 _medkits = [
 	"Medikit"
-	,"gm_ge_army_medkit_80"];
+	,"gm_ge_army_medkit_80"
+	,"gm_gc_army_medbox"];
 missionNamespace setvariable ["a3e_arr_medkits",_medkits,true];
 
 //////////////////////////////////////////////////////////////////
@@ -636,9 +668,9 @@ a3e_arr_extractiontypes = [
 // always the fallback option, use BIS units if mod has no helicopters
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"gm_gc_airforce_mi2p_grg"
-	,"gm_gc_airforce_mi2sr_grg"
-	,"gm_gc_airforce_mi2t_grg"
+	"gm_gc_airforce_mi2p_grg"	//8
+	,"gm_gc_airforce_mi2urn"		//8
+	,"gm_gc_airforce_mi2t_grg"	//7
 	];
 a3e_arr_extraction_chopper_escort = [
 	"gm_gc_airforce_mi2us_grg"
@@ -776,17 +808,16 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	"Land_UWreck_MV22_F"
-	,"Land_Wreck_Plane_Transport_01_F"
-	,"Land_Wreck_Heli_Attack_01_F"];
+	"Land_Mi8_wreck_F""];
 a3e_arr_CrashSiteCrew = [
-	"gm_gc_army_crew_mpiaks74nk_80_blk"
-	,"gm_gc_army_crew_mpiaks74nk_80_blk"];
+	"gm_gc_airforce_pilot_pm_80_blu"];
 a3e_arr_CrashSiteWrecksCar = [
-	"Land_Wreck_HMMWV_F"
-	,"Land_Wreck_Hunter_F"
-	,"Land_Wreck_Slammer_F"
-	,"Land_Wreck_AFV_Wheeled_01_F"];
+	"Land_Wreck_UAZ_F"
+	,"Land_Wreck_Ural_F"
+	,"Land_Wreck_T72_hull_F"
+	,"Land_V3S_wreck_F"
+	,"Land_Wreck_BRDM2_F"
+	,"Land_Wreck_BMP2_F"];
 a3e_arr_CrashSiteCrewCar = [
 	"gm_gc_army_crew_mpiaks74nk_80_blk"
 	,"gm_gc_bgs_rifleman_mpikm72_80_str"];
