@@ -1,0 +1,178 @@
+{
+	"ParsedFiles" : [],
+	"Mods" : [
+		{
+			"name" : "SOGPF MACV vs PAVN-VC",
+			"path" : "./Mods/SOGPF MACV vs PAVN-VC/",
+			"require" : ["characters_f_vietnam_c","wheeled_f_vietnam_c","static_f_vietnam_c","boat_f_vietnam_c","air_f_vietnam_c","armor_f_vietnam_c"],
+			"replace" :
+				{
+					"MOD" : "SOGPF MACV vs PAVN and VC",
+					"PLAYERSIDE" : "WEST",
+					"PLAYERUNIT_1" : "vn_b_men_army_01",
+					"PLAYERUNIT_2" : "vn_b_men_army_12",
+					"PLAYERUNIT_3" : "vn_b_men_army_05",
+					"PLAYERUNIT_4" : "vn_b_men_army_04",
+					"PLAYERUNIT_5" : "vn_b_men_army_07",
+					"PLAYERUNIT_6" : "vn_b_men_army_06",
+					"PLAYERUNIT_7" : "vn_b_men_army_08",
+					"PLAYERUNIT_8" : "vn_b_men_army_09",
+					"PLAYERUNIT_9" : "vn_b_men_army_10",
+					"PLAYERUNIT_10" : "vn_b_men_army_03"
+				}
+		},
+		{
+			"name" : "SOGPF PAVN vs MACV-ARVN",
+			"path" : "./Mods/SOGPF PAVN vs MACV-ARVN/",
+			"require" : ["characters_f_vietnam_c","wheeled_f_vietnam_c","static_f_vietnam_c","boat_f_vietnam_c","air_f_vietnam_c","armor_f_vietnam_c"],
+			"replace" :
+				{
+					"MOD" : "SOGPF PAVN vs MACV and ARVN",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "vn_o_men_nva_15",
+					"PLAYERUNIT_2" : "vn_o_men_nva_28",
+					"PLAYERUNIT_3" : "vn_o_men_nva_36",
+					"PLAYERUNIT_4" : "vn_o_men_nva_23",
+					"PLAYERUNIT_5" : "vn_o_men_nva_21",
+					"PLAYERUNIT_6" : "vn_o_men_nva_25",
+					"PLAYERUNIT_7" : "vn_o_men_nva_27",
+					"PLAYERUNIT_8" : "vn_o_men_nva_26",
+					"PLAYERUNIT_9" : "vn_o_men_nva_24",
+					"PLAYERUNIT_10" : "vn_o_men_nva_22"
+				}
+		}
+	],
+	"Islands": [
+		{
+			"name" : "Cam Lao Nam",
+			"class" : "Cam_Lao_Nam",
+			"path" : "./Islands/Cam_Lao_Nam/",
+			"replace" :
+				{
+				"ISLAND" : "Cam Lao Nam",
+				"ISLANDNAME" : "Cam Lao Nam"
+				}
+		}
+	],
+	"Missions" : [
+		{
+			"island" : "Cam Lao Nam",
+			"sqm": "Cam_Lao_Nam",
+			"mod" : "SOGPF MACV vs PAVN-VC",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_MACV_vs_PAVN_and_VC"
+		},
+		{
+			"island" : "Tanoa",
+			"sqm": "Tanoa",
+			"mod" : "SOGPF MACV vs PAVN-VC",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_MACV_vs_PAVN_and_VC"
+		},
+		{
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "SOGPF MACV vs PAVN-VC",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_MACV_vs_PAVN_and_VC"
+		},
+		{
+			"island" : "Porto",
+			"sqm": "Porto",
+			"mod" : "SOGPF MACV vs PAVN-VC",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_MACV_vs_PAVN_and_VC"
+		},
+		{
+			"island" : "Prei Khmaoch Luong Legacy",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "SOGPF MACV vs PAVN-VC",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_MACV_vs_PAVN_and_VC"
+		},
+		{
+			"island" : "Prei Khmaoch Luong RHS",
+			"sqm": "rhspkl",
+			"mod" : "SOGPF MACV vs PAVN-VC",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_MACV_vs_PAVN_and_VC"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
+			"mod" : "SOGPF MACV vs PAVN-VC",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_MACV_vs_PAVN_and_VC"
+		},
+		{
+			"island" : "Da Krong",
+			"sqm": "DaKrong",
+			"mod" : "SOGPF MACV vs PAVN-VC",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_MACV_vs_PAVN_and_VC"
+		},
+		{
+			"island" : "Cam Lao Nam",
+			"sqm": "Cam_Lao_Nam",
+			"mod" : "SOGPF PAVN vs MACV-ARVN",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_PAVN_vs_MACV_and_ARVN"
+		},
+		{
+			"island" : "Tanoa",
+			"sqm": "Tanoa",
+			"mod" : "SOGPF PAVN vs MACV-ARVN",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_PAVN_vs_MACV_and_ARVN"
+		},
+		{
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "SOGPF PAVN vs MACV-ARVN",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_PAVN_vs_MACV_and_ARVN"
+		},
+		{
+			"island" : "Porto",
+			"sqm": "Porto",
+			"mod" : "SOGPF PAVN vs MACV-ARVN",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_PAVN_vs_MACV_and_ARVN"
+		},
+		{
+			"island" : "Prei Khmaoch Luong Legacy",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "SOGPF PAVN vs MACV-ARVN",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_PAVN_vs_MACV_and_ARVN"
+		},
+		{
+			"island" : "Prei Khmaoch Luong RHS",
+			"sqm": "rhspkl",
+			"mod" : "SOGPF PAVN vs MACV-ARVN",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_PAVN_vs_MACV_and_ARVN"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
+			"mod" : "SOGPF PAVN vs MACV-ARVN",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_PAVN_vs_MACV_and_ARVN"
+		},
+		{
+			"island" : "Da Krong",
+			"sqm": "DaKrong",
+			"mod" : "SOGPF PAVN vs MACV-ARVN",
+			"replace" : {},
+			"name" : "co10_Escape_SOGPF_PAVN_vs_MACV_and_ARVN"
+		}
+	],
+	"Addons" : [
+		{
+			"name" : "SOG Prairie Fire",
+			"mods" : ["SOGPF MACV vs PAVN-VC","SOGPF PAVN vs MACV-ARVN"]
+		}
+	]
+	
+}
