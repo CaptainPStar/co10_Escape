@@ -29,7 +29,7 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 	"gm_pl_army_rifleman_akm_80_moro",
 	"gm_pl_army_rifleman_akm_80_moro",
 	"gm_pl_army_squadleader_akm_80_moro",
-	"gm_pl_army_radioman_akm_80_win"];
+	"gm_pl_army_radioman_akm_80_moro"];
 
 // Prison backpacks
 a3e_arr_PrisonBackpacks = [
