@@ -569,7 +569,7 @@ a3e_arr_AmmoDepotOrdnance = [];
 // General weapons
 a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["vn_mine_satchel_remote_02_mag"], 5];
 a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["vn_mine_tm57_mag"], 5];
-a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["vn_mine_punji_01_mag",""], 5];
+a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["vn_mine_punji_01_mag"], 5]; //Todo
 a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["vn_mine_tripwire_f1_02_mag","vn_mine_tripwire_f1_04_mag"], 5];
 
 // Weapons and ammo in the vehicle box (the big one)
