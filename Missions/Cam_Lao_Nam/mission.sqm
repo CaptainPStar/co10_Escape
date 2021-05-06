@@ -165,7 +165,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=12;
-					type="{* PLAYERUNIT_2*}";
+					type="{* PLAYERUNIT_2 *}";
 				};
 				class Item4
 				{
@@ -261,48 +261,6 @@ class Mission
 					};
 					id=17;
 					type="vn_b_men_sf_19";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male01ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.99000001;
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 				class Item9
 				{
