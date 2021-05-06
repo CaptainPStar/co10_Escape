@@ -675,7 +675,7 @@ missionNamespace setvariable ["a3e_arr_medkits",_medkits,true];
 // fn_addIntel.sqf
 // types of intel items you can find on enemies
 //////////////////////////////////////////////////////////////////
-a3e_arr_intelitems = [
+A3E_IntelItems = [
 	"Files"
 	,"FileTopSecret"
 	,"FilesSecret"
@@ -850,7 +850,10 @@ a3e_arr_MortarSite = [
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
-	"vn_b_air_f4b_navy_hcas"
+	"vn_b_air_f4b_navy_cas"
+	,"vn_b_air_f4c_cas"
+	,"vn_b_air_f4b_usmc_cas"
+	,"vn_b_air_f4b_navy_hcas"
 	,"vn_b_air_f4c_hcas"
 	,"vn_b_air_f4b_usmc_hcas"];
 
