@@ -652,6 +652,22 @@ _medkits = [
 missionNamespace setvariable ["a3e_arr_medkits",_medkits,true];
 
 //////////////////////////////////////////////////////////////////
+// fn_addIntel.sqf
+// types of intel items you can find on enemies
+//////////////////////////////////////////////////////////////////
+A3E_IntelItems = [
+	"Files"
+	,"FileTopSecret"
+	,"FilesSecret"
+	//,"FlashDisk"
+	,"DocumentsSecret"
+	,"Wallet_ID"
+	,"FileNetworkStructure"
+	//,"MobilePhone"
+	//,"SmartPhone"
+	];
+
+//////////////////////////////////////////////////////////////////
 // SelectExtractionZone.sqf
 // Which type of extractions are supported/preferred by this unitclasses version?
 // Only if supported by terrain, so if corresponding markers are placed
