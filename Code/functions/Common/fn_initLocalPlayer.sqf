@@ -26,27 +26,7 @@ AT_Revive_Camera = 1;
 
 [] call A3E_fnc_addUserActions;
 
-//BIS
-player unassignItem "ItemMap";
-player removeItem "ItemMap";
-player unassignItem "ItemCompass";
-player removeItem "ItemCompass";
-player unassignItem "itemGPS";
-player removeItem "itemGPS";
-player unassignItem "itemRadio";
-player removeItem "itemRadio";
-player unassignItem "itemWatch";
-player removeItem "itemWatch";
-player unassignItem "O_UavTerminal";
-player removeItem "O_UavTerminal";
-player unassignitem "B_UavTerminal"; 
-player removeitem "B_UavTerminal";
-player unassignitem "I_UavTerminal"; 
-player removeitem "I_UavTerminal";
-
-
-
-
+removeAllAssignedItems player;
 removeAllWeapons player;
 removeAllItems player;
 removeBackpack player;
