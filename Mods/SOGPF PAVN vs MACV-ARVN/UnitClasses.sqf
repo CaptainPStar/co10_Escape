@@ -44,6 +44,7 @@ a3e_arr_PrisonBackpacks = [
 	,"vn_o_pack_06"
 	,"vn_c_pack_01"
 	,"vn_b_pack_01"
+	,"vn_b_pack_01_02"
 	,"vn_b_pack_trp_02_02"];
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
