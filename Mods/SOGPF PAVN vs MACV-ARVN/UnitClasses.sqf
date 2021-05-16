@@ -705,11 +705,11 @@ a3e_arr_extractiontypes = [
 // always the fallback option, use BIS units if mod has no helicopters
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-	"vn_o_air_mi2_01_01"	//
-	,"vn_o_air_mi2_01_02"	//
-	,"vn_o_air_mi2_01_03"	//
-	,"vn_o_air_mi2_02_01"	//
-	,"vn_o_air_mi2_02_02"	//
+	//"vn_o_air_mi2_01_01"	//4
+	//,"vn_o_air_mi2_01_02"	//4
+	"vn_o_air_mi2_01_03"	//5
+	,"vn_o_air_mi2_02_01"	//5
+	,"vn_o_air_mi2_02_02"	//5
 	];
 a3e_arr_extraction_chopper_escort = [
 	"vn_o_air_mi2_04_05"
