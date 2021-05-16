@@ -46,7 +46,8 @@ private _instanceNo = 0;
 			selectRandom [
 				//a3e_fnc_BuildComCenter, 
 				//a3e_fnc_BuildComCenter2
-				a3e_fnc_BuildComCenter3
+				a3e_fnc_BuildComCenter3,
+				a3e_fnc_BuildComCenter_VN_US1
 				//a3e_fnc_BuildComCenter4,
 				//a3e_fnc_BuildComCenter5
 			];
