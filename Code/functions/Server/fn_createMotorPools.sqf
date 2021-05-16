@@ -80,7 +80,7 @@ private _playergroup = [] call A3E_fnc_getPlayerGroup;
     [_x select 0, (_x select 1)-180, a3e_arr_ComCenStaticWeapons,
      a3e_arr_ComCenParkedVehicles, 
      a3e_arr_ComCenDefence_lightArmorClasses + a3e_arr_ComCenDefence_heavyArmorClasses]
-     call A3E_fnc_BuildMotorPool;
+     call A3E_fnc_BuildMotorPool_VN;
 
     [_playergroup, "A3E_MotorPoolPatrolMarker", A3E_VAR_Side_Opfor, "INS", 5, 5, 8, A3E_Param_EnemySkill, A3E_Param_EnemySkill, A3E_Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
 	 a3e_var_Escape_MotorPoolPositions pushBack (_x select 0);
