@@ -946,3 +946,8 @@ a3e_arr_CrashSiteItems pushback ["vn_o_9x_m14", 20, 1, 3];
 
 A3E_Trap_Classes = [["random","vn_mine_punji_03"],["random","vn_mine_punji_01"],["random","vn_mine_punji_02"],["random","vn_mine_m14"]];//,["roadcenter","vn_mine_tripwire_m16_04"],["roadcenter","vn_mine_tripwire_arty"],["roadside","vn_mine_tripwire_f1_02"]]; Classnames ofd traps and mines. String or array in form [classname, trigger range, scriptcode]
 A3E_Trap_Pathes = ["TRACK", "TRAIL"]; //Classnames of roads and pathes for the traps to spawn
+
+A3E_Var_AllowVanillaNightVision = false;
+
+A3E_MapItemsUsedInMission = ["vn_b_item_map","vn_o_item_map"];
+A3E_ItemsToBeRemoved = ["vn_b_item_watch","vn_b_item_compass_sog","vn_b_item_compass"];

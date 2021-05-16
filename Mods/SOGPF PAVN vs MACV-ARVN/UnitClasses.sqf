@@ -905,3 +905,9 @@ a3e_arr_CrashSiteItems pushback ["vn_o_3x_m9130", 20, 1, 3]; //M38 / SKS scope
 
 A3E_Trap_Classes = [["random","vn_mine_m18_range"],["roadside","vn_mine_m18_x3_range"],["random","vn_mine_m14"]];//,["roadcenter","vn_mine_tripwire_m16_04"],["roadcenter","vn_mine_tripwire_arty"],["roadside","vn_mine_tripwire_f1_02"]]; Classnames ofd traps and mines. String or array in form [classname, trigger range, scriptcode]
 A3E_Trap_Pathes = ["TRACK", "TRAIL"]; //Classnames of roads and pathes for the traps to spawn
+
+
+A3E_Var_AllowVanillaNightVision = false;
+
+A3E_MapItemsUsedInMission = ["vn_b_item_map","vn_o_item_map"]; //MapItems that should be removed from guards and are allowed to be carried randomly by patrols
+A3E_ItemsToBeRemoved = ["vn_b_item_watch","vn_b_item_compass_sog","vn_b_item_compass"]; //Items to randomly remove from units anmd to remove from guards
