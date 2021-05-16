@@ -901,3 +901,7 @@ a3e_arr_CrashSiteItems = [];
 a3e_arr_CrashSiteItems pushback ["vn_o_3x_m9130", 20, 1, 3];	//SKS scope
 a3e_arr_CrashSiteItems pushback ["vn_o_4x_m4956", 20, 1, 3]; //M49/65 scope
 a3e_arr_CrashSiteItems pushback ["vn_o_3x_m9130", 20, 1, 3]; //M38 / SKS scope
+
+
+A3E_Trap_Classes = [["random","vn_mine_m18_range"],["roadside","vn_mine_m18_x3_range"],["random","vn_mine_m14"]];//,["roadcenter","vn_mine_tripwire_m16_04"],["roadcenter","vn_mine_tripwire_arty"],["roadside","vn_mine_tripwire_f1_02"]]; Classnames ofd traps and mines. String or array in form [classname, trigger range, scriptcode]
+A3E_Trap_Pathes = ["TRACK", "TRAIL"]; //Classnames of roads and pathes for the traps to spawn

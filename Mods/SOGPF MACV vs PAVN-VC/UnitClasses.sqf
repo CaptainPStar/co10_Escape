@@ -939,3 +939,10 @@ a3e_arr_CrashSiteItems = [];
 a3e_arr_CrashSiteItems pushback ["vn_mk21_binocs", 20, 1, 3];
 a3e_arr_CrashSiteItems pushback ["vn_o_4x_m16", 20, 1, 3];
 a3e_arr_CrashSiteItems pushback ["vn_o_9x_m14", 20, 1, 3];
+
+
+
+//New stuff for VN
+
+A3E_Trap_Classes = [["random","vn_mine_punji_03"],["random","vn_mine_punji_01"],["random","vn_mine_punji_02"],["random","vn_mine_m14"]];//,["roadcenter","vn_mine_tripwire_m16_04"],["roadcenter","vn_mine_tripwire_arty"],["roadside","vn_mine_tripwire_f1_02"]]; Classnames ofd traps and mines. String or array in form [classname, trigger range, scriptcode]
+A3E_Trap_Pathes = ["TRACK", "TRAIL"]; //Classnames of roads and pathes for the traps to spawn

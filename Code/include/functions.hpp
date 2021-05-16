@@ -111,6 +111,8 @@ class CfgFunctions
 			class RoadBlocks {};
 			class MissionFlow {};
 			class createStartpos {};
+			class initTraps {};
+			class updateTraps {};
 		};
 		class Spawning
 		{
@@ -154,7 +156,9 @@ class CfgFunctions
 		};
 		class Chronos
 		{
-			class Chronos_Init {};
+			class Chronos_Init {
+				 postInit = 1;
+			};
 			class Chronos_Run {};
 			class Chronos_Register {};
 			class Chronos_Dispatch {};

@@ -508,6 +508,10 @@ _scriptHandle = [getMarkerPos "drn_searchChopperStartPosMarker", A3E_VAR_Side_Op
 waitUntil {scriptDone _scriptHandle};
 
 
+//Init trap spawning system for mines and other roadside surprises
+call A3E_fnc_initTraps;
+
+
 // Spawn creation of start position settings
 [A3E_StartPos, _backPack, _enemyFrequency] spawn {
 	params ["_startPos", "_backPack", "_enemyFrequency"];
