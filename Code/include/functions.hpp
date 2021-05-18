@@ -29,7 +29,9 @@ class CfgFunctions
 		class GetPlayers {};
 		class GetRandomPlayer {};
 		class GetPlayerGroup {};
+		class CallRandomFunction {};
 		class Briefing {
+		
 		//	postInit = 1;
 		};
 		class InitLocalPlayer {
