@@ -116,7 +116,7 @@ _fnc_CreateRoadBlock = {
 	_vehicles pushBack _static;
 	_units pushback ([_static,_side] call A3E_fnc_AddStaticGunner); 
 
-    _units append ([_pos, _dir + _angle, _static, _vehicle] call selectRandom [A3E_fnc_Roadblock, A3E_fnc_Roadblock2, A3E_fnc_Roadblock3, A3E_fnc_Roadblock4]);
+    _units append ([_pos, _dir + _angle, _static, _vehicle] call selectRandom [A3E_fnc_Roadblock_vn1, A3E_fnc_Roadblock_vn2]);
 
     _group = createGroup _side;
 	private _guardTypes = [];
