@@ -343,8 +343,25 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"vn_b_wheeled_m54_mg_01"
 	,"vn_b_wheeled_m54_mg_03"];
 
+//////////////////////////////////////////////////////////////////
+// fn_createMotorPools.sqf
+// Array of templates to use for motor pool
+//////////////////////////////////////////////////////////////////
+A3E_MotorPoolTemplates = [
+	"A3E_fnc_BuildMotorPool_VN"
+	];
+
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
 // light *and* a random heavy armor.
+
+//////////////////////////////////////////////////////////////////
+// fn_createComCenters.sqf
+// Array of templates to use for com centers
+//////////////////////////////////////////////////////////////////
+A3E_ComCenterTemplates = [
+	"a3e_fnc_BuildComCenter3"
+	,"a3e_fnc_BuildComCenter_VN_US1"
+	];
 
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
@@ -463,6 +480,13 @@ a3e_arr_I_pilots = [
 	"vn_i_men_aircrew_01"
 	,"vn_i_men_aircrew_02"];
 
+//////////////////////////////////////////////////////////////////
+// fn_createAmmoDepots.sqf
+// Array of templates to usefor ammo depots
+//////////////////////////////////////////////////////////////////
+A3E_AmmoDepotTemplates = [
+	"A3E_fnc_AmmoDepot_VN_US1"
+	];
 
 // The following arrays define weapons and ammo contained at the ammo depots
 // Index 0: Weapon classname.
@@ -836,6 +860,14 @@ a3e_arr_AquaticPatrols = [
 //////////////////////////////////////////////////////////////////
 a3e_additional_weapon_box_1 = "vn_b_ammobox_full_07";
 a3e_additional_weapon_box_2 = "vn_b_ammobox_full_05";
+
+//////////////////////////////////////////////////////////////////
+// fn_createMortarSites.sqf
+// Array of templates to usefor mortar sites
+//////////////////////////////////////////////////////////////////
+A3E_MortarSiteTemplates = [
+	"A3E_fnc_MortarSite_vn_us1"
+	];
 
 //////////////////////////////////////////////////////////////////
 // fn_MortarSite
