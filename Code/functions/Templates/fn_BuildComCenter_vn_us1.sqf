@@ -1,3 +1,6 @@
+//VN US ComCenter 1
+//FOB
+
 // Eden Object composition to SQF
 // Export file
 // Script by NeoArmageddon
