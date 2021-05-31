@@ -411,6 +411,7 @@ A3E_MotorPoolTemplates = [
 A3E_ComCenterTemplates = [
 	"a3e_fnc_BuildComCenter3"
 	,"a3e_fnc_BuildComCenter_VN_nva1"
+	,"a3e_fnc_BuildComCenter_VN_nva2"
 	];
 
 // Random array. Light armored vehicles guarding the communication centers.
