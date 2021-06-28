@@ -415,7 +415,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 			_vehicle addMagazineCargoGlobal [_weaponItem select 1, _weaponItem select 2];
 		};	
 		if (random 100 < 80) then {
-           _vehicle addItemCargoglobal ["firstaidkit", 3];	
+           _vehicle addItemCargoglobal ["vn_b_item_firstaidkit", 3];	
 		};
 		if (random 100 < 80) then {
            _vehicle addMagazineCargoglobal ["smokeshellRed", 2];	
@@ -508,6 +508,10 @@ _scriptHandle = [getMarkerPos "drn_searchChopperStartPosMarker", A3E_VAR_Side_Op
 waitUntil {scriptDone _scriptHandle};
 
 
+//Init trap spawning system for mines and other roadside surprises
+call A3E_fnc_initTraps;
+
+
 // Spawn creation of start position settings
 [A3E_StartPos, _backPack, _enemyFrequency] spawn {
 	params ["_startPos", "_backPack", "_enemyFrequency"];
@@ -564,9 +568,21 @@ waitUntil {scriptDone _scriptHandle};
         {
             _unit = _x; //(units _guardGroup) select 0;
             _unit setUnitRank "CAPTAIN";
-			_unit unlinkItem "ItemMap";
-            _unit unlinkItem "ItemCompass";
+			//_unit unlinkItem "vn_o_item_map";			
+            _unit unlinkItem "vn_b_item_compass";
             _unit unlinkItem "ItemGPS";
+			
+			
+			private _mapItems = missionNamespace getVariable ["A3E_MapItemsUsedInMission",["ItemMap","vn_o_item_map"]];
+			{_unit unlinkItem _x;} foreach _mapItems;
+				
+			private _itemsToRemove = missionNamespace getVariable ["A3E_ItemsToBeRemoved",[]];
+			{
+				_unit unlinkItem _x;
+			} foreach _itemsToRemove;
+
+			
+			
 			if (ACE_MedicalServer) then {_unit addItem "ACE_epinephrine"};//Add Epinephrine for each unit
 			removeBackpackGlobal _unit;
 			
@@ -588,7 +604,11 @@ waitUntil {scriptDone _scriptHandle};
 				_unit unlinkItem _hmd;
 				_unit removeItem _hmd;
 			};
-	
+			private _missionHasNVGs = missionnamespace getvariable ["A3E_Var_AllowVanillaNightVision", true];
+			if(!_missionHasNVGs) then {
+				_unit unlinkItem _hmd;
+				_unit removeItem _hmd;
+			};
             //_unit setSkill a3e_var_Escape_enemyMinSkill;
 			//[_unit, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
 			
