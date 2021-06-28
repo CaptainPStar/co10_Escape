@@ -44,22 +44,23 @@ if(random 100 < 70) then {
 	};
 };
 
-	private _nvgs = hmd _unit; //NVGoggles
-    if (_nvgs isEqualTo "") then {
-        private _cfgWeapons = configFile >> "CfgWeapons";
-        {
-            if (616 == getNumber (_cfgWeapons >> _x >> "ItemInfo" >> "type")) exitWith {
-                _nvgs = _x;
-            };
-        } forEach items _unit;
-    };
+private _nvgs = hmd _unit; //NVGoggles
+private _missionHasNVGs = missionnamespace getvariable ["A3E_Var_AllowVanillaNightVision", true];
+if (_nvgs isEqualTo "") then {
+	private _cfgWeapons = configFile >> "CfgWeapons";
+	{
+		if (616 == getNumber (_cfgWeapons >> _x >> "ItemInfo" >> "type")) exitWith {
+			_nvgs = _x;
+		};
+	} forEach items _unit;
+};
 if(_nvgs != "") then {
 	if((_nighttime) && (random 100 > 40) || !(_nighttime) && (random 100 > 5) || (A3E_Param_NoNightvision>0)) then {
 		_unit unlinkItem _nvgs;
 		_unit removeItem _nvgs;
 	};
 } else {
-	if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (A3E_Param_NoNightvision==0)) then {
+	if((((_nighttime) && (random 100 < 40)) || (!(_nighttime) && (random 100 < 5))) && (A3E_Param_NoNightvision==0) && _missionHasNVGs) then {
 		_unit linkItem "NVGoggles_OPFOR";
 	};
 };
@@ -87,13 +88,26 @@ if(((random 100 < 10) && (!_nighttime)) OR ((random 100 < 40) && (_nighttime))) 
 if (random 100 > 20) then {
 	//_unit additem "ItemMap";
 	//_unit assignItem "ItemMap";
-	_unit unlinkItem "ItemMap";
+	private _mapItems = missionNamespace getVariable ["A3E_MapItemsUsedInMission",["ItemMap","vn_o_item_map"]];
+	{_unit unlinkItem _x;} foreach _mapItems;
 };
 if (random 100 > 30) then {
 	//_unit additem "ItemCompass";
 	//_unit assignItem "ItemCompass";
+	_unit unlinkItem "vn_b_item_compass";	
 	_unit unlinkItem "ItemCompass";
 };
+
+private _itemsToRemove = missionNamespace getVariable ["A3E_ItemsToBeRemoved",[]];
+{
+	private _items = items _unit;
+	if(random 100 > 30) then {
+		_unit unlinkItem _x;
+	};
+} foreach _itemsToRemove;
+
+
+
 if (random 100 > 5) then {
 	//_unit additem "ItemGPS";
    // _unit assignItem "ItemGPS";
