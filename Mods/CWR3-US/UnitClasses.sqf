@@ -23,8 +23,11 @@ A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 // Random array. Start position guard types around the prison
 a3e_arr_Escape_StartPositionGuardTypes = [
 	"cwr3_i_commander"
-	,"cwr3_i_soldier_fal"
+	,"cwr3_i_militia_ak"
+	,"cwr3_i_militia_fal"
+	,"cwr3_i_militia_g3"
 	,"cwr3_i_soldier_sks"
+	,"cwr3_i_soldier_driver"
 	,"cwr3_i_soldier_hunter"];
 
 // Prison backpacks
@@ -52,11 +55,15 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"cwr3_c_skoda"
 	,"cwr3_c_skoda"
 	,"cwr3_c_skoda"
+	,"cwr3_c_rapid"
+	,"cwr3_c_rapid"
+	,"cwr3_c_rapid"
 	,"cwr3_c_s1203"
 	,"cwr3_c_s1203"
 	,"cwr3_c_s1203_ambulance"
 	,"cwr3_c_s1203_police"
 	,"cwr3_c_bus"
+	,"cwr3_c_cj5_police"
 	,"cwr3_c_gaz24"
 	,"cwr3_c_gaz24"
 	,"cwr3_c_gaz24"
@@ -64,6 +71,12 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"cwr3_c_lada"
 	,"cwr3_c_lada"
 	,"cwr3_c_lada_police"
+	,"cwr3_c_landrover_blue"
+	,"cwr3_c_landrover_red"
+	,"cwr3_c_landrover_yellow"
+	,"cwr3_c_mini"
+	,"cwr3_c_mini"
+	,"cwr3_c_mini"
 	,"cwr3_c_v3s_blue"
 	,"cwr3_c_v3s_green"
 	,"cwr3_c_v3s_yellow"
@@ -71,6 +84,9 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"cwr3_c_trabant"
 	,"cwr3_c_tractor"
 	,"cwr3_c_tractor_old"
+	,"cwr3_c_uaz452"
+	,"cwr3_c_uaz452"
+	,"cwr3_c_uaz452_police"
 	,"cwr3_c_ural_blue"
 	,"cwr3_c_ural_yellow"];
 	
@@ -82,8 +98,8 @@ switch (_enemyFrequency) do {
 		"cwr3_b_hmmwv"  //1
 		,"cwr3_b_hmmwv"
 		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
+		,"cwr3_b_hmmwv_transport"
+		,"cwr3_b_hmmwv_mev"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
@@ -100,8 +116,8 @@ switch (_enemyFrequency) do {
 		,"cwr3_b_hmmwv"  //2
 		,"cwr3_b_hmmwv"
 		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
+		,"cwr3_b_hmmwv_transport"
+		,"cwr3_b_hmmwv_mev"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
@@ -139,10 +155,15 @@ switch (_enemyFrequency) do {
 		//Tanks
 		,"cwr3_b_m60a3"
 		,"cwr3_b_m60a3_tts"
+		,"cwr3_b_m1"
 		,"cwr3_b_m1a1"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		//Unarmed Cars/UAVs  3 sets
 		"cwr3_i_m151"  //1
+		,"cwr3_i_landrover"
+		,"cwr3_i_landrover_mev"
+		,"cwr3_i_uaz452"
+		,"cwr3_i_uaz452_mev"
 		,"cwr3_i_uaz"
 		,"cwr3_i_uaz_mev"
 		,"cwr3_i_v3s_open"
@@ -150,6 +171,10 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_uaz_open"
 		,"cwr3_i_btr40"
 		,"cwr3_i_m151"  //2
+		,"cwr3_i_landrover"
+		,"cwr3_i_landrover_mev"
+		,"cwr3_i_uaz452"
+		,"cwr3_i_uaz452_mev"
 		,"cwr3_i_uaz"
 		,"cwr3_i_uaz_mev"
 		,"cwr3_i_v3s_open"
@@ -157,6 +182,10 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_uaz_open"
 		,"cwr3_i_btr40"
 		,"cwr3_i_m151"  //3
+		,"cwr3_i_landrover"
+		,"cwr3_i_landrover_mev"
+		,"cwr3_i_uaz452"
+		,"cwr3_i_uaz452_mev"
 		,"cwr3_i_uaz"
 		,"cwr3_i_uaz_mev"
 		,"cwr3_i_v3s_open"
@@ -167,6 +196,7 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_v3s_reammo"
 		,"cwr3_i_v3s_refuel"
 		,"cwr3_i_v3s_repair"
+		,"mtlb_repair"
 		//Armed Cars  1 set
 		,"cwr3_i_uaz_spg9"
 		,"cwr3_i_uaz_spg9"
@@ -190,6 +220,7 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_brdm2"
 		,"cwr3_i_brdm2"
 		,"cwr3_i_brdm2"
+		,"cwr3_i_mtlb_sa13"
 		//Heavily Armed APCs or AA  1 set
 		,"cwr3_i_bmp2_zu23"
 		,"cwr3_i_bmp1"
@@ -198,6 +229,7 @@ switch (_enemyFrequency) do {
 		//Tanks  1 set
 		,"cwr3_i_t34"
 		,"cwr3_i_t55"
+		,"cwr3_i_t55a"
 		,"cwr3_i_t72a"
 		,"cwr3_i_t72b1"];
     };
@@ -207,8 +239,8 @@ switch (_enemyFrequency) do {
 		"cwr3_b_hmmwv"  //1
 		,"cwr3_b_hmmwv"
 		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
+		,"cwr3_b_hmmwv_transport"
+		,"cwr3_b_hmmwv_mev"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
@@ -225,8 +257,8 @@ switch (_enemyFrequency) do {
 		,"cwr3_b_hmmwv"  //2
 		,"cwr3_b_hmmwv"
 		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
+		,"cwr3_b_hmmwv_transport"
+		,"cwr3_b_hmmwv_mev"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
@@ -272,10 +304,15 @@ switch (_enemyFrequency) do {
 		//Tanks
 		,"cwr3_b_m60a3"
 		,"cwr3_b_m60a3_tts"
+		,"cwr3_b_m1"
 		,"cwr3_b_m1a1"];
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		//Unarmed Cars/UAVs  3 sets
 		"cwr3_i_m151"  //1
+		,"cwr3_i_landrover"
+		,"cwr3_i_landrover_mev"
+		,"cwr3_i_uaz452"
+		,"cwr3_i_uaz452_mev"
 		,"cwr3_i_uaz"
 		,"cwr3_i_uaz_mev"
 		,"cwr3_i_v3s_open"
@@ -283,6 +320,10 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_uaz_open"
 		,"cwr3_i_btr40"
 		,"cwr3_i_m151"  //2
+		,"cwr3_i_landrover"
+		,"cwr3_i_landrover_mev"
+		,"cwr3_i_uaz452"
+		,"cwr3_i_uaz452_mev"
 		,"cwr3_i_uaz"
 		,"cwr3_i_uaz_mev"
 		,"cwr3_i_v3s_open"
@@ -290,6 +331,10 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_uaz_open"
 		,"cwr3_i_btr40"
 		,"cwr3_i_m151"  //3
+		,"cwr3_i_landrover"
+		,"cwr3_i_landrover_mev"
+		,"cwr3_i_uaz452"
+		,"cwr3_i_uaz452_mev"
 		,"cwr3_i_uaz"
 		,"cwr3_i_uaz_mev"
 		,"cwr3_i_v3s_open"
@@ -300,6 +345,7 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_v3s_reammo"
 		,"cwr3_i_v3s_refuel"
 		,"cwr3_i_v3s_repair"
+		,"mtlb_repair"
 		//Armed Cars  2 sets
 		,"cwr3_i_uaz_spg9"	//1
 		,"cwr3_i_uaz_spg9"
@@ -337,6 +383,7 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_brdm2"
 		,"cwr3_i_brdm2"
 		,"cwr3_i_brdm2"
+		,"cwr3_i_mtlb_sa13"
 		//Heavily Armed APCs or AA  1 set
 		,"cwr3_i_bmp2_zu23"
 		,"cwr3_i_bmp1"
@@ -345,6 +392,7 @@ switch (_enemyFrequency) do {
 		//Tanks  1 set
 		,"cwr3_i_t34"
 		,"cwr3_i_t55"
+		,"cwr3_i_t55a"
 		,"cwr3_i_t72a"
 		,"cwr3_i_t72b1"];
     };
@@ -354,8 +402,8 @@ switch (_enemyFrequency) do {
 		"cwr3_b_hmmwv"  //1
 		,"cwr3_b_hmmwv"
 		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
+		,"cwr3_b_hmmwv_transport"
+		,"cwr3_b_hmmwv_mev"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
@@ -372,8 +420,8 @@ switch (_enemyFrequency) do {
 		,"cwr3_b_hmmwv"  //2
 		,"cwr3_b_hmmwv"
 		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
-		,"cwr3_b_hmmwv"
+		,"cwr3_b_hmmwv_transport"
+		,"cwr3_b_hmmwv_mev"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
 		,"cwr3_b_m151"
@@ -423,13 +471,19 @@ switch (_enemyFrequency) do {
 		//Tanks	2 sets
 		,"cwr3_b_m60a3"
 		,"cwr3_b_m60a3_tts"
+		,"cwr3_b_m1"
 		,"cwr3_b_m1a1"
 		,"cwr3_b_m60a3"
 		,"cwr3_b_m60a3_tts"
+		,"cwr3_b_m1"
 		,"cwr3_b_m1a1"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		//Unarmed Cars/UAVs  3 sets
 		"cwr3_i_m151"  //1
+		,"cwr3_i_landrover"
+		,"cwr3_i_landrover_mev"
+		,"cwr3_i_uaz452"
+		,"cwr3_i_uaz452_mev"
 		,"cwr3_i_uaz"
 		,"cwr3_i_uaz_mev"
 		,"cwr3_i_v3s_open"
@@ -437,6 +491,10 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_uaz_open"
 		,"cwr3_i_btr40"
 		,"cwr3_i_m151"  //2
+		,"cwr3_i_landrover"
+		,"cwr3_i_landrover_mev"
+		,"cwr3_i_uaz452"
+		,"cwr3_i_uaz452_mev"
 		,"cwr3_i_uaz"
 		,"cwr3_i_uaz_mev"
 		,"cwr3_i_v3s_open"
@@ -444,6 +502,10 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_uaz_open"
 		,"cwr3_i_btr40"
 		,"cwr3_i_m151"  //3
+		,"cwr3_i_landrover"
+		,"cwr3_i_landrover_mev"
+		,"cwr3_i_uaz452"
+		,"cwr3_i_uaz452_mev"
 		,"cwr3_i_uaz"
 		,"cwr3_i_uaz_mev"
 		,"cwr3_i_v3s_open"
@@ -454,6 +516,7 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_v3s_reammo"
 		,"cwr3_i_v3s_refuel"
 		,"cwr3_i_v3s_repair"
+		,"mtlb_repair"
 		//Armed Cars  2 sets
 		,"cwr3_i_uaz_spg9"	//1
 		,"cwr3_i_uaz_spg9"
@@ -491,6 +554,7 @@ switch (_enemyFrequency) do {
 		,"cwr3_i_brdm2"
 		,"cwr3_i_brdm2"
 		,"cwr3_i_brdm2"
+		,"cwr3_i_mtlb_sa13"
 		//Heavily Armed APCs or AA  2 sets
 		,"cwr3_i_bmp2_zu23"	//1
 		,"cwr3_i_bmp1"
@@ -503,10 +567,12 @@ switch (_enemyFrequency) do {
 		//Tanks  2 sets
 		,"cwr3_i_t34"	//1
 		,"cwr3_i_t55"
+		,"cwr3_i_t55a"
 		,"cwr3_i_t72a"
 		,"cwr3_i_t72b1"
 		,"cwr3_i_t34"	//2
 		,"cwr3_i_t55"
+		,"cwr3_i_t55a"
 		,"cwr3_i_t72a"
 		,"cwr3_i_t72b1"];
     };
@@ -565,6 +631,7 @@ a3e_arr_Escape_InfantryTypes = [
 	,"cwr3_b_soldier_xms"
 	,"cwr3_b_soldier_sl"
 	,"cwr3_b_soldier_tl"
+	,"cwr3_b_soldier_radio"
 	,"cwr3_b_soldier_at_law"
 	,"cwr3_b_soldier_at_law"];
 a3e_arr_Escape_InfantryTypes_Ind = [
@@ -615,10 +682,13 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"cwr3_i_soldier_hg"
 	,"cwr3_i_soldier_sks"
 	,"cwr3_i_soldier_sks"
+	,"cwr3_i_soldier_vz58"
+	,"cwr3_i_soldier_vz58"
 	,"cwr3_i_soldier_at_rpg75"
 	,"cwr3_i_soldier_at_rpg75"
 	,"cwr3_i_soldier_spotter"
 	,"cwr3_i_soldier_sniper"
+	,"cwr3_i_soldier_radio"
 	,"cwr3_i_soldier_sl"
 	,"cwr3_i_soldier_tl"];
 a3e_arr_recon_InfantryTypes = [
@@ -708,15 +778,33 @@ a3e_arr_ComCenParkedVehicles = [
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
 	"cwr3_c_skoda"
+	,"cwr3_c_skoda"
+	,"cwr3_c_rapid"
+	,"cwr3_c_rapid"
+	,"cwr3_c_s1203"
 	,"cwr3_c_s1203"
 	,"cwr3_c_s1203_ambulance"
 	,"cwr3_c_s1203_police"
 	,"cwr3_c_gaz24"
+	,"cwr3_c_gaz24"
+	,"cwr3_c_lada"
 	,"cwr3_c_lada"
 	,"cwr3_c_lada_police"
+	,"cwr3_c_landrover_blue"
+	,"cwr3_c_landrover_red"
+	,"cwr3_c_landrover_yellow"
+	,"cwr3_c_mini"
+	,"cwr3_c_mini"
 	,"cwr3_c_trabant"
+	,"cwr3_c_trabant"
+	,"cwr3_c_uaz452"
+	,"cwr3_c_uaz452"
+	,"cwr3_c_uaz452_police"
 	,"cwr3_c_ural_blue"
-	,"cwr3_c_v3s_green"];
+	,"cwr3_c_ural_yellow"
+	,"cwr3_c_v3s_blue"
+	,"cwr3_c_v3s_green"
+	,"cwr3_c_v3s_yellow"];
 
 // Vehicles, weapons and ammo at ammo depots
 
@@ -735,15 +823,20 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 a3e_arr_O_attack_heli = [
 	"cwr3_b_ah1f"
 	,"cwr3_b_ah1f"
+	,"cwr3_b_ah6j"
 	,"cwr3_b_ah64"
 	,"cwr3_b_ah64_hellfire"
-	,"cwr3_b_uh1_gunship"];
+	,"cwr3_b_uh1_gunship"
+	,"cwr3_b_kiowa_at"
+	,"cwr3_b_kiowa_ffar"];
 a3e_arr_O_transport_heli = [
 	"cwr3_b_ch47"
+	,"cwr3_b_mh6j"
 	,"cwr3_b_uh1"
-	,"cwr3_b_uh1_slick"
+	,"cwr3_b_uh1_armed"
 	,"cwr3_b_uh60_unarmed_ffv"
-	,"cwr3_b_uh60_ffv"];
+	,"cwr3_b_uh60_ffv"
+	,"cwr3_b_uh60_m240"];
 a3e_arr_O_pilots = [
 	"cwr3_b_soldier_pilot"];
 a3e_arr_I_transport_heli = [
@@ -766,11 +859,11 @@ a3e_arr_AmmoDepotBasicWeapons = [];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_hgun_Colt1911", 50, 4, 8, ["CUP_7Rnd_45ACP_1911"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_hgun_M9", 50, 4, 8, ["CUP_15Rnd_9x19_M9"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_smg_M3A1", 30, 1, 3, ["CUP_30Rnd_45ACP_M3A1_M"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_M16A2", 100, 2, 4, ["CUP_30Rnd_556x45_Stanag"], 8];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_M16A1E1", 100, 2, 4, ["CUP_30Rnd_556x45_Stanag"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_srifle_M14", 30, 2, 4, ["CUP_20Rnd_762x51_DMR"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_smg_MP5A5", 30, 2, 4, ["CUP_30Rnd_9x19_MP5"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_smg_uzi", 30, 2, 4, ["CUP_30Rnd_9x19_UZI"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_M16A2_GL", 75, 2, 4, ["CUP_30Rnd_556x45_Stanag", "CUP_1Rnd_HE_M203"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_arifle_M16A1E1GL", 75, 2, 4, ["CUP_30Rnd_556x45_Stanag", "CUP_1Rnd_HE_M203"], 4];
 // non-CSAT weapons
 a3e_arr_AmmoDepotBasicWeapons pushback ["cwr3_smg_uzi", 20, 4, 8, ["CUP_30Rnd_9x19_UZI"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_hgun_CZ75", 20, 4, 8, ["CUP_16Rnd_9x19_cz75"], 6];
@@ -844,7 +937,7 @@ a3e_arr_AmmoDepotVehicleItems = [];
 a3e_arr_AmmoDepotVehicleItems pushback ["ToolKit", 20, 1, 1, [], 0];
 a3e_arr_AmmoDepotVehicleItems pushback ["Medikit", 20, 1, 1, [], 0];
 a3e_arr_AmmoDepotVehicleItems pushback ["FirstAidKit", 100, 10, 50, [], 0];
-a3e_arr_AmmoDepotVehicleBackpacks = ["cwr3_i_backpack"];
+a3e_arr_AmmoDepotVehicleBackpacks = ["cwr3_b_backpack_alice"];
 // Items
 
 // Index 0: Item classname.
@@ -989,7 +1082,9 @@ a3e_arr_extraction_car_escort = [
 // Classnames of drones
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchdrone = [
-	"cwr3_b_camel"];
+	"cwr3_b_camel"
+	,"cwr3_b_camel"
+	,"cwr3_i_cessna_t41"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
