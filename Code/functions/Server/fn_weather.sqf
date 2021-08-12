@@ -1,117 +1,270 @@
-params[["_initial",true]];
-private _weatherTemplates = [];
-//[overcast,rain,fog,lightnings]
+//Clouds
+private _weatherParamOvercast = if (A3E_Param_WeatherOvercast isEqualTo -1) then {
+    selectrandomweighted [0,500,1,400,2,800,3,1000,4,1000,5,700,6,600,7,400,8,300,9,200,10,100];
 
-//Clear
-_weatherTemplates pushBack [0,0,0,0];
+} else {
+    A3E_Param_WeatherOvercast
+};
 
-//Overcast
-_weatherTemplates pushBack [0.6,0,0.2,0];
-//Rain
-_weatherTemplates pushBack [1.0,0,0.2,0];
+switch _weatherParamOvercast do {
+    //Cloudless
+    case 0: {
+        0 setovercast 0;
+	};
+    //10% Overcast
+    case 1: {
+		0 setovercast random [0.05,0.1,0.15];
+	};
+	//20% Overcast
+	case 2: {
+		0 setovercast random [0.15,0.2,0.25];
+	};
+	//30% Overcast
+	case 3: {
+		0 setovercast random [0.25,0.3,0.35];
+	};
+	//40% Overcast
+	case 4: {
+		0 setovercast random [0.35,0.4,0.45];
+	};
+	//50% Overcast (Mimimum needed for rain to appear)
+	case 5: {
+        0 setovercast random [0.5,0.5,0.55];
+    };
+	//60% Overcast
+	case 6: {
+        0 setovercast random [0.55,0.6,0.65];
+    };
+	//70% Overcast
+	case 7: {
+        0 setovercast random [0.65,0.7,0.75];
+    };
+	//80% Overcast
+	case 8: {
+        0 setovercast random [0.75,0.8,0.85];
+    };
+	//90 % Overcast
+	case 9: {
+        0 setovercast random [0.85,0.90,0.95];
+    };
+	//100% Overcast
+	case 10: {
+        0 setovercast 1;
+    };
+	default {
+        0 setovercast 0;
+    };
+};
+
 //Fog
-_weatherTemplates pushBack [0.4,0,[0.2+random 0.2,0.01,random 30 + 5],0];
-//Storm
-_weatherTemplates pushBack [1,0.2,0.1,1];
-//Nightmare
-_weatherTemplates pushBack [1,0,[0.4,0.01,random 20 + 5],1];
-//Partly cloudy
-_weatherTemplates pushBack [0.2,0,0,0];
-//Cloudy
-_weatherTemplates pushBack [0.4,0,0,0];
-//Could get rainy
-_weatherTemplates pushBack [0.6,0.1,0,0];
-//Nice
-_weatherTemplates pushBack [0.1,0,0,0];
-//Morningmood
-_weatherTemplates pushBack [0,0,[0.1+random 0.3,0.05,random 5 + 1],0];
-//Morningmood2
-_weatherTemplates pushBack [0,0,[0.1+random 0.2,0.075,random 10 + 5],0];
-//Clear
-_weatherTemplates pushBack [0,0,0,0];
-//Clear
-_weatherTemplates pushBack [0,0,0,0];
-//Clear
-_weatherTemplates pushBack [0,0,0,0];
-//Overcast
-_weatherTemplates pushBack [0.6,0,0.2,0];
-//Overcast
-_weatherTemplates pushBack [0.6,0,0.2,0];
-//Cloudy
-_weatherTemplates pushBack [0.4,0,0,0];
-//Cloudy
-_weatherTemplates pushBack [0.4,0,0,0];
-//Make sure all used vars are initialised
-if(isNil("A3E_Param_Weather")) then {
-	A3E_Param_Weather = -1;
-};
-if(isNil("A3E_Param_DynamicWeather")) then {
-	A3E_Param_DynamicWeather = 1;
-};
-if(isNil("A3E_Param_TimeMultiplier")) then {
-	A3E_Param_TimeMultiplier = 1;
-};
-private _currentTemplate = [];
-if(A3E_Param_Weather<0) then {
-	_currentTemplate = _weatherTemplates select floor(random(count(_weatherTemplates)));
+private _weatherParamFog = if (A3E_Param_WeatherFog isEqualTo -1) then {
+    selectrandomweighted [0,10000,1,500,2,400,3,300,4,200,5,100,6,90,7,80,8,80,9,80,10,80];
+
 } else {
-	if(A3E_Param_Weather<count(_weatherTemplates)) then {
-		_currentTemplate = _weatherTemplates select A3E_Param_Weather;
-	} else {
-		_currentTemplate = _weatherTemplates select floor(random(count(_weatherTemplates)));
+    A3E_Param_WeatherFog
+};
+
+switch _weatherParamFog do {
+    //No Fog
+    case 0: {
+        0 setFog 0;
 	};
-};
-
-private _weatherTransitionTime = 1800;
-private _weatherWaitTime = 600;
-private _rainDelay = 120; //Delay rainchange
-if(_initial) then {
-	_weatherTransitionTime = 0;
-};
-if(A3E_Param_DynamicWeather == 0) then {
-	_weatherWaitTime = 60*60*24*A3E_Param_TimeMultiplier;
-};
-
-//Transition in _weatherTransitionTime ingame seconds
-_weatherTransitionTime setovercast (_currentTemplate select 0);
-if(abs(rain-(_currentTemplate select 1))<0.2 || _initial) then {
-	_weatherTransitionTime setrain (_currentTemplate select 1);
-} else {
-	//Delay rain a bit of rainchange is to heavy. Otherwise rain will start before clouds appear or vice versa
-	[(_currentTemplate select 1),_rainDelay/A3E_Param_TimeMultiplier,_weatherTransitionTime-(_rainDelay/A3E_Param_TimeMultiplier)] spawn {
-		systemchat ("Delaying rain by "+str _time + " seconds");
-		params["_rain","_time","_change"];
-		sleep _time;
-		_change setrain _rain;
+    //10% Fog
+    case 1: {
+		0 setFog random [0.05,0.1,0.15];
 	};
+	//20% Fog
+	case 2: {
+		0 setFog random [0.15,0.2,0.25];
+	};
+	//30% Fog
+	case 3: {
+		0 setFog random [0.25,0.3,0.35];
+	};
+	//40% Fog
+	case 4: {
+		0 setFog random [0.35,0.4,0.45];
+	};
+	//50% Fog (Mimimum needed for rain to appear)
+	case 5: {
+        0 setFog random [0.5,0.5,0.55];
+    };
+	//60% Fog
+	case 6: {
+        0 setFog random [0.55,0.6,0.65];
+    };
+	//70% Fog
+	case 7: {
+        0 setFog random [0.65,0.7,0.75];
+    };
+	//80% Fog
+	case 8: {
+        0 setFog random [0.75,0.8,0.85];
+    };
+	//90 % Fog
+	case 9: {
+        0 setFog random [0.85,0.90,0.95];
+    };
+	//100% Fog (I can't see a damn thing!)
+	case 10: {
+        0 setFog 1;
+    };
+	default {
+        0 setFog 0;
+    };
 };
-_weatherTransitionTime setfog (_currentTemplate select 2);
-_weatherTransitionTime setlightnings (_currentTemplate select 3);
 
-systemchat str _currentTemplate;
+//Wind
+private _weatherParamWind = if (A3E_Param_WeatherWind isEqualTo -1) then {
+    selectrandomweighted [0,10000,1,1000,2,1000,3,1000,4,800,5,700,6,600,7,300,8,200,9,100,10,90,11,10,12,10,13,14,10];
 
-if(_initial) then {
-	skiptime -24;
-	skiptime 24;
-	forceWeatherChange;
-};
-//Sleep _weatherTransitionTime ingame seconds
-systemchat ("Weatherchange in "+str (_weatherTransitionTime/A3E_Param_TimeMultiplier) + " seconds");
-sleep (_weatherTransitionTime/A3E_Param_TimeMultiplier);
-
-//Keep the weather 10 realtime minutes
-_weatherWaitTime*A3E_Param_TimeMultiplier setovercast (_currentTemplate select 0);
-_weatherWaitTime*A3E_Param_TimeMultiplier setrain (_currentTemplate select 1);
-_weatherWaitTime*A3E_Param_TimeMultiplier setfog (_currentTemplate select 2);
-_weatherWaitTime*A3E_Param_TimeMultiplier setlightnings (_currentTemplate select 3);
-
-//Keep the weather 10 minutes
-systemchat ("Keeping weather for "+str (_weatherWaitTime) + " seconds");
-sleep _weatherWaitTime;
-
-if(A3E_Param_DynamicWeather == 1) then {
-	systemchat "Restarting weather script";
-	[false] spawn A3E_fnc_Weather;
 } else {
-	systemchat "Keeping weather constant";
+    A3E_Param_WeatherWind
 };
+
+switch _weatherParamWind do {
+    //Let's the engine decide
+    case 0: {};
+    //No Wind
+    case 1: {
+		setwind [0,0,true];
+	};
+	//Lv 1 Wind
+	case 2: {
+		setwind selectrandom [[random [0,1,2], random [0,1,2], true],[random [0,-1,-2], random [0,-1,-2], true],[random [0,1,2], random [0,-1,-2], true],[random [0,-1,-2], random [0,1,2], true]];
+	};
+	//Lvl 2 Wind
+	case 3: {
+		setwind selectrandom [[random [1,2,3], random [1,2,3], true],[random [1,-2,-3], random [1,-2,-3], true],[random [1,2,3], random [1,-2,-3], true],[random [1,-2,-3], random [1,2,3], true]];
+	};
+	//Lvl 3 Wind (Start to see the effects on smoke around here)
+	case 4: {
+		setwind selectrandom [[random [2,3,4], random [2,3,4], true],[random [2,-3,-4], random [2,-3,-4], true],[random [2,3,4], random [2,-3,-4], true],[random [2,-3,-4], random [2,3,4], true]];
+	};	
+	//Lvl 4 Wind 
+	case 5: {
+		setwind selectrandom [[random [3,4,5], random [3,4,5], true],[random [3,-4,-5], random [3,-4,-5], true],[random [3,4,5], random [3,-4,-5], true],[random [3,-4,-5], random [3,4,5], true]];
+	};
+	//Lvl 5 Wind (Smoke grenades are less effective)
+	case 6: {
+		setwind selectrandom [[random [4,5,6], random [4,5,6], true],[random [4,-5,-6], random [4,-5,-6], true],[random [4,5,6], random [4,-5,-6], true],[random [4,-5,-6], random [4,5,6], true]];
+	};
+	//Lvl 6 Wind
+	case 7: {
+		setwind selectrandom [[random [5,6,7], random [5,6,7], true],[random [5,-6,-7], random [5,-6,-7], true],[random [5,6,7], random [5,-6,-7], true],[random [5,-6,-7], random [5,6,7], true]];
+	};
+	//Lvl 7 Wind (Smoke Grenades are useless at this point)
+	case 8: {
+		setwind selectrandom [[random [6,7,8], random [6,7,8], true],[random [6,-7,-8], random [6,-7,-8], true],[random [6,7,8], random [6,-7,-8], true],[random [6,-7,-8], random [6,7,8], true]];
+	};
+	//Lvl 8 Wind
+	case 9: {
+		setwind selectrandom [[random [7,8,9], random [7,8,9], true],[random [7,-8,-9], random [7,-8,-9], true],[random [7,8,9], random [7,-8,-9], true],[random [7,-8,-9], random [7,8,9], true]];
+	};
+	//Lvl 9 Wind 
+	case 10: {
+		setwind selectrandom [[random [8,9,10], random [8,9,10], true],[random [8,-9,-10], random [8,-9,-10], true],[random [8,9,10], random [8,-9,-10], true],[random [8,-9,-10], random [8,9,10], true]];
+	};
+	//Lvl 10 Wind (Game wasn't designed for wind at this point.  Doesn't affect performance, but does affect fun)
+	case 11: {
+		setwind selectrandom [[random [10,15,20], random [10,15,20], true],[random [10,-15,-20], random [10,-15,-20], true],[random [10,15,20], random [10,-15,-20], true],[random [10,-15,-20], random [10,15,20], true]];
+	}; 
+	//Lvl 69 Wind
+	case 12: {
+		setwind selectrandom [[random [20,40,60], random [20,40,60], true],[random [20,-40,-60], random [20,-40,-60], true],[random [20,40,60], random [20,-40,-60], true],[random [20,-40,-60], random [20,40,60], true]];
+	}; 
+	//Lvl 420 Wind
+	case 13: {
+		setwind selectrandom [[random [40,80,100], random [40,80,100], true],[random [40,-80,-100], random [40,-80,-100], true],[random [40,80,100], random [40,-80,-100], true],[random [40,-80,-100], random [40,80,100], true]];
+	}; 
+	//Lvl 42069 Wind (Doesn't get any higher than this)
+	case 14: {
+		setwind selectrandom [[random [100,100,100], random [100,100,100], true],[random [100,-100,-100], random [100,-100,-100], true],[random [100,100,100], random [100,-100,-100], true],[random [100,-100,-100], random [100,100,100], true]];
+	}; 
+	default {};
+};
+
+//Rain
+private _weatherParamRain = if (A3E_Param_WeatherRain isEqualTo -1) then {
+    selectrandomweighted [0,10000,1,500,2,500,3,500,4,500,5,500,6,500,7,500,8,500,9,500,10,500,11,500];
+
+} else {
+    A3E_Param_WeatherRain
+};
+
+switch _weatherParamRain do {
+    //Let's the engine decide
+    case 0: {};
+    //No Rain
+    case 1: {
+		0 setrain 0;
+		999999 setrain 0; //quirk of the engine, if "manual override" in the eden editor is not selected when overcast is high enough rain is all but certain.  setting immediate no rain and then a ridiculously long no rain ensures the engine won't override first immediate no rain command.  doing it this way allows the engine to take over on other settings where there can be rain
+	};
+    //10% Rain
+    case 2: {
+		0 setRain random [0.05,0.1,0.15];
+	};
+	//20% Rain
+	case 3: {
+		0 setRain random [0.15,0.2,0.25];
+	};
+	//30% Rain
+	case 4: {
+		0 setRain random [0.25,0.3,0.35];
+	};
+	//40% Rain
+	case 5: {
+		0 setRain random [0.35,0.4,0.45];
+	};
+	//50% Rain
+	case 6: {
+        0 setRain random [0.5,0.5,0.55];
+    };
+	//60% Rain
+	case 7: {
+        0 setRain random [0.55,0.6,0.65];
+    };
+	//70% Rain
+	case 8: {
+        0 setRain random [0.65,0.7,0.75];
+    };
+	//80% Rain
+	case 9: {
+        0 setRain random [0.75,0.8,0.85];
+    };
+	//90 % Rain
+	case 10: {
+        0 setRain random [0.85,0.90,0.95];
+    };
+	//100% Rain
+	case 11: {
+        0 setRain 1;
+    };
+	default {
+        0 setRain 0;
+    };
+};
+forceWeatherChange;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

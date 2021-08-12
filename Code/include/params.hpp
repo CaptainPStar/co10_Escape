@@ -57,7 +57,7 @@ class Params
 	{
 		title="Search Chopper Type";
 		values[]={0,1,2};
-		texts[]={"Standard","Easy","Hard"};
+		texts[]={"Random (Chooses between Easy and Hard Values)","Easy","Hard"};
 		default = 0;
 	};
 	class A3E_Param_Spacer2
@@ -84,17 +84,33 @@ class Params
 		code = "if(isserver) then {setTimeMultiplier _this;};";
 		default = 6;
 	};
-	class A3E_Param_Weather {
-		title="Weather";
-		values[] = {0,1,2,3,4,-1};
-		texts[] = {"Clear","Overcast","Rain","Fog","Storm","Random"};
-		default = 0;
+	class A3E_Param_WeatherOvercast
+	{
+		title="Cloud Cover";
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"Randomly picks one of the below values (weighted towards low cloud cover for a better gameplay experience)","No Clouds","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"};
+		default = -1;
 	};
-	class A3E_Param_DynamicWeather {
-		title="Dynamic Weather";
-		values[] = {0,1};
-		texts[] = {"Constant","Random"};
-		default = 1;
+	class A3E_Param_WeatherFog
+	{
+		title="Fog Density";
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"Randomly picks one of the below values (heavily weighted towards no fog for a better gameplay experience)","No Fog","10%","20%","30%","40%","50%","60%","70%","80%","90%","100% (I can't see a damn thing!)"};
+		default = -1;
+	};
+	class A3E_Param_WeatherWind
+	{
+		title="Wind";
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14};
+		texts[] = {"Randomly picks one of the below values (heavily weighted towards low wind for a better gameplay experience)","Lets the game engine decide (engine only likes to put heavy winds when it's cloudy)","No Wind","Lvl 1 Wind","Lvl 2 Wind","Lvl 3 Wind (Start to see the effects on smoke around here)","Lvl 4 Wind","Lvl 5 Wind (Smoke grenades are less effective)","Lvl 6 Wind","Lvl 7 (Smoke Grenades are useless at this point)","Lvl 8 Wind","Lvl 9 Wind","Lvl 10 Wind (Game wasn't designed for wind this fast at this point.  Doesn't affect performance.)","Lvl 69 Wind","Lvl 420 Wind","Lvl 42069 Wind"};
+		default = -1;
+	};
+	class A3E_Param_WeatherRain
+	{
+		title="Rain Density (Cloud Cover must be at least 50%)";
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10,11};
+		texts[] = {"Randomly picks one of the below values","Lets the game engine decide (depends on Cloud Cover)","No Rain","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"};
+		default = 0;
 	};
 	class A3E_Param_Grass
 	{	

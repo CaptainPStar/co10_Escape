@@ -191,7 +191,6 @@ class CfgFunctions
 			class PopulateLocation {};
 			class DepopulateLocation {};
 			class InitGuardedLocations {};
-			class DynamicWeatherEffects {};
 			class InsertionTruck {};
 			class MilitaryTraffic {};
 			class MoveVehicle {};
@@ -236,15 +235,6 @@ class CfgFunctions
 			class ATCam {};
 			class CaptiveHandle {};
 			class GroundHandler {};
-		};
-	};
-	class MB
-	{
-		class Weather
-		{
-			class randomWeather2 {
-				file  = "functions\Weather\randomWeather2.sqf";
-			};
 		};
 	};
 };
