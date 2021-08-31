@@ -92,6 +92,9 @@ switch (_enemyFrequency) do {
 		,"gm_gc_army_t55am2_win"
 		,"gm_gc_army_t55am2b_win"
 		,"gm_gc_army_zsu234v1_win"
+		,"gm_gc_army_ural375d_mlrs_win"
+		,"gm_gc_army_2s1_win"
+		,"gm_gc_army_2p16_win"
 		,"gm_gc_army_bmp1sp2_win"
 		,"gm_gc_army_bmp1sp2_win"
 		,"gm_gc_army_brdm2_win"
@@ -121,6 +124,9 @@ switch (_enemyFrequency) do {
 		,"gm_pl_army_bmp1sp2_olw"
 		,"gm_pl_army_bmp1sp2_olw"
 		,"gm_pl_army_zsu234v1_win"
+		,"gm_pl_army_2p16_olw"
+		,"gm_pl_army_2s1_olw"
+		,"gm_pl_army_ural375d_mlrs_olw"
 		,"gm_pl_army_t55_olw"
 		,"gm_pl_army_t55a_olw"
 		,"gm_pl_army_t55ak_olw"];
@@ -153,6 +159,9 @@ switch (_enemyFrequency) do {
 		,"gm_gc_army_t55am2_win"
 		,"gm_gc_army_t55am2b_win"
 		,"gm_gc_army_zsu234v1_win"
+		,"gm_gc_army_ural375d_mlrs_win"
+		,"gm_gc_army_2s1_win"
+		,"gm_gc_army_2p16_win"
 		,"gm_gc_army_bmp1sp2_win"
 		,"gm_gc_army_bmp1sp2_win"
 		,"gm_gc_army_brdm2_win"
@@ -182,6 +191,9 @@ switch (_enemyFrequency) do {
 		,"gm_pl_army_bmp1sp2_olw"
 		,"gm_pl_army_bmp1sp2_olw"
 		,"gm_pl_army_zsu234v1_win"
+		,"gm_pl_army_2p16_olw"
+		,"gm_pl_army_2s1_olw"
+		,"gm_pl_army_ural375d_mlrs_olw"
 		,"gm_pl_army_t55_olw"
 		,"gm_pl_army_t55a_olw"
 		,"gm_pl_army_t55ak_olw"];
@@ -214,6 +226,9 @@ switch (_enemyFrequency) do {
 		,"gm_gc_army_t55am2_win"
 		,"gm_gc_army_t55am2b_win"
 		,"gm_gc_army_zsu234v1_win"
+		,"gm_gc_army_ural375d_mlrs_win"
+		,"gm_gc_army_2s1_win"
+		,"gm_gc_army_2p16_win"
 		,"gm_gc_army_bmp1sp2_win"
 		,"gm_gc_army_bmp1sp2_win"
 		,"gm_gc_army_brdm2_win"
@@ -243,6 +258,9 @@ switch (_enemyFrequency) do {
 		,"gm_pl_army_bmp1sp2_olw"
 		,"gm_pl_army_bmp1sp2_olw"
 		,"gm_pl_army_zsu234v1_win"
+		,"gm_pl_army_2p16_olw"
+		,"gm_pl_army_2s1_olw"
+		,"gm_pl_army_ural375d_mlrs_olw"
 		,"gm_pl_army_t55_olw"
 		,"gm_pl_army_t55a_olw"
 		,"gm_pl_army_t55ak_olw"];
@@ -407,7 +425,8 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 	"gm_gc_army_brdm2_win"
 	,"gm_gc_army_btr60pb_win"
 	,"gm_gc_army_bmp1sp2_win"
-	,"gm_gc_army_pt76b_win"];
+	,"gm_gc_army_pt76b_win"
+	,"gm_gc_army_2s1_win"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"gm_gc_army_t55_win"
@@ -442,6 +461,7 @@ a3e_arr_ComCenParkedVehicles = [
 	,"gm_gc_army_btr60pu12_win"
 	,"gm_gc_army_bmp1sp2_win"
 	,"gm_gc_army_zsu234v1_win"
+	,"gm_gc_army_2p16_win"
 	,"gm_gc_army_pt76b_win"
 	,"gm_gc_army_t55_win"];
 
@@ -565,6 +585,7 @@ a3e_arr_AmmoDepotLaunchers pushback ["gm_rpg7_wud", 10, 1, 2, ["gm_1Rnd_40mm_hea
 a3e_arr_AmmoDepotOrdnance = [];
 // General weapons
 a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["gm_explosive_plnp_charge"], 5];
+a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["gm_mine_ap_pfm1"], 5];
 a3e_arr_AmmoDepotOrdnance pushback [objNull, 30, 1, 1, ["gm_mine_at_tm46"], 5];
 
 // Weapons and ammo in the vehicle box (the big one)
@@ -639,7 +660,7 @@ a3e_arr_CivilianCarWeapons pushback ["gm_pm_blk", "gm_8Rnd_9x18mm_B_pst_pm_blk",
 a3e_arr_CivilianCarWeapons pushback ["gm_wz78_blk", "gm_1Rnd_265mm_flare_multi_red_DM23", 6];
 a3e_arr_CivilianCarWeapons pushback ["gm_wz78_blk", "gm_1Rnd_265mm_flare_para_yel_DM16", 6];
 a3e_arr_CivilianCarWeapons pushback ["gm_wz78_blk", "gm_1Rnd_265mm_flare_multi_nbc_DM47", 6];
-a3e_arr_CivilianCarWeapons pushback ["gm_m16a1_blk", "gm_20Rnd_556x45mm_b_M855_stanag_gry", 6];
+a3e_arr_CivilianCarWeapons pushback ["gm_m16a1_blk", "gm_20Rnd_556x45mm_B_M193_stanag_gry", 6];
 a3e_arr_CivilianCarWeapons pushback ["gm_mp2a1_blk", "gm_32rnd_9x19mm_b_dm11_mp2_blk", 6];
 a3e_arr_CivilianCarWeapons pushback ["gm_rpg7_prp", "gm_1rnd_40mm_heat_pg7v_rpg7", 2];
 a3e_arr_CivilianCarWeapons pushback ["gm_mp5a2_blk", "gm_30Rnd_9x19mm_B_DM11_mp5_blk", 6];
@@ -901,7 +922,7 @@ a3e_arr_CrashSiteWeapons pushback ["gm_mp2a1_blk", 30, 1, 2, ["gm_32rnd_9x19mm_b
 a3e_arr_CrashSiteWeapons pushback ["gm_mp5a2_blk", 30, 1, 2, ["gm_30Rnd_9x19mm_B_DM11_mp5_blk"], 6];
 a3e_arr_CrashSiteWeapons pushback ["gm_mp5sd3_blk", 30, 1, 2, ["gm_30Rnd_9x19mm_B_DM51_mp5a3_blk"], 6];
 a3e_arr_CrashSiteWeapons pushback ["gm_mg3_blk", 25, 1, 2, ["gm_120rnd_762x51mm_b_t_dm21_mg3_grn"], 4];
-a3e_arr_CrashSiteWeapons pushback ["gm_g36a1_blk", 20, 1, 2, ["gm_30Rnd_556x45mm_B_DM11_g36_blk"], 8];
+a3e_arr_CrashSiteWeapons pushback ["gm_g36a1_blk", 20, 1, 2, ["gm_30Rnd_556x45mm_B_T_DM21_g36_blk"], 8];
 a3e_arr_CrashSiteWeapons pushback ["gm_hk69a1_blk", 30, 2, 4, ["1Rnd_HE_Grenade_shell", "UGL_FlareWhite_F", "1Rnd_Smoke_Grenade_shell"], 6];
 // Attachments and other items in crash site box
 a3e_arr_CrashSiteItems = [];

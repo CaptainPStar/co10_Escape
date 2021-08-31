@@ -74,7 +74,6 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_iltis_milan"
 		,"gm_ge_army_iltis_mg3"
 		,"gm_ge_army_iltis_mg3"
-		,"gm_ge_army_kat1_454_cargo"
 		,"gm_ge_army_u1300l_container"
 		,"gm_ge_army_u1300l_medic"
 		,"gm_ge_army_u1300l_repair"
@@ -86,6 +85,9 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_kat1_451_refuel"
 		,"gm_ge_army_kat1_451_cargo"
 		,"gm_ge_army_kat1_451_cargo"
+		,"gm_ge_army_kat1_452_container"
+		,"gm_ge_army_kat1_454_cargo"
+		,"gm_ge_army_kat1_454_reammo"
 		,"gm_ge_army_typ1200_cargo"
 		,"gm_ge_army_gepard1a1"
 		,"gm_ge_army_m113a1g_apc"
@@ -99,6 +101,9 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_luchsa1"
 		,"gm_ge_army_luchsa2"
 		,"gm_ge_army_bpz2a0"
+		,"gm_ge_army_bibera0"
+		,"gm_ge_army_kat1_463_mlrs"
+		,"gm_ge_army_m109g"
 		,"gm_ge_army_marder1a1a"
 		,"gm_ge_army_marder1a1plus"
 		,"gm_ge_army_marder1a2"
@@ -119,6 +124,8 @@ switch (_enemyFrequency) do {
 		,"gm_dk_army_typ1200_cargo"
 		,"gm_dk_army_typ1200_cargo"
 		,"gm_dk_army_bpz2a0"
+		,"gm_dk_army_bibera0"
+		,"gm_dk_army_m109"
 		,"gm_dk_army_Leopard1a3"];
     };
     case 2: {//Some (4-6)
@@ -131,7 +138,6 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_iltis_milan"
 		,"gm_ge_army_iltis_mg3"
 		,"gm_ge_army_iltis_mg3"
-		,"gm_ge_army_kat1_454_cargo"
 		,"gm_ge_army_u1300l_container"
 		,"gm_ge_army_u1300l_medic"
 		,"gm_ge_army_u1300l_repair"
@@ -143,8 +149,10 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_kat1_451_refuel"
 		,"gm_ge_army_kat1_451_cargo"
 		,"gm_ge_army_kat1_451_cargo"
+		,"gm_ge_army_kat1_452_container"
+		,"gm_ge_army_kat1_454_cargo"
+		,"gm_ge_army_kat1_454_reammo"
 		,"gm_ge_army_typ1200_cargo"
-		,"gm_ge_army_gepard1a1"
 		,"gm_ge_army_gepard1a1"
 		,"gm_ge_army_m113a1g_apc"
 		,"gm_ge_army_m113a1g_apc_milan"
@@ -157,6 +165,9 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_luchsa1"
 		,"gm_ge_army_luchsa2"
 		,"gm_ge_army_bpz2a0"
+		,"gm_ge_army_bibera0"
+		,"gm_ge_army_kat1_463_mlrs"
+		,"gm_ge_army_m109g"
 		,"gm_ge_army_marder1a1a"
 		,"gm_ge_army_marder1a1plus"
 		,"gm_ge_army_marder1a2"
@@ -177,6 +188,8 @@ switch (_enemyFrequency) do {
 		,"gm_dk_army_typ1200_cargo"
 		,"gm_dk_army_typ1200_cargo"
 		,"gm_dk_army_bpz2a0"
+		,"gm_dk_army_bibera0"
+		,"gm_dk_army_m109"
 		,"gm_dk_army_Leopard1a3"];
     };
     default {//A lot (7-8)
@@ -189,7 +202,6 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_iltis_milan"
 		,"gm_ge_army_iltis_mg3"
 		,"gm_ge_army_iltis_mg3"
-		,"gm_ge_army_kat1_454_cargo"
 		,"gm_ge_army_u1300l_container"
 		,"gm_ge_army_u1300l_medic"
 		,"gm_ge_army_u1300l_repair"
@@ -201,8 +213,10 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_kat1_451_refuel"
 		,"gm_ge_army_kat1_451_cargo"
 		,"gm_ge_army_kat1_451_cargo"
+		,"gm_ge_army_kat1_452_container"
+		,"gm_ge_army_kat1_454_cargo"
+		,"gm_ge_army_kat1_454_reammo"
 		,"gm_ge_army_typ1200_cargo"
-		,"gm_ge_army_gepard1a1"
 		,"gm_ge_army_gepard1a1"
 		,"gm_ge_army_m113a1g_apc"
 		,"gm_ge_army_m113a1g_apc_milan"
@@ -215,6 +229,9 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_luchsa1"
 		,"gm_ge_army_luchsa2"
 		,"gm_ge_army_bpz2a0"
+		,"gm_ge_army_bibera0"
+		,"gm_ge_army_kat1_463_mlrs"
+		,"gm_ge_army_m109g"
 		,"gm_ge_army_marder1a1a"
 		,"gm_ge_army_marder1a1plus"
 		,"gm_ge_army_marder1a2"
@@ -235,6 +252,8 @@ switch (_enemyFrequency) do {
 		,"gm_dk_army_typ1200_cargo"
 		,"gm_dk_army_typ1200_cargo"
 		,"gm_dk_army_bpz2a0"
+		,"gm_dk_army_bibera0"
+		,"gm_dk_army_m109"
 		,"gm_dk_army_Leopard1a3"];
     };
 };
@@ -390,9 +409,11 @@ a3e_arr_ComCenParkedVehicles = [
 	,"gm_ge_army_m113a1g_medic"
 	,"gm_ge_army_kat1_451_cargo"
 	,"gm_ge_army_kat1_451_refuel"
+	,"gm_ge_army_kat1_454_reammo"
 	,"gm_ge_army_fuchsa0_reconnaissance"
 	,"gm_ge_army_luchsa1"
-	,"gm_ge_army_bpz2a0"];
+	,"gm_ge_army_bpz2a0"
+	,"gm_ge_army_bibera0"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
@@ -435,6 +456,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"gm_ge_army_kat1_451_container"
 	,"gm_ge_army_kat1_451_refuel"
 	,"gm_ge_army_kat1_451_cargo"
+	,"gm_ge_army_kat1_454_reammo"
 	,"gm_ge_army_typ1200_cargo"
 	,"gm_ge_army_m113a1g_medic"
 	,"gm_ge_army_m113a1g_command"
@@ -480,7 +502,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["gm_mg3_blk", 50, 2, 4, ["gm_120rnd_762x
 a3e_arr_AmmoDepotBasicWeapons pushback ["gm_g3a4_oli", 50, 2, 4, ["gm_20rnd_762x51mm_b_t_dm21a2_g3_blk"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["gm_g3a3_oli", 50, 2, 4, ["gm_20rnd_762x51mm_b_t_dm21a1_g3_blk", "gm_1rnd_67mm_heat_dm22a1_g3"], 6];
 // non-CSAT weapons
-a3e_arr_AmmoDepotBasicWeapons pushback ["gm_m16a1_blk", 50, 1, 3, ["gm_20Rnd_556x45mm_b_M855_stanag_gry"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["gm_m16a1_blk", 50, 1, 3, ["gm_20Rnd_556x45mm_B_M193_stanag_gry"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["gm_m16a2_blk", 40, 1, 3, ["gm_30Rnd_556x45mm_b_M855_stanag_gry"], 6];
 
 // Weapons and ammo in the special weapons box
@@ -540,6 +562,7 @@ a3e_arr_AmmoDepotVehicleItems pushback ["gm_repairkit_01", 20, 1, 1, [], 0];
 a3e_arr_AmmoDepotVehicleItems pushback ["gm_ge_army_medkit_80", 20, 1, 1, [], 0];
 a3e_arr_AmmoDepotVehicleItems pushback ["gm_ge_army_gauzeBandage", 100, 10, 50, [], 0];
 a3e_arr_AmmoDepotVehicleItems pushback ["gm_ge_facewear_m65", 50, 1, 3, [], 0];
+a3e_arr_AmmoDepotVehicleItems pushback ["gm_ge_facewear_sunglasses", 50, 1, 3, [], 0];
 a3e_arr_AmmoDepotVehicleBackpacks = ["gm_ge_army_backpack_80_oli"];
 // Items
 
@@ -593,7 +616,7 @@ a3e_arr_CivilianCarWeapons pushback ["gm_p1_blk", "gm_8rnd_9x19mm_b_dm51_p1_blk"
 a3e_arr_CivilianCarWeapons pushback ["gm_p2a1_blk", "gm_1Rnd_265mm_flare_multi_red_gc", 6];
 a3e_arr_CivilianCarWeapons pushback ["gm_p2a1_blk", "gm_1Rnd_265mm_flare_para_yel_DM16", 6];
 a3e_arr_CivilianCarWeapons pushback ["gm_p2a1_blk", "gm_1Rnd_265mm_flare_multi_nbc_DM47", 6];
-a3e_arr_CivilianCarWeapons pushback ["gm_m16a1_blk", "gm_20Rnd_556x45mm_b_M855_stanag_gry", 6];
+a3e_arr_CivilianCarWeapons pushback ["gm_m16a1_blk", "gm_20Rnd_556x45mm_B_M193_stanag_gry", 6];
 a3e_arr_CivilianCarWeapons pushback ["gm_mp2a1_blk", "gm_32rnd_9x19mm_b_dm11_mp2_blk", 6];
 a3e_arr_CivilianCarWeapons pushback ["gm_rpg7_prp", "gm_1rnd_40mm_heat_pg7v_rpg7", 2];
 a3e_arr_CivilianCarWeapons pushback ["gm_pm63_blk", "gm_15Rnd_9x18mm_B_pst_pm63_blk", 7];
