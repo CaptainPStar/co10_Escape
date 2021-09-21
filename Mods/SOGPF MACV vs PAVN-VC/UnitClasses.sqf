@@ -69,13 +69,18 @@ a3e_arr_PrisonBackpackWeapons pushback ["vn_pm_sd","vn_pm_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_fkb1_pm","vn_pm_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_tt33","vn_tt33_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_welrod","vn_welrod_mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["vn_vz61_p","vn_vz61_mag"];
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	"vn_c_bicycle_01"
 	,"vn_c_bicycle_02"
 	,"vn_c_wheeled_m151_02"
-	,"vn_c_wheeled_m151_01"];
+	,"vn_c_wheeled_m151_01"
+	,"vn_c_car_01_01"
+	,"vn_c_car_02_01"
+	,"vn_c_car_03_01"
+	,"vn_c_car_04_01"];
 	
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -109,6 +114,12 @@ switch (_enemyFrequency) do {
 		"vn_o_bicycle_01_vcmf"
 		,"vn_o_bicycle_01_vcmf"
 		,"vn_o_bicycle_02_vcmf"
+		,"vn_o_car_01_01"
+		,"vn_o_car_02_01"
+		,"vn_o_car_03_01"
+		,"vn_o_car_04_01"
+		,"vn_o_car_04_mg_01"
+		,"vn_o_car_04_mg_01"
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_02_vcmf"
@@ -159,6 +170,12 @@ switch (_enemyFrequency) do {
 		"vn_o_bicycle_01_vcmf"
 		,"vn_o_bicycle_01_vcmf"
 		,"vn_o_bicycle_02_vcmf"
+		,"vn_o_car_01_01"
+		,"vn_o_car_02_01"
+		,"vn_o_car_03_01"
+		,"vn_o_car_04_01"
+		,"vn_o_car_04_mg_01"
+		,"vn_o_car_04_mg_01"
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_02_vcmf"
@@ -212,6 +229,12 @@ switch (_enemyFrequency) do {
 		"vn_o_bicycle_01_vcmf"
 		,"vn_o_bicycle_01_vcmf"
 		,"vn_o_bicycle_02_vcmf"
+		,"vn_o_car_01_01"
+		,"vn_o_car_02_01"
+		,"vn_o_car_03_01"
+		,"vn_o_car_04_01"
+		,"vn_o_car_04_mg_01"
+		,"vn_o_car_04_mg_01"
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_02_vcmf"
@@ -451,15 +474,18 @@ a3e_arr_ComCenParkedVehicles = [
 a3e_arr_Escape_EnemyCivilianCarTypes = [
 	"vn_c_bicycle_01"
 	,"vn_c_wheeled_m151_02"
-	,"vn_c_wheeled_m151_02"
 	,"vn_c_wheeled_m151_01"
-	,"vn_c_wheeled_m151_01"];
+	,"vn_c_car_01_01"
+	,"vn_c_car_02_01"
+	,"vn_c_car_03_01"
+	,"vn_c_car_04_01"];
 
 // Vehicles, weapons and ammo at ammo depots
 
 // Random array. An ammo depot contains one static weapon of the following types:
 a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	"vn_o_nva_static_at3"
+	,"vn_o_nva_static_type56rr"
 	,"vn_o_nva_static_dshkm_high_01"
 	,"vn_o_nva_static_dshkm_low_02"
 	,"vn_o_nva_static_dshkm_low_01"
@@ -543,6 +569,7 @@ A3E_AmmoDepotTemplates = [
 a3e_arr_AmmoDepotBasicWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_pm", 50, 4, 8, ["vn_pm_mag"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["vn_vz61_p", 50, 4, 8, ["vn_vz61_mag"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_sks", 100, 4, 8, ["vn_sks_t_mag"], 10];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_sks_gl", 50, 2, 4, ["vn_sks_mag","vn_22mm_m60_frag_mag","vn_22mm_m22_smoke_mag","vn_22mm_lume_mag"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_rpd", 30, 2, 4, ["vn_rpd_100_mag"], 4];
@@ -668,6 +695,8 @@ a3e_arr_CivilianCarWeapons pushback ["vn_mc10", "vn_mc10_mag", 6];
 a3e_arr_CivilianCarWeapons pushback ["vn_m45_fold", "vn_m45_mag", 6];
 a3e_arr_CivilianCarWeapons pushback ["vn_m72", "vn_m72_mag", 2];
 a3e_arr_CivilianCarWeapons pushback ["vn_m3a1", "vn_m3a1_t_mag", 6];
+a3e_arr_CivilianCarWeapons pushback ["vn_m1928_tommy", "vn_m1a1_30_t_mag", 4];
+a3e_arr_CivilianCarWeapons pushback ["vn_m63a_cdo", "vn_m63a_150_mag", 4];
 a3e_arr_CivilianCarWeapons pushback ["vn_b_item_trapkit", objNull, 0];
 a3e_arr_CivilianCarWeapons pushback ["vn_b_item_medikit_01", objNull, 0];
 a3e_arr_CivilianCarWeapons pushback ["vn_b_item_toolkit", objNull, 0];
@@ -961,11 +990,14 @@ a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["vn_m72", 40, 1, 2, ["vn_m72_mag"], 1];
 a3e_arr_CrashSiteWeapons pushback ["vn_m127", 50, 1, 2, ["vn_m127_mag","vn_m128_mag","vn_m129_mag"], 2];
 a3e_arr_CrashSiteWeapons pushback ["vn_xm177_camo", 50, 1, 2, ["vn_m16_20_t_mag"], 10];
+a3e_arr_CrashSiteWeapons pushback ["vn_m1a1_tommy", 50, 1, 2, ["vn_m1a1_30_t_mag"], 10];
 a3e_arr_CrashSiteWeapons pushback ["vn_m1carbine_gl", 40, 1, 2, ["vn_carbine_15_mag","vn_22mm_m1a2_frag_mag","vn_22mm_lume_mag"], 12];
 a3e_arr_CrashSiteWeapons pushback ["vn_m14", 75, 2, 4, ["vn_m14_mag"], 12];
 a3e_arr_CrashSiteWeapons pushback ["vn_m79_p", 50, 2, 4, ["vn_40mm_m381_he_mag", "vn_40mm_m576_buck_mag", "vn_40mm_m661_flare_g_mag"], 6];
 a3e_arr_CrashSiteWeapons pushback ["vn_mk22_sd", 30, 1, 2, ["vn_mk22_mag"], 6];
 a3e_arr_CrashSiteWeapons pushback ["vn_m63a", 30, 1, 2, ["vn_m63a_30_mag"], 10];
+a3e_arr_CrashSiteWeapons pushback ["vn_m63a_lmg", 20, 1, 2, ["vn_m63a_100_mag"], 5];
+a3e_arr_CrashSiteWeapons pushback ["vn_m63a_cdo", 20, 1, 2, ["vn_m63a_150_t_mag"], 5];
 a3e_arr_CrashSiteWeapons pushback ["vn_mx991_m1911", 50, 1, 2, ["vn_m1911_mag"], 6];
 a3e_arr_CrashSiteWeapons pushback ["vn_m60", 30, 1, 2, ["vn_m60_100_mag"], 4];
 // Attachments and other items in crash site box
