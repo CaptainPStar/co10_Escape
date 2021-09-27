@@ -870,7 +870,7 @@ if(A3E_Param_UseDLCMarksmen==1) then {
 	a3e_arr_CrashSiteWeapons pushback ["srifle_DMR_07_blk_DMS_F", 10, 1, 2, ["20Rnd_650x39_Cased_Mag_F"], 8];
 };
 a3e_arr_CrashSiteWeapons pushback ["arifle_CTAR_blk_F", 75, 2, 4, ["30Rnd_580x42_Mag_F"], 6];
-a3e_arr_CrashSiteWeapons pushback ["arifle_CTAR_GL_blk_F", 50, 2, 4, ["30Rnd_65x39_caseless_green", "1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F"], 6];
+a3e_arr_CrashSiteWeapons pushback ["arifle_CTAR_GL_blk_F", 50, 2, 4, ["30Rnd_580x42_Mag_F", "1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F"], 6];
 a3e_arr_CrashSiteWeapons pushback ["arifle_CTARS_blk_F", 20, 1, 2, ["100Rnd_580x42_Mag_Tracer_F"], 6];
 a3e_arr_CrashSiteWeapons pushback ["arifle_CTAR_ghex_F", 10, 1, 2, ["30Rnd_580x42_Mag_F"], 8];
 a3e_arr_CrashSiteWeapons pushback ["SMG_02_ACO_F", 10, 1, 2, ["30Rnd_9x21_Mag_SMG_02_Tracer_Green"], 8];
