@@ -31,278 +31,120 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
-//Pistols
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Glock17","CUP_17Rnd_9x19_glock17"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Glock17","CUP_17Rnd_9x19_glock17"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Browning_HP","CUP_13Rnd_9x19_Browning_HP"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_CZ75","CUP_16Rnd_9x19_cz75"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Compact","CUP_10Rnd_9x19_Compact"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Duty","16Rnd_9x21_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Duty_M3X","16Rnd_9x21_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Phantom","CUP_18Rnd_9x19_Phantom"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Phantom_Flashlight","CUP_18Rnd_9x19_Phantom"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Phantom_Flashlight_snds","CUP_18Rnd_9x19_Phantom"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Deagle","CUP_7Rnd_50AE_Deagle"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_M17_Black","CUP_17Rnd_9x19_M17_Black"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_M17_Black","CUP_21Rnd_9x19_M17_Black"];
 a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Glock17_blk","CUP_17Rnd_9x19_glock17"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_glock17_blk_flashlight_snds","CUP_17Rnd_9x19_glock17"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_glock17_blk_snds","CUP_17Rnd_9x19_glock17"];
 a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_glock17_flashlight","CUP_17Rnd_9x19_glock17"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_glock17_flashlight_snds","CUP_17Rnd_9x19_glock17"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_glock17_snds","CUP_17Rnd_9x19_glock17"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_glock17_blk_flashlight_snds","CUP_17Rnd_9x19_glock17"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Colt1911","CUP_7Rnd_45ACP_1911"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Colt1911_snds","CUP_7Rnd_45ACP_1911"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_M9","CUP_15Rnd_9x19_M9"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_M9_snds","CUP_15Rnd_9x19_M9"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_M9A1","CUP_15Rnd_9x19_M9"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Mac10","CUP_30Rnd_45ACP_MAC10_M"];
 a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_PB6P9","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_PB6P9","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_PB6P9","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_PB6P9","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_PB6P9","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_PB6P9","CUP_8Rnd_9x18_Makarov_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_PB6P9","CUP_8Rnd_9x18_Makarov_M"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_MicroUzi","CUP_30Rnd_9x19_UZI"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_MicroUzi_snds","CUP_30Rnd_9x19_UZI"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Mk23","CUP_12Rnd_45ACP_mk23"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_mk23_snds_lam","CUP_12Rnd_45ACP_mk23"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_MP7","CUP_20Rnd_46x30_MP7"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_MP7","CUP_40Rnd_46x30_MP7"];
 a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_PB6P9_snds","CUP_8Rnd_9x18_MakarovSD_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_PB6P9_snds","CUP_8Rnd_9x18_MakarovSD_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TEC9","CUP_32Rnd_9x19_TEC9"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TEC9","CUP_32Rnd_9x19_TEC9"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TEC9","CUP_32Rnd_9x19_TEC9"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TEC9","CUP_32Rnd_9x19_TEC9"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TEC9","CUP_32Rnd_9x19_TEC9"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TaurusTracker455","CUP_6Rnd_45ACP_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TaurusTracker455","CUP_6Rnd_45ACP_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TaurusTracker455","CUP_6Rnd_45ACP_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TaurusTracker455","CUP_6Rnd_45ACP_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TaurusTracker455","CUP_6Rnd_45ACP_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TaurusTracker455","CUP_6Rnd_45ACP_M"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_PMM","CUP_12Rnd_9x18_PMM_M"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_SA61","CUP_20Rnd_B_765x17_Ball_M"];
 a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TaurusTracker455","CUP_6Rnd_45ACP_M"];
 a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TaurusTracker455_gold","CUP_6Rnd_45ACP_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Deagle","CUP_7Rnd_50AE_Deagle"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Deagle","CUP_7Rnd_50AE_Deagle"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Deagle","CUP_7Rnd_50AE_Deagle"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Deagle","CUP_7Rnd_50AE_Deagle"];
-//SMGs
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_MicroUzi","CUP_30Rnd_9x19_UZI"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_smg_Mac10","CUP_30Rnd_45ACP_MAC10_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_SA61","CUP_20Rnd_B_765x17_Ball_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_smg_SA61","CUP_20Rnd_B_765x17_Ball_M"];
-a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_Mac10","CUP_30Rnd_45ACP_MAC10_M"];
-
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TEC9","CUP_32Rnd_9x19_TEC9"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TEC9_FA","CUP_32Rnd_9x19_TEC9"];
+a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TT","CUP_8Rnd_762x25_TT"];
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
+	//CUP Civ
 	"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Datsun_4seat"
 	,"CUP_C_Datsun_4seat"
 	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_camo_Civ"
-	,"CUP_C_Golf4_camodark_Civ"
-	,"CUP_C_Golf4_camodigital_Civ"
-	,"CUP_C_Golf4_crowe_Civ"
-	,"CUP_C_Golf4_kitty_Civ"
-	,"CUP_C_Golf4_reptile_Civ"
-	,"CUP_C_Golf4_whiteblood_Civ"
+	,"CUP_C_Golf4_Sport_random_Civ"
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
 	,"CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
+	//CUP Civ Cherna
 	,"CUP_C_TT650_CIV"
 	,"CUP_C_TT650_CIV"
-	,"CUP_C_TT650_CIV"
-	,"CUP_C_TT650_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_S1203_Militia_CIV"
+	,"CUP_C_Skoda_CR_CIV"
+	,"CUP_C_Skoda_CR_CIV"
+	,"CUP_C_Skoda_CR_CIV"
+	,"CUP_C_Skoda_CR_CIV"
+	,"CUP_C_S1203_CIV_CR"
+	,"CUP_C_S1203_CIV_CR"
+	,"CUP_B_S1203_Ambulance_CR"
 	,"CUP_C_S1203_Militia_CIV"
 	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Plain"
 	,"CUP_C_Datsun_Plain"
 	,"CUP_C_Datsun_Tubeframe"
-	,"CUP_C_Datsun_Tubeframe"
-	,"CUP_C_Datsun_Tubeframe"
+	,"CUP_C_Volha_CR_CIV"
+	,"CUP_C_Volha_CR_CIV"
+	,"CUP_C_Volha_CR_CIV"
+	,"CUP_C_Volha_CR_CIV"
+	,"CUP_C_Golf4_CR_Civ"
+	,"CUP_C_Golf4_CR_Civ"
+	,"CUP_C_Golf4_Sport_CR_Civ"
+	,"CUP_O_Hilux_unarmed_CR_CIV"
+	,"CUP_O_Hilux_unarmed_CR_CIV"
+	,"CUP_O_Hilux_unarmed_CR_CIV"
+	,"CUP_O_Hilux_unarmed_CR_CIV"
 	,"CUP_C_Ikarus_Chernarus"
 	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
+	,"CUP_C_Bus_City_CRCIV"
 	,"CUP_C_SUV_CIV"
 	,"CUP_C_SUV_CIV"
 	,"CUP_C_SUV_CIV"
 	,"CUP_C_SUV_CIV"
 	,"CUP_C_Tractor_CIV"
-	,"CUP_C_Tractor_CIV"
-	,"CUP_C_Tractor_Old_CIV"
 	,"CUP_C_Tractor_Old_CIV"
 	,"CUP_C_Ural_Civ_03"
 	,"CUP_C_Ural_Civ_03"
-	,"CUP_C_Ural_Civ_03"
 	,"CUP_C_Ural_Open_Civ_03"
 	,"CUP_C_Ural_Open_Civ_03"
-	,"CUP_C_Ural_Open_Civ_03"
-    ,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_TT650_TK_CIV"
-	,"CUP_C_TT650_TK_CIV"
-	,"CUP_C_TT650_TK_CIV"
-	,"CUP_C_TT650_TK_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"];
+	,"CUP_C_Lada_CIV"
+	,"CUP_C_Lada_CIV"
+	,"CUP_C_Lada_CIV"
+	,"CUP_C_Lada_CIV"
+	,"CUP_LADA_LM_CIV"
+	//Vanilla
+	,"C_Hatchback_01_F"
+	,"C_Hatchback_01_F"
+	,"C_Hatchback_01_sport_F"
+	,"C_Offroad_01_F"
+	,"C_Offroad_01_F"
+	,"C_Offroad_01_repair_F"
+	,"C_Quadbike_01_F"
+	,"C_Quadbike_01_F"
+	,"C_SUV_01_F"
+	,"C_SUV_01_F"
+	,"C_Van_01_box_F"
+	,"C_Van_01_transport_F"
+	,"C_Van_01_fuel_F"
+	,"C_Truck_02_box_F"
+	,"C_Truck_02_covered_F"
+	,"C_Truck_02_fuel_F"
+	,"C_Truck_02_transport_F"];
 	if(A3E_Param_UseDLCApex==1) then {
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	};
 	if(A3E_Param_UseDLCLaws==1) then {
@@ -310,6 +152,14 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
+	};
+	if(A3E_Param_UseDLCContact==1) then {
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Tractor_01_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_01_covered_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_01_covered_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_01_covered_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_01_comms_F";
 	};
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
@@ -371,25 +221,32 @@ switch (_enemyFrequency) do {
 		,"CUP_B_T72_CDF"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		//Unarmed Cars  1 set
-		"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
+		"CUP_I_nM1025_Unarmed_ION_WIN"
+		,"CUP_I_nM1025_Unarmed_ION_WIN"
+		,"CUP_I_nM1025_Unarmed_DF_ION_WIN"
+		,"CUP_I_nM1037sc_ION_WIN"
+		,"CUP_I_nM1038_ION_WIN"
+		,"CUP_I_nM1038_4s_ION_WIN"
+		,"CUP_I_nM1035_amb_ION_WIN"
+		,"CUP_I_nM1038_Ammo_ION_WIN"
+		,"CUP_I_nM1038_Repair_ION_WIN"
 		//Armed Cars
-		,"CUP_I_SUV_Armored_ION"
+		,"CUP_I_nM1025_M2_ION_WIN"
+		,"CUP_I_nM1025_M240_ION_WIN"
+		,"CUP_I_nM1025_Mk19_ION_WIN"
+		,"CUP_B_nM1025_SOV_M2_ION_WIN"
+		,"CUP_B_nM1025_SOV_Mk19_ION_WIN"
+		,"CUP_I_nM1036_TOW_ION_WIN"
 		//MRAPS
         ,"CUP_I_RG31_Mk19_W_ION"
 		,"CUP_I_RG31E_M2_W_ION"
+		,"CUP_I_RG31_M2_W_ION"
 		,"CUP_I_RG31_M2_W_GC_ION"];
-		if(A3E_Param_UseDLCApex==1) then {
+		/*if(A3E_Param_UseDLCApex==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_AT_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_LMG_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_unarmed_ION";
-		};
+		};*/
 		if(A3E_Param_UseDLCLaws==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_ammo_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_Cargo_ION";
@@ -461,29 +318,32 @@ switch (_enemyFrequency) do {
 		,"CUP_B_T72_CDF"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		//Unarmed Cars  1 set
-		"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		//Armed Cars  2 sets
-		,"CUP_I_SUV_Armored_ION"
-		,"CUP_I_SUV_Armored_ION"
-		//MRAPS  2 sets
-        ,"CUP_I_RG31_Mk19_W_ION"  //1
+		"CUP_I_nM1025_Unarmed_ION_WIN"
+		,"CUP_I_nM1025_Unarmed_ION_WIN"
+		,"CUP_I_nM1025_Unarmed_DF_ION_WIN"
+		,"CUP_I_nM1037sc_ION_WIN"
+		,"CUP_I_nM1038_ION_WIN"
+		,"CUP_I_nM1038_4s_ION_WIN"
+		,"CUP_I_nM1035_amb_ION_WIN"
+		,"CUP_I_nM1038_Ammo_ION_WIN"
+		,"CUP_I_nM1038_Repair_ION_WIN"
+		//Armed Cars
+		,"CUP_I_nM1025_M2_ION_WIN"
+		,"CUP_I_nM1025_M240_ION_WIN"
+		,"CUP_I_nM1025_Mk19_ION_WIN"
+		,"CUP_B_nM1025_SOV_M2_ION_WIN"
+		,"CUP_B_nM1025_SOV_Mk19_ION_WIN"
+		,"CUP_I_nM1036_TOW_ION_WIN"
+		//MRAPS
+        ,"CUP_I_RG31_Mk19_W_ION"
 		,"CUP_I_RG31E_M2_W_ION"
-		,"CUP_I_RG31_M2_W_GC_ION"
-		,"CUP_I_RG31_Mk19_W_ION"  //2
-		,"CUP_I_RG31E_M2_W_ION"
+		,"CUP_I_RG31_M2_W_ION"
 		,"CUP_I_RG31_M2_W_GC_ION"];
-		if(A3E_Param_UseDLCApex==1) then {
+		/*if(A3E_Param_UseDLCApex==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_AT_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_LMG_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_unarmed_ION";
-		};
+		};*/
 		if(A3E_Param_UseDLCLaws==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_ammo_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_Cargo_ION";
@@ -561,29 +421,36 @@ switch (_enemyFrequency) do {
 		,"CUP_B_T72_CDF"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		//Unarmed Cars  1 set
-		"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		,"CUP_I_SUV_ION"
-		//Armed Cars  2 sets
-		,"CUP_I_SUV_Armored_ION"
-		,"CUP_I_SUV_Armored_ION"
-		//MRAPS  2 sets
-        ,"CUP_I_RG31_Mk19_W_ION"  //1
+		"CUP_I_nM1025_Unarmed_ION_WIN"
+		,"CUP_I_nM1025_Unarmed_ION_WIN"
+		,"CUP_I_nM1025_Unarmed_DF_ION_WIN"
+		,"CUP_I_nM1037sc_ION_WIN"
+		,"CUP_I_nM1038_ION_WIN"
+		,"CUP_I_nM1038_4s_ION_WIN"
+		,"CUP_I_nM1035_amb_ION_WIN"
+		,"CUP_I_nM1038_Ammo_ION_WIN"
+		,"CUP_I_nM1038_Repair_ION_WIN"
+		//Armed Cars
+		,"CUP_I_nM1025_M2_ION_WIN"
+		,"CUP_I_nM1025_M240_ION_WIN"
+		,"CUP_I_nM1025_Mk19_ION_WIN"
+		,"CUP_B_nM1025_SOV_M2_ION_WIN"
+		,"CUP_B_nM1025_SOV_Mk19_ION_WIN"
+		,"CUP_I_nM1036_TOW_ION_WIN"
+		//MRAPS	2 sets
+        ,"CUP_I_RG31_Mk19_W_ION"	//1
 		,"CUP_I_RG31E_M2_W_ION"
+		,"CUP_I_RG31_M2_W_ION"
 		,"CUP_I_RG31_M2_W_GC_ION"
-		,"CUP_I_RG31_Mk19_W_ION"  //2
+		,"CUP_I_RG31_Mk19_W_ION"	//2
 		,"CUP_I_RG31E_M2_W_ION"
+		,"CUP_I_RG31_M2_W_ION"
 		,"CUP_I_RG31_M2_W_GC_ION"];
-		if(A3E_Param_UseDLCApex==1) then {
+		/*if(A3E_Param_UseDLCApex==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_AT_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_LMG_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_unarmed_ION";
-		};
+		};*/
 		if(A3E_Param_UseDLCLaws==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_ammo_ION";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_Van_Cargo_ION";
@@ -676,16 +543,14 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"CUP_B_UAZ_SPG9_CDF"
 	,"CUP_B_UAZ_AGS30_CDF"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
-	"CUP_I_SUV_Armored_ION"
+	"CUP_I_nM1025_M2_ION_WIN"
+	,"CUP_I_nM1025_M240_ION_WIN"
+	,"CUP_I_nM1025_Mk19_ION_WIN"
+	,"CUP_I_nM1036_TOW_ION_WIN"
 	,"CUP_I_SUV_Armored_ION"
     ,"CUP_I_RG31_Mk19_W_ION"
     ,"CUP_I_RG31E_M2_W_ION"
     ,"CUP_I_RG31_M2_W_GC_ION"];
-	if(A3E_Param_UseDLCApex==1) then {
-	a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_AT_ION";
-	a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_LMG_ION";
-	a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "CUP_I_4WD_unarmed_ION";
-	};
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
@@ -694,7 +559,8 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	,"CUP_B_Kamaz_CDF"
 	,"CUP_B_Kamaz_Open_CDF"];
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
-	"CUP_I_SUV_ION"];
+	"CUP_I_nM1025_Unarmed_ION_WIN"
+	,"CUP_I_nM1038_4s_ION_WIN"];
 	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind pushback "CUP_I_Van_Transport_ION";
 	};
@@ -744,7 +610,7 @@ a3e_arr_ComCenParkedVehicles = [
 	,"CUP_B_Ural_Refuel_CDF"
 	,"CUP_B_Ural_Repair_CDF"
 	,"CUP_B_Ural_ZU23_CDF"
-	,"CUP_I_SUV_ION"
+	,"CUP_I_nM1025_Unarmed_ION_WIN"
 	,"CUP_I_SUV_Armored_ION"
 	,"CUP_I_SUV_Armored_ION"];
 	if(A3E_Param_UseDLCApex==1) then {
@@ -762,219 +628,87 @@ a3e_arr_ComCenParkedVehicles = [
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
+	//CUP Civ
 	"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Datsun_4seat"
-	,"CUP_C_Datsun_4seat"
 	,"CUP_C_Datsun_4seat"
 	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_random_Civ"
-	,"CUP_C_Golf4_camo_Civ"
-	,"CUP_C_Golf4_camodark_Civ"
-	,"CUP_C_Golf4_camodigital_Civ"
-	,"CUP_C_Golf4_crowe_Civ"
-	,"CUP_C_Golf4_kitty_Civ"
-	,"CUP_C_Golf4_reptile_Civ"
-	,"CUP_C_Golf4_whiteblood_Civ"
+	,"CUP_C_Golf4_Sport_random_Civ"
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
 	,"CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Octavia_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_Skoda_Blue_CIV"
-	,"CUP_C_Skoda_Green_CIV"
-	,"CUP_C_Skoda_Red_CIV"
-	,"CUP_C_Skoda_White_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_S1203_Militia_CIV"
-	,"CUP_C_S1203_Militia_CIV"
+	//CUP Civ Cherna
+	,"CUP_C_Skoda_CR_CIV"
+	,"CUP_C_Skoda_CR_CIV"
+	,"CUP_C_Skoda_CR_CIV"
+	,"CUP_C_Skoda_CR_CIV"
+	,"CUP_C_S1203_CIV_CR"
+	,"CUP_C_S1203_CIV_CR"
+	,"CUP_B_S1203_Ambulance_CR"
 	,"CUP_C_S1203_Militia_CIV"
 	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Covered"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Plain"
-	,"CUP_C_Datsun_Plain"
 	,"CUP_C_Datsun_Plain"
 	,"CUP_C_Datsun_Tubeframe"
-	,"CUP_C_Datsun_Tubeframe"
-	,"CUP_C_Datsun_Tubeframe"
+	,"CUP_C_Volha_CR_CIV"
+	,"CUP_C_Volha_CR_CIV"
+	,"CUP_C_Volha_CR_CIV"
+	,"CUP_C_Volha_CR_CIV"
+	,"CUP_C_Golf4_CR_Civ"
+	,"CUP_C_Golf4_CR_Civ"
+	,"CUP_C_Golf4_Sport_CR_Civ"
+	,"CUP_O_Hilux_unarmed_CR_CIV"
+	,"CUP_O_Hilux_unarmed_CR_CIV"
+	,"CUP_O_Hilux_unarmed_CR_CIV"
+	,"CUP_O_Hilux_unarmed_CR_CIV"
 	,"CUP_C_Ikarus_Chernarus"
 	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Ikarus_Chernarus"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_C_Lada_White_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_LADA_LM_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
-	,"CUP_C_Lada_Red_CIV"
+	,"CUP_C_Bus_City_CRCIV"
 	,"CUP_C_SUV_CIV"
 	,"CUP_C_SUV_CIV"
 	,"CUP_C_SUV_CIV"
 	,"CUP_C_SUV_CIV"
 	,"CUP_C_Ural_Civ_03"
 	,"CUP_C_Ural_Civ_03"
-	,"CUP_C_Ural_Civ_03"
 	,"CUP_C_Ural_Open_Civ_03"
 	,"CUP_C_Ural_Open_Civ_03"
-	,"CUP_C_Ural_Open_Civ_03"
-    ,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Open_Civ_01"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_Ural_Open_Civ_02"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_S1203_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_Lada_GreenTK_CIV"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_LR_Transport_CTK"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Open_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_V3S_Covered_TKC"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_SUV_TK"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Unarmed_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_UAZ_Open_TK_CIV"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Ural_Civ_01"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Blue_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Gray_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"
-	,"CUP_C_Volha_Limo_TKCIV"];
+	,"CUP_C_Lada_CIV"
+	,"CUP_C_Lada_CIV"
+	,"CUP_C_Lada_CIV"
+	,"CUP_C_Lada_CIV"
+	,"CUP_LADA_LM_CIV"
+	//Vanilla
+	,"C_Hatchback_01_F"
+	,"C_Hatchback_01_F"
+	,"C_Hatchback_01_sport_F"
+	,"C_Offroad_01_F"
+	,"C_Offroad_01_F"
+	,"C_Offroad_01_repair_F"
+	,"C_SUV_01_F"
+	,"C_SUV_01_F"
+	,"C_Van_01_transport_F"
+	,"C_Van_01_fuel_F"
+	,"C_Truck_02_covered_F"
+	,"C_Truck_02_fuel_F"
+	,"C_Truck_02_transport_F"];
 	if(A3E_Param_UseDLCApex==1) then {
-		a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
 	};
 	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
-	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_service_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_transport_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_transport_F";
+	};
+	if(A3E_Param_UseDLCContact==1) then {
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_01_covered_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_01_covered_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_01_covered_F";
+	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_01_comms_F";
 	};
 
 // Vehicles, weapons and ammo at ammo depots
@@ -994,7 +728,11 @@ a3e_arr_O_transport_heli = [
 a3e_arr_O_pilots = [
 	"CUP_B_CDF_Pilot_SNW"];
 a3e_arr_I_transport_heli = [
-	"CUP_I_MH6M_ION"];
+	"CUP_I_MH6M_ION"
+	,"CUP_I_412_Mil_Transport_PMC"
+	,"CUP_I_412_Military_Armed_PMC"
+	,"CUP_I_Merlin_HC3_PMC_Transport_3C"
+	,"CUP_I_Merlin_HC3_PMC_Transport_black"];
 a3e_arr_I_pilots = [
 	"CUP_I_PMC_Winter_Pilot"];
 
@@ -1036,6 +774,14 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_xm8_SAW", 50, 2, 4, ["CUP_
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_XM8_sharpshooter", 50, 2, 4, ["CUP_30Rnd_556x45_G36"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_PKM", 50, 1, 2, ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M", "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_ksvk_PSO3", 10, 1, 2, ["CUP_5Rnd_127x108_KSVK_M"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_M4A1_SOMMOD_snow", 20, 1, 3, ["CUP_30Rnd_556x45_Stanag"], 10];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_M4A1_MOE_short_winter", 20, 1, 3, ["CUP_30Rnd_556x45_Stanag"], 10];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_sgun_AA12", 20, 1, 3, ["CUP_20Rnd_B_AA12_Pellets","CUP_20Rnd_B_AA12_Slug","CUP_20Rnd_B_AA12_HE"], 8];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_HK417_20", 20, 1, 2, ["CUP_20Rnd_762x51_HK417"], 10];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_Mk16_STD_SFG_black", 20, 1, 3, ["CUP_30Rnd_556x45_Stanag_Mk16_black"], 10];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_ACRC_snw_556", 20, 1, 3, ["CUP_30Rnd_556x45_Stanag"], 10];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_M107_Snow", 15, 1, 2, ["CUP_10Rnd_127x99_M107"], 10];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_M2010_winter", 15, 1, 2, ["CUP_5Rnd_762x67_M2010_M"], 12];
 
 // Weapons and ammo in the launchers box
 a3e_arr_AmmoDepotLaunchers = [];
@@ -1090,15 +836,28 @@ a3e_arr_AmmoDepotItems pushback ["ItemWatch", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["CUP_acc_Flashlight", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_acc_XM8_light_module", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_snds_XM8", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_snds_M16", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_snds_socom762rc", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_mfsup_SCAR_L", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_mfsup_Flashhider_556x45_Black", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_mfsup_Suppressor_M107_Snow", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_PB6P9", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_PBS4", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_Kobra", 20, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["CUP_optic_OKP_7", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_1", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_1_open", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_1_AK", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_1_AK_open", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_3", 10, 1, 1];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_3_open", 10, 1, 1];
+a3e_arr_AmmoDepotItems pushback ["CUP_optic_CompM2_low", 10, 1, 1];
+a3e_arr_AmmoDepotItems pushback ["CUP_optic_HoloBlack", 10, 1, 1];
+a3e_arr_AmmoDepotItems pushback ["CUP_optic_SB_11_4x20_PM", 10, 1, 1];
+a3e_arr_AmmoDepotItems pushback ["CUP_optic_Elcan_SpecterDR_RMR_black", 10, 1, 1];
+a3e_arr_AmmoDepotItems pushback ["CUP_optic_HensoldtZO_low_RDS", 10, 1, 1];
+a3e_arr_AmmoDepotItems pushback ["CUP_optic_LeupoldMk4_25x50_LRT_SNOW", 20, 1, 1];
+a3e_arr_AmmoDepotItems pushback ["CUP_bipod_Harris_1A2_L_BLK", 20, 1, 1];
 if(A3E_Param_NoNightvision==0) then {
     a3e_arr_AmmoDepotItems pushback ["CUP_NVG_PVS7", 10, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_GOSHAWK", 10, 1, 3];
@@ -1140,10 +899,12 @@ a3e_arr_CivilianCarWeapons pushback [objNull, "SmokeShell", 5];
 // Here is a list of scopes:
 a3e_arr_Scopes = [
 	"CUP_optic_Kobra"
+	,"CUP_optic_OKP_7"
 	,"CUP_optic_PSO_1_AK"
 	,"CUP_optic_PSO_1_AK_open"];
 a3e_arr_Scopes_SMG = [
-	"CUP_optic_Kobra"];
+	"CUP_optic_Kobra"
+	,"CUP_optic_OKP_7"];
 a3e_arr_Scopes_Sniper = [
 	"CUP_optic_PSO_1"
 	,"CUP_optic_PSO_3"];
@@ -1228,10 +989,12 @@ a3e_arr_searchdrone = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
 	"CUP_I_MH6M_ION"
-	,"CUP_I_MH6M_ION_OBS"];
+	,"CUP_I_MH6M_ION_OBS"
+	,"CUP_I_412_Military_Radar_PMC"];
 a3e_arr_searchChopperHard = [
 	"CUP_I_Ka60_Blk_ION"
-	,"CUP_I_Ka60_GL_Blk_ION"];
+	,"CUP_I_Ka60_GL_Blk_ION"
+	,"CUP_I_412_Military_Armed_PMC"];
 a3e_arr_searchChopper_pilot = [
 	"CUP_I_PMC_Winter_Pilot"];
 a3e_arr_searchChopper_crew = [
@@ -1304,7 +1067,8 @@ a3e_arr_MortarSite = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
 	"CUP_B_Su25_Dyn_CDF"
-	,"CUP_B_SU34_CDF"];
+	,"CUP_B_SU34_CDF"
+	,"CUP_I_CESSNA_T41_ARMED_ION"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
@@ -1346,7 +1110,9 @@ a3e_arr_CrashSiteWeapons pushback ["CUP_sgun_Saiga12K", 10, 1, 2, ["CUP_8Rnd_B_S
 a3e_arr_CrashSiteItems = [];
 a3e_arr_CrashSiteItems pushback ["CUP_muzzle_PBS4", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["CUP_muzzle_Bizon", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["CUP_muzzle_snds_KZRZP_AK762", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["CUP_optic_Kobra", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["CUP_optic_OKP_7", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["CUP_optic_PSO_1_AK", 50, 1, 3];
 a3e_arr_CrashSiteItems pushback ["CUP_optic_PSO_1", 50, 1, 3];
 a3e_arr_CrashSiteItems pushback ["CUP_optic_PechenegScope", 25, 1, 3];
