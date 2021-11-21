@@ -65,6 +65,9 @@ scopeName "main";
 					};
 				} else {
 					//Report was not successfull. Reset detection states
+					if(vehicle _reporter == _reporter) then {
+						[_reporter,false] remoteexec ["setRandomLip",0];
+					};
 					[] spawn {
 						sleep 2; //Small delay for other people to notice reporter died
 						[] call A3E_fnc_PlayerDetection; //Refresh triggers
