@@ -901,6 +901,7 @@ a3e_arr_extraction_chopper_escort = [
 	,"rhs_mi28n_vvs"
 	,"RHS_Mi24P_vvs"
 	,"RHS_Mi24V_vvs"];
+
 //////////////////////////////////////////////////////////////////
 // RunExtractionBoat.sqf
 // Boats that come to pick you up
@@ -915,23 +916,31 @@ a3e_arr_extraction_boat_escort = [
 // Boats that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_car = [
-	"rhsusf_M1078A1P2_B_WD_fmtv_usarmy"	//14
-	,"rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy"	//13
-	,"rhsusf_M1083A1P2_B_WD_fmtv_usarmy"	//14
-	,"rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy"	//13
-	,"rhsusf_m998_w_s_2dr_fulltop"	//7
-	,"rhsusf_M1232_MC_M2_usmc_wd"	//10
-	,"rhsusf_M1232_MC_M2_usmc_wd"];	//10
+	"rhs_btr80a_vdv"	//17
+	,"rhs_btr80_vdv"	//18
+	,"rhs_btr70_vdv"	//17
+	,"rhs_tigr_vdv"	//8
+	,"rhs_tigr_m_vdv"	//7
+	,"rhs_bmd4ma_vdv"	//6
+	,"rhs_kamaz5350_vdv"	//16
+	,"rhs_gaz66_vdv"	//13
+	,"rhs_kraz255b1_cargo_open_vdv"	//15
+	,"RHS_Ural_VDV_01"	//14
+	,"rhs_zil131_vdv"];	//12
 a3e_arr_extraction_car_escort = [
-	"rhsusf_M1117_W"	//6
-	,"rhsusf_M1220_M153_M2_usarmy_wd"	//8
-	,"rhsusf_stryker_m1126_m2_wd"	//9
-	,"rhsusf_stryker_m1126_mk19_wd"
-	,"rhsusf_stryker_m1132_m2_np_wd"
-	,"rhsusf_stryker_m1132_m2_wd"
-	,"rhsusf_m1a1fep_wd"
-	,"rhsusf_m1a1fep_od"
-	,"rhsusf_m1a1hc_wd"];
+	"rhs_t72bb_tv"
+	,"rhs_t80uk"
+	,"rhs_t80bvk"
+	,"rhs_t90am_tv"
+	,"rhs_t90a_tv"
+	,"rhs_t14_tv"
+	,"rhs_t15_tv"	//15
+	,"rhs_bmd4ma_vdv"	//6
+	,"rhs_bmd4ma_vdv"	//6
+	,"rhs_bmd4ma_vdv"	//6
+	,"rhs_sprut_vdv"
+	,"rhs_sprut_vdv"
+	,"rhs_sprut_vdv"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
