@@ -21,7 +21,7 @@ while {[_markerName] call drn_fnc_CL_MarkerExists} do {
 		diag_log ("""" + _arrayName + " set [" + str _i + ", [" + str (getMarkerPos _markerName) + ", " + str markerDir _markerName + "]];""");
 	}
 	else {
-		diag_log ("""" + _arrayName + " set [" + str _i + ", [" + str (getMarkerPos _markerName) + ", " + str markerDir _markerName + ", """ + markerShape _markerName + """, " + str markerSize _markerName + "]];""");
+		diag_log ("""" + _arrayName + " set [" + str _i + ", [" + str (getMarkerPos _markerName) + ", " + str markerDir _markerName + ", """ + markerShape _markerName + """, " + str markerSize _markerName + ", """ + markerColor _markerName + """]];""");
 	};
 
 	_markerNo = _markerNo + 1;
