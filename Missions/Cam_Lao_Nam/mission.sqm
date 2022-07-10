@@ -24,7 +24,8 @@ addons[]=
 {
 	{* REQUIRE *}
 	"A3_Modules_F",
-	"A3_Ui_F"
+	"A3_Ui_F",
+	"characters_f_vietnam_02_c"
 };
 class AddonsMetaData
 {
@@ -129,11 +130,11 @@ class Mission
 					{
 						rank="MAJOR";
 						init="{* PLAYER_INIT *}";
-						name="p3";
+						name="p2";
 						isPlayable=1;
 					};
-					id=10;
-					type="{* PLAYERUNIT_3 *}";
+					id=339;
+					type="{* PLAYERUNIT_2 *}";
 				};
 				class Item2
 				{
@@ -148,11 +149,11 @@ class Mission
 					{
 						rank="CAPTAIN";
 						init="{* PLAYER_INIT *}";
-						name="p4";
+						name="p3";
 						isPlayable=1;
 					};
-					id=11;
-					type="{* PLAYERUNIT_4 *}";
+					id=340;
+					type="{* PLAYERUNIT_3 *}";
 				};
 				class Item3
 				{
@@ -162,16 +163,16 @@ class Mission
 						position[]={2.734,223.93173,20478.029};
 					};
 					side="{* PLAYERSIDE *}";
-					flags=4;
+					flags=5;
 					class Attributes
 					{
-						rank="MAJOR";
+						rank="LIEUTENANT";
 						init="{* PLAYER_INIT *}";
-						name="p2";
+						name="p4";
 						isPlayable=1;
 					};
-					id=12;
-					type="{* PLAYERUNIT_2 *}";
+					id=343;
+					type="{* PLAYERUNIT_4 *}";
 				};
 				class Item4
 				{
@@ -184,12 +185,12 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						rank="CAPTAIN";
+						rank="LIEUTENANT";
 						init="{* PLAYER_INIT *}";
 						name="p5";
 						isPlayable=1;
 					};
-					id=13;
+					id=344;
 					type="{* PLAYERUNIT_5 *}";
 				};
 				class Item5
@@ -203,12 +204,12 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						rank="LIEUTENANT";
+						rank="SERGEANT";
 						init="{* PLAYER_INIT *}";
 						name="p6";
 						isPlayable=1;
 					};
-					id=14;
+					id=347;
 					type="{* PLAYERUNIT_6 *}";
 				};
 				class Item6
@@ -222,12 +223,12 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						rank="LIEUTENANT";
+						rank="SERGEANT";
 						init="{* PLAYER_INIT *}";
 						name="p7";
 						isPlayable=1;
 					};
-					id=15;
+					id=348;
 					type="{* PLAYERUNIT_7 *}";
 				};
 				class Item7
@@ -241,12 +242,12 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						rank="SERGEANT";
+						rank="CORPORAL";
 						init="{* PLAYER_INIT *}";
 						name="p8";
 						isPlayable=1;
 					};
-					id=16;
+					id=349;
 					type="{* PLAYERUNIT_8 *}";
 				};
 				class Item8
@@ -265,7 +266,7 @@ class Mission
 						name="p9";
 						isPlayable=1;
 					};
-					id=17;
+					id=350;
 					type="{* PLAYERUNIT_9 *}";
 				};
 				class Item9
@@ -283,7 +284,7 @@ class Mission
 						name="p10";
 						isPlayable=1;
 					};
-					id=18;
+					id=351;
 					type="{* PLAYERUNIT_10 *}";
 				};
 			};
