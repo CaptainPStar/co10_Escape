@@ -13,8 +13,8 @@ private ["_enemyFrequency"];
 
 _enemyFrequency = _this select 0;
 
-A3E_VAR_Side_Blufor = east;	//player side SOGPF PAVN
-A3E_VAR_Side_Opfor = west; //SOGPF MACV
+A3E_VAR_Side_Blufor = east;	//player side SOGPF PAVN NVA
+A3E_VAR_Side_Opfor = west; //SOGPF ANZAC
 A3E_VAR_Side_Ind = resistance; //SOGPF ARVN
 
 A3E_VAR_Flag_Opfor = "\vn\objects_f_vietnam\flags\data\vn_flag_01_usa_co.paa";
@@ -519,6 +519,8 @@ a3e_arr_O_attack_heli = [
 	,"vn_b_air_uh1c_04_01"
 	,"vn_b_air_uh1c_02_01"
 	,"vn_b_air_uh1c_05_01"
+	,"vn_b_air_uh1e_01_04"
+	,"vn_b_air_uh1e_02_04"
 	,"vn_b_air_ch34_04_02"
 	,"vn_b_air_ch34_04_04"
 	,"vn_b_air_ch34_04_01"];
