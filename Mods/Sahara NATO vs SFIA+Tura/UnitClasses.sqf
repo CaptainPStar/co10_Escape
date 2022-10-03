@@ -24,8 +24,8 @@ A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 a3e_arr_Escape_StartPositionGuardTypes = [
 	"I_SFIA_defector_lxWS",
 	"I_SFIA_defector_lxWS",
-	"I_SFIA_deserter_lxWS",
-	"I_SFIA_deserter_lxWS",
+	"I_Tura_deserter_lxWS",
+	"I_Tura_deserter_lxWS",
 	"I_SFIA_watcher_lxWS",
 	"I_SFIA_watcher_lxWS",
 	"I_SFIA_Said_lxWS",
@@ -144,8 +144,12 @@ switch (_enemyFrequency) do {
 		,"O_SFIA_Offroad_AT_lxWS"
 		,"O_SFIA_Offroad_AT_lxWS"
 		,"O_SFIA_Offroad_AT_lxWS"
+		//APCs
+		,"O_SFIA_APC_Wheeled_02_hmg_lxWS"
+		,"O_SFIA_APC_Wheeled_02_unarmed_lxWS"
 		//Heavily Armed APCs or AA  1 set
 		,"O_SFIA_APC_Tracked_02_AA_lxWS"
+		,"O_SFIA_APC_Tracked_02_30mm_lxWS"
 		,"O_SFIA_Truck_02_aa_lxWS"
 		,"O_SFIA_APC_Tracked_02_cannon_lxWS"
 		//Artillery  1 set
@@ -168,7 +172,9 @@ switch (_enemyFrequency) do {
 		,"I_Tura_Offroad_armor_armed_lxWS"
 		,"I_Tura_Offroad_armor_armed_lxWS"
 		,"I_Tura_Offroad_armor_armed_lxWS"
-		,"I_Tura_Offroad_armor_armed_lxWS"];
+		,"I_Tura_Offroad_armor_armed_lxWS"
+		//AA-truck
+		,"I_Tura_Truck_02_aa_lxWS"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -208,11 +214,16 @@ switch (_enemyFrequency) do {
 		,"O_SFIA_Offroad_AT_lxWS"
 		,"O_SFIA_Offroad_AT_lxWS"
 		,"O_SFIA_Offroad_AT_lxWS"
+		//APCs
+		,"O_SFIA_APC_Wheeled_02_hmg_lxWS"
+		,"O_SFIA_APC_Wheeled_02_unarmed_lxWS"
 		//Heavily Armed APCs or AA  2 sets
 		,"O_SFIA_APC_Tracked_02_AA_lxWS"	//1
+		,"O_SFIA_APC_Tracked_02_30mm_lxWS"
 		,"O_SFIA_Truck_02_aa_lxWS"
 		,"O_SFIA_APC_Tracked_02_cannon_lxWS"
 		,"O_SFIA_APC_Tracked_02_AA_lxWS"	//2
+		,"O_SFIA_APC_Tracked_02_30mm_lxWS"
 		,"O_SFIA_Truck_02_aa_lxWS"
 		,"O_SFIA_APC_Tracked_02_cannon_lxWS"
 		//Artillery
@@ -237,7 +248,9 @@ switch (_enemyFrequency) do {
 		,"I_Tura_Offroad_armor_armed_lxWS"
 		,"I_Tura_Offroad_armor_armed_lxWS"
 		,"I_Tura_Offroad_armor_armed_lxWS"
-		,"I_Tura_Offroad_armor_armed_lxWS"];
+		,"I_Tura_Offroad_armor_armed_lxWS"
+		//AA-truck
+		,"I_Tura_Truck_02_aa_lxWS"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -277,11 +290,18 @@ switch (_enemyFrequency) do {
 		,"O_SFIA_Offroad_AT_lxWS"
 		,"O_SFIA_Offroad_AT_lxWS"
 		,"O_SFIA_Offroad_AT_lxWS"
+		//APCs		2sets
+		,"O_SFIA_APC_Wheeled_02_hmg_lxWS"		//1
+		,"O_SFIA_APC_Wheeled_02_unarmed_lxWS"
+		,"O_SFIA_APC_Wheeled_02_hmg_lxWS"		//2
+		,"O_SFIA_APC_Wheeled_02_unarmed_lxWS"
 		//Heavily Armed APCs or AA  2 sets
 		,"O_SFIA_APC_Tracked_02_AA_lxWS"	//1
+		,"O_SFIA_APC_Tracked_02_30mm_lxWS"
 		,"O_SFIA_Truck_02_aa_lxWS"
 		,"O_SFIA_APC_Tracked_02_cannon_lxWS"
 		,"O_SFIA_APC_Tracked_02_AA_lxWS"	//2
+		,"O_SFIA_APC_Tracked_02_30mm_lxWS"
 		,"O_SFIA_Truck_02_aa_lxWS"
 		,"O_SFIA_APC_Tracked_02_cannon_lxWS"
 		//Artillery
@@ -307,7 +327,9 @@ switch (_enemyFrequency) do {
 		,"I_Tura_Offroad_armor_armed_lxWS"
 		,"I_Tura_Offroad_armor_armed_lxWS"
 		,"I_Tura_Offroad_armor_armed_lxWS"
-		,"I_Tura_Offroad_armor_armed_lxWS"];
+		,"I_Tura_Offroad_armor_armed_lxWS"
+		//AA-truck
+		,"I_Tura_Truck_02_aa_lxWS"];
     };
 };
 
@@ -332,8 +354,10 @@ a3e_arr_Escape_InfantryTypes = [
 	,"O_SFIA_soldier_lxWS"
 	,"O_SFIA_soldier_lxWS"
 	,"O_SFIA_soldier_lxWS"
-	,"O_SFIA_Soldier_universal_lxWS"
-	,"O_SFIA_Soldier_universal_lxWS"
+	,"O_SFIA_HeavyGunner_lxWS"
+	,"O_SFIA_HeavyGunner_lxWS"
+	,"O_SFIA_soldier_lite_lxWS"
+	,"O_SFIA_soldier_lite_lxWS"
 	,"O_SFIA_Soldier_GL_lxWS"
 	,"O_SFIA_Soldier_GL_lxWS"
 	,"O_SFIA_Soldier_GL_lxWS"
@@ -347,6 +371,8 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	"I_SFIA_defector_lxWS"
 	,"I_SFIA_deserter_lxWS"
 	,"I_SFIA_enforcer_lxWS"
+	,"I_Tura_soldier_UAV_lxWS"
+	,"I_Tura_HeavyGunner_lxWS"
 	,"I_SFIA_hireling_lxWS"
 	,"I_SFIA_scout_lxWS"
 	,"I_SFIA_medic2_lxWS"
@@ -355,10 +381,11 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 a3e_arr_recon_InfantryTypes = [
 	"O_SFIA_Soldier_TL_lxWS"
 	,"O_SFIA_sharpshooter_lxWS"
+	,"O_SFIA_HeavyGunner_lxWS"
 	,"O_SFIA_exp_lxWS"];
 a3e_arr_recon_I_InfantryTypes = [
 	"I_SFIA_defector_lxWS"
-	,"I_SFIA_deserter_lxWS"
+	,"I_Tura_deserter_lxWS"
 	,"I_SFIA_Said_lxWS"
 	,"I_PMC_Story_Gustavo_lxWS"];
 
@@ -368,17 +395,22 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"O_SFIA_Offroad_armed_lxWS"
 	,"O_SFIA_Offroad_armed_lxWS"
 	,"O_SFIA_Offroad_AT_lxWS"
+	,"O_SFIA_APC_Wheeled_02_hmg_lxWS"
 	,"O_SFIA_Truck_02_aa_lxWS"];
 	
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"I_Tura_Offroad_armor_armed_lxWS"
 	,"I_Tura_Offroad_armor_armed_lxWS"
-	,"I_Tura_Offroad_armor_AT_lxWS"];
+	,"I_Tura_Offroad_armor_armed_lxWS"
+	,"I_Tura_Offroad_armor_AT_lxWS"
+	,"I_Tura_Offroad_armor_AT_lxWS"
+	,"I_Tura_Truck_02_aa_lxWS"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	"O_SFIA_Truck_02_covered_lxWS"
-	,"O_SFIA_Truck_02_transport_lxWS"];
+	,"O_SFIA_Truck_02_transport_lxWS"
+	,"O_SFIA_APC_Wheeled_02_unarmed_lxWS"];
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	"I_Tura_Offroad_armor_lxWS"];
 
@@ -387,6 +419,7 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	"O_SFIA_Offroad_armed_lxWS"
 	,"O_SFIA_Offroad_AT_lxWS"
+	,"O_SFIA_APC_Wheeled_02_hmg_lxWS"
 	,"O_SFIA_APC_Tracked_02_cannon_lxWS"];
 
 
@@ -397,6 +430,7 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 a3e_arr_ComCenDefence_lightArmorClasses = [
 	"O_SFIA_Truck_02_aa_lxWS"
 	,"O_SFIA_APC_Tracked_02_cannon_lxWS"
+	,"O_SFIA_APC_Tracked_02_30mm_lxWS"
 	,"O_SFIA_APC_Tracked_02_AA_lxWS"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
@@ -426,8 +460,8 @@ a3e_arr_ComCenParkedVehicles = [
 		,"O_SFIA_Offroad_armed_lxWS"
 		,"O_SFIA_Offroad_AT_lxWS"
 		//MRAPS
-		,"O_MRAP_02_gmg_F"
-		,"O_MRAP_02_hmg_F"];
+		,"O_SFIA_APC_Wheeled_02_hmg_lxWS"
+		,"O_SFIA_APC_Wheeled_02_unarmed_lxWS"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
@@ -502,12 +536,14 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_SLR_GL_lxWS", 10, 2, 4, ["20Rnd_
 // Weapons and ammo in the special weapons box
 a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
-a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_Galat_lxWS", 50, 2, 4, ["75Rnd_762x39_Mag_F"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_Galat_worn_lxWS", 50, 2, 4, ["30Rnd_762x39_Mag_worn_lxWS"], 8];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_SLR_D_lxWS", 30, 2, 4, ["30Rnd_762x51_slr_lxWS_desert"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_SLR_D_KHS_old_lxWS", 10, 2, 4, ["20Rnd_762x51_slr_lxWS_desert"], 9];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["LMG_S77_lxWS", 20, 1, 3, ["100Rnd_762x51_S77_Yellow_lxWS"], 6];
 // non-CAST weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_SLR_KHS_old_lxWS", 10, 2, 4, ["20Rnd_762x51_slr_lxWS"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_SLR_V_lxWS", 10, 2, 4, ["20Rnd_762x51_slr_lxWS"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["LMG_S77_Desert_lxWS", 10, 1, 2, ["100Rnd_762x51_S77_Green_lxWS"], 6];
 if(A3E_Param_UseDLCMarksmen==1) then {
 	a3e_arr_AmmoDepotSpecialWeapons pushback ["srifle_DMR_06_camo_khs_F", 10, 2, 4, ["20Rnd_762x51_Mag"], 10];
 };
@@ -751,7 +787,8 @@ a3e_arr_searchdrone = [
 	"O_UAV_01_F"
 	,"O_UAV_02_CAS_F"
 	,"O_UAV_02_lxWS"
-	,"O_UAV_02_lxWS"];
+	,"O_UAV_02_lxWS"
+	,"O_Tura_UAV_02_IED_lxWS"];
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
@@ -873,6 +910,8 @@ a3e_arr_CrashSiteWeapons pushback ["arifle_MX_F", 75, 2, 4, ["30Rnd_65x39_casele
 a3e_arr_CrashSiteWeapons pushback ["arifle_MX_GL_F", 50, 2, 4, ["30Rnd_65x39_caseless_mag", "1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F"], 6];
 a3e_arr_CrashSiteWeapons pushback ["arifle_MX_SW_F", 20, 1, 2, ["100Rnd_65x39_caseless_mag_Tracer"], 6];
 a3e_arr_CrashSiteWeapons pushback ["arifle_MXM_F", 10, 1, 2, ["30Rnd_65x39_caseless_mag"], 8];
+a3e_arr_CrashSiteWeapons pushback ["sgun_aa40_tan_lxWS", 20, 2, 4, ["8Rnd_12Gauge_AA40_Pellets_Snake_lxWS", "8Rnd_12Gauge_AA40_Slug_Tan_lxWS", "8Rnd_12Gauge_AA40_HE_Tan_lxWS"], 8];
+a3e_arr_CrashSiteWeapons pushback ["glaunch_GLX_tan_lxWS", 30, 2, 4, ["1Rnd_HE_Grenade_shell", "1Rnd_Pellet_Grenade_shell_lxWS", "3Rnd_UGL_FlareWhite_F"], 8];
 a3e_arr_CrashSiteWeapons pushback ["SMG_01_Holo_pointer_snds_F", 50, 1, 2, ["30Rnd_45ACP_Mag_SMG_01"], 8];
 if(A3E_Param_UseDLCMarksmen==1) then {
 	a3e_arr_CrashSiteWeapons pushback ["MMG_02_sand_F", 10, 2, 4, ["130Rnd_338_Mag"], 6];
