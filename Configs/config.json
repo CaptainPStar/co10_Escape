@@ -24,7 +24,8 @@
 			"VERSION" : "1.10",
 			"MISSION" : "Escape",
 			"MISSION_FULL": "co10 Escape",
-			"PLAYER_INIT" : "this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};"
+			"PLAYER_INIT" : "this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};",
+			"GAMETYPE" : "Escape"
 		},
 	"ParsedFiles" : ["mission.sqm","defines.hpp","fn_briefing.sqf"],
 	"Mods" : [
