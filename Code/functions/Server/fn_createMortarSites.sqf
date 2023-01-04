@@ -90,9 +90,9 @@ while {count _positions < _mortarSiteCount} do {
     };
 };
 
-private _MortarSiteTemplates = missionnamespace getvariable ["A3E_MortarSiteTemplates",["A3E_fnc_MortarSite","A3E_fnc_MortarSite2"]];
+private _mortarSiteTemplates = missionnamespace getvariable ["A3E_MortarSiteTemplates",["A3E_fnc_MortarSite","A3E_fnc_MortarSite2"]];
 {
-    [[_x],A3E_MortarSiteTemplates] call A3E_fnc_callRandomFunction;
+    [[_x],_mortarSiteTemplates] call A3E_fnc_callRandomFunction;
 	private _playergroup = [] call A3E_fnc_getPlayerGroup;
 	[_playergroup, "A3E_MortarSitePatrolMarker", A3E_VAR_Side_Opfor, "INS", 1, 1, 2, A3E_Param_EnemySkill, A3E_Param_EnemySkill, A3E_Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
 } foreach _positions;

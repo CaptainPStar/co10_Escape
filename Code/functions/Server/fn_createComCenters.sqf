@@ -43,7 +43,7 @@ private _instanceNo = 0;
 	if _ok then {
 		// pick one of the BuildComCenter methods at random
 		private _ComCenterTemplates = missionnamespace getvariable ["A3E_ComCenterTemplates",["a3e_fnc_BuildComCenter","a3e_fnc_BuildComCenter2","a3e_fnc_BuildComCenter3","a3e_fnc_BuildComCenter4","a3e_fnc_BuildComCenter5"]];
-		[[_pos, _dir, a3e_arr_ComCenStaticWeapons, a3e_arr_ComCenParkedVehicles],A3E_ComCenterTemplates] call A3E_fnc_callRandomFunction;
+		[[_pos, _dir, a3e_arr_ComCenStaticWeapons, a3e_arr_ComCenParkedVehicles], _ComCenterTemplates] call A3E_fnc_callRandomFunction;
 
 		A3E_Var_ClearedPositions pushBack _pos;
 		[format ["drn_CommunicationCenterMapMarker%1", _instanceNo], _pos, "o_hq"] call A3E_fnc_createLocationMarker;

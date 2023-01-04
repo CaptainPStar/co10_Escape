@@ -86,7 +86,7 @@ while {count _positions < A3E_AmmoDepotCount} do {
 
 private _AmmoDepotTemplates = missionnamespace getvariable ["A3E_AmmoDepotTemplates",["A3E_fnc_AmmoDepot","A3E_fnc_AmmoDepot2","A3E_fnc_AmmoDepot3","A3E_fnc_AmmoDepot4","A3E_fnc_AmmoDepot5"]];
 {
-    [[_x, a3e_arr_Escape_AmmoDepot_StaticWeaponClasses, a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses],A3E_AmmoDepotTemplates] call A3E_fnc_callRandomFunction;
+    [[_x, a3e_arr_Escape_AmmoDepot_StaticWeaponClasses, a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses],_AmmoDepotTemplates] call A3E_fnc_callRandomFunction;
 } foreach _positions;
 
 a3e_var_Escape_AmmoDepotPositions = _positions;
