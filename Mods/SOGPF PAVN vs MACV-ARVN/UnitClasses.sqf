@@ -357,6 +357,16 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"vn_i_men_sf_09"	//Scout
 	,"vn_i_men_sf_02"];	//Squad Leader
 
+
+//////////////////////////////////////////////////////////////////
+// fn_RoadBlocks.sqf
+// Array of templates to use for roadblocks
+//////////////////////////////////////////////////////////////////
+A3E_RoadblockTemplates = [
+	"A3E_fnc_Roadblock_vn1"
+	,"A3E_fnc_Roadblock_vn2"
+	,"A3E_fnc_Roadblock2"]
+
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"vn_b_wheeled_m151_mg_02"
