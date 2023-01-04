@@ -1,0 +1,10 @@
+a3e_patrolBoatMarkers = [];
+a3e_patrolBoatMarkers set [0, [[5248.19,882.93,0], 184.709, "ELLIPSE", [363.765,20.175]]];
+a3e_patrolBoatMarkers set [1, [[6271.65,10100,0], 30.5723, "ELLIPSE", [427.77,22.5132]]];
+a3e_patrolBoatMarkers set [2, [[5061.32,11011.8,0], 9.998, "ELLIPSE", [495.778,35.9326]]];
+a3e_patrolBoatMarkers set [3, [[7442.54,11649.8,0], 10.1637, "ELLIPSE", [573.598,54.8178]]];
+a3e_patrolBoatMarkers set [4, [[1558.36,397.222,0], 357.123, "ELLIPSE", [455.124,14.9084]]];
+a3e_patrolBoatMarkers set [5, [[11863.5,5848.67,0], 16.0769, "ELLIPSE", [11.9092,265.147]]];
+a3e_patrolBoatMarkers set [6, [[14507.1,5279.77,0], 351.186, "ELLIPSE", [11.4313,367.561]]];
+a3e_patrolBoatMarkers set [7, [[14682.5,10364.4,0], 355.793, "ELLIPSE", [24.2122,552.015]]];
+a3e_patrolBoatMarkers set [8, [[13513.8,12279,0], 337.919, "ELLIPSE", [237.846,75.808]]];

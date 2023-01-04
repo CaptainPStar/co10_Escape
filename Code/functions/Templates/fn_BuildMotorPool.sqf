@@ -297,7 +297,8 @@ _dir = 0;
 
 _pos = [-2.35, -17.1];
 _dir = 270;
-["Flag_CSAT_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+private _flag = ["Flag_CSAT_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_CreateObject;
+_flag setflagtexture A3E_VAR_Flag_Opfor;
 
 _pos = [0.90, -3.4];
 _dir = 317.365;

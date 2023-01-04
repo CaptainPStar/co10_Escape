@@ -113,6 +113,8 @@ class CfgFunctions
 			class RoadBlocks {};
 			class MissionFlow {};
 			class createStartpos {};
+			class initTraps {};
+			class updateTraps {};
 		};
 		class Spawning
 		{
@@ -137,25 +139,38 @@ class CfgFunctions
 			class BuildComCenter3 {};
 			class BuildComCenter4 {};
 			class BuildComCenter5 {};
+			class BuildComCenter_VN_US1 {};
+			class BuildComCenter_VN_US2 {};
+			class BuildComCenter_VN_NVA1 {};
+			class BuildComCenter_VN_NVA2 {};
             class BuildMotorPool {};
+			class BuildMotorPool_VN {};
 			class AmmoDepot {};
 			class AmmoDepot2 {};
 			class AmmoDepot3 {};
 			class AmmoDepot4 {};
-			class AmmoDepot5 {};			
+			class AmmoDepot5 {};
+			class AmmoDepot_VN_US1 {};
+			class AmmoDepot_VN_NVA1 {};
 			class CrashSite {};
 			class MortarSite {};
 			class MortarSite2 {};
+			class MortarSite_VN_US1 {};
+			class MortarSite_VN_NVA1 {};
 			class Roadblock {};
 			class Roadblock2 {};
 			class Roadblock3 {};
-			class Roadblock4 {};	
+			class Roadblock4 {};
+			class Roadblock_VN1 {};
+			class Roadblock_VN2 {};
 			class isoTemplateStore {};		
 			class isoTemplateRestore {};	
 		};
 		class Chronos
 		{
-			class Chronos_Init {};
+			class Chronos_Init {
+				 postInit = 1;
+			};
 			class Chronos_Run {};
 			class Chronos_Register {};
 			class Chronos_Dispatch {};
