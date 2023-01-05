@@ -2,7 +2,7 @@
 params["_exportName"];
 private _allTrigger = (allMissionObjects "EmptyDetector");
 private _areaIndex =  _allTrigger findIf { (triggerText _x) == _exportName;};
-if(_areaIndex < 0) exitWith {systemchat ("Can't find a trigger with name "+_exportName);};
+if(_areaIndex < 0) exitWith {[("Can't find a trigger with name "+_exportName),["ERROR","Templates","Missing"]] call A3E_fnc_Log;};
 private _area = _allTrigger select _areaIndex;
 
 private _obj = (allMissionObjects "") inAreaArray _area;

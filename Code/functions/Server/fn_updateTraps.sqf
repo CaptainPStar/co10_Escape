@@ -22,14 +22,11 @@ private _tmpTraps = []+A3E_Traps;
 	if(!_playerNear) then {
 		A3E_Traps deleteAt (A3E_Traps find _trap);
 		deletevehicle _trap;
-		systemchat "Despawned a trap";
 	};
 } foreach _tmpTraps;
-systemchat "Nothing to delete";
 
 if(_maxTraps > count(A3E_Traps)) then
 {
-	systemchat "Attempt at spawning a trap";
 	private _rndPos = [_players,_minSpawnDistance,_spawnDistance] call A3E_fnc_RandomSpawnPos;
 	private _nearRoads = _rndPos nearRoads 100;
 	private _roadSegment = objNull;
@@ -64,15 +61,12 @@ if(_maxTraps > count(A3E_Traps)) then
 				case "random": {
 					_trapPos = _posOnRoad vectorAdd (_roadDirectionPerpendicular vectorMultiply (_roadWidth*random(0.9)));
 					_trapDir = random 360;
-					systemchat "Traptype random";
 				};
 				case "roadside": {
 					_trapPos = _posOnRoad vectorAdd (_roadDirectionPerpendicular vectorMultiply ((_roadWidth*0.8)+random 0.5-0.25));
-					systemchat "Traptype roadside";
 				};
 				case "roadcenter": {
 					//Nothing to do
-					systemchat "Traptype roadcenter";
 				};
 				default {
 					//Equal to random
@@ -88,18 +82,17 @@ if(_maxTraps > count(A3E_Traps)) then
 			A3E_VAR_Side_Opfor revealMine _trap;
 			A3E_VAR_Side_Ind revealMine _trap;
 			civilian revealMine _trap;
-			systemchat format["Spawned a Trap at %1 in %2m",_trapPos, _trapPos distance player];
+			[format["Spawned a Trap at %1 in %2m",_trapPos, _trapPos distance player],["Traps"]] call A3E_fnc_Log;
 		
 		} else {
 			//Simple class 
 			private _trap = createMine [_type # 1, _roadCenter, [], 0];
 			_trap setdir _roadDir;
 			A3E_Traps pushBack _trap;
-			systemchat "Spawned a Trap";
 		};
 		
 	} else {
-		systemchat "No road found for spawning a trap";
+		//systemchat "No road found for spawning a trap";
 	}
 	
 }

@@ -75,8 +75,10 @@ class CfgFunctions
 			class unit_debug_marker {};
 			class drawMapLine {};
 			class TrackGroup {};
-            class debugMsg {};
+            class DebugMsg {};
 			class rptLog {};
+			class Log {};
+			class logMessage {};
 		};
 		class Intel
 		{

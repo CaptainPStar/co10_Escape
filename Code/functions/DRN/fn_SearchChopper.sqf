@@ -14,8 +14,7 @@ if (count _this > 4) then {_debug = _this select 4;} else {_debug = false;};
 if (isNil "a3e_var_commonLibInitialized") exitWith {
 	private ["_message"];
 	_message = "Scripts\DRN\CommonLib\CommonLib.sqf must be called before call to Scripts/DRN/SearchChopper/SearchChopper.sqf.";
-	systemchat _message;
-	diag_log _message;
+	[_message] call A3E_fnc_DebugMsg;
 };
 
 _group = group _chopper;
@@ -23,13 +22,11 @@ _side = side leader _group;
 _state = "IDLE";
 _homePos = getPos _chopper;
 private _updateSearchAreaTime = 0;
-if (_debug) then {
-    systemchat "Starting search chopper script...";
-};
+["Starting search chopper script..."] call A3E_fnc_DebugMsg;
+
 
 if (vehicleVarName _chopper == "") exitWith {
-	sleep 5;
-	systemchat "Search chopper must have a name. Script exiting.";
+	["Search chopper must have a name. Script exiting."] call A3E_fnc_DebugMsg;
 };
 
 
@@ -68,7 +65,7 @@ while {!_exitScript} do {
 			_moveOutTimeSek = diag_tickTime;
 
 			if (_debug) then {
-				systemchat "Search chopper state: MOVING OUT.";
+				["Search chopper state: MOVING OUT."] call A3E_fnc_DebugMsg;
 			};
 
 			_chopper flyInHeight 100;
@@ -95,7 +92,7 @@ while {!_exitScript} do {
 		};
 		case "SEARCHING": {
 			if (_debug) then {
-				systemchat "Search chopper state: SEARCHING.";
+				["Search chopper state: SEARCHING."] call A3E_fnc_DebugMsg;
 			};
 			
 			_chopper setVariable ["waypointFulfilled", false];
@@ -117,7 +114,7 @@ while {!_exitScript} do {
 		};
 		case "RETURNING": {
 			if (_debug) then {
-				systemchat "Search chopper state: RETURNING.";
+				["Search chopper state: RETURNING."] call A3E_fnc_DebugMsg;
 			};
 
 			_oldGroup = _group;
@@ -141,10 +138,7 @@ while {!_exitScript} do {
 			_chopper flyInHeight 100;
 		};
 		case "LANDING": {
-			if (_debug) then {
-				systemchat "Search chopper state: LANDING.";
-			};
-
+				["Search chopper state: LANDING."] call A3E_fnc_DebugMsg;
 			_chopper land "LAND";
 			_chopper setVariable ["waypointFulfilled", false];
 		};
@@ -152,12 +146,10 @@ while {!_exitScript} do {
 			// Do nothing
 		};
 		case "DEAD": {
-			if (_debug) then {
-				systemchat "Search chopper state: DEAD.";
-			};
+				["Search chopper state: DEAD."] call A3E_fnc_DebugMsg;
 		};
 		default {
-			systemchat "ERROR IN SearchChopper.sqf: Case " + _state + " not taken care of (1st switch)!";
+			["ERROR IN SearchChopper.sqf: Case " + _state + " not taken care of (1st switch)!"] call A3E_fnc_DebugMsg;
 		};
 	};
 
@@ -182,7 +174,7 @@ while {!_exitScript} do {
 					_state = "LANDING";
 				};
 				default {
-					systemchat "ERROR IN SearchChopper.sqf: Case " + _state + " not taken care of (2nd switch)!";
+					["ERROR IN SearchChopper.sqf: Case " + _state + " not taken care of (2nd switch)!"] call A3E_fnc_DebugMsg;
 				};
 			};
 		};
@@ -190,7 +182,7 @@ while {!_exitScript} do {
 		if (_state == "LANDING") exitWith {
 			_state = "REFUELING";
 			if (_debug) then {
-				systemchat "Search chopper state: REFUELING.";
+				["Search chopper state: REFUELING."] call A3E_fnc_DebugMsg;
 			};
 
 			_refuelStartTimeSek = diag_tickTime;
@@ -198,7 +190,6 @@ while {!_exitScript} do {
 		};
 
 		if (_state == "REFUELING") exitWith {
-//			systemchat "Tick time == " + str diag_tickTime + " AND right side == " + str (_refuelStartTimeSek + (_refuelTimeMin * 60));
 			if (diag_tickTime > _refuelStartTimeSek + (_refuelTimeMin * 60)) then {
 				_state = "READY";
 			};
@@ -221,7 +212,7 @@ while {!_exitScript} do {
 
 if (_exitScript) then {
 	if (_debug) then {
-		systemchat "Search chopper unable to continue. Script exiting.";
+		["Search chopper unable to continue. Script exiting."] call A3E_fnc_DebugMsg;
 	};
 };
 
