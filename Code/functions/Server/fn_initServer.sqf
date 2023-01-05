@@ -23,6 +23,19 @@ if(!isNil("A3E_Param_Debug")) then {
 	A3E_Debug = true;
 	["Warning! Debug was set to true because of missing param!."] spawn a3e_fnc_debugmsg;
 };
+if(is3DENPreview) then {
+	A3E_Debug = true;
+	
+	//Delete AI in Preview:
+	{
+		if(!isPlayer _x) then {
+			[_x] joinSilent grpNull;
+			deleteVehicle _x;
+		};
+	} foreach units group player;
+	["Debug mode active!."] spawn a3e_fnc_debugmsg;
+};
+
 publicVariable "A3E_Debug";
 
 //ACE Revive
