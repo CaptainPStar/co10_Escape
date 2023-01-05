@@ -4,6 +4,16 @@
 	};
 
 	_groups = A3E_Debug_TrackedGroups;
+	
+	if(!missionNamespace getvariable["A3E_Debug",false]) exitwith {
+	{
+		{deletemarker _x;} foreach _unitmarkers;
+		deletemarker _marker;
+		deletemarker _linemarker;
+	} foreach _groups;
+	A3E_Debug_TrackedGroups = [];
+	};
+	
 	_newgroups = [];
 	{
 
