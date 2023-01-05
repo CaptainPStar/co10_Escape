@@ -12,6 +12,7 @@
 		_marker = _x  select 1;
 		_linemarker = _x  select 2;
 		_unitmarkers = _x  select 3;
+		{deletemarker _x;} foreach _unitmarkers;
 		
 		if(!isNull _group) then 
 		{
@@ -20,7 +21,6 @@
 			private _state = [_group] call a3e_fnc_GetTaskState;
 			_text = format["%1 (#U:%2)",_state,count(units _group)];
 			_marker setmarkertext _text;
-			{deletemarker _x;} foreach _unitmarkers;
 			_unitmarkers = [];
 			{
 				private["_umarker","_markername"];

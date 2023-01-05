@@ -1,10 +1,12 @@
-	private["_group","_markername","_marker","_linemarker"];
-	_group = _this select 0;
+	private["_markername","_marker","_linemarker"];
+	params["_group"];
 	
 	if(isNil("A3E_Debug_TrackedGroups")) then {
 		A3E_Debug_TrackedGroups = [];
 	};
-
+	
+	["Group "+str _group+" added for debug tracking",["Debugging"]] call a3e_fnc_log;
+	
 	_markername = format["a3e_debug_positionMarker_%1",_group];
 	_marker = createmarker [_markername,getposASL (leader _group)];
 	_marker setmarkershape "ICON";		
