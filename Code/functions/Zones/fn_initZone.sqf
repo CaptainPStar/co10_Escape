@@ -2,17 +2,16 @@ private["_zoneIndex"];
 
 
 // ### Basic bootstrap and definitions ###
-if(isNil("a3e_patrolZoneIndex")) then {
-	a3e_patrolZoneIndex = 0;
+if(isNil("A3E_ZoneIndex")) then {
+	A3E_ZoneIndex = 0;
 	_zoneIndex = 0;
 } else {
-	a3e_patrolZoneIndex = a3e_patrolZoneIndex + 1;
-	_zoneIndex = a3e_patrolZoneIndex;
+	A3E_ZoneIndex = A3E_ZoneIndex + 1;
+	_zoneIndex = A3E_ZoneIndex;
 };
-if(isNil("a3e_patrolZones")) then {
-	a3e_patrolZones = [];
+if(isNil("A3E_Zones")) then {
+	A3E_Zones = [];
 };
-
 params["_shape","_onInit",["_type","Default"]];
 
 private _zonePosition = (_shape select 0);
@@ -21,23 +20,24 @@ private _zoneShape = (_shape select 2);
 private _zoneSizeXY = (_shape select 3);
 private _zoneArea = (_zoneSizeXY select 0)*(_zoneSizeXY select 1);
 
-//Select the side based on the zone size. Small zones are occupied by locals while large cities are occupied by OPFOR
-private _side = A3E_VAR_Side_Ind;
-if(_zoneArea > 5000) then {
-	_side = A3E_VAR_Side_Opfor;
-};
+//ToDo: A Zone should have a type depending on the marker color from the map, so in the future we can handcraft/discern villages and bases etc
 
 private _name = format["A3E_ZoneMarker%1",_zoneIndex];
-private _marker = createMarker [_name,(_x select 0)];
-_marker setMarkerDir (_x select 1);
-_marker setMarkerShape (_x select 2);
-_marker setMarkerSize (_x select 3);
+private _marker = createMarker [_name,_zonePosition];
+_marker setMarkerDir _zoneDir;
+_marker setMarkerShape _zoneShape;
+_marker setMarkerSize _zoneSizeXY;
 _marker setMarkerColor "ColorBlue";
-_name = format["A3E_ZoneMarkerText%1",_zoneIndex];
 _marker setMarkerAlpha 0;
 
 if(A3E_Debug) then {
 	_marker setMarkerAlpha 0.2;
+	private _markerLabel = createMarker [format["A3E_ZoneMarkerLabel%1",_zoneIndex],_zonePosition];
+	_markerLabel setmarkershape "ICON";		
+	_markerLabel setmarkertype "mil_dot";
+	_markerLabel setMarkerSize [0.4, 0.4];
+	_markerLabel setMarkerAlpha 0.5;
+	_markerLabel setMarkerText format["Zone #%1 (Type: %2)",_zoneIndex, _type];
 };
 
 private _triggerRange = missionNamespace getvariable ["A3E_Param_EnemySpawnDistance",800];
@@ -53,8 +53,8 @@ if(_zoneShape == "RECTANGLE") then {
 };
 _trigger setTriggerArea[(_zoneSizeXY select 0)+_triggerRange, (_zoneSizeXY select 1)+_triggerRange, _zoneDir, _rectangle];
 _trigger setTriggerTimeout [1, 1, 1, true];
-private _activation = format["[%1] call A3E_FNC_activatePatrolZone;",_zoneIndex];
-private _deactivation = format["[%1] call A3E_FNC_deactivatePatrolZone;",_zoneIndex];
+private _activation = format["[%1] call A3E_FNC_activateZone;",_zoneIndex];
+private _deactivation = format["[%1] call A3E_FNC_deactivateZone;",_zoneIndex];
 _trigger setTriggerStatements["this",_activation,""];
 
 private _deactivationTrigger = createTrigger["EmptyDetector", _zonePosition, false];
@@ -76,14 +76,14 @@ private _zoneArray = [
 			["trigger",_trigger],
 			["deactivationtrigger",_deactivationTrigger],
 			["marker",_marker],
-			["zoneArea",_zoneArea],
+			["zonearea",_zoneArea],
+			["oninit",_onInit],
+			["type",toUpper _type],
 			["initialized",false],
-			["active",false],
-			["patrols",[]],
-			["housePatrols",[]]
+			["active",false]
 			];
-a3e_patrolZones set [_zoneIndex,createHashMapFromArray _zoneArray];
-
+A3E_Zones set [_zoneIndex,createHashMapFromArray _zoneArray];
+_zoneIndex;
 
 
 

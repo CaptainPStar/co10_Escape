@@ -90,4 +90,8 @@ private _AmmoDepotTemplates = missionnamespace getvariable ["A3E_AmmoDepotTempla
 } foreach _positions;
 
 a3e_var_Escape_AmmoDepotPositions = _positions;
+{
+	[_x,60,selectRandom[A3E_VAR_Side_Opfor],"AMMODEPOT"] call A3E_fnc_initLocationZone;
+} foreach _positions;
+
 publicVariable "a3e_var_Escape_AmmoDepotPositions";

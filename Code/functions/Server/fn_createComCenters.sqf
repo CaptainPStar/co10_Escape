@@ -61,4 +61,9 @@ private _instanceNo = 0;
 } forEach _shuffledComCenterMarkers;
 
 a3e_var_Escape_communicationCenterPositions = _comCenPositions;
+
+{
+	[_x,80,selectRandom[A3E_VAR_Side_Opfor],"COMCENTER"] call A3E_fnc_initLocationZone;
+} foreach _comCenPositions;
+
 publicVariable "a3e_var_Escape_communicationCenterPositions";

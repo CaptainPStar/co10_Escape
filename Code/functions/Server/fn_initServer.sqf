@@ -208,14 +208,16 @@ _playerGroup = [] call A3E_fnc_GetPlayerGroup;
 
 
 // Create communication centers
-[] call A3E_fnc_CreateComCenters;
+[] spawn A3E_fnc_CreateComCenters;
 
 // Create Motor Pools
-[] call A3E_fnc_CreateMotorPools;
+[] spawn A3E_fnc_CreateMotorPools;
 
 // Create ammo depots
-[] call A3E_fnc_CreateAmmoDepots;
+[] spawn A3E_fnc_CreateAmmoDepots;
 
+//Spawn mortar sites
+[] spawn A3E_fnc_createMortarSites;
 
 // Initialize search leader
 //[drn_searchAreaMarkerName, A3E_Debug] execVM "Scripts\Escape\SearchLeader.sqf"; //depreciated
@@ -223,6 +225,7 @@ _playerGroup = [] call A3E_fnc_GetPlayerGroup;
 
 //Start the player detection script
 [] call A3E_fnc_PlayerDetection;
+
 
 // Start garbage collector
 [_playerGroup, 750, A3E_Debug] spawn drn_fnc_CL_RunGarbageCollector;
@@ -484,8 +487,6 @@ if(false) then {
 	};
 
 
-	//Spawn mortar sites
-	[] call A3E_fnc_createMortarSites;
 };
 
 };
@@ -715,6 +716,6 @@ call A3E_fnc_InitTraps;
 };
 
 
-["A3E_FNC_AmbientAISpawn"] call A3E_FNC_Chronos_Register;
+//["A3E_FNC_AmbientAISpawn"] call A3E_FNC_Chronos_Register;
 ["A3E_FNC_AmbientAICleanup"] call A3E_FNC_Chronos_Register;
 ["A3E_FNC_TrackGroup_Update"] call A3E_FNC_Chronos_Register;

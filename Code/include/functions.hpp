@@ -58,6 +58,8 @@ class CfgFunctions
 			class SearchDrone {};
 			class LeafletDrone {};
 			class Patrol {};
+			class Guard {};
+			class GuardBuilding {};
 			class Flee {};
 			class FireArtillery {};
 			class CallCAS {};
@@ -97,6 +99,9 @@ class CfgFunctions
 			class NearestObjectDis {};
 			class GetCircularSpawnPos {};
 			class RandomMarkerPos {};
+			class calcMarkerArea {};
+			class getBuildingsInMarker {};
+			class getSideColor {};
 		};
 		class Server
 		{
@@ -132,14 +137,26 @@ class CfgFunctions
 		};
 		class Spawning
 		{
-			class initPatrolZone {};
+			//class initPatrolZone {};
 			class initVillages {};
-			class activatePatrolZone {};
-			class deactivatePatrolZone {};
+			//class activatePatrolZone {};
+			//class deactivatePatrolZone {};
 			class onEnemySoldierSpawn {};
 			class spawnPatrol {};
 			class getDynamicSquadsize {};
 			class findSpawnPosBuilding {};
+			class populateVillageZone {};
+			class populateLocationZone {};
+		};
+		class Zones
+		{
+			class InitZone {};
+			class InitLocationZone {};
+			class ActivateZone {};
+			class DeactivateZone {};
+			class SerializeZoneGroups {};
+			class DeserializeZoneGroups {};
+			
 		};
 		class Templates
 		{
