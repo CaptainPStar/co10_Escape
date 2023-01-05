@@ -105,12 +105,9 @@ _fnc_GetKnownEnemyPosition = {
 };
 
 _fnc_SetNewState = {
-    private ["_state"];
-    
-    _state = _this select 0;
-    A3E_Debug = _this select 1;
-    
-    if (A3E_Debug) then {
+    params ["_state","_debug"];
+
+    if (_debug) then {
         ["Motorized search group state = " + _state] call drn_fnc_CL_ShowDebugTextAllClients;
     };
     
