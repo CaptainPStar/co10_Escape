@@ -120,7 +120,7 @@ publicVariable "a3e_var_Escape_hoursSkipped";
 
 
 setTimeMultiplier A3E_Param_TimeMultiplier;
-call compile preprocessFileLineNumbers ("Island\CommunicationCenterMarkers.sqf");
+
 
 
 // Game Control Variables, do not edit!
@@ -195,8 +195,8 @@ private _backpack = [] call A3E_fnc_createStartpos;
 
 //### The following is a mission function now
 
-[true] call drn_fnc_InitVillageMarkers; 
-[true] call drn_fnc_InitAquaticPatrolMarkers; 
+[true] call A3E_fnc_InitVillageMarkers; 
+//[true] call drn_fnc_InitAquaticPatrolMarkers; 
 
 //Wait for players to actually arrive ingame. This may be a long time if server is set to persistent
 waituntil{uisleep 1; count([] call A3E_FNC_GetPlayers)>0};
@@ -207,36 +207,14 @@ _playerGroup = [] call A3E_fnc_GetPlayerGroup;
 [_enemyMinSkill, _enemyMaxSkill, _enemyFrequency, A3E_Debug] execVM "Scripts\Escape\EscapeSurprises.sqf";
 
 
-// Initialize communication centers
+// Create communication centers
+[] call A3E_fnc_CreateComCenters;
 
-[] call A3E_fnc_createComCenters;
+// Create Motor Pools
+[] call A3E_fnc_CreateMotorPools;
 
-_EnemyCount = [3] call A3E_fnc_GetEnemyCount;
-
-[_playerGroup, "drn_CommunicationCenterPatrolMarker", A3E_VAR_Side_Opfor, "INS", 4, _EnemyCount select 0, _EnemyCount select 1, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance] call drn_fnc_InitGuardedLocations;
-[_playerGroup, a3e_var_Escape_communicationCenterPositions, _enemySpawnDistance, _enemyFrequency] call drn_fnc_Escape_InitializeComCenArmor;
-
-
-// Initialize Motor Pools
-[] call A3E_fnc_createMotorPools;
-
-
-// Initialize ammo depots
-
-[_enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _playerGroup, _enemyFrequency] spawn {
-	params ["_enemyMinSkill", "_enemyMaxSkill", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency"];
-	private ["_playerGroup", "_minEnemies", "_maxEnemies", "_bannedPositions", "_scriptHandle"];
-
-	private _EnemyCount = [2] call A3E_fnc_GetEnemyCount;
-	_EnemyCount params ["_minEnemies", "_maxEnemies"];
-	
-	_bannedPositions = + a3e_var_Escape_communicationCenterPositions + [A3E_StartPos, getMarkerPos "drn_insurgentAirfieldMarker"];
-	a3e_var_Escape_ammoDepotPositions = _bannedPositions call drn_fnc_Escape_FindAmmoDepotPositions;
-	
-	[] call A3E_fnc_createAmmoDepots;
-	
-	[_playerGroup, "drn_AmmoDepotPatrolMarker", A3E_VAR_Side_Opfor , "INS", 3, _minEnemies, _maxEnemies, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, A3E_Debug] spawn drn_fnc_InitGuardedLocations;
-};
+// Create ammo depots
+[] call A3E_fnc_CreateAmmoDepots;
 
 
 // Initialize search leader
@@ -253,6 +231,8 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 // Run initialization for scripts that need the players to be gathered at the start position
 [] spawn A3E_fnc_initVillages;
 
+//Uncommenting all legacy scripts for now
+if(false) then {
 [_enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _enemyFrequency] spawn {
 	params ["_enemyMinSkill", "_enemyMaxSkill", "_enemySpawnDistance", "_enemyFrequency"];
 
@@ -508,6 +488,7 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 	[] call A3E_fnc_createMortarSites;
 };
 
+};
 //Start local and remote statistic tracking
 [] spawn {
 	sleep 1;
@@ -522,7 +503,7 @@ waitUntil {scriptDone _scriptHandle};
 
 
 //Init trap spawning system for mines and other roadside surprises
-call A3E_fnc_initTraps;
+call A3E_fnc_InitTraps;
 
 
 // Spawn creation of start position settings
@@ -541,10 +522,13 @@ call A3E_fnc_initTraps;
 	};
 	
     // Spawn more guards
-    _marker = createMarkerLocal ["drn_guardAreaMarker", _startPos];
-    _marker setMarkerAlphaLocal 0;
-    _marker setMarkerShapeLocal "ELLIPSE";
-    _marker setMarkerSizeLocal [50, 50];
+    _marker = createMarker ["drn_guardAreaMarker", _startPos];
+    _marker setMarkerShape "ELLIPSE";
+    _marker setMarkerSize [50, 50];
+	_marker setMarkerAlpha 0;
+	if(missionNamespace getvariable["A3E_Debug",false]) then {
+		_marker setMarkerAlpha 0.5;
+	};
     
     //_guardCount = (2 + (_enemyFrequency)) + floor (random 2);
 
@@ -729,3 +713,8 @@ call A3E_fnc_initTraps;
 		} foreach call A3E_fnc_GetPlayers;
 	};
 };
+
+
+["A3E_FNC_AmbientAISpawn"] call A3E_FNC_Chronos_Register;
+["A3E_FNC_AmbientAICleanup"] call A3E_FNC_Chronos_Register;
+["A3E_FNC_TrackGroup_Update"] call A3E_FNC_Chronos_Register;

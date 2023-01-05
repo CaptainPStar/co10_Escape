@@ -16,6 +16,6 @@ A3E_DebugLog append [[_types,_msg,time,_data]];
 
 //Write to Chat/rpt if Debug is on
 if(missionNamespace getvariable ["A3E_Debug",false]) then {
-	["Log "+ _msg + " "+str _types] call a3e_fnc_systemChat;
-	["Escape Log "+ _msg] call a3e_fnc_rptLog;
+	["Log "+ _msg + " "+str _types+" "+str _data] call a3e_fnc_systemChat;
+	["Escape Log "+ _msg+" "+str _data] call a3e_fnc_rptLog;
 };

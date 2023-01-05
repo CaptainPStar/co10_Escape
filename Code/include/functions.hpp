@@ -1,52 +1,52 @@
 class CfgFunctions
 {
-  class A3E
-  {
-    class Common
-    {
-		class BootstrapEscape {
-#ifndef A3E_EDITOR
-			preInit = 0; // 1 to call the function upon mission start, before objects are initialized. Passed arguments are ["preInit"]
-			postInit = 1; // 1 to call the function upon mission start, after objects are initialized. Passed arguments are ["postInit"]
-			recompile = 0;
-#endif
-		};
-		class RandomMarkerPos {};
-		class GetSideColor {};
-		class RandomSpawnPos {};
-		class KeyDown {};
-		class RandomPatrolPos {};
-		class WriteParamBriefing {};
-		class findFlatArea{};
-		class findFlatAreaNear{};
-		class RotatePosition{};
-		class GetEnemyCount{};
-		class systemChat {};
-		class groupChat {};
-		class addUserActions {};
-		class Hijack {};
-		class HealAtBuilding {};
-		class GetPlayers {};
-		class GetRandomPlayer {};
-		class GetPlayerGroup {};
-		class CallRandomFunction {};
-		class Briefing {
-		
-		//	postInit = 1;
-		};
-		class InitLocalPlayer {
-#ifndef A3E_EDITOR
-			postInit = 0;
-#endif
-		};			
-		class cleanupTerrain {};
-		class handleRating {};
-		class handleScore {};
-		class CheckCampDistance {};
-		class FireSmokeFX {};
-		class OnVehicleSpawn {};
-		class initArsenal {};
-		class toggleEarplugs {};
+	class A3E
+	{
+		class Common
+		{
+			class BootstrapEscape {
+	#ifndef A3E_EDITOR
+				preInit = 0; // 1 to call the function upon mission start, before objects are initialized. Passed arguments are ["preInit"]
+				postInit = 1; // 1 to call the function upon mission start, after objects are initialized. Passed arguments are ["postInit"]
+				recompile = 0;
+	#endif
+			};
+			class GetSideColor {};
+			class RandomSpawnPos {};
+			class KeyDown {};
+			class RandomPatrolPos {};
+			class WriteParamBriefing {};
+			class findFlatArea{};
+			class findFlatAreaNear{};
+			class RotatePosition{};
+			class GetEnemyCount{};
+			class systemChat {};
+			class groupChat {};
+			class addUserActions {};
+			class Hijack {};
+			class HealAtBuilding {};
+			class GetPlayers {};
+			class GetRandomPlayer {};
+			class GetPlayerGroup {};
+			class CallRandomFunction {};
+			class Briefing {
+			
+			//	postInit = 1;
+			};
+			class InitLocalPlayer {
+	#ifndef A3E_EDITOR
+				postInit = 0;
+	#endif
+			};			
+			class cleanupTerrain {};
+			class handleRating {};
+			class handleScore {};
+			class CheckCampDistance {};
+			class FireSmokeFX {};
+			class OnVehicleSpawn {};
+			class initArsenal {};
+			class toggleEarplugs {};
+			class initVillageMarkers {};
 		};
 		class AI
 		{
@@ -69,12 +69,17 @@ class CfgFunctions
 			class ExtractionBoat {};
 			class ExtractionCar {};
 			class ExtractionChopper {};
+			class AmbientAISpawn {};
+			class AmbientAICleanup {};
+			class SpawnGarisson {};
 		};
 		class Debug
 		{
 			class unit_debug_marker {};
 			class drawMapLine {};
 			class TrackGroup {};
+			class TrackGroup_Add {};
+			class TrackGroup_Update {};
             class DebugMsg {};
 			class rptLog {};
 			class Log {};
@@ -85,6 +90,13 @@ class CfgFunctions
 			class AddIntel {};
 			class CollectIntel {};
 			class RevealPOI {};
+		};
+		class Helper
+		{
+			class GetRandomCirclePosition {};
+			class NearestObjectDis {};
+			class GetCircularSpawnPos {};
+			class RandomMarkerPos {};
 		};
 		class Server
 		{
@@ -127,6 +139,7 @@ class CfgFunctions
 			class onEnemySoldierSpawn {};
 			class spawnPatrol {};
 			class getDynamicSquadsize {};
+			class findSpawnPosBuilding {};
 		};
 		class Templates
 		{
@@ -214,10 +227,6 @@ class CfgFunctions
 			class MotorizedSearchGroup {};	
 			class SearchChopper {};
 			class SearchGroup {};
-			class InitVillageMarkers{};
-			class PopulateVillage {};
-			class DepopulateVillage {};
-			class InitAquaticPatrols {};
 			class PopulateAquaticPatrol {};
 			class DepopulateAquaticPatrol {};
 			class InitAquaticPatrolMarkers {};
