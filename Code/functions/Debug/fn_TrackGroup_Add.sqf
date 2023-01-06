@@ -1,7 +1,7 @@
 	private["_markername","_marker","_linemarker"];
 	params["_group"];
 	
-	if(!missionNamespace getvariable["A3E_Debug",false]) exitwith {};
+	if(!(missionNamespace getvariable["A3E_Debug",false])) exitwith {};
 	
 	if(isNil("A3E_Debug_TrackedGroups")) then {
 		A3E_Debug_TrackedGroups = [];
