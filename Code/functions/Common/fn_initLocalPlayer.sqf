@@ -40,7 +40,7 @@ if(hmd player != "") then {
 if(A3E_DEBUG) then {
 	player allowdamage false;
 	player linkitem "ItemMap";
-	onmapsingleclick "player setpos _pos";
+	onmapsingleclick "if(_alt) then {player setpos _pos;};";
 };
 player addeventhandler["HandleRating","_this call A3E_FNC_handleRating;"];
 
