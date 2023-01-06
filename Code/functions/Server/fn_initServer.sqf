@@ -228,7 +228,7 @@ _playerGroup = [] call A3E_fnc_GetPlayerGroup;
 
 
 // Start garbage collector
-[_playerGroup, 750, A3E_Debug] spawn drn_fnc_CL_RunGarbageCollector;
+//[_playerGroup, 750, A3E_Debug] spawn drn_fnc_CL_RunGarbageCollector;
 
 
 // Run initialization for scripts that need the players to be gathered at the start position
@@ -717,5 +717,5 @@ call A3E_fnc_InitTraps;
 
 
 //["A3E_FNC_AmbientAISpawn"] call A3E_FNC_Chronos_Register;
-["A3E_FNC_AmbientAICleanup"] call A3E_FNC_Chronos_Register;
+["A3E_FNC_AmbientPatrols"] call A3E_FNC_Chronos_Register;
 ["A3E_FNC_TrackGroup_Update"] call A3E_FNC_Chronos_Register;

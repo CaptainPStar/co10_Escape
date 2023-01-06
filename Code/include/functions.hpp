@@ -71,8 +71,6 @@ class CfgFunctions
 			class ExtractionBoat {};
 			class ExtractionCar {};
 			class ExtractionChopper {};
-			class AmbientAISpawn {};
-			class AmbientAICleanup {};
 			class SpawnGarisson {};
 		};
 		class Debug
@@ -147,6 +145,9 @@ class CfgFunctions
 			class findSpawnPosBuilding {};
 			class populateVillageZone {};
 			class populateLocationZone {};
+			class AmbientPatrols {};
+			class MilitaryTraffic {};
+			class CivilianCommuters {};
 		};
 		class Zones
 		{
