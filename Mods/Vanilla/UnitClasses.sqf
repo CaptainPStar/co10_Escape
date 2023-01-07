@@ -768,6 +768,16 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"I_G_Soldier_LAT2_F"];
 
 
+//////////////////////////////////////////////////////////////////
+// fn_RoadBlocks.sqf
+// Array of templates to use for roadblocks
+//////////////////////////////////////////////////////////////////
+A3E_RoadblockTemplates = [
+	"A3E_fnc_Roadblock"
+	,"A3E_fnc_Roadblock2"
+	,"A3E_fnc_Roadblock3"
+	,"A3E_fnc_Roadblock4"];
+
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"O_MRAP_02_hmg_F"
@@ -803,6 +813,29 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"O_APC_Wheeled_02_rcws_F"
 	,"O_APC_Tracked_02_cannon_F"];
 
+
+//////////////////////////////////////////////////////////////////
+// fn_createMotorPools.sqf
+// Array of templates to use for motor pool
+//////////////////////////////////////////////////////////////////
+A3E_MotorPoolTemplates = [
+	"A3E_fnc_BuildMotorPool"
+	];
+
+// A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
+// light *and* a random heavy armor.
+
+//////////////////////////////////////////////////////////////////
+// fn_createComCenters.sqf
+// Array of templates to use for com centers
+//////////////////////////////////////////////////////////////////
+A3E_ComCenterTemplates = [
+	"a3e_fnc_BuildComCenter"
+	,"a3e_fnc_BuildComCenter2"
+	,"a3e_fnc_BuildComCenter3"
+	,"a3e_fnc_BuildComCenter4"
+	,"a3e_fnc_BuildComCenter5"
+	];
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
 // light *and* a random heavy armor.
@@ -909,6 +942,18 @@ a3e_arr_I_pilots = [
 	"I_helipilot_F"
 	,"I_helicrew_F"];
 
+
+//////////////////////////////////////////////////////////////////
+// fn_createAmmoDepots.sqf
+// Array of templates to usefor ammo depots
+//////////////////////////////////////////////////////////////////
+A3E_AmmoDepotTemplates = [
+	"A3E_fnc_AmmoDepot"
+	,"A3E_fnc_AmmoDepot2"
+	,"A3E_fnc_AmmoDepot3"
+	,"A3E_fnc_AmmoDepot4"
+	,"A3E_fnc_AmmoDepot5"
+	];
 
 // The following arrays define weapons and ammo contained at the ammo depots
 // Index 0: Weapon classname.
@@ -1264,6 +1309,14 @@ a3e_arr_AquaticPatrols = [
 a3e_additional_weapon_box_1 = "Box_NATO_Wps_F";
 a3e_additional_weapon_box_2 = "Box_NATO_WpsSpecial_F";
 
+//////////////////////////////////////////////////////////////////
+// fn_createMortarSites.sqf
+// Array of templates to usefor mortar sites
+//////////////////////////////////////////////////////////////////
+A3E_MortarSiteTemplates = [
+	"A3E_fnc_MortarSite"
+	];
+	
 //////////////////////////////////////////////////////////////////
 // fn_MortarSite
 // mortar spawned in the mortar camps
