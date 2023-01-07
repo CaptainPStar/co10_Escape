@@ -360,7 +360,7 @@ a3e_arr_recon_I_InfantryTypes = [
 A3E_RoadblockTemplates = [
 	"A3E_fnc_Roadblock_vn1"
 	,"A3E_fnc_Roadblock_vn2"
-	,"A3E_fnc_Roadblock2"]
+	,"A3E_fnc_Roadblock2"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
