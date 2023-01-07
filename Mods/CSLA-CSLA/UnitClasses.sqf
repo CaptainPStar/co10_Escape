@@ -58,11 +58,11 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CSLA_CIV_V3S"
 	,"CSLA_CIV_V3Sr"
 	,"US85_TT650"
+	//,"CSLA_CIV_AZU"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200PO"
-	,"CSLA_CIV_AZU"
 	,"CSLA_civ_CATOR"];
 	if(A3E_Param_UseDLCContact==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Tractor_01_F";
@@ -418,11 +418,11 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"CSLA_CIV_V3S"
 	,"CSLA_CIV_V3Sr"
 	,"US85_TT650"
+	//,"CSLA_CIV_AZU"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
-	,"CSLA_CIV_Sarka1200PO"
-	,"CSLA_CIV_AZU"];
+	,"CSLA_CIV_Sarka1200PO"];
 
 // Vehicles, weapons and ammo at ammo depots
 
@@ -703,7 +703,7 @@ A3E_IntelItems = [
 	,"FileNetworkStructure"
 	//,"MobilePhone"
 	//,"SmartPhone"
-	,"CSLA_Documents_item"
+	//,"CSLA_Documents_item"
 	];
 
 //////////////////////////////////////////////////////////////////
