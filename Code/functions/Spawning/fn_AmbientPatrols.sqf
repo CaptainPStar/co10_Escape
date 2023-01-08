@@ -24,15 +24,23 @@ private _group = _x;
 		_leader = ((units _x) select 0);
 		private _nearest = [getpos _leader,_plist] call A3E_fnc_NearestObjectDis;
 		if(_nearest>_removalDistance) then {
+			private _vehicles = [];
 			{
-				deletevehicle _x;
+				if(vehicle _x != _x) then {
+					private _veh = (vehicle _x);
+					_veh deletevehiclecrew _x;
+					_vehicles pushBackUnique _veh;
+				} else {
+					deletevehicle _x;
+				};
 			} foreach units _x;
+			{deletevehicle _x;} foreach _vehicles;
+			
 			[format["Group %1 deleted (too far)",_group],["AmbientAI","Spawning"],[["NearestPlayer",_nearest]]] call A3E_fnc_Log;
 			deletegroup _x;
 			_groups set [_foreachIndex,grpNull];
 		};
 	};
-
 } foreach _groups;
 
 //Remove deletes entries from array
