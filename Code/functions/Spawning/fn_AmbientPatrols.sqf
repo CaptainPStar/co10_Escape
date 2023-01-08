@@ -1,5 +1,5 @@
 private _groups = missionNamespace getvariable ["A3E_AmbientAIGroups",[]];
-private _maxAmbientGroups = missionNamespace getvariable ["A3E_MaxAmbientAIGroups",10];
+private _maxAmbientGroups = missionNamespace getvariable ["A3E_MaxAmbientAIGroups",15];
 
 private _MinSpawnCircleDistance = missionNamespace getvariable ["A3E_MinSpawnCircleDistance",800];
 private _MaxSpawnCircleDistance = missionNamespace getvariable ["A3E_MaxSpawnCircleDistance",1500];
