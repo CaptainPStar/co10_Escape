@@ -1,14 +1,26 @@
-private["_pos","_radius","_rndpos"];
-_pos = [_this,0,[0,0,0],[[]]] call bis_fnc_param;
-_radius = [_this,1,50] call bis_fnc_param;
-_water = [_this,2,false] call bis_fnc_param;
-_isOk = false;
+params["_startPos",["_minDis",1000],["_maxDis",2000],["_mode","NONE"]];
 
-for [{_x=0},{_x<=10},{_x=_x+1}] do {
-	_rndpos = [(_pos select 0)+2*random(_radius)-_radius,(_pos select 1)+2*random(_radius)-_radius,0];
-	if((!_water && !(surfaceIsWater _rndpos)) || (_water && surfaceIsWater _rndpos)) exitwith {_isOk = true;};
+private _return = [];
+private _pos = [];
+
+for "_x" from 1 to 10 do {
+	private _distance = _minDis + random(_maxDis-_minDis);
+	_dir = random 360;
+	_pos = [(_startPos select 0)+cos(_dir)*_distance,(_startPos select 1)+sin(_dir)*_distance,0];
+	if(_mode != "ROAD") then {
+		if(!(surfaceIsWater _pos) && _mode=="NONE") exitwith {_return = _pos;};
+		if((surfaceIsWater _pos) && _mode=="WATER") exitwith {_return = _pos;};
+	} else {
+		private _roads = _pos nearRoads 50;
+		_roads = _roads select {
+			private _info = getRoadInfo _x;
+			private _ret = false;
+			_ret = (!(_info#2) && !(_info#8));
+			_ret;
+		};
+		if(count(_roads)>0) exitwith {
+			_return = getpos(selectRandom _roads);
+		};
+	};
 };
-if(!_isOk) then {
-_rndpos = [];
-};
-_rndpos
+_return
