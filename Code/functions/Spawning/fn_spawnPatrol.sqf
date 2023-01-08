@@ -18,6 +18,7 @@ private _unitArray = _possibleInfantryTypes;
 
 //Create a Group
 private _group = creategroup _side;
+[_group] call A3E_fnc_onEnemyGroupSpawn;
 
 ["Creating group with "+str (_count+1) +" units.",[]] call a3e_fnc_log;
 

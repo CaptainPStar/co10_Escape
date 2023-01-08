@@ -58,6 +58,7 @@ class CfgFunctions
 			class SearchDrone {};
 			class LeafletDrone {};
 			class Patrol {};
+			class MilitaryTrafficPatrol {};
 			class Guard {};
 			class GuardBuilding {};
 			class Flee {};
@@ -72,10 +73,11 @@ class CfgFunctions
 			class ExtractionCar {};
 			class ExtractionChopper {};
 			class SpawnGarisson {};
+			class onEnemyDetected {};
 		};
 		class Debug
 		{
-			class unit_debug_marker {};
+			//class unit_debug_marker {};
 			class drawMapLine {};
 			class TrackGroup {};
 			class TrackGroup_Add {};
@@ -84,6 +86,8 @@ class CfgFunctions
 			class rptLog {};
 			class Log {};
 			class logMessage {};
+			class startDebugView {};
+			class getDebugMessages {};
 		};
 		class Intel
 		{
@@ -141,6 +145,7 @@ class CfgFunctions
 			//class deactivatePatrolZone {};
 			class onEnemySoldierSpawn {};
 			class spawnPatrol {};
+			class spawnMilitaryVehicle {};
 			class getDynamicSquadsize {};
 			class findSpawnPosBuilding {};
 			class populateVillageZone {};
@@ -148,6 +153,7 @@ class CfgFunctions
 			class AmbientPatrols {};
 			class MilitaryTraffic {};
 			class CivilianCommuters {};
+			class onEnemyGroupSpawn {};
 		};
 		class Zones
 		{
@@ -226,6 +232,7 @@ class CfgFunctions
 			class SearchLeaderInit {};
 			class SearchLeaderRadio {};
 			class CreateKnownPosition {};
+			class onPlayerSpotted {};
 			
 		};
 	};

@@ -4,7 +4,7 @@
 #define MOD "{* MOD *}"
 #define ISLAND "{* ISLANDNAME *}"
 #define RELEASE "{* RELEASE *}"
-#define GAMETYPE {* GAMETYPE *}
+//#define GAMETYPE {* GAMETYPE *}
 
 //--- [Controls Style Preprocessors]
 #define ST_LEFT 				0

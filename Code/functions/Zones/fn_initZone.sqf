@@ -52,10 +52,10 @@ if(_zoneShape == "RECTANGLE") then {
 	_rectangle = true;
 };
 _trigger setTriggerArea[(_zoneSizeXY select 0)+_triggerRange, (_zoneSizeXY select 1)+_triggerRange, _zoneDir, _rectangle];
-_trigger setTriggerTimeout [1, 1, 1, true];
+_trigger setTriggerTimeout [1,1, 1, true];
 private _activation = format["[%1] call A3E_FNC_activateZone;",_zoneIndex];
 private _deactivation = format["[%1] call A3E_FNC_deactivateZone;",_zoneIndex];
-_trigger setTriggerStatements["this",_activation,""];
+_trigger setTriggerStatements["this && time > 1",_activation,""];
 
 private _deactivationTrigger = createTrigger["EmptyDetector", _zonePosition, false];
 _deactivationTrigger setTriggerInterval 5;
@@ -66,8 +66,8 @@ if(_zoneShape == "RECTANGLE") then {
 	_rectangle = true;
 };
 
-//Deactivation trigger is 50m larger than activation, to prevent spawn/despawn oscillation
-_deactivationTrigger setTriggerArea[(_zoneSizeXY select 0)+_triggerRange+50, (_zoneSizeXY select 1)+_triggerRange+50, _zoneDir, _rectangle];
+//Deactivation trigger is 100m larger than activation, to prevent spawn/despawn oscillation
+_deactivationTrigger setTriggerArea[(_zoneSizeXY select 0)+_triggerRange+100, (_zoneSizeXY select 1)+_triggerRange+100, _zoneDir, _rectangle];
 _deactivationTrigger setTriggerTimeout [1, 1, 1, true];
 
 _deactivationTrigger setTriggerStatements["this","",_deactivation];
