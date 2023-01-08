@@ -1,4 +1,4 @@
-private["_group","_markername","_searchRange","_oncomplete","_destinationPos","_waypoint","_leader","_players"];
+private["_group","_BuildingPos","_positionIndex","_markername","_searchRange","_movePos","_oncomplete","_destinationPos","_waypoint","_leader","_players","_Building"];
 params["_group",["_markerName","noMarker"]];
 
 if(!isserver) then {
@@ -10,11 +10,10 @@ if(_markerName == "noMarker") then {
 	_markerName = _group getvariable ["a3e_homeMarker","noMarker"];
 };
 
-_oncomplete = format["if(isserver) then {[group this,""%1""] spawn A3E_FNC_Guard;};",_markerName];
+_oncomplete = format["if(isserver) then {[group this,""%1""] spawn A3E_FNC_Patrol;};",_markerName];
 
 
 _Building = [(getpos leader _group)] call A3E_fnc_getRndBuildingWithPositions;
-
 
 
 if(count(_Building)>0) then {
@@ -30,10 +29,9 @@ if(count(_Building)>0) then {
 		_movePos = [(getpos _BuildingObject select 0) + (random 50) - 25,(getpos _BuildingObject select 1) + (random 50) - 25,0];
 		_waypoint = [_group,_movePos,"MOVE","COLUMN","LIMITED","SAFE",_oncomplete] call a3E_fnc_move;
 	};
-	
-	_waypoint setWaypointTimeout [10, 30, 60];
-	[_group,"GARRISONED"] call a3e_fnc_SetTaskState;
+	_waypoint setWaypointTimeout [10, 20, 30];
+	[_group,"PATROL BUILDINGS"] call a3e_fnc_SetTaskState;
 } else {
 	//No Building near. Do normal patrol duty
-	[_group,_markerName] spawn A3E_fnc_Guard;
+	[_group,_markerName] spawn A3E_fnc_Patrol;
 };

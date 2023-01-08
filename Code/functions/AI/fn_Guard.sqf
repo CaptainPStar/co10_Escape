@@ -9,10 +9,21 @@ if(_markerName == "noMarker") then {
 	_markerName = _group getvariable ["a3e_homeMarker","noMarker"];
 };
 
+
+if((random 100)<=35) then {
+
+	//Switch randomly to House Patrol
+	private _houses = nearestObjects [leader _group, ["House", "Building"], 50];
+	if(count(_houses) > 0) exitwith {
+		[_group,_markerName] spawn A3E_fnc_GuardBuilding;
+	};
+};
+
+
 [_group,"GUARD"] call a3e_fnc_SetTaskState;
 
-	private["_counter"];
-	_counter = 0;
+private["_counter"];
+_counter = 0;
 	
 if(_markerName != "noMarker") then {
 	_destinationPos = [_markerName] call a3e_fnc_RandomMarkerPos;

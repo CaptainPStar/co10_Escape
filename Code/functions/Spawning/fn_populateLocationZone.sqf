@@ -39,19 +39,6 @@ if(_side == A3E_VAR_Side_Opfor) then {
 	_possibleInfantryTypes = a3e_arr_Escape_InfantryTypes;
 };
 
-for "_x" from 1 to _guardCount do {
-	private _pos = selectRandom _buildingsPositions;
-	private _grp = creategroup _side;
-	_unit = _grp createUnit [selectRandom _possibleInfantryTypes, _pos, [], 0, "NONE"];
-   _unit setpos _pos;
-   _unit setdir (random 360);
-	[_unit] call A3E_fnc_onEnemySoldierSpawn;
-	[_grp, _marker] call A3E_fnc_GuardBuilding;
-	[_grp] call A3E_fnc_TrackGroup_Add;
-	_groups pushBack _grp;
-};
-
-
 
 //General purpose patrol groups
 for "_x" from 1 to _patrolCount do {
@@ -61,8 +48,11 @@ for "_x" from 1 to _patrolCount do {
 	private _grp = [_pos,_side,_unitCount] call A3E_FNC_spawnPatrol;
 	_groups pushBack _grp;
 	//_grp setvariable ["A3E_PatrolZone_Index",_zoneIndex];
-	[_grp, _marker] call A3E_fnc_Guard;
-	[_grp] call A3E_fnc_TrackGroup_Add;
+	if(random 100 <= 70) then {
+		[_grp, _marker] call A3E_fnc_Guard;
+	} else {
+		[_grp, _marker] call A3E_fnc_GuardBuilding;
+	};
 };
 _zone set ["groups",_groups];
 

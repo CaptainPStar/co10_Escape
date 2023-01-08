@@ -74,6 +74,18 @@ class CfgFunctions
 			class ExtractionChopper {};
 			class SpawnGarisson {};
 			class onEnemyDetected {};
+			class PatrolBuildings {};
+			class MoveInBuilding {};
+			//class SearchBuilding {};
+		};
+		class Garrison
+		{
+			class GetBuildingPositions {};
+			class GetBuildingPositionsInMarker {};
+			class GetRndBuilding {};
+			class GetRndBuildingPosition {};
+			class GetRndBuildingWithPositions {};
+			
 		};
 		class Debug
 		{

@@ -20,7 +20,7 @@ if(_base<0) then {
 	};
 };
 
-_unitsPerGroup = _unitsPerGroup + selectRandom [-1,-1,0,0,0,1,1,1,2];
+_unitsPerGroup = _unitsPerGroup + selectRandom [-1,-1,0,0,0,1,1,1,1,1,1,2,2,2,2,3];
 _unitsPerGroup = _unitsPerGroup max _min;
 _unitsPerGroup = _unitsPerGroup min _max;
 _unitsPerGroup;

@@ -14,5 +14,10 @@ if(count(_movePos)==0) exitwith {
 	};
 };
 
-[_group,_movePos,"MOVE","COLUMN","LIMITED","AWARE","[group this] spawn A3E_fnc_MilitaryTrafficPatrol;"] spawn A3E_FNC_Move;
+private _waypoint = [_group,_movePos,"MOVE","COLUMN","LIMITED","AWARE","[group this] spawn A3E_fnc_MilitaryTrafficPatrol;"] call A3E_FNC_Move;
+
+if(!isNil("_waypoint")) then {
+	_waypoint setWaypointTimeout [0, 10, 30];
+};
+
 [_group,"VEHICLEPATROL"] call a3e_fnc_SetTaskState;

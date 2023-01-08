@@ -8,7 +8,7 @@ _speed = [_this,4,"LIMITED",[""]] call bis_fnc_param;
 _combatmode = [_this,5,"SAFE",[""]] call bis_fnc_param;
 _onComplete = [_this,6,"",[""]] call bis_fnc_param;
 
-
+(units _group) doFollow (leader _group);
 
 if(count (waypoints _group) <= 1) then {
 	_group addWaypoint [[0,0,0], 1];
