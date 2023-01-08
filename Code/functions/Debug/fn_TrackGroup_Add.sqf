@@ -8,13 +8,27 @@
 	};
 	
 	["Group "+str _group+" added for debug tracking",["Debugging"]] call a3e_fnc_log;
+	private _side = side _group;
 	
 	_markername = format["a3e_debug_positionMarker_%1",_group];
 	_marker = createmarker [_markername,getposASL (leader _group)];
-	_marker setmarkershape "ICON";		
-	_marker setmarkertype "mil_dot";
-	_marker setMarkerSize [0.4, 0.4];
-	_marker setmarkercolor "ColorRed";
+	_marker setmarkershapelocal "ICON";		
+	_marker setmarkertypelocal "mil_dot";
+	_marker setMarkerSizelocal [0.7, 0.7];
+	private _markerColor = "ColorBlack";
+	 if (_side == west) then {
+		_markerColor = "ColorBlue";
+	};
+	if (_side == east) then {
+		_markerColor = "ColorRed";
+	};
+	if (_side == civilian) then {
+		_markerColor = "ColorWhite";
+	};
+	if (_side == resistance) then {
+		_markerColor = "ColorGreen";
+	};
+	_marker setmarkercolor _markerColor;
 
 	if(isNil("a3e_var_LineMarkerNo")) then {
 		a3e_var_LineMarkerNo = 0;
@@ -25,7 +39,7 @@
 	_linemarker = createMarker [_markername,getposASL (leader _group)];
 
 	_linemarker setMarkerShape "RECTANGLE";
-	_linemarker setMarkerColor "ColorYellow";
+	_linemarker setMarkerColor _markerColor;
 	_linemarker setMarkerSize [1,1];
 
 	

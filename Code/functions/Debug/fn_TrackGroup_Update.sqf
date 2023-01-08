@@ -28,7 +28,17 @@
 		{
 			private _state = [_group] call a3e_fnc_GetTaskState;
 			_text = format["%1 (#U:%2)",_state,count(units _group)];
+			
+			private _markertype = "b_inf";
+			if(vehicle (leader _group) isKindOf "Tank") then {
+				_markertype = "b_armor";
+			} else {
+				if(vehicle (leader _group) isKindOf "Car") then {
+					_markertype = "b_motor_inf";
+				};
+			};
 			_marker setmarkertextlocal _text;
+			_marker setmarkertype _markertype;
 			_marker setmarkerpos getposASL (leader _group);
 			[getposASL (units _group select 0),waypointPosition ((waypoints _group) select 1),_linemarker] call A3E_FNC_DrawMapLine;
 			
@@ -39,7 +49,7 @@
 				_umarker = createmarker [_markername,getposASL _x];
 				_umarker setmarkershapeLocal "ICON";		
 				_umarker setmarkertypeLocal "mil_dot";
-				_umarker setMarkerSizeLocal [0.3, 0.3];
+				_umarker setMarkerSizeLocal [0.5, 0.5];
 				//_umarker setmarkercolor ([side leader _group] call a3e_fnc_getSideColor);
 				_umarker setmarkercolor "ColorRed";
 				_unitmarkers set[count(_unitmarkers),_umarker];

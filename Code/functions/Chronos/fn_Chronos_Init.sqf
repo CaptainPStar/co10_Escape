@@ -20,7 +20,7 @@ if(isserver) then {
 	_trigger setTriggerInterval A3E_CronTime;
 	_trigger setTriggerArea[0, 0, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", true];
-	_trigger setTriggerTimeout [1, 1, 1, false];
+	_trigger setTriggerTimeout [0, 0, 0, false];
 	_trigger setTriggerStatements["A3E_CronTick", "A3E_CronTick = false; [] call a3e_fnc_chronos_run;", "A3E_CronTick = true;"];
 	
 	A3E_CronTrigger = _trigger;

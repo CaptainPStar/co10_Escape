@@ -19,6 +19,6 @@ A3E_DebugLog append [[_types,_msg,time,_data]];
 if(	(missionNamespace getvariable ["A3E_Debug",false] && ({_x in _types} count _filter) == 0 )
 	|| (!(missionNamespace getvariable ["A3E_Debug",false]) && ({_x in _types}count _filter) > 0 )
 	) then {
-	["Log "+ _msg + " "+str _types+" "+str _data] call a3e_fnc_systemChat;
-	["Escape Log "+ _msg+" "+str _data] call a3e_fnc_rptLog;
+	["Log: "+ _msg + " "+str _types+" "+str _data] call a3e_fnc_systemChat;
+	["Escape Log: "+ _msg+" "+str _data] call a3e_fnc_rptLog;
 };
