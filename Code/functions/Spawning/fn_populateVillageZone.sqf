@@ -48,9 +48,27 @@ for "_x" from 1 to _patrolCount do {
 	[_grp, _marker] call A3E_fnc_Patrol;
 	[_grp] call A3E_fnc_TrackGroup_Add;
 };
+
+
+
+//Spawn some civilians
+if(_patrolCount > 2) then {
+
+	private _count = (_patrolCount)+selectRandom[-4,-3,-3,-2,-2,-2,-1,-1,0,0,0,0,0,1,1,1,1];
+	_count = 0 max _count;
+
+	for "_x" from 1 to (_count) do {
+		private _pos = [_marker] call BIS_fnc_randomPosTrigger;
+		private _grp = [_pos,selectRandom[1,1,1,1,1,2]] call A3E_FNC_spawnCivilianStroller;
+	
+		_groups pushBack _grp;
+		_grp setvariable ["A3E_PatrolZone_Index",_zoneIndex];
+		[_grp, _marker] call A3E_fnc_Stroll;
+		[_grp] call A3E_fnc_TrackGroup_Add;
+	};
+};
+
 _zone set ["groups",_groups];
-
-
 
 
 //["Zone "+str _zoneIndex+" populated with "+str count(_groups)+" groups",["Zones","Spawning"]] call A3E_fnc_Log;

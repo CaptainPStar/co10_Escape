@@ -43,7 +43,6 @@ class CfgFunctions
 			class handleScore {};
 			class CheckCampDistance {};
 			class FireSmokeFX {};
-			class OnVehicleSpawn {};
 			class initArsenal {};
 			class toggleEarplugs {};
 			class initVillageMarkers {};
@@ -76,6 +75,11 @@ class CfgFunctions
 			class onEnemyDetected {};
 			class PatrolBuildings {};
 			class MoveInBuilding {};
+			class CivilianCommuter {};
+			class Stroll {};
+			class Occupy {};
+			class resumeTask {};
+			class SeekShelter {};
 			//class SearchBuilding {};
 		};
 		class Garrison
@@ -156,8 +160,11 @@ class CfgFunctions
 			//class activatePatrolZone {};
 			//class deactivatePatrolZone {};
 			class onEnemySoldierSpawn {};
+			class onCivilianSpawn {};
 			class spawnPatrol {};
 			class spawnMilitaryVehicle {};
+			class spawnCivilianVehicle {};
+			class spawnCivilianStroller {};
 			class getDynamicSquadsize {};
 			class findSpawnPosBuilding {};
 			class populateVillageZone {};
@@ -166,6 +173,8 @@ class CfgFunctions
 			class MilitaryTraffic {};
 			class CivilianCommuters {};
 			class onEnemyGroupSpawn {};
+			class onCivilianGroupSpawn {};
+			class OnVehicleSpawn {};
 		};
 		class Zones
 		{

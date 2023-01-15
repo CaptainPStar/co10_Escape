@@ -1,16 +1,17 @@
-params ["_grp", "_newTarget"];
+params["_grp"];
 
-["Grp "+str _grp+" spotted enemy "+name _newTarget,["AI","SearchLeader"]] call A3E_fnc_log;
+[_grp] call A3E_fnc_TrackGroup_Add;
 
-if(!(_newTarget in ([]call A3E_Fnc_GetPlayers))) exitwith {};
 
-if(side _grp == civilian) then {
+_group addEventHandler ["EnemyDetected", {_this call A3E_fnc_onEnemyDetected;}];
 
+_group addEventHandler ["KnowsAboutChanged", {
+	params ["_grp", "_player", "_newKnowsAbout", "_oldKnowsAbout"];
 	private _score = missionNamespace getvariable ["A3E_Warcrime_Score",0];
 	private _threshold = missionNamespace getvariable ["A3E_Warcrime_Score_CivilianFear",1000];
 	private _lastReported = _grp getvariable ["A3E_LastReportedPlayer",0];
 
-	if(( _grp knowsabout _newTarget)< 2.5) exitwith {};
+	if(_newKnowsAbout<_oldKnowsAbout || _newKnowsAbout< 2.5) exitwith {};
 	if(_score<_threshold) exitwith {};
 	if(!(isPlayer _player)) exitwith {};
 	if(time < (_lastReported+300)) exitwith {};
@@ -63,4 +64,5 @@ if(side _grp == civilian) then {
 		};
 	};
 
-};
+	
+}];

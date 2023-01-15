@@ -71,6 +71,18 @@ private _serializedGroups = _zone get "serializedgroups";
 			{
 				[_grp] call A3E_FNC_Patrol;
 			};
+			case "STROLL":
+			{
+				[_grp] call A3E_FNC_Stroll;
+			};
+			case "OCCUPY":
+			{
+				[_grp] call A3E_FNC_OCCUPY;
+			};
+			case "SHELTER":
+			{
+				[_grp] call A3E_FNC_SeekShelter;
+			};
 			default
 			{
 				[_grp] call A3E_FNC_Patrol;

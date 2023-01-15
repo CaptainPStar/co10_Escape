@@ -72,6 +72,7 @@ publicVariable "A3E_VAR_Flag_Ind";
 
 createCenter A3E_VAR_Side_Opfor;
 createCenter A3E_VAR_Side_Ind;
+createCenter civilian;
 
 if(isNil("A3E_Param_War_Torn")) then {
 	A3E_Param_War_Torn = 0;
@@ -358,70 +359,6 @@ if(false) then {
 	_radius = _enemySpawnDistance + 500;
 	_vehiclesCount = round (_vehiclesPerSqkm * (_radius / 1000) * (_radius / 1000) * 3.141592);
 	
-	_fnc_onSpawnCivilian = {
-		private ["_vehicle", "_crew"];
-		_vehicle = _this select 0;
-		_crew = _this select 1;
-		//_vehiclesGroup = _result select 2;
-		
-		{
-			{
-				_x removeWeapon "ItemMap";
-			} foreach _crew; // foreach crew
-			
-			_x addeventhandler ["killed",{
-				if ((_this select 1) in (call A3E_fnc_GetPlayers)) then {
-					if((isNil("a3e_var_Escape_SearchLeader_civilianReporting"))||!a3e_var_Escape_SearchLeader_civilianReporting) then {
-						a3e_var_Escape_SearchLeader_civilianReporting = true;
-						publicVariable "a3e_var_Escape_SearchLeader_civilianReporting";
-						(_this select 1) addScore -5;
-					} else {
-						(_this select 1) addScore -1;
-					};
-					(_this select 1) addRating 1000; //Even out the minus score by killing civilians
-					[name (_this select 1) + " has killed a civilian."] call drn_fnc_CL_ShowCommandTextAllClients;
-				};
-				if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
-					_killer = (_this select 0) getVariable ["ace_medical_lastDamageSource", objNull];
-					if (_killer in (call A3E_fnc_GetPlayers)) then {
-						if((isNil("a3e_var_Escape_SearchLeader_civilianReporting"))||!a3e_var_Escape_SearchLeader_civilianReporting) then {
-								a3e_var_Escape_SearchLeader_civilianReporting = true;
-								publicVariable "a3e_var_Escape_SearchLeader_civilianReporting";
-								(_killer) addScore -5;
-							} else {
-								(_killer) addScore -1;
-							};
-							(_killer) addRating 1000; //Even out the minus score by killing civilians
-							[name (_killer) + " has killed a civilian."] call drn_fnc_CL_ShowCommandTextAllClients;
-					};
-				};
-			}];
-		} foreach _crew;
-		
-		clearitemcargoglobal _vehicle;
-        clearWeaponCargoGlobal _vehicle;
-        clearMagazineCargoGlobal _vehicle;			
-		
-		if (random 100 < 20) then {
-			private ["_weaponItem"];
-			
-			_weaponItem = selectRandom a3e_arr_CivilianCarWeapons;
-			
-			_vehicle addWeaponCargoGlobal [_weaponItem select 0, 1];
-			_vehicle addMagazineCargoGlobal [_weaponItem select 1, _weaponItem select 2];
-		};	
-		if (random 100 < 80) then {
-           _vehicle addItemCargoglobal ["firstaidkit", 3];	
-		};
-		if (random 100 < 80) then {
-           _vehicle addMagazineCargoglobal ["smokeshellRed", 2];	
-		};
-		if (random 100 < 80) then {
-           _vehicle addMagazineCargoglobal ["Chemlight_green", 5];	
-		};
-	};
-	
-	[civilian, [], _vehiclesCount, _enemySpawnDistance, _radius, 0.5, 0.5, _fnc_onSpawnCivilian, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
 
 	
 	// Enemy military traffic
@@ -719,4 +656,20 @@ call A3E_fnc_InitTraps;
 //["A3E_FNC_AmbientAISpawn"] call A3E_FNC_Chronos_Register;
 ["A3E_FNC_AmbientPatrols"] call A3E_FNC_Chronos_Register;
 ["A3E_FNC_MilitaryTraffic"] call A3E_FNC_Chronos_Register;
+["A3E_FNC_CivilianCommuters"] call A3E_FNC_Chronos_Register;
 ["A3E_FNC_TrackGroup_Update"] call A3E_FNC_Chronos_Register;
+
+
+//Move to chronos
+
+[] spawn {
+	while {true} do {
+		private _score = missionNamespace getvariable ["A3E_Warcrime_Score",0];
+		if(_score>500) then {
+			_score = _score - 50;
+			missionNamespace setvariable ["A3E_Warcrime_Score",_score];
+		};
+		sleep 60;
+	};
+};
+
