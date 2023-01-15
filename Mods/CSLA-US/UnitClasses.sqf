@@ -23,6 +23,9 @@ A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
 A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
+
+A3E_ItemsToBeRemoved = ["US85_watch","US85_scFAL","US85_FALbpd"]; //Items to randomly remove from units and to remove from guards
+
 // Random array. Start position guard types around the prison
 a3e_arr_Escape_StartPositionGuardTypes = [
 	"FIA_mcFAL"
@@ -311,6 +314,31 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"FIA_cdFAL"
 	,"FIA_cdSa26RPG75"
 	,"FIA_cdOP63"];
+
+a3e_units_civilian_InfantryTypes = [
+	"CSLA_CIV_Citizen"
+	,"CSLA_CIV_Citizen_V2"
+	,"CSLA_CIV_Citizen_V3"
+	,"CSLA_CIV_Citizen_V4"
+	,"CSLA_CIV_Foreman"
+	,"CSLA_CIV_Foreman_V2"
+	,"CSLA_CIV_Woodlander"
+	,"CSLA_CIV_Woodlander_V2"
+	,"CSLA_CIV_Woodlander_V3"
+	,"CSLA_CIV_Woodlander_V4"
+	,"CSLA_CIV_Functionary"
+	,"CSLA_CIV_Functionary_V2"
+	,"CSLA_CIV_Villager"
+	,"CSLA_CIV_Villager_V2"
+	,"CSLA_CIV_Villager_V3"
+	,"CSLA_CIV_Villager_V4"
+	,"CSLA_CIV_Worker"
+	,"CSLA_CIV_Worker_V2"
+	,"CSLA_CIV_Worker_V3"
+	,"CSLA_CIV_Worker_V4"
+//	,"CSLA_CIV_Policeman"
+//	,"CSLA_CIV_PoliceManSa61"
+	,"CSLA_CIV_Doctor"];
 
 //////////////////////////////////////////////////////////////////
 // fn_RoadBlocks.sqf

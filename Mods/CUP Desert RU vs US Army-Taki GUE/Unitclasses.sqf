@@ -1387,6 +1387,32 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"CUP_I_TK_GUE_Soldier_M16A2"
 	,"CUP_I_TK_GUE_Soldier_GL"];
 
+a3e_units_civilian_InfantryTypes = [
+	"CUP_C_TK_Man_04"
+	,"CUP_C_TK_Man_04_Jack"
+	,"CUP_C_TK_Man_04_Waist"
+	,"CUP_C_TK_Man_07"
+	,"CUP_C_TK_Man_07_Coat"
+	,"CUP_C_TK_Man_07_Waist"
+	,"CUP_C_TK_Man_08"
+	,"CUP_C_TK_Man_08_Jack"
+	,"CUP_C_TK_Man_08_Waist"
+	,"CUP_C_TK_Man_05_Coat"
+	,"CUP_C_TK_Man_05_Jack"
+	,"CUP_C_TK_Man_05_Waist"
+	,"CUP_C_TK_Man_06_Coat"
+	,"CUP_C_TK_Man_06_Jack"
+	,"CUP_C_TK_Man_06_Waist"
+	,"CUP_C_TK_Man_02"
+	,"CUP_C_TK_Man_02_Jack"
+	,"CUP_C_TK_Man_02_Waist"
+	,"CUP_C_TK_Man_01_Waist"
+	,"CUP_C_TK_Man_01_Coat"
+	,"CUP_C_TK_Man_01_Jack"
+	,"CUP_C_TK_Man_03_Coat"
+	,"CUP_C_TK_Man_03_Jack"
+	,"CUP_C_TK_Man_03_Waist"];
+
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"CUP_B_HMMWV_Crows_M2_USA"
@@ -2383,3 +2409,7 @@ a3e_arr_CrashSiteItems pushback ["CUP_optic_Kobra", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["CUP_optic_PSO_1_AK", 50, 1, 3];
 a3e_arr_CrashSiteItems pushback ["CUP_optic_PSO_1", 50, 1, 3];
 a3e_arr_CrashSiteItems pushback ["CUP_optic_PechenegScope", 25, 1, 3];
+
+//Mines and traps, fn_initTraps
+A3E_Trap_Classes = [["roadside","CUP_IED_V4_M"],["roadside","CUP_IED_V2_M"],["roadside","IEDLandSmall_Remote_Mag"],["roadside","CUP_IED_V3_M"],["roadside","IEDUrbanSmall_Remote_Mag"],["roadside","CUP_IED_V1_M"]];//,["roadcenter","vn_mine_tripwire_m16_04"],["roadcenter","vn_mine_tripwire_arty"],["roadside","vn_mine_tripwire_f1_02"]]; Classnames ofd traps and mines. String or array in form [classname, trigger range, scriptcode]
+A3E_Trap_Pathes = ["TRACK", "TRAIL"]; //Classnames of roads and pathes for the traps to spawn
