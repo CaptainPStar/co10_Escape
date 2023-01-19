@@ -25,10 +25,15 @@ private _score = missionNamespace getvariable ["A3E_Warcrime_Score",0];
 
 _unit addEventHandler ["Killed", {
 	params ["_unit", "_killer", "_instigator", "_useEffects"];
-	if(isPlayer _instigator || isPlayer _killer) then {
+	private _k = _killer;
+	if(isPlayer _instigator) then {
+		_k = _instigator;
+	};
+	
+	if(!(isNull _k)) then {
 		private _score = missionNamespace getvariable ["A3E_Warcrime_Score",0];
 		missionNamespace setvariable ["A3E_Warcrime_Score",_score+500, true];
-		[format["%1 killed a civilian.",name _instigator]] remoteExec ["systemchat"];
+		[format["%1 killed a civilian.",name _k]] remoteExec ["systemchat"];
 		_instigator addScore -5;
 		_instigator addRating 1000; 
 	};
@@ -44,12 +49,12 @@ _unit addEventHandler["FiredNear",{
 	_unit setvariable ["A3E_IsScared",true];
 	_unit setvariable ["A3E_LastScaredByFire",time];
 	if(vehicle _unit == _unit && _distance < 25) then {
-		switch(selectRandom[0,1,2])do{
-			case 0:{_unit switchMove "ApanPercMstpSnonWnonDnon_G01";};
-			case 1:{_unit playMoveNow "ApanPknlMstpSnonWnonDnon_G01";};
-			case 2:{_unit playMoveNow "ApanPpneMstpSnonWnonDnon_G01";};
-			default{_unit playMoveNow "ApanPknlMstpSnonWnonDnon_G01";};
-		};
+		/*switch(selectRandom[0,1,2])do{
+			case 0:{[_unit,"ApanPercMstpSnonWnonDnon_G01"] remoteexec ["switchMove",0];};
+			case 1:{[_unit,"ApanPknlMstpSnonWnonDnon_G01"] remoteexec ["playMoveNow",_unit];};
+			case 2:{[_unit,"ApanPpneMstpSnonWnonDnon_G01"] remoteexec ["playMoveNow",_unit];};
+			default{[_unit,"ApanPknlMstpSnonWnonDnon_G01"] remoteexec ["playMoveNow",_unit];};
+		};*/
 	};
 	private _building = [_unit] call A3E_fnc_getRndBuildingWithPositions;
 
