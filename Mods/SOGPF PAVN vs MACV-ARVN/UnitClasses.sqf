@@ -59,7 +59,7 @@ a3e_arr_PrisonBackpackWeapons pushback ["vn_m1911", "vn_m1911_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_m1911_sd", "vn_m1911_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_mx991_m1911", "vn_m1911_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_m712","vn_m712_mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["vn_m79_p","vn_40mm_m576_buck_mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["vn_m79_p","vn_40mm_m381_he_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_mk22","vn_mk22_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_mk22_sd","vn_mk22_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_m10","vn_m10_mag"];
