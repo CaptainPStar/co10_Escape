@@ -13,12 +13,12 @@ if(isNil("a3e_patrolZones")) then {
 	a3e_patrolZones = [];
 };
 
-params["_zone"];
+params["_shape","_onInit",["_type","Default"]];
 
-private _zonePosition = (_zone select 0);
-private _zoneDir = (_x select 1);
-private _zoneShape = (_x select 2);
-private _zoneSizeXY = (_x select 3);
+private _zonePosition = (_shape select 0);
+private _zoneDir = (_shape select 1);
+private _zoneShape = (_shape select 2);
+private _zoneSizeXY = (_shape select 3);
 private _zoneArea = (_zoneSizeXY select 0)*(_zoneSizeXY select 1);
 
 //Select the side based on the zone size. Small zones are occupied by locals while large cities are occupied by OPFOR
@@ -37,7 +37,7 @@ _name = format["A3E_ZoneMarkerText%1",_zoneIndex];
 _marker setMarkerAlpha 0;
 
 if(A3E_Debug) then {
-	_marker setMarkerAlpha 0.5;
+	_marker setMarkerAlpha 0.2;
 };
 
 private _triggerRange = missionNamespace getvariable ["A3E_Param_EnemySpawnDistance",800];
@@ -76,14 +76,13 @@ private _zoneArray = [
 			["trigger",_trigger],
 			["deactivationtrigger",_deactivationTrigger],
 			["marker",_marker],
-			["side",_side],
 			["zoneArea",_zoneArea],
 			["initialized",false],
 			["active",false],
 			["patrols",[]],
 			["housePatrols",[]]
 			];
-a3e_patrolZones set [_zoneIndex,_zoneArray];
+a3e_patrolZones set [_zoneIndex,createHashMapFromArray _zoneArray];
 
 
 

@@ -37,7 +37,11 @@ if(hmd player != "") then {
 	private _hmd = hmd player;
 	player unlinkItem _hmd;
 };
-
+if(A3E_DEBUG) then {
+	player allowdamage false;
+	player linkitem "ItemMap";
+	onmapsingleclick "if(_alt) then {player setpos _pos;};";
+};
 player addeventhandler["HandleRating","_this call A3E_FNC_handleRating;"];
 
 player addeventhandler["InventoryClosed","_this call A3E_FNC_collectIntel;"];

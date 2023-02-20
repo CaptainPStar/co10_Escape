@@ -42,14 +42,8 @@ private _instanceNo = 0;
 
 	if _ok then {
 		// pick one of the BuildComCenter methods at random
-		[_pos, _dir, a3e_arr_ComCenStaticWeapons, a3e_arr_ComCenParkedVehicles] call 
-			selectRandom [
-				a3e_fnc_BuildComCenter, 
-				a3e_fnc_BuildComCenter2,
-				a3e_fnc_BuildComCenter3,
-				a3e_fnc_BuildComCenter4,
-				a3e_fnc_BuildComCenter5
-			];
+		private _ComCenterTemplates = missionnamespace getvariable ["A3E_ComCenterTemplates",["a3e_fnc_BuildComCenter","a3e_fnc_BuildComCenter2","a3e_fnc_BuildComCenter3","a3e_fnc_BuildComCenter4","a3e_fnc_BuildComCenter5"]];
+		[[_pos, _dir, a3e_arr_ComCenStaticWeapons, a3e_arr_ComCenParkedVehicles], _ComCenterTemplates] call A3E_fnc_callRandomFunction;
 
 		A3E_Var_ClearedPositions pushBack _pos;
 		[format ["drn_CommunicationCenterMapMarker%1", _instanceNo], _pos, "o_hq"] call A3E_fnc_createLocationMarker;
@@ -67,4 +61,9 @@ private _instanceNo = 0;
 } forEach _shuffledComCenterMarkers;
 
 a3e_var_Escape_communicationCenterPositions = _comCenPositions;
+
+{
+	[_x,80,selectRandom[A3E_VAR_Side_Opfor],"COMCENTER"] call A3E_fnc_initLocationZone;
+} foreach _comCenPositions;
+
 publicVariable "a3e_var_Escape_communicationCenterPositions";

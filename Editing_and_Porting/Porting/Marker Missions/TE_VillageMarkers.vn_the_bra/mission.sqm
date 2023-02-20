@@ -1,0 +1,1479 @@
+version=54;
+class EditorData
+{
+	moveGridStep=4;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1025;
+	class ItemIDProvider
+	{
+		nextID=2155;
+	};
+	class MarkerIDProvider
+	{
+		nextID=142;
+	};
+	class Camera
+	{
+		pos[]={1831.5406,126.07629,1556.7874};
+		dir[]={0.78735435,-0.49379683,-0.36945117};
+		up[]={0.44711772,0.86953992,-0.20980228};
+		aside[]={-0.42484364,-2.5691697e-006,-0.90540695};
+	};
+};
+binarizationWanted=0;
+sourceName="TE_VillageMarkers";
+addons[]=
+{
+	"A3_Ui_F",
+	"A3_Characters_F"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=2400677;
+class ScenarioData
+{
+	author="Scruffy";
+};
+class Intro
+{
+	class Intel
+	{
+		startWeather=0.25;
+		startWind=0.1;
+		forecastWeather=0.25;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class Mission
+{
+	class Intel
+	{
+		briefingName="Escape";
+		resistanceEast=1;
+		startWeather=0;
+		startWind=0.1;
+		forecastWeather=0;
+		forecastFog=0.1205344;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=15;
+		minute=-8;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+	class Entities
+	{
+		items=96;
+		class Item0
+		{
+			dataType="Trigger";
+			position[]={-624.33301,69.491211,4248.9932};
+			class Attributes
+			{
+				text="Generate";
+				onActivation="_nil = [] execVM ""PositionGenerator.sqf"";";
+				interuptable=1;
+				activationBy="ALPHA";
+			};
+			id=141;
+			type="EmptyDetector";
+			atlOffset=44.834511;
+		};
+		class Item1
+		{
+			dataType="Marker";
+			position[]={-573.97156,621.57257,3923.9717};
+			name="a3e_village";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=50;
+			b=50;
+			id=198;
+			atlOffset=581.16266;
+		};
+		class Item2
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1353.4963,19.121952,2860.1294};
+						angles[]={0.019996032,0,6.2551923};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						skill=0.59999996;
+						rank="MAJOR";
+						name="drn_player1";
+						isPlayer=1;
+						isPlayable=1;
+					};
+					id=2061;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male12ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2060;
+		};
+		class Item3
+		{
+			dataType="Marker";
+			position[]={246.11322,602.55267,680.11536};
+			name="a3e_village_1";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=33.615463;
+			b=26.593628;
+			id=2062;
+			atlOffset=581.16266;
+		};
+		class Item4
+		{
+			dataType="Marker";
+			position[]={386.04916,628.95868,279.18961};
+			name="a3e_village_2";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=32.551147;
+			b=37.796478;
+			id=2063;
+			atlOffset=577.73566;
+		};
+		class Item5
+		{
+			dataType="Marker";
+			position[]={606.46667,604.30267,957.76355};
+			name="a3e_village_3";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=21.274292;
+			b=20.429535;
+			id=2064;
+			atlOffset=578.54089;
+		};
+		class Item6
+		{
+			dataType="Marker";
+			position[]={474.73126,608.71912,941.151};
+			name="a3e_village_4";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=15.722321;
+			b=44.930573;
+			angle=318.2916;
+			id=2065;
+			atlOffset=585.5437;
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={999.56091,590.31506,890.82397};
+			name="a3e_village_5";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=20.454865;
+			b=30.945435;
+			angle=306.90695;
+			id=2066;
+			atlOffset=581.12372;
+		};
+		class Item8
+		{
+			dataType="Marker";
+			position[]={1085.4156,590.75659,961.46289};
+			name="a3e_village_6";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=7.7161255;
+			b=7.8230286;
+			id=2067;
+			atlOffset=581.16907;
+		};
+		class Item9
+		{
+			dataType="Marker";
+			position[]={769.59692,593.41266,1364.2537};
+			name="a3e_village_7";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=19.380951;
+			b=17.747803;
+			id=2068;
+			atlOffset=581.16266;
+		};
+		class Item10
+		{
+			dataType="Marker";
+			position[]={939.70087,588.263,1463.6843};
+			name="a3e_village_8";
+			markerType="RECTANGLE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=56.752853;
+			b=73.396133;
+			angle=48.767017;
+			id=2069;
+			atlOffset=581.16302;
+		};
+		class Item11
+		{
+			dataType="Marker";
+			position[]={1069.9015,587.83807,1614.7014};
+			name="a3e_village_9";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=49.430359;
+			b=27.308533;
+			angle=22.326172;
+			id=2070;
+			atlOffset=580.92017;
+		};
+		class Item12
+		{
+			dataType="Marker";
+			position[]={1573.3129,587.33301,1866.8971};
+			name="a3e_village_10";
+			markerType="RECTANGLE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=35.841518;
+			b=41.302448;
+			angle=321.14297;
+			id=2071;
+			atlOffset=578.32025;
+		};
+		class Item13
+		{
+			dataType="Marker";
+			position[]={1524.0078,592.18658,2410.502};
+			name="a3e_village_11";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=36.160217;
+			b=67.472778;
+			id=2072;
+			atlOffset=581.27502;
+		};
+		class Item14
+		{
+			dataType="Marker";
+			position[]={764.60828,592.21265,2571.4517};
+			name="a3e_village_12";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=76.280151;
+			b=141.14172;
+			angle=31.553091;
+			id=2073;
+			atlOffset=577.69891;
+		};
+		class Item15
+		{
+			dataType="Marker";
+			position[]={198.02257,617.5166,3317.7168};
+			name="a3e_village_13";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=17.350426;
+			b=12.961548;
+			angle=20.249861;
+			id=2074;
+			atlOffset=586.59973;
+		};
+		class Item16
+		{
+			dataType="Marker";
+			position[]={1937.162,600.41486,3351.792};
+			name="a3e_village_14";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=34.590759;
+			b=63.848877;
+			angle=40.526691;
+			id=2075;
+			atlOffset=581.01428;
+		};
+		class Item17
+		{
+			dataType="Marker";
+			position[]={2483.0198,596.89801,3250.7554};
+			name="a3e_village_15";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=43.902767;
+			b=19.303818;
+			angle=345.55548;
+			id=2076;
+			atlOffset=581.60016;
+		};
+		class Item18
+		{
+			dataType="Marker";
+			position[]={1284.1533,608.83313,4437.2847};
+			name="a3e_village_16";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=59.052673;
+			b=129.88556;
+			angle=17.123943;
+			id=2077;
+			atlOffset=579.1076;
+		};
+		class Item19
+		{
+			dataType="Marker";
+			position[]={1419.8646,620.26263,4624.2886};
+			name="a3e_village_17";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=35.892918;
+			b=21.337309;
+			angle=333.35727;
+			id=2078;
+			atlOffset=581.16266;
+		};
+		class Item20
+		{
+			dataType="Marker";
+			position[]={3350.9517,620.84534,4373.7944};
+			name="a3e_village_18";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=129.64319;
+			b=127.19582;
+			angle=283.23865;
+			id=2079;
+			atlOffset=577.85535;
+		};
+		class Item21
+		{
+			dataType="Marker";
+			position[]={3442.3638,594.57465,3191.9402};
+			name="a3e_village_19";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=22.602173;
+			b=43.482544;
+			angle=341.21533;
+			id=2080;
+			atlOffset=579.45404;
+		};
+		class Item22
+		{
+			dataType="Marker";
+			position[]={3551.7803,593.07581,3293.4417};
+			name="a3e_village_20";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=82.950073;
+			b=35.275269;
+			angle=350.29062;
+			id=2081;
+			atlOffset=582.42383;
+		};
+		class Item23
+		{
+			dataType="Marker";
+			position[]={3818.1948,606.37671,3073.1543};
+			name="a3e_village_21";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=46.164185;
+			b=76.421265;
+			angle=20.831644;
+			id=2082;
+			atlOffset=581.1861;
+		};
+		class Item24
+		{
+			dataType="Marker";
+			position[]={4093.1497,605.42249,3206.4639};
+			name="a3e_village_22";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=51.207031;
+			b=18.981323;
+			id=2083;
+			atlOffset=580.80957;
+		};
+		class Item25
+		{
+			dataType="Marker";
+			position[]={3979.7029,609.25208,3104.1035};
+			name="a3e_village_23";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=15.843018;
+			b=26.584961;
+			id=2084;
+			atlOffset=581.07141;
+		};
+		class Item26
+		{
+			dataType="Marker";
+			position[]={3759.8784,589.51208,2845.7571};
+			name="a3e_village_24";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=105.42041;
+			b=81.009033;
+			angle=40.892063;
+			id=2085;
+			atlOffset=580.20728;
+		};
+		class Item27
+		{
+			dataType="Marker";
+			position[]={4726.2202,599.30408,2894.3904};
+			name="a3e_village_25";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=70.276367;
+			b=93.659271;
+			angle=316.83441;
+			id=2086;
+			atlOffset=584.71466;
+		};
+		class Item28
+		{
+			dataType="Marker";
+			position[]={4831.2866,583.89911,2552.2009};
+			name="a3e_village_26";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=41.018555;
+			b=29.315186;
+			angle=324.48965;
+			id=2087;
+			atlOffset=580.64569;
+		};
+		class Item29
+		{
+			dataType="Marker";
+			position[]={4843.8286,592.35907,2752.7007};
+			name="a3e_village_27";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=43.332031;
+			b=25.368652;
+			angle=16.515039;
+			id=2088;
+			atlOffset=583.28864;
+		};
+		class Item30
+		{
+			dataType="Marker";
+			position[]={3310.8623,591.73169,2020.5802};
+			name="a3e_village_28";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=27.128052;
+			b=13.052917;
+			angle=21.948523;
+			id=2089;
+			atlOffset=580.8526;
+		};
+		class Item31
+		{
+			dataType="Marker";
+			position[]={3158.4089,596.13263,2115.978};
+			name="a3e_village_29";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=26.248291;
+			b=29.327271;
+			id=2090;
+			atlOffset=581.16266;
+		};
+		class Item32
+		{
+			dataType="Marker";
+			position[]={2898.0134,587.14569,2208.0166};
+			name="a3e_village_30";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=54.014252;
+			b=25.511049;
+			angle=344.47217;
+			id=2091;
+			atlOffset=581.15363;
+		};
+		class Item33
+		{
+			dataType="Marker";
+			position[]={2886.2944,583.48657,2021.8903};
+			name="a3e_village_31";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=17.822632;
+			b=21.282471;
+			id=2092;
+			atlOffset=577.27094;
+		};
+		class Item34
+		{
+			dataType="Marker";
+			position[]={2644.3293,583.42175,1993.5253};
+			name="a3e_village_32";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=29.067261;
+			b=22.839539;
+			id=2093;
+			atlOffset=577.08978;
+		};
+		class Item35
+		{
+			dataType="Marker";
+			position[]={2449.8423,590.38586,1962.2145};
+			name="a3e_village_33";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=14.016479;
+			b=23.358276;
+			angle=30.807877;
+			id=2094;
+			atlOffset=578.72852;
+		};
+		class Item36
+		{
+			dataType="Marker";
+			position[]={2848.8103,612.10046,1570.314};
+			name="a3e_village_34";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=21.154175;
+			b=20.540405;
+			id=2095;
+			atlOffset=572.05078;
+		};
+		class Item37
+		{
+			dataType="Marker";
+			position[]={3075.4602,591.09174,1863.9386};
+			name="a3e_village_35";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=29.413452;
+			b=22.493408;
+			id=2096;
+			atlOffset=581.58173;
+		};
+		class Item38
+		{
+			dataType="Marker";
+			position[]={2461.875,585.26227,1496.0122};
+			name="a3e_village_36";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=19.926758;
+			b=15.630615;
+			id=2097;
+			atlOffset=573.52704;
+		};
+		class Item39
+		{
+			dataType="Marker";
+			position[]={2566.9224,587.22064,1418.2078};
+			name="a3e_village_37";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=14.249634;
+			b=25.60376;
+			angle=316.92993;
+			id=2098;
+			atlOffset=564.04718;
+		};
+		class Item40
+		{
+			dataType="Marker";
+			position[]={2491.2595,611.27179,1256.0712};
+			name="a3e_village_38";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=15.9375;
+			b=48.926025;
+			angle=36.358566;
+			id=2099;
+			atlOffset=580.42267;
+		};
+		class Item41
+		{
+			dataType="Marker";
+			position[]={2348.8362,599.24017,1374.244};
+			name="a3e_village_39";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=13.482544;
+			b=23.149048;
+			angle=335.92038;
+			id=2100;
+			atlOffset=576.29578;
+		};
+		class Item42
+		{
+			dataType="Marker";
+			position[]={2211.0654,593.55347,1802.9878};
+			name="a3e_village_40";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=27.593384;
+			b=20.567627;
+			id=2101;
+			atlOffset=581.591;
+		};
+		class Item43
+		{
+			dataType="Marker";
+			position[]={2017.6483,593.99896,1830.4274};
+			name="a3e_village_41";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=25.909193;
+			b=19.827393;
+			angle=34.704205;
+			id=2102;
+			atlOffset=581.23724;
+		};
+		class Item44
+		{
+			dataType="Marker";
+			position[]={1589.5591,589.12268,707.27435};
+			name="a3e_village_42";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=55.54723;
+			b=127.27274;
+			angle=41.519569;
+			id=2103;
+			atlOffset=578.25433;
+		};
+		class Item45
+		{
+			dataType="Marker";
+			position[]={1763.6482,604.0296,330.3923};
+			name="a3e_village_43";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=21.628357;
+			b=18.687592;
+			angle=43.579353;
+			id=2104;
+			atlOffset=573.46777;
+		};
+		class Item46
+		{
+			dataType="Marker";
+			position[]={1925.5696,651.45984,268.21185};
+			name="a3e_village_44";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=23.8759;
+			b=34.015736;
+			angle=346.82779;
+			id=2105;
+			atlOffset=578.47986;
+		};
+		class Item47
+		{
+			dataType="Marker";
+			position[]={2617.8171,623.59509,346.30966};
+			name="a3e_village_45";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=28.2962;
+			b=24.416922;
+			angle=358.40726;
+			id=2106;
+			atlOffset=579.60327;
+		};
+		class Item48
+		{
+			dataType="Marker";
+			position[]={2752.0378,608.68268,477.99988};
+			name="a3e_village_46";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=33.764771;
+			b=28.447876;
+			id=2107;
+			atlOffset=581.16266;
+		};
+		class Item49
+		{
+			dataType="Marker";
+			position[]={3495.5605,646.94153,218.24722};
+			name="a3e_village_47";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=41.436035;
+			b=36.404877;
+			id=2108;
+			atlOffset=581.16266;
+		};
+		class Item50
+		{
+			dataType="Marker";
+			position[]={3266.0078,623.22192,342.51968};
+			name="a3e_village_48";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=20.98999;
+			b=13.38974;
+			angle=29.687632;
+			id=2109;
+			atlOffset=578.15405;
+		};
+		class Item51
+		{
+			dataType="Marker";
+			position[]={3597.1721,612.85376,502.61551};
+			name="a3e_village_49";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=32.835327;
+			b=18.986359;
+			angle=341.07751;
+			id=2110;
+			atlOffset=581.79669;
+		};
+		class Item52
+		{
+			dataType="Marker";
+			position[]={3884.3535,602.36267,523.83911};
+			name="a3e_village_50";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=35.565918;
+			b=34.395752;
+			id=2111;
+			atlOffset=578.54089;
+		};
+		class Item53
+		{
+			dataType="Marker";
+			position[]={4039.8484,603.51984,784.31201};
+			name="a3e_village_51";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=18.986572;
+			b=21.327057;
+			id=2112;
+			atlOffset=573.03802;
+		};
+		class Item54
+		{
+			dataType="Marker";
+			position[]={3704.0205,607.15613,745.57739};
+			name="a3e_village_52";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=8.8435059;
+			b=8.843689;
+			id=2113;
+			atlOffset=584.73517;
+		};
+		class Item55
+		{
+			dataType="Marker";
+			position[]={3470.335,613.20209,960.24078};
+			name="a3e_village_53";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=21.991699;
+			b=40.220947;
+			id=2114;
+			atlOffset=581.02979;
+		};
+		class Item56
+		{
+			dataType="Marker";
+			position[]={3150.0083,605.64514,745.98834};
+			name="a3e_village_54";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=106.73392;
+			b=42.069725;
+			angle=20.738365;
+			id=2115;
+			atlOffset=581.9071;
+		};
+		class Item57
+		{
+			dataType="Marker";
+			position[]={2863.7837,599.31702,1026.7026};
+			name="a3e_village_55";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=7.0322266;
+			b=5.7044678;
+			id=2116;
+			atlOffset=566.66028;
+		};
+		class Item58
+		{
+			dataType="Marker";
+			position[]={4398.8716,618.88855,558.31323};
+			name="a3e_village_56";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=29.714355;
+			b=43.368225;
+			id=2117;
+			atlOffset=580.96857;
+		};
+		class Item59
+		{
+			dataType="Marker";
+			position[]={4113.8799,590.93414,605.64899};
+			name="a3e_village_57";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=10.208862;
+			b=9.8188782;
+			id=2118;
+			atlOffset=570.63013;
+		};
+		class Item60
+		{
+			dataType="Marker";
+			position[]={4503.751,624.77142,424.76761};
+			name="a3e_village_58";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=17.426025;
+			b=13.71994;
+			id=2119;
+			atlOffset=572.34039;
+		};
+		class Item61
+		{
+			dataType="Marker";
+			position[]={4720.8506,597.71051,555.65979};
+			name="a3e_village_59";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=19.96167;
+			b=12.549744;
+			angle=30.31579;
+			id=2120;
+			atlOffset=580.14734;
+		};
+		class Item62
+		{
+			dataType="Marker";
+			position[]={4709.9199,609.91254,810.44861};
+			name="a3e_village_60";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=25.423096;
+			b=18.791504;
+			id=2121;
+			atlOffset=584.01074;
+		};
+		class Item63
+		{
+			dataType="Marker";
+			position[]={4528.9063,602.80994,969.27448};
+			name="a3e_village_61";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=30.689453;
+			b=33.420258;
+			id=2122;
+			atlOffset=580.27124;
+		};
+		class Item64
+		{
+			dataType="Marker";
+			position[]={4500.4458,608.17358,719.68213};
+			name="a3e_village_62";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=18.596436;
+			b=15.085297;
+			id=2123;
+			atlOffset=580.99707;
+		};
+		class Item65
+		{
+			dataType="Marker";
+			position[]={4579.2896,599.68268,1081.8138};
+			name="a3e_village_63";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=8.0632324;
+			b=7.2833252;
+			id=2124;
+			atlOffset=575.09375;
+		};
+		class Item66
+		{
+			dataType="Marker";
+			position[]={3948.0957,580.30267,1276.1521};
+			name="a3e_village_64";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=47.216797;
+			b=35.227173;
+			id=2125;
+			atlOffset=576.50317;
+		};
+		class Item67
+		{
+			dataType="Marker";
+			position[]={3226.1018,620.81805,4275.415};
+			name="a3e_village_65";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=50;
+			b=60.820667;
+			angle=71.122162;
+			id=2126;
+			atlOffset=581.15808;
+		};
+		class Item68
+		{
+			dataType="Marker";
+			position[]={484.28159,597.43018,4530.4741};
+			name="a3e_village_66";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=60.517834;
+			b=37.235786;
+			angle=43.522274;
+			id=2127;
+			atlOffset=581.07935;
+		};
+		class Item69
+		{
+			dataType="Marker";
+			position[]={649.14166,585.23627,2425.6553};
+			name="a3e_village_67";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=18.407898;
+			b=75.441406;
+			angle=40.216774;
+			id=2128;
+			atlOffset=579.79974;
+		};
+		class Item70
+		{
+			dataType="Marker";
+			position[]={2057.8674,613.59125,3441.9524};
+			name="a3e_village_68";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=147.72192;
+			b=50.97522;
+			id=2129;
+			atlOffset=581.4989;
+		};
+		class Item71
+		{
+			dataType="Marker";
+			position[]={3592.0247,588.17365,2692.8669};
+			name="a3e_village_69";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=26.014374;
+			b=99.099121;
+			angle=355.14014;
+			id=2130;
+			atlOffset=577.11652;
+		};
+		class Item72
+		{
+			dataType="Marker";
+			position[]={3668.2979,589.77777,2749.1504};
+			name="a3e_village_70";
+			markerType="RECTANGLE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=10.805992;
+			b=16.230478;
+			angle=24.613598;
+			id=2131;
+			atlOffset=578.87775;
+		};
+		class Item73
+		{
+			dataType="Marker";
+			position[]={3109.5237,622.24677,1196.2775};
+			name="a3e_village_71";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=13.914917;
+			b=19.376526;
+			id=2132;
+			atlOffset=581.04895;
+		};
+		class Item74
+		{
+			dataType="Marker";
+			position[]={3387.395,594.90302,1345.4196};
+			name="a3e_village_72";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=21.522095;
+			b=22.497375;
+			id=2133;
+			atlOffset=572.09119;
+		};
+		class Item75
+		{
+			dataType="Marker";
+			position[]={3396.9443,601.40393,1529.0302};
+			name="a3e_village_73";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=52.14563;
+			b=17.230835;
+			angle=336.46271;
+			id=2134;
+			atlOffset=584.05957;
+		};
+		class Item76
+		{
+			dataType="Marker";
+			position[]={3534.1047,602.61115,1485.9136};
+			name="a3e_village_74";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=19.181519;
+			b=14.695313;
+			id=2135;
+			atlOffset=575.00269;
+		};
+		class Item77
+		{
+			dataType="Marker";
+			position[]={2504.6411,594.45264,849.59015};
+			name="a3e_village_75";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=50;
+			b=50;
+			id=2136;
+			atlOffset=483.36218;
+		};
+		class Item78
+		{
+			dataType="Marker";
+			position[]={2979.135,611.14264,777.87219};
+			name="a3e_village_76";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=65.415039;
+			b=38.438873;
+			angle=15.379356;
+			id=2137;
+			atlOffset=581.16266;
+		};
+		class Item79
+		{
+			dataType="Marker";
+			position[]={3012.4265,609.25269,835.99915};
+			name="a3e_village_77";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=31.69458;
+			b=47.537842;
+			angle=318.17773;
+			id=2138;
+			atlOffset=577.29468;
+		};
+		class Item80
+		{
+			dataType="Marker";
+			position[]={3624.4902,616.99304,743.05054};
+			name="a3e_village_78";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=35.9375;
+			b=34.421692;
+			id=2139;
+			atlOffset=562.27264;
+		};
+		class Item81
+		{
+			dataType="Marker";
+			position[]={1930.4698,634.50146,370.95001};
+			name="a3e_village_79";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=5.2331543;
+			b=5.2920532;
+			id=2140;
+			atlOffset=580.93445;
+		};
+		class Item82
+		{
+			dataType="Marker";
+			position[]={1239.3903,598.92255,318.10379};
+			name="a3e_village_80";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=36.73645;
+			b=24.05777;
+			id=2141;
+			atlOffset=581.1828;
+		};
+		class Item83
+		{
+			dataType="Marker";
+			position[]={929.51477,594.73236,453.38425};
+			name="a3e_village_81";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=20.188049;
+			b=20.912018;
+			id=2142;
+			atlOffset=576.97382;
+		};
+		class Item84
+		{
+			dataType="Marker";
+			position[]={1688.9351,591.57434,871.81812};
+			name="a3e_village_82";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=24.56958;
+			b=24.485321;
+			id=2143;
+			atlOffset=542.17767;
+		};
+		class Item85
+		{
+			dataType="Marker";
+			position[]={2163.1406,591.09436,552.77283};
+			name="a3e_village_83";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=4.8905029;
+			b=5.1144409;
+			id=2144;
+			atlOffset=574.86462;
+		};
+		class Item86
+		{
+			dataType="Marker";
+			position[]={2273.3105,590.21588,517.76031};
+			name="a3e_village_84";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=26.24707;
+			b=24.241028;
+			id=2145;
+			atlOffset=541.36652;
+		};
+		class Item87
+		{
+			dataType="Marker";
+			position[]={4626.2988,587.70648,1300.8595};
+			name="a3e_village_85";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=28.543213;
+			b=29.207642;
+			id=2146;
+			atlOffset=556.92285;
+		};
+		class Item88
+		{
+			dataType="Marker";
+			position[]={3745.9365,608.4361,3305.0088};
+			name="a3e_village_86";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=25.498657;
+			b=25.37793;
+			id=2147;
+			atlOffset=542.35828;
+		};
+		class Item89
+		{
+			dataType="Marker";
+			position[]={1479.3394,605.69269,3432.7744};
+			name="a3e_village_87";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=43.844482;
+			b=43.361694;
+			id=2148;
+			atlOffset=563.03577;
+		};
+		class Item90
+		{
+			dataType="Marker";
+			position[]={1366.7075,614.40228,2296.4893};
+			name="a3e_village_88";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=21.959106;
+			b=20.948486;
+			id=2149;
+			atlOffset=559.14801;
+		};
+		class Item91
+		{
+			dataType="Marker";
+			position[]={1840.8014,587.19482,2445.4912};
+			name="a3e_village_89";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=23.666199;
+			b=23.023804;
+			id=2150;
+			atlOffset=546.90936;
+		};
+		class Item92
+		{
+			dataType="Marker";
+			position[]={1933.3098,587.05249,2422.9502};
+			name="a3e_village_90";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=17.564453;
+			b=14.24585;
+			id=2151;
+			atlOffset=558.87476;
+		};
+		class Item93
+		{
+			dataType="Marker";
+			position[]={1722.8293,587.49445,2175.8088};
+			name="a3e_village_91";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=29.967102;
+			b=22.466553;
+			id=2152;
+			atlOffset=554.66718;
+		};
+		class Item94
+		{
+			dataType="Marker";
+			position[]={1882.0076,587.3233,2238.054};
+			name="a3e_village_92";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=24.175415;
+			b=25.979248;
+			id=2153;
+			atlOffset=556.34418;
+		};
+		class Item95
+		{
+			dataType="Marker";
+			position[]={2074.8303,633.86658,1425.4081};
+			name="a3e_village_93";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorBlue";
+			a=19.901917;
+			b=14.823425;
+			id=2154;
+			atlOffset=556.55469;
+		};
+	};
+};
+class OutroLoose
+{
+	class Intel
+	{
+		startWeather=0.25;
+		startWind=0.1;
+		forecastWeather=0.25;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroWin
+{
+	class Intel
+	{
+		startWeather=0.25;
+		startWind=0.1;
+		forecastWeather=0.25;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};

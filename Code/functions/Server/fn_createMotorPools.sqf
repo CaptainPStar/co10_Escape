@@ -74,15 +74,15 @@ if(count(_sites)==0 && _createMPcount<A3E_MotorPoolCount) then {
 
 a3e_var_Escape_MotorPoolPositions = [];
 
+private _MotorPoolTemplates = missionnamespace getvariable ["A3E_MotorPoolTemplates",["A3E_fnc_BuildMotorPool"]];
 private _playergroup = [] call A3E_fnc_getPlayerGroup;
 {
     // Fixme: hard coding to 180° orientation for now
-    [_x select 0, (_x select 1)-180, a3e_arr_ComCenStaticWeapons,
+    [[_x select 0, (_x select 1)-180, a3e_arr_ComCenStaticWeapons,
      a3e_arr_ComCenParkedVehicles, 
-     a3e_arr_ComCenDefence_lightArmorClasses + a3e_arr_ComCenDefence_heavyArmorClasses]
-     call A3E_fnc_BuildMotorPool;
+     a3e_arr_ComCenDefence_lightArmorClasses + a3e_arr_ComCenDefence_heavyArmorClasses],_MotorPoolTemplates] call A3E_fnc_callRandomFunction;
 
-    [_playergroup, "A3E_MotorPoolPatrolMarker", A3E_VAR_Side_Opfor, "INS", 5, 5, 8, A3E_Param_EnemySkill, A3E_Param_EnemySkill, A3E_Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
+    [_x select 0,70,selectRandom[A3E_VAR_Side_Opfor,A3E_VAR_Side_Ind],"MOTORPOOL"] call A3E_fnc_initLocationZone;
 	 a3e_var_Escape_MotorPoolPositions pushBack (_x select 0);
 } foreach _mpPosition;
 

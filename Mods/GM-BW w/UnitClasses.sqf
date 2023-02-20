@@ -24,6 +24,9 @@ A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
 A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
+
+A3E_ItemsToBeRemoved = ["gm_watch_kosei_80","gm_gc_compass_f73"]; //Items to randomly remove from units and to remove from guards
+
 // Random array. Start position guard types around the prison
 a3e_arr_Escape_StartPositionGuardTypes = [
 	"gm_dk_army_rifleman_gvm95_90_win",
@@ -335,6 +338,23 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"gm_dk_army_sf_marksman_g3a3_84_win"
 	,"gm_dk_army_sf_rifleman_g3a4_84_win"
 	,"gm_dk_army_sf_radioman_g3a4_84_m84"];
+
+a3e_units_civilian_InfantryTypes = [
+	"gm_gc_civ_man_02_80_gry"
+	,"gm_gc_civ_man_01_80_blk"
+	,"gm_gc_civ_man_01_80_blu"
+	,"gm_gc_civ_man_03_80_blu"
+	,"gm_gc_civ_man_02_80_brn"
+	,"gm_gc_civ_man_03_80_grn"
+	,"gm_gc_civ_man_03_80_gry"
+	,"gm_gc_civ_man_04_80_blu"
+	,"gm_gc_civ_man_04_80_gry"
+//	,"gm_gc_pol_officer_80_blu"		//police east
+//	,"gm_ge_pol_officer_80_grn"		//police west
+//	,"gm_ge_pol_patrol_80_blk"		//police west
+//	,"gm_ge_ff_man_80_orn"		//firefighter west
+//	,"gm_ge_dbp_man_01_80_blu"		//postman west
+	];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [

@@ -6,7 +6,7 @@ while {alive _boat && !_extract} do {
 	private _state = _boat getvariable ["State","Unknown"];
 	switch (_state) do {
 		case "Init": { 
-			systemchat "Init Boat";
+			["Extraction boats created.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			_boat setvariable ["State","Approach"];
 			private _waypoint = (group _boat) addWaypoint [_extractPos, 0];
 			_waypoint setWaypointSpeed "FULL";
@@ -15,7 +15,7 @@ while {alive _boat && !_extract} do {
 			_waypoint setWaypointStatements ["true", "(vehicle this) setvariable [""State"",""Land""];"];
 		};
 		case "Approach": { 
-			systemchat "Approaching";
+			["Extraction boats switch to approach.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			if(_boat distance _extractPos < 100) then {
 				_boat setSpeedMode "NORMAL";
 			};
@@ -24,7 +24,7 @@ while {alive _boat && !_extract} do {
 			};
 		};
 		case "Land": { 
-			systemchat "Landing";
+			["Extraction boats are landing.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			_boat land "LAND";
 			sleep 10;
 			if(_boat getvariable ["State","Unknown"] != "Evac") then {
@@ -32,7 +32,7 @@ while {alive _boat && !_extract} do {
 			};
 		};
 		case "WaitForPlayers": {
-			systemchat "Waiting";
+			["Extraction boats are awaiting players.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			if(!isTouchingGround _boat) then {
 				if(_boat getvariable ["State","Unknown"] != "Evac") then {
 					_boat setvariable ["State","Land"];
@@ -40,7 +40,7 @@ while {alive _boat && !_extract} do {
 			};
 		};
 		case "Evac": { 
-			systemchat "Extracting";
+			["Extraction boats are moving out for evac.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			sleep (random 4 + 1);
 			_boat land "NONE";
 			_boat setSpeedMode "FULL";

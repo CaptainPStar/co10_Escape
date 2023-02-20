@@ -8,7 +8,7 @@ class EditorData
 	toggles=1537;
 	class ItemIDProvider
 	{
-		nextID=782;
+		nextID=788;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=31;
+		nextID=32;
 	};
 	class Camera
 	{
-		pos[]={5112.9214,103.17852,101.4649};
-		dir[]={-0.48702779,-0.18974759,0.85252553};
-		up[]={-0.094122268,0.98183286,0.16475783};
-		aside[]={0.86829996,-7.4505806e-009,0.49603939};
+		pos[]={1823.3864,212.01494,258.02606};
+		dir[]={0.017156973,-0.39073762,0.92039675};
+		up[]={0.0072821416,0.92050254,0.39067009};
+		aside[]={0.9998675,-1.4820034e-007,-0.018640259};
 	};
 };
 binarizationWanted=0;
@@ -65,7 +65,7 @@ class AddonsMetaData
 randomSeed=13122150;
 class ScenarioData
 {
-	author="NeoArmageddon and Scruffy";
+	author="Captain P. Star and Scruffy";
 	disabledAI=1;
 	class Header
 	{
@@ -80,27 +80,24 @@ class Mission
 	class Intel
 	{
 		briefingName="{* MISSION *} {* ISLANDNAME *} {* MOD *} {* VERSION *}";
-		overviewText="Fight to escape the green hell or die trying.";
-		startWeather=0.30000001;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=1986;
-		month=9;
-		day=17;
-		hour=12;
-		minute=0;
-		startFogBase=250;
-		forecastFogBase=250;
-		startFogDecay=0.017999999;
-		forecastFogDecay=0.017999999;
+		resistanceWest=0;
+		startWeather=0.099999994;
+		startWind=0.099999994;
+		startWaves=0.099999994;
+		forecastWeather=0.099999994;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
+		year=2008;
+		month=6;
+		day=24;
+		hour=15;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
 	};
 	class Entities
 	{
-		items=69;
+		items=63;
 		class Item0
 		{
 			dataType="Layer";
@@ -202,7 +199,7 @@ class Mission
 		class Item11
 		{
 			dataType="Marker";
-			position[]={-746.14783,49.78989,-701.96118};
+			position[]={799.4314,30.331066,3593.4592};
 			name="A3E_CarExtractionPos2";
 			type="Empty";
 			colorName="ColorOrange";
@@ -211,7 +208,7 @@ class Mission
 		class Item12
 		{
 			dataType="Marker";
-			position[]={-709.92883,49.308758,-683.26978};
+			position[]={779.38904,31.346199,3610.8354};
 			name="A3E_CarExtractionPos2_1";
 			type="Empty";
 			colorName="ColorOrange";
@@ -230,88 +227,87 @@ class Mission
 		class Item14
 		{
 			dataType="Marker";
-			position[]={-1116.0691,134.68481,-720.58215};
+			position[]={201.17558,138.46666,4222.6826};
 			name="A3E_CarExtractionSpawnPos2";
 			type="Empty";
 			colorName="ColorOrange";
 			id=697;
-			atlOffset=87.535721;
+			atlOffset=88.729134;
 		};
 		class Item15
 		{
 			dataType="Marker";
-			position[]={-1005.64,33.545658,354.30548};
+			position[]={4087.0713,71.378464,1504.4287};
 			name="A3E_ExtractionPos1";
 			type="Empty";
 			colorName="ColorPink";
 			id=700;
-			atlOffset=3.8146973e-006;
+			atlOffset=0.66603088;
 		};
 		class Item16
 		{
 			dataType="Marker";
-			position[]={-1062.514,33.047596,396.25763};
+			position[]={4128.021,71.5532,1536.5728};
 			name="A3E_ExtractionPos1_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=701;
-			atlOffset=3.8146973e-006;
 		};
 		class Item17
 		{
 			dataType="Marker";
-			position[]={-712.69568,73.546646,261.53107};
+			position[]={4600.2397,60.317928,-72.102295};
 			name="A3E_ExtractionSpawnPos1";
 			type="Empty";
 			colorName="ColorPink";
 			id=702;
-			atlOffset=23.730545;
+			atlOffset=-12.102947;
 		};
 		class Item18
 		{
 			dataType="Marker";
-			position[]={-717.3241,71.943787,934.5246};
+			position[]={2625.2192,193.77014,3733.9722};
 			name="A3E_ExtractionPos2";
 			type="Empty";
 			colorName="ColorPink";
 			angle=4.395;
 			id=703;
-			atlOffset=22.002033;
+			atlOffset=21.898483;
 		};
 		class Item19
 		{
 			dataType="Marker";
-			position[]={-795.05017,96.706253,1005.2978};
+			position[]={2576.3975,195.85658,3751.3374};
 			name="A3E_ExtractionPos2_1";
 			type="Empty";
 			colorName="ColorPink";
 			angle=357.54086;
 			id=704;
-			atlOffset=31.953697;
+			atlOffset=25.096588;
 		};
 		class Item20
 		{
 			dataType="Marker";
-			position[]={-844.47314,80.555267,1324.8936};
+			position[]={2285.582,80.930199,4279.1768};
 			name="A3E_ExtractionPos3";
 			type="Empty";
 			colorName="ColorPink";
 			id=705;
-			atlOffset=7.6293945e-006;
 		};
 		class Item21
 		{
 			dataType="Marker";
-			position[]={-810.03857,82.018814,1434.0945};
+			position[]={2234.3633,76.809082,4281.9912};
 			name="A3E_ExtractionPos3_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=706;
+			atlOffset=-4.8900604;
 		};
 		class Item22
 		{
 			dataType="Marker";
-			position[]={-1377.0782,85.07975,1955.2252};
+			position[]={1463.5295,11.057034,1625.4347};
 			name="A3E_ExtractionPos4";
 			type="Empty";
 			colorName="ColorPink";
@@ -320,7 +316,7 @@ class Mission
 		class Item23
 		{
 			dataType="Marker";
-			position[]={-1398.9855,93.135948,1913.1154};
+			position[]={1473.4706,11.500605,1692.7512};
 			name="A3E_ExtractionPos4_1";
 			type="Empty";
 			colorName="ColorPink";
@@ -329,196 +325,83 @@ class Mission
 		class Item24
 		{
 			dataType="Marker";
-			position[]={-1470.7905,63.267101,2438.4414};
+			position[]={4079.6213,152.61377,3995.1345};
 			name="A3E_ExtractionPos5";
 			type="Empty";
 			colorName="ColorPink";
 			id=709;
-			atlOffset=3.8146973e-006;
 		};
 		class Item25
 		{
 			dataType="Marker";
-			position[]={-1590.8496,46.219753,2387.3203};
+			position[]={4156.2222,159.59431,3997.5857};
 			name="A3E_ExtractionPos5_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=710;
+			atlOffset=3.8269958;
 		};
 		class Item26
 		{
 			dataType="Marker";
-			position[]={-1649.0514,89.743652,3136.2476};
+			position[]={2376.2915,92.023529,1449.5518};
 			name="A3E_ExtractionPos7";
 			type="Empty";
 			colorName="ColorPink";
 			id=713;
+			atlOffset=57.53804;
 		};
 		class Item27
 		{
 			dataType="Marker";
-			position[]={-1775.6783,86.324409,3172.8809};
+			position[]={2424.0176,81.553337,1424.2567};
 			name="A3E_ExtractionPos7_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=714;
-			atlOffset=-7.6293945e-006;
+			atlOffset=48.314999;
 		};
 		class Item28
 		{
 			dataType="Marker";
-			position[]={-1708.9363,101.1302,3627.6094};
-			name="A3E_ExtractionPos8";
-			type="Empty";
-			colorName="ColorPink";
-			id=715;
-		};
-		class Item29
-		{
-			dataType="Marker";
-			position[]={-1819.6431,104.00977,3522.5256};
-			name="A3E_ExtractionPos8_1";
-			type="Empty";
-			colorName="ColorPink";
-			id=716;
-			atlOffset=2.3815231;
-		};
-		class Item30
-		{
-			dataType="Marker";
-			position[]={-1762.4567,120.10327,4194.4307};
-			name="A3E_ExtractionPos9";
-			type="Empty";
-			colorName="ColorPink";
-			id=717;
-			atlOffset=17.099716;
-		};
-		class Item31
-		{
-			dataType="Marker";
-			position[]={-1698.0826,88.797951,4158.1353};
-			name="A3E_ExtractionPos9_1";
-			type="Empty";
-			colorName="ColorPink";
-			id=718;
-		};
-		class Item32
-		{
-			dataType="Marker";
-			position[]={-1257.2218,43.365372,935.42523};
+			position[]={3352.6799,144.48096,5511.1421};
 			name="A3E_ExtractionSpawnPos2";
 			type="Empty";
 			colorName="ColorPink";
 			id=719;
-			atlOffset=3.8146973e-006;
+			atlOffset=-9.9304047;
 		};
-		class Item33
+		class Item29
 		{
 			dataType="Marker";
-			position[]={-1228.3945,84.096291,1390.2778};
+			position[]={2319,150.80249,5590.5522};
 			name="A3E_ExtractionSpawnPos3";
 			type="Empty";
 			colorName="ColorPink";
 			id=720;
+			atlOffset=-11.935257;
 		};
-		class Item34
+		class Item30
 		{
 			dataType="Marker";
-			position[]={-623.57092,58.045898,1936.6925};
+			position[]={-538.29321,94.551514,1827.0574};
 			name="A3E_ExtractionSpawnPos4";
 			type="Empty";
 			colorName="ColorPink";
 			id=721;
-			atlOffset=-15.019447;
+			atlOffset=16.028557;
 		};
-		class Item35
+		class Item31
 		{
 			dataType="Marker";
-			position[]={-1136.6349,67.121536,3212.5566};
+			position[]={2412.4297,67.612633,-451.88232};
 			name="A3E_ExtractionSpawnPos7";
 			type="Empty";
 			colorName="ColorPink";
 			id=724;
-			atlOffset=-6.0086746;
+			atlOffset=54.857178;
 		};
-		class Item36
-		{
-			dataType="Marker";
-			position[]={-1344.1642,150.39066,3557.9426};
-			name="A3E_ExtractionSpawnPos8";
-			type="Empty";
-			colorName="ColorPink";
-			id=725;
-			atlOffset=36.844391;
-		};
-		class Item37
-		{
-			dataType="Marker";
-			position[]={-1407.8756,103.82146,4037.271};
-			name="A3E_ExtractionSpawnPos9";
-			type="Empty";
-			colorName="ColorPink";
-			id=726;
-			atlOffset=15.514275;
-		};
-		class Item38
-		{
-			dataType="Marker";
-			position[]={-1821.6251,80.63636,4747.979};
-			name="A3E_ExtractionSpawnPos10";
-			type="Empty";
-			colorName="ColorPink";
-			id=730;
-		};
-		class Item39
-		{
-			dataType="Marker";
-			position[]={-1980.2231,61.250565,5295.0996};
-			name="A3E_ExtractionSpawnPos11";
-			type="Empty";
-			colorName="ColorPink";
-			id=731;
-		};
-		class Item40
-		{
-			dataType="Marker";
-			position[]={-1387.9697,37.567383,5306.4575};
-			name="A3E_ExtractionPos11";
-			type="Empty";
-			colorName="ColorPink";
-			id=732;
-			atlOffset=-26.71273;
-		};
-		class Item41
-		{
-			dataType="Marker";
-			position[]={-1374.8159,79.0914,5424.5898};
-			name="A3E_ExtractionPos11_1";
-			type="Empty";
-			colorName="ColorPink";
-			id=733;
-		};
-		class Item42
-		{
-			dataType="Marker";
-			position[]={-1327.297,76.102478,4698.4814};
-			name="A3E_ExtractionPos10";
-			type="Empty";
-			colorName="ColorPink";
-			id=734;
-			atlOffset=9.0238037;
-		};
-		class Item43
-		{
-			dataType="Marker";
-			position[]={-1336.8121,87.156784,4796.9873};
-			name="A3E_ExtractionPos10_1";
-			type="Empty";
-			colorName="ColorPink";
-			id=735;
-			atlOffset=14.943962;
-		};
-		class Item44
+		class Item32
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -531,7 +414,7 @@ class Mission
 			type="Logic";
 			atlOffset=-115.55669;
 		};
-		class Item45
+		class Item33
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -544,7 +427,7 @@ class Mission
 			type="Logic";
 			atlOffset=317.18661;
 		};
-		class Item46
+		class Item34
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -557,7 +440,7 @@ class Mission
 			type="Logic";
 			atlOffset=-115.02349;
 		};
-		class Item47
+		class Item35
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -570,7 +453,7 @@ class Mission
 			type="Logic";
 			atlOffset=35.600632;
 		};
-		class Item48
+		class Item36
 		{
 			dataType="Marker";
 			position[]={1744.7333,7.9671559,26.473694};
@@ -578,7 +461,7 @@ class Mission
 			type="Empty";
 			id=751;
 		};
-		class Item49
+		class Item37
 		{
 			dataType="Marker";
 			position[]={4871.9321,292.82446,3712.0776};
@@ -587,7 +470,7 @@ class Mission
 			id=752;
 			atlOffset=225.85999;
 		};
-		class Item50
+		class Item38
 		{
 			dataType="Marker";
 			position[]={1709.7533,31.270332,3811.0022};
@@ -596,7 +479,7 @@ class Mission
 			id=753;
 			atlOffset=-19.944626;
 		};
-		class Item51
+		class Item39
 		{
 			dataType="Marker";
 			position[]={1089.0011,82.849365,5098.3413};
@@ -605,7 +488,7 @@ class Mission
 			id=754;
 			atlOffset=-85.415375;
 		};
-		class Item52
+		class Item40
 		{
 			dataType="Marker";
 			position[]={4868.7148,-41.200531,2973.0122};
@@ -614,7 +497,7 @@ class Mission
 			id=755;
 			atlOffset=-95.758514;
 		};
-		class Item53
+		class Item41
 		{
 			dataType="Marker";
 			position[]={2584.4717,78.788277,2243.2498};
@@ -624,7 +507,7 @@ class Mission
 			id=756;
 			atlOffset=50.716568;
 		};
-		class Item54
+		class Item42
 		{
 			dataType="Marker";
 			position[]={56.129059,-0.67965698,2262.5476};
@@ -634,7 +517,7 @@ class Mission
 			id=757;
 			atlOffset=-132.30794;
 		};
-		class Item55
+		class Item43
 		{
 			dataType="Marker";
 			position[]={4914.854,170.3609,4964.9624};
@@ -643,7 +526,7 @@ class Mission
 			id=758;
 			atlOffset=73.878357;
 		};
-		class Item56
+		class Item44
 		{
 			dataType="Marker";
 			position[]={39.517803,139.78061,29.020386};
@@ -653,7 +536,7 @@ class Mission
 			id=759;
 			atlOffset=75.842926;
 		};
-		class Item57
+		class Item45
 		{
 			dataType="Marker";
 			position[]={9.125803,414.57465,5100.7363};
@@ -663,106 +546,104 @@ class Mission
 			id=760;
 			atlOffset=279.60913;
 		};
-		class Item58
+		class Item46
 		{
 			dataType="Marker";
-			position[]={-980.22217,82.35498,2430.0742};
+			position[]={4895.71,118.27637,5495.5713};
 			name="A3E_ExtractionSpawnPos5";
 			type="Empty";
 			colorName="ColorPink";
 			id=761;
-			atlOffset=-10.628418;
+			atlOffset=-49.175003;
 		};
-		class Item59
+		class Item47
 		{
 			dataType="Marker";
-			position[]={-1063.2092,28.009224,-1255.9393};
+			position[]={1090.9939,115.54956,5077.6416};
 			name="A3E_CarExtractionSpawnPos3";
 			type="Empty";
 			colorName="ColorOrange";
 			id=762;
+			atlOffset=-52.645721;
 		};
-		class Item60
+		class Item48
 		{
 			dataType="Marker";
-			position[]={-1024.7217,-51.94273,-1722.7063};
+			position[]={1744.2968,4.9152832,20.431091};
 			name="A3E_CarExtractionSpawnPos4";
 			type="Empty";
 			colorName="ColorOrange";
 			id=763;
-			atlOffset=-87.748108;
+			atlOffset=-3.1570387;
 		};
-		class Item61
+		class Item49
 		{
 			dataType="Marker";
-			position[]={-707.20215,-93.291405,-1178.9465};
+			position[]={1422.8168,69.420822,3226.116};
 			name="A3E_CarExtractionPos3";
 			type="Empty";
 			colorName="ColorOrange";
 			id=764;
-			atlOffset=-122.80757;
+			atlOffset=27.940929;
 		};
-		class Item62
+		class Item50
 		{
 			dataType="Marker";
-			position[]={-659.09363,-90.966988,-1251.1273};
+			position[]={1394.9508,43.334106,3278.9482};
 			name="A3E_CarExtractionPos3_1";
 			type="Empty";
 			colorName="ColorOrange";
 			id=765;
-			atlOffset=-118.3733;
 		};
-		class Item63
+		class Item51
 		{
 			dataType="Marker";
-			position[]={-591.74133,-70.450951,-1669.7736};
+			position[]={1556.4706,5.3722887,1123.7175};
 			name="A3E_CarExtractionPos4";
 			type="Empty";
 			colorName="ColorOrange";
 			id=766;
-			atlOffset=-100.53976;
+			atlOffset=-0.6534071;
 		};
-		class Item64
+		class Item52
 		{
 			dataType="Marker";
-			position[]={-543.6322,-75.136398,-1669.7736};
+			position[]={1580.6832,6.4261289,1084.9393};
 			name="A3E_CarExtractionPos4_1";
 			type="Empty";
 			colorName="ColorOrange";
 			id=767;
-			atlOffset=-105.99176;
 		};
-		class Item65
+		class Item53
 		{
 			dataType="Marker";
-			position[]={-1149.8053,169.08362,2771.7297};
+			position[]={5292.3203,227.15802,3794.1658};
 			name="A3E_ExtractionSpawnPos6";
 			type="Empty";
 			colorName="ColorPink";
 			id=768;
-			atlOffset=78.043755;
+			atlOffset=139.49359;
 		};
-		class Item66
+		class Item54
 		{
 			dataType="Marker";
-			position[]={-1808.8983,79.502312,2829.4741};
+			position[]={3070.2747,126.14616,2799.603};
 			name="A3E_ExtractionPos6";
 			type="Empty";
 			colorName="ColorPink";
 			id=769;
-			atlOffset=9.9209442;
+			atlOffset=13.315094;
 		};
-		class Item67
+		class Item55
 		{
 			dataType="Marker";
-			position[]={-1731.9244,56.285011,2790.9778};
+			position[]={3033.8333,114.11241,2826.926};
 			name="A3E_ExtractionPos6_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=770;
-			atlOffset=-6.5140839;
 		};
-		class Item68
+		class Item56
 		{
 			dataType="Group";
 			side="{* PLAYERSIDE *}";
@@ -965,6 +846,64 @@ class Mission
 			};
 			id=771;
 			atlOffset=7.6293945e-006;
+		};
+		class Item57
+		{
+			dataType="Marker";
+			position[]={32.029079,102.7551,3021.9436};
+			name="A3E_CarExtractionSpawnPos5";
+			type="Empty";
+			colorName="ColorOrange";
+			id=782;
+		};
+		class Item58
+		{
+			dataType="Marker";
+			position[]={1321.5236,16.12915,2487.0771};
+			name="A3E_CarExtractionPos5";
+			type="Empty";
+			colorName="ColorOrange";
+			id=783;
+			atlOffset=-0.90613174;
+		};
+		class Item59
+		{
+			dataType="Marker";
+			position[]={1313.8783,15.120474,2523.6707};
+			name="A3E_CarExtractionPos5_1";
+			type="Empty";
+			colorName="ColorOrange";
+			id=784;
+			atlOffset=-0.90613174;
+		};
+		class Item60
+		{
+			dataType="Marker";
+			position[]={5060.6177,74.33828,3797.4292};
+			name="A3E_CarExtractionSpawnPos6";
+			type="Empty";
+			colorName="ColorOrange";
+			id=785;
+		};
+		class Item61
+		{
+			dataType="Marker";
+			position[]={4573.561,103.58451,3129.9688};
+			name="A3E_CarExtractionPos6";
+			type="Empty";
+			colorName="ColorOrange";
+			id=786;
+			atlOffset=54.999989;
+		};
+		class Item62
+		{
+			dataType="Marker";
+			position[]={4547.3091,105.16039,3107.8625};
+			name="A3E_CarExtractionPos6_1";
+			type="Empty";
+			colorName="ColorOrange";
+			id=787;
+			atlOffset=54.999992;
 		};
 	};
 };

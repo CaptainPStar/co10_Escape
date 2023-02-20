@@ -24,6 +24,9 @@ A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
 A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
+
+A3E_ItemsToBeRemoved = ["CSLA_Prim_enl","US85_scFAL","US85_FALbpd"]; //Items to randomly remove from units and to remove from guards
+
 // Random array. Start position guard types around the prison
 a3e_arr_Escape_StartPositionGuardTypes = [
 	"FIA_mcFAL"
@@ -58,11 +61,11 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CSLA_CIV_V3S"
 	,"CSLA_CIV_V3Sr"
 	,"US85_TT650"
+	//,"CSLA_CIV_AZU"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200PO"
-	,"CSLA_CIV_AZU"
 	,"CSLA_civ_CATOR"];
 	if(A3E_Param_UseDLCContact==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Tractor_01_F";
@@ -335,6 +338,31 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"FIA_cdSa26RPG75"
 	,"FIA_cdOP63"];
 
+a3e_units_civilian_InfantryTypes = [
+	"CSLA_CIV_Citizen"
+	,"CSLA_CIV_Citizen_V2"
+	,"CSLA_CIV_Citizen_V3"
+	,"CSLA_CIV_Citizen_V4"
+	,"CSLA_CIV_Foreman"
+	,"CSLA_CIV_Foreman_V2"
+	,"CSLA_CIV_Woodlander"
+	,"CSLA_CIV_Woodlander_V2"
+	,"CSLA_CIV_Woodlander_V3"
+	,"CSLA_CIV_Woodlander_V4"
+	,"CSLA_CIV_Functionary"
+	,"CSLA_CIV_Functionary_V2"
+	,"CSLA_CIV_Villager"
+	,"CSLA_CIV_Villager_V2"
+	,"CSLA_CIV_Villager_V3"
+	,"CSLA_CIV_Villager_V4"
+	,"CSLA_CIV_Worker"
+	,"CSLA_CIV_Worker_V2"
+	,"CSLA_CIV_Worker_V3"
+	,"CSLA_CIV_Worker_V4"
+//	,"CSLA_CIV_Policeman"
+//	,"CSLA_CIV_PoliceManSa61"
+	,"CSLA_CIV_Doctor"];
+
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"CSLA_AZU_R2"
@@ -418,11 +446,11 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"CSLA_CIV_V3S"
 	,"CSLA_CIV_V3Sr"
 	,"US85_TT650"
+	//,"CSLA_CIV_AZU"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
-	,"CSLA_CIV_Sarka1200PO"
-	,"CSLA_CIV_AZU"];
+	,"CSLA_CIV_Sarka1200PO"];
 
 // Vehicles, weapons and ammo at ammo depots
 
@@ -703,7 +731,7 @@ A3E_IntelItems = [
 	,"FileNetworkStructure"
 	//,"MobilePhone"
 	//,"SmartPhone"
-	,"CSLA_Documents_item"
+	//,"CSLA_Documents_item"
 	];
 
 //////////////////////////////////////////////////////////////////

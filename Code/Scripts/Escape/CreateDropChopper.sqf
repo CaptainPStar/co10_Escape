@@ -14,12 +14,10 @@ if (count _this > 7) then {_maxSkill = _this select 7;} else {_maxSkill = 0.5;};
 if (count _this > 8) then {_onGroupDropped = _this select 8;} else {_onGroupDropped = {};};
 if (count _this > 9) then {_debug = _this select 9;} else {_debug = false;};
 
-if (_debug) then {
-    player sideChat "Creating drop chopper...";
-};
-systemchat (str _dropUnits);
+
+["Creating drop chopper...",["Info","DropChopper"]] call A3E_fnc_Log;
 _dropUnits = _dropUnits select {!isNull _x}; //Remove all null units from list as a workaround
-systemchat (str _dropUnits);
+
 if (isNil "drn_CreateDropChopper_CurrentInstanceNo") then {
 	drn_CreateDropChopper_CurrentInstanceNo = 0
 };

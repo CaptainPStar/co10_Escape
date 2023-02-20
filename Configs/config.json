@@ -15,14 +15,17 @@
 		"./Configs/OPTRE.json",
 		"./Configs/GM.json",
 		"./Configs/CSLA.json",
-		"./Configs/WS.json"
+		"./Configs/WS.json",
+		"./Configs/SOGPF.json"
+
 	],
 	"replace" :
 		{
 			"VERSION" : "1.10",
 			"MISSION" : "Escape",
 			"MISSION_FULL": "co10 Escape",
-			"PLAYER_INIT" : "this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};"
+			"PLAYER_INIT" : "this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};",
+			"GAMETYPE" : "Escape"
 		},
 	"ParsedFiles" : ["mission.sqm","defines.hpp","fn_briefing.sqf"],
 	"Mods" : [
@@ -1035,6 +1038,13 @@
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
 		{
+			"island" : "Polanek",
+			"sqm" : "Polanek",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
 			"island" : "Sefrou-Ramal",
 			"sqm" : "Sefrou-Ramal",
 			"mod" : "Vanilla",
@@ -1660,6 +1670,20 @@
         {
 			"island" : "Gabreta",
 			"sqm" : "Gabreta",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Polanek",
+			"sqm" : "Polanek",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Polanek",
+			"sqm" : "Polanek",
 			"mod" : "Vanilla Contact US",
 			"replace" : {},
 			"name" : "co10_Escape_Contact_CSAT_vs_NATO"

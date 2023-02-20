@@ -90,14 +90,8 @@ while {count _positions < _mortarSiteCount} do {
     };
 };
 
-{	
-	private _blah = floor(random 2);//returns 0 or 1
-	if (_blah == 0) then {
-	[_x] call A3E_fnc_MortarSite;
-	};
-	if (_blah == 1) then {
-	[_x] call A3E_fnc_MortarSite2;
-	};
-	private _playergroup = [] call A3E_fnc_getPlayerGroup;
-	[_playergroup, "A3E_MortarSitePatrolMarker", A3E_VAR_Side_Opfor, "INS", 1, 1, 2, A3E_Param_EnemySkill, A3E_Param_EnemySkill, A3E_Param_EnemySpawnDistance, false] spawn drn_fnc_InitGuardedLocations;
+private _mortarSiteTemplates = missionnamespace getvariable ["A3E_MortarSiteTemplates",["A3E_fnc_MortarSite","A3E_fnc_MortarSite2"]];
+{
+    [[_x],_mortarSiteTemplates] call A3E_fnc_callRandomFunction;
+	[_x,40,selectRandom[A3E_VAR_Side_Opfor,A3E_VAR_Side_Ind],"MORTAR"] call A3E_fnc_initLocationZone;
 } foreach _positions;

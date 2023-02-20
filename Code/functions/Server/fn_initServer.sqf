@@ -23,6 +23,19 @@ if(!isNil("A3E_Param_Debug")) then {
 	A3E_Debug = true;
 	["Warning! Debug was set to true because of missing param!."] spawn a3e_fnc_debugmsg;
 };
+if(is3DENPreview) then {
+	A3E_Debug = true;
+	
+	//Delete AI in Preview:
+	{
+		if(!isPlayer _x) then {
+			[_x] joinSilent grpNull;
+			deleteVehicle _x;
+		};
+	} foreach units group player;
+	["Debug mode active!."] spawn a3e_fnc_debugmsg;
+};
+
 publicVariable "A3E_Debug";
 
 //ACE Revive
@@ -59,6 +72,7 @@ publicVariable "A3E_VAR_Flag_Ind";
 
 createCenter A3E_VAR_Side_Opfor;
 createCenter A3E_VAR_Side_Ind;
+createCenter civilian;
 
 if(isNil("A3E_Param_War_Torn")) then {
 	A3E_Param_War_Torn = 0;
@@ -107,7 +121,7 @@ publicVariable "a3e_var_Escape_hoursSkipped";
 
 
 setTimeMultiplier A3E_Param_TimeMultiplier;
-call compile preprocessFileLineNumbers ("Island\CommunicationCenterMarkers.sqf");
+
 
 
 // Game Control Variables, do not edit!
@@ -182,8 +196,8 @@ private _backpack = [] call A3E_fnc_createStartpos;
 
 //### The following is a mission function now
 
-[true] call drn_fnc_InitVillageMarkers; 
-[true] call drn_fnc_InitAquaticPatrolMarkers; 
+[true] call A3E_fnc_InitVillageMarkers; 
+//[true] call drn_fnc_InitAquaticPatrolMarkers; 
 
 //Wait for players to actually arrive ingame. This may be a long time if server is set to persistent
 waituntil{uisleep 1; count([] call A3E_FNC_GetPlayers)>0};
@@ -194,37 +208,17 @@ _playerGroup = [] call A3E_fnc_GetPlayerGroup;
 [_enemyMinSkill, _enemyMaxSkill, _enemyFrequency, A3E_Debug] execVM "Scripts\Escape\EscapeSurprises.sqf";
 
 
-// Initialize communication centers
+// Create communication centers
+[] spawn A3E_fnc_CreateComCenters;
 
-[] call A3E_fnc_createComCenters;
+// Create Motor Pools
+[] spawn A3E_fnc_CreateMotorPools;
 
-_EnemyCount = [3] call A3E_fnc_GetEnemyCount;
+// Create ammo depots
+[] spawn A3E_fnc_CreateAmmoDepots;
 
-[_playerGroup, "drn_CommunicationCenterPatrolMarker", A3E_VAR_Side_Opfor, "INS", 4, _EnemyCount select 0, _EnemyCount select 1, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance] call drn_fnc_InitGuardedLocations;
-[_playerGroup, a3e_var_Escape_communicationCenterPositions, _enemySpawnDistance, _enemyFrequency] call drn_fnc_Escape_InitializeComCenArmor;
-
-
-// Initialize Motor Pools
-[] call A3E_fnc_createMotorPools;
-
-
-// Initialize ammo depots
-
-[_enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _playerGroup, _enemyFrequency] spawn {
-	params ["_enemyMinSkill", "_enemyMaxSkill", "_enemySpawnDistance", "_playerGroup", "_enemyFrequency"];
-	private ["_playerGroup", "_minEnemies", "_maxEnemies", "_bannedPositions", "_scriptHandle"];
-
-	private _EnemyCount = [2] call A3E_fnc_GetEnemyCount;
-	_EnemyCount params ["_minEnemies", "_maxEnemies"];
-	
-	_bannedPositions = + a3e_var_Escape_communicationCenterPositions + [A3E_StartPos, getMarkerPos "drn_insurgentAirfieldMarker"];
-	a3e_var_Escape_ammoDepotPositions = _bannedPositions call drn_fnc_Escape_FindAmmoDepotPositions;
-	
-	[] call A3E_fnc_createAmmoDepots;
-	
-	[_playerGroup, "drn_AmmoDepotPatrolMarker", A3E_VAR_Side_Opfor , "INS", 3, _minEnemies, _maxEnemies, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, A3E_Debug] spawn drn_fnc_InitGuardedLocations;
-};
-
+//Spawn mortar sites
+[] spawn A3E_fnc_createMortarSites;
 
 // Initialize search leader
 //[drn_searchAreaMarkerName, A3E_Debug] execVM "Scripts\Escape\SearchLeader.sqf"; //depreciated
@@ -233,13 +227,16 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 //Start the player detection script
 [] call A3E_fnc_PlayerDetection;
 
+
 // Start garbage collector
-[_playerGroup, 750, A3E_Debug] spawn drn_fnc_CL_RunGarbageCollector;
+//[_playerGroup, 750, A3E_Debug] spawn drn_fnc_CL_RunGarbageCollector;
 
 
 // Run initialization for scripts that need the players to be gathered at the start position
 [] spawn A3E_fnc_initVillages;
 
+//Uncommenting all legacy scripts for now
+if(false) then {
 [_enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _enemyFrequency] spawn {
 	params ["_enemyMinSkill", "_enemyMaxSkill", "_enemySpawnDistance", "_enemyFrequency"];
 
@@ -362,70 +359,6 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 	_radius = _enemySpawnDistance + 500;
 	_vehiclesCount = round (_vehiclesPerSqkm * (_radius / 1000) * (_radius / 1000) * 3.141592);
 	
-	_fnc_onSpawnCivilian = {
-		private ["_vehicle", "_crew"];
-		_vehicle = _this select 0;
-		_crew = _this select 1;
-		//_vehiclesGroup = _result select 2;
-		
-		{
-			{
-				_x removeWeapon "ItemMap";
-			} foreach _crew; // foreach crew
-			
-			_x addeventhandler ["killed",{
-				if ((_this select 1) in (call A3E_fnc_GetPlayers)) then {
-					if((isNil("a3e_var_Escape_SearchLeader_civilianReporting"))||!a3e_var_Escape_SearchLeader_civilianReporting) then {
-						a3e_var_Escape_SearchLeader_civilianReporting = true;
-						publicVariable "a3e_var_Escape_SearchLeader_civilianReporting";
-						(_this select 1) addScore -5;
-					} else {
-						(_this select 1) addScore -1;
-					};
-					(_this select 1) addRating 1000; //Even out the minus score by killing civilians
-					[name (_this select 1) + " has killed a civilian."] call drn_fnc_CL_ShowCommandTextAllClients;
-				};
-				if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
-					_killer = (_this select 0) getVariable ["ace_medical_lastDamageSource", objNull];
-					if (_killer in (call A3E_fnc_GetPlayers)) then {
-						if((isNil("a3e_var_Escape_SearchLeader_civilianReporting"))||!a3e_var_Escape_SearchLeader_civilianReporting) then {
-								a3e_var_Escape_SearchLeader_civilianReporting = true;
-								publicVariable "a3e_var_Escape_SearchLeader_civilianReporting";
-								(_killer) addScore -5;
-							} else {
-								(_killer) addScore -1;
-							};
-							(_killer) addRating 1000; //Even out the minus score by killing civilians
-							[name (_killer) + " has killed a civilian."] call drn_fnc_CL_ShowCommandTextAllClients;
-					};
-				};
-			}];
-		} foreach _crew;
-		
-		clearitemcargoglobal _vehicle;
-        clearWeaponCargoGlobal _vehicle;
-        clearMagazineCargoGlobal _vehicle;			
-		
-		if (random 100 < 20) then {
-			private ["_weaponItem"];
-			
-			_weaponItem = selectRandom a3e_arr_CivilianCarWeapons;
-			
-			_vehicle addWeaponCargoGlobal [_weaponItem select 0, 1];
-			_vehicle addMagazineCargoGlobal [_weaponItem select 1, _weaponItem select 2];
-		};	
-		if (random 100 < 80) then {
-           _vehicle addItemCargoglobal ["firstaidkit", 3];	
-		};
-		if (random 100 < 80) then {
-           _vehicle addMagazineCargoglobal ["smokeshellRed", 2];	
-		};
-		if (random 100 < 80) then {
-           _vehicle addMagazineCargoglobal ["Chemlight_green", 5];	
-		};
-	};
-	
-	[civilian, [], _vehiclesCount, _enemySpawnDistance, _radius, 0.5, 0.5, _fnc_onSpawnCivilian, A3E_Debug] spawn drn_fnc_MilitaryTraffic;
 
 	
 	// Enemy military traffic
@@ -491,10 +424,9 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 	};
 
 
-	//Spawn mortar sites
-	[] call A3E_fnc_createMortarSites;
 };
 
+};
 //Start local and remote statistic tracking
 [] spawn {
 	sleep 1;
@@ -506,6 +438,10 @@ _EnemyCount = [3] call A3E_fnc_GetEnemyCount;
 private ["_scriptHandle"];
 _scriptHandle = [getMarkerPos "drn_searchChopperStartPosMarker", A3E_VAR_Side_Opfor, drn_searchAreaMarkerName, _searchChopperSearchTimeMin, _searchChopperRefuelTimeMin, _enemyMinSkill, _enemyMaxSkill, [], A3E_Debug] execVM "Scripts\Escape\CreateSearchChopper.sqf";
 waitUntil {scriptDone _scriptHandle};
+
+
+//Init trap spawning system for mines and other roadside surprises
+call A3E_fnc_InitTraps;
 
 
 // Spawn creation of start position settings
@@ -524,10 +460,13 @@ waitUntil {scriptDone _scriptHandle};
 	};
 	
     // Spawn more guards
-    _marker = createMarkerLocal ["drn_guardAreaMarker", _startPos];
-    _marker setMarkerAlphaLocal 0;
-    _marker setMarkerShapeLocal "ELLIPSE";
-    _marker setMarkerSizeLocal [50, 50];
+    _marker = createMarker ["drn_guardAreaMarker", _startPos];
+    _marker setMarkerShape "ELLIPSE";
+    _marker setMarkerSize [50, 50];
+	_marker setMarkerAlpha 0;
+	if(missionNamespace getvariable["A3E_Debug",false]) then {
+		_marker setMarkerAlpha 0.5;
+	};
     
     //_guardCount = (2 + (_enemyFrequency)) + floor (random 2);
 
@@ -564,9 +503,20 @@ waitUntil {scriptDone _scriptHandle};
         {
             _unit = _x; //(units _guardGroup) select 0;
             _unit setUnitRank "CAPTAIN";
-			_unit unlinkItem "ItemMap";
             _unit unlinkItem "ItemCompass";
             _unit unlinkItem "ItemGPS";
+			
+			
+			private _mapItems = missionNamespace getVariable ["A3E_MapItemsUsedInMission",["ItemMap"]];
+			{_unit unlinkItem _x;} foreach _mapItems;
+				
+			private _itemsToRemove = missionNamespace getVariable ["A3E_ItemsToBeRemoved",[]];
+			{
+				_unit unlinkItem _x;
+			} foreach _itemsToRemove;
+
+			
+			
 			if (ACE_MedicalServer) then {_unit addItem "ACE_epinephrine"};//Add Epinephrine for each unit
 			removeBackpackGlobal _unit;
 			
@@ -588,7 +538,11 @@ waitUntil {scriptDone _scriptHandle};
 				_unit unlinkItem _hmd;
 				_unit removeItem _hmd;
 			};
-	
+			private _missionHasNVGs = missionnamespace getvariable ["A3E_Var_AllowVanillaNightVision", true];
+			if(!_missionHasNVGs) then {
+				_unit unlinkItem _hmd;
+				_unit removeItem _hmd;
+			};
             //_unit setSkill a3e_var_Escape_enemyMinSkill;
 			//[_unit, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
 			
@@ -697,3 +651,25 @@ waitUntil {scriptDone _scriptHandle};
 		} foreach call A3E_fnc_GetPlayers;
 	};
 };
+
+
+//["A3E_FNC_AmbientAISpawn"] call A3E_FNC_Chronos_Register;
+["A3E_FNC_AmbientPatrols"] call A3E_FNC_Chronos_Register;
+["A3E_FNC_MilitaryTraffic"] call A3E_FNC_Chronos_Register;
+["A3E_FNC_CivilianCommuters"] call A3E_FNC_Chronos_Register;
+["A3E_FNC_TrackGroup_Update"] call A3E_FNC_Chronos_Register;
+
+
+//Move to chronos
+
+[] spawn {
+	while {true} do {
+		private _score = missionNamespace getvariable ["A3E_Warcrime_Score",0];
+		if(_score>500) then {
+			_score = _score - 50;
+			missionNamespace setvariable ["A3E_Warcrime_Score",_score];
+		};
+		sleep 60;
+	};
+};
+
