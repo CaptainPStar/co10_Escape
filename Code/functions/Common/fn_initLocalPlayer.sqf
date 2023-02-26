@@ -74,6 +74,7 @@ if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
 	call ATR_FNC_ReviveInit;
 };
 
+call compile preprocessFile "Scripts\AT\dronehack_init.sqf";
 
 setTerrainGrid A3E_Param_Grass;
 
