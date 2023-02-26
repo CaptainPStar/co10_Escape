@@ -52,4 +52,3 @@ AT_FNC_dh_Switchmove = {
 	_unit switchmove _anim;	
 
 };
-call at_fnc_dh_init;
