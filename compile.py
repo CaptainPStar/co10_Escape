@@ -26,8 +26,7 @@ data['replace']['RELEASE'] = 'Mission'
 cpbo = data['cpbo'];
 
 for directory in [data['BuildDir'], data['PackedDir']+'/Addons', data['PackedDir']+'/Missions']:
-    if not os.path.exists('./Build'):
-        os.mkdir(directory)
+    os.makedirs(directory, exist_ok=True)
 
 for the_file in os.listdir(data['BuildDir']):
     file_path = os.path.join(data['BuildDir'], the_file)
