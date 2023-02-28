@@ -63,6 +63,11 @@ _enemySpawnDistance = (A3E_Param_EnemySpawnDistance);
 
 [_enemyFrequency] call compile preprocessFileLineNumbers "Units\UnitClasses.sqf";
 
+
+//Load base templates 
+[] call a3e_fnc_loadTemplates;
+
+
 // prison is created locally, clients need flag texture path
 publicVariable "A3E_VAR_Flag_Ind";
 

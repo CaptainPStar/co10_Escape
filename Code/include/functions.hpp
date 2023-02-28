@@ -225,6 +225,7 @@ class CfgFunctions
 			class Roadblock_VN2 {};
 			class isoTemplateStore {};		
 			class isoTemplateRestore {};	
+			class LoadTemplates {};
 		};
 		class Chronos
 		{
