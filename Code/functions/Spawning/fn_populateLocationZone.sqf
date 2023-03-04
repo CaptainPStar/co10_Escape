@@ -20,10 +20,14 @@ switch(_type) do {
 	case "MOTORPOOL": {
 		_patrolCount = 5;
 	};
+	case "ROADBLOCK": {
+		_patrolCount = 2;
+	};
 };
 
-private _groups = [];
-
+//private _groups = [];
+//An unpopulated zone already may have units that were spawned in.
+private _groups = _zone getordefault ["groups",[]];
 
 private _buildingsPositions = [_x] call a3e_fnc_getBuildingsInMarker;
 [format["Found %1 enterable Buildings... in Zone %2",count(_buildingsPositions),_zoneIndex],["Spawning","Garisson"],[_buildingsPositions]] call a3e_fnc_log;

@@ -659,6 +659,7 @@ call A3E_fnc_InitTraps;
 
 
 //["A3E_FNC_AmbientAISpawn"] call A3E_FNC_Chronos_Register;
+["A3E_FNC_RoadBlocks"] call A3E_FNC_Chronos_Register;
 ["A3E_FNC_AmbientPatrols"] call A3E_FNC_Chronos_Register;
 ["A3E_FNC_MilitaryTraffic"] call A3E_FNC_Chronos_Register;
 ["A3E_FNC_CivilianCommuters"] call A3E_FNC_Chronos_Register;

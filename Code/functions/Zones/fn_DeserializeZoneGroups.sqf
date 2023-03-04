@@ -18,26 +18,33 @@ private _serializedGroups = _zone get "serializedgroups";
 		{
 			(values _x) params (keys _x);
 			private _veh = createVehicle [_class, _pos, [], 0, "None"];
-			_veh setpos _pos;
+			_veh setposATL _pos;
 			_veh setdir _dir;
 			_veh setfuel _fuel;
-			_veh set ["_fuel",fuel _v];
-			{
-				_veh setHitIndex [_foreachIndex,_x];
-			} foreach _dmg#2;
+			if(typeName(_dmg)=="ARRAY") then {
+				{
+					_veh setHitIndex [_foreachIndex,_x];
+				} foreach _dmg#2;
+			} else {
+				_veh setdammage _dmg;
+			};
 			_groupVehicles pushBack _veh;
 		} foreach _vehicles;
 		private _grp = creategroup _side;
 		{
 			(values _x) params (keys _x);
 			private _unit = _grp createUnit [_class, _pos, [], 0, "FORM"];
-			_unit setpos _pos;
+			_unit setposATL _pos;
 			_unit setdir _dir;
 			_unit setrank _rank;
 			_unit setUnitLoadout[_loadout,false];
-			{
-				_unit setHitIndex [_foreachIndex,_x];
-			} foreach _dmg#2;
+			if(typeName(_dmg)=="ARRAY") then {
+				{
+					_unit setHitIndex [_foreachIndex,_x];
+				} foreach _dmg#2;
+			} else {
+				_unit setdammage _dmg;
+			};
 			if("_vehicleIndex" in _x) then {
 				private _veh = _groupVehicles select _vehicleIndex;
 				switch(_vehiclePosition#0) do {

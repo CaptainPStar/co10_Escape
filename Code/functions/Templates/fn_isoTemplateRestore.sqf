@@ -23,11 +23,8 @@ if(count(_clearance)>0) then {
 private _templateObjects =  [_template,"Objects",[]] call BIS_fnc_getFromPairs;
 if(count(_templateObjects)==0) exitwith {diag_log ("Escape Error: Template "+_templateName+" contains no objects.");};
 
-private _parkedVehicles = [];
-private _statics = [];
-private _ammoboxes = [];
-private _flags = [];
 
+private _return = createHashMap;
 
 private _createObject = {
 	params["_type","_realPos","_dir","_rotation","_atr"];
@@ -43,7 +40,7 @@ private _createObject = {
 	if(_atr getOrDefault ["indestructable",false]) then {
 		_obj allowdamage false;
 	};
-	if(_atr getOrDefault ["yeet"] call _hasAttribute) then {
+	if(_atr getOrDefault ["yeet",false]) then {
 		_obj spawn {
 			sleep 2;
 			_this setvelocity [0,0,100];
@@ -88,17 +85,24 @@ private _spawn = {
 		if(_atr getOrDefault ["parkedvehicle",false]) then {
 			private _type = _atr getOrDefault ["parkedvehicletype","Unknown"];
 			private _init = _atr getOrDefault ["init",""];
+			private _parkedVehicles = _return getOrDefault ["parkedvehicles",[]];
 			_parkedVehicles pushBack [_type,_realPos,_dir,_init];
+			_return set ["parkedvehicles",_parkedVehicles];
 		};
 		if(_atr getOrDefault ["static",false]) then {
 			private _type = _atr getOrDefault ["statictype","Unknown"];
 			private _init = _atr getOrDefault ["init",""];
+			private _statics = _return getOrDefault ["statics",[]];
 			_statics pushBack [_type,_realPos,_dir,_init];
+			_return set ["statics",_statics];
 		};
 		if(_atr getOrDefault ["ammobox",false]) then {
 			private _type = _atr getOrDefault ["ammotype","Unknown"];
 			private _init = _atr getOrDefault ["init",""];
+			private _ammoboxes = _return getOrDefault ["ammoboxes",[]];
 			_ammoboxes pushBack [_type,_realPos,_dir,_init];
+			_return set ["ammoboxes",_ammoboxes];
+			
 		};
 	};
 	_obj
@@ -108,5 +112,5 @@ private _spawn = {
 	[_center,_rotation,_x] call _spawn;
 } foreach _templateObjects;
 
-private _return = [["ParkedVehicles",_parkedVehicles],["Statics",_statics],["Ammoboxes",_ammoboxes],["Flags",_flags]];
+
 _return;

@@ -17,11 +17,16 @@ private _serializedGroups = [];
 		{
 			private _unit = createHashMap;
 			_unit set ["_class",typeof _x];
-			_unit set ["_pos",getpos _x];
+			_unit set ["_pos",getposATL _x];
 			_unit set ["_dir",getdir _x];
 			_unit set ["_loadout",getUnitLoadout [_x,false]];
 			_unit set ["_rank",rank _x];
-			_unit set ["_dmg",getAllHitPointsDamage _x];
+			private _hdmg = getAllHitPointsDamage _x;
+			if((count _hdmg) >=3) then {
+				_unit set ["_dmg",getAllHitPointsDamage _x];
+			} else {
+				_unit set ["_dmg",getdammage _x];
+			};
 			if(vehicle _x != _x) then {
 				private _in = _vehicleList find (vehicle _x);
 				if(_in<0) then {
@@ -29,10 +34,15 @@ private _serializedGroups = [];
 					private _v = vehicle _x;
 					private _veh = createHashMap;
 					_veh set ["_class",typeof _v];
-					_veh set ["_pos",getpos _v];
+					_veh set ["_pos",getposATL _v];
 					_veh set ["_dir",getdir _v];
 					_veh set ["_fuel",fuel _v];
-					_veh set ["_dmg",getAllHitPointsDamage _v];
+					private _hdmg = getAllHitPointsDamage _v;
+					if((count _hdmg) >=3) then {
+						_veh set ["_dmg",getAllHitPointsDamage _v];
+					} else {
+						_veh set ["_dmg",getdammage _v];
+					};
 					_vehicleList pushBack _v;
 					_groupVehicles pushBack _veh;
 				};

@@ -41,6 +41,7 @@
 	_linemarker setMarkerShape "RECTANGLE";
 	_linemarker setMarkerColor _markerColor;
 	_linemarker setMarkerSize [1,1];
+	_linemarker setMarkerAlpha 0;
 
 	
 	A3E_Debug_TrackedGroups set [count(A3E_Debug_TrackedGroups),[_group,_marker,_linemarker,[]]];

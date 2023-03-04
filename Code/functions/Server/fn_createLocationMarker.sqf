@@ -1,5 +1,5 @@
 private["_marker","_trigger","_activation"];
-params["_markerName","_markerPosition","_markerType",["_color","ColorRed"],["_hidden",false]];
+params["_markerName","_markerPosition","_markerType",["_color","ColorRed"],["_hidden",false],["_inIntel",true]];
 
 _marker = createMarker [_markerName, _markerPosition];
 _marker setMarkerShape "ICON";
@@ -45,4 +45,4 @@ if(A3E_Param_RevealMarkers == 0 || A3E_Debug) then {
 	};
 };
 
-A3E_POIs pushBack [_marker,_markerType,_color,_markerPosition,_hidden,_unknown,_accuracy];
+A3E_POIs pushBack [_marker,_markerType,_color,_markerPosition,_hidden,_unknown,_accuracy,_inIntel];

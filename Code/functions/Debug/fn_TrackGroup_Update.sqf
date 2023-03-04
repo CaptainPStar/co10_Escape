@@ -40,8 +40,12 @@
 			_marker setmarkertextlocal _text;
 			_marker setmarkertype _markertype;
 			_marker setmarkerpos getposASL (leader _group);
-			[getposASL (units _group select 0),waypointPosition ((waypoints _group) select 1),_linemarker] call A3E_FNC_DrawMapLine;
-			
+			if(count(waypoints _group)>1) then {
+				_linemarker setmarkeralpha 1;
+				[getposASL (units _group select 0),waypointPosition ((waypoints _group) select 1),_linemarker] call A3E_FNC_DrawMapLine;
+			} else {
+				_linemarker setmarkeralpha 0;
+			};
 			_unitmarkers = [];
 			{
 				private["_umarker","_markername"];
