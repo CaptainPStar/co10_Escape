@@ -4,7 +4,7 @@ This Arma3 mission is the official successor of the original Escape mission from
 
 ## Overview
 
-This mission places you and your squad in the midst of an Altis invasion, captured by AAF forces and awaiting questioning by CSAT officers. However, NATO loyal insurgents have hidden a backpack with weapons in the prison, and it's up to you to overcome the guards, escape the prison, find a map of the island, make contact with NATO forces, and reach the designated evacuation zone.
+In this mission, you and your squad have been captured by enemy forces during a covert operation to gather intelligence on their presence ahead of a planned invasion. You're now being held captive and awaiting interrogation by high ranking enemy officers. However, loyal locals have hidden a stash of weapons in your prison, and it's up to you to retrieve them, overcome your guards, and escape. Once you're out, your objective is to find a map of the area, make contact with friendly forces, and reach the designated evacuation zone.
 
 The mission is fully dynamic, meaning that every playthrough will be different. It's also quite challenging and designed to be played more than once.
 
