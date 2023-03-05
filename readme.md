@@ -110,5 +110,5 @@ For this it is sufficient to rename your mission by adding your tag or server an
 
 ## Feedback
 
-Please post bugs and feedback in our Gitlab at the [Github bugtracker](https://github.com/CaptainPStar/co10_Escape/issues)
+Please post bugs and feedback in our Gitlab at the [Github bugtracker](https://github.com/CaptainPStar/co10_Escape/issues)<br>
 You can join us at our Discord server at https://discord.gg/0kV3JvVEhmnMfmq1
