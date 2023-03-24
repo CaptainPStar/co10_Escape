@@ -1,6 +1,6 @@
 params["_numIntel"];
 
-private _pois = (missionnamespace getvariable ["A3E_POIs",[]] select {_x # 4 || _x # 5});
+private _pois = (missionnamespace getvariable ["A3E_POIs",[]] select {_x # 7 && (_x # 4 || _x # 5)});
 _numIntel = _numIntel min count(_pois);
 
 

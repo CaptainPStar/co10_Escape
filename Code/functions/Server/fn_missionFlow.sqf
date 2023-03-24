@@ -23,7 +23,7 @@ if(isServer) then {
 	_trigger setTriggerArea[0, 0, 0, false];
 	_trigger setTriggerActivation["NONE", "PRESENT", false];
 	_trigger setTriggerTimeout [3, 3, 3, true];
-	_trigger setTriggerStatements["a3e_var_Escape_MissionComplete && a3e_var_Escape_SearchLeader_civilianReporting && !a3e_var_Escape_AllPlayersDead", """end4"" call A3E_fnc_endMissionServer;", ""];
+	_trigger setTriggerStatements["a3e_var_Escape_MissionComplete &&  (missionNamespace getvariable [""A3E_Warcrime_Score"",0])>1000 && !a3e_var_Escape_AllPlayersDead", """end4"" call A3E_fnc_endMissionServer;", ""];
 	
 	//Mission failed by MIA
 	_trigger = createTrigger["EmptyDetector", [0,0,0], false];

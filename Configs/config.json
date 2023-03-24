@@ -15,14 +15,17 @@
 		"./Configs/OPTRE.json",
 		"./Configs/GM.json",
 		"./Configs/CSLA.json",
-		"./Configs/WS.json"
+		"./Configs/WS.json",
+		"./Configs/SOGPF.json"
+
 	],
 	"replace" :
 		{
 			"VERSION" : "1.10",
 			"MISSION" : "Escape",
 			"MISSION_FULL": "co10 Escape",
-			"PLAYER_INIT" : "this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};"
+			"PLAYER_INIT" : "this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};",
+			"GAMETYPE" : "Escape"
 		},
 	"ParsedFiles" : ["mission.sqm","defines.hpp","fn_briefing.sqf"],
 	"Mods" : [
@@ -216,6 +219,16 @@
 				{
 				"ISLAND" : "stozec",
 				"ISLANDNAME" : "Gabreta"
+				}
+		},
+		{
+			"name" : "Polanek",
+			"class" : "zdanice",
+			"path" : "./Islands/Polanek/",
+			"replace" :
+				{
+				"ISLAND" : "zdanice",
+				"ISLANDNAME" : "Polanek"
 				}
 		},
 		{
@@ -649,7 +662,7 @@
 				"ISLANDNAME" : "Prei Khmaoch Luong"
 				}
 		},
-        {
+        	{
 			"name" : "Prei Khmaoch Luong RHS",
 			"class" : "rhspkl",
 			"path" : "./Islands/rhspkl/",
@@ -900,6 +913,16 @@
 				}
 		},
         {
+			"name" : "County Fermanagh",
+			"class" : "oski_ire",
+			"path" : "./Islands/CountyFermanagh/",
+			"replace" :
+				{
+				"ISLAND" : "County Fermanagh",
+				"ISLANDNAME" : "County Fermanagh"
+				}
+		},
+        {
 			"name" : "Fapovo",
 			"class" : "fapovo",
 			"path" : "./Islands/Fapovo/",
@@ -908,7 +931,7 @@
 				"ISLAND" : "Fapovo Island",
 				"ISLANDNAME" : "Fapovo Island"
 				}
-		},
+			},
         {
 			"name" : "Colombia",
 			"class" : "UMB_Colombia",
@@ -917,6 +940,46 @@
 				{
 				"ISLAND" : "Colombia",
 				"ISLANDNAME" : "Colombia"
+				}
+		},
+        {
+			"name" : "Pulau",
+			"class" : "pulau",
+			"path" : "./Islands/Pulau/",
+			"replace" :
+				{
+				"ISLAND" : "Pulau",
+				"ISLANDNAME" : "Pulau"
+				}
+		},
+        {
+			"name" : "Mutambara",
+			"class" : "swu_public_rhode_map",
+			"path" : "./Islands/Mutambara/",
+			"replace" :
+				{
+				"ISLAND" : "Mutambara",
+				"ISLANDNAME" : "Mutambara"
+				}
+		},
+        {
+			"name" : "Niakala",
+			"class" : "juju_kalahari",
+			"path" : "./Islands/Niakala/",
+			"replace" :
+				{
+				"ISLAND" : "Niakala",
+				"ISLANDNAME" : "Niakala"
+				}
+		},
+		{
+			"name" : "Zagorsk Big Lakes",
+			"class" : "zagor_zagorsk_biglakes",
+			"path" : "./Islands/zagor_zagorsk_biglakes/",
+			"replace" :
+				{
+				"ISLAND" : "Zagorsk Big Lakes",
+				"ISLANDNAME" : "Zagorsk Big Lakes"
 				}
 		}
 	],
@@ -980,6 +1043,13 @@
 		{
 			"island" : "Gabreta",
 			"sqm" : "Gabreta",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Polanek",
+			"sqm" : "Polanek",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
@@ -1482,6 +1552,13 @@
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
         {
+			"island" : "County Fermanagh",
+			"sqm": "CountyFermanagh",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
 			"island" : "Fapovo",
 			"sqm": "Fapovo",
 			"mod" : "Vanilla",
@@ -1498,6 +1575,41 @@
 		{
 			"island" : "Colombia",
 			"sqm": "UMB_Colombia",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Mutambara",
+			"sqm": "Mutambara",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Niakala",
+			"sqm": "Niakala",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Niakala",
+			"sqm": "Niakala",
 			"mod" : "Vanilla Apex",
 			"replace" : {},
 			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
@@ -1582,6 +1694,20 @@
         {
 			"island" : "Gabreta",
 			"sqm" : "Gabreta",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Polanek",
+			"sqm" : "Polanek",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Polanek",
+			"sqm" : "Polanek",
 			"mod" : "Vanilla Contact US",
 			"replace" : {},
 			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
@@ -2252,6 +2378,20 @@
 			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		},
         {
+			"island" : "County Fermanagh",
+			"sqm": "CountyFermanagh",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "County Fermanagh",
+			"sqm": "CountyFermanagh",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
 			"island" : "Fapovo",
 			"sqm": "Fapovo",
 			"mod" : "Vanilla US",
@@ -2278,6 +2418,76 @@
 			"mod" : "Vanilla Apex US",
 			"replace" : {},
 			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Mutambara",
+			"sqm": "Mutambara",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Niakala",
+			"sqm": "Niakala",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Niakala",
+			"sqm": "Niakala",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
 		}
 	],
 	"Addons" : [

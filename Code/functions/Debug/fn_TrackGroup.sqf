@@ -1,5 +1,7 @@
 private["_startpos","_endpos","_marker","_width","_length","_distanceY","_distanceX","_markername","_rotation","_text"];
 _group = [_this,0] call bis_fnc_param;
+
+if(true) exitwith {};
 if(!A3E_Debug) exitwith {};
 
 	_marker = _group getvariable "a3e_debug_positionMarker";

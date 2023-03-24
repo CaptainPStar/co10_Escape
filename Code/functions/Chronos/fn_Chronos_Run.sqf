@@ -1,6 +1,5 @@
-private["_time","_debug"];
-_debug = true;
-systemchat str A3E_CronTimer;
+private["_time"];
+
 A3E_CronTimer = diag_tickTime + A3E_CronTime;
 {
 	private["_function","_callType","_timeout","_handle","_lastCall","_time"];
@@ -13,14 +12,14 @@ A3E_CronTimer = diag_tickTime + A3E_CronTime;
 	
 
 	if(diag_tickTime>=(_lastCall+_time)) then {
-		systemchat "Calling function";
+		//systemchat "Calling function";
 		if(_callType=="call") then {
 			[_x,_foreachindex] call a3e_fnc_chronos_dispatch;
 		} else {
 			if(_callType == "spawn" && scriptDone _handle) then {
 				[_x,_foreachindex] call a3e_fnc_chronos_dispatch;
 			} else {
-				systemchat format["A script is running too slow: %1",str _function];
+				diag_log format["Escape scheduler: A script is running too slow: %1",str _function];
 			};
 		};
 	};

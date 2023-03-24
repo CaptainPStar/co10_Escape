@@ -1,0 +1,19 @@
+Spawn				-		[true/false] Defines if this object will be spawned with the template composition
+Indestructable		-		[true/false] Makes object indestructable e.g., comcenter buildings
+Terminal			-		[true/false] Defines an object as hackable terminal
+Yeet				-		[true/false] Catapults an object into the air after spawn
+Inflame				-		[true/false] Lights campfires and lamps
+Init 				-		[compilable string] Code executed when object is spawned
+Static				-		[true/false] This item is a placeholder for static MGs etc.
+StaticType 			-		[string (Supported "low", "high", "large")] Defines the type of static mg, e.g. if it is on the ground or raised
+ParkedVehicle		-		[true/false] This item is a placeholder for parked vehicles
+ParkedVehicleType 	-		[string (Supported TBD e.g.,"Armed", "Armored")] Defines class of the parked vehicles
+Ammobox 			-		[true/false] This item is a placeholder for ammo boxes
+AmmoType 			- 		[string (Supported "Basic", "Special", "Launchers", "Ordnance", "Vehicle", "Items", "Random","RandomInf","Car","CrashSite","Extra1", "Extra2")]
+Flag 				- 		[true/false] This item is a flag
+Probability			-		[integer (0-100%)] Probability this object will spawn
+ExcludingPresence	-		[string (Unique name for this shared object, where only one is created)] Defines two or more items to be in a pool of objects where only one spawns in one template instance (e.g. random positions of terminals)
+isBase				-		[string (unique name of this base object)] Sets this object as base objects (normally a building) that can be used as reference objects for other objects
+hasBase				-		[string (name of the base this object is relative to e.g. for an antenna on a tower)] Links this objects to a base object. When spawned this item will always be spawned relative to the base object
+Guard				-		[true/false] Defines this object as placeholder for a guard position
+GuardType			-		[string (Supported TBD, maybe "Basic", "Sniper", "Launcher", "GrenadeLauncher", "MG")] Defines the type of guard position

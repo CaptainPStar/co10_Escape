@@ -6,11 +6,11 @@
 // Param4: true, when Timeout (Single call; Default: false) 
 //############################
 
-private["_function","_calltype","_time","_isTimeout","_lastCall"];
+params["_function","_calltype","_time","_isTimeout"];
 
 _function = [_this, 0, ""] call BIS_fnc_param;
 _calltype = [_this, 1, "spawn"] call BIS_fnc_param;
 _time = [_this, 2, 1] call BIS_fnc_param;
 _isTimeout = [_this, 3, false] call BIS_fnc_param;
-_lastCall = diag_tickTime;
+private _lastCall = diag_tickTime;
 A3E_CronProcesses pushBack [_function,_calltype, _time, _lastCall, _isTimeout,scriptNull];

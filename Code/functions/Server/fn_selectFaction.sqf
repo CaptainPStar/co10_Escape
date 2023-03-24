@@ -28,7 +28,7 @@ switch (_side) do {
 		["Error",str _side +" is an unknown side"] call a3e_fnc_log;
 	};
 };
-systemchat str _sideArr;
+
 private _faction  = [];
 
 if(count _sideArr == 0) exitwith {["Error",_side + " doesn't have any factions."] call a3e_fnc_log;_faction;};
