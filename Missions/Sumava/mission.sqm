@@ -23,9 +23,10 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="co10_Escape_BIS_NATO_vs_CSAT";
+sourceName="co10_Escape";
 addons[]=
 {
+	{* REQUIRE *}
 	"A3_Ui_F",
 	"A3_Modules_F",
 	"A3_Characters_F"
@@ -87,7 +88,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Escape Stratis BIS NATO vs CSAT 1.10 dev ";
+		briefingName="{* MISSION *} {* ISLANDNAME *} {* MOD *} {* VERSION *}";
 		startWeather=0.099999994;
 		startWind=0.099999994;
 		startWaves=0.099999994;
@@ -414,7 +415,7 @@ class Mission
 		class Item32
 		{
 			dataType="Group";
-			side="West";
+			side="{* PLAYERSIDE *}";
 			class Entities
 			{
 				items=10;
@@ -426,19 +427,19 @@ class Mission
 						position[]={11981.163,143.09969,4219.3682};
 						angles[]={0.049958061,0,6.278194};
 					};
-					side="West";
+					side="{* PLAYERSIDE *}";
 					flags=6;
 					class Attributes
 					{
 						skill=0.60000002;
 						rank="CAPTAIN";
-						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
+						init="{* PLAYER_INIT *}";
 						name="p1";
 						isPlayer=1;
 						isPlayable=1;
 					};
 					id=47;
-					type="B_Soldier_TL_F";
+					type="{* PLAYERUNIT_1 *}";
 					atlOffset=-1.5258789e-005;
 				};
 				class Item1
@@ -449,18 +450,18 @@ class Mission
 						position[]={11979.28,143.21094,4217.5762};
 						angles[]={0.056605019,0,6.2748561};
 					};
-					side="West";
+					side="{* PLAYERSIDE *}";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
+						init="{* PLAYER_INIT *}";
 						name="p4";
 						isPlayable=1;
 					};
 					id=48;
-					type="B_soldier_AT_F";
+					type="{* PLAYERUNIT_4 *}";
 					atlOffset=1.5258789e-005;
 				};
 				class Item2
@@ -471,18 +472,18 @@ class Mission
 						position[]={11978.574,143.07939,4220.123};
 						angles[]={0.053283807,0,6.2748489};
 					};
-					side="West";
+					side="{* PLAYERSIDE *}";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
+						init="{* PLAYER_INIT *}";
 						name="p2";
 						isPlayable=1;
 					};
 					id=49;
-					type="B_soldier_AA_F";
+					type="{* PLAYERUNIT_2 *}";
 				};
 				class Item3
 				{
@@ -492,18 +493,18 @@ class Mission
 						position[]={11978.487,143.15306,4218.7559};
 						angles[]={0.053283807,0,6.2748489};
 					};
-					side="West";
+					side="{* PLAYERSIDE *}";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
+						init="{* PLAYER_INIT *}";
 						name="p3";
 						isPlayable=1;
 					};
 					id=50;
-					type="B_engineer_F";
+					type="{* PLAYERUNIT_3 *}";
 				};
 				class Item4
 				{
@@ -513,18 +514,18 @@ class Mission
 						position[]={11980.399,143.24471,4216.8159};
 						angles[]={0.056605019,0,6.2748561};
 					};
-					side="West";
+					side="{* PLAYERSIDE *}";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
+						init="{* PLAYER_INIT *}";
 						name="p5";
 						isPlayable=1;
 					};
 					id=51;
-					type="B_Soldier_GL_F";
+					type="{* PLAYERUNIT_5 *}";
 					atlOffset=1.5258789e-005;
 				};
 				class Item5
@@ -535,18 +536,18 @@ class Mission
 						position[]={11981.854,143.22989,4216.8633};
 						angles[]={0.056605019,0,6.2748561};
 					};
-					side="West";
+					side="{* PLAYERSIDE *}";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
+						init="{* PLAYER_INIT *}";
 						name="p6";
 						isPlayable=1;
 					};
 					id=52;
-					type="B_soldier_AR_F";
+					type="{* PLAYERUNIT_6 *}";
 				};
 				class Item6
 				{
@@ -556,18 +557,18 @@ class Mission
 						position[]={11983.343,143.19756,4217.2207};
 						angles[]={0.051619392,0,6.278194};
 					};
-					side="West";
+					side="{* PLAYERSIDE *}";
 					flags=4;
 					class Attributes
 					{
 						skill=0.59000003;
 						rank="LIEUTENANT";
-						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
+						init="{* PLAYER_INIT *}";
 						name="p7";
 						isPlayable=1;
 					};
 					id=53;
-					type="B_soldier_LAT_F";
+					type="{* PLAYERUNIT_7 *}";
 				};
 				class Item7
 				{
@@ -577,18 +578,18 @@ class Mission
 						position[]={11984.386,143.14896,4218.0605};
 						angles[]={0.049958061,0,6.278194};
 					};
-					side="West";
+					side="{* PLAYERSIDE *}";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
+						init="{* PLAYER_INIT *}";
 						name="p8";
 						isPlayable=1;
 					};
 					id=54;
-					type="B_soldier_UAV_F";
+					type="{* PLAYERUNIT_8 *}";
 				};
 				class Item8
 				{
@@ -598,18 +599,18 @@ class Mission
 						position[]={11985.206,143.09018,4219.1543};
 						angles[]={0.049958061,0,6.278194};
 					};
-					side="West";
+					side="{* PLAYERSIDE *}";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
+						init="{* PLAYER_INIT *}";
 						name="p9";
 						isPlayable=1;
 					};
 					id=55;
-					type="B_soldier_M_F";
+					type="{* PLAYERUNIT_9 *}";
 				};
 				class Item9
 				{
@@ -619,18 +620,18 @@ class Mission
 						position[]={11985.827,143.03259,4220.2402};
 						angles[]={0.058268402,0,6.2698536};
 					};
-					side="West";
+					side="{* PLAYERSIDE *}";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
+						init="{* PLAYER_INIT *}";
 						name="p10";
 						isPlayable=1;
 					};
 					id=56;
-					type="B_medic_F";
+					type="{* PLAYERUNIT_10 *}";
 					atlOffset=-1.5258789e-005;
 				};
 			};
