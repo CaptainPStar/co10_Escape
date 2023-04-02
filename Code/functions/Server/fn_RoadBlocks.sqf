@@ -37,7 +37,13 @@ if (random 100 < 50) then {
 	_dir = _dir + 180;
 };
 
-private _templatePositions = [_pos,_dir, selectRandom ["rb_bis_rb3","rb_bis_rb2"]]  call a3e_fnc_IsoTemplateRestore;
+private _templatesAvailable = missionnamespace getvariable ["A3E_RoadblockTemplates",[]];
+
+if(count _templatesAvailable == 0) exitwith {
+	["No roadblocks spawned because there are no templates defined/loaded.",["Roadblocks"]] call A3E_fnc_Log;
+};
+
+private _templatePositions = [_pos,_dir, selectRandom _templatesAvailable]  call a3e_fnc_IsoTemplateRestore;
 
 [format["A3E_Roadblock_%1",count(_roadBlocks)],_pos,"hd_warning","ColorRed",false,false] call a3e_fnc_createLocationMarker;
 
