@@ -32,7 +32,8 @@ addons[]=
 	{* REQUIRE *}
 	"A3_Ui_F",
 	"A3_Modules_F",
-	"A3_Characters_F"
+	"A3_Characters_F",
+	"A3_Boat_F_Gamma_Boat_Transport_01"
 };
 class AddonsMetaData
 {
@@ -60,6 +61,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item3
+		{
+			className="A3_Boat_F_Gamma";
+			name="Arma 3 - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=13122150;
@@ -80,7 +88,7 @@ class Mission
 	class Intel
 	{
 		briefingName="{* MISSION *} {* ISLANDNAME *} {* MOD *} {* VERSION *}";
-		overviewText="Fight to escape the green hell or die trying.";
+		overviewText="Stain the white sands red soldier";
 		startWeather=0.099999994;
 		startWind=0.099999994;
 		startWaves=0.099999994;
@@ -1140,6 +1148,719 @@ class Mission
 			colorName="ColorGreen";
 			id=1901;
 			atlOffset=3.6387906;
+		};
+		class Item82
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={559.96399,1.2430416,1679.8719};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1903;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=1.7890002;
+		};
+		class Item83
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4223.5068,1.2435327,2297.397};
+				angles[]={0,3.6333044,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1904;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=2.01;
+		};
+		class Item84
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5344.2129,1.2435327,192.09097};
+				angles[]={0,2.0470033,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1905;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=7.8024058;
+		};
+		class Item85
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5473.252,1.2435327,645.55524};
+				angles[]={0,3.6333044,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1906;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=23.526203;
+		};
+		class Item86
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5294.2554,1.2435327,1487.5303};
+				angles[]={0,2.173528,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1907;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=106.09385;
+		};
+		class Item87
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5586.5918,1.2134361,2566.2029};
+				angles[]={0,4.0402689,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1909;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=8.8120394;
+		};
+		class Item88
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1603.3031,1.2435327,4968.335};
+				angles[]={0,4.1196928,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1910;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=1.0734514;
+		};
+		class Item89
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3015.322,1.2435327,5761.9023};
+				angles[]={0,2.173528,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1911;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=0.48397705;
+		};
+		class Item90
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3539.4617,1.2435327,6767.8086};
+				angles[]={0,2.6871126,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1912;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=10.17961;
+		};
+		class Item91
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1989.9949,1.2435327,8821.668};
+				angles[]={0,3.0989244,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1913;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=3.1395142;
+		};
+		class Item92
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1108.3043,1.2435327,9628.9385};
+				angles[]={0,5.8686862,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1914;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=5.1552682;
+		};
+		class Item93
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3333.011,1.2435327,11383.478};
+				angles[]={0,3.0543675,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1915;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=1.5204418;
+		};
+		class Item94
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1597.0076,0.79040557,12122.571};
+				angles[]={0,2.173528,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1916;
+			type="B_G_Boat_Transport_01_F";
+		};
+		class Item95
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={312.22333,1.2435327,13511.851};
+				angles[]={0,2.173528,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1917;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=17.720932;
+		};
+		class Item96
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={596.34241,1.2435327,14593.861};
+				angles[]={0,2.173528,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1918;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=2.7895172;
+		};
+		class Item97
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2299.3748,1.2435327,15100.124};
+				angles[]={0,2.173528,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1919;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=14.672778;
+		};
+		class Item98
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4885.9233,1.2435327,14770.467};
+				angles[]={0,3.1758947,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1920;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=7.4080682;
+		};
+		class Item99
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9302.1729,1.2435327,14568.705};
+				angles[]={0,2.173528,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1921;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=2.4915869;
+		};
+		class Item100
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9821.2607,1.2435327,14436.99};
+				angles[]={0,0.10214403,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1922;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=4.1230516;
+		};
+		class Item101
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12585.872,1.2435327,14879.787};
+				angles[]={0,4.5788331,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1923;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=4.7814827;
+		};
+		class Item102
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14432.421,1.2435327,14995.358};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1924;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=5.0149488;
+		};
+		class Item103
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4680.8506,1.2435327,14070.878};
+				angles[]={0,5.0506639,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1925;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=1.7478168;
+		};
+		class Item104
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14323.325,1.2435327,12763.701};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1926;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=18.973785;
+		};
+		class Item105
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12573.452,1.2435327,10422.846};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1927;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=6.7131824;
+		};
+		class Item106
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14704.605,1.2435327,11982.739};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1928;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=7.6500001;
+		};
+		class Item107
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12632.739,1.2435327,13531.249};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1929;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=1.4864843;
+		};
+		class Item108
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12392.177,1.2435327,9375.9922};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1930;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=15.942456;
+		};
+		class Item109
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9163.6084,1.2435327,7525.6631};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1931;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=34.538811;
+		};
+		class Item110
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15006.32,1.2435327,7447.1167};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1932;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=11.264946;
+		};
+		class Item111
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14367.449,1.2435327,9025.7783};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1933;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=22.26512;
+		};
+		class Item112
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14673.741,1.2435327,5557.54};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1934;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=3.68276;
+		};
+		class Item113
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={13341.158,1.2435327,5445.9419};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1935;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=6.0374136;
+		};
+		class Item114
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14940.949,1.2435327,4241.2471};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1936;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=3.1444643;
+		};
+		class Item115
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14872.224,1.2435327,1969.9144};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1937;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=7.0250616;
+		};
+		class Item116
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={13919.428,1.2435327,386.63797};
+				angles[]={0,3.4520168,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1938;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=3.453733;
+		};
+		class Item117
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={13169.481,1.2435327,704.87183};
+				angles[]={0,1.6827699,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1939;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=10.518883;
+		};
+		class Item118
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12829.281,1.2435327,370.69614};
+				angles[]={0,1.3487209,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1940;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=15.189834;
+		};
+		class Item119
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10626.657,1.2435327,224.22372};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1941;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=3.2381611;
+		};
+		class Item120
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9606.7148,1.2435327,879.70514};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1942;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=0.41997114;
+		};
+		class Item121
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10804.403,1.2435327,1996.0371};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1943;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=5.8292007;
+		};
+		class Item122
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6270.5879,1.2435327,4540.9741};
+				angles[]={0,0.93303269,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1944;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=9.4726467;
+		};
+		class Item123
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8102.5239,1.2435327,7438.5776};
+				angles[]={0,0.10214403,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1945;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=0.95505005;
 		};
 	};
 };
