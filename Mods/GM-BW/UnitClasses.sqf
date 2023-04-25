@@ -389,7 +389,7 @@ a3e_arr_recon_InfantryTypes = [
 	,"gm_ge_army_sf_rifleman_g3a4_80_wdl"
 	,"gm_ge_army_sf_rifleman_mp5a3_80_wdl"
 	,"gm_ge_army_sf_radioman_mp5a3_80_wdl"
-	,"gm_ge_army_sf_maginegunner_g8a2_80_wdl"	//fix after RC
+	,"gm_ge_army_sf_machinegunner_g8a2_80_wdl"
 	,"gm_ge_army_sf_grenadier_hk69a1_80_wdl"];
 a3e_arr_recon_I_InfantryTypes = [
 	"gm_dk_army_sf_squadleader_mp5a3_p2a1_84_m84"	//80s
