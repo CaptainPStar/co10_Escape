@@ -201,6 +201,13 @@ class Params
 		livechanges = 1;
 		default = 0;
 	};
+	class A3E_Param_Stamina
+	{
+		title="Player Stamina";
+		values[]={0,1};
+		texts[]={"Off", "On"};
+		default = 1;
+	};
 	class A3E_Param_Spacer4
     {
             title = "==================== Statistic Settings ====================";

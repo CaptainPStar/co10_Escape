@@ -78,6 +78,11 @@ call compile preprocessFile "Scripts\AT\dronehack_init.sqf";
 
 setTerrainGrid A3E_Param_Grass;
 
+//disable player stamina based on setting
+if (A3E_Param_Stamina == 0) then {
+    player enableStamina false;
+};
+
 if (A3E_Param_Magrepack == 1) then {
 	[] execVM "Scripts\outlw_magRepack\MagRepack_init_sv.sqf";
 };
