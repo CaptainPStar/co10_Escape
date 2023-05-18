@@ -25,7 +25,7 @@ A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
 A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
 
-A3E_ItemsToBeRemoved = ["gm_watch_kosei_80","gm_gc_compass_f73"]; //Items to randomly remove from units and to remove from guards
+A3E_ItemsToBeRemoved = ["gm_ge_army_conat2"]; //Items to randomly remove from units and to remove from guards
 
 // Random array. Start position guard types around the prison
 a3e_arr_Escape_StartPositionGuardTypes = [
