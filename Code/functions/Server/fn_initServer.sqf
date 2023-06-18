@@ -213,17 +213,23 @@ _playerGroup = [] call A3E_fnc_GetPlayerGroup;
 [_enemyMinSkill, _enemyMaxSkill, _enemyFrequency, A3E_Debug] execVM "Scripts\Escape\EscapeSurprises.sqf";
 
 
-// Create communication centers
-[] spawn A3E_fnc_CreateComCenters;
+[] spawn {
+	// Create communication centers
+	[] call A3E_fnc_CreateComCenters;
 
-// Create Motor Pools
-[] spawn A3E_fnc_CreateMotorPools;
+	// Create Motor Pools
+	[] call A3E_fnc_CreateMotorPools;
 
-// Create ammo depots
-[] spawn A3E_fnc_CreateAmmoDepots;
+	// Create ammo depots
+	[] call A3E_fnc_CreateAmmoDepots;
 
-//Spawn mortar sites
-[] spawn A3E_fnc_createMortarSites;
+	//Spawn mortar sites
+	[] call A3E_fnc_createMortarSites;
+
+	//Spawn crash sites
+	[] call A3E_fnc_createCrashSites;
+};
+
 
 // Initialize search leader
 //[drn_searchAreaMarkerName, A3E_Debug] execVM "Scripts\Escape\SearchLeader.sqf"; //depreciated
