@@ -431,6 +431,16 @@ a3e_units_civilian_InfantryTypes = [
 //	,"gm_ge_dbp_man_01_80_blu"		//postman west
 	];
 
+//////////////////////////////////////////////////////////////////
+// fn_RoadBlocks.sqf
+// Array of templates to use for roadblocks
+//////////////////////////////////////////////////////////////////
+A3E_RoadblockTemplates = [
+	"rb_gm_rb1"
+	,"rb_gm_rb2"
+	,"rb_gm_rb3"
+	,"rb_gm_rb4"];
+
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"gm_ge_army_iltis_milan"
