@@ -945,7 +945,8 @@ a3e_units_civilian_InfantryTypes = [
 // Array of templates to use for roadblocks
 //////////////////////////////////////////////////////////////////
 A3E_RoadblockTemplates = [
-	"rb_bis_rb2"
+	"rb_bis_rb1"
+	,"rb_bis_rb2"
 	,"rb_bis_rb3"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).

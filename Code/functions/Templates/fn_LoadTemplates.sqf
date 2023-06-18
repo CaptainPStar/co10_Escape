@@ -1,4 +1,4 @@
-private _roadblocks = missionNamespace getvariable ["A3E_RoadblockTemplates",["rb_bis_rb3","rb_bis_rb2"]];
+private _roadblocks = missionNamespace getvariable ["A3E_RoadblockTemplates",["rb_bis_rb1","rb_bis_rb2","rb_bis_rb3"]];
 private _templates = [];
 
 
