@@ -47,7 +47,7 @@ diag_log ("ESCAPE SURPRISE: " + str _surprise);
 
 //Search Drone
 
-if(count(missionNamespace getvariable ["a3e_arr_searchdrone",[]])>0)
+if(count(missionNamespace getvariable ["a3e_arr_searchdrone",[]])>0) then
 {
 	_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
 	_timeInSek = 5 * 60 + random (30 * 60);
@@ -59,7 +59,7 @@ if(count(missionNamespace getvariable ["a3e_arr_searchdrone",[]])>0)
 
 //Leaflet Drone
 
-if(count(missionNamespace getvariable ["a3e_arr_leafletdrone",[]])>0 || isNil "a3e_arr_leafletdrone")
+if(count(missionNamespace getvariable ["a3e_arr_leafletdrone",[]])>0 || isNil "a3e_arr_leafletdrone") then
 {
 	_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
 	_timeInSek = 5 * 60 + random (30 * 60);
