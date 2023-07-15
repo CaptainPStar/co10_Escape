@@ -47,12 +47,15 @@ diag_log ("ESCAPE SURPRISE: " + str _surprise);
 
 //Search Drone
 
-_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
-_timeInSek = 5 * 60 + random (30 * 60);
-_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
-_surprise = ["SEARCHDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
-_surprises set [count _surprises, _surprise];
-diag_log ("ESCAPE SURPRISE: " + str _surprise);
+if(count(missionNamespace getvariable ["a3e_arr_searchdrone",[]])>0)
+{
+	_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
+	_timeInSek = 5 * 60 + random (30 * 60);
+	_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
+	_surprise = ["SEARCHDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
+	_surprises set [count _surprises, _surprise];
+	diag_log ("ESCAPE SURPRISE: " + str _surprise);
+};
 
 //Leaflet Drone
 
