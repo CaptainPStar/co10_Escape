@@ -12,8 +12,14 @@ private _list = [
 "BUILDING",
 "BUNKER",
 "BUSH",
+"BUSSTOP",
+"CHAPEL",
+"CHURCH",
 "CROSS",
 "FENCE",
+//"FOREST BORDER",
+//"FOREST SQUARE",
+//"FOREST TRIANGLE",
 "FOREST",
 "FORTRESS",
 "FOUNTAIN",
@@ -23,17 +29,26 @@ private _list = [
 "HOUSE",
 "LIGHTHOUSE",
 "POWER LINES",
+"POWERSOLAR",
+"POWERWAVE",
+"POWERWIND",
 "QUAY",
+//"RAILWAY",
 "ROCK",
 "ROCKS",
 "RUIN",
 "SHIPWRECK",
 "SMALL TREE",
 "STACK",
-"TOURISM"];
+"TOURISM",
+"TRANSMITTER",
+"TREE",
+"VIEW-TOWER",
+"WALL",
+"WATERTOWER"];
 
 {
-	[_x, true] remoteExec ["hideObject", 0, true];
+	[_x, true] remoteExec ["hideObjectGlobal", 0, true];
 } forEach nearestTerrainObjects [_position, _list, _radius, false, true];
 
 
