@@ -27,6 +27,18 @@ A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
 A3E_ItemsToBeRemoved = ["gm_ge_army_conat2"]; //Items to randomly remove from units and to remove from guards
 
+//////////////////////////////////////////////////////////////////
+// fn_createStartPos.sqf
+// Array of templates to use for prisons
+//////////////////////////////////////////////////////////////////
+A3E_PrisonTemplates = [
+	"a3e_fnc_BuildPrison1"
+	,"a3e_fnc_BuildPrison2"
+	,"a3e_fnc_BuildPrison3"
+	,"a3e_fnc_BuildPrison4"
+	,"a3e_fnc_BuildPrison5"
+	];
+
 // Random array. Start position guard types around the prison
 a3e_arr_Escape_StartPositionGuardTypes = [
 	"gm_xx_army_machinegunner_rpk_80_oli",
