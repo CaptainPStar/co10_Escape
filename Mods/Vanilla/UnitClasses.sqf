@@ -20,7 +20,10 @@ A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
 A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
+A3E_Var_AllowVanillaNightVision = true;
 
+A3E_MapItemsUsedInMission = ["ItemMap"]; //MapItems that should be removed from guards and are allowed to be carried randomly by patrols
+A3E_ItemsToBeRemoved = ["ItemCompass"]; //Items to randomly remove from units and to remove from guards
 
 //////////////////////////////////////////////////////////////////
 // fn_createStartPos.sqf
