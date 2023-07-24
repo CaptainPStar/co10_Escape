@@ -732,6 +732,20 @@ A3E_AmmoDepotTemplates = [
 	"A3E_fnc_AmmoDepot_VN_nva1"
 	];
 
+//Ammo Depot Crates
+// classnames to be used for the crates that are placed at an ammo depot
+a3e_arr_AmmoDepotCrate_Basic = ["vn_o_ammobox_04"];
+a3e_arr_AmmoDepotCrate_Special = ["vn_o_ammobox_02"];
+a3e_arr_AmmoDepotCrate_Launchers = ["vn_o_ammobox_03"];
+a3e_arr_AmmoDepotCrate_Ordnance = ["vn_o_ammobox_05"];
+a3e_arr_AmmoDepotCrate_Vehicle = ["vn_o_ammobox_08"];
+a3e_arr_AmmoDepotCrate_Items = ["vn_o_ammobox_01"];
+a3e_arr_AmmoDepotCrate_Random = ["vn_o_ammobox_02"];
+a3e_arr_AmmoDepotCrate_RandomInf = ["vn_o_ammobox_04"];
+a3e_arr_AmmoDepotCrate_Car = ["vn_o_ammobox_01"];
+a3e_arr_AmmoDepotCrate_CrashSite = ["vn_b_ammobox_02"];
+a3e_arr_AmmoDepotCrate_Extra1 = ["vn_o_ammobox_06"];
+a3e_arr_AmmoDepotCrate_Extra2 = ["vn_o_ammobox_05"];
 
 // The following arrays define weapons and ammo contained at the ammo depots
 // Index 0: Weapon classname.
@@ -1267,5 +1281,5 @@ A3E_Trap_Pathes = ["TRACK", "TRAIL"]; //Classnames of roads and pathes for the t
 
 A3E_Var_AllowVanillaNightVision = false;
 
-A3E_MapItemsUsedInMission = ["vn_b_item_map","vn_o_item_map"];
-A3E_ItemsToBeRemoved = ["vn_b_item_watch","vn_b_item_compass_sog","vn_b_item_compass"];
+A3E_MapItemsUsedInMission = ["vn_b_item_map","vn_o_item_map"]; //MapItems that should be removed from guards and are allowed to be carried randomly by patrols
+A3E_ItemsToBeRemoved = ["vn_b_item_watch","vn_b_item_compass_sog","vn_b_item_compass"]; //Items to randomly remove from units and to remove from guards
