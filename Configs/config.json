@@ -16,7 +16,8 @@
 		"./Configs/GM.json",
 		"./Configs/CSLA.json",
 		"./Configs/WS.json",
-		"./Configs/SOGPF.json"
+		"./Configs/SOGPF.json",
+		"./Configs/SFP.json"
 
 	],
 	"replace" :
@@ -124,9 +125,10 @@
                     "PLAYERUNIT_5" : "O_R_Soldier_GL_F",
                     "PLAYERUNIT_6" : "O_R_Soldier_AR_F",
                     "PLAYERUNIT_7" : "O_R_Soldier_LAT_F",
-                    "PLAYERUNIT_8" : "O_R_soldier_exp_F",
+                    "PLAYERUNIT_8" : "O_R_JTAC_F",
                     "PLAYERUNIT_9" : "O_R_soldier_M_F",
-                    "PLAYERUNIT_10" : "O_R_medic_F"
+                    "PLAYERUNIT_10" : "O_R_medic_F",
+					"PLAYER_INIT" : "this setCaptive true; if(this == p8) then {this setUnitTrait ['UavHacker',true];};"
                 }
         }
 	],
