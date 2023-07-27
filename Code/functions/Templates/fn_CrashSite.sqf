@@ -39,8 +39,7 @@ private _effect = selectRandom ["SMOKE_SMALL", "SMOKE_MEDIUM", "SMOKE_BIG"];
 _fx = [_position, _effect];
 _fx remoteExec ["A3E_fnc_FireSmokeFX",0,true];
 
-
-_boxType = "Box_NATO_Wps_F";
+private _boxType = selectRandom (missionNamespace getvariable ["a3e_arr_AmmoDepotCrate_CrashSite",["Box_NATO_Wps_F"]]);
 _boxpos = _position findEmptyPosition [3,15,_boxType];
  if(count _boxpos >0) then {
 	_box = createVehicle [_boxType, _boxpos, [], 0, "NONE"];

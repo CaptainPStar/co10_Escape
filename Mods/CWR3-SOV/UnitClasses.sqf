@@ -760,6 +760,36 @@ a3e_arr_recon_InfantryTypes = [
 a3e_arr_recon_I_InfantryTypes = [
 	"cwr3_i_soldier_saboteur"];
 
+a3e_units_civilian_InfantryTypes = [
+	"cwr3_c_citizen"
+	,"cwr3_c_citizen"
+	,"cwr3_c_citizen"
+	,"cwr3_c_civilian_random"
+	,"cwr3_c_civilian_random"
+	,"cwr3_c_civilian_random"
+	,"cwr3_c_civilian_random"
+	,"cwr3_c_civilian_random"
+	,"cwr3_c_doctor"
+	,"cwr3_c_functionary"
+	,"cwr3_c_functionary"
+	,"cwr3_c_functionary"
+	,"cwr3_c_pilot"
+	,"cwr3_c_profiteer"
+	,"cwr3_c_profiteer"
+	,"cwr3_c_profiteer"
+	,"cwr3_c_racketeer"
+	,"cwr3_c_racketeer"
+	,"cwr3_c_racketeer"
+	,"cwr3_c_villager"
+	,"cwr3_c_villager"
+	,"cwr3_c_villager"
+	,"cwr3_c_woodlander"
+	,"cwr3_c_woodlander"
+	,"cwr3_c_woodlander"
+	,"cwr3_c_worker"
+	,"cwr3_c_worker"
+	,"cwr3_c_worker"];
+
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"cwr3_o_uaz_dshkm"

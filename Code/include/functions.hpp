@@ -204,8 +204,11 @@ class CfgFunctions
 			class BuildComCenter_VN_US2 {};
 			class BuildComCenter_VN_NVA1 {};
 			class BuildComCenter_VN_NVA2 {};
+			class BuildComCenter_spe1 {};
+			class BuildComCenter_spe_ger1 {};
             class BuildMotorPool {};
 			class BuildMotorPool_VN {};
+			class BuildMotorPool_SPE {};
 			class AmmoDepot {};
 			class AmmoDepot2 {};
 			class AmmoDepot3 {};
@@ -213,11 +216,15 @@ class CfgFunctions
 			class AmmoDepot5 {};
 			class AmmoDepot_VN_US1 {};
 			class AmmoDepot_VN_NVA1 {};
+			class AmmoDepot_spe1 {};
+			class AmmoDepot_spe2 {};
+			class AmmoDepot_spe3 {};
 			class CrashSite {};
 			class MortarSite {};
 			class MortarSite2 {};
 			class MortarSite_VN_US1 {};
 			class MortarSite_VN_NVA1 {};
+			class MortarSite_spe1 {};
 			class Roadblock {};
 			class Roadblock2 {};
 			class Roadblock3 {};

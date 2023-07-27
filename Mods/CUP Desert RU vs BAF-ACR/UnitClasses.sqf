@@ -331,6 +331,32 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"CUP_B_CZ_SpecOps_Scout_DES"
 	,"CUP_B_CZ_SpecOps_TL_DES"];
 
+a3e_units_civilian_InfantryTypes = [
+	"CUP_C_TK_Man_04"
+	,"CUP_C_TK_Man_04_Jack"
+	,"CUP_C_TK_Man_04_Waist"
+	,"CUP_C_TK_Man_07"
+	,"CUP_C_TK_Man_07_Coat"
+	,"CUP_C_TK_Man_07_Waist"
+	,"CUP_C_TK_Man_08"
+	,"CUP_C_TK_Man_08_Jack"
+	,"CUP_C_TK_Man_08_Waist"
+	,"CUP_C_TK_Man_05_Coat"
+	,"CUP_C_TK_Man_05_Jack"
+	,"CUP_C_TK_Man_05_Waist"
+	,"CUP_C_TK_Man_06_Coat"
+	,"CUP_C_TK_Man_06_Jack"
+	,"CUP_C_TK_Man_06_Waist"
+	,"CUP_C_TK_Man_02"
+	,"CUP_C_TK_Man_02_Jack"
+	,"CUP_C_TK_Man_02_Waist"
+	,"CUP_C_TK_Man_01_Waist"
+	,"CUP_C_TK_Man_01_Coat"
+	,"CUP_C_TK_Man_01_Jack"
+	,"CUP_C_TK_Man_03_Coat"
+	,"CUP_C_TK_Man_03_Jack"
+	,"CUP_C_TK_Man_03_Waist"];
+
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	"CUP_B_LR_MG_GB_D"
