@@ -75,7 +75,10 @@ The mission is available on the following terrains (with the mods above when app
 
 **Warning:** This repository is bleeding edge development. While it is most up-to-date with new features, there may be bugs or some versions may even be unplayable.
 
-To install the mission, follow these steps:
+You can find the newest packed version ready for use on your server mpmissions-folder here: http://co10esc.anzp.de/
+
+
+To pack and install the mission on your own, follow these steps:
 
 1. Clone the repository with `git clone <repo_url>`
 2. Run `git submodule update --init --recursive` in the repository folder to fetch the revive submodule
