@@ -252,6 +252,8 @@ class CfgFunctions
 			class SaveStatistics {};
 			class ParseStatistics {};
 			class PingStatistics {};
+			class StartSession {};
+			class EndSession {};
 		};
 		class Searchleader
 		{
