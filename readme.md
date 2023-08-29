@@ -102,7 +102,7 @@ For the old compilation method you may run `compile.py` from the main folder but
 - (most) Island ports and unit configs by Scruffy.
 - Mission-compiler by Captain P. Star
 - Additional scripting and fixing by abelian, dystopian1, FrozenLiquidity, Cyprus, DPM.
-- Magrepack by outlawled.
+- Magrepack by outlawed.
 - Additional ports and configs by SurvivorOfZeds (IFA3+LEN), Nils5940 (IFA3), CRCError1970 (Malden and Kolgujev), and supercereal4 (Malden 2035).
 - Testing: Maikeks, Darcy, Memphis Belle, Aurelia, Freshman, Roy, and many more.
 
