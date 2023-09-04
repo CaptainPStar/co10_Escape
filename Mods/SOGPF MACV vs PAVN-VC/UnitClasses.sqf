@@ -24,6 +24,19 @@ A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
 A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
+
+//////////////////////////////////////////////////////////////////
+// fn_createStartPos.sqf
+// Array of templates to use for prisons
+//////////////////////////////////////////////////////////////////
+A3E_PrisonTemplates = [
+	"a3e_fnc_BuildPrison1"
+	,"a3e_fnc_BuildPrison2"
+	,"a3e_fnc_BuildPrison3"
+	,"a3e_fnc_BuildPrison4"
+	,"a3e_fnc_BuildPrison5"
+	];
+
 // Random array. Start position guard types around the prison
 a3e_arr_Escape_StartPositionGuardTypes = [
 	"vn_o_men_vc_local_18"	//Rifleman K-50M
@@ -51,6 +64,7 @@ a3e_arr_PrisonBackpackWeapons = [];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_p38s","vn_m10_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_hd","vn_hd_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_hp","vn_hp_mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["vn_hp_sd","vn_hp_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_izh54_p","vn_izh54_so_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_izh54_p","vn_izh54_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_m1895","vn_m1895_mag"];
@@ -70,6 +84,11 @@ a3e_arr_PrisonBackpackWeapons pushback ["vn_fkb1_pm","vn_pm_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_tt33","vn_tt33_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_welrod","vn_welrod_mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["vn_vz61_p","vn_vz61_mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["vn_ppk","vn_ppk_mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["vn_ppk_sd","vn_ppk_mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["vn_p38","vn_p38_mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["vn_p38_sd","vn_p38_mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["vn_type64","vn_type64_mag"];
 
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
@@ -80,7 +99,8 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"vn_c_car_01_01"
 	,"vn_c_car_02_01"
 	,"vn_c_car_03_01"
-	,"vn_c_car_04_01"];
+	,"vn_c_car_04_01"
+	,"vn_c_car_01_02"];
 	
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
@@ -98,6 +118,12 @@ switch (_enemyFrequency) do {
 		,"vn_o_wheeled_btr40_mg_01"
 		,"vn_o_wheeled_btr40_mg_03"
 		,"vn_o_wheeled_btr40_02"
+		,"vn_o_wheeled_btr40_mg_04"	//sgm
+		,"vn_o_wheeled_btr40_mg_05"	//type56 rr
+		,"vn_o_wheeled_btr40_mg_06"	//mortar
+		,"vn_o_armor_btr50pk_01"	//transport
+		,"vn_o_armor_btr50pk_02"	//zgu-1 aa
+		,"vn_o_armor_btr50pk_03"	//ambulance
 		,"vn_o_wheeled_z157_ammo"
 		,"vn_o_wheeled_z157_fuel"
 		,"vn_o_wheeled_z157_03"
@@ -112,9 +138,12 @@ switch (_enemyFrequency) do {
 		,"vn_o_armor_m113_acav_03"
 		,"vn_o_armor_m113_01"
 		,"vn_o_armor_m113_acav_01"
+		,"vn_o_armor_m125_01"
 		,"vn_o_armor_pt76a_01"
 		,"vn_o_armor_pt76b_01"
-		,"vn_o_armor_type63_01"];
+		,"vn_o_armor_type63_01"
+		,"vn_o_armor_t54b_01"
+		,"vn_o_armor_ot54_01"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"vn_o_bicycle_01_vcmf"
 		,"vn_o_bicycle_01_vcmf"
@@ -128,6 +157,9 @@ switch (_enemyFrequency) do {
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_02_vcmf"
+		,"vn_o_wheeled_btr40_mg_04_vcmf"
+		,"vn_o_wheeled_btr40_mg_05_vcmf"
+		,"vn_o_wheeled_btr40_mg_06_vcmf"
 		,"vn_o_wheeled_z157_01_vcmf"
 		,"vn_o_wheeled_z157_02_vcmf"
 		,"vn_o_wheeled_z157_ammo_vcmf"
@@ -142,7 +174,9 @@ switch (_enemyFrequency) do {
 		,"vn_o_wheeled_btr40_mg_03_vcmf"
 		,"vn_o_wheeled_z157_mg_01_vcmf"
 		,"vn_o_wheeled_z157_mg_02_vcmf"
-		,"vn_o_armor_m41_02_vcmf"];
+		,"vn_o_armor_m41_02_vcmf"
+		,"vn_o_armor_t54b_01_vcmf"
+		,"vn_o_armor_ot54_01_vcmf"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -158,6 +192,12 @@ switch (_enemyFrequency) do {
 		,"vn_o_wheeled_btr40_mg_03"
 		,"vn_o_wheeled_btr40_mg_03"
 		,"vn_o_wheeled_btr40_02"
+		,"vn_o_wheeled_btr40_mg_04"	//sgm
+		,"vn_o_wheeled_btr40_mg_05"	//type56 rr
+		,"vn_o_wheeled_btr40_mg_06"	//mortar
+		,"vn_o_armor_btr50pk_01"	//transport
+		,"vn_o_armor_btr50pk_02"	//zgu-1 aa
+		,"vn_o_armor_btr50pk_03"	//ambulance
 		,"vn_o_wheeled_z157_ammo"
 		,"vn_o_wheeled_z157_fuel"
 		,"vn_o_wheeled_z157_03"
@@ -172,10 +212,13 @@ switch (_enemyFrequency) do {
 		,"vn_o_armor_m113_acav_03"
 		,"vn_o_armor_m113_01"
 		,"vn_o_armor_m113_acav_01"
+		,"vn_o_armor_m125_01"
 		,"vn_o_armor_pt76a_01"
 		,"vn_o_armor_pt76b_01"
 		,"vn_o_armor_type63_01"
-		,"vn_o_armor_type63_01"];
+		,"vn_o_armor_type63_01"
+		,"vn_o_armor_t54b_01"
+		,"vn_o_armor_ot54_01"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"vn_o_bicycle_01_vcmf"
 		,"vn_o_bicycle_01_vcmf"
@@ -189,6 +232,9 @@ switch (_enemyFrequency) do {
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_02_vcmf"
+		,"vn_o_wheeled_btr40_mg_04_vcmf"
+		,"vn_o_wheeled_btr40_mg_05_vcmf"
+		,"vn_o_wheeled_btr40_mg_06_vcmf"
 		,"vn_o_wheeled_z157_01_vcmf"
 		,"vn_o_wheeled_z157_02_vcmf"
 		,"vn_o_wheeled_z157_ammo_vcmf"
@@ -204,7 +250,9 @@ switch (_enemyFrequency) do {
 		,"vn_o_wheeled_btr40_mg_03_vcmf"
 		,"vn_o_wheeled_z157_mg_01_vcmf"
 		,"vn_o_wheeled_z157_mg_02_vcmf"
-		,"vn_o_armor_m41_02_vcmf"];
+		,"vn_o_armor_m41_02_vcmf"
+		,"vn_o_armor_t54b_01_vcmf"
+		,"vn_o_armor_ot54_01_vcmf"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -221,6 +269,12 @@ switch (_enemyFrequency) do {
 		,"vn_o_wheeled_btr40_mg_03"
 		,"vn_o_wheeled_btr40_mg_03"
 		,"vn_o_wheeled_btr40_02"
+		,"vn_o_wheeled_btr40_mg_04"	//sgm
+		,"vn_o_wheeled_btr40_mg_05"	//type56 rr
+		,"vn_o_wheeled_btr40_mg_06"	//mortar
+		,"vn_o_armor_btr50pk_01"	//transport
+		,"vn_o_armor_btr50pk_02"	//zgu-1 aa
+		,"vn_o_armor_btr50pk_03"	//ambulance
 		,"vn_o_wheeled_z157_ammo"
 		,"vn_o_wheeled_z157_fuel"
 		,"vn_o_wheeled_z157_03"
@@ -238,13 +292,16 @@ switch (_enemyFrequency) do {
 		,"vn_o_armor_m113_01"
 		,"vn_o_armor_m113_acav_01"
 		,"vn_o_armor_m113_acav_01"
+		,"vn_o_armor_m125_01"
 		,"vn_o_armor_pt76a_01"
 		,"vn_o_armor_pt76a_01"
 		,"vn_o_armor_pt76b_01"
 		,"vn_o_armor_pt76b_01"
 		,"vn_o_armor_type63_01"
 		,"vn_o_armor_type63_01"
-		,"vn_o_armor_type63_01"];
+		,"vn_o_armor_type63_01"
+		,"vn_o_armor_t54b_01"
+		,"vn_o_armor_ot54_01"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"vn_o_bicycle_01_vcmf"
 		,"vn_o_bicycle_01_vcmf"
@@ -258,6 +315,9 @@ switch (_enemyFrequency) do {
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_01_vcmf"
 		,"vn_o_wheeled_btr40_02_vcmf"
+		,"vn_o_wheeled_btr40_mg_04_vcmf"
+		,"vn_o_wheeled_btr40_mg_05_vcmf"
+		,"vn_o_wheeled_btr40_mg_06_vcmf"
 		,"vn_o_wheeled_z157_01_vcmf"
 		,"vn_o_wheeled_z157_02_vcmf"
 		,"vn_o_wheeled_z157_ammo_vcmf"
@@ -275,7 +335,9 @@ switch (_enemyFrequency) do {
 		,"vn_o_wheeled_z157_mg_01_vcmf"
 		,"vn_o_wheeled_z157_mg_02_vcmf"
 		,"vn_o_wheeled_z157_mg_02_vcmf"
-		,"vn_o_armor_m41_02_vcmf"];
+		,"vn_o_armor_m41_02_vcmf"
+		,"vn_o_armor_t54b_01_vcmf"
+		,"vn_o_armor_ot54_01_vcmf"];
     };
 };
 
@@ -305,14 +367,16 @@ a3e_arr_Escape_InfantryTypes = [
 	,"vn_o_men_nva_02"	//Rifleman SKS
 	,"vn_o_men_nva_05"	//Rifleman Type 56 Bayo
 	,"vn_o_men_nva_04"	//Rifleman Type 56
-	,"vn_o_men_nva_07" //Grenadier SKS
-	,"vn_o_men_nva_07" //Grenadier SKS
+	,"vn_o_men_nva_07" //Grenadier KBKG
+	,"vn_o_men_nva_07" //Grenadier KBKG
 	,"vn_o_men_nva_13"	//RTO PPSh-41
 	,"vn_o_men_nva_13"	//RTO PPSh-41
 	,"vn_o_men_nva_10"	//Marksman SKS
 	,"vn_o_men_nva_10"	//Marksman SKS
 	,"vn_o_men_nva_45"	//Marksman VZ54
 	,"vn_o_men_nva_45"	//Marksman VZ54
+	,"vn_o_men_nva_47"	//Marksman SVD
+	,"vn_o_men_nva_49"	//Rifleman AK
 	,"vn_o_men_nva_01"	//Officer PPSH-41
 	,"vn_o_men_nva_01"];	//Officer PPSH-41
 a3e_arr_Escape_InfantryTypes_Ind = [
@@ -345,10 +409,10 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"vn_o_men_vc_local_28"	//AT (M49/56 / B40)
 	,"vn_o_men_vc_local_28"	//AT (M49/56 / B40)
 	,"vn_o_men_vc_local_12"	//Sentry M1891 bayo
-	,"vn_o_men_vc_local_26"	//Sentry M1891 bayo
+	,"vn_o_men_vc_local_26"	//Sentry K98K bayo
 	,"vn_o_men_vc_local_31"	//Marksman M91/30
 	,"vn_o_men_vc_local_10"	//Marksman M91/30
-	,"vn_o_men_vc_local_24"	//Marksman M91/30
+	,"vn_o_men_vc_local_24"	//Marksman K98K
 	,"vn_o_men_vc_local_27"	//RTO M1 Carbine bayo
 	,"vn_o_men_vc_local_13"	//RTO M1891
 	,"vn_o_men_vc_local_01"	//Officer MAT-49
@@ -442,9 +506,9 @@ a3e_units_civilian_InfantryTypes = [
 // Array of templates to use for roadblocks
 //////////////////////////////////////////////////////////////////
 A3E_RoadblockTemplates = [
-	"A3E_fnc_Roadblock_vn1"
-	,"A3E_fnc_Roadblock_vn2"
-	,"A3E_fnc_Roadblock2"];
+	"rb_vn_rb1"
+	,"rb_vn_rb2"
+	,"rb_bis_rb2"];
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
@@ -453,6 +517,10 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"vn_o_wheeled_btr40_mg_02"
 	,"vn_o_wheeled_btr40_mg_02"
 	,"vn_o_wheeled_btr40_mg_03"
+	,"vn_o_wheeled_btr40_mg_04"	//sgm
+	,"vn_o_wheeled_btr40_mg_05"	//type56 rr
+	,"vn_o_wheeled_btr40_mg_06"	//mortar
+	,"vn_o_armor_btr50pk_02"	//zgu-1 aa
 	,"vn_o_wheeled_z157_mg_01"
 	,"vn_o_wheeled_z157_mg_02"
 	,"vn_o_armor_m113_01"
@@ -463,6 +531,8 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	,"vn_o_wheeled_btr40_mg_02_vcmf"
 	,"vn_o_wheeled_btr40_mg_02_vcmf"
 	,"vn_o_wheeled_btr40_mg_03_vcmf"
+	,"vn_o_wheeled_btr40_mg_04_vcmf"
+	,"vn_o_wheeled_btr40_mg_05_vcmf"
 	,"vn_o_wheeled_z157_mg_01_vcmf"
 	,"vn_o_wheeled_z157_mg_02_vcmf"];	//ToDo
 
@@ -471,7 +541,8 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	"vn_o_wheeled_btr40_01"
 	,"vn_o_wheeled_z157_01"
 	,"vn_o_wheeled_z157_02"
-	,"vn_o_wheeled_btr40_mg_01"];
+	,"vn_o_wheeled_btr40_mg_01"
+	,"vn_o_armor_btr50pk_01"];
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	"vn_o_wheeled_btr40_01_vcmf"
 	,"vn_o_wheeled_z157_01_vcmf"
@@ -481,6 +552,8 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	"vn_o_wheeled_btr40_mg_01"
 	,"vn_o_wheeled_btr40_mg_02"
+	,"vn_o_wheeled_btr40_mg_04"	//sgm
+	,"vn_o_wheeled_btr40_mg_05"	//type56 rr
 	,"vn_o_armor_m113_01"
 	,"vn_o_wheeled_z157_mg_01"];
 
@@ -509,6 +582,8 @@ A3E_ComCenterTemplates = [
 a3e_arr_ComCenDefence_lightArmorClasses = [
 	"vn_o_wheeled_btr40_mg_03"
 	,"vn_o_wheeled_btr40_mg_03"
+	,"vn_o_wheeled_btr40_mg_05"	//type56 rr
+	,"vn_o_armor_btr50pk_02"	//zgu-1 aa
 	,"vn_o_armor_m113_01"
 	,"vn_o_armor_m113_acav_01"
 	,"vn_o_armor_m113_acav_03"];
@@ -517,7 +592,10 @@ a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"vn_o_armor_pt76a_01"
 	,"vn_o_armor_pt76b_01"
 	,"vn_o_armor_type63_01"
-	,"vn_o_armor_type63_01"];
+	,"vn_o_armor_type63_01"
+	,"vn_o_armor_t54b_01"
+	,"vn_o_armor_t54b_01"
+	,"vn_o_armor_ot54_01"];
 
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
@@ -526,6 +604,7 @@ a3e_arr_ComCenStaticWeapons = [
 	,"vn_o_nva_static_pk_high"
 	,"vn_o_nva_static_rpd_high"
 	,"vn_o_nva_static_sgm_high_01"
+	,"vn_o_nva_static_m1910_high_01"
 	,"vn_o_vc_static_mg42_high"];
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
@@ -536,6 +615,13 @@ a3e_arr_ComCenParkedVehicles = [
 	,"vn_o_wheeled_btr40_mg_01"
 	,"vn_o_wheeled_btr40_mg_02"
 	,"vn_o_wheeled_btr40_mg_03"
+	,"vn_o_wheeled_btr40_mg_04"	//sgm
+	,"vn_o_wheeled_btr40_mg_05"	//type56 rr
+	,"vn_o_wheeled_btr40_mg_06"	//mortar
+	,"vn_o_armor_btr50pk_01"	//transport
+	,"vn_o_armor_btr50pk_02"	//zgu-1 aa
+	,"vn_o_armor_btr50pk_03"	//ambulance
+	,"vn_o_armor_m125_01"
 	,"vn_o_wheeled_z157_01"
 	,"vn_o_wheeled_z157_02"
 	,"vn_o_wheeled_z157_03"
@@ -553,7 +639,8 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"vn_c_car_01_01"
 	,"vn_c_car_02_01"
 	,"vn_c_car_03_01"
-	,"vn_c_car_04_01"];
+	,"vn_c_car_04_01"
+	,"vn_c_car_01_02"];
 
 // Vehicles, weapons and ammo at ammo depots
 
@@ -564,6 +651,9 @@ a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	,"vn_o_nva_static_dshkm_high_01"
 	,"vn_o_nva_static_dshkm_low_02"
 	,"vn_o_nva_static_dshkm_low_01"
+	,"vn_o_nva_static_m1910_low_01"
+	,"vn_o_nva_static_m1910_low_02"
+	,"vn_o_nva_static_m1910_high_01"
 	,"vn_o_nva_static_pk_high"
 	,"vn_o_nva_static_pk_low"
 	,"vn_o_nva_static_rpd_high"
@@ -577,7 +667,7 @@ a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	,"vn_o_nva_static_dshkm_high_02"
 	,"vn_o_nva_static_sgm_high_01"
 	,"vn_o_nva_static_zpu4"
-	];
+	,"vn_o_nva_navy_static_zgu1_01"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	"vn_o_bicycle_01"
@@ -587,6 +677,12 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"vn_o_wheeled_btr40_mg_01"
 	,"vn_o_wheeled_btr40_mg_02"
 	,"vn_o_wheeled_btr40_mg_03"
+	,"vn_o_wheeled_btr40_mg_04"	//sgm
+	,"vn_o_wheeled_btr40_mg_05"	//type56 rr
+	,"vn_o_wheeled_btr40_mg_06"	//mortar
+	,"vn_o_armor_btr50pk_01"	//transport
+	,"vn_o_armor_btr50pk_02"	//zgu-1 aa
+	,"vn_o_armor_btr50pk_03"	//ambulance
 	,"vn_o_wheeled_z157_01"
 	,"vn_o_wheeled_z157_02"
 	,"vn_o_wheeled_z157_03"
@@ -636,6 +732,20 @@ A3E_AmmoDepotTemplates = [
 	"A3E_fnc_AmmoDepot_VN_nva1"
 	];
 
+//Ammo Depot Crates
+// classnames to be used for the crates that are placed at an ammo depot
+a3e_arr_AmmoDepotCrate_Basic = ["vn_o_ammobox_04"];
+a3e_arr_AmmoDepotCrate_Special = ["vn_o_ammobox_02"];
+a3e_arr_AmmoDepotCrate_Launchers = ["vn_o_ammobox_03"];
+a3e_arr_AmmoDepotCrate_Ordnance = ["vn_o_ammobox_05"];
+a3e_arr_AmmoDepotCrate_Vehicle = ["vn_o_ammobox_08"];
+a3e_arr_AmmoDepotCrate_Items = ["vn_o_ammobox_01"];
+a3e_arr_AmmoDepotCrate_Random = ["vn_o_ammobox_02"];
+a3e_arr_AmmoDepotCrate_RandomInf = ["vn_o_ammobox_04"];
+a3e_arr_AmmoDepotCrate_Car = ["vn_o_ammobox_01"];
+a3e_arr_AmmoDepotCrate_CrashSite = ["vn_b_ammobox_02"];
+a3e_arr_AmmoDepotCrate_Extra1 = ["vn_o_ammobox_06"];
+a3e_arr_AmmoDepotCrate_Extra2 = ["vn_o_ammobox_05"];
 
 // The following arrays define weapons and ammo contained at the ammo depots
 // Index 0: Weapon classname.
@@ -655,17 +765,23 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["vn_sks_gl", 50, 2, 4, ["vn_sks_mag","vn
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_rpd", 30, 2, 4, ["vn_rpd_100_mag"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_ppsh41", 30, 2, 4, ["vn_ppsh41_35_t_mag"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_type56", 25, 2, 4, ["vn_type56_t_mag"], 8];
+a3e_arr_AmmoDepotBasicWeapons pushback ["vn_ak_01", 20, 2, 4, ["vn_type56_mag"], 8];
+a3e_arr_AmmoDepotBasicWeapons pushback ["vn_kbkg", 25, 2, 4, ["vn_kbkg_mag"], 12];
+a3e_arr_AmmoDepotBasicWeapons pushback ["vn_kbkg_gl", 25, 2, 4, ["vn_kbkg_mag","vn_20mm_f1n60_frag_mag","vn_20mm_pgn60_heat_mag","vn_20mm_dgn_wp_mag"], 10];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_pps43", 25, 2, 4, ["vn_pps_t_mag"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_pps52", 25, 2, 4, ["vn_pps_t_mag"], 8];
+a3e_arr_AmmoDepotBasicWeapons pushback ["vn_k98k", 50, 4, 8, ["vn_k98k_mag"], 10];
 // non-CSAT weapons
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_m712", 50, 4, 8, ["vn_m712_mag"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_izh54", 50, 1, 3, ["vn_izh54_mag"], 10];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_m9130", 40, 1, 3, ["vn_m38_t_mag"], 10];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_m1891", 40, 1, 3, ["vn_m38_t_mag"], 10];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_m38", 40, 1, 3, ["vn_m38_t_mag"], 10];
+a3e_arr_AmmoDepotBasicWeapons pushback ["vn_m1903", 30, 1, 3, ["vn_m1903_mag"], 10];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_k50m", 30, 1, 3, ["vn_ppsh41_35_t_mag"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_mp40", 30, 2, 4, ["vn_mp40_t_mag"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_m4956", 40, 2, 4, ["vn_m4956_10_t_mag"], 8];
+a3e_arr_AmmoDepotBasicWeapons pushback ["vn_m36", 30, 2, 4, ["vn_m36_mag"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_mat49_vc", 30, 1, 3, ["vn_mat49_vc_mag"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["vn_ppsh41", 30, 1, 3, ["vn_ppsh41_71_t_mag"], 8];
 
@@ -674,6 +790,8 @@ a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_fkb1_pm", 50, 1, 2, ["vn_pm_mag"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_sks_sniper", 40, 2, 4, ["vn_sks_t_mag"], 10];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_svd_sniper", 30, 2, 4, ["vn_svd_mag"], 10];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_k98k_mrk_camo", 30, 2, 4, ["vn_k98k_mag"], 10];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_vz54", 40, 2, 4, ["vn_m38_t_mag"], 10];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_pk", 25, 1, 2, ["vn_pk_100_mag"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m1carbine_gl", 30, 2, 4, ["vn_carbine_15_t_mag", "vn_22mm_m1a2_frag_mag","vn_22mm_lume_mag","vn_22mm_m22_smoke_mag"], 8];
@@ -683,8 +801,11 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m3a1", 40, 2, 4, ["vn_m3a1_t_mag"]
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_izh54_shorty", 40, 2, 4, ["vn_izh54_mag"], 12];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m4956_sniper", 30, 2, 4, ["vn_m4956_10_t_mag"], 10];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m4956_gl", 40, 2, 4, ["vn_m4956_10_mag","vn_22mm_he_mag"], 10];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m1903_sniper", 20, 2, 4, ["vn_m1903_mag"], 10];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m1903_gl", 30, 2, 4, ["vn_m1903_t_mag","vn_22mm_he_mag"], 10];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_k50m", 30, 2, 4, ["vn_ppsh41_71_t_mag"], 8];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_dp28", 40, 2, 4, ["vn_dp28_mag"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_mg42", 30, 2, 4, ["vn_mg42_50_t_mag"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m79", 25, 2, 4, ["vn_40mm_m381_he_mag","vn_40mm_m576_buck_mag","vn_40mm_m661_flare_g_mag"], 8];
 
 // Weapons and ammo in the launchers box
@@ -718,6 +839,8 @@ a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["vn_22mm_lume_mag"], 25];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 25, 1, 1, ["vn_22mm_cs_mag"], 10];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 25, 1, 1, ["vn_22mm_m22_smoke_mag", "vn_22mm_m19_wp_mag"], 15];
 a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["vn_22mm_m60_frag_mag","vn_22mm_m60_heat_mag"], 20];
+a3e_arr_AmmoDepotVehicle pushback [objNull, 50, 1, 1, ["vn_20mm_f1n60_frag_mag","vn_20mm_kgn_frag_mag","vn_20mm_pgn60_heat_mag"], 20];
+a3e_arr_AmmoDepotVehicle pushback [objNull, 25, 1, 1, ["vn_20mm_dgn_wp_mag"], 10];
 a3e_arr_AmmoDepotVehicleItems = [];
 a3e_arr_AmmoDepotVehicleItems pushback ["vn_b_item_toolkit", 20, 1, 1, [], 0];
 a3e_arr_AmmoDepotVehicleItems pushback ["vn_b_item_medikit_01", 20, 1, 1, [], 0];
@@ -747,13 +870,22 @@ a3e_arr_AmmoDepotItems pushback ["vn_b_item_watch", 50, 1, 10];
 //a3e_arr_AmmoDepotItems pushback ["acc_pointer_IR", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["vn_b_type56", 20, 1, 2]; //AK bayonet
 a3e_arr_AmmoDepotItems pushback ["vn_b_sks", 20, 1, 2]; //SKS bayonet
-a3e_arr_AmmoDepotItems pushback ["vn_o_3x_m9130", 20, 1, 2]; //SKS scope
+a3e_arr_AmmoDepotItems pushback ["vn_o_3x_sks", 20, 1, 2]; //SKS scope
+a3e_arr_AmmoDepotItems pushback ["vn_o_3x_m9130", 20, 1, 2]; //M9130 scope
 a3e_arr_AmmoDepotItems pushback ["vn_o_3x_vz54", 20, 1, 2]; //VZ54 scope
 a3e_arr_AmmoDepotItems pushback ["vn_b_m38", 20, 1, 2]; //M38 bayonet
 a3e_arr_AmmoDepotItems pushback ["vn_b_camo_m9130", 40, 1, 3]; //
 a3e_arr_AmmoDepotItems pushback ["vn_b_camo_vz54", 40, 1, 3]; //
 a3e_arr_AmmoDepotItems pushback ["vn_b_m4956", 20, 1, 5]; //
 a3e_arr_AmmoDepotItems pushback ["vn_o_4x_m4956", 20, 1, 5]; //
+a3e_arr_AmmoDepotItems pushback ["vn_b_m1903", 20, 1, 5]; //bayonet
+a3e_arr_AmmoDepotItems pushback ["vn_o_8x_m1903", 20, 1, 5]; //scope
+a3e_arr_AmmoDepotItems pushback ["vn_b_camo_m1903", 20, 1, 5]; //camo
+a3e_arr_AmmoDepotItems pushback ["vn_b_m36", 20, 1, 5]; //bayonet
+a3e_arr_AmmoDepotItems pushback ["vn_b_camo_m36", 20, 1, 5]; //camo
+a3e_arr_AmmoDepotItems pushback ["vn_b_k98k", 20, 1, 5]; //bayonet
+a3e_arr_AmmoDepotItems pushback ["vn_o_1_5x_k98k", 20, 1, 5]; //scope
+a3e_arr_AmmoDepotItems pushback ["vn_b_camo_k98k", 20, 1, 5]; //camo
 /*if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["optic_tws", 10, 1, 1];
 	a3e_arr_AmmoDepotItems pushback ["optic_tws_mg", 10, 1, 1];
@@ -779,7 +911,10 @@ a3e_arr_CivilianCarWeapons pushback ["vn_m45_fold", "vn_m45_mag", 6];
 a3e_arr_CivilianCarWeapons pushback ["vn_m72", "vn_m72_mag", 2];
 a3e_arr_CivilianCarWeapons pushback ["vn_m3a1", "vn_m3a1_t_mag", 6];
 a3e_arr_CivilianCarWeapons pushback ["vn_m1928_tommy", "vn_m1a1_30_t_mag", 4];
+a3e_arr_CivilianCarWeapons pushback ["vn_l4", "vn_l1a1_30_t_mag", 7];
 a3e_arr_CivilianCarWeapons pushback ["vn_f1_smg", "vn_f1_smg_mag", 8];
+a3e_arr_CivilianCarWeapons pushback ["vn_l34a1_f", "vn_f1_smg_mag", 8];
+a3e_arr_CivilianCarWeapons pushback ["vn_l2a3_f", "vn_f1_smg_t_mag", 8];
 a3e_arr_CivilianCarWeapons pushback ["vn_m63a_cdo", "vn_m63a_150_mag", 4];
 a3e_arr_CivilianCarWeapons pushback ["vn_b_item_trapkit", objNull, 0];
 a3e_arr_CivilianCarWeapons pushback ["vn_b_item_medikit_01", objNull, 0];
@@ -862,7 +997,8 @@ a3e_arr_extractiontypes = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"vn_b_air_ch34_01_01"
-	,"vn_b_air_uh1d_02_04"];
+	,"vn_b_air_uh1d_02_04"
+	,"vn_b_air_ch47_02_01"];
 a3e_arr_extraction_chopper_escort = [
 	"vn_b_air_ah1g_02_usmc"
 	,"vn_b_air_ah1g_03_usmc"
@@ -878,7 +1014,12 @@ a3e_arr_extraction_chopper_escort = [
 	,"vn_b_air_uh1c_02_04"
 	,"vn_b_air_uh1c_05_04"
 	,"vn_b_air_uh1e_01_04"
-	,"vn_b_air_uh1e_02_04"];
+	,"vn_b_air_uh1e_02_04"
+	,"vn_b_air_ach47_01_01"
+	,"vn_b_air_ach47_02_01"
+	,"vn_b_air_ach47_03_01"
+	,"vn_b_air_ach47_04_01"
+	,"vn_b_air_ach47_05_01"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtractionBoat.sqf
@@ -922,8 +1063,8 @@ a3e_arr_extraction_car_escort = [
 	,"vn_b_armor_m113_acav_05"
 	,"vn_b_armor_m41_01_02"
 	,"vn_b_armor_m41_01_02"
-	,"vn_b_armor_m41_01_02"
-	,"vn_b_armor_m41_01_02"];
+	,"vn_b_armor_m48_01_02"
+	,"vn_b_armor_m48_01_02"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -1046,7 +1187,8 @@ a3e_arr_MortarSite = [
 // Classnames of planes for the CAS module
 //////////////////////////////////////////////////////////////////
 a3e_arr_CASplane = [
-	"vn_o_air_mig19_mr"];	//ToDo
+	"vn_o_air_mig19_mr"
+	,"vn_o_air_mig21_mr"];	//ToDo
 
 //////////////////////////////////////////////////////////////////
 // fn_CrashSite
@@ -1066,6 +1208,7 @@ a3e_arr_CrashSiteWrecks = [
 	,"vn_air_uh1c_01_wreck"
 	,"vn_air_uh1d_med_wreck"
 	,"vn_air_uh1d_01_wreck"
+	,"vn_air_ch47_wreck"
 	,"vn_air_f4b_wreck"
 	,"vn_air_f100d_01_wreck"];
 a3e_arr_CrashSiteCrew = [
@@ -1085,10 +1228,14 @@ a3e_arr_CrashSiteWrecksCar = [
 	,"vn_armor_m113_01_wreck"
 	,"vn_armor_m113_01_wreck"
 	,"vn_armor_m113_acav_01_wreck"
-	,"vn_armor_m113_acav_01_wreck"
+	,"vn_armor_m125_wreck"
+	,"vn_armor_m132_wreck"
 	,"vn_armor_m41_01_wreck"
 	,"vn_armor_m41_01_wreck"
-	,"vn_armor_m41_01_wreck"];
+	,"vn_armor_m41_01_wreck"
+	,"vn_armor_m48_wreck"
+	,"vn_armor_m48_wreck"
+	,"vn_armor_m67_wreck"];
 a3e_arr_CrashSiteCrewCar = [
 	"vn_b_men_army_23"
 	,"vn_b_men_army_24"
@@ -1099,13 +1246,18 @@ a3e_arr_CrashSiteCrewCar = [
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["vn_m72", 40, 1, 2, ["vn_m72_mag"], 1];
 a3e_arr_CrashSiteWeapons pushback ["vn_m127", 50, 1, 2, ["vn_m127_mag","vn_m128_mag","vn_m129_mag"], 2];
+a3e_arr_CrashSiteWeapons pushback ["vn_m20a1b1_01", 30, 1, 2, ["vn_m20a1b1_heat_mag","vn_m20a1b1_wp_mag"], 2];
 a3e_arr_CrashSiteWeapons pushback ["vn_xm177_camo", 50, 1, 2, ["vn_m16_20_t_mag"], 10];
 a3e_arr_CrashSiteWeapons pushback ["vn_gau5a", 50, 1, 2, ["vn_m16_20_mag"], 10];
 a3e_arr_CrashSiteWeapons pushback ["vn_m1a1_tommy", 50, 1, 2, ["vn_m1a1_30_t_mag"], 10];
 a3e_arr_CrashSiteWeapons pushback ["vn_m1carbine_gl", 40, 1, 2, ["vn_carbine_15_mag","vn_22mm_m1a2_frag_mag","vn_22mm_lume_mag"], 12];
+a3e_arr_CrashSiteWeapons pushback ["vn_m1carbine_shorty", 40, 1, 2, ["vn_hp_mag"], 12];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m1carbine_shorty", 10, 2, 4, ["vn_hp_mag"], 10];
 a3e_arr_CrashSiteWeapons pushback ["vn_m14", 50, 2, 4, ["vn_m14_mag"], 12];
 a3e_arr_CrashSiteWeapons pushback ["vn_m14a1", 40, 2, 4, ["vn_m14_mag"], 12];
 a3e_arr_CrashSiteWeapons pushback ["vn_m79_p", 50, 2, 4, ["vn_40mm_m381_he_mag", "vn_40mm_m576_buck_mag", "vn_40mm_m661_flare_g_mag"], 6];
+a3e_arr_CrashSiteWeapons pushback ["vn_xm177_m203_camo", 50, 2, 4, ["vn_m16_30_t_mag", "vn_40mm_m406_he_mag", "vn_40mm_m661_flare_g_mag"], 6];
+a3e_arr_CrashSiteWeapons pushback ["vn_m14a1_shorty", 30, 1, 2, ["vn_m14_t_mag"], 10];
 a3e_arr_CrashSiteWeapons pushback ["vn_mk22_sd", 30, 1, 2, ["vn_mk22_mag"], 6];
 a3e_arr_CrashSiteWeapons pushback ["vn_m63a", 30, 1, 2, ["vn_m63a_30_mag"], 10];
 a3e_arr_CrashSiteWeapons pushback ["vn_m63a_lmg", 20, 1, 2, ["vn_m63a_100_mag"], 5];
@@ -1124,10 +1276,10 @@ a3e_arr_CrashSiteItems pushback ["vn_b_acc_towel_02", 20, 1, 3];
 
 //New stuff for VN
 
-A3E_Trap_Classes = [["random","vn_mine_punji_03"],["random","vn_mine_punji_01"],["random","vn_mine_punji_02"],["random","vn_mine_m14"]];//,["roadcenter","vn_mine_tripwire_m16_04"],["roadcenter","vn_mine_tripwire_arty"],["roadside","vn_mine_tripwire_f1_02"]]; Classnames ofd traps and mines. String or array in form [classname, trigger range, scriptcode]
+A3E_Trap_Classes = [["random","vn_mine_punji_03"],["random","vn_mine_punji_01"],["random","vn_mine_punji_02"],["roadside","vn_mine_jerrycan_range"],["roadside","vn_mine_bike_range"],["center","vn_mine_gboard"],["center","vn_mine_tripwire_f1_04"]];//,["roadcenter","vn_mine_tripwire_m16_04"],["roadcenter","vn_mine_tripwire_arty"],["roadside","vn_mine_tripwire_f1_02"]]; Classnames ofd traps and mines. String or array in form [classname, trigger range, scriptcode]
 A3E_Trap_Pathes = ["TRACK", "TRAIL"]; //Classnames of roads and pathes for the traps to spawn
 
 A3E_Var_AllowVanillaNightVision = false;
 
-A3E_MapItemsUsedInMission = ["vn_b_item_map","vn_o_item_map"];
-A3E_ItemsToBeRemoved = ["vn_b_item_watch","vn_b_item_compass_sog","vn_b_item_compass"];
+A3E_MapItemsUsedInMission = ["vn_b_item_map","vn_o_item_map"]; //MapItems that should be removed from guards and are allowed to be carried randomly by patrols
+A3E_ItemsToBeRemoved = ["vn_b_item_watch","vn_b_item_compass_sog","vn_b_item_compass"]; //Items to randomly remove from units and to remove from guards

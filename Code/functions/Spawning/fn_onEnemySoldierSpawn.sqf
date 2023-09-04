@@ -129,3 +129,14 @@ if ("Rangefinder" in (assignedItems _unit)) then {
 if(A3E_Param_UseIntel==1) then {
 	[_unit] call A3E_fnc_AddIntel;
 };
+
+
+
+//Track kills
+_unit addEventHandler ["Killed", {
+	params ["_unit", "_killer"];
+	if(isPlayer _killer) then {
+		private _killStats = missionNamespace getvariable ["A3E_Kill_Count",0];
+		missionNamespace setvariable ["A3E_Kill_Count",_killStats+1,false];
+	};
+}];

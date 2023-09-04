@@ -3,7 +3,7 @@
 // Mission Header
 class Header
 {
-  gameType = Escape; //gameType = Escape if not Vietnam CDLC
+  gameType = co10esc; //gameType = Escape if not Vietnam CDLC
   minPlayers = 1;
   maxPlayers = 10;
 };
@@ -22,6 +22,7 @@ EscapeIsland = ISLAND;
 EscapeMod = MOD;
 EscapeVersion = VERSION;
 EscapeRelease = RELEASE;
+EscapeBuild = BUILD;
 cba_settings_hasSettingsFile = 1;
 
 class Extended_PreInit_EventHandlers {
@@ -209,7 +210,9 @@ class RscTitles {
 };
 class CfgCommands {
    allowedHTMLLoadURIs[] += {
-      "http://escape.anzp.de/track.php*"
+      "http://escape.anzp.de/track.php*",
+	  "http://co10esc.anzp.de/api*",
+	  "http://localhost:5093/api/session*"
    };
 };
 class CfgLeaflets

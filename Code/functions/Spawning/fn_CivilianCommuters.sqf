@@ -46,6 +46,9 @@ private _group = _x;
 //Remove deletes entries from array
 _groups = _groups select {!(isNull _x)};
 
+//Exit if no civilian vehicles are configured
+if(count(missionnamespace getvariable ["a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses",[]])==0) exitwith {};
+
 
 if(count(_groups)<_maxGroups) then {
 

@@ -213,17 +213,23 @@ _playerGroup = [] call A3E_fnc_GetPlayerGroup;
 [_enemyMinSkill, _enemyMaxSkill, _enemyFrequency, A3E_Debug] execVM "Scripts\Escape\EscapeSurprises.sqf";
 
 
-// Create communication centers
-[] spawn A3E_fnc_CreateComCenters;
+[] spawn {
+	// Create communication centers
+	[] call A3E_fnc_CreateComCenters;
 
-// Create Motor Pools
-[] spawn A3E_fnc_CreateMotorPools;
+	// Create Motor Pools
+	[] call A3E_fnc_CreateMotorPools;
 
-// Create ammo depots
-[] spawn A3E_fnc_CreateAmmoDepots;
+	// Create ammo depots
+	[] call A3E_fnc_CreateAmmoDepots;
 
-//Spawn mortar sites
-[] spawn A3E_fnc_createMortarSites;
+	//Spawn mortar sites
+	[] call A3E_fnc_createMortarSites;
+
+	//Spawn crash sites
+	[] call A3E_fnc_createCrashSites;
+};
+
 
 // Initialize search leader
 //[drn_searchAreaMarkerName, A3E_Debug] execVM "Scripts\Escape\SearchLeader.sqf"; //depreciated
@@ -548,6 +554,16 @@ call A3E_fnc_InitTraps;
 				_unit unlinkItem _hmd;
 				_unit removeItem _hmd;
 			};
+			
+			//Track kills
+			_unit addEventHandler ["Killed", {
+				params ["_unit", "_killer"];
+				if(isPlayer _killer) then {
+					private _killStats = missionNamespace getvariable ["A3E_Kill_Count",0];
+					missionNamespace setvariable ["A3E_Kill_Count",_killStats+1,false];
+				};
+			}];
+						
             //_unit setSkill a3e_var_Escape_enemyMinSkill;
 			//[_unit, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
 			

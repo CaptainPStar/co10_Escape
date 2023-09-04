@@ -16,7 +16,9 @@
 		"./Configs/GM.json",
 		"./Configs/CSLA.json",
 		"./Configs/WS.json",
-		"./Configs/SOGPF.json"
+		"./Configs/SOGPF.json",
+		"./Configs/SFP.json",
+		"./Configs/SPE.json"
 
 	],
 	"replace" :
@@ -124,9 +126,10 @@
                     "PLAYERUNIT_5" : "O_R_Soldier_GL_F",
                     "PLAYERUNIT_6" : "O_R_Soldier_AR_F",
                     "PLAYERUNIT_7" : "O_R_Soldier_LAT_F",
-                    "PLAYERUNIT_8" : "O_R_soldier_exp_F",
+                    "PLAYERUNIT_8" : "O_R_JTAC_F",
                     "PLAYERUNIT_9" : "O_R_soldier_M_F",
-                    "PLAYERUNIT_10" : "O_R_medic_F"
+                    "PLAYERUNIT_10" : "O_R_medic_F",
+					"PLAYER_INIT" : "this setCaptive true; if(this == p8) then {this setUnitTrait ['UavHacker',true];};"
                 }
         }
 	],
@@ -1010,6 +1013,46 @@
 				{
 				"ISLAND" : "Zagorsk Big Lakes",
 				"ISLANDNAME" : "Zagorsk Big Lakes"
+				}
+		},
+		{
+			"name" : "Lybor",
+			"class" : "VTF_Lybor",
+			"path" : "./Islands/Lybor/",
+			"replace" :
+				{
+				"ISLAND" : "Lybor",
+				"ISLANDNAME" : "Lybor"
+				}
+		},
+		{
+			"name" : "Staszow",
+			"class" : "Staszow",
+			"path" : "./Islands/Staszow/",
+			"replace" :
+				{
+				"ISLAND" : "Staszow",
+				"ISLANDNAME" : "Staszow"
+				}
+		},
+		{
+			"name" : "NF Svartmarka",
+			"class" : "tem_chernarus",
+			"path" : "./Islands/NF_Svartmarka/",
+			"replace" :
+				{
+				"ISLAND" : "NF Svartmarka",
+				"ISLANDNAME" : "NF Svartmarka"
+				}
+		},
+		{
+			"name" : "NF Svartmarka Winter",
+			"class" : "tem_chernarusw",
+			"path" : "./Islands/NF_Svartmarka_W/",
+			"replace" :
+				{
+				"ISLAND" : "NF Svartmarka Winter",
+				"ISLANDNAME" : "NF Svartmarka Winter"
 				}
 		}
 	],
@@ -2620,6 +2663,41 @@
         {
 			"island" : "Zagorsk Big Lakes",
 			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Lybor",
+			"sqm": "Lybor",
 			"mod" : "Vanilla US",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"

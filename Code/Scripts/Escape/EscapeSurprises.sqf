@@ -47,22 +47,27 @@ diag_log ("ESCAPE SURPRISE: " + str _surprise);
 
 //Search Drone
 
-_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
-_timeInSek = 5 * 60 + random (30 * 60);
-_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
-_surprise = ["SEARCHDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
-_surprises set [count _surprises, _surprise];
-diag_log ("ESCAPE SURPRISE: " + str _surprise);
+if(count(missionNamespace getvariable ["a3e_arr_searchdrone",[]])>0) then
+{
+	_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
+	_timeInSek = 5 * 60 + random (30 * 60);
+	_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
+	_surprise = ["SEARCHDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
+	_surprises set [count _surprises, _surprise];
+	diag_log ("ESCAPE SURPRISE: " + str _surprise);
+};
 
 //Leaflet Drone
 
-_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
-_timeInSek = 5 * 60 + random (30 * 60);
-_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
-_surprise = ["LEAFLETDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
-_surprises set [count _surprises, _surprise];
-diag_log ("ESCAPE SURPRISE: " + str _surprise);
-
+if(count(missionNamespace getvariable ["a3e_arr_leafletdrone",[]])>0 || isNil "a3e_arr_leafletdrone") then
+{
+	_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
+	_timeInSek = 5 * 60 + random (30 * 60);
+	_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
+	_surprise = ["LEAFLETDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
+	_surprises set [count _surprises, _surprise];
+	diag_log ("ESCAPE SURPRISE: " + str _surprise);
+};
 
 // Motorized Search Group
 
@@ -292,9 +297,10 @@ while {true} do {
                 };
 				
 				if (_surpriseID == "LEAFLETDRONE") then {
-                    private ["_chopper", "_result", "_group","_helitype","_arr"];
+                    private ["_chopper", "_result", "_group","_helitype","_arr","_dronetype"];
 					
-					_arr = [(getMarkerPos "drn_russianSearchChopperStartPosMarker"), 0, "I_UAV_06_F", A3E_VAR_Side_Ind] call bis_fnc_spawnvehicle;
+					_dronetype = missionnamespace getvariable ["a3e_arr_leafletdrone", ["I_UAV_06_F"]];
+					_arr = [(getMarkerPos "drn_russianSearchChopperStartPosMarker"), 0, selectRandom _dronetype, A3E_VAR_Side_Ind] call bis_fnc_spawnvehicle;
 					_chopper = _arr select 0;
 					_group = _arr select 2;
 					_chopper lock false;
