@@ -1065,7 +1065,7 @@
 				"ISLANDNAME" : "NF Svartmarka Winter"
 				}
 		},
-				{
+		{
 			"name" : "Kapaulio",
 			"class" : "Kapaulio",
 			"path" : "./Islands/Kapaulio/",
@@ -1075,6 +1075,18 @@
 				"ISLANDNAME" : "Kapaulio"
 				}
 		},
+		{
+				{
+			"name" : "Al Salman",
+			"class" : "swu_public_salman_map",
+			"path" : "./Islands/Al Salman/",
+			"replace" :
+				{
+				"ISLAND" : "Al Salman",
+				"ISLANDNAME" : "Al Salman"
+				}
+		},
+		{
 				{
 			"name" : "IslaPera",
 			"class" : "IslaPera",
@@ -1085,6 +1097,7 @@
 				"ISLANDNAME" : "IslaPera"
 				}
 		},
+		{
 				{
 			"name" : "Farabad",
 			"class" : "Farabad",
@@ -2785,12 +2798,19 @@
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
 		},
         {
-			"island" : "IslaPera",
-			"sqm": "IslaPera",
+			"island" : "Al Salman",
+			"sqm": "Al Salman",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
+		{
+			"island" : "Al Salman",
+			"sqm": "Al Salman",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
         {
 			"island" : "IslaPera",
 			"sqm": "IslaPera",
@@ -2846,6 +2866,13 @@
 			"mod" : "Vanilla US",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Farabad",
+			"sqm": "Farabad",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		}
 		
 	],
