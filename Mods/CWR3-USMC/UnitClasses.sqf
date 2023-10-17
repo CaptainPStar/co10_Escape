@@ -1113,13 +1113,13 @@ a3e_arr_searchdrone = [
 // Two arrays for "Easy" and "Hard" parameter, both used on stadard setting
 //////////////////////////////////////////////////////////////////
 a3e_arr_searchChopperEasy = [
-	"cwr3_i_mi8_amt"];
+	"cwr3_b_usmc_ch53e"];
 a3e_arr_searchChopperHard = [
-	"cwr3_i_mi8_mtv3"];
+	"cwr3_b_usmc_uh1_gunship"];
 a3e_arr_searchChopper_pilot = [
-	"cwr3_i_soldier_pilot"];
+	"cwr3_b_soldier_pilot"];
 a3e_arr_searchChopper_crew = [
-	"cwr3_i_soldier_pilot"];
+	"cwr3_b_soldier_pilot"];
 
 if(A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
