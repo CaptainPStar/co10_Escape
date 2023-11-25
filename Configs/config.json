@@ -1,24 +1,33 @@
 {
 	"Code" : "./Code",
 	"BuildDir" : "./Build",
+	"PackedDir" : "./Packed/",
 	"Missionname" : "co10_Escape",
 	"cpbo" : "S:\\ArmA3Work\\Tools\\cpbo\\cpbo.exe",
 	"Subconfigs": [
 		"./Configs/subconfig_example.json",
 		"./Configs/RHS.json",
 		"./Configs/CUP.json",
+		"./Configs/CWR3.json",
 		"./Configs/IFA3.json",
 		"./Configs/Massi.json",
 		"./Configs/UNS.json",
 		"./Configs/OPTRE.json",
-		"./Configs/GM.json"
+		"./Configs/GM.json",
+		"./Configs/CSLA.json",
+		"./Configs/WS.json",
+		"./Configs/SOGPF.json",
+		"./Configs/SFP.json",
+		"./Configs/SPE.json"
+
 	],
 	"replace" :
 		{
 			"VERSION" : "1.10",
 			"MISSION" : "Escape",
 			"MISSION_FULL": "co10 Escape",
-			"PLAYER_INIT" : "this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};"
+			"PLAYER_INIT" : "this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};",
+			"GAMETYPE" : "Escape"
 		},
 	"ParsedFiles" : ["mission.sqm","defines.hpp","fn_briefing.sqf"],
 	"Mods" : [
@@ -117,9 +126,10 @@
                     "PLAYERUNIT_5" : "O_R_Soldier_GL_F",
                     "PLAYERUNIT_6" : "O_R_Soldier_AR_F",
                     "PLAYERUNIT_7" : "O_R_Soldier_LAT_F",
-                    "PLAYERUNIT_8" : "O_R_soldier_exp_F",
+                    "PLAYERUNIT_8" : "O_R_JTAC_F",
                     "PLAYERUNIT_9" : "O_R_soldier_M_F",
-                    "PLAYERUNIT_10" : "O_R_medic_F"
+                    "PLAYERUNIT_10" : "O_R_medic_F",
+					"PLAYER_INIT" : "this setCaptive true; if(this == p8) then {this setUnitTrait ['UavHacker',true];};"
                 }
         }
 	],
@@ -175,16 +185,6 @@
 				}
 		},
 		{
-			"name" : "Chernarus",
-			"class" : "Chernarus",
-			"path" : "./Islands/Chernarus/",
-			"replace" :
-				{
-				"ISLAND" : "Chernarus",
-				"ISLANDNAME" : "Chernarus"
-				}
-		},
-		{
 			"name" : "Livonia",
 			"class" : "Enoch",
 			"path" : "./Islands/Enoch/",
@@ -212,6 +212,46 @@
 				{
 				"ISLAND" : "gm_weferlingen_winter",
 				"ISLANDNAME" : "Weferlingen"
+				}
+		},
+		{
+			"name" : "Gabreta",
+			"class" : "stozec",
+			"path" : "./Islands/Gabreta/",
+			"replace" :
+				{
+				"ISLAND" : "stozec",
+				"ISLANDNAME" : "Gabreta"
+				}
+		},
+		{
+			"name" : "Polanek",
+			"class" : "zdanice",
+			"path" : "./Islands/Polanek/",
+			"replace" :
+				{
+				"ISLAND" : "zdanice",
+				"ISLANDNAME" : "Polanek"
+				}
+		},
+		{
+			"name" : "Sefrou-Ramal",
+			"class" : "SefrouRamal",
+			"path" : "./Islands/Sefrou-Ramal/",
+			"replace" :
+				{
+				"ISLAND" : "Sefrou-Ramal",
+				"ISLANDNAME" : "Sefrou-Ramal"
+				}
+		},
+		{
+			"name" : "Chernarus",
+			"class" : "Chernarus",
+			"path" : "./Islands/Chernarus/",
+			"replace" :
+				{
+				"ISLAND" : "Chernarus",
+				"ISLANDNAME" : "Chernarus"
 				}
 		},
 		{
@@ -596,6 +636,16 @@
 				}
 		},
 		{
+			"name" : "Virolahti",
+			"class" : "VT7",
+			"path" : "./Islands/VT7/",
+			"replace" :
+				{
+				"ISLAND" : "Virolahti",
+				"ISLANDNAME" : "Virolahti"
+				}
+		},
+		{
 			"name" : "Ruha",
 			"class" : "Ruha",
 			"path" : "./Islands/Ruha/",
@@ -615,7 +665,7 @@
 				"ISLANDNAME" : "Prei Khmaoch Luong"
 				}
 		},
-        {
+        	{
 			"name" : "Prei Khmaoch Luong RHS",
 			"class" : "rhspkl",
 			"path" : "./Islands/rhspkl/",
@@ -683,6 +733,16 @@
 				{
 				"ISLAND" : "Bukovina",
 				"ISLANDNAME" : "Bukovina"
+				}
+		},
+		{
+			"name" : "Bystrica",
+			"class" : "Woodland_ACR",
+			"path" : "./Islands/Woodland_ACR/",
+			"replace" :
+				{
+				"ISLAND" : "Bystrica",
+				"ISLANDNAME" : "Bystrica"
 				}
 		},
 		{
@@ -795,6 +855,46 @@
 				"ISLANDNAME" : "Summa"
 				}
 		},
+		{
+			"name" : "Ihantala",
+			"class" : "tem_ihantala",
+			"path" : "./Islands/Ihantala/",
+			"replace" :
+				{
+				"ISLAND" : "Ihantala",
+				"ISLANDNAME" : "Ihantala"
+				}
+		},
+        {
+			"name" : "IhantalaW",
+			"class" : "tem_ihantalaw",
+			"path" : "./Islands/IhantalaW/",
+			"replace" :
+				{
+				"ISLAND" : "Ihantala",
+				"ISLANDNAME" : "Ihantala"
+				}
+		},
+		{
+			"name" : "Hellanmaa",
+			"class" : "hellanmaa",
+			"path" : "./Islands/Hellanmaa/",
+			"replace" :
+				{
+				"ISLAND" : "Hellanmaa",
+				"ISLANDNAME" : "Hellanmaa"
+				}
+		},
+        {
+			"name" : "HellanmaaW",
+			"class" : "hellanmaaw",
+			"path" : "./Islands/HellanmaaW/",
+			"replace" :
+				{
+				"ISLAND" : "Hellanmaa",
+				"ISLANDNAME" : "Hellanmaa"
+				}
+		},
         {
 			"name" : "Mull of Kintyre",
 			"class" : "rof_mok",
@@ -803,6 +903,206 @@
 				{
 				"ISLAND" : "Mull of Kintyre",
 				"ISLANDNAME" : "Mull of Kintyre"
+				}
+		},
+        {
+			"name" : "Scottish Highlands",
+			"class" : "oski_corran",
+			"path" : "./Islands/ScottishHighlands/",
+			"replace" :
+				{
+				"ISLAND" : "Scottish Highlands",
+				"ISLANDNAME" : "Scottish Highlands"
+				}
+		},
+        {
+			"name" : "County Fermanagh",
+			"class" : "oski_ire",
+			"path" : "./Islands/CountyFermanagh/",
+			"replace" :
+				{
+				"ISLAND" : "County Fermanagh",
+				"ISLANDNAME" : "County Fermanagh"
+				}
+		},
+        {
+			"name" : "Fapovo",
+			"class" : "fapovo",
+			"path" : "./Islands/Fapovo/",
+			"replace" :
+				{
+				"ISLAND" : "Fapovo Island",
+				"ISLANDNAME" : "Fapovo Island"
+				}
+			},
+        {
+			"name" : "Colombia",
+			"class" : "UMB_Colombia",
+			"path" : "./Islands/UMB_Colombia/",
+			"replace" :
+				{
+				"ISLAND" : "Colombia",
+				"ISLANDNAME" : "Colombia"
+				}
+		},
+        {
+			"name" : "Pulau",
+			"class" : "pulau",
+			"path" : "./Islands/Pulau/",
+			"replace" :
+				{
+				"ISLAND" : "Pulau",
+				"ISLANDNAME" : "Pulau"
+				}
+		},
+        {
+			"name" : "Mutambara",
+			"class" : "swu_public_rhode_map",
+			"path" : "./Islands/Mutambara/",
+			"replace" :
+				{
+				"ISLAND" : "Mutambara",
+				"ISLANDNAME" : "Mutambara"
+				}
+		},
+        {
+			"name" : "Niakala",
+			"class" : "juju_kalahari",
+			"path" : "./Islands/Niakala/",
+			"replace" :
+				{
+				"ISLAND" : "Niakala",
+				"ISLANDNAME" : "Niakala"
+				}
+		},
+        {
+			"name" : "Sumava",
+			"class" : "brf_sumava",
+			"path" : "./Islands/Sumava/",
+			"replace" :
+				{
+				"ISLAND" : "Sumava",
+				"ISLANDNAME" : "Sumava"
+				}
+		},
+        {
+			"name" : "Maksniemi",
+			"class" : "Maksniemi",
+			"path" : "./Islands/Maksniemi/",
+			"replace" :
+				{
+				"ISLAND" : "Maksniemi",
+				"ISLANDNAME" : "Maksniemi"
+				}
+		},
+		        {
+			"name" : "Gulfcoast",
+			"class" : "Gulfcoast",
+			"path" : "./Islands/Gulfcoast/",
+			"replace" :
+				{
+				"ISLAND" : "Gulfcoast",
+				"ISLANDNAME" : "Gulfcoast"
+				}
+		},
+		{
+			"name" : "Zagorsk Big Lakes",
+			"class" : "zagor_zagorsk_biglakes",
+			"path" : "./Islands/zagor_zagorsk_biglakes/",
+			"replace" :
+				{
+				"ISLAND" : "Zagorsk Big Lakes",
+				"ISLANDNAME" : "Zagorsk Big Lakes"
+				}
+		},
+		{
+			"name" : "Lybor",
+			"class" : "VTF_Lybor",
+			"path" : "./Islands/Lybor/",
+			"replace" :
+				{
+				"ISLAND" : "Lybor",
+				"ISLANDNAME" : "Lybor"
+				}
+		},
+		{
+			"name" : "Dagger_Island",
+			"class" : "dagger_island_summer",
+			"path" : "./Islands/Dagger_Island/",
+			"replace" :
+				{
+				"ISLAND" : "Dagger_Island",
+				"ISLANDNAME" : "Dagger_Island"
+				}
+		},
+		{
+			"name" : "Staszow",
+			"class" : "Staszow",
+			"path" : "./Islands/Staszow/",
+			"replace" :
+				{
+				"ISLAND" : "Staszow",
+				"ISLANDNAME" : "Staszow"
+				}
+		},
+		{
+			"name" : "NF Svartmarka",
+			"class" : "tem_chernarus",
+			"path" : "./Islands/NF_Svartmarka/",
+			"replace" :
+				{
+				"ISLAND" : "NF Svartmarka",
+				"ISLANDNAME" : "NF Svartmarka"
+				}
+		},
+		{
+			"name" : "NF Svartmarka Winter",
+			"class" : "tem_chernarusw",
+			"path" : "./Islands/NF_Svartmarka_W/",
+			"replace" :
+				{
+				"ISLAND" : "NF Svartmarka Winter",
+				"ISLANDNAME" : "NF Svartmarka Winter"
+				}
+		},
+		{
+			"name" : "Kapaulio",
+			"class" : "Kapaulio",
+			"path" : "./Islands/Kapaulio/",
+			"replace" :
+				{
+				"ISLAND" : "Kapaulio",
+				"ISLANDNAME" : "Kapaulio"
+				}
+		},
+		{
+			"name" : "Al Salman",
+			"class" : "swu_public_salman_map",
+			"path" : "./Islands/Al Salman/",
+			"replace" :
+				{
+				"ISLAND" : "Al Salman",
+				"ISLANDNAME" : "Al Salman"
+				}
+		},
+		{
+			"name" : "IslaPera",
+			"class" : "IslaPera",
+			"path" : "./Islands/IslaPera/",
+			"replace" :
+				{
+				"ISLAND" : "IslaPera",
+				"ISLANDNAME" : "IslaPera"
+				}
+		},
+		{
+			"name" : "Farabad",
+			"class" : "Farabad",
+			"path" : "./Islands/Farabad/",
+			"replace" :
+				{
+				"ISLAND" : "Farabad",
+				"ISLANDNAME" : "Farabad"
 				}
 		}
 	],
@@ -859,6 +1159,27 @@
         {
 			"island" : "WeferlingenWinter",
 			"sqm" : "WeferlingenW",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Gabreta",
+			"sqm" : "Gabreta",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Polanek",
+			"sqm" : "Polanek",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Sefrou-Ramal",
+			"sqm" : "Sefrou-Ramal",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
@@ -939,13 +1260,6 @@
 			"mod" : "Vanilla Apex",
 			"replace" : {},
 			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
-		},
-		{
-			"island" : "Lingor",
-			"sqm": "Lingor3",
-			"mod" : "Vanilla Apex US",
-			"replace" : {},
-			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
 		},
 		{
 			"island" : "Dingor",
@@ -1151,6 +1465,13 @@
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
 		{
+			"island" : "Virolahti",
+			"sqm": "VT7",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
 			"island" : "Ruha",
 			"sqm": "Ruha",
 			"mod" : "Vanilla",
@@ -1223,6 +1544,13 @@
 		{
 			"island" : "Bukovina",
 			"sqm": "Bootcamp_ACR",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Bystrica",
+			"sqm": "Woodland_ACR",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
@@ -1304,12 +1632,110 @@
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
+		{
+			"island" : "Ihantala",
+			"sqm": "Ihantala",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "IhantalaW",
+			"sqm": "IhantalaW",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Hellanmaa",
+			"sqm": "Hellanmaa",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "HellanmaaW",
+			"sqm": "HellanmaaW",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
         {
 			"island" : "Mull of Kintyre",
 			"sqm": "rof_mok",
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Scottish Highlands",
+			"sqm": "ScottishHighlands",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "County Fermanagh",
+			"sqm": "CountyFermanagh",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Fapovo",
+			"sqm": "Fapovo",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Colombia",
+			"sqm": "UMB_Colombia",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Colombia",
+			"sqm": "UMB_Colombia",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Mutambara",
+			"sqm": "Mutambara",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Niakala",
+			"sqm": "Niakala",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Niakala",
+			"sqm": "Niakala",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
 		},
 		{
 			"island" : "Altis",
@@ -1377,6 +1803,41 @@
         {
 			"island" : "WeferlingenWinter",
 			"sqm" : "WeferlingenW",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Gabreta",
+			"sqm" : "Gabreta",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Gabreta",
+			"sqm" : "Gabreta",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Polanek",
+			"sqm" : "Polanek",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Polanek",
+			"sqm" : "Polanek",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Sefrou-Ramal",
+			"sqm" : "Sefrou-Ramal",
 			"mod" : "Vanilla US",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
@@ -1717,6 +2178,27 @@
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
 		},
+        {
+			"island" : "Valtatie 5",
+			"sqm": "VT5",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Virolahti",
+			"sqm": "VT7",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Virolahti",
+			"sqm": "VT7",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
 		{
 			"island" : "Ruha",
 			"sqm": "Ruha",
@@ -1800,6 +2282,27 @@
 			"mod" : "Vanilla US",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Bukovina",
+			"sqm": "Bootcamp_ACR",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Bystrica",
+			"sqm": "Woodland_ACR",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Bystrica",
+			"sqm": "Woodland_ACR",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		},
 	    {
 			"island" : "Vidda",
@@ -1913,6 +2416,62 @@
 			"replace" : {},
 			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		},
+		{
+			"island" : "Ihantala",
+			"sqm": "Ihantala",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Ihantala",
+			"sqm": "Ihantala",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "IhantalaW",
+			"sqm": "IhantalaW",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "IhantalaW",
+			"sqm": "IhantalaW",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Hellanmaa",
+			"sqm": "Hellanmaa",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Hellanmaa",
+			"sqm": "Hellanmaa",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "HellanmaaW",
+			"sqm": "HellanmaaW",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "HellanmaaW",
+			"sqm": "HellanmaaW",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
         {
 			"island" : "Mull of Kintyre",
 			"sqm": "rof_mok",
@@ -1926,7 +2485,393 @@
 			"mod" : "Vanilla Contact US",
 			"replace" : {},
 			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Scottish Highlands",
+			"sqm": "ScottishHighlands",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Scottish Highlands",
+			"sqm": "ScottishHighlands",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "County Fermanagh",
+			"sqm": "CountyFermanagh",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "County Fermanagh",
+			"sqm": "CountyFermanagh",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Fapovo",
+			"sqm": "Fapovo",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Fapovo",
+			"sqm": "Fapovo",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Colombia",
+			"sqm": "UMB_Colombia",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Colombia",
+			"sqm": "UMB_Colombia",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Mutambara",
+			"sqm": "Mutambara",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Niakala",
+			"sqm": "Niakala",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Niakala",
+			"sqm": "Niakala",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Sumava",
+			"sqm": "Sumava",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Sumava",
+			"sqm": "Sumava",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Sumava",
+			"sqm": "Sumava",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Sumava",
+			"sqm": "Sumava",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Sumava",
+			"sqm": "Sumava",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Maksniemi",
+			"sqm": "Maksniemi",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Maksniemi",
+			"sqm": "Maksniemi",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Maksniemi",
+			"sqm": "Maksniemi",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Maksniemi",
+			"sqm": "Maksniemi",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Maksniemi",
+			"sqm": "Maksniemi",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		        {
+			"island" : "Gulfcoast",
+			"sqm": "Gulfcoast",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Gulfcoast",
+			"sqm": "Gulfcoast",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Gulfcoast",
+			"sqm": "Gulfcoast",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Gulfcoast",
+			"sqm": "Gulfcoast",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Gulfcoast",
+			"sqm": "Gulfcoast",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Dagger_Island",
+			"sqm": "dagger_island_summer",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Kapaulio",
+			"sqm": "Kapaulio",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Kapaulio",
+			"sqm": "Kapaulio",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Kapaulio",
+			"sqm": "Kapaulio",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Kapaulio",
+			"sqm": "Kapaulio",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Kapaulio",
+			"sqm": "Kapaulio",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Al Salman",
+			"sqm": "Al Salman",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Al Salman",
+			"sqm": "Al Salman",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "IslaPera",
+			"sqm": "IslaPera",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "IslaPera",
+			"sqm": "IslaPera",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "IslaPera",
+			"sqm": "IslaPera",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "IslaPera",
+			"sqm": "IslaPera",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Farabad",
+			"sqm": "Farabad",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Farabad",
+			"sqm": "Farabad",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Farabad",
+			"sqm": "Farabad",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Farabad",
+			"sqm": "Farabad",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Farabad",
+			"sqm": "Farabad",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		}
+		
 	],
 	"Addons" : [
 		{

@@ -1,6 +1,6 @@
 params [["_modifier", 1, [0]]];
 private ["_enemyFrequency","_minEnemies","_maxEnemies","_return"];
-_enemyFrequency = (Param_EnemyFrequency);
+_enemyFrequency = (A3E_Param_EnemyFrequency);
 _minEnemies = 8;
 _maxEnemies = 12;
 switch (_enemyFrequency) do

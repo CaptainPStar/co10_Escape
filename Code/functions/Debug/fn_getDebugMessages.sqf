@@ -16,7 +16,7 @@ if(_filter == "STRING") then {
 	};
 };
 for[{_i=_length-1},{_i >= 0},{_i = _i-1}] do {
-	private _types = (A3E_DebugLog select _i) select 0;
+	private _types = (A3E_DebugLog select _i) select 1;
 	private _isInFilter = false;
 	if(count(_filter)==0) then {
 		_isInFilter = true;

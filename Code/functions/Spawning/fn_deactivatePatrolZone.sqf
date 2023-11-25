@@ -17,14 +17,22 @@ if(_active && _initialized) then {
 		_marker setMarkerAlpha 0;
 	};
 	private _grpArray = [];
+	private _grouplist = missionNamespace getvariable ["A3E_StatusOfPatrols",[]];
 	{
-		if(!isNull _x) then {
-			private _count = {alive _x} count (units _x);
+		private _grp = _x;
+		if(!isNull _grp) then {
+			private _count = {alive _x} count (units _grp);
 			if(_count > 0) then {
-				_grpArray pushBack [getpos (leader _x),_count];
+				_grpArray pushBack [getpos (leader _grp),_count];
 				{
 					deletevehicle _x;
-				} foreach (units _x);
+				} foreach (units _grp);
+				
+				{
+					if(_grp==_x#0) exitwith {
+						_x set [3,true]; //set despawn flag, so searchleader will not miss this group
+					};
+				} foreach _grouplist;
 				deletegroup _x;
 			};
 		};

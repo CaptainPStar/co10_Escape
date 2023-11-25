@@ -13,12 +13,12 @@ if(isNil("a3e_patrolZones")) then {
 	a3e_patrolZones = [];
 };
 
-params["_zone"];
+params["_shape","_onInit",["_type","Default"]];
 
-private _zonePosition = (_zone select 0);
-private _zoneDir = (_x select 1);
-private _zoneShape = (_x select 2);
-private _zoneSizeXY = (_x select 3);
+private _zonePosition = (_shape select 0);
+private _zoneDir = (_shape select 1);
+private _zoneShape = (_shape select 2);
+private _zoneSizeXY = (_shape select 3);
 private _zoneArea = (_zoneSizeXY select 0)*(_zoneSizeXY select 1);
 
 //Select the side based on the zone size. Small zones are occupied by locals while large cities are occupied by OPFOR
@@ -37,10 +37,10 @@ _name = format["A3E_ZoneMarkerText%1",_zoneIndex];
 _marker setMarkerAlpha 0;
 
 if(A3E_Debug) then {
-	_marker setMarkerAlpha 0.5;
+	_marker setMarkerAlpha 0.2;
 };
 
-private _triggerRange = missionNamespace getvariable ["Param_EnemySpawnDistance",800];
+private _triggerRange = missionNamespace getvariable ["A3E_Param_EnemySpawnDistance",800];
 
 private _trigger = createTrigger["EmptyDetector", _zonePosition, false];
 _trigger setTriggerInterval 5;
@@ -55,21 +55,34 @@ _trigger setTriggerArea[(_zoneSizeXY select 0)+_triggerRange, (_zoneSizeXY selec
 _trigger setTriggerTimeout [1, 1, 1, true];
 private _activation = format["[%1] call A3E_FNC_activatePatrolZone;",_zoneIndex];
 private _deactivation = format["[%1] call A3E_FNC_deactivatePatrolZone;",_zoneIndex];
-_trigger setTriggerStatements["this",_activation,_deactivation];
+_trigger setTriggerStatements["this",_activation,""];
 
+private _deactivationTrigger = createTrigger["EmptyDetector", _zonePosition, false];
+_deactivationTrigger setTriggerInterval 5;
+_deactivationTrigger triggerAttachVehicle [vehicle (units _playerGroup select 0)];
+_deactivationTrigger setTriggerActivation["MEMBER", "PRESENT", true];
+private _rectangle = false;
+if(_zoneShape == "RECTANGLE") then {
+	_rectangle = true;
+};
 
+//Deactivation trigger is 50m larger than activation, to prevent spawn/despawn oscillation
+_deactivationTrigger setTriggerArea[(_zoneSizeXY select 0)+_triggerRange+50, (_zoneSizeXY select 1)+_triggerRange+50, _zoneDir, _rectangle];
+_deactivationTrigger setTriggerTimeout [1, 1, 1, true];
+
+_deactivationTrigger setTriggerStatements["this","",_deactivation];
 
 private _zoneArray = [
 			["trigger",_trigger],
+			["deactivationtrigger",_deactivationTrigger],
 			["marker",_marker],
-			["side",_side],
 			["zoneArea",_zoneArea],
 			["initialized",false],
 			["active",false],
 			["patrols",[]],
 			["housePatrols",[]]
 			];
-a3e_patrolZones set [_zoneIndex,_zoneArray];
+a3e_patrolZones set [_zoneIndex,createHashMapFromArray _zoneArray];
 
 
 

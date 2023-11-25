@@ -26,27 +26,7 @@ AT_Revive_Camera = 1;
 
 [] call A3E_fnc_addUserActions;
 
-//BIS
-player unassignItem "ItemMap";
-player removeItem "ItemMap";
-player unassignItem "ItemCompass";
-player removeItem "ItemCompass";
-player unassignItem "itemGPS";
-player removeItem "itemGPS";
-player unassignItem "itemRadio";
-player removeItem "itemRadio";
-player unassignItem "itemWatch";
-player removeItem "itemWatch";
-player unassignItem "O_UavTerminal";
-player removeItem "O_UavTerminal";
-player unassignitem "B_UavTerminal"; 
-player removeitem "B_UavTerminal";
-player unassignitem "I_UavTerminal"; 
-player removeitem "I_UavTerminal";
-
-
-
-
+removeAllAssignedItems player;
 removeAllWeapons player;
 removeAllItems player;
 removeBackpack player;
@@ -57,8 +37,14 @@ if(hmd player != "") then {
 	private _hmd = hmd player;
 	player unlinkItem _hmd;
 };
-
+if(A3E_DEBUG) then {
+	player allowdamage false;
+	player linkitem "ItemMap";
+	onmapsingleclick "if(_alt) then {player setpos _pos;};";
+};
 player addeventhandler["HandleRating","_this call A3E_FNC_handleRating;"];
+
+player addeventhandler["InventoryClosed","_this call A3E_FNC_collectIntel;"];
 
 
 drn_fnc_Escape_DisableLeaderSetWaypoints = {
@@ -79,7 +65,7 @@ if (isMultiplayer) then {
 };
 
 waituntil{sleep 0.1;!isNil("A3E_ParamsParsed")};
-AT_Revive_Camera = Param_ReviveView;
+AT_Revive_Camera = A3E_Param_ReviveView;
 
 //If no ACE use ATR revive
 if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
@@ -88,10 +74,11 @@ if (isClass(configFile >> "CfgPatches" >> "ACE_Medical")) then {
 	call ATR_FNC_ReviveInit;
 };
 
+call compile preprocessFile "Scripts\AT\dronehack_init.sqf";
 
-setTerrainGrid Param_Grass;
+setTerrainGrid A3E_Param_Grass;
 
-if (Param_Magrepack == 1) then {
+if (A3E_Param_Magrepack == 1) then {
 	[] execVM "Scripts\outlw_magRepack\MagRepack_init_sv.sqf";
 };
 
@@ -126,4 +113,11 @@ diag_log format["Escape debug: %1 is now ready (clientside).", name player];
 [] spawn {
 	waituntil{sleep 0.5;A3E_Task_Prison_Complete};
 	[localize "STR_A3E_initLocalPlayer_somewhereOn", A3E_WorldName , str (date select 2) + "/" + str (date select 1) + "/" + str (date select 0) + " " + str (date select 3) + ":00"] spawn BIS_fnc_infoText;
+};
+
+if(!isNil("CBA_fnc_addKeybind")) then {
+	[] spawn {
+		disableSerialization;
+		["A3E Earplugs", "toggle_earplugs_key", localize "STR_A3E_initLocalPlayer_toggleEarplugs", {_this call A3E_fnc_toggleEarplugs}, ""] call CBA_fnc_addKeybind;
+	};
 };

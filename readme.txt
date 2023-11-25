@@ -73,7 +73,7 @@ Valtatie 5
 Compiling Basics
 - Clone the repo with git
 - run "git submodule update --init --recursive" in the repo folder to fetch the revive submodule
-- run compile_local.py
+- run compile.py
 
 Credits
 Original Mission (Arma2) by Engima of Östgöta Ops.

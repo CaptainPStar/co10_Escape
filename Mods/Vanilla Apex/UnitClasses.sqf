@@ -60,7 +60,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"C_Truck_02_box_F"
 	,"C_Truck_02_transport_F"
 	,"C_Truck_02_covered_F"];
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
@@ -103,7 +103,7 @@ switch (_enemyFrequency) do {
 		,"O_T_Truck_03_fuel_ghex_F"
 		,"O_T_Truck_03_medical_ghex_F"
 		,"O_T_Truck_03_repair_ghex_F"];
-		if(Param_UseDLCTanks==1) then {
+		if(A3E_Param_UseDLCTanks==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "O_T_MBT_04_cannon_F";
 		};
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
@@ -155,7 +155,7 @@ switch (_enemyFrequency) do {
 		,"O_T_Truck_03_fuel_ghex_F"
 		,"O_T_Truck_03_medical_ghex_F"
 		,"O_T_Truck_03_repair_ghex_F"];
-		if(Param_UseDLCTanks==1) then {
+		if(A3E_Param_UseDLCTanks==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "O_T_MBT_04_cannon_F";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "O_T_MBT_04_command_F";
 		};
@@ -211,7 +211,7 @@ switch (_enemyFrequency) do {
 		,"O_T_Truck_03_fuel_ghex_F"
 		,"O_T_Truck_03_medical_ghex_F"
 		,"O_T_Truck_03_repair_ghex_F"];
-		if(Param_UseDLCTanks==1) then {
+		if(A3E_Param_UseDLCTanks==1) then {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "O_T_MBT_04_cannon_F";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "O_T_MBT_04_command_F";
 		};
@@ -285,7 +285,7 @@ a3e_arr_Escape_InfantryTypes = [
 	,"O_T_Soldier_M_F"
 	,"O_T_Soldier_AHAT_F"
 	,"O_T_Soldier_HAT_F"];
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 		a3e_arr_Escape_InfantryTypes pushback "O_T_soldier_mine_F";
 		a3e_arr_Escape_InfantryTypes pushback "O_T_soldier_UAV_06_F";
 		a3e_arr_Escape_InfantryTypes pushback "O_T_soldier_UAV_06_medical_F";
@@ -376,7 +376,7 @@ a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"O_T_MBT_02_cannon_ghex_F"
 	,"O_T_APC_Tracked_02_cannon_ghex_F"
 	,"O_T_APC_Tracked_02_AA_ghex_F"];
-	if(Param_UseDLCTanks==1) then {
+	if(A3E_Param_UseDLCTanks==1) then {
 		a3e_arr_ComCenDefence_heavyArmorClasses pushback "O_T_MBT_04_cannon_F";
 		a3e_arr_ComCenDefence_heavyArmorClasses pushback "O_T_MBT_04_command_F";
 	};
@@ -426,7 +426,7 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"C_Truck_02_box_F"
 	,"C_Truck_02_transport_F"
 	,"C_Truck_02_covered_F"];
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_service_F";
@@ -472,7 +472,7 @@ a3e_arr_O_attack_heli = [
 	,"O_T_VTOL_02_infantry_F"];
 a3e_arr_O_transport_heli = [
 	"O_Heli_Light_02_unarmed_F"];
-	if(Param_UseDLCHelis==1) then {
+	if(A3E_Param_UseDLCHelis==1) then {
 	a3e_arr_O_transport_heli pushback "O_Heli_Transport_04_bench_black_F";
 	a3e_arr_O_transport_heli pushback "O_Heli_Transport_04_covered_black_F";
 	};
@@ -519,7 +519,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_AKS_F", 10, 2, 4, ["30Rnd_545x39
 a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["srifle_DMR_07_blk_F", 50, 2, 4, ["20Rnd_650x39_Cased_Mag_F"], 5];
-if(Param_UseDLCMarksmen==1) then {
+if(A3E_Param_UseDLCMarksmen==1) then {
 	a3e_arr_AmmoDepotSpecialWeapons pushback ["srifle_DMR_04_F", 50, 2, 4, ["10Rnd_127x54_Mag"], 5];
 	a3e_arr_AmmoDepotSpecialWeapons pushback ["MMG_01_tan_F", 50, 2, 4, ["150Rnd_93x64_Mag"], 3];
 };
@@ -534,7 +534,7 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_SPAR_01_GL_khk_F", 20, 2, 4, [
 a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_SPAR_02_khk_F", 20, 2, 4, ["150Rnd_556x45_Drum_Mag_F"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_SPAR_03_khk_F", 20, 2, 4, ["20Rnd_762x51_Mag"], 5];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["LMG_03_F", 20, 2, 4, ["200Rnd_556x45_Box_Tracer_Red_F"], 6];
-if(Param_UseDLCMarksmen==1) then {
+if(A3E_Param_UseDLCMarksmen==1) then {
 	a3e_arr_AmmoDepotSpecialWeapons pushback ["srifle_DMR_06_olive_F", 20, 2, 4, ["20Rnd_762x51_Mag"], 5];
 };
 
@@ -587,7 +587,7 @@ a3e_arr_AmmoDepotVehicleBackpacks = ["O_UAV_01_backpack_F"];
 
 a3e_arr_AmmoDepotItems = [];
 a3e_arr_AmmoDepotItems pushback ["Laserdesignator_02_ghex_F", 10, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["O_NVGoggles_ghex_F", 10, 1, 3];
 };
 a3e_arr_AmmoDepotItems pushback ["Binocular", 50, 2, 3, [], 0];
@@ -618,7 +618,7 @@ a3e_arr_AmmoDepotItems pushback ["optic_Holosight_blk_F", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_Holosight_smg_blk_F", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_MRCO", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_SOS", 10, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["optic_tws", 10, 1, 1];
 	a3e_arr_AmmoDepotItems pushback ["optic_tws_mg", 10, 1, 1];
 	a3e_arr_AmmoDepotItems pushback ["optic_NVS", 10, 1, 2];
@@ -723,7 +723,7 @@ a3e_arr_extractiontypes = [
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
 	"B_Heli_Transport_01_F"];
-	 if(Param_UseDLCHelis==1) then {
+	 if(A3E_Param_UseDLCHelis==1) then {
 	a3e_arr_O_transport_heli pushback "B_Heli_Transport_03_F";
 	};
 a3e_arr_extraction_chopper_escort = [
@@ -779,13 +779,13 @@ a3e_arr_searchChopper_pilot = [
 a3e_arr_searchChopper_crew = [
 	"O_T_Helicrew_F"];
 
-if(Param_SearchChopper==0) then {
+if(A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
 };
-if(Param_SearchChopper==1) then {
+if(A3E_Param_SearchChopper==1) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
 };
-if(Param_SearchChopper==2) then {
+if(A3E_Param_SearchChopper==2) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperHard;
 };
 
@@ -881,7 +881,7 @@ a3e_arr_CrashSiteCrewCar = [
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["launch_NLAW_F", 10, 1, 2, ["NLAW_F"], 3];
 a3e_arr_CrashSiteWeapons pushback ["launch_MRAWS_green_F", 10, 1, 2, ["MRAWS_HEAT_F","MRAWS_HE_F"], 2];
-if(Param_UseDLCMarksmen==1) then {
+if(A3E_Param_UseDLCMarksmen==1) then {
 	a3e_arr_CrashSiteWeapons pushback ["srifle_DMR_03_khaki_F", 10, 1, 2, ["20Rnd_762x51_Mag"], 8];
 };
 a3e_arr_CrashSiteWeapons pushback ["srifle_LRR_tna_F", 10, 1, 2, ["7Rnd_408_Mag"], 8];

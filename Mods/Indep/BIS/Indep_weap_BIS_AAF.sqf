@@ -79,7 +79,7 @@ a3e_arr_AmmoDepotItems append [
 	,["bipod_03_F_blk", 10, 1, 2]//AAF
 	,["bipod_03_F_oli", 10, 1, 2]//AAF
 	];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems append [
 	["NVGoggles_INDEP", 10, 1, 3]
 	];

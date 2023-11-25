@@ -1,6 +1,6 @@
 
 a3e_arr_AmmoDepotItems pushback ["Laserdesignator_02", 10, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["NVGoggles_OPFOR", 10, 1, 3];
 };
 a3e_arr_AmmoDepotItems pushback ["Binocular", 50, 2, 3, [], 0];
@@ -29,7 +29,7 @@ a3e_arr_AmmoDepotItems pushback ["optic_Holosight_smg", 10, 1, 2];//NATO, FIA
 a3e_arr_AmmoDepotItems pushback ["optic_MRCO", 10, 1, 2];//AAF, FIA
 a3e_arr_AmmoDepotItems pushback ["optic_NVS", 10, 1, 2];//
 a3e_arr_AmmoDepotItems pushback ["optic_SOS", 10, 1, 2];//All
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["optic_tws", 10, 1, 1];//
 	a3e_arr_AmmoDepotItems pushback ["optic_tws_mg", 10, 1, 1];//
 	a3e_arr_AmmoDepotItems pushback ["optic_Nightstalker", 10, 1, 1];//CSAT

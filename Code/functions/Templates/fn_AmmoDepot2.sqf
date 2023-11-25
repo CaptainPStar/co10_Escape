@@ -273,7 +273,7 @@ private ["_weapons", "_weaponMagazines", "_box", "_weaponCount"];
 } foreach _weaponMagazines;
 };
 
-if((Param_Waffelbox)==1) then {
+if((A3E_Param_Waffelbox)==1) then {
   _box = createVehicle [a3e_additional_weapon_box_1, [(_center select 0) + 0, (_center select 1) + 3, 0], [], 0, "CAN_COLLIDE"];
   _box call A3E_fnc_initArsenal;
   _box = createVehicle [a3e_additional_weapon_box_2, [(_center select 0) + 3, (_center select 1) + 3, 0], [], 0, "CAN_COLLIDE"];

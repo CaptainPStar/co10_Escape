@@ -3,7 +3,7 @@
 // Mission Header
 class Header
 {
-  gameType = Escape;
+  gameType = co10esc; //gameType = Escape if not Vietnam CDLC
   minPlayers = 1;
   maxPlayers = 10;
 };
@@ -11,9 +11,9 @@ class Header
 onLoadName = MISSIONNAME;
 onLoadMission = MISSIONNAMEFULL;
 OnLoadMissionTime = FALSE;
-dev = "NeoArmageddon and Scruffy";
+dev = "Captain P. Star and Scruffy";
 briefingName = MISSIONNAMEFULL;
-author = "NeoArmageddon and Scruffy";
+author = "Captain P. Star and Scruffy";
 overviewPicture = "a3\Missions_F_Gamma\data\img\MP_COOP_m03_overview_CA.paa";
 overviewText = MISSIONNAMEFULL;
 loadScreen = "escape_banner.paa"; 
@@ -22,7 +22,14 @@ EscapeIsland = ISLAND;
 EscapeMod = MOD;
 EscapeVersion = VERSION;
 EscapeRelease = RELEASE;
+EscapeBuild = BUILD;
 cba_settings_hasSettingsFile = 1;
+
+class Extended_PreInit_EventHandlers {
+    class a3e {
+        init = "call compile preprocessFileLineNumbers 'XEH_preInit.sqf'";
+    };
+};
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 Respawn = "INSTANT";
@@ -31,6 +38,7 @@ respawnButton = 0;
 
 disabledAI = 1;
 enableDebugConsole = 1;
+allowFunctionsRecompile = 1;
 
 corpseLimit = 30;
 corpseRemovalMinTime = 600;
@@ -96,12 +104,12 @@ class CfgRemoteExec
                mode = 2;
                // Ability to send jip messages: 0-disabled, 1-enabled (default)
                jip = 1;
+			   class a3e_fnc_initPlayer { allowedTargets=2; jip=0; };
        };        
        // List of script commands allowed to be sent from client via remoteExec
        class Commands
        {
               class moveInAny { allowedTargets=0; jip=0; }; // can target anyone, sending jip is turned off (overrides settings in the Commands class)
-			  class a3e_fnc_initPlayer { allowedTargets=2; jip=0; };
 	};
 };
 
@@ -202,7 +210,9 @@ class RscTitles {
 };
 class CfgCommands {
    allowedHTMLLoadURIs[] += {
-      "http://escape.anzp.de/track.php*"
+      "http://escape.anzp.de/track.php*",
+	  "http://co10esc.anzp.de/api*",
+	  "http://localhost:5093/api/session*"
    };
 };
 class CfgLeaflets

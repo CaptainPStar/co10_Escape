@@ -3,7 +3,7 @@ if(isserver) then {
 		A3E_CronTimer = 0;
 	};
 	if(isNil("A3E_CronTime")) then {
-		A3E_CronTime = 1; //s
+		A3E_CronTime = 5; //s
 	};
 	if(isNil("A3E_CronProcesses")) then {
 		A3E_CronProcesses= [];
@@ -11,11 +11,17 @@ if(isserver) then {
 	if(isNil("A3E_CronTick")) then {
 		A3E_CronTick=true;
 	};
+	if(isNil("A3E_CronTrigger")) then {
+		A3E_CronTrigger = objNull; //
+	};
+	private["_trigger"];
 
-	private["_DTrg"];
-	//_DTrg="EmptyDetector" createvehicle [0,0,0];
-	_DTrg=createvehicle ["EmptyDetector",[0,0,0],false];
-	_DTrg setTriggerArea[0,0,0,true];
-	_DTrg setTriggerActivation["NONE","PRESENT",true];
-	_DTrg setTriggerStatements["diag_tickTime>=A3E_CronTimer && A3E_CronTick",  "[] call a3e_fnc_chronos_run;A3E_CronTick = false;", "A3E_CronTick = true;"]; 
+	_trigger = createTrigger["EmptyDetector", [0,0,0], false];
+	_trigger setTriggerInterval A3E_CronTime;
+	_trigger setTriggerArea[0, 0, 0, false];
+	_trigger setTriggerActivation["NONE", "PRESENT", true];
+	_trigger setTriggerTimeout [0, 0, 0, false];
+	_trigger setTriggerStatements["A3E_CronTick", "A3E_CronTick = false; [] call a3e_fnc_chronos_run;", "A3E_CronTick = true;"];
+	
+	A3E_CronTrigger = _trigger;
 };

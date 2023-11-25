@@ -1,0 +1,1 @@
+[] call A3E_fnc_StartSession;

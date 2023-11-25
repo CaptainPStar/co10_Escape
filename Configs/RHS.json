@@ -4,7 +4,7 @@
 		{
 			"name" : "RHS w",
 			"path" : "./Mods/RHS w/",
-			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr","rhs_cti_insurgents"],
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "RHS US vs RU+CDF",
@@ -24,10 +24,10 @@
 		{
 			"name" : "RHS d",
 			"path" : "./Mods/RHS d/",
-			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr","rhs_cti_insurgents"],
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
-					"MOD" : "RHS US vs RU",
+					"MOD" : "RHS US vs RU+SAF",
 					"PLAYERSIDE" : "WEST",
 					"PLAYERUNIT_1" : "rhsusf_army_ucp_teamleader",
 					"PLAYERUNIT_2" : "rhsusf_army_ucp_javelin",
@@ -44,150 +44,10 @@
 		{
 			"name" : "RHS mf",
 			"path" : "./Mods/RHS mf/",
-			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr","rhs_cti_insurgents"],
+			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
 			"replace" :
 				{
 					"MOD" : "RHS US vs RU",
-					"PLAYERSIDE" : "WEST",
-					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
-					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_javelin",
-					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_stinger",
-					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
-					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
-					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
-					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_riflemanat",
-					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
-					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_marksman",
-					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic"
-				}
-		},
-		{
-			"name" : "RHS w CAF eu",
-			"path" : "./Mods/RHS w CAF eu/",
-			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
-			"replace" :
-				{
-					"MOD" : "RHS US vs RU+CAF",
-					"PLAYERSIDE" : "WEST",
-					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
-					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_javelin",
-					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_stinger",
-					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
-					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
-					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
-					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_riflemanat",
-					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
-					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_marksman",
-					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic"
-				}
-		},
-		{
-			"name" : "RHS d CAF me",
-			"path" : "./Mods/RHS d CAF me/",
-			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
-			"replace" :
-				{
-					"MOD" : "RHS US vs RU+CAF",
-					"PLAYERSIDE" : "WEST",
-					"PLAYERUNIT_1" : "rhsusf_army_ucp_teamleader",
-					"PLAYERUNIT_2" : "rhsusf_army_ucp_javelin",
-					"PLAYERUNIT_3" : "rhsusf_army_ucp_aa",
-					"PLAYERUNIT_4" : "rhsusf_army_ucp_engineer",
-					"PLAYERUNIT_5" : "rhsusf_army_ucp_grenadier",
-					"PLAYERUNIT_6" : "rhsusf_army_ucp_machinegunner",
-					"PLAYERUNIT_7" : "rhsusf_army_ucp_riflemanat",
-					"PLAYERUNIT_8" : "rhsusf_army_ucp_rifleman",
-					"PLAYERUNIT_9" : "rhsusf_army_ucp_marksman",
-					"PLAYERUNIT_10" : "rhsusf_army_ucp_medic"
-				}
-		},
-		{
-			"name" : "RHS mf CAF pi",
-			"path" : "./Mods/RHS mf CAF pi/",
-			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
-			"replace" :
-				{
-					"MOD" : "RHS US vs RU+CAF",
-					"PLAYERSIDE" : "WEST",
-					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
-					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_javelin",
-					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_stinger",
-					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
-					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
-					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
-					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_riflemanat",
-					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
-					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_marksman",
-					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic"
-				}
-		},
-		{
-			"name" : "RHS w LOP ua",
-			"path" : "./Mods/RHS w LOP ua/",
-			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
-			"replace" :
-				{
-					"MOD" : "RHS US vs RU+LOP",
-					"PLAYERSIDE" : "WEST",
-					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
-					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_javelin",
-					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_stinger",
-					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
-					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
-					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
-					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_riflemanat",
-					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
-					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_marksman",
-					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic"
-				}
-		},
-		{
-			"name" : "RHS w LOP sla",
-			"path" : "./Mods/RHS w LOP sla/",
-			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
-			"replace" :
-				{
-					"MOD" : "RHS US vs RU+LOP",
-					"PLAYERSIDE" : "WEST",
-					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
-					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_javelin",
-					"PLAYERUNIT_3" : "rhsusf_usmc_marpat_wd_stinger",
-					"PLAYERUNIT_4" : "rhsusf_usmc_marpat_wd_engineer",
-					"PLAYERUNIT_5" : "rhsusf_usmc_marpat_wd_grenadier",
-					"PLAYERUNIT_6" : "rhsusf_usmc_marpat_wd_machinegunner",
-					"PLAYERUNIT_7" : "rhsusf_usmc_marpat_wd_riflemanat",
-					"PLAYERUNIT_8" : "rhsusf_usmc_marpat_wd_rifleman",
-					"PLAYERUNIT_9" : "rhsusf_usmc_marpat_wd_marksman",
-					"PLAYERUNIT_10" : "rhsusf_navy_marpat_wd_medic"
-				}
-		},
-		{
-			"name" : "RHS d LOP am",
-			"path" : "./Mods/RHS d LOP am/",
-			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
-			"replace" :
-				{
-					"MOD" : "RHS US vs RU+LOP",
-					"PLAYERSIDE" : "WEST",
-					"PLAYERUNIT_1" : "rhsusf_army_ucp_teamleader",
-					"PLAYERUNIT_2" : "rhsusf_army_ucp_javelin",
-					"PLAYERUNIT_3" : "rhsusf_army_ucp_aa",
-					"PLAYERUNIT_4" : "rhsusf_army_ucp_engineer",
-					"PLAYERUNIT_5" : "rhsusf_army_ucp_grenadier",
-					"PLAYERUNIT_6" : "rhsusf_army_ucp_machinegunner",
-					"PLAYERUNIT_7" : "rhsusf_army_ucp_riflemanat",
-					"PLAYERUNIT_8" : "rhsusf_army_ucp_rifleman",
-					"PLAYERUNIT_9" : "rhsusf_army_ucp_marksman",
-					"PLAYERUNIT_10" : "rhsusf_army_ucp_medic"
-				}
-		},
-		{
-			"name" : "RHS mf LOP afr",
-			"path" : "./Mods/RHS mf LOP afr/",
-			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
-			"replace" :
-				{
-					"MOD" : "RHS US vs RU+LOP",
 					"PLAYERSIDE" : "WEST",
 					"PLAYERUNIT_1" : "rhsusf_usmc_marpat_wd_officer",
 					"PLAYERUNIT_2" : "rhsusf_usmc_marpat_wd_javelin",
@@ -222,26 +82,6 @@
 				}
 		},
 		{
-			"name" : "RHS-US w LOP napa+pmc",
-			"path" : "./Mods/RHS-US w LOP napa+pmc/",
-			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr","lop_faction_napa","lop_faction_pmc"],
-			"replace" :
-				{
-					"MOD" : "RHS RU vs US+LOP",
-					"PLAYERSIDE" : "EAST",
-					"PLAYERUNIT_1" : "rhs_vdv_flora_sergeant",
-					"PLAYERUNIT_2" : "rhs_vdv_flora_at",
-					"PLAYERUNIT_3" : "rhs_vdv_flora_aa",
-					"PLAYERUNIT_4" : "rhs_vdv_flora_engineer",
-					"PLAYERUNIT_5" : "rhs_vdv_flora_grenadier",
-					"PLAYERUNIT_6" : "rhs_vdv_flora_machinegunner",
-					"PLAYERUNIT_7" : "rhs_vdv_flora_LAT",
-					"PLAYERUNIT_8" : "rhs_vdv_flora_rifleman",
-					"PLAYERUNIT_9" : "rhs_vdv_flora_marksman",
-					"PLAYERUNIT_10" : "rhs_vdv_flora_medic"
-				}
-		},
-		{
 			"name" : "RHS-US d",
 			"path" : "./Mods/RHS-US d/",
 			"require" : ["rhsusf_c_troops","rhs_c_troops","rhs_c_trucks","rhs_c_cars","rhs_c_a2port_car","rhs_c_a2port_air","rhs_c_btr"],
@@ -259,6 +99,26 @@
 					"PLAYERUNIT_8" : "rhs_vdv_des_rifleman",
 					"PLAYERUNIT_9" : "rhs_vdv_des_marksman",
 					"PLAYERUNIT_10" : "rhs_vdv_des_medic"
+				}
+		},        
+		{
+			"name" : "RHS-HIDF",
+			"path" : "./Mods/RHS-HIDF/",
+			"require" : ["rhs_c_troops","rhsgref_c_troops","rhsgref_c_vehicles_ret","rhsgref_c_air","RHSGREF_c_A29","rhsgref_c_canoe"],
+			"replace" :
+				{
+					"MOD" : "RHS RU vs HIDF+TLA",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "rhs_vdv_mflora_sergeant",
+					"PLAYERUNIT_2" : "rhs_vdv_mflora_at",
+					"PLAYERUNIT_3" : "rhs_vdv_mflora_aa",
+					"PLAYERUNIT_4" : "rhs_vdv_mflora_engineer",
+					"PLAYERUNIT_5" : "rhs_vdv_mflora_grenadier",
+					"PLAYERUNIT_6" : "rhs_vdv_mflora_machinegunner",
+					"PLAYERUNIT_7" : "rhs_vdv_mflora_grenadier_rpg",
+					"PLAYERUNIT_8" : "rhs_vdv_mflora_rifleman",
+					"PLAYERUNIT_9" : "rhs_vdv_mflora_marksman",
+					"PLAYERUNIT_10" : "rhs_vdv_mflora_medic"
 				}
 		}
 	],
@@ -281,14 +141,14 @@
 		{
 			"island" : "Tanoa",
 			"sqm": "Tanoa",
-			"mod" : "RHS mf",
+			"mod" : "RHS w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
 		{
 			"island" : "Malden 2035",
 			"sqm": "Malden",
-			"mod" : "RHS mf",
+			"mod" : "RHS w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
@@ -310,6 +170,27 @@
 			"island" : "WeferlingenWinter",
 			"sqm": "WeferlingenW",
 			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+        {
+			"island" : "Gabreta",
+			"sqm": "Gabreta",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+        {
+			"island" : "Polanek",
+			"sqm": "Polanek",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Sefrou-Ramal",
+			"sqm": "Sefrou-Ramal",
+			"mod" : "RHS d",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
@@ -379,7 +260,7 @@
 		{
 			"island" : "Isla Duala",
 			"sqm": "IslaDuala3",
-			"mod" : "RHS mf",
+			"mod" : "RHS d",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
@@ -393,14 +274,7 @@
 		{
 			"island" : "Lingor",
 			"sqm": "Lingor3",
-			"mod" : "RHS mf",
-			"replace" : {},
-			"name" : "co10_Escape_RHS_US_vs_RU"
-		},
-		{
-			"island" : "Dingor",
-			"sqm": "Dingor",
-			"mod" : "RHS mf",
+			"mod" : "RHS w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
@@ -463,16 +337,16 @@
 		{
 			"island" : "Porto",
 			"sqm": "Porto",
-			"mod" : "RHS-US d",
+			"mod" : "RHS d",
 			"replace" : {},
-			"name" : "co10_Escape_RHS_RU_vs_US"
+			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
 		{
 			"island" : "Porto",
 			"sqm": "Porto",
-			"mod" : "RHS mf",
+			"mod" : "RHS-US d",
 			"replace" : {},
-			"name" : "co10_Escape_RHS_US_vs_RU"
+			"name" : "co10_Escape_RHS_RU_vs_US"
 		},
 		{
 			"island" : "Thirsk",
@@ -491,7 +365,7 @@
 		{
 			"island" : "Capraia",
 			"sqm": "IsolaDiCapraia",
-			"mod" : "RHS mf",
+			"mod" : "RHS d",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
@@ -559,6 +433,20 @@
 			"name" : "co10_Escape_RHS_RU_vs_US"
 		},
 		{
+			"island" : "Al Salman",
+			"sqm": "Al Salman",
+			"mod" : "RHS d",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Al Salman",
+			"sqm": "Al Salman",
+			"mod" : "RHS-US d",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
 			"island" : "Esseker",
 			"sqm": "Esseker",
 			"mod" : "RHS w",
@@ -568,7 +456,7 @@
 		{
 			"island" : "Australia",
 			"sqm": "Australia",
-			"mod" : "RHS mf",
+			"mod" : "RHS d",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
@@ -650,6 +538,13 @@
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
 		{
+			"island" : "Virolahti",
+			"sqm": "VT7",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
 			"island" : "Ruha",
 			"sqm": "Ruha",
 			"mod" : "RHS w",
@@ -691,6 +586,34 @@
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
+		{
+			"island" : "Ihantala",
+			"sqm": "Ihantala",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+        {
+			"island" : "IhantalaW",
+			"sqm": "IhantalaW",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Hellanmaa",
+			"sqm": "Hellanmaa",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+        {
+			"island" : "HellanmaaW",
+			"sqm": "HellanmaaW",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
         {
 			"island" : "Mull of Kintyre",
 			"sqm": "rof_mok",
@@ -698,17 +621,59 @@
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
+        {
+			"island" : "Scottish Highlands",
+			"sqm": "ScottishHighlands",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+        {
+			"island" : "County Fermanagh",
+			"sqm": "CountyFermanagh",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+        {
+			"island" : "Fapovo",
+			"sqm": "Fapovo",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
 		{
 			"island" : "Prei Khmaoch Luong Legacy",
 			"sqm": "prei_khmaoch_luong",
-			"mod" : "RHS mf",
+			"mod" : "RHS w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
 		{
 			"island" : "Prei Khmaoch Luong RHS",
 			"sqm": "rhspkl",
-			"mod" : "RHS mf",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Colombia",
+			"sqm": "UMB_Colombia",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Niakala",
+			"sqm": "Niakala",
+			"mod" : "RHS w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
@@ -734,6 +699,13 @@
 			"name" : "co10_Escape_RHS_RU_vs_US"
 		},
 		{
+			"island" : "Tanoa",
+			"sqm": "Tanoa",
+			"mod" : "RHS-HIDF",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_HIDF"
+		},
+		{
 			"island" : "Malden 2035",
 			"sqm": "Malden",
 			"mod" : "RHS-US w",
@@ -758,6 +730,27 @@
 			"island" : "WeferlingenWinter",
 			"sqm": "WeferlingenW",
 			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+        {
+			"island" : "Gabreta",
+			"sqm": "Gabreta",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+        {
+			"island" : "Polanek",
+			"sqm": "Polanek",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Sefrou-Ramal",
+			"sqm": "Sefrou-Ramal",
+			"mod" : "RHS-US d",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_RU_vs_US"
 		},
@@ -830,6 +823,13 @@
 			"mod" : "RHS-US w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+        {
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "RHS-HIDF",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_HIDF"
 		},
 		{
 			"island" : "Sahrani",
@@ -939,7 +939,7 @@
 		{
 			"island" : "Diyala",
 			"sqm": "DYA",
-			"mod" : "RHS mf",
+			"mod" : "RHS d",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_US_vs_RU"
 		},
@@ -967,6 +967,13 @@
 		{
 			"island" : "Valtatie 5",
 			"sqm": "VT5",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Virolahti",
+			"sqm": "VT7",
 			"mod" : "RHS-US w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_RU_vs_US"
@@ -1013,9 +1020,58 @@
 			"replace" : {},
 			"name" : "co10_Escape_RHS_RU_vs_US"
 		},
+		{
+			"island" : "Ihantala",
+			"sqm": "Ihantala",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+        {
+			"island" : "IhantalaW",
+			"sqm": "IhantalaW",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Hellanmaa",
+			"sqm": "Hellanmaa",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+        {
+			"island" : "HellanmaaW",
+			"sqm": "HellanmaaW",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
         {
 			"island" : "Mull of Kintyre",
 			"sqm": "rof_mok",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+        {
+			"island" : "Scottish Highlands",
+			"sqm": "ScottishHighlands",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+        {
+			"island" : "County Fermanagh",
+			"sqm": "CountyFermanagh",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+        {
+			"island" : "Fapovo",
+			"sqm": "Fapovo",
 			"mod" : "RHS-US w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_RU_vs_US"
@@ -1028,6 +1084,13 @@
 			"name" : "co10_Escape_RHS_RU_vs_US"
 		},
 		{
+			"island" : "Prei Khmaoch Luong Legacy",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "RHS-HIDF",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_HIDF"
+		},
+		{
 			"island" : "Prei Khmaoch Luong RHS",
 			"sqm": "rhspkl",
 			"mod" : "RHS-US w",
@@ -1035,11 +1098,11 @@
 			"name" : "co10_Escape_RHS_RU_vs_US"
 		},
 		{
-			"island" : "Southeast Angola",
-			"sqm": "seangola",
-			"mod" : "RHS mf",
+			"island" : "Prei Khmaoch Luong RHS",
+			"sqm": "rhspkl",
+			"mod" : "RHS-HIDF",
 			"replace" : {},
-			"name" : "co10_Escape_RHS_US_vs_RU"
+			"name" : "co10_Escape_RHS_RU_vs_HIDF"
 		},
 		{
 			"island" : "Southeast Angola",
@@ -1079,13 +1142,6 @@
 		{
 			"island" : "Kujari",
 			"sqm": "Kujari",
-			"mod" : "RHS mf",
-			"replace" : {},
-			"name" : "co10_Escape_RHS_US_vs_RU"
-		},
-		{
-			"island" : "Kujari",
-			"sqm": "Kujari",
 			"mod" : "RHS-US d",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_RU_vs_US"
@@ -1114,6 +1170,20 @@
 		{
 			"island" : "Bukovina",
 			"sqm": "Bootcamp_ACR",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Bystrica",
+			"sqm": "Woodland_ACR",
+			"mod" : "RHS w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Bystrica",
+			"sqm": "Woodland_ACR",
 			"mod" : "RHS-US w",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_RU_vs_US"
@@ -1201,12 +1271,194 @@
 			"mod" : "RHS-US d",
 			"replace" : {},
 			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Colombia",
+			"sqm": "UMB_Colombia",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Colombia",
+			"sqm": "UMB_Colombia",
+			"mod" : "RHS-HIDF",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_HIDF"
+		},
+		{
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "RHS-HIDF",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_HIDF"
+		},
+		{
+			"island" : "Niakala",
+			"sqm": "Niakala",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Niakala",
+			"sqm": "Niakala",
+			"mod" : "RHS-HIDF",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_HIDF"
+		},
+		{
+			"island" : "Mutambara",
+			"sqm": "Mutambara",
+			"mod" : "RHS d",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Mutambara",
+			"sqm": "Mutambara",
+			"mod" : "RHS-US d",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Mutambara",
+			"sqm": "Mutambara",
+			"mod" : "RHS-HIDF",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_HIDF"
+		},		
+		{
+			"island" : "Sumava",
+			"sqm": "Sumava",
+			"mod" : "RHS d",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Sumava",
+			"sqm": "Sumava",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Maksniemi",
+			"sqm": "Maksniemi",
+			"mod" : "RHS d",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Maksniemi",
+			"sqm": "Maksniemi",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "RHS d",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "RHS d",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Kapaulio",
+			"sqm": "Kapaulio",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Kapaulio",
+			"sqm": "Kapaulio",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Kapaulio",
+			"sqm": "Kapaulio",
+			"mod" : "RHS-HIDF",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_HIDF"
+		},
+		{
+			"island" : "IslaPera",
+			"sqm": "IslaPera",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "IslaPera",
+			"sqm": "IslaPera",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "IslaPera",
+			"sqm": "IslaPera",
+			"mod" : "RHS-HIDF",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_HIDF"
+		},
+		{
+			"island" : "Farabad",
+			"sqm": "Farabad",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_US"
+		},
+		{
+			"island" : "Farabad",
+			"sqm": "Farabad",
+			"mod" : "RHS-US w",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_US_vs_RU"
+		},
+		{
+			"island" : "Farabad",
+			"sqm": "Farabad",
+			"mod" : "RHS-HIDF",
+			"replace" : {},
+			"name" : "co10_Escape_RHS_RU_vs_HIDF"
 		}
 	],
 	"Addons" : [
 		{
 			"name" : "RHS",
-			"mods" : ["RHS w","RHS d","RHS mf","RHS-US w","RHS-US d"]
+			"mods" : ["RHS w","RHS d","RHS mf","RHS-US w","RHS-US d","RHS-HIDF"]
 		}
 	]
 	

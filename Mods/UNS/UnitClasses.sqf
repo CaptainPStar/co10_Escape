@@ -548,7 +548,7 @@ a3e_arr_AmmoDepotVehicleBackpacks = ["UNS_NVA_R3"];
 
 a3e_arr_AmmoDepotItems = [];
 a3e_arr_AmmoDepotItems pushback ["uns_binocular_navy", 10, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["uns_ANPVS2", 10, 1, 3];
 };
 a3e_arr_AmmoDepotItems pushback ["uns_binocular_army", 50, 2, 3, [], 0];
@@ -578,7 +578,7 @@ a3e_arr_AmmoDepotItems pushback ["uns_o_Unertl8x", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["uns_o_PU", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["uns_o_PSO1", 30, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["uns_o_PSO1_camo", 10, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["uns_o_ANPVS2_M16", 10, 1, 1];
 	a3e_arr_AmmoDepotItems pushback ["uns_o_ANPVS2", 10, 1, 1];
 	a3e_arr_AmmoDepotItems pushback ["uns_o_ANPVS2_M14", 10, 1, 2];
@@ -716,13 +716,13 @@ a3e_arr_searchChopper_pilot = [
 a3e_arr_searchChopper_crew = [
 	"uns_nvaf_pilot5"];
 
-if(Param_SearchChopper==0) then {
+if(A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
 };
-if(Param_SearchChopper==1) then {
+if(A3E_Param_SearchChopper==1) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
 };
-if(Param_SearchChopper==2) then {
+if(A3E_Param_SearchChopper==2) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperHard;
 };
 
@@ -843,7 +843,7 @@ a3e_arr_CrashSiteCrewCar = [
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["uns_m72", 40, 1, 2, ["uns_m72rocket"], 1];
 a3e_arr_CrashSiteWeapons pushback ["uns_m20_bazooka", 20, 1, 2, ["uns_M28A2_mag","uns_M30_smoke_mag"], 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_CrashSiteWeapons pushback ["uns_m3carbine", 10, 1, 2, ["uns_m2carbinemag"], 8];
 };
 a3e_arr_CrashSiteWeapons pushback ["uns_m1carbine_pouch", 75, 1, 2, ["uns_m1carbinemag"], 8];

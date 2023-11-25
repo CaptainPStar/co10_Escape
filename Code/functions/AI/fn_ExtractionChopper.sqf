@@ -6,7 +6,7 @@ while {alive _heli && !_extract} do {
 	private _state = _heli getvariable ["State","Unknown"];
 	switch (_state) do {
 		case "Init": { 
-			systemchat "Init Heli";
+			["Extraction choppers created.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			_heli setvariable ["State","Approach"];
 			private _waypoint = (group _heli) addWaypoint [_extractPos, 30];
 			_waypoint setWaypointSpeed "FULL";
@@ -15,7 +15,7 @@ while {alive _heli && !_extract} do {
 			_waypoint setWaypointStatements ["true", "(vehicle this) setvariable [""State"",""Land""];"];
 		};
 		case "Approach": { 
-			systemchat "Approaching";
+			["Extraction choppers switch to approach.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			if(_heli distance _extractPos < 300) then {
 				_heli setSpeedMode "NORMAL";
 				_heli flyinheight 30;
@@ -26,7 +26,7 @@ while {alive _heli && !_extract} do {
 			};
 		};
 		case "Land": { 
-			systemchat "Landing";
+			["Extraction choppers are landing.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			_heli land "LAND";
 			sleep 10;
 			if(_heli getvariable ["State","Unknown"] != "Evac") then {
@@ -34,7 +34,7 @@ while {alive _heli && !_extract} do {
 			};
 		};
 		case "WaitForPlayers": {
-			systemchat "Waiting";
+			["Extraction choppers are awaiting players.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			if(!isTouchingGround _heli) then {
 				if(_heli getvariable ["State","Unknown"] != "Evac") then {
 					_heli setvariable ["State","Land"];
@@ -42,7 +42,7 @@ while {alive _heli && !_extract} do {
 			};
 		};
 		case "Evac": { 
-			systemchat "Extracting";
+			["Extraction choppers are moving out for evac.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			sleep (random 4 + 1);
 			_heli land "NONE";
 			_heli setSpeedMode "FULL";

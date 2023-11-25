@@ -6,7 +6,7 @@ while {alive _car && !_extract} do {
 	private _state = _car getvariable ["State","Unknown"];
 	switch (_state) do {
 		case "Init": { 
-			systemchat "Init Car";
+			["Extraction vehicles created.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			_car setvariable ["State","Approach"];
 			private _waypoint = (group _car) addWaypoint [_extractPos, 0];
 			_waypoint setWaypointSpeed "FULL";
@@ -15,7 +15,7 @@ while {alive _car && !_extract} do {
 			_waypoint setWaypointStatements ["true", "(vehicle this) setvariable [""State"",""Land""];"];
 		};
 		case "Approach": { 
-			systemchat "Approaching";
+			["Extraction vehicles switch to approach.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			if(_car distance _extractPos < 100) then {
 				_car setSpeedMode "NORMAL";
 			};
@@ -24,7 +24,7 @@ while {alive _car && !_extract} do {
 			};
 		};
 		case "Land": { 
-			systemchat "Parking";
+			["Extraction vehicles are parking.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			_car land "LAND";
 			sleep 10;
 			if(_car getvariable ["State","Unknown"] != "Evac") then {
@@ -32,7 +32,7 @@ while {alive _car && !_extract} do {
 			};
 		};
 		case "WaitForPlayers": {
-			systemchat "Waiting";
+			["Extraction vehicles are awaiting players.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			if(!isTouchingGround _car) then {
 				if(_car getvariable ["State","Unknown"] != "Evac") then {
 					_car setvariable ["State","Land"];
@@ -40,7 +40,7 @@ while {alive _car && !_extract} do {
 			};
 		};
 		case "Evac": { 
-			systemchat "Extracting";
+			["Extraction vehicles are moving out for evac.",["Extraction"],[_extractPos]] call A3E_fnc_Log;
 			sleep (random 4 + 1);
 			_car land "NONE";
 			_car setSpeedMode "FULL";
