@@ -123,7 +123,7 @@ A3E_Task_Exfil_Complete = true;
 publicvariable "A3E_Task_Exfil_Complete";
 sleep 35;
 
-if({vehicle _x == _car1 || vehicle _x == _car2} count (call A3E_fnc_GetPlayers) == count (call A3E_fnc_GetPlayers)) then {
+if({vehicle _x == _car1 || vehicle _x == _car2 || vehicle _x == _car3} count (call A3E_fnc_GetPlayers) == count (call A3E_fnc_GetPlayers)) then {
 	a3e_var_Escape_MissionComplete = true;
 	publicVariable "a3e_var_Escape_MissionComplete";
 } else {

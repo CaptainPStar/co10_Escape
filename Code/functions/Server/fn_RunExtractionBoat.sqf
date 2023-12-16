@@ -72,7 +72,7 @@ _group3 setGroupIdGlobal ["Hammerhead"];
 _heloGuard = {
 	params["_boat"];
 	sleep 6;
-	private _msg = ["We are taking damage!","We are sinking!","Under fire!","We are under fire!","Taking damage!","I thought the extraction zone was safe!","I thought the coast zone was clear!"];
+	private _msg = ["We are taking damage!","We are sinking!","Under fire!","We are under fire!","Taking damage!","I thought the extraction zone was safe!","I thought the coast was clear!"];
 	waituntil{sleep 0.5;((getDammage _boat)>0.1)};
 	if(alive (driver _boat)) then {
 		[driver _boat,selectRandom _msg] remoteExec ["sideChat",0,false];
@@ -133,7 +133,7 @@ A3E_Task_Exfil_Complete = true;
 publicvariable "A3E_Task_Exfil_Complete";
 sleep 35;
 
-if({vehicle _x == _boat1 || vehicle _x == _boat2} count (call A3E_fnc_GetPlayers) == count (call A3E_fnc_GetPlayers)) then {
+if({vehicle _x == _boat1 || vehicle _x == _boat2 || vehicle _x == _boat3} count (call A3E_fnc_GetPlayers) == count (call A3E_fnc_GetPlayers)) then {
 	a3e_var_Escape_MissionComplete = true;
 	publicVariable "a3e_var_Escape_MissionComplete";
 } else {
