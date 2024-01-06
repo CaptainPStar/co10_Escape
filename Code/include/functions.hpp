@@ -30,14 +30,14 @@ class CfgFunctions
 			class GetPlayerGroup {};
 			class CallRandomFunction {};
 			class Briefing {
-			
+
 			//	postInit = 1;
 			};
 			class InitLocalPlayer {
 	#ifndef A3E_EDITOR
 				postInit = 0;
 	#endif
-			};			
+			};
 			class cleanupTerrain {};
 			class handleRating {};
 			class handleScore {};
@@ -46,6 +46,7 @@ class CfgFunctions
 			class initArsenal {};
 			class toggleEarplugs {};
 			class initVillageMarkers {};
+			class loadLocalClasses {};
 		};
 		class AI
 		{
@@ -89,7 +90,7 @@ class CfgFunctions
 			class GetRndBuilding {};
 			class GetRndBuildingPosition {};
 			class GetRndBuildingWithPositions {};
-			
+
 		};
 		class Debug
 		{
@@ -130,7 +131,7 @@ class CfgFunctions
             };
 			class initPlayer {};
 			class watchKnownPosition {};
-			class parameterInit {}; 
+			class parameterInit {};
             class createComCenters {};
             class createMotorPools {};
             class createAmmoDepots {};
@@ -185,7 +186,7 @@ class CfgFunctions
 			class DeactivateZone {};
 			class SerializeZoneGroups {};
 			class DeserializeZoneGroups {};
-			
+
 		};
 		class Templates
 		{
@@ -231,8 +232,8 @@ class CfgFunctions
 			class Roadblock4 {};
 			class Roadblock_VN1 {};
 			class Roadblock_VN2 {};
-			class isoTemplateStore {};		
-			class isoTemplateRestore {};	
+			class isoTemplateStore {};
+			class isoTemplateRestore {};
 			class LoadTemplates {};
 		};
 		class Chronos
@@ -265,15 +266,15 @@ class CfgFunctions
 			class SearchLeaderRadio {};
 			class CreateKnownPosition {};
 			class onPlayerSpotted {};
-			
+
 		};
 	};
 	class drn
 	{
 		class DRN
 		{
-			class AmbientInfantry {}; 
-			class MoveInfantryGroup {}; 
+			class AmbientInfantry {};
+			class MoveInfantryGroup {};
 			class MonitorEmptyGroups {};
 			class PopulateLocation {};
 			class DepopulateLocation {};
@@ -281,7 +282,7 @@ class CfgFunctions
 			class InsertionTruck {};
 			class MilitaryTraffic {};
 			class MoveVehicle {};
-			class MotorizedSearchGroup {};	
+			class MotorizedSearchGroup {};
 			class SearchChopper {};
 			class SearchGroup {};
 			class PopulateAquaticPatrol {};

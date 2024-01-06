@@ -5,6 +5,7 @@ A3E_Param_UseDLCLaws = 1;
 A3E_Param_NoNightvision = 0;
 A3E_Param_SearchChopper = 2;
 [3] call compile preprocessFileLineNumbers "Units\UnitClasses.sqf";
+call compile preprocessFileLineNumbers "functions\Common\fn_loadLocalClasses.sqf";
 
 private _arraysVehicle = [
     a3e_arr_Escape_StartPositionGuardTypes,
