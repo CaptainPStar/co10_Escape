@@ -1,7 +1,7 @@
 /*
  * Description: This file contains the vehicle types and unit types for the units spawned in the mission, and the weapons and magazines found in ammo boxes/cars.
- * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain 
- * many elements of the same type, so the example array ["Offroad_DSHKM_INS", "Pickup_PK_INS", "Pickup_PK_INS"] will spawn an Offroad with 1/3 probability, and a 
+ * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain
+ * many elements of the same type, so the example array ["Offroad_DSHKM_INS", "Pickup_PK_INS", "Pickup_PK_INS"] will spawn an Offroad with 1/3 probability, and a
  * Pickup with 2/3 probability.
  */
 
@@ -385,7 +385,7 @@ a3e_arr_Escape_InfantryTypes = [
 	,"CUP_O_SLA_Soldier_AT"
 	,"CUP_O_SLA_Soldier_HAT"
 	,"CUP_O_SLA_Soldier_AA"
-	,"CUP_O_SLA_Engineer"	
+	,"CUP_O_SLA_Engineer"
 	,"CUP_O_SLA_Engineer"
 	,"CUP_O_SLA_Soldier_MG"
 	,"CUP_O_SLA_Soldier_AR"
@@ -493,7 +493,7 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 
 
-// A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
+// A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random
 // light *and* a random heavy armor.
 
 // Random array. Light armored vehicles guarding the communication centers.
@@ -866,7 +866,7 @@ a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ750_SOS_bipod", "CUP_10Rnd_76
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_slamfire", "CUP_1Rnd_12Gauge_Pellets_No00_Buck", 20];
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_slamfire", "CUP_1Rnd_12Gauge_HE", 20];
 a3e_arr_CivilianCarWeapons pushback ["CUP_launch_RPG18","CUP_RPG18_M", 1];
-a3e_arr_CivilianCarWeapons pushback ["MineDetector", objNull, 0]
+a3e_arr_CivilianCarWeapons pushback ["MineDetector", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Medikit", objNull, 0];
 //a3e_arr_CivilianCarWeapons pushback ["Toolkit", objNull, 0];
 a3e_arr_CivilianCarWeapons pushback ["Binocular", objNull, 0];
@@ -1120,7 +1120,7 @@ a3e_arr_CrashSiteWeapons pushback ["CUP_glaunch_M32", 10, 1, 2, ["CUP_6Rnd_HE_M2
 a3e_arr_CrashSiteWeapons pushback ["CUP_hgun_FlareGun", 10, 1, 2, ["CUP_StarClusterGreen_265_M"], 6];
 a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_G36C_holo_snds", 75, 2, 4, ["CUP_30Rnd_556x45_G36"], 4];
 a3e_arr_CrashSiteWeapons pushback ["CUP_lmg_M60E4", 20, 1, 2, ["CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M"], 5];
-a3e_arr_CrashSiteWeapons pushback ["CUP_B_USMC_Sniper_M40A3", 10, 1, 2, ["CUP_5Rnd_762x51_M24"], 10];
+a3e_arr_CrashSiteWeapons pushback ["CUP_srifle_M40A3", 10, 1, 2, ["CUP_5Rnd_762x51_M24"], 10];
 a3e_arr_CrashSiteWeapons pushback ["CUP_srifle_M110_black", 10, 1, 2, ["CUP_20Rnd_762x51_B_M110"], 8];
 a3e_arr_CrashSiteWeapons pushback ["CUP_lmg_Mk48", 10, 1, 2, ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M"], 6];
 // Attachments and other items in crash site box

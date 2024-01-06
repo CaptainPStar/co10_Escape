@@ -1,10 +1,10 @@
 /*
  * Description: This file contains the vehicle types and unit types for the units spawned in the mission, and the weapons and magazines found in ammo boxes/cars.
- * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain 
- * many elements of the same type, so the example array ["Offroad_DSHKM_INS", "Pickup_PK_INS", "Pickup_PK_INS"] will spawn an Offroad with 1/3 probability, and a 
+ * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain
+ * many elements of the same type, so the example array ["Offroad_DSHKM_INS", "Pickup_PK_INS", "Pickup_PK_INS"] will spawn an Offroad with 1/3 probability, and a
  * Pickup with 2/3 probability.
  */
- 
+
 //DON'T USE M1130 IT CAN'T HOLD PASSENGERS FOR SOME REASON
 
 private ["_enemyFrequency"];
@@ -29,7 +29,7 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 	"CUP_I_TK_GUE_Soldier"
 	,"CUP_I_TK_GUE_Soldier"
 	,"CUP_I_TK_GUE_Soldier_GL"
-	,"CUP_I_TK_GUE_Guerilla_Enfield" 
+	,"CUP_I_TK_GUE_Guerilla_Enfield"
 	,"CUP_I_TK_GUE_Soldier_AK_47S"
 	,"CUP_I_TK_GUE_Soldier_AR"];
 
@@ -401,14 +401,14 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"	
+		,"CUP_B_MTVR_USA"
         ,"CUP_B_M1030_USA"  //3
 		,"CUP_B_HMMWV_Ambulance_USA"
 		,"CUP_B_HMMWV_Transport_USA"
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"	
+		,"CUP_B_MTVR_USA"
 		,"CUP_B_M1030_USA"  //4
 		,"CUP_B_HMMWV_Ambulance_USA"
 		,"CUP_B_HMMWV_Transport_USA"
@@ -422,7 +422,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"	
+		,"CUP_B_MTVR_USA"
         ,"CUP_B_M1030_USA"  //6
 		,"CUP_B_HMMWV_Ambulance_USA"
 		,"CUP_B_HMMWV_Transport_USA"
@@ -443,8 +443,8 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"		
-		//Supply Trucks 
+		,"CUP_B_MTVR_USA"
+		//Supply Trucks
 		,"CUP_B_MTVR_Ammo_USA"  //1
 		,"CUP_B_MTVR_Refuel_USA"
 		,"CUP_B_MTVR_Repair_USA"
@@ -475,7 +475,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_MK19_USA"
 		,"CUP_B_HMMWV_TOW_USA"
 		,"CUP_B_HMMWV_Crows_M2_USA"
-		,"CUP_B_HMMWV_Crows_MK19_USA"	
+		,"CUP_B_HMMWV_Crows_MK19_USA"
 		,"CUP_B_HMMWV_M2_GPK_USA"
 		,"CUP_B_HMMWV_M2_USA"
 		,"CUP_B_HMMWV_SOV_M2_USA"
@@ -496,11 +496,11 @@ switch (_enemyFrequency) do {
 		,"CUP_B_RG31_M2_GC_USA"
 		//Light Armed APCs  1 set
         ,"CUP_B_M113_desert_USA"
-        ,"CUP_B_M113_desert_USA"	
         ,"CUP_B_M113_desert_USA"
         ,"CUP_B_M113_desert_USA"
-        ,"CUP_B_M113_desert_USA"	
-        ,"CUP_B_M113_desert_USA"		
+        ,"CUP_B_M113_desert_USA"
+        ,"CUP_B_M113_desert_USA"
+        ,"CUP_B_M113_desert_USA"
 		//Heavily Armed APCs or AA
         ,"CUP_B_M6LineBacker_USA_D"
 		,"CUP_B_M1126_ICV_M2_Desert"
@@ -590,7 +590,7 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_BMP1_TK"
 		,"CUP_I_Hilux_btr60_TK"
 		//MRAPs  1 set
-		,"CUP_I_BRDM2_TK_Gue" 
+		,"CUP_I_BRDM2_TK_Gue"
 		,"CUP_I_BRDM2_ATGM_TK_Gue"
 		,"CUP_I_BRDM2_HQ_TK_Gue"
 		,"CUP_I_Hilux_armored_BMP1_TK"
@@ -601,7 +601,7 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_armored_igla_TK"
 		,"CUP_I_Hilux_zu23_TK"
 	    ,"CUP_I_Hilux_armored_zu23_TK"
-        ,"CUP_I_Datsun_AA_TK_Random"		
+        ,"CUP_I_Datsun_AA_TK_Random"
 		//Heavily Armed APCs  1 set
 		,"CUP_I_BMP1_TK_GUE"
         ,"CUP_I_BMP1_TK_GUE"
@@ -632,14 +632,14 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"	
+		,"CUP_B_MTVR_USA"
         ,"CUP_B_M1030_USA"  //3
 		,"CUP_B_HMMWV_Ambulance_USA"
 		,"CUP_B_HMMWV_Transport_USA"
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"	
+		,"CUP_B_MTVR_USA"
 		,"CUP_B_M1030_USA"  //4
 		,"CUP_B_HMMWV_Ambulance_USA"
 		,"CUP_B_HMMWV_Transport_USA"
@@ -653,15 +653,15 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"	
+		,"CUP_B_MTVR_USA"
         ,"CUP_B_M1030_USA"  //6
 		,"CUP_B_HMMWV_Ambulance_USA"
 		,"CUP_B_HMMWV_Transport_USA"
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"		
-		//Supply Trucks 
+		,"CUP_B_MTVR_USA"
+		//Supply Trucks
 		,"CUP_B_MTVR_Ammo_USA"  //1
 		,"CUP_B_MTVR_Refuel_USA"
 		,"CUP_B_MTVR_Repair_USA"
@@ -692,7 +692,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_MK19_USA"
 		,"CUP_B_HMMWV_TOW_USA"
 		,"CUP_B_HMMWV_Crows_M2_USA"
-		,"CUP_B_HMMWV_Crows_MK19_USA"	
+		,"CUP_B_HMMWV_Crows_MK19_USA"
 		,"CUP_B_HMMWV_M2_GPK_USA"
 		,"CUP_B_HMMWV_M2_USA"
 		,"CUP_B_HMMWV_SOV_M2_USA"
@@ -706,7 +706,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_MK19_USA"
 		,"CUP_B_HMMWV_TOW_USA"
 		,"CUP_B_HMMWV_Crows_M2_USA"
-		,"CUP_B_HMMWV_Crows_MK19_USA"	
+		,"CUP_B_HMMWV_Crows_MK19_USA"
 		,"CUP_B_HMMWV_M2_GPK_USA"
 		,"CUP_B_HMMWV_M2_USA"
 		,"CUP_B_HMMWV_SOV_M2_USA"
@@ -735,11 +735,11 @@ switch (_enemyFrequency) do {
 		,"CUP_B_RG31_M2_GC_USA"
 		//Light Armed APCs  1 set
         ,"CUP_B_M113_desert_USA"
-        ,"CUP_B_M113_desert_USA"	
         ,"CUP_B_M113_desert_USA"
         ,"CUP_B_M113_desert_USA"
-        ,"CUP_B_M113_desert_USA"	
-        ,"CUP_B_M113_desert_USA"		
+        ,"CUP_B_M113_desert_USA"
+        ,"CUP_B_M113_desert_USA"
+        ,"CUP_B_M113_desert_USA"
 		//Heavily Armed APCs or AA
         ,"CUP_B_M6LineBacker_USA_D"
 		,"CUP_B_M1126_ICV_M2_Desert"
@@ -851,7 +851,7 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_igla_TK"
 		,"CUP_I_Hilux_armored_igla_TK"
 		,"CUP_I_Hilux_zu23_TK"
-	    ,"CUP_I_Hilux_armored_zu23_TK" 
+	    ,"CUP_I_Hilux_armored_zu23_TK"
 		,"CUP_I_Datsun_AA_TK_Random"
 		,"CUP_I_Ural_ZU23_TK_Gue"  //2
 		,"CUP_I_Hilux_igla_TK"
@@ -889,14 +889,14 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"	
+		,"CUP_B_MTVR_USA"
         ,"CUP_B_M1030_USA"  //3
 		,"CUP_B_HMMWV_Ambulance_USA"
 		,"CUP_B_HMMWV_Transport_USA"
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"	
+		,"CUP_B_MTVR_USA"
 		,"CUP_B_M1030_USA"  //4
 		,"CUP_B_HMMWV_Ambulance_USA"
 		,"CUP_B_HMMWV_Transport_USA"
@@ -910,15 +910,15 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"	
+		,"CUP_B_MTVR_USA"
         ,"CUP_B_M1030_USA"  //6
 		,"CUP_B_HMMWV_Ambulance_USA"
 		,"CUP_B_HMMWV_Transport_USA"
 		,"CUP_B_HMMWV_Terminal_USA"
 		,"CUP_B_M1151_USA"
 		,"CUP_B_M1152_USA"
-		,"CUP_B_MTVR_USA"	
-		//Supply Trucks 
+		,"CUP_B_MTVR_USA"
+		//Supply Trucks
 		,"CUP_B_MTVR_Ammo_USA"  //1
 		,"CUP_B_MTVR_Refuel_USA"
 		,"CUP_B_MTVR_Repair_USA"
@@ -949,7 +949,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_MK19_USA"
 		,"CUP_B_HMMWV_TOW_USA"
 		,"CUP_B_HMMWV_Crows_M2_USA"
-		,"CUP_B_HMMWV_Crows_MK19_USA"	
+		,"CUP_B_HMMWV_Crows_MK19_USA"
 		,"CUP_B_HMMWV_M2_GPK_USA"
 		,"CUP_B_HMMWV_M2_USA"
 		,"CUP_B_HMMWV_SOV_M2_USA"
@@ -963,7 +963,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_HMMWV_MK19_USA"
 		,"CUP_B_HMMWV_TOW_USA"
 		,"CUP_B_HMMWV_Crows_M2_USA"
-		,"CUP_B_HMMWV_Crows_MK19_USA"	
+		,"CUP_B_HMMWV_Crows_MK19_USA"
 		,"CUP_B_HMMWV_M2_GPK_USA"
 		,"CUP_B_HMMWV_M2_USA"
 		,"CUP_B_HMMWV_SOV_M2_USA"
@@ -992,11 +992,11 @@ switch (_enemyFrequency) do {
 		,"CUP_B_RG31_M2_GC_USA"
 		//Light Armed APCs  1 set
         ,"CUP_B_M113_desert_USA"
-        ,"CUP_B_M113_desert_USA"	
         ,"CUP_B_M113_desert_USA"
         ,"CUP_B_M113_desert_USA"
-        ,"CUP_B_M113_desert_USA"	
-        ,"CUP_B_M113_desert_USA"		
+        ,"CUP_B_M113_desert_USA"
+        ,"CUP_B_M113_desert_USA"
+        ,"CUP_B_M113_desert_USA"
 		//Heavily Armed APCs or AA  2 sets
         ,"CUP_B_M6LineBacker_USA_D"
 		,"CUP_B_M1126_ICV_M2_Desert"
@@ -1118,13 +1118,13 @@ switch (_enemyFrequency) do {
 		,"CUP_I_Hilux_igla_TK"
 		,"CUP_I_Hilux_armored_igla_TK"
 		,"CUP_I_Hilux_zu23_TK"
-		,"CUP_I_Hilux_armored_zu23_TK" 
+		,"CUP_I_Hilux_armored_zu23_TK"
 		,"CUP_I_Datsun_AA_TK_Random"
 		,"CUP_I_Ural_ZU23_TK_Gue"  //2
 		,"CUP_I_Hilux_igla_TK"
 		,"CUP_I_Hilux_armored_igla_TK"
 		,"CUP_I_Hilux_zu23_TK"
-	    ,"CUP_I_Hilux_armored_zu23_TK" 
+	    ,"CUP_I_Hilux_armored_zu23_TK"
 		,"CUP_I_Datsun_AA_TK_Random"
 		//Heavily Armed APCs  2 sets
 		,"CUP_I_BMP1_TK_GUE"  //1
@@ -1438,10 +1438,10 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	,"CUP_I_Hilux_armored_SPG9_TK"
 	,"CUP_I_Hilux_armored_zu23_TK"
     ,"CUP_I_Hilux_armored_BMP1_TK"
-    ,"CUP_I_Hilux_armored_btr60_TK"	
+    ,"CUP_I_Hilux_armored_btr60_TK"
 	,"CUP_I_BRDM2_TK_Gue"
 	,"CUP_I_BRDM2_ATGM_TK_Gue"];
-	
+
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
@@ -1449,7 +1449,7 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	"CUP_I_V3S_Open_TKG"
 	,"CUP_I_V3S_Covered_TKG"];
-    
+
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
@@ -1466,7 +1466,7 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 
 
-// A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
+// A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random
 // light *and* a random heavy armor.
 
 // Random array. Light armored vehicles guarding the communication centers.
@@ -1801,7 +1801,7 @@ a3e_arr_I_pilots = [
 a3e_arr_AmmoDepotBasicWeapons = [];
 // CSAT weapons
 
- 
+
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_hgun_M9", 50, 2, 5, ["CUP_15Rnd_9x19_M9"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_hgun_Colt1911", 50, 2, 5, ["CUP_7Rnd_45ACP_1911"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_smg_MP5A5", 20, 1, 2, ["CUP_30Rnd_9x19_MP5"], 8];
@@ -1979,8 +1979,8 @@ a3e_arr_AmmoDepotItems pushback ["B_UavTerminal", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_ElcanM145", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_Eotech553_Black", 50, 1, 5];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_Eotech553_Coyote", 50, 1, 5];
-a3e_arr_AmmoDepotItems pushback ["CUP_optic_Eotech553Grey", 50, 1, 5];
-a3e_arr_AmmoDepotItems pushback ["CUP_optic_Eotech553", 50, 1, 5];
+a3e_arr_AmmoDepotItems pushback ["CUP_optic_Eotech533Grey", 50, 1, 5];
+a3e_arr_AmmoDepotItems pushback ["CUP_optic_Eotech533", 50, 1, 5];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_G33_HWS_BLK", 25, 1, 5];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_G33_HWS_COYOTE", 25, 1, 5];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_G33_HWS_TAN", 25, 1, 5];
@@ -2065,7 +2065,7 @@ a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_mfsup_Suppressor_M107_Black", 10, 1
 //Bipods
 a3e_arr_AmmoDepotItems pushback ["CUP_bipod_VLTOR_Modpod_black", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["CUP_bipod_VLTOR_Modpod", 20, 1, 2];
-//INDEP Equipment 
+//INDEP Equipment
 //SCOPES
 if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_4", 20, 1, 3];
@@ -2108,8 +2108,8 @@ a3e_arr_CivilianCarWeapons pushback [objNull, "SmokeShell", 5];
 a3e_arr_Scopes = [
     "CUP_optic_ElcanM145"
 	,"CUP_optic_Eotech553_Black"
-	,"CUP_optic_Eotech553Grey"
-	,"CUP_optic_Eotech553"
+	,"CUP_optic_Eotech533Grey"
+	,"CUP_optic_Eotech533"
 	,"CUP_optic_G33_HWS_BLK"
     ,"CUP_optic_LeupoldMk4_CQ_T"
     ,"CUP_optic_CompM2_low"
@@ -2151,7 +2151,7 @@ a3e_arr_Scopes = [
 	,"CUP_optic_ElcanM145"];
 a3e_arr_Scopes_SMG = [
 	"CUP_optic_Eotech533"
-	,"CUP_optic_Eotech553Grey"];
+	,"CUP_optic_Eotech533Grey"];
 a3e_arr_Scopes_Sniper = [
     "CUP_optic_LeupoldMk4"
    ,"CUP_optic_LeupoldMk4_10x40_LRT_Desert"
@@ -2376,14 +2376,16 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	 "Mi8Wreck"
+	 "CUP_Ka52Wreck"
+	,"CUP_KA60_Wreck"
+	,"CUP_Mi24Wreck"
+	,"CUP_SU25Wreck"
+	,"CUP_SU34Wreck"
 	,"CUP_Mi8Wreck"];
 a3e_arr_CrashSiteCrew = [
 	"CUP_O_RU_Pilot"];
 a3e_arr_CrashSiteWrecksCar = [
-	 "BMP2Wreck"
-	,"Land_Wreck_T72_hull_F"
-	,"BRDMWreck"];
+	 "Land_Wreck_T72_hull_F"];
 a3e_arr_CrashSiteCrewCar = [
 	"CUP_O_RU_Crew"];
 // Weapons and ammo in crash site box
