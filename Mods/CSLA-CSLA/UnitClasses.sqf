@@ -56,7 +56,6 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	"CSLA_CIV_ADA1600"
 	,"CSLA_CIV_ADA1600"
 	,"CSLA_CIV_ADA1600"
-	,"CSLA_CIV_ADA1600VB"
 	,"CSLA_CIV_JARA250"
 	,"CSLA_CIV_V3S"
 	,"CSLA_CIV_V3Sr"
@@ -65,12 +64,16 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
-	,"CSLA_CIV_Sarka1200PO"
 	,"CSLA_civ_CATOR"];
 	if(A3E_Param_UseDLCContact==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Tractor_01_F";
 	};
-	
+// Random array. Same Civilian vehicle classes, but exempt from random passenger classes
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClassesSpecial = [
+	"CSLA_CIV_ADA1600VB"
+	,"CSLA_CIV_Sarka1200PO"
+	,"CSLA_CIV_Sarka1200VB"];
+
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
 switch (_enemyFrequency) do {

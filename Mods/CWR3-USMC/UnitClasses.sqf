@@ -60,17 +60,13 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"cwr3_c_rapid"
 	,"cwr3_c_s1203"
 	,"cwr3_c_s1203"
-	,"cwr3_c_s1203_ambulance"
-	,"cwr3_c_s1203_police"
 	,"cwr3_c_bus"
-	,"cwr3_c_cj5_police"
 	,"cwr3_c_gaz24"
 	,"cwr3_c_gaz24"
 	,"cwr3_c_gaz24"
 	,"cwr3_c_lada"
 	,"cwr3_c_lada"
 	,"cwr3_c_lada"
-	,"cwr3_c_lada_police"
 	,"cwr3_c_landrover_blue"
 	,"cwr3_c_landrover_red"
 	,"cwr3_c_landrover_yellow"
@@ -86,10 +82,19 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"cwr3_c_tractor_old"
 	,"cwr3_c_uaz452"
 	,"cwr3_c_uaz452"
-	,"cwr3_c_uaz452_police"
 	,"cwr3_c_ural_blue"
 	,"cwr3_c_ural_yellow"];
-	
+// Random array. Same Civilian vehicle classes, but exempt from random passenger classes
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClassesSpecial = [
+	"cwr3_c_s1203_ambulance"
+	,"cwr3_c_s1203_militia"
+	,"cwr3_c_s1203_police"
+	,"cwr3_c_cj5_militia"
+	,"cwr3_c_cj5_police"
+	,"cwr3_c_lada_militia"
+	,"cwr3_c_uaz452_militia"
+	,"cwr3_c_uaz452_police"];
+
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
 switch (_enemyFrequency) do {

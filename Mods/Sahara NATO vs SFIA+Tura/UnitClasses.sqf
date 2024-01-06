@@ -78,10 +78,6 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"C_Truck_02_fuel_F"
 	,"C_Truck_02_box_F"
 	//Western Sahara
-	,"C_IDAP_Offroad_lxWS"
-	,"C_IDAP_Truck_02_cargo_lxWS"
-	,"C_IDAP_Truck_02_flatbed_lxWS"
-	,"C_IDAP_Truck_02_box_lxWS"
 	,"C_Offroad_lxWS"
 	,"C_Offroad_lxWS"
 	,"C_Offroad_lxWS"
@@ -89,18 +85,35 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"C_Offroad_lxWS"
 	,"C_Offroad_lxWS"
 	,"C_Truck_02_cargo_lxWS"
-	,"C_Truck_02_flatbed_lxWS"
-	,"C_Truck_02_racing_lxWS"];
+	,"C_Truck_02_flatbed_lxWS"];
 	if(A3E_Param_UseDLCApex==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	};
 	if(A3E_Param_UseDLCLaws==1) then {
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
+	};
+// Random array. Same Civilian vehicle classes, but exempt from random passenger classes
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClassesSpecial = [
+	"C_IDAP_Offroad_02_unarmed_F"
+	,"C_IDAP_Offroad_01_F"
+	,"C_IDAP_Offroad_lxWS"
+	,"C_IDAP_Van_02_medevac_F"
+	,"C_IDAP_Van_02_vehicle_F"
+	,"C_IDAP_Van_02_transport_F"
+	,"C_IDAP_Truck_02_cargo_lxWS"
+	,"C_IDAP_Truck_02_flatbed_lxWS"
+	,"C_IDAP_Truck_02_box_lxWS"
+	,"C_IDAP_Truck_02_transport_F"
+	,"C_IDAP_Truck_02_F"
+	,"C_IDAP_Truck_02_water_F"
+	,"C_IDAP_Truck_02_water_F"
+	,"C_Truck_02_racing_lxWS"];
+	if(A3E_Param_UseDLCLaws==1) then {
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
 	};
 	
 // Random arrays. Enemy vehicle classes for ambient traffic.

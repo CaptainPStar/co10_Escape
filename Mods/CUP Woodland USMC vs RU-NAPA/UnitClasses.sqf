@@ -91,8 +91,6 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_C_Skoda_CR_CIV"
 	,"CUP_C_S1203_CIV_CR"
 	,"CUP_C_S1203_CIV_CR"
-	,"CUP_B_S1203_Ambulance_CR"
-	,"CUP_C_S1203_Militia_CIV"
 	,"CUP_C_Datsun_Covered"
 	,"CUP_C_Datsun_Plain"
 	,"CUP_C_Datsun_Tubeframe"
@@ -124,7 +122,6 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_C_Lada_CIV"
 	,"CUP_C_Lada_CIV"
 	,"CUP_C_Lada_CIV"
-	,"CUP_LADA_LM_CIV"
 	//Vanilla
 	,"C_Hatchback_01_F"
 	,"C_Hatchback_01_F"
@@ -148,9 +145,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	};
 	if(A3E_Param_UseDLCLaws==1) then {
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
 	};
@@ -160,6 +155,15 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_01_covered_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_01_covered_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_01_comms_F";
+	};
+// Random array. Same Civilian vehicle classes, but exempt from random passenger classes
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClassesSpecial = [
+	"CUP_LADA_LM_CIV"
+	,"CUP_B_S1203_Ambulance_CR"
+	,"CUP_C_S1203_Militia_CIV"];
+	if(A3E_Param_UseDLCLaws==1) then {
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
 	};
 
 // Random arrays. Enemy vehicle classes for ambient traffic.

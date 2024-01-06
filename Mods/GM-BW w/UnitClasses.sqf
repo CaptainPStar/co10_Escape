@@ -71,31 +71,21 @@ a3e_arr_PrisonBackpackWeapons pushback ["gm_pm63_blk", "gm_25Rnd_9x18mm_B_pst_pm
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	"gm_ge_civ_u1300l"
 	,"gm_ge_civ_u1300l"
-	,"gm_ge_ff_u1300l_firefighter"
-	,"gm_ge_ff_u1300l_medic"
 	,"gm_ge_civ_typ1200"
 	,"gm_ge_civ_typ1200"
 	,"gm_ge_civ_typ1200"
 	,"gm_ge_civ_typ1200"
 	,"gm_ge_civ_typ1200"
-	,"gm_ge_ff_typ1200"
-	,"gm_ge_pol_typ1200"
-	,"gm_ge_dbp_typ1200"
 	,"gm_ge_civ_typ247"
 	,"gm_ge_civ_typ247"
 	,"gm_ge_civ_typ247"
 	,"gm_ge_ff_typ247"
-	,"gm_ge_ff_typ247_firefighter"
-	,"gm_ge_dbp_typ247"
 	,"gm_ge_civ_typ251"
 	,"gm_ge_civ_typ251"
-	,"gm_ge_dbp_typ251"
 	,"gm_ge_civ_typ253"
 	,"gm_ge_civ_typ253"
 	,"gm_ge_civ_typ253"
 	,"gm_ge_civ_typ253"
-	,"gm_ge_ff_typ253"
-	,"gm_ge_pol_typ253"
 	,"gm_ge_taxi_typ253"
 	,"gm_ge_taxi_typ253"
 	,"gm_ge_civ_w123"
@@ -103,17 +93,30 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"gm_ge_civ_w123"
 	,"gm_ge_civ_w123"
 	,"gm_ge_civ_w123"
-	,"gm_ge_ff_w123"
-	,"gm_ge_pol_w123"
-	,"gm_ge_dbp_w123"
 	,"gm_ge_taxi_w123"
 	,"gm_ge_taxi_w123"
-	,"gm_ge_taxi_w123"
-	,"gm_ge_pol_bicycle_01_grn"
-	,"gm_ge_dbp_bicycle_01_ylw"];
+	,"gm_ge_taxi_w123"];
 	if(A3E_Param_UseDLCContact==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Tractor_01_F";
 	};
+// Random array. Same Civilian vehicle classes, but exempt from random passenger classes
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClassesSpecial = [
+	"gm_ge_ff_u1300l_firefighter"
+	,"gm_ge_ff_typ247_firefighter"
+	,"gm_ge_ff_typ1200"
+	,"gm_ge_pol_typ1200"
+	,"gm_ge_dbp_typ1200"
+	,"gm_ge_ff_typ247"
+	,"gm_ge_dbp_typ247"
+	,"gm_ge_dbp_typ251"
+	,"gm_ge_ff_typ253"
+	,"gm_ge_pol_typ253"
+	,"gm_ge_ff_u1300l_medic"
+	,"gm_ge_ff_w123"
+	,"gm_ge_pol_w123"
+	,"gm_ge_dbp_w123"
+	,"gm_ge_pol_bicycle_01_grn"
+	,"gm_ge_dbp_bicycle_01_ylw"];
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).

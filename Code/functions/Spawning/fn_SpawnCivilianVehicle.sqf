@@ -1,7 +1,8 @@
 params["_pos"];
 
-private _possibleVehicles = missionnamespace getvariable ["a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses",[]];
-
+private _possibleVehiclesNormal = missionnamespace getvariable ["a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses",[]];
+private _possibleVehiclesSpecial = missionnamespace getvariable ["a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClassesSpecial",[]];
+private _possibleVehicles = _possibleVehiclesNormal + _possibleVehiclesSpecial;
 
 if(count(_possibleVehicles) == 0) exitwith {
 	["No civilian vehicle defined.",["Spawning","CivilianCommuters"]] call a3e_fnc_log;

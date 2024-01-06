@@ -297,10 +297,6 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_C_S1203_CIV_CR"
 	,"CUP_C_S1203_CIV_CR"
 	,"CUP_C_S1203_CIV_CR"
-	,"CUP_B_S1203_Ambulance_CR"
-	,"CUP_B_S1203_Ambulance_CR"
-	,"CUP_B_S1203_Ambulance_CR"
-	,"CUP_B_S1203_Ambulance_CR"
 	,"CUP_C_SUV_CIV"
 	,"CUP_C_SUV_CIV"
 	,"CUP_C_SUV_CIV"
@@ -375,9 +371,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	};
 	if(A3E_Param_UseDLCLaws==1) then {
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
@@ -388,6 +382,16 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_01_covered_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_01_covered_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_01_comms_F";
+	};
+// Random array. Same Civilian vehicle classes, but exempt from random passenger classes
+a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClassesSpecial = [
+	"CUP_B_S1203_Ambulance_CR"
+	,"CUP_B_S1203_Ambulance_CR"
+	,"CUP_B_S1203_Ambulance_CR"
+	,"CUP_B_S1203_Ambulance_CR"];
+	if(A3E_Param_UseDLCLaws==1) then {
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
 	};
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
