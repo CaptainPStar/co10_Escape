@@ -42,6 +42,26 @@
 				}
 		},
 		{
+			"name" : "CWR3-USdesert",
+			"path" : "./Mods/CWR3-USdesert/",
+			"require" : ["cwr3_expansion_usmc","cwr3_soldiers_us","cwr3_soldiers_fia","cwr3_soldiers_ru","cwr3_civilians"],
+			"replace" :
+				{
+					"MOD" : "CWR TK vs US and UN",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "CUP_O_TK_Commander",
+					"PLAYERUNIT_2" : "CUP_O_TK_Soldier_AR",
+					"PLAYERUNIT_3" : "CUP_O_TK_Soldier_GL",
+					"PLAYERUNIT_4" : "CUP_O_TK_Engineer",
+					"PLAYERUNIT_5" : "CUP_O_TK_Soldier_GL",
+					"PLAYERUNIT_6" : "CUP_O_TK_Soldier_MG",
+					"PLAYERUNIT_7" : "CUP_O_TK_Soldier_AT",
+					"PLAYERUNIT_8" : "CUP_O_TK_Soldier",
+					"PLAYERUNIT_9" : "CUP_O_TK_Soldier_M",
+					"PLAYERUNIT_10" : "CUP_O_TK_Medic"
+				}
+		},
+		{
 			"name" : "CWR3-SOV",
 			"path" : "./Mods/CWR3-SOV/",
 			"require" : ["cwr3_soldiers_us","cwr3_soldiers_fia","cwr3_soldiers_ru","cwr3_civilians"],
@@ -1607,64 +1627,183 @@
 		{
 			"island" : "Kapaulio",
 			"sqm": "Kapaulio",
-			"mod" : "CWR3-SOV",
+			"mod" : "CWR3-US",
 			"replace" : {},
 			"name" : "co10_Escape_CWR3_SOV_vs_US"
 		},
 		{
 			"island" : "Kapaulio",
 			"sqm": "Kapaulio",
-			"mod" : "CWR3-SOV",
-			"replace" : {},
-			"name" : "co10_Escape_CWR3_SOV_vs_USMC"
-		},
-		{
-			"island" : "IslaPera",
-			"sqm": "IslaPera",
-			"mod" : "CWR3-SOV",
-			"replace" : {},
-			"name" : "co10_Escape_CWR3_US_vs_SOV"
-		},
-		{
-			"island" : "IslaPera",
-			"sqm": "IslaPera",
-			"mod" : "CWR3-SOV",
-			"replace" : {},
-			"name" : "co10_Escape_CWR3_SOV_vs_US"
-		},
-		{
-			"island" : "IslaPera",
-			"sqm": "IslaPera",
-			"mod" : "CWR3-SOV",
-			"replace" : {},
-			"name" : "co10_Escape_CWR3_SOV_vs_USMC"
-		},
-		{
-			"island" : "Farabad",
-			"sqm": "Farabad",
-			"mod" : "CWR3-SOV",
-			"replace" : {},
-			"name" : "co10_Escape_CWR3_US_vs_SOV"
-		},
-		{
-			"island" : "Farabad",
-			"sqm": "Farabad",
-			"mod" : "CWR3-SOV",
-			"replace" : {},
-			"name" : "co10_Escape_CWR3_SOV_vs_US"
-		},
-		{
-			"island" : "Farabad",
-			"sqm": "Farabad",
 			"mod" : "CWR3-USMC",
 			"replace" : {},
 			"name" : "co10_Escape_CWR3_SOV_vs_USMC"
+		},
+		{
+			"island" : "IslaPera",
+			"sqm": "IslaPera",
+			"mod" : "CWR3-SOV",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_US_vs_SOV"
+		},
+		{
+			"island" : "IslaPera",
+			"sqm": "IslaPera",
+			"mod" : "CWR3-US",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_SOV_vs_US"
+		},
+		{
+			"island" : "IslaPera",
+			"sqm": "IslaPera",
+			"mod" : "CWR3-USMC",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_SOV_vs_USMC"
+		},
+		{
+			"island" : "Sefrou-Ramal",
+			"sqm" : "Sefrou-Ramal",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Dingor",
+			"sqm": "Dingor",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Isla Duala",
+			"sqm": "IslaDuala3",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Takistan",
+			"sqm": "Takistan",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Zargabad",
+			"sqm": "Zargabad",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Capraia",
+			"sqm": "IsolaDiCapraia",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Clafghan",
+			"sqm": "Clafghan",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Al Rayak",
+			"sqm": "pja310",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Lythium",
+			"sqm": "Lythium",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Fallujah",
+			"sqm": "Fallujah",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Diyala",
+			"sqm": "DYA",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Porto",
+			"sqm": "Porto",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Southeast Angola",
+			"sqm": "seangola",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Kujari",
+			"sqm": "Kujari",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Reshmaan",
+			"sqm": "reshmaan",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"											   
+		},
+		{
+			"island" : "Anizay",
+			"sqm": "tem_anizay",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Al Salman",
+			"sqm": "Al Salman",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Mutambara",
+			"sqm": "Mutambara",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Farabad",
+			"sqm": "Farabad",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
+		},
+		{
+			"island" : "Sahatra",
+			"sqm": "Sahatra",
+			"mod" : "CWR3-USdesert",
+			"replace" : {},
+			"name" : "co10_Escape_CWR3_TK_vs_US"
 		}
 	],
 	"Addons" : [
 		{
 			"name" : "CWR3",
-			"mods" : ["CWR3-US","CWR3-USMC","CWR3-SOV"]
+			"mods" : ["CWR3-US","CWR3-USMC","CWR3-SOV","CWR3-USdesert"]
 		}
 	]
 	
