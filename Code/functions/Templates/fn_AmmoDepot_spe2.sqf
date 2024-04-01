@@ -94,7 +94,9 @@ _obj = ["Land_SPE_bocage_long_mound",_center,[10.282,0.111816,0],_rotation,0] ca
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+             if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
@@ -137,7 +139,9 @@ _obj = ["Land_SPE_bocage_long_mound",_center,[10.282,0.111816,0],_rotation,0] ca
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+             if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
@@ -187,7 +191,9 @@ _obj = ["Land_SPE_bocage_long_mound",_center,[10.282,0.111816,0],_rotation,0] ca
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+             if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
@@ -230,7 +236,9 @@ _obj = ["Land_SPE_bocage_long_mound",_center,[10.282,0.111816,0],_rotation,0] ca
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+            if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
