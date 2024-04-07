@@ -10,12 +10,6 @@ sleep 0.5;
 
 [player] remoteExec ["a3e_fnc_initPlayer", 2];
 
-[] spawn {
-	disableSerialization;
-	waitUntil {!isNull(findDisplay 46)};
-	(findDisplay 46) displayAddEventHandler ["keyDown", "_this call a3e_fnc_KeyDown"];
-};
-
 
 AT_Revive_StaticRespawns = [];
 AT_Revive_enableRespawn = false;
