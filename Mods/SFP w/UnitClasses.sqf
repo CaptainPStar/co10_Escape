@@ -13,9 +13,9 @@ private ["_enemyFrequency"];
 
 _enemyFrequency = _this select 0;
 
-A3E_VAR_Side_Blufor = east; //BIS LDF
-A3E_VAR_Side_Opfor = west; //SFP Sweden 2000-2015	(and some 1990-2000 vehicles)
-A3E_VAR_Side_Ind = resistance; //FFP - Finnish Forces
+A3E_VAR_Side_Blufor = east; //CUP ION
+A3E_VAR_Side_Opfor = west; //SFP Sweden 1990-2000 Snow
+A3E_VAR_Side_Ind = resistance; //FFP - Finnish Forces Snow
 
 A3E_VAR_Flag_Opfor = "\sfp_config\data\flag_sweden_co.paa";
 A3E_VAR_Flag_Ind = "\ffp_config\data\flag_finland_co.paa";
@@ -119,14 +119,12 @@ switch (_enemyFrequency) do {
     case 1: {//Few (1-3)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
 		//Unarmed Cars/UAVs  2 sets
-		"sfp_bv206"  //1
+		"sfp_bv206_winter"  //1
 		,"sfp_tgb11"
 		,"sfp_tgb1112"
-		,"sfp_tgb16"	//MRAP
-		,"sfp_bv206"  //2
+		,"sfp_bv206_winter"  //2
 		,"sfp_tgb11"
 		,"sfp_tgb1112"
-		,"sfp_tgb16"	//MRAP
 		//Supply Trucks  1 set
 		,"sfp_tgb1314"
 		,"sfp_tgb1317"
@@ -136,26 +134,20 @@ switch (_enemyFrequency) do {
 		,"sfp_tgb13_ksp58"
 		,"sfp_tgb1111_sog_rbs56"	//commMG and AT
 		,"sfp_tgb1111"				//SPG
-		//MRAPs  1 set
-		,"sfp_tgb16_ksp58"
-		,"sfp_tgb16_ksp58_mp"
-		,"sfp_tgb16_rws"
 		//Armed APC
-		,"sfp_pbv302"
-		,"sfp_pbv302_mounted"
-		,"sfp_patgb360"
+		,"sfp_pbv302_snow"
+		,"sfp_pbv302_mounted_snow"
 		//Heavily Armed APCs or AA
-		,"sfp_strf90c"
-		,"sfp_lvkv90c"	//AA
+		,"sfp_strf90c_snow"
+		,"sfp_lvkv90c_snow"	//AA
 		//Artillery
-		,"sfp_grkpbv90120"	//tank
 		,"sfp_robotbil15"	//rocket truck
 		//Tanks
-		,"sfp_ikv91"
+		,"sfp_ivk91_snow"
 		,"sfp_strv102"
 		,"sfp_strv103c"
-		,"sfp_strv121"
-		,"sfp_strv122"];
+		,"sfp_strv121_snow"
+		,"sfp_strv122_snow"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		//Unarmed Cars/UAVs
 		"sfp_police_offroad"
@@ -187,14 +179,12 @@ switch (_enemyFrequency) do {
     case 2: {//Some (4-6)
 	    a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
 		//Unarmed Cars/UAVs  2 sets
-		"sfp_bv206"  //1
+		"sfp_bv206_winter"  //1
 		,"sfp_tgb11"
 		,"sfp_tgb1112"
-		,"sfp_tgb16"	//MRAP
-		,"sfp_bv206"  //2
+		,"sfp_bv206_winter"  //2
 		,"sfp_tgb11"
 		,"sfp_tgb1112"
-		,"sfp_tgb16"	//MRAP
 		//Supply Trucks  1 set
 		,"sfp_tgb1314"
 		,"sfp_tgb1317"
@@ -204,26 +194,20 @@ switch (_enemyFrequency) do {
 		,"sfp_tgb13_ksp58"
 		,"sfp_tgb1111_sog_rbs56"	//commMG and AT
 		,"sfp_tgb1111"				//SPG
-		//MRAPs  1 set
-		,"sfp_tgb16_ksp58"
-		,"sfp_tgb16_ksp58_mp"
-		,"sfp_tgb16_rws"
 		//Armed APC
-		,"sfp_pbv302"
-		,"sfp_pbv302_mounted"
-		,"sfp_patgb360"
+		,"sfp_pbv302_snow"
+		,"sfp_pbv302_mounted_snow"
 		//Heavily Armed APCs or AA
-		,"sfp_strf90c"
-		,"sfp_lvkv90c"	//AA
+		,"sfp_strf90c_snow"
+		,"sfp_lvkv90c_snow"	//AA
 		//Artillery
-		,"sfp_grkpbv90120"	//tank
 		,"sfp_robotbil15"	//rocket truck
 		//Tanks
-		,"sfp_ikv91"
+		,"sfp_ivk91_snow"
 		,"sfp_strv102"
 		,"sfp_strv103c"
-		,"sfp_strv121"
-		,"sfp_strv122"];
+		,"sfp_strv121_snow"
+		,"sfp_strv122_snow"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		//Unarmed Cars/UAVs
 		"sfp_police_offroad"
@@ -255,14 +239,12 @@ switch (_enemyFrequency) do {
     default {//A lot (7-8)
 	    a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
 		//Unarmed Cars/UAVs  2 sets
-		"sfp_bv206"  //1
+		"sfp_bv206_winter"  //1
 		,"sfp_tgb11"
 		,"sfp_tgb1112"
-		,"sfp_tgb16"	//MRAP
-		,"sfp_bv206"  //2
+		,"sfp_bv206_winter"  //2
 		,"sfp_tgb11"
 		,"sfp_tgb1112"
-		,"sfp_tgb16"	//MRAP
 		//Supply Trucks  1 set
 		,"sfp_tgb1314"
 		,"sfp_tgb1317"
@@ -272,26 +254,20 @@ switch (_enemyFrequency) do {
 		,"sfp_tgb13_ksp58"
 		,"sfp_tgb1111_sog_rbs56"	//commMG and AT
 		,"sfp_tgb1111"				//SPG
-		//MRAPs  1 set
-		,"sfp_tgb16_ksp58"
-		,"sfp_tgb16_ksp58_mp"
-		,"sfp_tgb16_rws"
 		//Armed APC
-		,"sfp_pbv302"
-		,"sfp_pbv302_mounted"
-		,"sfp_patgb360"
+		,"sfp_pbv302_snow"
+		,"sfp_pbv302_mounted_snow"
 		//Heavily Armed APCs or AA
-		,"sfp_strf90c"
-		,"sfp_lvkv90c"	//AA
+		,"sfp_strf90c_snow"
+		,"sfp_lvkv90c_snow"	//AA
 		//Artillery
-		,"sfp_grkpbv90120"	//tank
 		,"sfp_robotbil15"	//rocket truck
 		//Tanks
-		,"sfp_ikv91"
+		,"sfp_ivk91_snow"
 		,"sfp_strv102"
 		,"sfp_strv103c"
-		,"sfp_strv121"
-		,"sfp_strv122"];
+		,"sfp_strv121_snow"
+		,"sfp_strv122_snow"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		//Unarmed Cars/UAVs
 		"sfp_police_offroad"
@@ -324,106 +300,98 @@ switch (_enemyFrequency) do {
 
 // Random array. General infantry types. E.g. village patrols, ambient infantry, etc. (for ammo depot guards and communication center guards see further down in this file at fn_InitGuardedLocations)
 a3e_arr_Escape_InfantryTypes = [
-	"sfp_m90w_engineer"
-	,"sfp_m90w_engineer"
-	,"sfp_m90w_engineer"
-	,"sfp_m90w_medic"
-	,"sfp_m90w_medic"
-	,"sfp_m90w_medic"
-	,"sfp_m90w_automaticrifleman_ksp90"
-	,"sfp_m90w_automaticrifleman_ksp90"
-	,"sfp_m90w_machinegunner_ksp58"
-	,"sfp_m90w_machinegunner_ksp58"
-	,"sfp_m90w_marksman"
-	,"sfp_m90w_marksman"
-	,"sfp_m90w_automaticrifleman_ksp90"
-	,"sfp_m90w_automaticrifleman_ksp90"
-	,"sfp_m90w_automaticrifleman_ksp90"
-	,"sfp_m90w_at_specialist_rb57"
-	,"sfp_m90w_at_specialist_rb57"
-	,"sfp_m90w_explosive_specialist"
-	,"sfp_m90w_rifleman_ak5"
-	,"sfp_m90w_rifleman_ak5"
-	,"sfp_m90w_rifleman_ak5"
-	,"sfp_m90w_rifleman_ak4"
-	,"sfp_m90w_rifleman_ak4"
-	,"sfp_m90w_gr"
-	,"sfp_m90w_gr"
-	,"sfp_m90w_gr"
-	,"sfp_m90w_gr"
-	,"sfp_m90w_at_specialist_pskott86"
-	,"sfp_m90w_at_specialist_pskott86"
-	,"sfp_m90w_rifleman_cap_peltor"
-	,"sfp_m90w_rifleman_cap_peltor"
-	,"sfp_m90w_rifleman_nbc"
-	,"sfp_m90w_rifleman_peltor"
-	,"sfp_m90w_rifleman_rto"
-	,"sfp_m90w_rifleman_fs18"
-	,"sfp_m90w_platoonleader"
-	,"sfp_m90w_rifleman_uav_op"
-	,"sfp_m90w_rifleman_uav_op"
-	,"sfp_m90w_at_loader_grg86"
-	,"sfp_m90w_at_specialist_grg86"
-	,"sfp_m90w_at_specialist_grg86"
-	,"sfp_m90w_at_loader_grg86"
-	,"sfp_m90w_rifleman_jtac"
-	,"sfp_m90w_squadleader"
-	,"sfp_m90w_teamleader"
-	,"sfp_m90w_teamleader"
-	,"sfp_m90w_sniper"
-	,"sfp_m90w_sniper"
-	,"sfp_m90w_rifleman_ag90"];
+	"sfp_m90s_engineer"
+	,"sfp_m90s_engineer"
+	,"sfp_m90s_engineer"
+	,"sfp_m90s_medic"
+	,"sfp_m90s_medic"
+	,"sfp_m90s_medic"
+	,"sfp_m90s_automaticrifleman_ksp90"
+	,"sfp_m90s_automaticrifleman_ksp90"
+	,"sfp_m90s_machinegunner_ksp58"
+	,"sfp_m90s_machinegunner_ksp58"
+	,"sfp_1990_m90s_marksman"
+	,"sfp_1990_m90s_marksman"
+	,"sfp_m90s_automaticrifleman_ksp90"
+	,"sfp_m90s_automaticrifleman_ksp90"
+	,"sfp_m90s_automaticrifleman_ksp90"
+	,"sfp_m90s_at_specialist_pskott86"
+	,"sfp_m90s_at_specialist_pskott86"
+	,"sfp_m90s_explosive_specialist"
+	,"sfp_m90s_rifleman_ak5"
+	,"sfp_m90s_rifleman_ak5"
+	,"sfp_m90s_rifleman_ak5"
+	,"sfp_m90s_rifleman_ak4"
+	,"sfp_m90s_rifleman_ak4"
+	,"sfp_m90s_gr"
+	,"sfp_m90s_gr"
+	,"sfp_m90s_gr"
+	,"sfp_m90s_gr"
+	,"sfp_m90s_aa_specialist_rbs69"
+	,"sfp_m90s_aa_specialist_rbs69"
+	,"sfp_m90s_rifleman_rto"
+	,"sfp_m90s_platoonleader"
+	,"sfp_m90s_at_loader_grg86"
+	,"sfp_m90s_at_specialist_grg86"
+	,"sfp_m90s_at_specialist_grg86"
+	,"sfp_m90s_mine_specialist"
+	,"sfp_m90s_platoonleader"
+	,"sfp_m90s_squadleader"
+	,"sfp_m90s_teamleader"
+	,"sfp_m90s_teamleader"
+	,"sfp_m90s_sniper"
+	,"sfp_m90s_sniper"
+	,"sfp_m90s_rifleman_ag90"];
 a3e_arr_Escape_InfantryTypes_Ind = [
-	"ffp_m05w_m05w_engineer"
-	,"ffp_m05w_m05w_engineer"
-	,"ffp_m05w_medic"
-	,"ffp_m05w_medic"
-	,"ffp_m05w_medic"
-	,"ffp_m05w_rifleman_ito15"
-	,"ffp_m05w_rifleman_ito15"
-	,"ffp_m05w_rifleman_ito15"
-	,"ffp_m05w_rifleman_ito15"
-	,"ffp_m05w_rifleman_ito15"
-	,"ffp_m05w_machinegunner_kk_pkm"
-	,"ffp_m05w_machinegunner_kk_pkm"
-	,"ffp_m05w_machinegunner_kk_pkm"
-	,"ffp_m05w_at_specialist_nlaw"
-	,"ffp_m05w_at_specialist_apilas"
-	,"ffp_m05w_explosive_specialist"
-	,"ffp_m05w_rifleman_rk95"
-	,"ffp_m05w_rifleman_rk95"
-	,"ffp_m05w_rifleman_rk95"
-	,"ffp_m05w_rifleman_rk95"
-	,"ffp_m05w_rifleman_jtac"
-	,"ffp_m05w_at_specialist_kes88"
-	,"ffp_m05w_at_specialist_kes88"
-	,"ffp_m05w_marksman"
-	,"ffp_m05w_marksman"
-	,"ffp_m05w_marksman"
-	,"ffp_m05w_platoonleader"
-	,"ffp_m05w_rifleman_uav_op"
-	,"ffp_m05w_rifleman_uav_op"
-	,"ffp_m05w_rifleman_uav_op_assistant"
-	,"ffp_m05w_mines_specialist"
-	,"ffp_m05w_sniper_rstkiv2000"
-	,"ffp_m05w_sniper"
-	,"ffp_m05w_squadleader"
-	,"ffp_m05w_teamleader"
-	,"ffp_m05w_teamleader"];
+	"ffp_m05s_engineer"
+	,"ffp_m05s_engineer"
+	,"ffp_m05s_medic"
+	,"ffp_m05s_medic"
+	,"ffp_m05s_medic"
+	,"ffp_m05s_rifleman_ito15"
+	,"ffp_m05s_rifleman_ito15"
+	,"ffp_m05s_rifleman_ito15"
+	,"ffp_m05s_rifleman_ito15"
+	,"ffp_m05s_rifleman_ito15"
+	,"ffp_m05s_machinegunner_kk_pkm"
+	,"ffp_m05s_machinegunner_kk_pkm"
+	,"ffp_m05s_machinegunner_kk_pkm"
+	,"ffp_m05s_at_specialist_nlaw"
+	,"ffp_m05s_at_specialist_apilas"
+	,"ffp_m05s_explosive_specialist"
+	,"ffp_m05s_rifleman_rk95"
+	,"ffp_m05s_rifleman_rk95"
+	,"ffp_m05s_rifleman_rk95"
+	,"ffp_m05s_rifleman_rk95"
+	,"ffp_m05s_rifleman_jtac"
+	,"ffp_m05s_at_specialist_kes88"
+	,"ffp_m05s_at_specialist_kes88"
+	,"ffp_m05s_marksman"
+	,"ffp_m05s_marksman"
+	,"ffp_m05s_marksman"
+	,"ffp_m05s_platoonleader"
+	,"ffp_m05s_rifleman_uav_op"
+	,"ffp_m05s_rifleman_uav_op"
+	,"ffp_m05s_rifleman_uav_op_assistant"
+	,"ffp_m05s_mines_specialist"
+	,"ffp_m05s_sniper_rstkiv2000"
+	,"ffp_m05s_sniper"
+	,"ffp_m05s_squadleader"
+	,"ffp_m05s_teamleader"
+	,"ffp_m05s_teamleader"];
 a3e_arr_recon_InfantryTypes = [
-	"sfp_m90w_sog_ksp90"
-	,"sfp_m90w_sog_at_specialist_rb57"
-	,"sfp_m90w_sog_explosive_specialist"
-	,"sfp_m90w_sog_jtac"
-	,"sfp_m90w_sog_medic"
-	,"sfp_m90w_sog_machinegunner_ksp58"
-	,"sfp_m90w_sog_ak5_sd"
-	,"sfp_m90w_sog_teamleader"
-	,"sfp_m90w_sog_uav_op"
-	,"sfp_m90w_sog_at_specialist_grg"
-	,"sfp_m90w_sog_ak5"
-	,"sfp_m90w_sog_ag90"
-	,"sfp_m90w_sog_g36"];
+	"sfp_1990_m90w_bassak_ksp90"
+	,"sfp_1990_m90w_bassak_at_specialist_grg"
+	,"sfp_1990_m90w_bassak_at_specialist"
+	,"sfp_1990_m90w_bassak_explosive_specialist"
+	,"sfp_1990_m90w_bassak_marksman"
+	,"sfp_1990_m90w_bassak_medic"
+	,"sfp_1990_m90w_bassak_machinegunner_ksp58"
+	,"sfp_1990_m90w_bassak_teamleader"
+	,"sfp_1990_m90w_bassak_ak5"
+	,"sfp_1990_m90w_bassak_ak5"
+	,"sfp_1990_m90w_bassak_ak5"
+	,"sfp_1990_m90w_bassak_ag90"];
 a3e_arr_recon_I_InfantryTypes = [
 	"ffp_m04d_sog_rk95"
 	,"ffp_m04d_sog_at_specialist_nlaw"
@@ -498,11 +466,8 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"sfp_tgb13_ksp58"
 	,"sfp_tgb1111"
 	,"sfp_tgb1111_sog_rbs56"
-	,"sfp_tgb16_ksp58"
-	,"sfp_tgb16_ksp58_mp"
-	,"sfp_tgb16_rws"
-	,"sfp_pbv302"
-	,"sfp_pbv302"];
+	,"sfp_pbv302_snow"
+	,"sfp_pbv302_snow"];
 	
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"ffp_rg32m_gmg"
@@ -519,20 +484,14 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	"sfp_tgb11"					//6
 	,"sfp_tgb13_ksp58"			//5
-	,"sfp_tgb16"				//4
 	,"sfp_tgb20"];	//12+
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
-	"sfp_tgb16_ksp58"
-	,"sfp_tgb16_ksp58_mp"
-	,"sfp_tgb16_rws"
-	,"sfp_pbv302"
-	,"sfp_pbv302_mounted"
-	,"sfp_patgb360"
-	,"sfp_patgb360"
-	,"sfp_strf90c"];
+	"sfp_pbv302_snow"
+	,"sfp_pbv302_mounted_snow"
+	,"sfp_strf90c_snow"];
 
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
@@ -540,17 +499,17 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
-	"sfp_pbv302_mounted"
-	,"sfp_ikv91"
+	"sfp_pbv302_mounted_snow"
+	,"sfp_ivk91_snow"
 	,"sfp_strv102"
 	,"sfp_strv103c"
-	,"sfp_strf90c"
-	,"sfp_lvkv90c"];
+	,"sfp_strf90c_snow"
+	,"sfp_lvkv90c_snow"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
-	"sfp_strv121"
-	,"sfp_strv122"
-	,"sfp_strv122"];
+	"sfp_strv121_snow"
+	,"sfp_strv122_snow"
+	,"sfp_strv122_snow"];
 
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
@@ -559,18 +518,13 @@ a3e_arr_ComCenStaticWeapons = [
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
 	"sfp_cykel42"
-	,"sfp_bv206"
+	,"sfp_bv206_winter"
 	,"sfp_tgb11"
-	,"sfp_pbv302"
+	,"sfp_pbv302_snow"
 	,"sfp_tgb13_ksp58"
 	,"sfp_tgb1111"
 	,"sfp_tgb1111_sog_rbs56"
 	,"sfp_tgb1111_sog_ksp58"
-	,"sfp_tgb16"
-	,"sfp_tgb16"
-	,"sfp_tgb16_ksp58"
-	,"sfp_tgb16_rws"
-	,"sfp_patgb360"
 	,"sfp_tgb1314"
 	,"sfp_tgb1317"
 	,"sfp_tgb20"
@@ -609,11 +563,11 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 a3e_arr_O_attack_heli = [
 	"sfp_hkp9_rb55"];
 a3e_arr_O_transport_heli = [
-	"sfp_hkp9_sog"
-	,"sfp_hkp16_ffv"
-	,"sfp_hkp4_2015"];
+	"sfp_hkp9"
+	,"sfp_hkp6"
+	,"sfp_hkp4"];
 a3e_arr_O_pilots = [
-	"sfp_m90w_helipilot"];
+	"sfp_m90s_pilot"];
 a3e_arr_I_transport_heli = [
 	"ffp_md500"
 	,"ffp_md500"
@@ -653,16 +607,11 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_signpist50", 50, 2, 4, ["sfp_1rnd_l
 a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_cbj_ms", 10, 1, 2, ["sfp_30Rnd_650x25mag", "sfp_30Rnd_650x25mag_subsonic"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak4", 30, 1, 3, ["sfp_20Rnd_762x51_ak4","sfp_20Rnd_762x51_ak4_ap","sfp_riflegrenade_smoke_ak4"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak4_m203", 30, 1, 2, ["sfp_20Rnd_762x51_ak4","1Rnd_HE_Grenade_shell","UGL_FlareGreen_F"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak4b", 20, 1, 2, ["sfp_20Rnd_762x51_ak4","sfp_20Rnd_762x51_ak4_irtracer","sfp_riflegrenade_smoke_ak4"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak4b_m203", 20, 1, 2, ["sfp_20Rnd_762x51_ak4","1Rnd_HE_Grenade_shell","UGL_FlareYellow_F"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak4c", 10, 1, 2, ["sfp_20Rnd_762x51_ak4_tracer","sfp_20Rnd_762x51_ak4_ap","sfp_riflegrenade_smoke_ak4"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak4d", 10, 1, 2, ["sfp_20Rnd_762x51_ak4_tracer","sfp_20Rnd_762x51_ak4_ap","sfp_riflegrenade_smoke_ak4"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak5", 50, 2, 4, ["sfp_30Rnd_556x45_Stanag_plastic"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak5_snow", 100, 2, 4, ["sfp_30Rnd_556x45_Stanag_plastic"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak5_m203", 30, 1, 2, ["sfp_30Rnd_556x45_Stanag_plastic","1Rnd_HE_Grenade_shell","UGL_FlareGreen_F"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak5d", 20, 1, 2, ["sfp_30Rnd_556x45_Stanag_plastic","sfp_30Rnd_556x45_Stanag_tracer_plastic"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak5b", 50, 1, 2, ["sfp_30Rnd_556x45_Stanag_plastic"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak5b", 20, 1, 2, ["sfp_30Rnd_556x45_Stanag_plastic"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak5dmk2", 20, 1, 2, ["sfp_30Rnd_556x45_Stanag_plastic","sfp_30Rnd_556x45_Stanag_tracer_plastic"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak5c", 50, 2, 4, ["sfp_30Rnd_556x45_Stanag_plastic","sfp_30Rnd_556x45_Stanag_tracer_plastic"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_ak5c_m203", 50, 2, 4, ["sfp_30Rnd_556x45_Stanag_plastic", "UGL_FlareWhite_F", "1Rnd_HE_Grenade_shell"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_mp5", 20, 1, 3, ["sfp_30Rnd_9mm_mp5_JHP"], 10];
 a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_kpistm45", 10, 1, 2, ["sfp_36Rnd_9mm_kpistm45"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["sfp_kpistm45b", 10, 1, 2, ["sfp_36Rnd_9mm_kpistm45"], 8];
@@ -676,13 +625,10 @@ a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_g36c", 30, 1, 2, ["sfp_30Rnd_556x45_Stanag_g36"], 10];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_psg90", 50, 1, 2, ["sfp_9Rnd_762x51_psg90_prick", "sfp_9Rnd_762x51_psg90"], 8];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_ksp58a", 10, 1, 2, ["sfp_50Rnd_655x55_ksp58"], 8];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_ksp58", 20, 1, 2, ["sfp_50Rnd_762x51_ksp58"], 8];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_ksp58B2", 10, 1, 2, ["sfp_100Rnd_762x51_ksp58","sfp_50Rnd_762x51_ksp58_ap"], 4];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_ksp58f", 10, 1, 2, ["sfp_249Rnd_762x51_ksp58","sfp_50Rnd_762x51_ksp58_irTracer"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_ksp58a", 20, 1, 2, ["sfp_50Rnd_655x55_ksp58"], 8];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_ksp58", 40, 1, 2, ["sfp_50Rnd_762x51_ksp58"], 8];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_ksp90b", 20, 1, 2, ["sfp_200Rnd_556x45_ksp90"], 4];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_ksp90c", 20, 1, 2, ["sfp_200Rnd_556x45_ksp90","sfp_200Rnd_556x45_ksp90_irtracer"], 4];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_remington870", 20, 1, 2, ["sfp_12Gauge_8rd_Pellets", "sfp_12Gauge_8rd_Slug"], 12];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_remington870", 50, 1, 2, ["sfp_12Gauge_8rd_Pellets", "sfp_12Gauge_8rd_Slug"], 12];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["sfp_ag90", 20, 1, 1, ["sfp_10Rnd_127x99_ag90"], 12];
 // non-CAST weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["ffp_KVKK", 20, 1, 2, ["ffp_100Rnd_KVKK_mag", "ffp_100Rnd_KVKK_mag_Tracer"], 6];
@@ -744,7 +690,7 @@ a3e_arr_AmmoDepotVehicleBackpacks = ["sfp_backpack_stridssack08","sfp_backpack_s
 // Index 3: Maximum amount.
 
 a3e_arr_AmmoDepotItems = [];
-a3e_arr_AmmoDepotItems pushback ["Laserdesignator", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["Laserdesignator_03", 10, 1, 2];
 if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["NVGoggles", 10, 1, 3];
 };
@@ -765,19 +711,19 @@ a3e_arr_AmmoDepotItems pushback ["muzzle_snds_338_black", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["sfp_muzzle_snds_cbj", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_B", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_M", 10, 1, 3];//AK5
-a3e_arr_AmmoDepotItems pushback ["sfp_optic_aimpoint", 30, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["sfp_optic_aimpoint_t1", 30, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["sfp_optic_3x_aimpoint", 20, 1, 3];
+//a3e_arr_AmmoDepotItems pushback ["sfp_optic_aimpoint", 30, 1, 2];
+//a3e_arr_AmmoDepotItems pushback ["sfp_optic_aimpoint_t1", 30, 1, 2];
+//a3e_arr_AmmoDepotItems pushback ["sfp_optic_3x_aimpoint", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["sfp_optic_kikarsikte09_4x", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["sfp_optic_susat_4x", 20, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["sfp_optic_hensoldt_4x", 20, 1, 2];
+//a3e_arr_AmmoDepotItems pushback ["sfp_optic_hensoldt_4x", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["sfp_optic_kikarsikte90b_10x", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["ffp_optic_TKiv2000", 20, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["ffp_pp04", 30, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["ffp_pp09", 30, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["ffp_ta11_3d", 20, 1, 2];
+//a3e_arr_AmmoDepotItems pushback ["ffp_pp04", 30, 1, 2];
+//a3e_arr_AmmoDepotItems pushback ["ffp_pp09", 30, 1, 2];
+//a3e_arr_AmmoDepotItems pushback ["ffp_ta11_3d", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["ffp_vv2000_sidemount", 20, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["sfp_ksp58_snow_support", 20, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["sfp_ksp58_snow_support", 50, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["bipod_01_F_blk", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["O_UavTerminal", 10, 1, 2];
 
@@ -812,16 +758,10 @@ a3e_arr_CivilianCarWeapons pushback [objNull, "ffp_smoke_white", 5];
 
 // Here is a list of scopes, might get randomly added to enemy patrols:
 a3e_arr_Scopes = [
-	"sfp_optic_aimpoint"
-	,"sfp_optic_aimpoint_t1"
-	,"sfp_optic_3x_aimpoint"
-	,"sfp_optic_kikarsikte09_4x"
+	"sfp_optic_kikarsikte09_4x"
 	,"sfp_optic_susat_4x"
-	,"ffp_vv2000_sidemount"
-	,"ffp_optic_TKiv2000"
-	,"ffp_pp04"
-	,"ffp_pp09"
-	,"ffp_ta11_3d"
+	,"sfp_optic_susat_4x"
+	,"sfp_optic_susat_4x"
 	,"sfp_optic_kikarsikte90b_10x"
 	,"sfp_optic_hensoldt_4x"];
 a3e_arr_Scopes_SMG = [
@@ -886,9 +826,12 @@ a3e_arr_extractiontypes = [
 // always the fallback option, use BIS units if mod has no helicopters
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_chopper = [
-    "I_E_Heli_light_03_unarmed_F"];
+    "CUP_I_412_Mil_Transport_PMC"
+	,"CUP_I_Ka60_Blk_ION"
+	,"CUP_I_Merlin_HC3_PMC_Transport_black"
+	,"CUP_I_Merlin_HC3_PMC_Lux_black"];
 a3e_arr_extraction_chopper_escort = [
-	"I_E_Heli_light_03_dynamicLoadout_F"];
+	"CUP_I_Mi24_D_Dynamic_ION"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtractionBoat.sqf
@@ -904,11 +847,12 @@ a3e_arr_extraction_boat_escort = [
 // Cars/APCs that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_car = [
-	"I_E_Van_02_transport_F",	//
-	"I_E_Truck_02_transport_F",	//
-	"I_E_Truck_02_F"];	//
+	"CUP_I_nM1038_DF_ION_WIN",	//7
+	"CUP_I_SUV_ION",	//
+	"CUP_I_SUV_Armored_ION"];	//
 a3e_arr_extraction_car_escort = [
-	"I_E_APC_tracked_03_cannon_F"];
+	"CUP_I_BTR80_ION"
+	,"CUP_I_BTR80A_ION"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -927,7 +871,7 @@ a3e_arr_searchChopperEasy = [
 	"sfp_bell429_police"
 	,"ffp_md500"];
 a3e_arr_searchChopperHard = [
-	"sfp_hkp9_sog"];
+	"sfp_hkp9"];
 a3e_arr_searchChopper_pilot = [
 	"ffp_helipilot"];
 a3e_arr_searchChopper_crew = [
@@ -976,10 +920,10 @@ a3e_arr_roadblocks_Veh_GUE = a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
 // boats that are spawned
 //////////////////////////////////////////////////////////////////
 a3e_arr_AquaticPatrols = [
-	"sfp_15_gruppbat"
-	,"sfp_15_gruppbat"
-	,"sfp_15_gruppbat"
-	,"sfp_15_gruppbat"
+	"sfp_90s_gruppbat"
+	,"sfp_90s_gruppbat"
+	,"sfp_90s_gruppbat"
+	,"sfp_90s_gruppbat"
 	,"sfp_strb90"
 	,"sfp_strb90"
 	,"sfp_strb90"
@@ -1027,8 +971,7 @@ a3e_arr_CASplane = [
 a3e_arr_CrashSiteWrecks = [
 	"Land_Mi8_wreck_F"];
 a3e_arr_CrashSiteCrew = [
-	"I_E_Helipilot_F"
-	,"I_E_Helicrew_F"];
+	"CUP_I_PMC_Winter_Pilot"];
 a3e_arr_CrashSiteWrecksCar = [
 	"Land_Wreck_Ural_F"
 	,"Land_V3S_wreck_F"
@@ -1036,29 +979,28 @@ a3e_arr_CrashSiteWrecksCar = [
 	,"Land_Wreck_BRDM2_F"
 	,"Land_Wreck_T72_hull_F"];
 a3e_arr_CrashSiteCrewCar = [
-	"I_E_Crew_F"];
+	"CUP_I_PMC_Winter_Crew"];
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
-a3e_arr_CrashSiteWeapons pushback ["SMG_02_ACO_F", 50, 1, 2, ["30Rnd_9x21_Mag_SMG_02"], 8];
-a3e_arr_CrashSiteWeapons pushback ["launch_RPG32_green_F", 25, 1, 2, ["RPG32_F","RPG32_HE_F"], 3];
-a3e_arr_CrashSiteWeapons pushback ["launch_O_Vorona_green_F", 10, 1, 1, ["Vorona_HEAT","Vorona_HE"], 2];
-a3e_arr_CrashSiteWeapons pushback ["arifle_AK12U_lush_F", 75, 2, 4, ["30rnd_762x39_AK12_Lush_Mag_F"], 6];
-a3e_arr_CrashSiteWeapons pushback ["arifle_AK12_lush_F", 75, 2, 4, ["30rnd_762x39_AK12_Lush_Mag_F"], 6];
-a3e_arr_CrashSiteWeapons pushback ["arifle_AK12_GL_lush_F", 75, 2, 4, ["30rnd_762x39_AK12_Lush_Mag_F", "1Rnd_HE_Grenade_shell"], 4];
-a3e_arr_CrashSiteWeapons pushback ["arifle_RPK12_lush_F", 60, 1, 3, ["75rnd_762x39_AK12_Lush_Mag_F"], 4];
-a3e_arr_CrashSiteWeapons pushback ["srifle_DMR_04_F", 40, 1, 2, ["10Rnd_127x54_Mag"], 8];
-if(A3E_Param_UseDLCMarksmen==1) then {
-	a3e_arr_CrashSiteWeapons pushback ["srifle_DMR_04_DMS_F", 10, 2, 4, ["10Rnd_127x54_Mag"], 12];
-	a3e_arr_CrashSiteWeapons pushback ["srifle_DMR_05_KHS_LP_F", 10, 2, 4, ["10Rnd_93x64_DMR_05_Mag"], 12];
-};
+a3e_arr_CrashSiteWeapons pushback ["CUP_smg_Mac10", 30, 1, 2, ["CUP_30Rnd_45ACP_MAC10_M"], 8];
+a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_SR3M_Vikhr_VFG", 30, 1, 2, ["CUP_30Rnd_9x39_SP5_VIKHR_M"], 8];
+a3e_arr_CrashSiteWeapons pushback ["CUP_launch_RPG18", 80, 1, 4, [objNull], 0];
+a3e_arr_CrashSiteWeapons pushback ["CUP_launch_FIM92Stinger", 40, 1, 1, ["CUP_Stinger_M"], 1];
+a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_FNFAL", 75, 2, 4, ["CUP_20Rnd_762x51_FNFAL_M"], 8];
+a3e_arr_CrashSiteWeapons pushback ["CUP_hgun_BallisticShield_Armed_M9", 40, 2, 4, ["CUP_15Rnd_9x19_M9"], 6];
+a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_M4A1_standard_winter", 75, 2, 4, ["CUP_30Rnd_556x45_Stanag"], 4];
+a3e_arr_CrashSiteWeapons pushback ["CUP_arifle_AUG_A1", 50, 2, 4, ["CUP_30Rnd_556x45_AUG"], 4];
+a3e_arr_CrashSiteWeapons pushback ["CUP_lmg_PKM", 60, 1, 3, ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"], 4];
+a3e_arr_CrashSiteWeapons pushback ["CUP_srifle_ksvk_PSO3", 20, 1, 2, ["CUP_5Rnd_127x108_KSVK_M"], 8];
+a3e_arr_CrashSiteWeapons pushback ["CUP_srifle_M107_Snow", 40, 1, 2, ["CUP_10Rnd_127x99_M107"], 8];
+a3e_arr_CrashSiteWeapons pushback ["CUP_srifle_AS50_SBPMII", 20, 1, 2, ["CUP_5Rnd_127x99_as50_M"], 8];
 // Attachments and other items in crash site box
 a3e_arr_CrashSiteItems = [];
-a3e_arr_CrashSiteItems pushback ["optic_Arco_AK_lush_F", 10, 1, 3];
-a3e_arr_CrashSiteItems pushback ["optic_Aco", 10, 1, 3];
-a3e_arr_CrashSiteItems pushback ["optic_Holosight_lush_F", 10, 1, 3];
-a3e_arr_CrashSiteItems pushback ["optic_DMS_weathered_Kir_F", 10, 1, 3];
-a3e_arr_CrashSiteItems pushback ["muzzle_snds_B_lush_F", 10, 1, 3];
-a3e_arr_CrashSiteItems pushback ["O_UavTerminal", 50, 1, 1];
+a3e_arr_CrashSiteItems pushback ["CUP_optic_CompM2_low", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["CUP_optic_LeupoldMk4_25x50_LRT_SNOW", 50, 1, 3];
+a3e_arr_CrashSiteItems pushback ["CUP_optic_PSO_3", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["muzzle_snds_B", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["CUP_Vector21Nite", 50, 1, 1];
 
 
 //Mines and traps, fn_initTraps
