@@ -25,22 +25,22 @@
         {
 			"name" : "SFP w",
 			"path" : "./Mods/SFP w/",
-			"require" : ["Swedish_Forces_Pack","Finnish_Forces_Pack"],
+			"require" : ["Swedish_Forces_Pack","Finnish_Forces_Pack","CUP_Creatures_Military_PMC"],
 			"replace" :
 				{
-					"MOD" : "SFP LDF vs SFP+FFP",
+					"MOD" : "SFP CUP ION vs SFP+FFP",
 					"PLAYERSIDE" : "EAST",
-					"PLAYERUNIT_1" : "O_R_recon_TL_F",
-					"PLAYERUNIT_2" : "O_R_recon_JTAC_F",
-					"PLAYERUNIT_3" : "O_R_recon_GL_F",
-					"PLAYERUNIT_4" : "O_R_recon_exp_F",
-					"PLAYERUNIT_5" : "O_R_recon_AR_F",
-					"PLAYERUNIT_6" : "O_R_recon_LAT_F",
-					"PLAYERUNIT_7" : "O_R_recon_LAT_F",
-					"PLAYERUNIT_8" : "O_R_recon_M_F",
-					"PLAYERUNIT_9" : "O_R_recon_M_F",
-					"PLAYERUNIT_10" : "O_R_recon_medic_F",
-					"PLAYER_INIT" : "this setCaptive true; if(this == p4) then {this setUnitTrait ['Engineer',true];}; if(this == p2) then {this setUnitTrait ['UavHacker',true];};"
+					"PLAYERUNIT_1" : "CUP_I_PMC_Winter_Soldier_TL",
+					"PLAYERUNIT_2" : "CUP_I_PMC_Winter_Soldier",
+					"PLAYERUNIT_3" : "CUP_I_PMC_Winter_Soldier_GL",
+					"PLAYERUNIT_4" : "CUP_I_PMC_Winter_Engineer",
+					"PLAYERUNIT_5" : "CUP_I_PMC_Winter_Soldier_MG",
+					"PLAYERUNIT_6" : "CUP_I_PMC_Winter_Soldier_MG_PKM",
+					"PLAYERUNIT_7" : "CUP_I_PMC_Winter_Soldier_AT",
+					"PLAYERUNIT_8" : "CUP_I_PMC_Winter_Sniper_KSVK",
+					"PLAYERUNIT_9" : "CUP_I_PMC_Winter_Soldier",
+					"PLAYERUNIT_10" : "CUP_I_PMC_Winter_Medic",
+					"PLAYER_INIT" : "this setCaptive true; if(this == p2) then {this setUnitTrait ['UavHacker',true];};"
 				}
 		},
         {
@@ -107,7 +107,7 @@
 			"sqm" : "WeferlingenW",
 			"mod" : "SFP w",
 			"replace" : {},
-			"name" : "co10_Escape_SFP_LDF_vs_SF_and_FDF"
+			"name" : "co10_Escape_SFP_CUPION_vs_SF_and_FDF"
 		},
         {
 			"island" : "Gabreta",
@@ -170,7 +170,7 @@
 			"sqm": "Chernarus_Winter",
 			"mod" : "SFP w",
 			"replace" : {},
-			"name" : "co10_Escape_SFP_LDF_vs_SF_and_FDF"
+			"name" : "co10_Escape_SFP_CUPION_vs_SF_and_FDF"
 		},
 		{
 			"island" : "Podagorsk",
@@ -191,7 +191,7 @@
 			"sqm": "Winthera3",
 			"mod" : "SFP w",
 			"replace" : {},
-			"name" : "co10_Escape_SFP_LDF_vs_SF_and_FDF"
+			"name" : "co10_Escape_SFP_CUPION_vs_SF_and_FDF"
 		},
 		{
 			"island" : "Lingor",
@@ -268,7 +268,7 @@
 			"mod" : "SFP w",
 			"replace" : {},
 			"sqm" : "ThirskW",
-			"name" : "co10_Escape_SFP_LDF_vs_SF_and_FDF"
+			"name" : "co10_Escape_SFP_CUPION_vs_SF_and_FDF"
 		},
 		{
 			"island" : "Isla Duala",
@@ -450,7 +450,7 @@
 			"sqm": "ChamW",
 			"mod" : "SFP w",
 			"replace" : {},
-			"name" : "co10_Escape_SFP_LDF_vs_SF_and_FDF"
+			"name" : "co10_Escape_SFP_CUPION_vs_SF_and_FDF"
 		},
         {
 			"island" : "Summa",
@@ -464,7 +464,7 @@
 			"sqm": "SummaW",
 			"mod" : "SFP w",
 			"replace" : {},
-			"name" : "co10_Escape_SFP_LDF_vs_SF_and_FDF"
+			"name" : "co10_Escape_SFP_CUPION_vs_SF_and_FDF"
 		},
 		{
 			"island" : "Ihantala",
@@ -478,7 +478,7 @@
 			"sqm": "IhantalaW",
 			"mod" : "SFP w",
 			"replace" : {},
-			"name" : "co10_Escape_SFP_LDF_vs_SF_and_FDF"
+			"name" : "co10_Escape_SFP_CUPION_vs_SF_and_FDF"
 		},
 		{
 			"island" : "Hellanmaa",
@@ -492,7 +492,7 @@
 			"sqm": "HellanmaaW",
 			"mod" : "SFP w",
 			"replace" : {},
-			"name" : "co10_Escape_SFP_LDF_vs_SF_and_FDF"
+			"name" : "co10_Escape_SFP_CUPION_vs_SF_and_FDF"
 		},
         {
 			"island" : "Mull of Kintyre",
@@ -604,7 +604,7 @@
 			"sqm": "NapfWinter",
 			"mod" : "SFP w",
 			"replace" : {},
-			"name" : "co10_Escape_SFP_LDF_vs_SF_and_FDF"
+			"name" : "co10_Escape_SFP_CUPION_vs_SF_and_FDF"
 		},
 		{
 			"island" : "Reshmaan",
@@ -675,6 +675,13 @@
 			"mod" : "SFP",
 			"replace" : {},
 			"name" : "co10_Escape_SFP_LDF_vs_SF_and_FDF"
+		},
+		{
+			"island" : "Fjord",
+			"sqm": "Fjord",
+			"mod" : "SFP w",
+			"replace" : {},
+			"name" : "co10_Escape_SFP_CUPION_vs_SF_and_FDF"
 		}
 	],
 	"Addons" : [
