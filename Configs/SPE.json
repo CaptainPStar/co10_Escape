@@ -54,6 +54,16 @@
 				"ISLAND" : "Normandy",
 				"ISLANDNAME" : "Normandy"
 				}
+		},
+		{
+			"name" : "Hurtgen",
+			"class" : "hpr_hurtgen",
+			"path" : "./Islands/Hurtgen/",
+			"replace" :
+				{
+				"ISLAND" : "Hürtgenwald",
+				"ISLANDNAME" : "Hürtgenwald"
+				}
 		}
 	],
 	"Missions" : [
@@ -63,7 +73,15 @@
 			"mod" : "SPE_USvsGER",
 			"replace" : {},
 			"name" : "co10_Escape_SPE_US_vs_GER"
-		},{
+		},
+		{
+			"island" : "Hurtgen",
+			"sqm": "Hurtgen",
+			"mod" : "SPE_USvsGER",
+			"replace" : {},
+			"name" : "co10_Escape_SPE_US_vs_GER"
+		},
+		{
 			"island" : "Altis",
 			"sqm": "Altis",
 			"mod" : "SPE_USvsGER",
@@ -507,6 +525,13 @@
 		{
 			"island" : "Normandy",
 			"sqm": "Normandy",
+			"mod" : "SPE_GERvsUS",
+			"replace" : {},
+			"name" : "co10_Escape_SPE_GER_vs_US"
+		},
+		{
+			"island" : "Hurtgen",
+			"sqm": "Hurtgen",
 			"mod" : "SPE_GERvsUS",
 			"replace" : {},
 			"name" : "co10_Escape_SPE_GER_vs_US"
