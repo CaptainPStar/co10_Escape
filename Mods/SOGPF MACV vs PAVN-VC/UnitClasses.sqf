@@ -1211,6 +1211,10 @@ a3e_arr_CrashSiteWrecks = [
 	,"vn_air_ch47_wreck"
 	,"vn_air_f4b_wreck"
 	,"vn_air_f100d_01_wreck"];
+if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {
+	a3e_arr_CrashSiteWrecks pushback "vnx_air_ac119_01_wreck";
+	a3e_arr_CrashSiteWrecks pushback "vnx_air_ac119_02_wreck";
+	};
 a3e_arr_CrashSiteCrew = [
 	"vn_b_men_aircrew_09"
 	,"vn_b_men_aircrew_10"

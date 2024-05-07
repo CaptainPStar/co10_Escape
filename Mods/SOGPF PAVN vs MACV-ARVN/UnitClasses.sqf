@@ -674,6 +674,9 @@ a3e_arr_O_transport_heli = [
 	,"vn_b_air_ch34_01_01"
 	,"vn_b_air_ch47_01_01"
 	,"vn_b_air_ch47_02_01"];
+if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {
+	a3e_arr_O_transport_heli pushback "vnx_b_air_ac119_02_01";
+	};
 a3e_arr_O_pilots = [
 	"vn_b_men_aircrew_05"];
 a3e_arr_I_transport_heli = [
@@ -683,6 +686,8 @@ a3e_arr_I_transport_heli = [
 	,"vn_i_air_uh1d_01_01"
 	,"vn_i_air_uh1d_02_01"
 	,"vn_i_air_ch47_04_01"];
+if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {
+	a3e_arr_I_transport_heli pushback "vnx_i_air_ac119_02_01";
 a3e_arr_I_pilots = [
 	"vn_i_men_aircrew_01"
 	,"vn_i_men_aircrew_02"];
@@ -1045,6 +1050,9 @@ a3e_arr_extraction_car_escort = [
 a3e_arr_searchdrone = [
 	"vn_b_air_uh1d_02_05"
 	,"vn_b_air_uh1b_01_09"];
+if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {
+	a3e_arr_searchdrone pushback "vnx_b_air_ac119_01_01";
+	};
 
 //////////////////////////////////////////////////////////////////
 // CreateSearchChopper.sqf
