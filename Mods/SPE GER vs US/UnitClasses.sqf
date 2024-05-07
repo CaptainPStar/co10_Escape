@@ -825,8 +825,13 @@ a3e_arr_roadblocks_Veh_GUE = a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
 // fn_PopulateAquaticPatrol
 // boats that are spawned
 //////////////////////////////////////////////////////////////////
-a3e_arr_AquaticPatrols = [
-	];
+if (isClass(configFile >> "CfgPatches" >> "spex_tem_utah_beach")) 
+then {
+	a3e_arr_AquaticPatrols = ["SPEX_LCVP"];
+		} 
+else {
+	a3e_arr_AquaticPatrols = [];
+	};
 
 //////////////////////////////////////////////////////////////////
 // fn_AmmoDepot

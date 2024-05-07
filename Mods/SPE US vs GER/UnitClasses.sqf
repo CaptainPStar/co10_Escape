@@ -707,8 +707,16 @@ A3E_IntelItems = [
 // Basic fallback is always Heli extraction
 // Available types: a3e_arr_extractiontypes = ["air","land","sea"];
 //////////////////////////////////////////////////////////////////
-a3e_arr_extractiontypes = [
+if (isClass(configFile >> "CfgPatches" >> "spex_tem_utah_beach")) 
+then {
+	a3e_arr_extractiontypes = [
+	"land"
+	,"sea"];
+		} 
+else {
+	a3e_arr_extractiontypes = [
 	"land"];
+	};
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
@@ -724,10 +732,19 @@ a3e_arr_extraction_chopper_escort = [
 // RunExtractionBoat.sqf
 // Boats that come to pick you up
 //////////////////////////////////////////////////////////////////
-a3e_arr_extraction_boat = [
-	"O_T_Boat_Armed_01_hmg_F"];
-a3e_arr_extraction_boat_escort = [
-	"O_T_Boat_Armed_01_hmg_F"];
+if (isClass(configFile >> "CfgPatches" >> "spex_tem_utah_beach")) 
+then {
+	a3e_arr_extraction_boat = [
+		"SPEX_LCVP"];
+	a3e_arr_extraction_boat_escort = [
+		"SPEX_LCVP"];
+		} 
+else {
+	a3e_arr_extraction_boat = [
+		"O_T_Boat_Armed_01_hmg_F"];
+	a3e_arr_extraction_boat_escort = [
+		"O_T_Boat_Armed_01_hmg_F"];
+	};
 
 //////////////////////////////////////////////////////////////////
 // RunExtractionLand.sqf
