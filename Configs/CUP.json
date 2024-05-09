@@ -164,6 +164,26 @@
 				}
 		},
 		{
+			"name" : "CUP Winter UA vs RU-ChDKZ",
+			"path" : "./Mods/CUP Winter UA vs RU-ChDKZ/",
+			"require" : ["CUP_Creatures_Military_Ukraine","CUP_Creatures_Military_RussiaModern_Units","CUP_Creatures_Military_Chedaki"],
+			"replace" :
+				{
+					"MOD" : "CUP Winter UA vs RU and ChDKZ",
+					"PLAYERSIDE" : "WEST",
+					"PLAYERUNIT_1" : "CUP_B_AFU_Soldier_SquadLeader",
+					"PLAYERUNIT_2" : "CUP_B_AFU_Soldier_Sapper",
+					"PLAYERUNIT_3" : "CUP_B_AFU_Soldier_Machinegunner",
+					"PLAYERUNIT_4" : "CUP_B_AFU_Soldier_Engineer",
+					"PLAYERUNIT_5" : "CUP_B_AFU_Soldier_Grenadier",
+					"PLAYERUNIT_6" : "CUP_B_AFU_Soldier_Autorifleman",
+					"PLAYERUNIT_7" : "CUP_B_AFU_Soldier_ATSpecialist",
+					"PLAYERUNIT_8" : "CUP_B_AFU_Soldier_Rifleman",
+					"PLAYERUNIT_9" : "CUP_B_AFU_Soldier_Marksman",
+					"PLAYERUNIT_10" : "CUP_B_AFU_Soldier_Medic"
+				}
+		},
+		{
 			"name" : "CUP Woodland RU vs USMC-RACS",
 			"path" : "./Mods/CUP Woodland RU vs USMC-RACS/",
 			"require" : ["CUP_Creatures_Military_RACS","CUP_Creatures_Military_USMC","CUP_Creatures_Military_Russia"],
@@ -409,6 +429,13 @@
 			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"
 		},
         {
+			"island" : "WeferlingenWinter",
+			"sqm": "WeferlingenW",
+			"mod" : "CUP Winter UA vs RU-ChDKZ",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Winter_UA_vs_RU_and_ChDKZ"
+		},
+        {
 			"island" : "Gabreta",
 			"sqm": "Gabreta",
 			"mod" : "CUP Woodland SLA vs USMC-NAPA",
@@ -612,6 +639,13 @@
 			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"
 		},
 		{
+			"island" : "Chernarus_Winter",
+			"sqm": "Chernarus_Winter",
+			"mod" : "CUP Winter UA vs RU-ChDKZ",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Winter_UA_vs_RU_and_ChDKZ"
+		},
+		{
 			"island" : "Podagorsk",
 			"sqm": "FDF_Isle1_a",
 			"mod" : "CUP Woodland SLA vs USMC-NAPA",
@@ -701,6 +735,13 @@
 			"mod" : "CUP Winter RU vs CDF-ION PMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"
+		},
+		{
+			"island" : "Winter Panthera",
+			"sqm": "Winthera3",
+			"mod" : "CUP Winter UA vs RU-ChDKZ",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Winter_UA_vs_RU_and_ChDKZ"
 		},
 		{
 			"island" : "Lingor",
@@ -939,6 +980,13 @@
 			"mod" : "CUP Winter RU vs CDF-ION PMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"
+		},
+		{
+			"island" : "Thirsk Winter",
+			"sqm": "ThirskW",
+			"mod" : "CUP Winter UA vs RU-ChDKZ",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Winter_UA_vs_RU_and_ChDKZ"
 		},
 		{
 			"island" : "Isla Duala",
@@ -1701,7 +1749,14 @@
 			"sqm": "ChamW",
 			"mod" : "CUP Winter RU vs CDF-ION PMC",
 			"replace" : {},
-			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"						   
+			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"
+		},
+        {
+			"island" : "ChamW",
+			"sqm": "ChamW",
+			"mod" : "CUP Winter UA vs RU-ChDKZ",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Winter_UA_vs_RU_and_ChDKZ"
 		},
         {
 			"island" : "Summa",
@@ -1738,6 +1793,13 @@
 			"replace" : {},
 			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"
 		},
+        {
+			"island" : "SummaW",
+			"sqm": "SummaW",
+			"mod" : "CUP Winter UA vs RU-ChDKZ",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Winter_UA_vs_RU_and_ChDKZ"
+		},
 		{
 			"island" : "Ihantala",
 			"sqm": "Ihantala",
@@ -1773,6 +1835,13 @@
 			"replace" : {},
 			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"
 		},
+        {
+			"island" : "IhantalaW",
+			"sqm": "IhantalaW",
+			"mod" : "CUP Winter UA vs RU-ChDKZ",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Winter_UA_vs_RU_and_ChDKZ"
+		},
 		{
 			"island" : "Hellanmaa",
 			"sqm": "Hellanmaa",
@@ -1807,6 +1876,13 @@
 			"mod" : "CUP Winter RU vs CDF-ION PMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"
+		},
+        {
+			"island" : "HellanmaaW",
+			"sqm": "HellanmaaW",
+			"mod" : "CUP Winter UA vs RU-ChDKZ",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Winter_UA_vs_RU_and_ChDKZ"
 		},
         {
 			"island" : "Mull of Kintyre",
@@ -2257,6 +2333,13 @@
 			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"
 		},
 		{
+			"island" : "Vidda",
+			"sqm": "blud_vidda",
+			"mod" : "CUP Winter UA vs RU-ChDKZ",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Winter_UA_vs_RU_and_ChDKZ"
+		},
+		{
 			"island" : "MSKE",
 			"sqm": "mske",
 			"mod" : "CUP Woodland SLA vs USMC-NAPA",
@@ -2318,6 +2401,13 @@
 			"mod" : "CUP Winter RU vs CDF-ION PMC",
 			"replace" : {},
 			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"
+		},
+		{
+			"island" : "Napf Island Winter",
+			"sqm": "NapfWinter",
+			"mod" : "CUP Winter UA vs RU-ChDKZ",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Winter_UA_vs_RU_and_ChDKZ"
 		},
 		{
 			"island" : "Reshmaan",
@@ -2894,6 +2984,13 @@
 			"name" : "co10_Escape_CUP_Winter_RU_vs_CDF_and_ION_PMC"
 		},
 		{
+			"island" : "Fjord",
+			"sqm": "Fjord",
+			"mod" : "CUP Winter UA vs RU-ChDKZ",
+			"replace" : {},
+			"name" : "co10_Escape_CUP_Winter_UA_vs_RU_and_ChDKZ"
+		},
+		{
 			"island" : "Yulakia",
 			"sqm": "Yulakia",
 			"mod" : "CUP Woodland SLA vs USMC-NAPA",
@@ -2926,7 +3023,7 @@
 	"Addons" : [
 		{
 			"name" : "CUP",
-			"mods" : ["CUP Sahrani USMC vs SLA-RACS","CUP Desert RU vs US Army-ION PMC","CUP Desert RU vs BAF-ACR","CUP Woodland RU vs BAF-ION PMC","CUP Woodland USMC vs RU-NAPA","CUP Desert GER vs Taki Army-Taki GUE","CUP Woodland SLA vs USMC-NAPA","CUP Winter RU vs CDF-ION PMC","CUP Woodland RU vs USMC-RACS","CUP Desert RU vs US Army-Taki GUE","CUP Tropical SLA vs HIL-RACS"]
+			"mods" : ["CUP Sahrani USMC vs SLA-RACS","CUP Desert RU vs US Army-ION PMC","CUP Desert RU vs BAF-ACR","CUP Woodland RU vs BAF-ION PMC","CUP Woodland USMC vs RU-NAPA","CUP Desert GER vs Taki Army-Taki GUE","CUP Woodland SLA vs USMC-NAPA","CUP Winter RU vs CDF-ION PMC","CUP Winter UA vs RU-ChDKZ","CUP Woodland RU vs USMC-RACS","CUP Desert RU vs US Army-Taki GUE","CUP Tropical SLA vs HIL-RACS"]
 		}
 	]
 	
