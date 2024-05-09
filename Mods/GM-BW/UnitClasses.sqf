@@ -114,6 +114,9 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	if(A3E_Param_UseDLCContact==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Tractor_01_F";
 	};
+	if(isClass(configFile >> "CfgPatches" >> "tgpd")) then {
+		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "tgpd_tank";
+	};
 
 // Random arrays. Enemy vehicle classes for ambient traffic.
 // Variable _enemyFrequency applies to server parameter, and can be one of the values 1 (Few), 2 (Some) or 3 (A lot).
