@@ -688,6 +688,7 @@ a3e_arr_I_transport_heli = [
 	,"vn_i_air_ch47_04_01"];
 if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {
 	a3e_arr_I_transport_heli pushback "vnx_i_air_ac119_02_01";
+	};
 a3e_arr_I_pilots = [
 	"vn_i_men_aircrew_01"
 	,"vn_i_men_aircrew_02"];
