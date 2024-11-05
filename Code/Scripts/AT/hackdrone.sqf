@@ -2,7 +2,7 @@
 at_fnc_dh_init = {
 	
 	AT_DH_Sides = [east,west,resistance];
-	AT_DH_Terminals = ["O_UavTerminal","B_UavTerminal","I_UavTerminal"];
+	AT_DH_Terminals = ["O_UavTerminal","B_UavTerminal","I_UavTerminal","O_Tura_UavTerminal_lxWS","B_Tura_UavTerminal_lxWS","I_Tura_UavTerminal_lxWS","O_G_FIA_UavTerminal_lxWS","B_G_FIA_UavTerminal_lxWS","I_G_FIA_UavTerminal_lxWS"];
 	AT_DH_DronesPacked = ["O_UAV_01_backpack_F","B_UAV_01_backpack_F","I_UAV_01_backpack_F"];
 	AT_DH_Drones = ["O_UAV_01_F","B_UAV_01_F","I_UAV_01_F"];
 	
