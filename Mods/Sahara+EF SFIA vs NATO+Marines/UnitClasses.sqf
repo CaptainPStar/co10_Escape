@@ -11,10 +11,10 @@ _enemyFrequency = _this select 0;
 
 A3E_VAR_Side_Blufor = east;	//player side, WS SFIA
 A3E_VAR_Side_Opfor = west;	//enemy side, WS NATO Desert
-A3E_VAR_Side_Ind = resistance;	//WS ION PMC
+A3E_VAR_Side_Ind = resistance;	//EF MJTF Desert
 
 A3E_VAR_Flag_Opfor = "\A3\Data_F\Flags\Flag_NATO_CO.paa";
-A3E_VAR_Flag_Ind = "\A3\Data_F\Flags\flag_ion_CO.paa";
+A3E_VAR_Flag_Ind = "\ef\ef_data\data\Flag_29thMEU_CO.paa";
 
 A3E_VAR_Side_Blufor_Str = format["%1",A3E_VAR_Side_Blufor];
 A3E_VAR_Side_Opfor_Str = format["%1",A3E_VAR_Side_Opfor];
@@ -22,12 +22,10 @@ A3E_VAR_Side_Ind_Str = format["%1",A3E_VAR_Side_Ind];
 
 // Random array. Start position guard types around the prison
 a3e_arr_Escape_StartPositionGuardTypes = [
-	"B_ION_Soldier_lxWS"
-	,"B_ION_Soldier_lxWS"
-	,"B_ION_Helipilot_lxWS"
-	,"B_ION_shot_lxWS"
-	,"B_ION_TL_lxWS"
-	,"B_ION_Soldier_SG_lxWS"];
+	"EF_B_Marine_Light_Des"
+	,"EF_B_Marine_Officer_Des"
+	,"EF_B_Marine_R_Des"
+	,"EF_B_Marine_Light_Des"];
 
 // Prison backpack secondary weapon (and corresponding magazine type).
 a3e_arr_PrisonBackpackWeapons = [];
@@ -39,12 +37,14 @@ a3e_arr_PrisonBackpackWeapons pushback ["hgun_ACPC2_F","9Rnd_45ACP_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_ACPC2_snds_F","9Rnd_45ACP_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_blk_F","16Rnd_9x21_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_blk_F","16Rnd_9x21_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_F","16Rnd_9x21_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_F","16Rnd_9x21_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_F","16Rnd_9x21_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["ef_hgun_P07_coy","16Rnd_9x21_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["ef_hgun_P07_coy","16Rnd_9x21_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["ef_hgun_P07_coy","16Rnd_9x21_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_snds_F","16Rnd_9x21_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_P07_snds_F","16Rnd_9x21_Mag"];
-a3e_arr_PrisonBackpackWeapons pushback ["hgun_Pistol_heavy_01_F","11Rnd_45ACP_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["ef_hgun_Pistol_heavy_01_coy","11Rnd_45ACP_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["ef_hgun_Pistol_heavy_01_coy","11Rnd_45ACP_Mag"];
+a3e_arr_PrisonBackpackWeapons pushback ["ef_hgun_Pistol_heavy_01_coy","11Rnd_45ACP_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_Pistol_heavy_01_MRD_F","11Rnd_45ACP_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_Pistol_heavy_01_snds_F","11Rnd_45ACP_Mag"];
 a3e_arr_PrisonBackpackWeapons pushback ["hgun_Pistol_heavy_02_F","6Rnd_45ACP_Cylinder"];
@@ -177,7 +177,10 @@ switch (_enemyFrequency) do {
 		,"B_D_MRAP_01_hmg_lxWS"
 		,"B_D_MRAP_01_hmg_lxWS"
 		,"B_D_MRAP_01_hmg_lxWS"
+		,"EF_B_MRAP_01_FSV_NATO_Des"
+		,"EF_B_MRAP_01_AT_NATO_Des"
 		//Heavily Armed APCs or AA
+		,"EF_B_MRAP_01_LAAD_NATO_Des"
 		,"B_D_APC_Tracked_01_aa_lxWS"
 		,"B_D_APC_Wheeled_01_cannon_lxWS"
 		,"B_D_APC_Wheeled_01_atgm_lxWS"
@@ -212,52 +215,73 @@ switch (_enemyFrequency) do {
 		if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_Pickup_aat_rf";
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_Pickup_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_Pickup_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_Pickup_rf";
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_Pickup_Comms_rf";
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_Pickup_mmg_rf";
 		};
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		//Unarmed Cars/UAVs  3 sets
-		"B_ION_Quadbike_01_lxWS"  //1
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Quadbike_01_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"ION_UAV_02_lxWS"
-		,"B_ION_Quadbike_01_lxWS"  //2
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Quadbike_01_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"ION_UAV_02_lxWS"
-		,"B_ION_Quadbike_01_lxWS"  //3
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Quadbike_01_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"ION_UAV_02_lxWS"
-		//Armed Cars  1 set
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		//Heavily Armed APCs or AA  1 set
-		,"B_ION_APC_Wheeled_01_command_lxWS"
-		,"B_ION_APC_Wheeled_01_command_lxWS"
-		,"B_ION_APC_Wheeled_02_hmg_lxWS"];
+		//Unarmed Cars/UAVs  2 sets
+		"EF_B_MRAP_01_MJTF_Des"  //1
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Truck_01_mover_MJTF_Des"
+		,"EF_B_Truck_01_box_MJTF_Des"
+		,"EF_B_Truck_01_covered_MJTF_Des"
+		,"EF_B_Truck_01_transport_MJTF_Des"
+		,"EF_B_Truck_01_medical_MJTF_Des"
+		,"EF_B_UGV_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"  //2
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Truck_01_mover_MJTF_Des"
+		,"EF_B_Truck_01_box_MJTF_Des"
+		,"EF_B_Truck_01_covered_MJTF_Des"
+		,"EF_B_Truck_01_transport_MJTF_Des"
+		,"EF_B_Truck_01_medical_MJTF_Des"
+		,"EF_B_UGV_01_MJTF_Des"
+		//Supply Trucks  1 set
+		,"EF_B_Truck_01_ammo_MJTF_Des"
+		,"EF_B_Truck_01_fuel_MJTF_Des"
+		,"EF_B_Truck_01_Repair_MJTF_Des"
+		,"EF_B_Truck_01_ammo_MJTF_Des"
+		,"EF_B_Truck_01_fuel_MJTF_Des"
+		,"EF_B_Truck_01_Repair_MJTF_Des"		
+		//Armed UAVs  1 set
+		,"EF_B_UGV_01_rcws_MJTF_Des"
+		,"EF_B_UGV_01_rcws_MJTF_Des"
+		//MRAPs  1 set
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_AT_MJTF_Des"
+		,"EF_B_MRAP_01_AT_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		,"EF_B_MRAP_01_FSV_MJTF_Des"
+		,"EF_B_MRAP_01_FSV_MJTF_Des"
+		//Heavily Armed APCs or AA
+		,"EF_B_MRAP_01_LAAD_MJTF_Des"
+		,"EF_B_MRAP_01_LAAD_MJTF_Des"
+		,"EF_B_AAV9_MJTF_Des"
+		,"EF_B_AAV9_50mm_MJTF_Des"
+		//Artillery
+		,"EF_B_MBT_01_mlrs_MJTF_Des"
+		//Tanks
+		,"EF_B_MBT_01_cannon_MJTF_Des"
+		,"EF_B_MBT_01_TUSK_MJTF_Des"];
 		if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
-			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_aat_rf";
-			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rf";
-			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_mmg_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_MJTF_Des";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_Comms_MJTF_Des";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_mmg_MJTF_Des";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_mmg_MJTF_Des";
 		};
     };
     case 2: {//Some (4-6)
@@ -320,7 +344,10 @@ switch (_enemyFrequency) do {
 		,"B_D_MRAP_01_hmg_lxWS"
 		,"B_D_MRAP_01_hmg_lxWS"
 		,"B_D_MRAP_01_hmg_lxWS"
+		,"EF_B_MRAP_01_FSV_NATO_Des"
+		,"EF_B_MRAP_01_AT_NATO_Des"
 		//Heavily Armed APCs or AA
+		,"EF_B_MRAP_01_LAAD_NATO_Des"
 		,"B_D_APC_Tracked_01_aa_lxWS"
 		,"B_D_APC_Wheeled_01_cannon_lxWS"
 		,"B_D_APC_Wheeled_01_atgm_lxWS"
@@ -374,56 +401,76 @@ switch (_enemyFrequency) do {
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_Pickup_mmg_rf";
 		};
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		//Unarmed Cars/UAVs  3 sets
-		"B_ION_Quadbike_01_lxWS"  //1
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Quadbike_01_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"ION_UAV_02_lxWS"
-		,"B_ION_Quadbike_01_lxWS"  //2
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Quadbike_01_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"ION_UAV_02_lxWS"
-		,"B_ION_Quadbike_01_lxWS"  //3
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Quadbike_01_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"ION_UAV_02_lxWS"
-		//Armed Cars  2 sets
-		,"B_ION_Offroad_armed_lxWS"  //1
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"  //2
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		//Heavily Armed APCs or AA  1 set
-		,"B_ION_APC_Wheeled_01_command_lxWS"
-		,"B_ION_APC_Wheeled_01_command_lxWS"
-		,"B_ION_APC_Wheeled_02_hmg_lxWS"];
+		//Unarmed Cars/UAVs  2 sets
+		"EF_B_MRAP_01_MJTF_Des"  //1
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Truck_01_mover_MJTF_Des"
+		,"EF_B_Truck_01_box_MJTF_Des"
+		,"EF_B_Truck_01_covered_MJTF_Des"
+		,"EF_B_Truck_01_transport_MJTF_Des"
+		,"EF_B_Truck_01_medical_MJTF_Des"
+		,"EF_B_UGV_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"  //2
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Truck_01_mover_MJTF_Des"
+		,"EF_B_Truck_01_box_MJTF_Des"
+		,"EF_B_Truck_01_covered_MJTF_Des"
+		,"EF_B_Truck_01_transport_MJTF_Des"
+		,"EF_B_Truck_01_medical_MJTF_Des"
+		,"EF_B_UGV_01_MJTF_Des"
+		//Supply Trucks  1 set
+		,"EF_B_Truck_01_ammo_MJTF_Des"
+		,"EF_B_Truck_01_fuel_MJTF_Des"
+		,"EF_B_Truck_01_Repair_MJTF_Des"
+		,"EF_B_Truck_01_ammo_MJTF_Des"
+		,"EF_B_Truck_01_fuel_MJTF_Des"
+		,"EF_B_Truck_01_Repair_MJTF_Des"		
+		//Armed UAVs  2 sets
+		,"EF_B_UGV_01_rcws_MJTF_Des"
+		,"EF_B_UGV_01_rcws_MJTF_Des"
+		,"EF_B_UGV_01_rcws_MJTF_Des"
+		,"EF_B_UGV_01_rcws_MJTF_Des"
+		//MRAPs  2 sets
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		//Heavily Armed APCs or AA
+		,"EF_B_MRAP_01_LAAD_MJTF_Des"
+		,"EF_B_MRAP_01_LAAD_MJTF_Des"
+		,"EF_B_AAV9_MJTF_Des"
+		,"EF_B_AAV9_50mm_MJTF_Des"
+		,"EF_B_AAV9_50mm_MJTF_Des"
+		//Artillery
+		,"EF_B_MBT_01_mlrs_MJTF_Des"
+		//Tanks
+		,"EF_B_MBT_01_cannon_MJTF_Des"
+		,"EF_B_MBT_01_TUSK_MJTF_Des"];
 		if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
-			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_aat_rf";
-			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rf";
-			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_mmg_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_MJTF_Des";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_Comms_MJTF_Des";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_mmg_MJTF_Des";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_mmg_MJTF_Des";
 		};
     };
     default {//A lot (7-8)
@@ -486,7 +533,10 @@ switch (_enemyFrequency) do {
 		,"B_D_MRAP_01_hmg_lxWS"
 		,"B_D_MRAP_01_hmg_lxWS"
 		,"B_D_MRAP_01_hmg_lxWS"
-		//Heavily Armed APCs or AA  2 sets
+		,"EF_B_MRAP_01_FSV_NATO_Des"
+		,"EF_B_MRAP_01_AT_NATO_Des"
+		//Heavily Armed APCs or AA 2 sets
+		,"EF_B_MRAP_01_LAAD_NATO_Des"
 		,"B_D_APC_Tracked_01_aa_lxWS"
 		,"B_D_APC_Wheeled_01_cannon_lxWS"
 		,"B_D_APC_Wheeled_01_atgm_lxWS"
@@ -550,59 +600,81 @@ switch (_enemyFrequency) do {
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "B_Pickup_mmg_rf";
 		};
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		//Unarmed Cars/UAVs  3 sets
-		"B_ION_Quadbike_01_lxWS"  //1
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Quadbike_01_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"ION_UAV_02_lxWS"
-		,"B_ION_Quadbike_01_lxWS"  //2
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Quadbike_01_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"ION_UAV_02_lxWS"
-		,"B_ION_Quadbike_01_lxWS"  //3
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Truck_02_covered_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"B_ION_Quadbike_01_lxWS"
-		,"B_ION_Offroad_lxWS"
-		,"ION_UAV_02_lxWS"
-		//Armed Cars  2 sets
-		,"B_ION_Offroad_armed_lxWS"  //1
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"  //2
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
-		,"B_ION_Offroad_armed_lxWS"
+		//Unarmed Cars/UAVs  2 sets
+		"EF_B_MRAP_01_MJTF_Des"  //1
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Truck_01_mover_MJTF_Des"
+		,"EF_B_Truck_01_box_MJTF_Des"
+		,"EF_B_Truck_01_covered_MJTF_Des"
+		,"EF_B_Truck_01_transport_MJTF_Des"
+		,"EF_B_Truck_01_medical_MJTF_Des"
+		,"EF_B_UGV_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"  //2
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_MRAP_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Quadbike_01_MJTF_Des"
+		,"EF_B_Truck_01_mover_MJTF_Des"
+		,"EF_B_Truck_01_box_MJTF_Des"
+		,"EF_B_Truck_01_covered_MJTF_Des"
+		,"EF_B_Truck_01_transport_MJTF_Des"
+		,"EF_B_Truck_01_medical_MJTF_Des"
+		,"EF_B_UGV_01_MJTF_Des"
+		//Supply Trucks  1 set
+		,"EF_B_Truck_01_ammo_MJTF_Des"
+		,"EF_B_Truck_01_fuel_MJTF_Des"
+		,"EF_B_Truck_01_Repair_MJTF_Des"
+		,"EF_B_Truck_01_ammo_MJTF_Des"
+		,"EF_B_Truck_01_fuel_MJTF_Des"
+		,"EF_B_Truck_01_Repair_MJTF_Des"		
+		//Armed UAVs  2 sets
+		,"EF_B_UGV_01_rcws_MJTF_Des"
+		,"EF_B_UGV_01_rcws_MJTF_Des"
+		,"EF_B_UGV_01_rcws_MJTF_Des"
+		,"EF_B_UGV_01_rcws_MJTF_Des"
+		//MRAPs  2 sets
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_gmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
+		,"EF_B_MRAP_01_hmg_MJTF_Des"
 		//Heavily Armed APCs or AA  2 sets
-		,"B_ION_APC_Wheeled_01_command_lxWS"
-		,"B_ION_APC_Wheeled_01_command_lxWS"
-		,"B_ION_APC_Wheeled_02_hmg_lxWS"
-		,"B_ION_APC_Wheeled_01_command_lxWS"
-		,"B_ION_APC_Wheeled_01_command_lxWS"
-		,"B_ION_APC_Wheeled_02_hmg_lxWS"];
+		,"EF_B_MRAP_01_LAAD_MJTF_Des"
+		,"EF_B_MRAP_01_LAAD_MJTF_Des"
+		,"EF_B_AAV9_MJTF_Des"
+		,"EF_B_AAV9_MJTF_Des"
+		,"EF_B_AAV9_50mm_MJTF_Des"
+		,"EF_B_AAV9_50mm_MJTF_Des"
+		,"EF_B_AAV9_MJTF_Des"
+		,"EF_B_AAV9_50mm_MJTF_Des"
+		//Artillery
+		,"B_MBT_01_arty_F"
+		//Tanks  2 sets
+		,"EF_B_MBT_01_cannon_MJTF_Des"  //1
+		,"EF_B_MBT_01_TUSK_MJTF_Des"
+		,"EF_B_MBT_01_cannon_MJTF_Des"  //2
+		,"EF_B_MBT_01_TUSK_MJTF_Des"];
 		if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
-			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_aat_rf";
-			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rf";
-			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_mmg_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_MJTF_Des";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_Comms_MJTF_Des";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_mmg_MJTF_Des";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "EF_B_Pickup_mmg_MJTF_Des";
 		};
     };
 };
@@ -672,34 +744,50 @@ a3e_arr_Escape_InfantryTypes = [
 		a3e_arr_Escape_InfantryTypes pushback "B_support_CMort_RF";
 	};
 a3e_arr_Escape_InfantryTypes_Ind = [
-	"B_ION_medic_lxWS"
-	,"B_ION_medic_lxWS"
-	,"B_ION_medic_lxWS"
-	,"B_ION_soldier_AR_lxWS"
-	,"B_ION_soldier_AR_lxWS"
-	,"B_ION_soldier_AR_lxWS"
-	,"B_ION_Soldier_lxWS"
-	,"B_ION_Soldier_lxWS"
-	,"B_ION_Soldier_lxWS"
-	,"B_ION_Soldier_lxWS"
-	,"B_ION_Soldier_lxWS"
-	,"B_ION_Soldier_GL_lxWS"
-	,"B_ION_Soldier_GL_lxWS"
-	,"B_ION_Soldier_GL_lxWS"
-	,"B_ION_shot_lxWS"
-	,"B_ION_shot_lxWS"
-	,"B_ION_shot_lxWS"
-	,"B_ION_Soldier_SG_lxWS"
-	,"B_ION_Soldier_SG_lxWS"
-	,"B_ION_marksman_lxWS"
-	,"B_ION_marksman_lxWS"
-	,"B_ION_marksman_lxWS"
-	,"B_ION_soldier_UAV_01_lxWS"
-	,"B_ION_soldier_UAV_01_lxWS"
-	,"B_ION_soldier_UAV_02_lxWS"
-	,"B_ION_soldier_UAV_02_lxWS"
-	,"B_ION_TL_lxWS"
-	,"B_ION_TL_lxWS"];
+	"EF_B_Marine_Eng_Des"
+	,"EF_B_Marine_Medic_Des"
+	,"EF_B_Marine_Medic_Des"
+	,"EF_B_Marine_Medic_Des"
+	,"EF_B_Marine_AA_Des"
+	,"EF_B_Marine_AA_Des"
+	,"EF_B_Marine_AR_Des"
+	,"EF_B_Marine_AR_Des"
+	,"EF_B_Marine_AR_Des"
+	,"EF_B_Marine_AT_Des"
+	,"EF_B_Marine_AT_Des"
+	,"EF_B_Marine_Exp_Des"
+	,"EF_B_Marine_R_Des"
+	,"EF_B_Marine_R_Des"
+	,"EF_B_Marine_R_Des"
+	,"EF_B_Marine_GL_Des"
+	,"EF_B_Marine_GL_Des"
+	,"EF_B_Marine_GL_Des"
+	,"EF_B_Marine_GL_Des"
+	,"EF_B_Marine_LAT_Des"
+	,"EF_B_Marine_LAT_Des"
+	,"EF_B_Marine_Light_Des"
+	,"EF_B_Marine_Light_Des"
+	,"EF_B_Marine_Light_Des"
+	,"EF_B_Marine_Mark_Des"
+	,"EF_B_Marine_Mark_Des"
+	,"EF_B_Marine_Mark_Des"
+	,"EF_B_Marine_Repair_Des"
+	,"EF_B_Marine_Repair_Des"
+	,"EF_B_Marine_Officer_Des"
+	,"EF_B_Marine_UAV_Des"
+	,"EF_B_Marine_UAV_Des"
+	,"EF_B_Marine_JTAC_Des"
+	,"EF_B_Marine_AMG_Des"
+	,"EF_B_Marine_AMort_Des"
+	,"EF_B_Marine_AAA_Des"
+	,"EF_B_Marine_AAT_Des"
+	,"EF_B_Marine_GMG_Des"
+	,"EF_B_Marine_HMG_Des"
+	,"EF_B_Marine_Mort_Des"
+	,"EF_B_Marine_SL_Des"
+	,"EF_B_Marine_TL_Des"
+	,"EF_B_Marine_LAT2_Des"
+	,"EF_B_Marine_LAT2_Des"];
 a3e_arr_recon_InfantryTypes = [
 	"B_D_recon_exp_lxWS"
 	,"B_D_recon_JTAC_lxWS"
@@ -709,16 +797,15 @@ a3e_arr_recon_InfantryTypes = [
 	,"B_D_recon_LAT_lxWS"
 	,"B_D_recon_TL_lxWS"];
 a3e_arr_recon_I_InfantryTypes = [
-	"B_D_CTRG_Soldier_Exp_lxWS"
-	,"B_D_CTRG_Soldier_HG_lxWS"
-	,"B_D_CTRG_Soldier_JTAC_lxWS"
-	,"B_D_CTRG_Soldier_M_lxWS"
-	,"B_D_CTRG_Soldier_Medic_lxWS"
-	,"B_D_CTRG_Soldier_LAT2_lxWS"
-	,"B_D_CTRG_Soldier_SG_lxWS"
-	,"B_D_CTRG_Soldier_lxWS"
-	,"B_D_CTRG_Soldier_TL_lxWS"
-	,"B_D_CTRG_soldier_UAV_lxWS"];
+	"EF_B_Marine_Recon_Exp_Des"
+	,"EF_B_Marine_Recon_JTAC_Des"
+	,"EF_B_Marine_Recon_M_Des"
+	,"EF_B_Marine_Recon_Medic_Des"
+	,"EF_B_Marine_Recon_Des"
+	,"EF_B_Marine_Recon_Des"
+	,"EF_B_Marine_Recon_Des"
+	,"EF_B_Marine_Recon_LAT_Des"
+	,"EF_B_Marine_Recon_TL_Des"];
 
 a3e_units_civilian_InfantryTypes = [
 	"C_Djella_01_lxWS"
@@ -749,14 +836,12 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	};
 	
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
-	"B_ION_Offroad_armed_lxWS"
-	,"B_ION_Offroad_armed_lxWS"
-	,"B_ION_APC_Wheeled_01_command_lxWS"
-	,"B_ION_APC_Wheeled_02_hmg_lxWS"
-	,"ION_UAV_02_lxWS"];
-	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
-		a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind pushback "B_ION_Pickup_mmg_rf";
-	};
+	"EF_B_MRAP_01_hmg_MJTF_Des"
+	,"EF_B_MRAP_01_hmg_MJTF_Des"
+	,"EF_B_MRAP_01_gmg_MJTF_Des"
+	,"EF_B_MRAP_01_AT_MJTF_Des"
+	,"EF_B_MRAP_01_FSV_MJTF_Des"
+	,"EF_B_UGV_01_rcws_MJTF_Des"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
@@ -767,10 +852,8 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 		a3e_arr_Escape_ReinforcementTruck_vehicleClasses pushback "B_Pickup_Comms_rf";
 	};
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
-	"B_ION_Truck_02_covered_lxWS"];
-	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
-		a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind pushback "B_ION_Pickup_rf";
-	};
+	"EF_B_Truck_01_transport_MJTF_Des"
+	,"EF_B_Truck_01_covered_MJTF_Des"];
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
@@ -874,7 +957,8 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = a3e_arr_ComCenParkedVehicles;
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
-	"B_D_Heli_Attack_01_dynamicLoadout_lxWS"];
+	"B_D_Heli_Attack_01_dynamicLoadout_lxWS"
+	,"EF_B_AH99J_NATO_Des"];
 	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 		a3e_arr_O_attack_heli pushback "B_Heli_EC_03_RF";
 	};
@@ -887,15 +971,9 @@ a3e_arr_O_transport_heli = [
 a3e_arr_O_pilots = [
 	"B_D_HeliPilot_lxWS"];
 a3e_arr_I_transport_heli = [
-	"B_ION_Heli_Light_02_unarmed_lxWS"];
-	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
-		a3e_arr_I_transport_heli pushback "B_ION_Heli_EC_01_RF";
-	};
+	"EF_B_Heli_Transport_01_MJTF_Des"];
 a3e_arr_I_pilots = [
-	"B_ION_Helipilot_lxWS"];
-	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
-		a3e_arr_I_pilots pushback "B_ION_Helipilot_RF";
-	};
+	"B_Helipilot_F"];
 
 
 // The following arrays define weapons and ammo contained at the ammo depots
@@ -909,7 +987,7 @@ a3e_arr_I_pilots = [
 // Weapons and ammo in the basic weapons box
 a3e_arr_AmmoDepotBasicWeapons = [];
 // CSAT weapons
-a3e_arr_AmmoDepotBasicWeapons pushback ["hgun_P07_F", 50, 4, 8, ["16Rnd_9x21_Mag"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["ef_hgun_P07_coy", 50, 4, 8, ["16Rnd_9x21_Mag"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["SMG_01_F", 10, 4, 8, ["30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01_Tracer_Green"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_MX_F", 100, 2, 4, ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_MXC_F", 50, 2, 4, ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer"], 6];
@@ -921,13 +999,16 @@ if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 // non-CSAT weapons
 a3e_arr_AmmoDepotBasicWeapons pushback ["hgun_PDW2000_F", 20, 4, 8, ["30Rnd_9x21_Mag"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["SMG_03C_TR_black", 20, 4, 8, ["50Rnd_570x28_SMG_03"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["SMG_01_F", 20, 4, 8, ["30Rnd_45ACP_Mag_SMG_01"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["hgun_P07_blk_F", 20, 4, 8, ["16Rnd_9x21_Mag"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_Base_lxWS", 50, 2, 4, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_GL_lxWS", 50, 2, 4, ["30Rnd_556x45_Stanag", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "UGL_FlareWhite_F"], 4];
-a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_Base_Sand_lxWS", 50, 2, 4, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["ef_arifle_mxar_coy", 50, 2, 4, ["EF_30Rnd_65x39_caseless_coy_mag_Tracer"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["ef_arifle_mx_coy", 50, 2, 4, ["EF_30Rnd_65x39_caseless_coy_mag"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["ef_arifle_mxc_coy", 30, 2, 4, ["EF_30Rnd_65x39_caseless_coy_mag","EF_30Rnd_65x39_caseless_coy_mag_Tracer"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["ef_arifle_mx_gl_coy", 30, 2, 4, ["EF_30Rnd_65x39_caseless_coy_mag", "EF_30Rnd_65x39_caseless_coy_mag_Tracer", "1Rnd_HE_Grenade_shell"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["ef_arifle_mxar_gl_coy", 30, 2, 4, ["EF_30Rnd_65x39_caseless_coy_mag", "3Rnd_HE_Grenade_shell"], 4];
+
+a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_Base_lxWS", 10, 2, 4, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_GL_lxWS", 10, 2, 4, ["30Rnd_556x45_Stanag", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "UGL_FlareWhite_F"], 4];
+a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_Base_Sand_lxWS", 10, 2, 4, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_Shot_lxWS", 10, 2, 4, ["30Rnd_556x45_Stanag", "6rnd_HE_Mag_lxWS", "6Rnd_12Gauge_Pellets", "6rnd_Smoke_Mag_lxWS", "6Rnd_12Gauge_Slug"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["sgun_aa40_lxWS", 30, 2, 4, ["20Rnd_12Gauge_AA40_Pellets_lxWS", "20Rnd_12Gauge_AA40_Slug_lxWS", "8Rnd_12Gauge_AA40_Smoke_lxWS", "8Rnd_12Gauge_AA40_HE_lxWS"], 6];
 
 // Weapons and ammo in the special weapons box
 a3e_arr_AmmoDepotSpecialWeapons = [];
@@ -956,13 +1037,17 @@ if(A3E_Param_UseDLCApex==1) then {
 	a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_SPAR_03_snd_F", 10, 1, 1, ["20Rnd_762x51_Mag"], 9];
 };
 if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
-	a3e_arr_AmmoDepotSpecialWeapons pushback ["srifle_h6_tan_rf", 30, 2, 4, ["10Rnd_556x45_AP_Stanag_RF"], 12];
+	a3e_arr_AmmoDepotSpecialWeapons pushback ["srifle_h6_tan_rf", 50, 2, 4, ["10Rnd_556x45_AP_Stanag_RF"], 12];
 };
 // non-CAST weapons
-a3e_arr_AmmoDepotSpecialWeapons pushback ["LMG_Mk200_black_F", 20, 2, 4, ["200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box_Tracer"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_GL_Sand_lxWS", 50, 2, 4, ["30Rnd_556x45_Stanag", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "UGL_FlareWhite_F"], 4];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_M_lxWS", 20, 2, 4, ["75Rnd_556x45_Stanag_green_lxWS", "75Rnd_556x45_Stanag_red_lxWS"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_M_Sand_lxWS", 20, 2, 4, ["75Rnd_556x45_Stanag_green_lxWS", "75Rnd_556x45_Stanag_red_lxWS"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["ef_arifle_mxm_coy", 50, 2, 4, ["EF_30Rnd_65x39_caseless_coy_mag", "EF_30Rnd_65x39_caseless_coy_mag_Tracer"], 8];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["ef_arifle_mxm_MBS_LP_BI", 50, 2, 4, ["30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag_Tracer"], 8];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["ef_arifle_mx_sw_coy", 50, 2, 4, ["EF_100Rnd_65x39_caseless_coy_mag","EF_100Rnd_65x39_caseless_coy_mag_Tracer"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["ef_arifle_mxar_black", 50, 2, 4, ["EF_100Rnd_65x39_caseless_coy_mag"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["LMG_Mk200_black_F", 10, 2, 4, ["200Rnd_65x39_cased_Box", "200Rnd_65x39_cased_Box_Tracer"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_GL_Sand_lxWS", 10, 2, 4, ["30Rnd_556x45_Stanag", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "UGL_FlareWhite_F"], 4];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_M_lxWS", 10, 2, 4, ["75Rnd_556x45_Stanag_green_lxWS", "75Rnd_556x45_Stanag_red_lxWS"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_M_Sand_lxWS", 10, 2, 4, ["75Rnd_556x45_Stanag_green_lxWS", "75Rnd_556x45_Stanag_red_lxWS"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_Shot_Sand_lxWS", 10, 2, 4, ["30Rnd_556x45_Stanag", "6rnd_HE_Mag_lxWS", "6Rnd_12Gauge_Pellets", "6rnd_Smoke_Mag_lxWS", "6Rnd_12Gauge_Slug"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["srifle_EBR_blk_tws_bpd_blk_lxWS", 10, 2, 4, ["20Rnd_762x51_Mag"], 9];
 if(A3E_Param_UseDLCMarksmen==1) then {
@@ -974,7 +1059,7 @@ if(A3E_Param_UseDLCMarksmen==1) then {
 a3e_arr_AmmoDepotLaunchers = [];
 // CSAT weapons
 a3e_arr_AmmoDepotLaunchers pushback ["launch_NLAW_F", 50, 3, 5, ["NLAW_F"], 2];
-a3e_arr_AmmoDepotLaunchers pushback ["launch_B_Titan_F", 50, 1, 1, ["Titan_AA"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["EF_launch_B_Titan_Coy", 50, 1, 1, ["Titan_AA"], 3];
 a3e_arr_AmmoDepotLaunchers pushback ["launch_B_Titan_short_F", 50, 1, 1, ["Titan_AP", "Titan_AT"], 3];
 a3e_arr_AmmoDepotLaunchers pushback ["launch_MRAWS_sand_F", 50, 1, 1, ["MRAWS_HEAT_F", "MRAWS_HE_F"], 2];
 // non-CSAT weapons
@@ -1026,6 +1111,10 @@ a3e_arr_AmmoDepotItems = [];
 a3e_arr_AmmoDepotItems pushback ["Laserdesignator", 10, 1, 2];
 if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["NVGoggles", 10, 1, 3];
+	a3e_arr_AmmoDepotItems pushback ["EF_LPNVG_Tan", 10, 1, 3];
+	a3e_arr_AmmoDepotItems pushback ["EF_LPNVG_T_Tan", 10, 1, 3];
+	a3e_arr_AmmoDepotItems pushback ["EF_LPNVG", 5, 1, 3];
+	a3e_arr_AmmoDepotItems pushback ["EF_LPNVG_T", 5, 1, 3];
 	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 		a3e_arr_AmmoDepotItems pushback ["TiGoggles_tan_RF", 10, 1, 3];
 	};
@@ -1039,6 +1128,8 @@ a3e_arr_AmmoDepotItems pushback ["ItemMap", 50, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["ItemRadio", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["ItemWatch", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["acc_flashlight", 10, 1, 5];
+a3e_arr_AmmoDepotItems pushback ["acc_flashlight_pistol", 50, 1, 5];
+a3e_arr_AmmoDepotItems pushback ["EF_acc_pointer_IR_coy", 25, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["saber_light_lxWS", 20, 1, 5];
 a3e_arr_AmmoDepotItems pushback ["saber_light_arid_lxWS", 20, 1, 5];
 a3e_arr_AmmoDepotItems pushback ["saber_light_sand_lxWS", 20, 1, 5];
@@ -1063,6 +1154,7 @@ a3e_arr_AmmoDepotItems pushback ["muzzle_snds_L", 30, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_M", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_12Gauge_lxWS", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_12Gauge_snake_lxWS", 10, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["ef_snds_mxar_coy", 30, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["optic_Aco", 50, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_Aco_smg", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_ACO_grn", 5, 1, 3];
@@ -1078,9 +1170,16 @@ a3e_arr_AmmoDepotItems pushback ["optic_r1_low_lxWS", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_r1_low_arid_lxWS", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_r1_low_sand_lxWS", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_r1_low_snake_lxWS", 15, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["optic_Holosight", 40, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["ef_optic_Holosight_smg_coy", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["ef_optic_Holosight_coy", 50, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_Holosight_snake_lxWS", 15, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_Holosight_smg_snake_lxWS", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["ef_optic_mbs_coy", 30, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["ef_optic_mbs_remote_coy", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["ef_optic_mbs_sand", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["ef_optic_mbs_remote_sand", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["ef_optic_microsight_coy", 50, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["ef_optic_microsight_pistol_coy", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_MRCO", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_NVS", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_SOS", 10, 1, 2];
@@ -1118,7 +1217,7 @@ if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 // Index 1: Magazine classname.
 // Index 2: Number of magazines.
 a3e_arr_CivilianCarWeapons = [];
-a3e_arr_CivilianCarWeapons pushback ["hgun_P07_F", "16Rnd_9x21_Mag", 5];
+a3e_arr_CivilianCarWeapons pushback ["ef_hgun_P07_coy", "16Rnd_9x21_Mag", 5];
 a3e_arr_CivilianCarWeapons pushback ["hgun_P07_snds_F", "30Rnd_9x21_Mag", 11];
 a3e_arr_CivilianCarWeapons pushback ["hgun_Rook40_snds_F", "30Rnd_9x21_Mag", 9];
 a3e_arr_CivilianCarWeapons pushback ["hgun_ACPC2_F", "9Rnd_45ACP_Mag", 12];
@@ -1148,11 +1247,17 @@ a3e_arr_CivilianCarWeapons pushback [objNull, "SmokeShell", 5];
 
 // Here is a list of scopes, might get randomly added to enemy patrols:
 a3e_arr_Scopes = [
-	"optic_ACO"
-	,"optic_Arco"
+	"ef_optic_Holosight_coy"
+	,"ef_optic_Holosight_coy"
+	,"ef_optic_Holosight_coy"
+	,"ef_optic_microsight_sand"
+	,"ef_optic_microsight_sand"
+	,"ef_optic_microsight_sand"
+	,"ef_optic_mbs_sand"
+	,"ef_optic_mbs_sand"
+	,"ef_optic_mbs_sand"
 	,"optic_Hamr"
 	,"optic_Hamr_snake_lxWS"
-	,"optic_MRCO"
 	,"optic_MRCO"
 	,"optic_MRCO"
 	,"optic_Holosight"
@@ -1169,20 +1274,22 @@ a3e_arr_Scopes = [
 	,"optic_Holosight_snake_lxWS"];
 	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 	a3e_arr_Scopes pushback "optic_VRCO_tan_RF";
+	a3e_arr_Scopes pushback "optic_VRCO_tan_RF";
+	a3e_arr_Scopes pushback "optic_VRCO_tan_RF";
 	};
 a3e_arr_Scopes_SMG = [
 	"optic_Aco_smg"
-	,"optic_Holosight_smg"
+	,"ef_optic_Holosight_smg_coy"
 	,"optic_Holosight_smg_snake_lxWS"];
 a3e_arr_Scopes_Sniper = [
 	"optic_SOS"
 	,"optic_DMS"
 	,"optic_LRPS"
-	,"optic_AMS"
-	,"optic_AMS_khk"
 	,"optic_AMS_snd"
 	,"optic_KHS_blk"
-	,"optic_KHS_hex"
+	,"ef_optic_mbs_remote_sand"
+	,"ef_optic_mbs_remote_sand"
+	,"ef_optic_mbs_remote_sand"
 	,"optic_KHS_old"
 	,"optic_KHS_tan"];
 a3e_arr_NightScopes = [
@@ -1196,11 +1303,7 @@ a3e_arr_TWSScopes = [
 a3e_arr_Bipods = [
 	"bipod_01_F_snd"
 	,"bipod_01_F_blk"
-	,"bipod_02_F_blk"
-	,"bipod_02_F_tan"
-	,"bipod_02_F_hex"
-	,"bipod_03_F_blk"
-	,"bipod_02_F_arid"];
+	,"bipod_02_F_tan"];
 
 //////////////////////////////////////////////////////////////////
 // SelectExtractionZone.sqf
@@ -1235,7 +1338,8 @@ a3e_arr_extraction_chopper_escort = [
 a3e_arr_extraction_boat = [
 	"O_Boat_Armed_01_hmg_F"];
 a3e_arr_extraction_boat_escort = [
-	"O_Boat_Armed_01_hmg_F"];
+	"EF_O_CombatBoat_HMG_OPF"
+	,"EF_O_CombatBoat_AT_OPF"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtractionLand.sqf
@@ -1280,11 +1384,11 @@ a3e_arr_searchChopperEasy = [
 		a3e_arr_searchChopperEasy pushback "B_ION_Heli_EC_01_RF";
 	};
 a3e_arr_searchChopperHard = [
-	"B_ION_Heli_Light_02_dynamicLoadout_lxWS"];
+	"EF_B_Heli_Transport_01_MJTF_Des"];
 a3e_arr_searchChopper_pilot = [
-	"B_ION_Helipilot_lxWS"];
+	"B_Helipilot_F"];
 a3e_arr_searchChopper_crew = [
-	"B_ION_Helipilot_lxWS"];
+	"B_Helipilot_F"];
 
 if(A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
@@ -1329,8 +1433,9 @@ a3e_arr_roadblocks_Veh_GUE = a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind;
 // boats that are spawned
 //////////////////////////////////////////////////////////////////
 a3e_arr_AquaticPatrols = [
-	"B_Boat_Armed_01_minigun_F"
-	,"I_Boat_Armed_01_minigun_F"];
+	"EF_O_CombatBoat_Unarmed_OPF"
+	,"EF_O_CombatBoat_HMG_OPF"
+	,"EF_O_CombatBoat_AT_OPF"];
 
 //////////////////////////////////////////////////////////////////
 // fn_AmmoDepot
@@ -1338,7 +1443,7 @@ a3e_arr_AquaticPatrols = [
 // use to add boxes from mods to the ammo depots
 //////////////////////////////////////////////////////////////////
 a3e_additional_weapon_box_1 = "Box_NATO_Wps_F";
-a3e_additional_weapon_box_2 = "ION_Box_Wps_lxWS";
+a3e_additional_weapon_box_2 = "EF_B_supplyCrate_MJTF";
 
 //////////////////////////////////////////////////////////////////
 // fn_MortarSite

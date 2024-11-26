@@ -107,6 +107,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_IDAP_Truck_02_water_F";
 	};
 	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Pickup_rf";
