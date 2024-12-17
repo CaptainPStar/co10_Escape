@@ -57,6 +57,7 @@ if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 	a3e_arr_PrisonBackpackWeapons pushback ["hgun_Glock19_auto_Tan_RF","33Rnd_9x19_Red_Mag_RF"];
 	a3e_arr_PrisonBackpackWeapons pushback ["hgun_DEagle_bronze_RF","7Rnd_50AE_Mag_RF"];
 	a3e_arr_PrisonBackpackWeapons pushback ["hgun_DEagle_classic_RF","7Rnd_50AE_Mag_RF"];
+	a3e_arr_PrisonBackpackWeapons pushback ["hgun_DEagle_camo_RF","7Rnd_50AE_Mag_RF"];
 };
 
 // Random array. Civilian vehicle classes for ambient traffic.
@@ -113,7 +114,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Pickup_rf";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Pickup_covered_rf";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Pickup_repair_rf";
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Truck_01_water_rf";	//HEMMT Firetruck
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Truck_01_FFT_rf";	//HEMMT Firetruck
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Truck_03_water_rf";	//Tempest Water
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_IDAP_Pickup_rf";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_IDAP_Pickup_covered_rf";
@@ -197,6 +198,7 @@ switch (_enemyFrequency) do {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_01_RF";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_fuel_rf";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_01_hmg_rf";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_01_Rocket_rf";
 		};
     };
     case 2: {//Some (4-6)
@@ -278,6 +280,8 @@ switch (_enemyFrequency) do {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_01_RF";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_fuel_rf";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_01_hmg_rf";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_01_hmg_rf";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_01_Rocket_rf";
 		};
     };
     default {//A lot (7-8)
@@ -362,6 +366,8 @@ switch (_enemyFrequency) do {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_01_RF";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_fuel_rf";
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_01_hmg_rf";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_01_hmg_rf";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_Tura_Pickup_01_Rocket_rf";
 		};
     };
 };
@@ -455,6 +461,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	,"I_Tura_Truck_02_aa_lxWS"];
 	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 	a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind pushback "I_Tura_Pickup_01_hmg_rf";
+	a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind pushback "I_Tura_Pickup_01_Rocket_rf";
 	};
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
@@ -623,6 +630,11 @@ a3e_arr_AmmoDepotLaunchers pushback ["launch_RPG32_F", 30, 3, 5, ["RPG32_F"], 2]
 if(A3E_Param_UseDLCApex==1) then {
 	a3e_arr_AmmoDepotLaunchers pushback ["launch_RPG7_F", 20, 2, 4, ["RPG7_F"], 2];
 };
+if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
+	a3e_arr_AmmoDepotLaunchers pushback ["launch_PSRL1_sand_RF", 10, 1, 3, ["PSRL1_AT_RF"], 2];
+	a3e_arr_AmmoDepotLaunchers pushback ["launch_PSRL1_black_RF", 10, 1, 2, ["PSRL1_HEAT_RF"], 3];
+	a3e_arr_AmmoDepotLaunchers pushback ["launch_PSRL1_sand_RF", 10, 1, 2, ["PSRL1_HE_RF","PSRL1_FRAG_RF"], 3];
+};
 
 // Weapons and ammo in the ordnance box
 a3e_arr_AmmoDepotOrdnance = [];
@@ -671,6 +683,7 @@ a3e_arr_AmmoDepotItems pushback ["Camera_lxWS", 50, 2, 3, [], 0];
 a3e_arr_AmmoDepotItems pushback ["Rangefinder", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["ItemCompass", 50, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["ItemGPS", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["ItemMotionSensor_lxWS", 25, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["ItemMap", 50, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["ItemRadio", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["ItemWatch", 50, 1, 10];
@@ -684,7 +697,8 @@ a3e_arr_AmmoDepotItems pushback ["muzzle_snds_m_snd_F", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_M", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["optic_Aco", 5, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_ERCO_snd_F", 5, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["optic_ACO_grn", 40, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["optic_ACO_grn", 20, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["optic_ACO_grn_camo_lxWS", 40, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["optic_ACO_grn_smg", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["optic_Arco_blk_F", 30, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_Hamr", 10, 1, 2];
@@ -715,13 +729,13 @@ a3e_arr_AmmoDepotItems pushback ["bipod_02_F_hex", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["bipod_02_F_arid", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["bipod_02_F_tan", 10, 1, 2];
 if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
-	a3e_arr_AmmoDepotItems pushback ["optic_ACO_grn_desert_RF", 10, 1, 1];
-	a3e_arr_AmmoDepotItems pushback ["optic_VRCO_tan_RF", 10, 1, 1];
-	a3e_arr_AmmoDepotItems pushback ["optic_MRD_tan_RF", 10, 1, 1];
-	a3e_arr_AmmoDepotItems pushback ["optic_rds_RF", 10, 1, 1];
-	a3e_arr_AmmoDepotItems pushback ["optic_VRCO_pistol_RF", 10, 1, 1];
-	a3e_arr_AmmoDepotItems pushback ["suppressor_127x55_big_desert_RF", 10, 1, 1];
-	a3e_arr_AmmoDepotItems pushback ["suppressor_127x55_small_desert_RF", 10, 1, 1];
+	a3e_arr_AmmoDepotItems pushback ["optic_ACO_grn_desert_RF", 20, 1, 1];
+	a3e_arr_AmmoDepotItems pushback ["optic_VRCO_tan_RF", 20, 1, 1];
+	a3e_arr_AmmoDepotItems pushback ["optic_MRD_tan_RF", 20, 1, 1];
+	a3e_arr_AmmoDepotItems pushback ["optic_rds_RF", 20, 1, 1];
+	a3e_arr_AmmoDepotItems pushback ["optic_VRCO_pistol_RF", 20, 1, 1];
+	a3e_arr_AmmoDepotItems pushback ["suppressor_127x55_big_desert_RF", 20, 1, 1];
+	a3e_arr_AmmoDepotItems pushback ["suppressor_127x55_small_desert_RF", 20, 1, 1];
 };
 
 // Weapons that may show up in civilian cars
@@ -737,6 +751,7 @@ a3e_arr_CivilianCarWeapons pushback ["hgun_ACPC2_snds_F", "9Rnd_45ACP_Mag", 12];
 a3e_arr_CivilianCarWeapons pushback ["arifle_Velko_lxWS", "35Rnd_556x45_Velko_lxWS", 6];
 a3e_arr_CivilianCarWeapons pushback ["arifle_Velko_lxWS", "50Rnd_556x45_Velko_lxWS", 4];
 a3e_arr_CivilianCarWeapons pushback ["arifle_XMS_Base_Sand_lxWS", "30Rnd_556x45_Stanag", 6];
+a3e_arr_CivilianCarWeapons pushback ["arifle_XMS_M_Camo_lxWS", "75Rnd_556x45_Stanag_camo_lxWS", 6];
 a3e_arr_CivilianCarWeapons pushback ["SMG_01_F", "30Rnd_45ACP_Mag_SMG_01", 8];
 a3e_arr_CivilianCarWeapons pushback ["srifle_GM6_F", "5Rnd_127x108_Mag", 8];
 a3e_arr_CivilianCarWeapons pushback ["SMG_03C_khaki", "50Rnd_570x28_SMG_03", 12];
@@ -769,6 +784,7 @@ a3e_arr_Scopes = [
 	"optic_Aco"
 	,"optic_ACO_grn"
 	,"optic_Arco_blk_F"
+	,"optic_ACO_grn_camo_lxWS"
 	,"optic_Hamr"
 	,"optic_MRCO"
 	,"optic_Holosight_arid_F"];
@@ -1037,11 +1053,12 @@ if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 a3e_arr_CrashSiteItems = [];
 a3e_arr_CrashSiteItems pushback ["optic_Hamr", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["optic_Aco", 10, 1, 3];
-a3e_arr_CrashSiteItems pushback ["optic_Aco_smg", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["optic_ACO_camo_lxWS", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["optic_Holosight", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["optic_DMS", 20, 1, 3];
 a3e_arr_CrashSiteItems pushback ["optic_SOS", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["muzzle_snds_H", 10, 1, 3];
+a3e_arr_CrashSiteItems pushback ["suppressor_l_camo_lxWS", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["bipod_01_F_snd", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["B_UavTerminal", 50, 1, 1];
 if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {

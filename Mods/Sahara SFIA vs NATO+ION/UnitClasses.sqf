@@ -58,6 +58,7 @@ if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 	a3e_arr_PrisonBackpackWeapons pushback ["hgun_Glock19_auto_Tan_RF","33Rnd_9x19_Red_Mag_RF"];
 	a3e_arr_PrisonBackpackWeapons pushback ["hgun_DEagle_bronze_RF","7Rnd_50AE_Mag_RF"];
 	a3e_arr_PrisonBackpackWeapons pushback ["hgun_DEagle_classic_RF","7Rnd_50AE_Mag_RF"];
+	a3e_arr_PrisonBackpackWeapons pushback ["hgun_DEagle_camo_RF","7Rnd_50AE_Mag_RF"];
 };
 
 // Random array. Civilian vehicle classes for ambient traffic.
@@ -114,7 +115,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Pickup_rf";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Pickup_covered_rf";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Pickup_repair_rf";
-	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Truck_01_water_rf";	//HEMMT Firetruck
+	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Truck_01_FFT_rf";	//HEMMT Firetruck
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Truck_03_water_rf";	//Tempest Water
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_IDAP_Pickup_rf";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_IDAP_Pickup_covered_rf";
@@ -257,7 +258,10 @@ switch (_enemyFrequency) do {
 		if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_aat_rf";
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rf";
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_mmg_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_mmg_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rcws_rf";
 		};
     };
     case 2: {//Some (4-6)
@@ -423,7 +427,10 @@ switch (_enemyFrequency) do {
 		if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_aat_rf";
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rf";
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_mmg_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_mmg_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rcws_rf";
 		};
     };
     default {//A lot (7-8)
@@ -602,7 +609,10 @@ switch (_enemyFrequency) do {
 		if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_aat_rf";
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rf";
 			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_mmg_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_mmg_rf";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "B_ION_Pickup_rcws_rf";
 		};
     };
 };
@@ -700,6 +710,10 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"B_ION_soldier_UAV_02_lxWS"
 	,"B_ION_TL_lxWS"
 	,"B_ION_TL_lxWS"];
+	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
+		a3e_arr_Escape_InfantryTypes_Ind pushback "B_ION_soldier_LAT_RF";
+		a3e_arr_Escape_InfantryTypes_Ind pushback "B_ION_soldier_LAT_RF";
+	};
 a3e_arr_recon_InfantryTypes = [
 	"B_D_recon_exp_lxWS"
 	,"B_D_recon_JTAC_lxWS"
@@ -719,6 +733,10 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"B_D_CTRG_Soldier_lxWS"
 	,"B_D_CTRG_Soldier_TL_lxWS"
 	,"B_D_CTRG_soldier_UAV_lxWS"];
+	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
+		a3e_arr_recon_I_InfantryTypes pushback "B_D_CTRG_Soldier_LAT_RF";
+		a3e_arr_recon_I_InfantryTypes pushback "B_D_CTRG_Soldier_LAT_RF";
+	};
 
 a3e_units_civilian_InfantryTypes = [
 	"C_Djella_01_lxWS"
@@ -756,6 +774,8 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	,"ION_UAV_02_lxWS"];
 	if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
 		a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind pushback "B_ION_Pickup_mmg_rf";
+		a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind pushback "B_ION_Pickup_mmg_rf";
+		a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind pushback "B_ION_Pickup_rcws_rf";
 	};
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
@@ -924,9 +944,11 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["SMG_03C_TR_black", 20, 4, 8, ["50Rnd_57
 a3e_arr_AmmoDepotBasicWeapons pushback ["SMG_01_F", 20, 4, 8, ["30Rnd_45ACP_Mag_SMG_01"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["hgun_P07_blk_F", 20, 4, 8, ["16Rnd_9x21_Mag"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_Base_lxWS", 50, 2, 4, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_Camo_lxWS", 20, 2, 4, ["30Rnd_556x45_Stanag_camo_lxWS", "30Rnd_556x45_Stanag_Tracer_Red_camo_lxWS"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_GL_lxWS", 50, 2, 4, ["30Rnd_556x45_Stanag", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "UGL_FlareWhite_F"], 4];
 a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_Base_Sand_lxWS", 50, 2, 4, ["30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Green", "30Rnd_556x45_Stanag_Tracer_Yellow"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_Shot_lxWS", 10, 2, 4, ["30Rnd_556x45_Stanag", "6rnd_HE_Mag_lxWS", "6Rnd_12Gauge_Pellets", "6rnd_Smoke_Mag_lxWS", "6Rnd_12Gauge_Slug"], 6];
+a3e_arr_AmmoDepotBasicWeapons pushback ["arifle_XMS_Shot_Camo_lxWS", 10, 2, 4, ["30Rnd_556x45_Stanag_camo_lxWS", "6rnd_HE_Mag_lxWS", "6Rnd_12Gauge_Pellets", "6rnd_Smoke_Mag_lxWS", "6Rnd_12Gauge_Slug"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["sgun_aa40_lxWS", 30, 2, 4, ["20Rnd_12Gauge_AA40_Pellets_lxWS", "20Rnd_12Gauge_AA40_Slug_lxWS", "8Rnd_12Gauge_AA40_Smoke_lxWS", "8Rnd_12Gauge_AA40_HE_lxWS"], 6];
 
 // Weapons and ammo in the special weapons box
@@ -963,6 +985,7 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["LMG_Mk200_black_F", 20, 2, 4, ["200Rn
 a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_GL_Sand_lxWS", 50, 2, 4, ["30Rnd_556x45_Stanag", "1Rnd_HE_Grenade_shell", "1Rnd_Smoke_Grenade_shell", "UGL_FlareWhite_F"], 4];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_M_lxWS", 20, 2, 4, ["75Rnd_556x45_Stanag_green_lxWS", "75Rnd_556x45_Stanag_red_lxWS"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_M_Sand_lxWS", 20, 2, 4, ["75Rnd_556x45_Stanag_green_lxWS", "75Rnd_556x45_Stanag_red_lxWS"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_M_Camo_lxWS", 10, 2, 4, ["75Rnd_556x45_Stanag_camo_lxWS"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["arifle_XMS_Shot_Sand_lxWS", 10, 2, 4, ["30Rnd_556x45_Stanag", "6rnd_HE_Mag_lxWS", "6Rnd_12Gauge_Pellets", "6rnd_Smoke_Mag_lxWS", "6Rnd_12Gauge_Slug"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["srifle_EBR_blk_tws_bpd_blk_lxWS", 10, 2, 4, ["20Rnd_762x51_Mag"], 9];
 if(A3E_Param_UseDLCMarksmen==1) then {
@@ -978,13 +1001,11 @@ a3e_arr_AmmoDepotLaunchers pushback ["launch_B_Titan_F", 50, 1, 1, ["Titan_AA"],
 a3e_arr_AmmoDepotLaunchers pushback ["launch_B_Titan_short_F", 50, 1, 1, ["Titan_AP", "Titan_AT"], 3];
 a3e_arr_AmmoDepotLaunchers pushback ["launch_MRAWS_sand_F", 50, 1, 1, ["MRAWS_HEAT_F", "MRAWS_HE_F"], 2];
 // non-CSAT weapons
-//a3e_arr_AmmoDepotLaunchers pushback ["launch_NLAW_F", 50, 3, 5, ["NLAW_F"], 3];
-//a3e_arr_AmmoDepotLaunchers pushback ["launch_MRAWS_olive_rail_F", 50, 1, 1, ["MRAWS_HEAT_F", "MRAWS_HE_F"], 2];
-//a3e_arr_AmmoDepotLaunchers pushback ["launch_I_Titan_F", 100, 1, 1, ["Titan_AA"], 3];
-//a3e_arr_AmmoDepotLaunchers pushback ["launch_I_Titan_short_F", 100, 1, 1, ["Titan_AP", "Titan_AT"], 3];
-//a3e_arr_AmmoDepotLaunchers pushback ["launch_B_Titan_F", 100, 1, 1, ["Titan_AA"], 3];
-//a3e_arr_AmmoDepotLaunchers pushback ["launch_B_Titan_short_F", 100, 1, 1, ["Titan_AP", "Titan_AT"], 3];
-
+if(isClass(configFile >> "CfgPatches" >> "rf_vehicles")) then {
+	a3e_arr_AmmoDepotLaunchers pushback ["launch_PSRL1_PWS_sand_RF", 20, 2, 4, ["PSRL1_AT_RF"], 2];
+	a3e_arr_AmmoDepotLaunchers pushback ["launch_PSRL1_PWS_black_RF", 30, 2, 4, ["PSRL1_HEAT_RF"], 3];
+	a3e_arr_AmmoDepotLaunchers pushback ["launch_PSRL1_PWS_black_RF", 20, 2, 4, ["PSRL1_HE_RF"], 4];
+};
 
 // Weapons and ammo in the ordnance box
 a3e_arr_AmmoDepotOrdnance = [];
@@ -1035,6 +1056,7 @@ a3e_arr_AmmoDepotItems pushback ["Rangefinder", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["Camera_lxWS", 50, 2, 3, [], 0];
 a3e_arr_AmmoDepotItems pushback ["ItemCompass", 50, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["ItemGPS", 10, 1, 2];
+a3e_arr_AmmoDepotItems pushback ["ItemMotionSensor_lxWS", 20, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["ItemMap", 50, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["ItemRadio", 50, 1, 10];
 a3e_arr_AmmoDepotItems pushback ["ItemWatch", 50, 1, 10];
@@ -1060,13 +1082,13 @@ a3e_arr_AmmoDepotItems pushback ["suppressor_h_arid_lxWS", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["suppressor_h_sand_lxWS", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["suppressor_h_snake_lxWS", 15, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_L", 30, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["suppressor_l_camo_lxWS", 30, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_M", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_12Gauge_lxWS", 20, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["muzzle_snds_12Gauge_snake_lxWS", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["optic_Aco", 50, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_Aco_smg", 20, 1, 2];
-a3e_arr_AmmoDepotItems pushback ["optic_ACO_grn", 5, 1, 3];
-a3e_arr_AmmoDepotItems pushback ["optic_ACO_grn_smg", 5, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["optic_ACO_camo_lxWS", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["optic_Arco", 5, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_Hamr", 30, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["optic_Hamr_snake_lxWS", 10, 1, 2];
@@ -1402,6 +1424,7 @@ a3e_arr_CrashSiteItems = [];
 a3e_arr_CrashSiteItems pushback ["optic_Arco_arid_F", 30, 1, 3];
 a3e_arr_CrashSiteItems pushback ["optic_Arco_hex_lxWS", 30, 1, 3];
 a3e_arr_CrashSiteItems pushback ["optic_ACO_grn", 50, 1, 3];
+a3e_arr_CrashSiteItems pushback ["optic_ACO_grn_camo_lxWS", 10, 1, 1];
 a3e_arr_CrashSiteItems pushback ["optic_Aco_grn_smg", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["optic_Holosight", 10, 1, 3];
 a3e_arr_CrashSiteItems pushback ["optic_KHS", 10, 1, 3];
