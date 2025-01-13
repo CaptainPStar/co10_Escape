@@ -37,6 +37,7 @@ _obj = ["Land_DataTerminal_01_F",_center,[-5.43176,0.866699,0],_rotation,357.19]
 _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
 [_obj,"green","green","green"] call BIS_fnc_DataTerminalColor;
+player reveal _obj;
 
 if (count _staticWeaponClasses > 0) then {
     // Statics

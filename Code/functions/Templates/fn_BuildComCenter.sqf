@@ -224,6 +224,7 @@ _obj = ["Land_DataTerminal_01_F", _pos, _dir, _centerPos, _rotateDir] call _fnc_
 _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
 [_obj,"green","green","green"] call BIS_fnc_DataTerminalColor;
+player reveal _obj;
 
 _pos = [13, 1];
 _dir = 90;
