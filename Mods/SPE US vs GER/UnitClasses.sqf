@@ -1002,6 +1002,11 @@ a3e_arr_CASplane = [
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
 	"SPE_P47_MRWreck"];
+if(isClass(configFile >> "CfgPatches" >> "spex_tem_utah_beach")) then {			//check if SPEX mod is loaded
+	a3e_arr_CrashSiteWrecks pushback "SPEX_HORSA_Wreck";
+	a3e_arr_CrashSiteWrecks pushback "SPEX_C47_Skytrain_wreck";
+	};
+
 a3e_arr_CrashSiteCrew = [
 	"SPE_US_Pilot"
 	,"SPE_US_Pilot_2"];
