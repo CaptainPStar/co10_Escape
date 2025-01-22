@@ -37,36 +37,6 @@ _obj = ["Land_DataTerminal_01_F",_center,[12.6268,6.06348,0],_rotation,357.19] c
 _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
 [_obj,"green","green","green"] call BIS_fnc_DataTerminalColor;
-_obj addAction [
-    "<t color='#cccc00'>Hack Terminal</t>",
-    {
-        params ["_target", "_caller", "_actionId"];
-       // systemChat format ["Action called on: %1", _target];
-        if (_target getVariable ["A3E_Terminal_Hacked", false]) exitWith {
-            systemChat "This terminal has already been hacked.";
-        };
-        [_target, _caller, _actionId] call A3E_fnc_Hijack;
-    },
-    [], 
-    1.5, 
-    false, 
-    true, 
-    "", 
-    "(_this getVariable ['A3E_Terminal_Hacked', false]) == false" 
-];
-
-private _trigger = createTrigger ["EmptyDetector", getPosATL _obj];
-_trigger setTriggerArea [5, 5, 1, true];
-_trigger setTriggerActivation ["ANY", "PRESENT", false];
-_trigger setVariable ["associatedTerminal", _obj];
-
-_trigger setTriggerStatements [
-    "this && player distance (_thisTrigger getVariable 'associatedTerminal') < 5",
-    "player reveal (_thisTrigger getVariable 'associatedTerminal');
-    [cursorObject] remoteExec ['A3E_fnc_addHijackAction', player];", 
-    ""
-];
-// end spawn terminal
 
 if (count _staticWeaponClasses > 0) then {
     // Statics

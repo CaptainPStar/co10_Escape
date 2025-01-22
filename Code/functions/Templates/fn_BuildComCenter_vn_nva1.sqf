@@ -36,36 +36,7 @@ _obj = ["Land_DataTerminal_01_F",_center,[3.59229,1.67432,14.1044],_rotation,101
 _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
 [_obj,"green","green","green"] call BIS_fnc_DataTerminalColor;
-_obj addAction [
-    "<t color='#cccc00'>Hack Terminal</t>",
-    {
-        params ["_target", "_caller", "_actionId"];
-       // systemChat format ["Action called on: %1", _target];
-        if (_target getVariable ["A3E_Terminal_Hacked", false]) exitWith {
-            systemChat "This terminal has already been hacked.";
-        };
-        [_target, _caller, _actionId] call A3E_fnc_Hijack;
-    },
-    [], 
-    1.5, 
-    false, 
-    true, 
-    "", 
-    "(_this getVariable ['A3E_Terminal_Hacked', false]) == false" 
-];
 
-private _trigger = createTrigger ["EmptyDetector", getPosATL _obj];
-_trigger setTriggerArea [5, 5, 1, true];
-_trigger setTriggerActivation ["ANY", "PRESENT", false];
-_trigger setVariable ["associatedTerminal", _obj];
-
-_trigger setTriggerStatements [
-    "this && player distance (_thisTrigger getVariable 'associatedTerminal') < 5",
-    "player reveal (_thisTrigger getVariable 'associatedTerminal');
-    [cursorObject] remoteExec ['A3E_fnc_addHijackAction', player];", 
-    ""
-];
-// end spawn terminal
 _obj = ["Land_vn_bagfence_01_round_green_f",_center,[4.41602,-7.02637,21.5102],_rotation,0] call _fnc_createObject;
 _obj = ["Land_vn_camonetb_nato",_center,[-13.7062,0.142578,-1.43051e-006],_rotation,90] call _fnc_createObject;
 _obj = ["Land_vn_ttowersmall_2_f",_center,[1.81067,6.1001,14.9617],_rotation,56.3967] call _fnc_createObject;
