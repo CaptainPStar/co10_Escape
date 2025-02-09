@@ -83,36 +83,7 @@ _obj = ["Land_SPE_Netting_02",_center,[1.22388,10.7354,0],_rotation,0] call _fnc
 _obj = ["SPE_Radio_Us",_center,[8.73096,7.56055,0],_rotation,0] call _fnc_createObject;
 _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
-_obj addAction [
-    "<t color='#cccc00'>Hack Terminal</t>",
-    {
-        params ["_target", "_caller", "_actionId"];
-       // systemChat format ["Action called on: %1", _target];
-        if (_target getVariable ["A3E_Terminal_Hacked", false]) exitWith {
-            systemChat "This terminal has already been hacked.";
-        };
-        [_target, _caller, _actionId] call A3E_fnc_Hijack;
-    },
-    [], 
-    1.5, 
-    false, 
-    true, 
-    "", 
-    "(_this getVariable ['A3E_Terminal_Hacked', false]) == false" 
-];
 
-private _trigger = createTrigger ["EmptyDetector", getPosATL _obj];
-_trigger setTriggerArea [5, 5, 1, true];
-_trigger setTriggerActivation ["ANY", "PRESENT", false];
-_trigger setVariable ["associatedTerminal", _obj];
-
-_trigger setTriggerStatements [
-    "this && player distance (_thisTrigger getVariable 'associatedTerminal') < 5",
-    "player reveal (_thisTrigger getVariable 'associatedTerminal');
-    [cursorObject] remoteExec ['A3E_fnc_addHijackAction', player];", 
-    ""
-];
-// end spawn terminal
 //_obj = ["SPE_ST_MG34_Bipod",_center,[-14.4316,-9.92139,0],_rotation,225] call _fnc_createObject;
 //_obj = ["SPE_ST_MG34_Bipod",_center,[14.2874,-10.1504,0],_rotation,135] call _fnc_createObject;
 //_obj = ["SPE_ST_MG34_Bipod",_center,[-14.4094,10.1772,0],_rotation,315] call _fnc_createObject;
