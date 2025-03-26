@@ -65,7 +65,6 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
-	,"CSLA_CIV_Sarka1200VB"
 	,"CSLA_CIV_Sarka1200PO"
 	//,"CSLA_CIV_AZU"
 	,"CSLA_civ_CATOR"];
@@ -673,8 +672,8 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["US85_ANPAQ1", 20, 1, 2, ["US85_ANPAQ1
 
 // non-CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_HuntingRifle", 20, 2, 4, ["CSLA_10Rnd_762hunt"], 12];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_OP54", 10, 2, 4, ["CSLA_OP54_5rnd_7_62TzOdst59"], 12];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_OP54", 20, 2, 4, ["CSLA_OP54_5rnd_7_62PZ59"], 12];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_PD54", 10, 2, 4, ["CSLA_OP54_5rnd_7_62TzOdst59"], 12];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_PD54", 20, 2, 4, ["CSLA_OP54_5rnd_7_62PZ59"], 12];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_LK52_25", 20, 1, 2, ["CSLA_LK52_25rnd_7_62Sv52"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_LK52_25", 20, 1, 2, ["CSLA_LK52_25rnd_7_62PZ52"], 5];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_LK57_50", 20, 2, 4, ["CSLA_LK57_50rnd_7_62vz43"], 6];
@@ -835,8 +834,7 @@ a3e_arr_Scopes = [
 //	,"optic_Holosight"];
 a3e_arr_Scopes_SMG = [];
 a3e_arr_Scopes_Sniper = [
-	"CSLA_PSO1_OP63"
-	,"CSLA_PD54"];
+	"CSLA_PSO1_OP63"];
 a3e_arr_NightScopes = [
 	"CSLA_NSPU"
 	,"CSLA_NSPU_OP63"
@@ -1074,7 +1072,7 @@ a3e_arr_CrashSiteWeapons pushback ["CSLA_RPG7", 15, 1, 2, ["CSLA_PG7M110V"], 2];
 a3e_arr_CrashSiteWeapons pushback ["CSLA_P27", 15, 1, 2, ["CSLA_NbP27"], 2];
 a3e_arr_CrashSiteWeapons pushback ["CSLA_9K32", 20, 1, 2, ["CSLA_9M32M"], 1];
 a3e_arr_CrashSiteWeapons pushback ["CSLA_HuntingRifle", 20, 1, 2, ["CSLA_10Rnd_762hunt"], 12];
-a3e_arr_CrashSiteWeapons pushback ["CSLA_OP54", 20, 1, 2, ["CSLA_OP54_5rnd_7_62TzOdst59"], 12];
+a3e_arr_CrashSiteWeapons pushback ["CSLA_OP54p", 20, 1, 2, ["CSLA_OP54_5rnd_7_62TzOdst59"], 12];
 a3e_arr_CrashSiteWeapons pushback ["CSLA_OP63", 20, 1, 2, ["CSLA_OP63_10rnd_7_62Odst59"], 10];
 a3e_arr_CrashSiteWeapons pushback ["CSLA_Sa26", 25, 1, 2, ["CSLA_Sa24_32rnd_7_62Pi52"], 8];
 a3e_arr_CrashSiteWeapons pushback ["CSLA_Sa58P", 75, 2, 4, ["CSLA_Sa58_30rnd_7_62vz43"], 5];
