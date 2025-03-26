@@ -757,7 +757,8 @@ a3e_arr_Scopes = [
 //	,"optic_Holosight"];
 a3e_arr_Scopes_SMG = [];
 a3e_arr_Scopes_Sniper = [
-	"CSLA_PSO1_OP63"];
+	"CSLA_PSO1_OP63"
+	,"CSLA_PD54"];
 a3e_arr_NightScopes = [
 	"CSLA_NSPU"
 	,"CSLA_NSPU_OP63"
