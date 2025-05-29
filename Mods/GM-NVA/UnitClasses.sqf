@@ -121,6 +121,7 @@ switch (_enemyFrequency) do {
 		,"gm_gc_army_brdm2"
 		,"gm_gc_army_brdm2rkh"
 		,"gm_gc_army_brdm2um"
+		,"gm_gc_army_brdm2_9p133"
 		,"gm_gc_army_btr60pa"
 		,"gm_gc_army_btr60pa_dshkm"
 		,"gm_gc_army_btr60pb"
@@ -139,6 +140,7 @@ switch (_enemyFrequency) do {
 		,"gm_pl_army_ural4320_repair"
 		,"gm_pl_army_brdm2"
 		,"gm_pl_army_brdm2"
+		,"gm_pl_army_brdm2_9p133"
 		,"gm_pl_army_ot64a"
 		,"gm_pl_army_ot64a"
 		,"gm_pl_army_pt76b"
@@ -190,6 +192,7 @@ switch (_enemyFrequency) do {
 		,"gm_gc_army_brdm2"
 		,"gm_gc_army_brdm2rkh"
 		,"gm_gc_army_brdm2um"
+		,"gm_gc_army_brdm2_9p133"
 		,"gm_gc_army_btr60pa"
 		,"gm_gc_army_btr60pa_dshkm"
 		,"gm_gc_army_btr60pb"
@@ -208,6 +211,7 @@ switch (_enemyFrequency) do {
 		,"gm_pl_army_ural4320_repair"
 		,"gm_pl_army_brdm2"
 		,"gm_pl_army_brdm2"
+		,"gm_pl_army_brdm2_9p133"
 		,"gm_pl_army_ot64a"
 		,"gm_pl_army_ot64a"
 		,"gm_pl_army_pt76b"
@@ -259,6 +263,7 @@ switch (_enemyFrequency) do {
 		,"gm_gc_army_brdm2"
 		,"gm_gc_army_brdm2rkh"
 		,"gm_gc_army_brdm2um"
+		,"gm_gc_army_brdm2_9p133"
 		,"gm_gc_army_btr60pa"
 		,"gm_gc_army_btr60pa_dshkm"
 		,"gm_gc_army_btr60pb"
@@ -277,6 +282,7 @@ switch (_enemyFrequency) do {
 		,"gm_pl_army_ural4320_repair"
 		,"gm_pl_army_brdm2"
 		,"gm_pl_army_brdm2"
+		,"gm_pl_army_brdm2_9p133"
 		,"gm_pl_army_ot64a"
 		,"gm_pl_army_ot64a"
 		,"gm_pl_army_pt76b"
@@ -436,6 +442,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"gm_gc_army_brdm2rkh"
 	,"gm_gc_army_btr60pa_dshkm"
 	,"gm_gc_army_btr60pb"
+	,"gm_gc_army_brdm2_9p133"
 	,"gm_gc_army_bmp1sp2"
 	,"gm_gc_army_dshkm_aatripod"
 	,"gm_gc_army_spg9_tripod"
@@ -444,6 +451,7 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"gm_pl_army_uaz469_dshkm"
 	,"gm_pl_army_brdm2"
 	,"gm_pl_army_brdm2"
+	,"gm_pl_army_brdm2_9p133"
 	,"gm_pl_army_ot64a"
 	,"gm_pl_army_ot64a"
 	,"gm_pl_army_dshkm_aatripod"
@@ -971,7 +979,7 @@ a3e_additional_weapon_box_2 = "gm_AmmoBox_800Rnd_762x54mmR_b_t_7t2_pk";
 // mortar spawned in the mortar camps
 //////////////////////////////////////////////////////////////////
 a3e_arr_MortarSite = [
-	"O_Mortar_01_F"];
+	"gm_gc_army_2b11"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CallCAS.sqf

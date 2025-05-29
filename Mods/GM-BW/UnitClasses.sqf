@@ -160,20 +160,25 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_fuchsa0_engineer"
 		,"gm_ge_army_fuchsa0_reconnaissance"
 		,"gm_ge_army_fuchsa0_reconnaissance"
+		,"gm_ge_army_fuchsa0_medic"
+		,"gm_ge_army_fuchsa1_jammer"
 		,"gm_ge_army_luchsa1"
 		,"gm_ge_army_luchsa2"
 		,"gm_ge_army_bpz2a0"
 		,"gm_ge_army_bibera0"
 		,"gm_ge_army_kat1_463_mlrs"
 		,"gm_ge_army_m109g"
+		,"gm_ge_army_m113a1g_mortar"
 		,"gm_ge_army_marder1a1a"
 		,"gm_ge_army_marder1a1plus"
 		,"gm_ge_army_marder1a2"
+		,"gm_ge_army_rakjpz2"
 		,"gm_ge_army_Leopard1a1"
 		,"gm_ge_army_Leopard1a1a1"
 		,"gm_ge_army_Leopard1a1a2"
 		,"gm_ge_army_Leopard1a3"
 		,"gm_ge_army_Leopard1a3a1"
+		,"gm_ge_army_Leopard1a4"
 		,"gm_ge_army_Leopard1a5"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"gm_dk_army_m113a1dk_apc"
@@ -183,15 +188,21 @@ switch (_enemyFrequency) do {
 		,"gm_dk_army_m113a2dk"
 		,"gm_dk_army_u1300l_container"
 		,"gm_dk_army_u1300l_container"
+		,"gm_dk_army_u1300l_container"
+		,"gm_dk_army_typ1200_cargo"
 		,"gm_dk_army_typ1200_cargo"
 		,"gm_dk_army_typ1200_cargo"
 		,"gm_dk_army_typ247_cargo"
+		,"gm_dk_army_typ247_cargo"
+		,"gm_dk_army_typ253_cargo"
 		,"gm_dk_army_typ253_cargo"
 		,"gm_dk_army_typ253_mp"
 		,"gm_dk_army_bpz2a0"
 		,"gm_dk_army_bibera0"
 		,"gm_dk_army_m109"
-		,"gm_dk_army_Leopard1a3"];
+		,"gm_dk_army_Leopard1a3"
+		,"gm_dk_army_Leopard1a5dk1"
+		,"gm_dk_army_Leopard1a5dk1_dozer"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -232,20 +243,25 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_fuchsa0_engineer"
 		,"gm_ge_army_fuchsa0_reconnaissance"
 		,"gm_ge_army_fuchsa0_reconnaissance"
+		,"gm_ge_army_fuchsa0_medic"
+		,"gm_ge_army_fuchsa1_jammer"
 		,"gm_ge_army_luchsa1"
 		,"gm_ge_army_luchsa2"
 		,"gm_ge_army_bpz2a0"
 		,"gm_ge_army_bibera0"
 		,"gm_ge_army_kat1_463_mlrs"
 		,"gm_ge_army_m109g"
+		,"gm_ge_army_m113a1g_mortar"
 		,"gm_ge_army_marder1a1a"
 		,"gm_ge_army_marder1a1plus"
 		,"gm_ge_army_marder1a2"
+		,"gm_ge_army_rakjpz2"
 		,"gm_ge_army_Leopard1a1"
 		,"gm_ge_army_Leopard1a1a1"
 		,"gm_ge_army_Leopard1a1a2"
 		,"gm_ge_army_Leopard1a3"
 		,"gm_ge_army_Leopard1a3a1"
+		,"gm_ge_army_Leopard1a4"
 		,"gm_ge_army_Leopard1a5"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"gm_dk_army_m113a1dk_apc"
@@ -258,12 +274,16 @@ switch (_enemyFrequency) do {
 		,"gm_dk_army_typ1200_cargo"
 		,"gm_dk_army_typ1200_cargo"
 		,"gm_dk_army_typ247_cargo"
+		,"gm_dk_army_typ247_cargo"
+		,"gm_dk_army_typ253_cargo"
 		,"gm_dk_army_typ253_cargo"
 		,"gm_dk_army_typ253_mp"
 		,"gm_dk_army_bpz2a0"
 		,"gm_dk_army_bibera0"
 		,"gm_dk_army_m109"
-		,"gm_dk_army_Leopard1a3"];
+		,"gm_dk_army_Leopard1a3"
+		,"gm_dk_army_Leopard1a5dk1"
+		,"gm_dk_army_Leopard1a5dk1_dozer"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
@@ -304,20 +324,25 @@ switch (_enemyFrequency) do {
 		,"gm_ge_army_fuchsa0_engineer"
 		,"gm_ge_army_fuchsa0_reconnaissance"
 		,"gm_ge_army_fuchsa0_reconnaissance"
+		,"gm_ge_army_fuchsa0_medic"
+		,"gm_ge_army_fuchsa1_jammer"
 		,"gm_ge_army_luchsa1"
 		,"gm_ge_army_luchsa2"
 		,"gm_ge_army_bpz2a0"
 		,"gm_ge_army_bibera0"
 		,"gm_ge_army_kat1_463_mlrs"
 		,"gm_ge_army_m109g"
+		,"gm_ge_army_m113a1g_mortar"
 		,"gm_ge_army_marder1a1a"
 		,"gm_ge_army_marder1a1plus"
 		,"gm_ge_army_marder1a2"
+		,"gm_ge_army_rakjpz2"
 		,"gm_ge_army_Leopard1a1"
 		,"gm_ge_army_Leopard1a1a1"
 		,"gm_ge_army_Leopard1a1a2"
 		,"gm_ge_army_Leopard1a3"
 		,"gm_ge_army_Leopard1a3a1"
+		,"gm_ge_army_Leopard1a4"
 		,"gm_ge_army_Leopard1a5"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"gm_dk_army_m113a1dk_apc"
@@ -335,7 +360,9 @@ switch (_enemyFrequency) do {
 		,"gm_dk_army_bpz2a0"
 		,"gm_dk_army_bibera0"
 		,"gm_dk_army_m109"
-		,"gm_dk_army_Leopard1a3"];
+		,"gm_dk_army_Leopard1a3"
+		,"gm_dk_army_Leopard1a5dk1"
+		,"gm_dk_army_Leopard1a5dk1_dozer"];
     };
 };
 
@@ -497,7 +524,8 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"gm_ge_army_luchsa2"
 	,"gm_ge_army_marder1a1a"
 	,"gm_ge_army_m113a1g_apc_milan"
-	,"gm_ge_army_iltis_milan"];
+	,"gm_ge_army_iltis_milan"
+	,"gm_ge_army_rakjpz2"];
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
 // light *and* a random heavy armor.
@@ -515,6 +543,7 @@ a3e_arr_ComCenDefence_heavyArmorClasses = [
 	,"gm_ge_army_marder1a2"
 	,"gm_ge_army_Leopard1a1a1"
 	,"gm_ge_army_Leopard1a3"
+	,"gm_ge_army_Leopard1a4"
 	,"gm_ge_army_Leopard1a5"];
 
 // A communication center contains two static weapons (in two corners of the communication center).
@@ -542,6 +571,7 @@ a3e_arr_ComCenParkedVehicles = [
 	,"gm_ge_army_kat1_451_refuel"
 	,"gm_ge_army_kat1_454_reammo"
 	,"gm_ge_army_fuchsa0_reconnaissance"
+	,"gm_ge_army_fuchsa1_jammer"
 	,"gm_ge_army_luchsa1"
 	,"gm_ge_army_bpz2a0"
 	,"gm_ge_army_bibera0"];
@@ -624,6 +654,8 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"gm_ge_army_m113a1g_medic"
 	,"gm_ge_army_m113a1g_command"
 	,"gm_ge_army_m113a1g_apc"
+	,"gm_ge_army_fuchsa0_medic"
+	,"gm_ge_army_fuchsa1_jammer"
 	,"gm_ge_army_bicycle_01_oli"];
 
 //Random array. Types of helicopters to spawn
@@ -1094,7 +1126,7 @@ a3e_additional_weapon_box_2 = "gm_AmmoBox_4Rnd_44x537mm_heat_DM32_pzf44_2";
 // mortar spawned in the mortar camps
 //////////////////////////////////////////////////////////////////
 a3e_arr_MortarSite = [
-	"B_T_Mortar_01_F"];
+	"gm_ge_army_m120"];
 
 //////////////////////////////////////////////////////////////////
 // fn_CallCAS.sqf
