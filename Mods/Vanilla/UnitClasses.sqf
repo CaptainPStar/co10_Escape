@@ -1130,6 +1130,15 @@ a3e_arr_I_pilots = [
 	"I_helipilot_F"
 	,"I_helicrew_F"];
 
+// Random array. Helicopters for the capture objective.
+// Index 0: Helicopter classname
+// Index 1: Number of seats
+a3e_arr_heli_capture = [
+    ["B_Heli_Transport_01_F", 8], // Ghosthawk
+    ["O_Heli_Light_02_unarmed_F", 6],  // Orca
+    ["I_Heli_Transport_02_F", 10] // Kajman
+];
+
 
 //////////////////////////////////////////////////////////////////
 // fn_createAmmoDepots.sqf
