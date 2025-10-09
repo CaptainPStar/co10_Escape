@@ -46,12 +46,19 @@ if (count _suitableHelis > 0) then {
         _heli setDir (random 360);
         _heli setVehicleLock "LOCKED";
 
-        // Spawn guards
-        private _guardCount = 3 + floor (random 4);
+        // Spawn guards with scaled difficulty
+        private _guardCount = 2;
+        switch (A3E_Param_EnemyFrequency) do {
+            case 1: { _guardCount = 2 + floor (random 2); }; // 2-3 guards
+            case 2: { _guardCount = 4 + floor (random 2); }; // 4-5 guards
+            default { _guardCount = 6 + floor (random 3); }; // 6-8 guards
+        };
+
         private _guardGroup = createGroup A3E_VAR_Side_Ind;
         for "_i" from 1 to _guardCount do {
             private _guardPos = [_spawnPos, 25, 60] call BIS_fnc_findSafePos;
             private _unit = _guardGroup createUnit [(selectRandom a3e_arr_Escape_InfantryTypes), _guardPos, [], 0, "FORM"];
+            _unit setSkill (a3e_var_Escape_enemyMinSkill + random (a3e_var_Escape_enemyMaxSkill - a3e_var_Escape_enemyMinSkill));
         };
 
         // Create task for players
