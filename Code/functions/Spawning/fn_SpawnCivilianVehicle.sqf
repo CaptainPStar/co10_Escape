@@ -39,8 +39,11 @@ if (random 100 < 20) then {
 	
 	_weaponItem = selectRandom a3e_arr_CivilianCarWeapons;
 	
-	_vehicle addWeaponCargoGlobal [_weaponItem select 0, 1];
-	_vehicle addMagazineCargoGlobal [_weaponItem select 1, _weaponItem select 2];
+	private _weapon = (_weaponItem select 0);
+	private _magazine = (_weaponItem select 1);
+	
+	if (_weapon isEqualType "") then { _vehicle addWeaponCargoGlobal [_weapon, 1]; };
+	if (_magazine isEqualType "") then { _vehicle addMagazineCargoGlobal [_magazine, _weaponItem select 2]; };
 };	
 if (random 100 < 80) then {
    _vehicle addItemCargoglobal ["firstaidkit", 3];	
