@@ -6,8 +6,8 @@ if (isPlayer _unit) then {
 	if (_isDown) then {
 		_unit setCaptive true;
 		[_unit] remoteExec ["ACE_fnc_CaptiveHandle",_unit];//Loop because for whatever reason unit gets set out of captive mode here and there
-		if !(_unit call ace_medical_fnc_getUnconsciousCondition) then {[_unit,1] remoteExec ["ACE_fnc_GroundHandler",_unit];};
-		if ((_unit call ace_medical_fnc_getUnconsciousCondition)&&!(_unit getVariable "ACE_Revive_isUnconscious")) then {
+		if !(_unit getVariable ["ACE_isUnconscious", false]) then {[_unit,1] remoteExec ["ACE_fnc_GroundHandler",_unit];};
+		if ((_unit getVariable ["ACE_isUnconscious", false])&&!(_unit getVariable "ACE_Revive_isUnconscious")) then {
 			_unit setVariable ["ACE_Revive_isUnconscious", true, true];
 			[_unit,2] remoteExec ["ACE_fnc_GroundHandler",_unit];
 			_msg = format["%1 is unconscious.",name _unit];
