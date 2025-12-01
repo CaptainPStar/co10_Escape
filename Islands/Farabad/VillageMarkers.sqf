@@ -68,7 +68,7 @@ a3e_villageMarkers set [65, [[4407.28,5252.89,0], 22.7331, "RECTANGLE", [217.601
 a3e_villageMarkers set [66, [[4599.99,5645.37,0], 24.382, "RECTANGLE", [166.112,93.0877], "ColorBlue"]];
 a3e_villageMarkers set [67, [[4562.96,4750.42,0], 10.4461, "ELLIPSE", [196.039,453.996], "ColorBlue"]];
 a3e_villageMarkers set [68, [[5010.75,4952.5,0], 49.1361, "ELLIPSE", [321.298,447.832], "ColorBlue"]];
-a3e_villageMarkers set [69, [[4096.81,4559.9,0], 8.4319, "RECTANGLE", [29.3591,17.1088], "ColorBlue"]];
+a3e_villageMarkers set [69, [[4096.81,4559.9,0], 8.43189, "RECTANGLE", [29.3591,17.1088], "ColorBlue"]];
 a3e_villageMarkers set [70, [[3098.92,3114.66,0], 345.455, "ELLIPSE", [66.1055,27.1594], "ColorBlue"]];
 a3e_villageMarkers set [71, [[1287.5,1569,0], 0, "ELLIPSE", [29.318,20.9533], "ColorBlue"]];
 a3e_villageMarkers set [72, [[8978.5,4155,0], 330.502, "ELLIPSE", [56.6001,23.2148], "ColorBlue"]];
@@ -118,7 +118,7 @@ a3e_villageMarkers set [115, [[8547.34,1920.98,0], 49.6158, "ELLIPSE", [100.345,
 a3e_villageMarkers set [116, [[8820.52,2804.86,0], 0, "RECTANGLE", [51.1938,36.1034], "ColorBlue"]];
 a3e_villageMarkers set [117, [[8069.31,2751.08,0], 43.9681, "ELLIPSE", [82.055,155.727], "ColorBlue"]];
 a3e_villageMarkers set [118, [[8242.43,2724.68,0], 350.864, "ELLIPSE", [21.0024,36.4001], "ColorBlue"]];
-a3e_villageMarkers set [119, [[7468.53,2546.71,0], 349.112, "ELLIPSE", [18.157,47.697], "ColorBlue"]];
+a3e_villageMarkers set [119, [[7468.53,2546.71,0], 349.111, "ELLIPSE", [18.157,47.697], "ColorBlue"]];
 a3e_villageMarkers set [120, [[8375.18,2996.61,0], 343.745, "RECTANGLE", [9.7095,23.7909], "ColorBlue"]];
 a3e_villageMarkers set [121, [[8149.72,2992.41,0], 0, "RECTANGLE", [28.4847,28.025], "ColorBlue"]];
 a3e_villageMarkers set [122, [[7993.25,3024.23,0], 63.291, "ELLIPSE", [49.2757,82.3095], "ColorBlue"]];
@@ -135,3 +135,10 @@ a3e_villageMarkers set [132, [[7394.04,1805.5,0], 32.1448, "RECTANGLE", [18.6005
 a3e_villageMarkers set [133, [[7439.06,1621.64,0], 30.6467, "RECTANGLE", [15.8213,70.8385], "ColorBlue"]];
 a3e_villageMarkers set [134, [[7982.73,2077.06,0], 0, "RECTANGLE", [14.9746,9.97168], "ColorBlue"]];
 a3e_villageMarkers set [135, [[7588.07,1788.23,0], 339.482, "ELLIPSE", [36.7019,17.7038], "ColorBlue"]];
+a3e_villageMarkers set [136, [[5837.29,4706.72,0], 12.4302, "ELLIPSE", [31.9032,49.9599], "ColorBlue"]];
+a3e_villageMarkers set [137, [[5860.14,4366.57,0], 0, "ELLIPSE", [29.189,56.4983], "ColorBlue"]];
+a3e_villageMarkers set [138, [[5714.7,4444.96,0], 34.374, "RECTANGLE", [21.6736,29.0225], "ColorBlue"]];
+a3e_villageMarkers set [139, [[5320.67,2615.13,0], 0, "RECTANGLE", [48.2554,30.8367], "ColorBlue"]];
+a3e_villageMarkers set [140, [[2475.77,7053.97,0], 0, "ELLIPSE", [44.7944,83.4321], "ColorBlue"]];
+a3e_villageMarkers set [141, [[9267.55,9422.89,0], 0, "ELLIPSE", [21.3169,19.4849], "ColorBlue"]];
+a3e_villageMarkers set [142, [[9088.31,7295.66,0], 0, "ELLIPSE", [15.6714,12.3755], "ColorBlue"]];
