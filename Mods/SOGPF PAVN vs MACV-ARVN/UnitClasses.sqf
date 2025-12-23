@@ -93,8 +93,10 @@ if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {							//c
 		a3e_arr_PrisonBackpackWeapons pushback ["vnx_gjet","vnx_gjet_mag"];
 		a3e_arr_PrisonBackpackWeapons pushback ["vnx_hd_02","vnx_hd_02_mag"];
 		a3e_arr_PrisonBackpackWeapons pushback ["vnx_m_ladle","vnx_hd_02_mag"];
+		a3e_arr_PrisonBackpackWeapons pushback ["vnx_c96","vnx_c96_mag"];
+		a3e_arr_PrisonBackpackWeapons pushback ["vnx_p08","vnx_p08_mag"];
+		a3e_arr_PrisonBackpackWeapons pushback ["vnx_m77e_shorty","vnx_m77e_so_mag"];
 	};
-
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	"vn_c_bicycle_01"
@@ -157,6 +159,12 @@ switch (_enemyFrequency) do {
 		,"vn_b_armor_m41_01_01"
 		,"vn_b_armor_m48_01_01"
 		,"vn_b_armor_m67_01_01"];
+		if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {							//check if Nickel Steel mod is loaded
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_m163_01";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_lvtp5_01";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_m50_01";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_m50a1_01";
+		};
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"vn_i_wheeled_m151_01"
 		,"vn_i_wheeled_m151_02"
@@ -232,6 +240,12 @@ switch (_enemyFrequency) do {
 		,"vn_b_armor_m48_01_01"
 		,"vn_b_armor_m48_01_01"
 		,"vn_b_armor_m67_01_01"];
+		if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {							//check if Nickel Steel mod is loaded
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_m163_01";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_lvtp5_01";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_m50_01";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_m50a1_01";
+		};
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"vn_i_wheeled_m151_01"
 		,"vn_i_wheeled_m151_02"
@@ -313,6 +327,12 @@ switch (_enemyFrequency) do {
 		,"vn_b_armor_m48_01_01"
 		,"vn_b_armor_m48_01_01"
 		,"vn_b_armor_m67_01_01"];
+		if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {							//check if Nickel Steel mod is loaded
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_m163_01";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_lvtp5_01";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_m50_01";
+			a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses pushback "vnx_b_armor_m50a1_01";
+		};
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
 		"vn_i_wheeled_m151_01"
 		,"vn_i_wheeled_m151_02"
@@ -418,6 +438,10 @@ a3e_arr_recon_InfantryTypes = [
 	,"vn_b_men_sog_11"	//Grenadier 2
 	,"vn_b_men_sog_28"	//Grenadier 3
 	,"vn_b_men_sog_29"];	//Grenadier 4
+	if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {							//check if Nickel Steel mod is loaded
+		a3e_arr_recon_InfantryTypes pushback "vnx_b_men_sog_32";
+		a3e_arr_recon_InfantryTypes pushback "vnx_b_men_sog_33";
+	};
 a3e_arr_recon_I_InfantryTypes = [
 	"vn_i_men_sf_12"	//AT
 	,"vn_i_men_sf_05"	//Demolitions
@@ -491,6 +515,11 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"vn_b_wheeled_m54_mg_03"
 	,"vn_b_wheeled_m54_mg_02"
 	,"vn_b_armor_m132_01"];
+	if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {							//check if Nickel Steel mod is loaded
+		a3e_arr_Escape_RoadBlock_MannedVehicleTypes pushback "vnx_b_armor_m163_01";
+		a3e_arr_Escape_RoadBlock_MannedVehicleTypes pushback "vnx_b_armor_m50_01";
+		a3e_arr_Escape_RoadBlock_MannedVehicleTypes pushback "vnx_b_armor_m50a1_01";
+	};
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"vn_i_wheeled_m151_mg_01"
 	,"vn_i_wheeled_m151_mg_01_mp"
@@ -503,6 +532,9 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	"vn_b_wheeled_m151_mg_04"
 	,"vn_b_wheeled_m54_01_sog"
 	,"vn_b_wheeled_m54_02_sog"];
+	if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {							//check if Nickel Steel mod is loaded
+		a3e_arr_Escape_ReinforcementTruck_vehicleClasses pushback "vnx_b_armor_lvtp5_01";
+	};
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	"vn_i_wheeled_m151_02"
 	,"vn_i_wheeled_m54_01"
@@ -515,7 +547,8 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	,"vn_b_wheeled_m151_mg_04"
 	,"vn_b_wheeled_m54_mg_01"
 	,"vn_b_wheeled_m54_mg_03"
-	,"vn_b_armor_m113_01"];
+	,"vn_b_armor_m113_01"
+	,"vn_b_armor_m132_01"];
 
 //////////////////////////////////////////////////////////////////
 // fn_createMotorPools.sqf
@@ -546,6 +579,11 @@ a3e_arr_ComCenDefence_lightArmorClasses = [
 	,"vn_b_armor_m113_acav_01"
 	,"vn_b_armor_m113_acav_04"
 	,"vn_b_armor_m113_acav_05"];
+	if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {							//check if Nickel Steel mod is loaded
+		a3e_arr_ComCenDefence_lightArmorClasses pushback "vnx_b_armor_m163_01";
+		a3e_arr_ComCenDefence_lightArmorClasses pushback "vnx_b_armor_m50_01";
+		a3e_arr_ComCenDefence_lightArmorClasses pushback "vnx_b_armor_m50a1_01";
+	};
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"vn_b_armor_m41_01_01"
@@ -774,6 +812,7 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m1carbine_shorty", 10, 2, 4, ["vn_
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m14a1_shorty", 10, 2, 4, ["vn_m14_t_mag"], 10];
 if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m3carbine", 10, 2, 4, ["vn_carbine_30_mag"], 5];
+	a3e_arr_AmmoDepotSpecialWeapons pushback ["vnx_m201z", 20, 2, 4, ["vnx_37mm_cs_mag", "vnx_37mm_cs_fin_mag", "vnx_37mm_baton_mag","vnx_37mm_flare_mag"], 8];
 };
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m40a1", 20, 2, 4, ["vn_m40a1_t_mag"], 12];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["vn_m14_camo", 20, 2, 4, ["vn_m14_10_mag"], 10];
@@ -939,6 +978,8 @@ if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {							//c
 		a3e_arr_CivilianCarWeapons pushback ["vnx_m12_smg_fold","vnx_m12_smg_32_mag", 8];
 		a3e_arr_CivilianCarWeapons pushback ["vnx_m50_smg_fold","vnx_m50_smg_mag", 8];
 		a3e_arr_CivilianCarWeapons pushback ["vnx_m77e_shorty","vnx_m77e_so_mag", 8];
+		a3e_arr_CivilianCarWeapons pushback ["vnx_no4","vnx_no4_mag", 10];
+		a3e_arr_CivilianCarWeapons pushback ["vnx_c96","vnx_c96_mag", 4];
 	};
 
 // Here is a list of scopes, might get randomly added to enemy patrols:
@@ -1199,6 +1240,10 @@ a3e_arr_CASplane = [
 	,"vn_b_air_f100d_ehcas"];
 if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {
 	a3e_arr_CASplane pushback "vnx_b_air_ac119_04_01";
+	a3e_arr_CASplane pushback "vnx_b_air_ac119_04_01";
+	a3e_arr_CASplane pushback "vnx_b_air_a4e_usn_ehcas";
+	a3e_arr_CASplane pushback "vnx_b_air_ov10a_navy_ehcas";
+	a3e_arr_CASplane pushback "vnx_b_air_ov10a_navy_mr";
 	};
 
 //////////////////////////////////////////////////////////////////
@@ -1257,6 +1302,13 @@ a3e_arr_CrashSiteWeapons pushback ["vn_dp28", 50, 1, 2, ["vn_dp28_mag"], 5];
 a3e_arr_CrashSiteWeapons pushback ["vn_mg42", 40, 1, 2, ["vn_mg42_50_mag"], 5];
 if(isClass(configFile >> "CfgPatches" >> "air_f_vietnam_04_c")) then {							//check if Nickel Steel mod is loaded
 		a3e_arr_CrashSiteWeapons pushback ["vnx_fm2429", 50, 1, 2, ["vnx_fm2429_t_mag"], 8];
+		a3e_arr_CrashSiteWeapons pushback ["vnx_m12_smg", 30, 1, 2, ["vnx_m12_smg_32_mag"], 12];
+		a3e_arr_CrashSiteWeapons pushback ["vnx_m38_smg", 30, 1, 2, ["vnx_m38_smg_32_mag"], 12];
+		a3e_arr_CrashSiteWeapons pushback ["vnx_m50_smg", 30, 1, 2, ["vnx_m50_smg_mag"], 12];
+		a3e_arr_CrashSiteWeapons pushback ["vnx_tul1", 30, 1, 2, ["vnx_rpk_40_t_mag"], 8];
+		a3e_arr_CrashSiteWeapons pushback ["vnx_tul1", 30, 1, 2, ["vnx_rpk_75_mag"], 6];
+		a3e_arr_CrashSiteWeapons pushback ["vnx_stg44", 30, 1, 2, ["vnx_stg44_mag"], 12];
+		a3e_arr_CrashSiteWeapons pushback ["vnx_no4_sniper", 30, 1, 2, ["vnx_no4_mag"], 12];
 	};
 // Attachments and other items in crash site box
 a3e_arr_CrashSiteItems = [];
