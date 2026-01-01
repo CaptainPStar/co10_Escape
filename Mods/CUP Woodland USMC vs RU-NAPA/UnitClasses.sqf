@@ -736,7 +736,7 @@ a3e_arr_CivilianCarWeapons pushback ["CUP_arifle_CZ805_A1_ZDDot_Laser", "CUP_30R
 a3e_arr_CivilianCarWeapons pushback ["CUP_CZ_BREN2_556_14_Grn", "CUP_30Rnd_556x45_Stanag", 7];
 a3e_arr_CivilianCarWeapons pushback ["CUP_lmg_M240", "CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M", 5];
 a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_Mosin_Nagant", "CUP_5Rnd_762x54_Mosin_M", 8];
-a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ550", "CUP_5x_22_LR_17_HMR_M", 10];
+a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ550", "CUP_5Rnd_93x64_CZ550", 10];
 a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ750_SOS_bipod", "CUP_10Rnd_762x51_CZ750", 10];
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_slamfire", "CUP_1Rnd_12Gauge_Pellets_No00_Buck", 20];
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_slamfire", "CUP_1Rnd_12Gauge_HE", 20];
