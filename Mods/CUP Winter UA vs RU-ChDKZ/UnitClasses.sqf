@@ -655,7 +655,7 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_smg_BallisticShield_PP19", 30, 2,
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_OTS14_GROZA_762_GL", 30, 2, 4, ["CUP_30Rnd_762x39_AK47_M","CUP_1Rnd_HE_GP25_M"], 6];
 // non-CAST weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_Sa58_Klec", 20, 2, 4, ["CUP_45Rnd_Sa58_M"], 6];
-a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_CZ550", 40, 1, 2, ["CUP_5x_22_LR_17_HMR_M"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_srifle_CZ550", 40, 1, 2, ["CUP_5Rnd_93x64_CZ550"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_PKM", 30, 1, 2, ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_lmg_UK59", 10, 1, 2, ["CUP_50Rnd_UK59_762x54R_Tracer"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_smg_bizon_snds", 50, 1, 2, ["CUP_64Rnd_9x19_Bizon_M"], 7];
@@ -771,7 +771,7 @@ a3e_arr_CivilianCarWeapons pushback ["CUP_arifle_CZ805_A1_ZDDot_Laser", "CUP_30R
 a3e_arr_CivilianCarWeapons pushback ["CUP_CZ_BREN2_556_14_Grn", "CUP_30Rnd_556x45_Stanag", 7];
 a3e_arr_CivilianCarWeapons pushback ["CUP_lmg_M240", "CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M", 5];
 a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_Mosin_Nagant", "CUP_5Rnd_762x54_Mosin_M", 8];
-a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ550", "CUP_5x_22_LR_17_HMR_M", 10];
+a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ550", "CUP_5Rnd_93x64_CZ550", 10];
 a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ750_SOS_bipod", "CUP_10Rnd_762x51_CZ750", 10];
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_slamfire", "CUP_1Rnd_12Gauge_Pellets_No00_Buck", 20];
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_slamfire", "CUP_1Rnd_12Gauge_HE", 20];

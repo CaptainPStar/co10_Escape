@@ -62,5 +62,5 @@ a3e_arr_Escape_EnemyCivilianCarTypes append [
 // Index 2: Number of magazines.
 a3e_arr_CivilianCarWeapons append [
 	["CUP_arifle_AKS_Gold", "CUP_30Rnd_545x39_AK_M", 5]
-	,["CUP_srifle_CZ550", "CUP_5x_22_LR_17_HMR_M", 10]
+	,["CUP_srifle_CZ550", "CUP_5Rnd_93x64_CZ550", 10]
 	];
