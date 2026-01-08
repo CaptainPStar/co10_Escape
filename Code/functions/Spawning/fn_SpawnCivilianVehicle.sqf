@@ -25,6 +25,21 @@ private _vehicle = _result select 0;
 private _vehiclesCrew = _result select 1;
 private _group = _result select 2;
 
+// replace unit with random class
+private _class = selectRandom a3e_arr_Escape_MilitaryTraffic_CivilianCrewClasses;
+private _newDriver = _group createUnit [_class, _pos, [] , 0, "NONE"];
+private _driver = driver _vehicle;
+moveOut _driver;
+deleteVehicle _driver;
+_newDriver moveInDriver _vehicle;
+if (random 10 < 2 && {0 < _vehicle emptyPositions "Cargo"}) then {
+	_class = selectRandom a3e_arr_Escape_MilitaryTraffic_CivilianCrewClasses;
+	_group createUnit [_class, _pos, [] , 0, "CARGO"];
+};
+_vehiclesCrew = crew _vehicle;
+_group addVehicle _vehicle;
+_group selectLeader commander _vehicle;
+
 [_group] call A3E_fnc_onCivilianGroupSpawn;
 
 {[_x] call A3E_fnc_onCivilianSpawn;} foreach units _group;
