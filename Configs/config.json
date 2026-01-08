@@ -18,7 +18,8 @@
 		"./Configs/WS.json",
 		"./Configs/SOGPF.json",
 		"./Configs/SFP.json",
-		"./Configs/SPE.json"
+		"./Configs/SPE.json",
+		"./Configs/EF.json"
 
 	],
 	"replace" :
@@ -1026,6 +1027,16 @@
 				}
 		},
 		{
+			"name" : "Lybor Winter",
+			"class" : "VTF_Lybor_Winter",
+			"path" : "./Islands/Lybor_Winter/",
+			"replace" :
+				{
+				"ISLAND" : "Lybor",
+				"ISLANDNAME" : "Lybor"
+				}
+		},
+		{
 			"name" : "Dagger_Island",
 			"class" : "dagger_island_summer",
 			"path" : "./Islands/Dagger_Island/",
@@ -1103,6 +1114,76 @@
 				{
 				"ISLAND" : "Farabad",
 				"ISLANDNAME" : "Farabad"
+				}
+		},
+		{
+			"name" : "Sahatra",
+			"class" : "juju_sahatra",
+			"path" : "./Islands/Sahatra/",
+			"replace" :
+				{
+				"ISLAND" : "Sahatra",
+				"ISLANDNAME" : "Sahatra"
+				}
+		},
+		{
+			"name" : "Fjord",
+			"class" : "go_map_fjord",
+			"path" : "./Islands/Fjord/",
+			"replace" :
+				{
+				"ISLAND" : "Fjord",
+				"ISLANDNAME" : "Fjord"
+				}
+		},
+		{
+			"name" : "Yulakia",
+			"class" : "yulakia",
+			"path" : "./Islands/Yulakia/",
+			"replace" :
+				{
+				"ISLAND" : "Yulakia",
+				"ISLANDNAME" : "Yulakia"
+				}
+		},
+		{
+			"name" : "Laghisola",
+			"class" : "egl_laghisola",
+			"path" : "./Islands/Laghisola/",
+			"replace" :
+				{
+				"ISLAND" : "Laghisola",
+				"ISLANDNAME" : "Laghisola"
+				}
+		},
+		{
+			"name" : "Mehland",
+			"class" : "mehland",
+			"path" : "./Islands/Mehland/",
+			"replace" :
+				{
+				"ISLAND" : "Mehland",
+				"ISLANDNAME" : "Mehland"
+				}
+		},
+		{
+			"name" : "Stubbhult",
+			"class" : "stubbhult",
+			"path" : "./Islands/Stubbhult/",
+			"replace" :
+				{
+				"ISLAND" : "Stubbhult",
+				"ISLANDNAME" : "Stubbhult"
+				}
+		},
+		{
+			"name" : "Namalsk",
+			"class" : "namalsk",
+			"path" : "./Islands/NamalskR/",
+			"replace" :
+				{
+				"ISLAND" : "Namalsk",
+				"ISLANDNAME" : "Namalsk"
 				}
 		}
 	],
@@ -1736,6 +1817,13 @@
 			"mod" : "Vanilla Apex",
 			"replace" : {},
 			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Yulakia",
+			"sqm": "Yulakia",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
 		},
 		{
 			"island" : "Altis",
@@ -2578,6 +2666,20 @@
 			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
 		},
         {
+			"island" : "Yulakia",
+			"sqm": "Yulakia",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Yulakia",
+			"sqm": "Yulakia",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
 			"island" : "Sumava",
 			"sqm": "Sumava",
 			"mod" : "Vanilla",
@@ -2753,6 +2855,41 @@
 			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
 		},
         {
+			"island" : "Lybor Winter",
+			"sqm": "Lybor",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Lybor Winter",
+			"sqm": "Lybor",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Lybor Winter",
+			"sqm": "Lybor",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Lybor Winter",
+			"sqm": "Lybor",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Lybor Winter",
+			"sqm": "Lybor",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
 			"island" : "Dagger_Island",
 			"sqm": "dagger_island_summer",
 			"mod" : "Vanilla",
@@ -2870,6 +3007,174 @@
 			"mod" : "Vanilla",
 			"replace" : {},
 			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Sahatra",
+			"sqm": "Sahatra",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Sahatra",
+			"sqm": "Sahatra",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Sahatra",
+			"sqm": "Sahatra",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Sahatra",
+			"sqm": "Sahatra",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Sahatra",
+			"sqm": "Sahatra",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Fjord",
+			"sqm": "Fjord",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Fjord",
+			"sqm": "Fjord",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Fjord",
+			"sqm": "Fjord",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Laghisola",
+			"sqm": "Laghisola",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+        {
+			"island" : "Laghisola",
+			"sqm": "Laghisola",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Laghisola",
+			"sqm": "Laghisola",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Laghisola",
+			"sqm": "Laghisola",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+        {
+			"island" : "Laghisola",
+			"sqm": "Laghisola",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Mehland",
+			"sqm": "Mehland",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Mehland",
+			"sqm": "Mehland",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Mehland",
+			"sqm": "Mehland",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Mehland",
+			"sqm": "Mehland",
+			"mod" : "Vanilla Apex US",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Mehland",
+			"sqm": "Mehland",
+			"mod" : "Vanilla Apex",
+			"replace" : {},
+			"name" : "co10_Escape_APEX_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Stubbhult",
+			"sqm": "Stubbhult",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Stubbhult",
+			"sqm": "Stubbhult",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Stubbhult",
+			"sqm": "Stubbhult",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Namalsk",
+			"sqm": "NamalsR",
+			"mod" : "Vanilla",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_NATO_vs_CSAT"
+		},
+		{
+			"island" : "Namalsk",
+			"sqm": "NamalsR",
+			"mod" : "Vanilla US",
+			"replace" : {},
+			"name" : "co10_Escape_BIS_CSAT_vs_NATO"
+		},
+		{
+			"island" : "Namalsk",
+			"sqm": "NamalsR",
+			"mod" : "Vanilla Contact US",
+			"replace" : {},
+			"name" : "co10_Escape_Contact_CSAT_vs_NATO"
 		}
 		
 	],

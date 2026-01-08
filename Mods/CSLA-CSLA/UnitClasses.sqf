@@ -33,7 +33,8 @@ a3e_arr_Escape_StartPositionGuardTypes = [
 	,"FIA_mcCmd"
 	,"FIA_mcSa58"
 	,"FIA_mcSa24"
-	,"FIA_mcVG70"];
+	,"FIA_mcVG70"
+	,"FIA_mcPu52"];
 
 // Prison backpacks
 a3e_arr_PrisonBackpacks = [
@@ -48,6 +49,7 @@ a3e_arr_PrisonBackpackWeapons pushback ["CSLA_Pi82","CSLA_Pi82_12rnd_9Pi82"];
 a3e_arr_PrisonBackpackWeapons pushback ["CSLA_Pi52","CSLA_Pi52_8rnd_7_62Pi52"];
 a3e_arr_PrisonBackpackWeapons pushback ["CSLA_Pi75lr","CSLA_Pi75_15Rnd_9Luger"];
 a3e_arr_PrisonBackpackWeapons pushback ["CSLA_Pi75sr","CSLA_Pi75_15Rnd_9Luger"];
+a3e_arr_PrisonBackpackWeapons pushback ["US85_Mk23","US85_Mk23_12Rnd_045ACP"];
 a3e_arr_PrisonBackpackWeapons pushback ["US85_M9","US85_M9_15Rnd_9Luger"];
 a3e_arr_PrisonBackpackWeapons pushback ["US85_1911","US85_1911_7Rnd_045ACP"];
 
@@ -65,6 +67,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
 	,"CSLA_CIV_Sarka1200"
+	,"CSLA_CIV_Sarka1200VB"
 	,"CSLA_CIV_Sarka1200PO"
 	,"CSLA_civ_CATOR"];
 	if(A3E_Param_UseDLCContact==1) then {
@@ -76,7 +79,8 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 switch (_enemyFrequency) do {
     case 1: {//Few (1-3)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"CSLA_AZU"
+		"CSLA_CS_CATOR"
+		,"CSLA_AZU"
 		,"CSLA_AZU"
 		,"CSLA_AZU_para"
 		,"CSLA_AZU_para"
@@ -103,6 +107,7 @@ switch (_enemyFrequency) do {
 		,"CSLA_DTP90"		//bmp rep
 		,"CSLA_MU90"
 		,"CSLA_OT62"
+		,"CSLA_OT62D"
 		,"CSLA_OT64C"		//SKOT
 		,"CSLA_OT64C_VB"	//SKOT riot
 		,"CSLA_OT65A"		//Otter
@@ -122,14 +127,20 @@ switch (_enemyFrequency) do {
 		,"FIA_AZU_T21"
 		,"FIA_AZU_T21"
 		,"CSLA_FIA_CATOR"
+		,"CSLA_FIA_V3S_M52"
+		,"CSLA_FIA_RM51"
+		,"CSLA_FIA_V3S_AGS17"
+		,"CSLA_FIA_V3S_GT"
 		,"FIA_BTR40"
 		,"FIA_BTR40_DSKM"
 		,"FIA_BTR40_DSKM"
+		,"CSLA_FIA_PLdvK59V3S"	//AA
 		,"FIA_OT64C_VB"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"CSLA_AZU"
+		"CSLA_CS_CATOR"
+		,"CSLA_AZU"
 		,"CSLA_AZU"
 		,"CSLA_AZU_para"
 		,"CSLA_AZU_para"
@@ -157,6 +168,8 @@ switch (_enemyFrequency) do {
 		,"CSLA_DTP90"		//bmp rep
 		,"CSLA_MU90"
 		,"CSLA_OT62"
+		,"CSLA_OT62D"
+		,"CSLA_OT62D"
 		,"CSLA_OT64C"		//SKOT
 		,"CSLA_OT64C"	
 		,"CSLA_OT64C_VB"	//SKOT riot
@@ -174,19 +187,23 @@ switch (_enemyFrequency) do {
 		,"FIA_AZU_para"
 		,"FIA_AZU_DSKM"
 		,"FIA_AZU_DSKM"
-		,"FIA_AZU_DSKM"
-		,"FIA_AZU_T21"
 		,"FIA_AZU_T21"
 		,"FIA_AZU_T21"
 		,"CSLA_FIA_CATOR"
+		,"CSLA_FIA_V3S_M52"
+		,"CSLA_FIA_RM51"
+		,"CSLA_FIA_V3S_AGS17"
+		,"CSLA_FIA_V3S_GT"
 		,"FIA_BTR40"
 		,"FIA_BTR40_DSKM"
 		,"FIA_BTR40_DSKM"
+		,"CSLA_FIA_PLdvK59V3S"	//AA
 		,"FIA_OT64C_VB"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"CSLA_AZU"
+		"CSLA_CS_CATOR"
+		,"CSLA_AZU"
 		,"CSLA_AZU"
 		,"CSLA_AZU_para"
 		,"CSLA_AZU_para"
@@ -215,6 +232,8 @@ switch (_enemyFrequency) do {
 		,"CSLA_MU90"
 		,"CSLA_OT62"
 		,"CSLA_OT62"
+		,"CSLA_OT62D"
+		,"CSLA_OT62D"
 		,"CSLA_OT64C"		//SKOT
 		,"CSLA_OT64C"
 		,"CSLA_OT64C_VB"	//SKOT riot
@@ -238,10 +257,19 @@ switch (_enemyFrequency) do {
 		,"FIA_AZU_T21"
 		,"FIA_AZU_T21"
 		,"CSLA_FIA_CATOR"
+		,"CSLA_FIA_V3S_M52"
+		,"CSLA_FIA_RM51"
+		,"CSLA_FIA_V3S_AGS17"
+		,"CSLA_FIA_V3S_GT"
+		,"CSLA_FIA_V3S_GT"
+		,"CSLA_FIA_V3S_GT"
 		,"FIA_BTR40"
 		,"FIA_BTR40_DSKM"
 		,"FIA_BTR40_DSKM"
 		,"FIA_BTR40_DSKM"
+		,"CSLA_FIA_PLdvK59V3S"	//AA
+		,"CSLA_FIA_PLdvK59V3S"	//AA
+		,"FIA_OT64C_VB"
 		,"FIA_OT64C_VB"];
     };
 };
@@ -283,6 +311,12 @@ a3e_arr_Escape_InfantryTypes = [
 	,"CSLA_mrOfcStb"
 	,"CSLA_mrOP63"
 	,"CSLA_mrOP63"
+	,"CSLA_mrAGS17m"
+	,"CSLA_mrDSKMm"
+	,"CSLA_mrAGS17g"
+	,"CSLA_mrAGS17a"
+	,"CSLA_mrDSKMg"
+	,"CSLA_mrDSKMa"
 	,"CSLA_mrSgt"
 	,"CSLA_mrOfc"];
 a3e_arr_Escape_InfantryTypes_Ind = [
@@ -314,7 +348,15 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"FIA_mcMdc"
 	,"FIA_mcMdc"
 	,"FIA_mcSa24"
-	,"FIA_mcSa24"];
+	,"FIA_mcSa24"
+	,"FIA_mcP27"
+	,"FIA_mcP27"
+	,"FIA_mcLK52"
+	,"FIA_mcLK52"
+	,"FIA_mcLK57"
+	,"FIA_mcPu52"
+	,"FIA_mcPu57"
+	,"FIA_mcOP54"];
 a3e_arr_recon_InfantryTypes = [
 	"CSLA_ptDrv"
 	,"CSLA_ptSpr"
@@ -335,8 +377,13 @@ a3e_arr_recon_I_InfantryTypes = [
 	,"FIA_cdUK59L"
 	,"FIA_cdMdc"
 	,"FIA_cdFAL"
+	,"FIA_cdFAL"
 	,"FIA_cdSa26RPG75"
-	,"FIA_cdOP63"];
+	,"FIA_cdOP63"
+	,"FIA_cdP27"
+	,"FIA_cdLK52"
+	,"FIA_cdLK57"
+	,"FIA_cdOP54"];
 
 a3e_units_civilian_InfantryTypes = [
 	"CSLA_CIV_Citizen"
@@ -377,9 +424,15 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
 	,"CSLA_UK59T_Stat"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	"FIA_AZU_DSKM"
+	,"FIA_AZU_DSKM"
+	,"FIA_AZU_DSKM"
 	,"FIA_AZU_T21"
+	,"FIA_AZU_T21"
+	,"CSLA_FIA_V3S_AGS17"
+	,"CSLA_FIA_V3S_GT"
 	,"FIA_BTR40_DSKM"
-	,"FIA_OT64C_VB"];
+	,"FIA_OT64C_VB"
+	,"CSLA_FIA_PLdvK59V3S"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
@@ -388,7 +441,8 @@ a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	,"CSLA_F813o"
 	,"CSLA_V3S"
 	,"CSLA_V3SLizard"
-	,"CSLA_OT62"];
+	,"CSLA_OT62"
+	,"CSLA_OT62D"];
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
 	"FIA_AZU_para"
 	,"FIA_AZU_para"
@@ -399,6 +453,7 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 	"CSLA_OT65A"
 	,"CSLA_OT65A"
 	,"CSLA_OT62"
+	,"CSLA_OT62D"
 	,"CSLA_OT64C"];
 
 // A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
@@ -407,6 +462,7 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
 	"CSLA_OT64C"
+	,"CSLA_OT62D"
 	,"CSLA_BVP1"
 	,"CSLA_BPzV"];
 // Random array. Heavy armored vehicles guarding the communication centers.
@@ -418,7 +474,9 @@ a3e_arr_ComCenDefence_heavyArmorClasses = [
 // A communication center contains two static weapons (in two corners of the communication center).
 // Random array. Possible static weapon types for communication centers.
 a3e_arr_ComCenStaticWeapons = [
-	"CSLA_UK59L_Stat"];
+	"CSLA_UK59L_Stat"
+	,"CSLA_DShKM_h_Stat"
+	,"CSLA_UK59L_Mount"];
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
 	"CSLA_AZU"
@@ -459,9 +517,12 @@ a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	"CSLA_9K113_Stat"
 	,"CSLA_PLdvK59_Stat"
 	,"CSLA_T21_Stat"
+	,"CSLA_AGS17_Stat"
+	,"CSLA_BzK59A_Stat"
 	,"CSLA_UK59L_Stat"
 	,"CSLA_UK59L_Stat"
-	,"CSLA_UK59T_Stat"];
+	,"CSLA_DShKM_h_Stat"
+	,"CSLA_UK59L_Mount"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	"CSLA_AZU"
@@ -479,6 +540,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"CSLA_OT65A"
 	,"CSLA_OT64C"
 	,"CSLA_OT62"
+	,"CSLA_OT62D"
 	,"CSLA_DTP90"
 	,"CSLA_OZV90"
 	,"CSLA_PLdvK59V3S"
@@ -535,6 +597,11 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_UK59L", 50, 1, 2, ["CSLA_UK59_50
 
 // non-CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_HuntingRifle", 40, 2, 4, ["CSLA_10Rnd_762hunt"], 12];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_OP54", 10, 2, 4, ["CSLA_OP54_5rnd_7_62TzOdst59"], 12];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_OP54", 20, 2, 4, ["CSLA_OP54_5rnd_7_62PZ59"], 12];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_LK52_25", 20, 1, 2, ["CSLA_LK52_25rnd_7_62Sv52"], 6];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_LK52_25", 20, 1, 2, ["CSLA_LK52_25rnd_7_62PZ52"], 5];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_LK57_50", 20, 2, 4, ["CSLA_LK57_50rnd_7_62vz43"], 6];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["CSLA_rSa61t", 40, 2, 4, ["CSLA_Sa58_30rnd_7_62Sv43"], 6];
 
 // Weapons and ammo in the launchers box
@@ -542,6 +609,7 @@ a3e_arr_AmmoDepotLaunchers = [];
 // CSAT weapons
 a3e_arr_AmmoDepotLaunchers pushback ["CSLA_RPG7", 50, 1, 3, ["CSLA_PG7M110V"], 2];
 a3e_arr_AmmoDepotLaunchers pushback ["CSLA_RPG75", 50, 1, 5, ["CSLA_RPG75_Mag"], 1];
+a3e_arr_AmmoDepotLaunchers pushback ["CSLA_P27", 20, 1, 2, ["CSLA_NbP27"], 2];
 a3e_arr_AmmoDepotLaunchers pushback ["CSLA_9K32", 50, 1, 2, ["CSLA_9M32M"], 2];
 //a3e_arr_AmmoDepotLaunchers pushback ["US85_LAW72", 50, 1, 2, ["US85_LAW72_Mag"], 1];
 //a3e_arr_AmmoDepotLaunchers pushback ["US85_SMAW", 50, 1, 2, ["US85_SMAW_HEAA","US85_SMAW_HEDP"], 2];
@@ -550,6 +618,8 @@ a3e_arr_AmmoDepotLaunchers pushback ["CSLA_9K32", 50, 1, 2, ["CSLA_9M32M"], 2];
 //a3e_arr_AmmoDepotLaunchers pushback ["US85_FIM92", 50, 1, 2, ["US85_FIM92_Mag"], 2];
 // non-CSAT weapons
 a3e_arr_AmmoDepotLaunchers pushback ["CSLA_RPG7", 20, 1, 2, ["CSLA_PG7M110V"], 3];
+a3e_arr_AmmoDepotLaunchers pushback ["CSLA_RPG75", 20, 1, 2, ["CSLA_RPG75_Mag"], 1];
+a3e_arr_AmmoDepotLaunchers pushback ["CSLA_P27", 20, 1, 2, ["CSLA_NbP27"], 2];
 a3e_arr_AmmoDepotLaunchers pushback ["CSLA_9K32", 10, 1, 2, ["CSLA_9M32M"], 2];
 
 
@@ -612,6 +682,8 @@ a3e_arr_AmmoDepotItems pushback ["US85_FALbpd", 50, 1, 2]; //FAL bipod
 a3e_arr_AmmoDepotItems pushback ["CSLA_PGO7", 40, 1, 3]; //RPG sight
 a3e_arr_AmmoDepotItems pushback ["CSLA_ZD4x8", 50, 1, 5]; //vz58 scope
 a3e_arr_AmmoDepotItems pushback ["CSLA_PSO1_OP63", 60, 1, 5]; //dragunov scope
+a3e_arr_AmmoDepotItems pushback ["CSLA_ZD4x8_Pu52", 60, 1, 5]; //Pu52 scope
+a3e_arr_AmmoDepotItems pushback ["CSLA_PD54", 60, 1, 5]; //OP54 scope
 a3e_arr_AmmoDepotItems pushback ["CSLA_UK59_ZD4x8", 30, 1, 3]; //MG scope
 //a3e_arr_AmmoDepotItems pushback ["US85_sc4x20M249", 30, 1, 3]; //MG scope
 //a3e_arr_AmmoDepotItems pushback ["US85_sc2000M249", 30, 1, 3]; //MG scope
@@ -675,6 +747,7 @@ a3e_arr_Scopes = [
 	//,"US85_sc4x20M249"
 	//,"US85_sc2000M249"
 	,"CSLA_ZD4x8"
+	,"CSLA_ZD4x8_Pu52"
 	,"CSLA_UK59_ZD4x8"];
 //	"optic_Aco"
 //	"optic_ACO_grn"
@@ -684,7 +757,8 @@ a3e_arr_Scopes = [
 //	,"optic_Holosight"];
 a3e_arr_Scopes_SMG = [];
 a3e_arr_Scopes_Sniper = [
-	"CSLA_PSO1_OP63"];
+	"CSLA_PSO1_OP63"
+	,"CSLA_PD54"];
 a3e_arr_NightScopes = [
 	"CSLA_NSPU"
 	,"CSLA_NSPU_OP63"
@@ -913,6 +987,7 @@ a3e_arr_CrashSiteWeapons pushback ["US85_M249", 30, 1, 2, ["US85_200Rnd_556x45"]
 a3e_arr_CrashSiteWeapons pushback ["US85_MPVN", 30, 1, 2, ["US85_MPV_30Rnd_9Luger"], 8];
 a3e_arr_CrashSiteWeapons pushback ["US85_MPVSD", 30, 1, 2, ["US85_MPV_30Rnd_9Luger"], 8];
 a3e_arr_CrashSiteWeapons pushback ["US85_M60", 25, 1, 2, ["US85_100Rnd_762x51"], 4];
+a3e_arr_CrashSiteWeapons pushback ["US85_M60E3SB", 25, 1, 2, ["US85_100Rnd_762x51"], 4];
 // Attachments and other items in crash site box
 a3e_arr_CrashSiteItems = [];
 a3e_arr_CrashSiteItems pushback ["US85_bino", 50, 1, 3];

@@ -27,6 +27,7 @@ The mission is available with the following mod configurations:
 - CUP
 - GM
 - SOGPF
+- SPE
 - RHS (outdated)
 
 The mission is available on the following terrains (with the mods above when applicable):

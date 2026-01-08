@@ -1554,8 +1554,8 @@ a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_LeeEnfield", "CUP_10x_303_M", 1
 a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_LeeEnfield", "CUP_10x_303_M", 10];
 a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_LeeEnfield", "CUP_10x_303_M", 10];
 a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_LeeEnfield", "CUP_10x_303_M", 10];
-a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ550", "CUP_5x_22_LR_17_HMR_M", 10];
-a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ550", "CUP_5x_22_LR_17_HMR_M", 10];
+a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ550", "CUP_5Rnd_93x64_CZ550", 10];
+a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ550", "CUP_5Rnd_93x64_CZ550", 10];
 a3e_arr_CivilianCarWeapons pushback ["CUP_launch_RPG18","CUP_RPG18_M", 0];
 a3e_arr_CivilianCarWeapons pushback ["CUP_hgun_SA61","CUP_20Rnd_B_765x17_Ball_M", 7];
 a3e_arr_CivilianCarWeapons pushback ["MineDetector", objNull, 0];

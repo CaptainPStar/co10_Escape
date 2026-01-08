@@ -1,7 +1,7 @@
 /*
  * Description: This file contains the vehicle types and unit types for the units spawned in the mission, and the weapons and magazines found in ammo boxes/cars.
- * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain 
- * many elements of the same type, so the example array ["Offroad_DSHKM_INS", "Pickup_PK_INS", "Pickup_PK_INS"] will spawn an Offroad with 1/3 probability, and a 
+ * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain
+ * many elements of the same type, so the example array ["Offroad_DSHKM_INS", "Pickup_PK_INS", "Pickup_PK_INS"] will spawn an Offroad with 1/3 probability, and a
  * Pickup with 2/3 probability.
  */
 
@@ -70,7 +70,7 @@ a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_TT","CUP_8Rnd_762x25_TT"];
 // Random array. Civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	//Cars
-	 "CUP_C_Octavia_CIV"  
+	 "CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
@@ -206,16 +206,16 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"CUP_O_Hilux_unarmed_TK_CIV"
 	,"CUP_O_Hilux_unarmed_TK_CIV"  //12
 	,"CUP_C_Pickup_unarmed_CIV"
-	,"CUP_C_Pickup_unarmed_CIV"	
 	,"CUP_C_Pickup_unarmed_CIV"
 	,"CUP_C_Pickup_unarmed_CIV"
-	,"CUP_C_Pickup_unarmed_CIV"	
 	,"CUP_C_Pickup_unarmed_CIV"
 	,"CUP_C_Pickup_unarmed_CIV"
-	,"CUP_C_Pickup_unarmed_CIV"	
 	,"CUP_C_Pickup_unarmed_CIV"
 	,"CUP_C_Pickup_unarmed_CIV"
-	,"CUP_C_Pickup_unarmed_CIV"	
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
 	,"CUP_C_Pickup_unarmed_CIV"	//12
 	//Light Trucks Closed
 	,"CUP_C_Datsun_Covered"
@@ -381,7 +381,7 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_transport_F";
-	};	
+	};
 	if(A3E_Param_UseDLCContact==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Tractor_01_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_01_covered_F";
@@ -452,7 +452,7 @@ switch (_enemyFrequency) do {
 		//Tanks  1 set
         ,"CUP_B_Leopard2A6_HIL"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		//Unarmed Cars  1 set 
+		//Unarmed Cars  1 set
 		"CUP_I_LR_Ambulance_RACS"
 		,"CUP_I_LR_Ambulance_RACS"
 		,"CUP_I_LR_Ambulance_RACS"
@@ -554,7 +554,7 @@ switch (_enemyFrequency) do {
         ,"CUP_B_Boxer_GMG_HIL"
 		,"CUP_B_Boxer_HMG_HIL"
 		,"CUP_B_Boxer_GMG_HIL"
-		,"CUP_B_Boxer_HMG_HIL"		
+		,"CUP_B_Boxer_HMG_HIL"
 		//Artillery  1 set
 		,"CUP_B_M270_DPICM_HIL"
 		,"CUP_B_M270_HE_HIL"
@@ -602,10 +602,10 @@ switch (_enemyFrequency) do {
 		,"CUP_I_M113A1_RACS_URB"
 		,"CUP_I_LAV25_HQ_RACS"  //2
 		,"CUP_I_M113A1_RACS"
-		,"CUP_I_M113A1_RACS_URB"  
+		,"CUP_I_M113A1_RACS_URB"
 		,"CUP_I_LAV25_HQ_RACS"  //3
 		,"CUP_I_M113A1_RACS"
-		,"CUP_I_M113A1_RACS_URB"  
+		,"CUP_I_M113A1_RACS_URB"
 		,"CUP_I_LAV25_HQ_RACS"  //4
 		,"CUP_I_M113A1_RACS"
 		,"CUP_I_M113A1_RACS_URB"
@@ -670,7 +670,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_M151_M2_HIL"  //20 cars
 		//MRAPs  2 sets
 		//Light Armed APCs  2 sets
-		//Heavily Armed APCs or AA  2 sets 
+		//Heavily Armed APCs or AA  2 sets
 		,"CUP_B_Boxer_GMG_HIL"
 		,"CUP_B_Boxer_HMG_HIL"
 		,"CUP_B_Boxer_GMG_HIL"
@@ -841,11 +841,11 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 a3e_arr_recon_InfantryTypes = [
     "CUP_B_HIL_Soldier_SF"
 	,"CUP_B_HIL_Soldier_LAT_SF"
-	,"CUP_B_HIL_Soldier_Engineer_SF"
-	,"CUP_B_HIL_Soldier_GL_SF"
-	,"CUP_B_HIL_Soldier_MMG_SF"
-	,"CUP_B_HIL_Soldier_M_SF"
-	,"CUP_B_HIL_Soldier_Medic_SF"
+	,"CUP_B_HIL_Engineer_SF"
+	,"CUP_B_HIL_GL_SF"
+	,"CUP_B_HIL_MMG_SF"
+	,"CUP_B_HIL_M_SF"
+	,"CUP_B_HIL_Medic_SF"
 	,"CUP_B_HIL_Soldier_HAT_SF"
 	,"CUP_B_HIL_Soldier_MAT_SF"
 	,"CUP_B_HIL_Soldier_PM_SF"
@@ -945,13 +945,13 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 
 
-// A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
+// A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random
 // light *and* a random heavy armor.
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
      "CUP_B_Boxer_HMG_HIL"
 	,"CUP_B_Boxer_GMG_HIL"
-	,"CUP_B_Boxer_GMG_HIL"]; 
+	,"CUP_B_Boxer_GMG_HIL"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
     "CUP_B_Leopard2A6_HIL"];
@@ -973,14 +973,14 @@ a3e_arr_ComCenParkedVehicles = [
 	,"CUP_B_M151_M2_HIL"
 	,"CUP_B_M151_M2_HIL"
 	,"CUP_B_MTVR_HIL"
-	,"CUP_B_MTVR_Ammo_HIL"  
+	,"CUP_B_MTVR_Ammo_HIL"
 	,"CUP_B_MTVR_Refuel_HIL"
 	,"CUP_B_MTVR_Repair_HIL"];
-		
+
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
     //Cars
-	 "CUP_C_Octavia_CIV"  
+	 "CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
 	,"CUP_C_Octavia_CIV"
@@ -1116,16 +1116,16 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"CUP_O_Hilux_unarmed_TK_CIV"
 	,"CUP_O_Hilux_unarmed_TK_CIV"  //12
 	,"CUP_C_Pickup_unarmed_CIV"
-	,"CUP_C_Pickup_unarmed_CIV"	
 	,"CUP_C_Pickup_unarmed_CIV"
 	,"CUP_C_Pickup_unarmed_CIV"
-	,"CUP_C_Pickup_unarmed_CIV"	
 	,"CUP_C_Pickup_unarmed_CIV"
 	,"CUP_C_Pickup_unarmed_CIV"
-	,"CUP_C_Pickup_unarmed_CIV"	
 	,"CUP_C_Pickup_unarmed_CIV"
 	,"CUP_C_Pickup_unarmed_CIV"
-	,"CUP_C_Pickup_unarmed_CIV"	
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
+	,"CUP_C_Pickup_unarmed_CIV"
 	,"CUP_C_Pickup_unarmed_CIV"	//12
 	//Heavy Trucks Open
 	,"CUP_C_Ural_Open_Civ_03"
@@ -1285,7 +1285,7 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"CUP_B_Boxer_GMG_HIL"
 	,"CUP_B_Boxer_HMG_HIL"
 	,"CUP_B_MTVR_HIL"
-	,"CUP_B_MTVR_Ammo_HIL"  
+	,"CUP_B_MTVR_Ammo_HIL"
 	,"CUP_B_MTVR_Refuel_HIL"
 	,"CUP_B_MTVR_Repair_HIL"
 	,"CUP_B_Leopard2A6_HIL"];
@@ -1332,7 +1332,7 @@ a3e_arr_I_pilots = [
 a3e_arr_AmmoDepotBasicWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_hgun_M9", 50, 2, 5, ["CUP_15Rnd_9x19_M9"], 6];
-a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_hgun_Mk23", 25, 2, 5, ["CUP_12Rnd_45ACP_mk23"], 6]; 
+a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_hgun_Mk23", 25, 2, 5, ["CUP_12Rnd_45ACP_mk23"], 6];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_smg_MP5A5", 20, 1, 2, ["CUP_30Rnd_9x19_MP5"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_smg_MP7", 20, 1, 2, ["CUP_40Rnd_46x30_MP7","CUP_40Rnd_46x30_MP7_Red_Tracer","CUP_40Rnd_46x30_MP7_Green_Tracer","CUP_40Rnd_46x30_MP7_Yellow_Tracer"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["CUP_smg_MP7_woodland", 20, 1, 2, ["CUP_40Rnd_46x30_MP7","CUP_40Rnd_46x30_MP7_Red_Tracer","CUP_40Rnd_46x30_MP7_Green_Tracer","CUP_40Rnd_46x30_MP7_Yellow_Tracer"], 8];
@@ -1513,7 +1513,7 @@ a3e_arr_AmmoDepotItems pushback ["CUP_muzzle_snds_SCAR_H", 10, 1, 5];
 //Bipods
 a3e_arr_AmmoDepotItems pushback ["CUP_bipod_VLTOR_Modpod_black", 20, 1, 5];
 a3e_arr_AmmoDepotItems pushback ["CUP_bipod_VLTOR_Modpod_OD", 20, 1, 5];
-//INDEP Equipment 
+//INDEP Equipment
 //SCOPES
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_LeupoldM3LR", 10, 1, 2];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_LeupoldMk4", 10, 1, 5];
@@ -1533,7 +1533,7 @@ a3e_arr_CivilianCarWeapons pushback ["CUP_hgun_PB6P9_snds", "CUP_8Rnd_9x18_Makar
 a3e_arr_CivilianCarWeapons pushback ["CUP_arifle_FNFAL_railed", "CUP_20Rnd_762x51_FNFAL_M", 7];
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_AA12", "CUP_20Rnd_B_AA12_Pellets", 4];
 a3e_arr_CivilianCarWeapons pushback ["CUP_sgun_AA12", "CUP_20Rnd_B_AA12_74Slug", 4];
-a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ550", "CUP_5x_22_LR_17_HMR_M", 10];
+a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_CZ550", "CUP_5Rnd_93x64_CZ550", 10];
 a3e_arr_CivilianCarWeapons pushback ["CUP_srifle_M14", "CUP_20Rnd_762x51_DMR", 8];
 a3e_arr_CivilianCarWeapons pushback ["CUP_hgun_MicroUzi_snds", "CUP_30Rnd_9x19_UZI", 4];
 a3e_arr_CivilianCarWeapons pushback ["CUP_lmg_UK59", "CUP_50Rnd_UK59_762x54R_Tracer", 6];
@@ -1765,14 +1765,13 @@ a3e_arr_CASplane = [
 // Index 4: Array of magazine classnames. Magazines of these types are present if weapon exists.
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
-	 "Mi8Wreck"
+	 "CUP_Mi24Wreck"
+	,"CUP_UH1HWreck"
 	,"CUP_Mi8Wreck"];
 a3e_arr_CrashSiteCrew = [
 	"CUP_O_sla_Pilot"];
 a3e_arr_CrashSiteWrecksCar = [
-	 "BMP2Wreck"
-	,"Land_Wreck_T72_hull_F"
-	,"BRDMWreck"];
+	 "Land_Wreck_T72_hull_F"];
 a3e_arr_CrashSiteCrewCar = [
 	"CUP_O_sla_Crew"];
 // Weapons and ammo in crash site box

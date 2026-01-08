@@ -36,6 +36,7 @@ _obj = ["Land_DataTerminal_01_F",_center,[3.59229,1.67432,14.1044],_rotation,101
 _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
 [_obj,"green","green","green"] call BIS_fnc_DataTerminalColor;
+
 _obj = ["Land_vn_bagfence_01_round_green_f",_center,[4.41602,-7.02637,21.5102],_rotation,0] call _fnc_createObject;
 _obj = ["Land_vn_camonetb_nato",_center,[-13.7062,0.142578,-1.43051e-006],_rotation,90] call _fnc_createObject;
 _obj = ["Land_vn_ttowersmall_2_f",_center,[1.81067,6.1001,14.9617],_rotation,56.3967] call _fnc_createObject;

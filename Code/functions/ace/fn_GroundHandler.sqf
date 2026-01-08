@@ -4,7 +4,7 @@ switch (_case) do {
 case 1: {
 	_eventID = _unit addEventHandler ["Dammaged", { //Create EventHandler incase player gets damaged on ground
 		params ["_unit"];
-		if ((_unit call ace_medical_fnc_getUnconsciousCondition)&&!(_unit getVariable "ACE_Revive_isUnconscious")) then {
+		if ((_unit getVariable ["ACE_isUnconscious", false])&&!(_unit getVariable "ACE_Revive_isUnconscious")) then {
 			_unconsciousPlayers = [];
 			_unit setVariable ["ACE_Revive_isUnconscious", true, true];
 			_players = call BIS_fnc_listPlayers;

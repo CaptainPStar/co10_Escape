@@ -92,6 +92,7 @@ _obj = ["Land_DataTerminal_01_F",_center,[-10.6299,10,4.68368],_rotation,0] call
 _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
 [_obj,"green","green","green"] call BIS_fnc_DataTerminalColor;
+
 _obj = ["Land_vn_lampshabby_f",_center,[17.0925,13.9746,0],_rotation,216.389] call _fnc_createObject;
 _obj = ["Land_vn_b_trench_revetment_05_01",_center,[-4.83643,15.1313,1.88703],_rotation,0] call _fnc_createObject;
 _obj = ["Land_vn_b_trench_revetment_05_01",_center,[9.37256,15.0654,1.88703],_rotation,0] call _fnc_createObject;

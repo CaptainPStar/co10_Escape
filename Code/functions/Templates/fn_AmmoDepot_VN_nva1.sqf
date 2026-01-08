@@ -123,7 +123,9 @@ private _fnc_createObject = {
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+            if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
@@ -166,7 +168,9 @@ private _fnc_createObject = {
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+             if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
@@ -216,7 +220,9 @@ private _fnc_createObject = {
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+             if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
@@ -259,7 +265,9 @@ private _fnc_createObject = {
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+             if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];

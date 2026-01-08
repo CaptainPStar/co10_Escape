@@ -67,3 +67,5 @@ a3e_var_Escape_communicationCenterPositions = _comCenPositions;
 } foreach _comCenPositions;
 
 publicVariable "a3e_var_Escape_communicationCenterPositions";
+
+[[] call A3E_fnc_GetPlayerGroup, _comCenPositions, A3E_Param_EnemySpawnDistance, A3E_Param_EnemyFrequency] call drn_fnc_Escape_InitializeComCenArmor;

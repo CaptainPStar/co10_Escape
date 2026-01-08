@@ -1,0 +1,1685 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=2970;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
+	};
+	class Camera
+	{
+		pos[]={7319.4214,68.120506,1924.0319};
+		dir[]={0.82307053,-0.37950957,-0.42251617};
+		up[]={0.33764061,0.92508751,-0.17332512};
+		aside[]={-0.45669004,-9.5833093e-07,-0.88964111};
+	};
+};
+binarizationWanted=0;
+sourceName="TE_BuildCommunicationCenter";
+addons[]=
+{
+	"A3_Ui_F",
+	"A3_Characters_F",
+	"A3_Modules_F"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=3;
+		class Item0
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=4799051;
+class ScenarioData
+{
+	author="Scruffy";
+};
+class Mission
+{
+	class Intel
+	{
+		resistanceWest=0;
+		resistanceEast=1;
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=1944;
+		month=7;
+		day=25;
+		hour=8;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=80;
+		class Item0
+		{
+			dataType="Trigger";
+			position[]={119.95813,459.49057,20382.205};
+			class Attributes
+			{
+				text="Build ComCenter1";
+				onActivation="drn_comCen = ""a3e_var_communicationCenter_1"";_nil = [getMarkerPos drn_comCen, markerDir drn_comCen] execVM ""Scripts\Escape\BuildCommunicationCenter.sqf"";";
+				interuptable=1;
+				activationBy="ALPHA";
+				isRectangle=1;
+			};
+			id=0;
+			type="EmptyDetector";
+			atlOffset=698.89764;
+		};
+		class Item1
+		{
+			dataType="Trigger";
+			position[]={117.00549,448.72705,20244.072};
+			class Attributes
+			{
+				text="Export all ComCenter positions to .rpt";
+				onActivation="_nil = [] execVM ""PositionGenerator.sqf"";";
+				interuptable=1;
+				activationBy="BRAVO";
+				isRectangle=1;
+			};
+			id=1;
+			type="EmptyDetector";
+			atlOffset=680.57715;
+		};
+		class Item2
+		{
+			dataType="Marker";
+			position[]={222.13245,186.61179,18468.885};
+			name="tip4_5";
+			text="Repeat until finished...";
+			type="Empty";
+			id=16;
+			atlOffset=410.32532;
+		};
+		class Item3
+		{
+			dataType="Marker";
+			position[]={395.1095,385.17618,19582.941};
+			name="tip_1";
+			text="the area marker just helps with placement, isn't needed";
+			type="Empty";
+			id=17;
+			atlOffset=605.45605;
+		};
+		class Item4
+		{
+			dataType="Trigger";
+			position[]={120.03625,437.64249,20068.902};
+			class Attributes
+			{
+				text="Build all ComCenters";
+				onActivation="_nil = [] execVM ""buildall.sqf"";";
+				interuptable=1;
+				activationBy="JULIET";
+				isRectangle=1;
+			};
+			id=18;
+			type="EmptyDetector";
+			atlOffset=672.3941;
+		};
+		class Item5
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14312.114,81.793213,4878.687};
+						angles[]={0,0,0.0028448866};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						isPlayer=1;
+						isPlayable=1;
+					};
+					id=251;
+					type="B_Soldier_GL_F";
+					atlOffset=1.5258789e-05;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male07ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=19;
+			atlOffset=1.5258789e-05;
+		};
+		class Item6
+		{
+			dataType="Trigger";
+			position[]={14941.204,138.4758,6834.4912};
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=624;
+			type="EmptyDetector";
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={14951.857,479.2608,6640.8594};
+			name="tip";
+			text="copy these two";
+			type="hd_arrow";
+			id=2232;
+			atlOffset=350.88043;
+		};
+		class Item8
+		{
+			dataType="Marker";
+			position[]={14788.241,557.4469,5700.8657};
+			name="tip2";
+			text="0-0-2: Exports all ComCenter positions to the .rpt file";
+			type="Empty";
+			id=2233;
+			atlOffset=453.71664;
+		};
+		class Item9
+		{
+			dataType="Marker";
+			position[]={15237.361,266.70306,5559.2148};
+			name="tip4_3";
+			text="Check if the positions work with the flying cam";
+			type="Empty";
+			id=2234;
+			atlOffset=166.44177;
+		};
+		class Item10
+		{
+			dataType="Marker";
+			position[]={14776.54,570.08026,5836.2622};
+			name="tip1";
+			text="0-0-1: Builds 1 ComCenter. Change markername in activation field to build another specific ComCenter";
+			type="Empty";
+			id=2235;
+			atlOffset=463.66913;
+		};
+		class Item11
+		{
+			dataType="Marker";
+			position[]={14941.204,578.57977,6834.4985};
+			name="a3e_var_communicationCenter";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			id=2236;
+			atlOffset=440.10321;
+		};
+		class Item12
+		{
+			dataType="Marker";
+			position[]={14941.204,578.55585,6834.4971};
+			name="area";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			id=2237;
+			atlOffset=440.07947;
+		};
+		class Item13
+		{
+			dataType="Marker";
+			position[]={14802.248,621.32874,5995.6636};
+			name="tip3";
+			text="Radio 0-0-0: Builds all ComCenters.";
+			type="Empty";
+			id=2238;
+			atlOffset=514.84735;
+		};
+		class Item14
+		{
+			dataType="Marker";
+			position[]={14767.523,400.44318,5584.7246};
+			name="tip4";
+			text="Place markers where you think a ComCenter should be";
+			type="Empty";
+			id=2239;
+			atlOffset=300.83826;
+		};
+		class Item15
+		{
+			dataType="Marker";
+			position[]={14792.219,634.31152,6116.0171};
+			name="tip2_1";
+			text="marker name has to be ""a3e_var_communicationCenter_1"" with rising number";
+			type="Empty";
+			id=2240;
+			atlOffset=523.86151;
+		};
+		class Item16
+		{
+			dataType="Marker";
+			position[]={14762.121,375.01727,5484.7734};
+			name="tip4_1";
+			text="Hit ""Preview"" and create ComCenters using Radio 0-0-0";
+			type="Empty";
+			id=2241;
+			atlOffset=278.64722;
+		};
+		class Item17
+		{
+			dataType="Marker";
+			position[]={14740.51,346.94714,5376.7168};
+			name="tip4_2";
+			text="Hit Escape and start BIS ""Camera""";
+			type="Empty";
+			id=2242;
+			atlOffset=251.19919;
+		};
+		class Item18
+		{
+			dataType="Marker";
+			position[]={14708.092,262.33472,5133.5938};
+			name="tip4_4";
+			text="Get back to the editor and push around markers";
+			type="Empty";
+			id=2243;
+			atlOffset=168.31818;
+		};
+		class Item19
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={14941.265,138.48689,6834.583};
+				angles[]={6.1767726,0,0.021554817};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2521;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item20
+		{
+			dataType="Trigger";
+			position[]={12200.256,108.3865,5158.8867};
+			angle=2.7940829;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2906;
+			type="EmptyDetector";
+		};
+		class Item21
+		{
+			dataType="Marker";
+			position[]={12200.259,548.49011,5158.8799};
+			name="a3e_var_communicationCenter_1";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=160.08916;
+			id=2907;
+			atlOffset=440.10315;
+		};
+		class Item22
+		{
+			dataType="Marker";
+			position[]={12200.258,548.46631,5158.8813};
+			name="area_1";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=160.08916;
+			id=2908;
+			atlOffset=440.07947;
+		};
+		class Item23
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={12200.23,108.39285,5158.7798};
+				angles[]={0.062774867,2.7960861,0.014281826};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2909;
+			type="ModuleHideTerrainObjects_F";
+			atlOffset=7.6293945e-06;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item24
+		{
+			dataType="Trigger";
+			position[]={7353.2446,19.948021,12441.058};
+			angle=5.1384921;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2910;
+			type="EmptyDetector";
+		};
+		class Item25
+		{
+			dataType="Marker";
+			position[]={7353.2373,460.05136,12441.061};
+			name="a3e_var_communicationCenter_2";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=294.41391;
+			id=2911;
+			atlOffset=440.10321;
+		};
+		class Item26
+		{
+			dataType="Marker";
+			position[]={7353.2393,460.02759,12441.06};
+			name="area_2";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=294.41391;
+			id=2912;
+			atlOffset=440.07947;
+		};
+		class Item27
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7353.186,19.945391,12441.15};
+				angles[]={0.048534121,5.1424479,6.2517667};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2913;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item28
+		{
+			dataType="Trigger";
+			position[]={7405.8003,470.80328,8586.4238};
+			angle=3.3282306;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2918;
+			type="EmptyDetector";
+		};
+		class Item29
+		{
+			dataType="Marker";
+			position[]={7405.7988,910.90649,8586.417};
+			name="a3e_var_communicationCenter_3";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=190.69357;
+			id=2919;
+			atlOffset=440.10321;
+		};
+		class Item30
+		{
+			dataType="Marker";
+			position[]={7405.7993,910.88263,8586.418};
+			name="area_3";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=190.69357;
+			id=2920;
+			atlOffset=440.07941;
+		};
+		class Item31
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7405.7236,470.8074,8586.3447};
+				angles[]={6.2631865,3.3273201,6.2090335};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2921;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item32
+		{
+			dataType="Trigger";
+			position[]={5898.916,490.48993,6508.5801};
+			angle=5.4528117;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2922;
+			type="EmptyDetector";
+		};
+		class Item33
+		{
+			dataType="Marker";
+			position[]={5898.9106,930.59253,6508.585};
+			name="a3e_var_communicationCenter_4";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=312.4231;
+			id=2923;
+			atlOffset=440.10321;
+		};
+		class Item34
+		{
+			dataType="Marker";
+			position[]={5898.9116,930.56897,6508.584};
+			name="area_4";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=312.4231;
+			id=2924;
+			atlOffset=440.07947;
+		};
+		class Item35
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5898.8892,490.48447,6508.6865};
+				angles[]={0.031414896,5.4567685,0.074152172};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2925;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item36
+		{
+			dataType="Trigger";
+			position[]={3967.7422,14.842088,6179.519};
+			angle=3.9002852;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2926;
+			type="EmptyDetector";
+		};
+		class Item37
+		{
+			dataType="Marker";
+			position[]={3967.7371,454.94348,6179.5142};
+			name="a3e_var_communicationCenter_5";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=223.46988;
+			id=2927;
+			atlOffset=440.10199;
+		};
+		class Item38
+		{
+			dataType="Marker";
+			position[]={3967.738,454.91953,6179.5151};
+			name="area_5";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=223.46988;
+			id=2928;
+			atlOffset=440.07791;
+		};
+		class Item39
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3967.635,14.833887,6179.4941};
+				angles[]={6.223258,3.8988595,0.062773921};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2929;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item40
+		{
+			dataType="Trigger";
+			position[]={2208.2246,3.7306936,6510.957};
+			angle=-0.29800919;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2930;
+			type="EmptyDetector";
+			atlOffset=2.3841858e-07;
+		};
+		class Item41
+		{
+			dataType="Marker";
+			position[]={2208.2229,443.74869,6510.9648};
+			name="a3e_var_communicationCenter_6";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=342.92529;
+			id=2931;
+			atlOffset=440.01657;
+		};
+		class Item42
+		{
+			dataType="Marker";
+			position[]={2208.2231,443.72449,6510.9624};
+			name="area_6";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=342.92529;
+			id=2932;
+			atlOffset=439.99283;
+		};
+		class Item43
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2208.2556,3.7457743,6511.063};
+				angles[]={6.1189637,5.9735155,6.2033563};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2933;
+			type="ModuleHideTerrainObjects_F";
+			atlOffset=2.3841858e-07;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item44
+		{
+			dataType="Trigger";
+			position[]={2777.3433,317.95001,3359.4758};
+			angle=2.3949068;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2934;
+			type="EmptyDetector";
+		};
+		class Item45
+		{
+			dataType="Marker";
+			position[]={2777.3481,758.05377,3359.4705};
+			name="a3e_var_communicationCenter_7";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=137.21805;
+			id=2935;
+			atlOffset=440.10318;
+		};
+		class Item46
+		{
+			dataType="Marker";
+			position[]={2777.3472,758.02991,3359.4717};
+			name="area_7";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=137.21805;
+			id=2936;
+			atlOffset=440.07944;
+		};
+		class Item47
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2777.3611,317.95718,3359.3674};
+				angles[]={0.057075065,2.3986728,0.054232251};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2937;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item48
+		{
+			dataType="Trigger";
+			position[]={1872.4431,5.3148232,4293.522};
+			angle=4.8326845;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2938;
+			type="EmptyDetector";
+		};
+		class Item49
+		{
+			dataType="Marker";
+			position[]={1872.4358,445.41797,4293.5229};
+			name="a3e_var_communicationCenter_8";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=276.89243;
+			id=2939;
+			atlOffset=440.10321;
+		};
+		class Item50
+		{
+			dataType="Marker";
+			position[]={1872.4373,445.39423,4293.5229};
+			name="area_8";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=276.89243;
+			id=2940;
+			atlOffset=440.07947;
+		};
+		class Item51
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1872.3593,5.31251,4293.5933};
+				angles[]={0.025708612,4.8356028,0.0057151932};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2941;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item52
+		{
+			dataType="Trigger";
+			position[]={3308.1921,421.93411,1346.1079};
+			angle=3.17471;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2942;
+			type="EmptyDetector";
+		};
+		class Item53
+		{
+			dataType="Marker";
+			position[]={3308.1919,862.03723,1346.1006};
+			name="a3e_var_communicationCenter_9";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=181.89749;
+			id=2943;
+			atlOffset=440.1033;
+		};
+		class Item54
+		{
+			dataType="Marker";
+			position[]={3308.1921,862.01343,1346.1021};
+			name="area_9";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=181.89749;
+			id=2944;
+			atlOffset=440.07947;
+		};
+		class Item55
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3308.1287,421.93152,1346.0182};
+				angles[]={6.2603374,3.1745334,0.0085693272};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2945;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item56
+		{
+			dataType="Trigger";
+			position[]={7599.5815,3.2641521,1844.0203};
+			angle=3.3783817;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2946;
+			type="EmptyDetector";
+			atlOffset=0.0011174679;
+		};
+		class Item57
+		{
+			dataType="Marker";
+			position[]={7599.5806,443.36655,1844.0132};
+			name="a3e_var_communicationCenter_10";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=193.567;
+			id=2947;
+			atlOffset=440.10425;
+		};
+		class Item58
+		{
+			dataType="Marker";
+			position[]={7599.5801,443.34296,1844.0146};
+			name="area_10";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=193.567;
+			id=2948;
+			atlOffset=440.08054;
+		};
+		class Item59
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7599.5015,3.2543821,1843.9452};
+				angles[]={6.1806889,3.3773386,0.011430433};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2949;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item60
+		{
+			dataType="Trigger";
+			position[]={7416.6143,1.0393029,1851.8865};
+			angle=1.515811;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2950;
+			type="EmptyDetector";
+		};
+		class Item61
+		{
+			dataType="Marker";
+			position[]={7416.6216,441.1427,1851.8868};
+			name="a3e_var_communicationCenter_11";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=86.849571;
+			id=2951;
+			atlOffset=440.10321;
+		};
+		class Item62
+		{
+			dataType="Marker";
+			position[]={7416.6201,441.1189,1851.8868};
+			name="area_11";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=86.849571;
+			id=2952;
+			atlOffset=440.07947;
+		};
+		class Item63
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7416.7095,1.0419666,1851.8311};
+				angles[]={0.0085693272,1.5178074,0.022850808};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2953;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item64
+		{
+			dataType="Trigger";
+			position[]={8285.2119,13.377217,1560.8849};
+			angle=3.6351187;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2954;
+			type="EmptyDetector";
+		};
+		class Item65
+		{
+			dataType="Marker";
+			position[]={8285.209,453.48126,1560.8784};
+			name="a3e_var_communicationCenter_12";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=208.27696;
+			id=2955;
+			atlOffset=440.10321;
+		};
+		class Item66
+		{
+			dataType="Marker";
+			position[]={8285.209,453.45737,1560.8798};
+			name="area_12";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=208.27696;
+			id=2956;
+			atlOffset=440.07947;
+		};
+		class Item67
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8285.1152,13.387311,1560.8328};
+				angles[]={0.10249727,3.6333656,6.2346525};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2957;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item68
+		{
+			dataType="Trigger";
+			position[]={11244.499,132.50751,9259.1865};
+			angle=1.1257313;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2958;
+			type="EmptyDetector";
+		};
+		class Item69
+		{
+			dataType="Marker";
+			position[]={11244.507,572.6106,9259.1904};
+			name="a3e_var_communicationCenter_13";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=64.499657;
+			id=2959;
+			atlOffset=440.10324;
+		};
+		class Item70
+		{
+			dataType="Marker";
+			position[]={11244.505,572.58685,9259.1895};
+			name="area_13";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=64.499657;
+			id=2960;
+			atlOffset=440.07947;
+		};
+		class Item71
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={11244.608,132.50414,9259.1719};
+				angles[]={6.2660432,1.1254874,6.254621};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2961;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item72
+		{
+			dataType="Trigger";
+			position[]={1519.6785,139.2617,12361.836};
+			angle=5.3496923;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2962;
+			type="EmptyDetector";
+		};
+		class Item73
+		{
+			dataType="Marker";
+			position[]={1519.673,579.36487,12361.84};
+			name="a3e_var_communicationCenter_14";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=306.5148;
+			id=2963;
+			atlOffset=440.10321;
+		};
+		class Item74
+		{
+			dataType="Marker";
+			position[]={1519.6738,579.34119,12361.84};
+			name="area_14";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=306.5148;
+			id=2964;
+			atlOffset=440.0795;
+		};
+		class Item75
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1519.6407,139.26588,12361.939};
+				angles[]={6.2261062,5.3537769,0.0456785};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2965;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item76
+		{
+			dataType="Trigger";
+			position[]={5440.2656,569.40527,1463.0688};
+			angle=-2.8798349;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2966;
+			type="EmptyDetector";
+		};
+		class Item77
+		{
+			dataType="Marker";
+			position[]={5440.2642,1009.5087,1463.0618};
+			name="a3e_var_communicationCenter_15";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=194.9976;
+			id=2967;
+			atlOffset=440.10327;
+		};
+		class Item78
+		{
+			dataType="Marker";
+			position[]={5440.2642,1009.4849,1463.0632};
+			name="area_15";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=194.9976;
+			id=2968;
+			atlOffset=440.07953;
+		};
+		class Item79
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5440.1836,569.40424,1462.9958};
+				angles[]={0.031414896,3.4016073,0.045692857};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2969;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+	};
+};

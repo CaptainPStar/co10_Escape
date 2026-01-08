@@ -44,12 +44,12 @@ A3E_PrisonTemplates = [
 
 // Random array. Start position guard types around the prison
 a3e_arr_Escape_StartPositionGuardTypes = [
-	"SPE_GER_rifleman_lite"
-	,"SPE_GER_rifleman"
-	,"SPE_GER_rifleman_2"
-//	,"SPE_GER_Flamethrower_Operator"
-	,"SPE_GER_oberst"
-	,"SPE_GER_spg_crew"];
+	"SPE_Milice_FG_Sentry"
+	,"SPE_Milice_FG_Sentry_Sten"
+	,"SPE_Milice_FG_SquadLead"
+	,"SPE_Milice_FG_Rifleman"
+	,"SPE_Milice_FG_Assist_Autorifleman"
+	,"SPE_Milice_FG_Autorifleman"];
 	
 // Prison backpacks
 a3e_arr_PrisonBackpacks = [
@@ -72,7 +72,10 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [];
 switch (_enemyFrequency) do {
     case 1: {//Few (1-3)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"SPE_ST_OpelBlitz"
+		"SPE_ST_R200_Unarmed"
+		,"SPE_ST_R200_Hood"
+		,"SPE_ST_R200_MG34"
+		,"SPE_ST_OpelBlitz"
 		,"SPE_ST_OpelBlitz"
 		,"SPE_ST_OpelBlitz_Open"
 		,"SPE_ST_OpelBlitz_Open"
@@ -84,14 +87,23 @@ switch (_enemyFrequency) do {
 		,"SPE_ST_SdKfz250_1"
 		,"SPE_ST_SdKfz250_1"
 		,"SPE_ST_OpelBlitz_Flak38"
+		,"SPE_ST_StuG_III_G_Early"
+		,"SPE_ST_StuG_III_G_Late"
+		,"SPE_ST_StuG_III_G_SKB"
+		,"SPE_ST_StuH_42"
+		,"SPE_ST_Jagdpanther_G1"
 		,"SPE_ST_PzKpfwIII_J"
 		,"SPE_ST_PzKpfwIII_L"
 		,"SPE_ST_PzKpfwIII_M"
 		,"SPE_ST_PzKpfwIII_N"
 		,"SPE_ST_PzKpfwIV_G"
+		,"SPE_ST_PzKpfwV_G"
 		,"SPE_ST_PzKpfwVI_H1"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"SPE_OpelBlitz_Open"
+		"SPE_GER_R200_Unarmed"
+		,"SPE_GER_R200_Hood"
+		,"SPE_GER_R200_MG34"
+		,"SPE_OpelBlitz_Open"
 		,"SPE_OpelBlitz_Open"
 		,"SPE_OpelBlitz"
 		,"SPE_OpelBlitz"
@@ -102,18 +114,30 @@ switch (_enemyFrequency) do {
 		,"SPE_SdKfz250_1"
 		,"SPE_SdKfz250_1"
 		,"SPE_OpelBlitz_Flak38"
+		,"SPE_StuG_III_G_Early"
+		,"SPE_StuG_III_G_Late"
+		,"SPE_StuG_III_G_SKB"
+		,"SPE_StuH_42"
+		,"SPE_Jagdpanther_G1"
 		,"SPE_PzKpfwIII_J"
 		,"SPE_PzKpfwIII_L"
 		,"SPE_PzKpfwIII_M"
 		,"SPE_PzKpfwIII_N"
 		,"SPE_PzKpfwIV_G"
+		,"SPE_PzKpfwV_G"
 		,"SPE_PzKpfwVI_H1"
 		,"SPE_Nashorn"];
     };
     case 2: {//Some (4-6)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"SPE_ST_OpelBlitz"
+		"SPE_ST_R200_Unarmed"
+		,"SPE_ST_R200_Hood"
+		,"SPE_ST_R200_MG34"
+		,"SPE_ST_R200_MG34"
+		,"SPE_ST_R200_MG34"
 		,"SPE_ST_OpelBlitz"
+		,"SPE_ST_OpelBlitz"
+		,"SPE_ST_OpelBlitz_Open"
 		,"SPE_ST_OpelBlitz_Open"
 		,"SPE_ST_OpelBlitz_Ambulance"
 		,"SPE_ST_OpelBlitz_Ammo"
@@ -122,15 +146,25 @@ switch (_enemyFrequency) do {
 		,"SPE_ST_SdKfz250_1"
 		,"SPE_ST_SdKfz250_1"
 		,"SPE_ST_OpelBlitz_Flak38"
-		,"SPE_ST_OpelBlitz_Flak38"
+		,"SPE_ST_StuG_III_G_Early"
+		,"SPE_ST_StuG_III_G_Late"
+		,"SPE_ST_StuG_III_G_SKB"
+		,"SPE_ST_StuH_42"
+		,"SPE_ST_Jagdpanther_G1"
 		,"SPE_ST_PzKpfwIII_J"
 		,"SPE_ST_PzKpfwIII_L"
 		,"SPE_ST_PzKpfwIII_M"
 		,"SPE_ST_PzKpfwIII_N"
 		,"SPE_ST_PzKpfwIV_G"
+		,"SPE_ST_PzKpfwV_G"
 		,"SPE_ST_PzKpfwVI_H1"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"SPE_OpelBlitz_Open"
+		"SPE_GER_R200_Unarmed"
+		,"SPE_GER_R200_Hood"
+		,"SPE_GER_R200_MG34"
+		,"SPE_GER_R200_MG34"
+		,"SPE_GER_R200_MG34"
+		,"SPE_OpelBlitz_Open"
 		,"SPE_OpelBlitz_Open"
 		,"SPE_OpelBlitz"
 		,"SPE_OpelBlitz"
@@ -141,38 +175,56 @@ switch (_enemyFrequency) do {
 		,"SPE_SdKfz250_1"
 		,"SPE_SdKfz250_1"
 		,"SPE_OpelBlitz_Flak38"
+		,"SPE_StuG_III_G_Early"
+		,"SPE_StuG_III_G_Late"
+		,"SPE_StuG_III_G_SKB"
+		,"SPE_StuH_42"
+		,"SPE_Jagdpanther_G1"
 		,"SPE_PzKpfwIII_J"
 		,"SPE_PzKpfwIII_L"
 		,"SPE_PzKpfwIII_M"
 		,"SPE_PzKpfwIII_N"
 		,"SPE_PzKpfwIV_G"
+		,"SPE_PzKpfwV_G"
 		,"SPE_PzKpfwVI_H1"
 		,"SPE_Nashorn"];
     };
     default {//A lot (7-8)
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses = [
-		"SPE_ST_OpelBlitz"
+		"SPE_ST_R200_Unarmed"
+		,"SPE_ST_R200_Hood"
+		,"SPE_ST_R200_MG34"
 		,"SPE_ST_OpelBlitz"
+		,"SPE_ST_OpelBlitz"
+		,"SPE_ST_OpelBlitz_Open"
 		,"SPE_ST_OpelBlitz_Open"
 		,"SPE_ST_OpelBlitz_Ambulance"
 		,"SPE_ST_OpelBlitz_Ammo"
 		,"SPE_ST_OpelBlitz_Fuel"
 		,"SPE_ST_OpelBlitz_Repair"
 		,"SPE_ST_SdKfz250_1"
-		,"SPE_ST_SdKfz250_1"
 		,"SPE_ST_OpelBlitz_Flak38"
-		,"SPE_ST_OpelBlitz_Flak38"
+		,"SPE_ST_StuG_III_G_Early"
+		,"SPE_ST_StuG_III_G_Late"
+		,"SPE_ST_StuG_III_G_SKB"
+		,"SPE_ST_StuH_42"
+		,"SPE_ST_Jagdpanther_G1"
 		,"SPE_ST_PzKpfwIII_J"
 		,"SPE_ST_PzKpfwIII_L"
-		,"SPE_ST_PzKpfwIII_M"
 		,"SPE_ST_PzKpfwIII_M"
 		,"SPE_ST_PzKpfwIII_N"
 		,"SPE_ST_PzKpfwIV_G"
 		,"SPE_ST_PzKpfwIV_G"
+		,"SPE_ST_PzKpfwV_G"
+		,"SPE_ST_PzKpfwV_G"
 		,"SPE_ST_PzKpfwVI_H1"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		"SPE_OpelBlitz_Open"
+		"SPE_GER_R200_Unarmed"
+		,"SPE_GER_R200_Hood"
+		,"SPE_GER_R200_MG34"
 		,"SPE_OpelBlitz_Open"
+		,"SPE_OpelBlitz_Open"
+		,"SPE_OpelBlitz"
 		,"SPE_OpelBlitz"
 		,"SPE_OpelBlitz_Ambulance"
 		,"SPE_OpelBlitz_Ammo"
@@ -181,11 +233,17 @@ switch (_enemyFrequency) do {
 		,"SPE_SdKfz250_1"
 		,"SPE_SdKfz250_1"
 		,"SPE_OpelBlitz_Flak38"
+		,"SPE_StuG_III_G_Early"
+		,"SPE_StuG_III_G_Late"
+		,"SPE_StuG_III_G_SKB"
+		,"SPE_StuH_42"
+		,"SPE_Jagdpanther_G1"
 		,"SPE_PzKpfwIII_J"
 		,"SPE_PzKpfwIII_L"
 		,"SPE_PzKpfwIII_M"
 		,"SPE_PzKpfwIII_N"
 		,"SPE_PzKpfwIV_G"
+		,"SPE_PzKpfwV_G"
 		,"SPE_PzKpfwVI_H1"
 		,"SPE_Nashorn"];
     };
@@ -226,7 +284,15 @@ a3e_arr_Escape_InfantryTypes = [
 	,"SPE_sturmtrooper_standartenfuhrer"
 	,"SPE_sturmtrooper_hauptsturmfuhrer"
 	,"SPE_sturmtrooper_Assist_SquadLead"
-	,"SPE_sturmtrooper_SquadLead"];
+	,"SPE_sturmtrooper_SquadLead"
+	,"SPE_ST_AT_Soldier_Assistant"
+	,"SPE_ST_AT_Soldier"
+	,"SPE_ST_Sentry_K98k"
+	,"SPE_ST_Sentry_MP35"
+	,"SPE_ST_Sentry_MP40"
+	,"SPE_ST_AT_Soldier_SquadLead"
+	,"SPE_ST_Driver"
+	,"SPE_ST_Driver_Lite"];
 a3e_arr_Escape_InfantryTypes_Ind = [
 	"SPE_GER_Mortar_AmmoBearer"
 	,"SPE_GER_HMG_AmmoBearer"
@@ -257,8 +323,44 @@ a3e_arr_Escape_InfantryTypes_Ind = [
 	,"SPE_GER_hauptmann"
 	,"SPE_GER_radioman"
 	,"SPE_GER_Assist_SquadLead"
-	,"SPE_GER_SquadLead"];
+	,"SPE_GER_SquadLead"
+	,"SPE_GER_AT_Soldier_Assistant"
+	,"SPE_GER_AT_Soldier"
+	,"SPE_GER_Sentry_K98k"
+	,"SPE_GER_Sentry_MP40"
+	,"SPE_GER_AT_Soldier_SquadLead"
+	,"SPE_GER_Driver"
+	,"SPE_GER_Driver_Lite"];
 a3e_arr_recon_InfantryTypes = [
+	"SPE_FSJ_Mortar_AmmoBearer"
+	,"SPE_FSJ_HMG_AmmoBearer"
+	,"SPE_FSJ_AT_Soldier_Assistant"
+	,"SPE_FSJ_Assist_SquadLead"
+	,"SPE_FSJ_Mortar_AGunner"
+	,"SPE_FSJ_ahmgunner"
+	,"SPE_FSJ_AT_grenadier"
+	,"SPE_FSJ_LAT_Soldier"
+	,"SPE_FSJ_AT_soldier"
+	,"SPE_FSJ_grenadier"
+	,"SPE_FSJ_Mortar_Gunner"
+	,"SPE_FSJ_hmgunner2"
+	,"SPE_FSJ_hmgunner"
+	,"SPE_FSJ_amgunner"
+	,"SPE_FSJ_Mgunner2"
+	,"SPE_FSJ_Mgunner"
+	,"SPE_FSJ_medic"
+	,"SPE_FSJ_radioman"
+	,"SPE_FSJ_Soldier"
+	,"SPE_FSJ_Soldier_FG42"
+	,"SPE_FSJ_Soldier_STG44"
+	,"SPE_FSJ_sapper"
+	,"SPE_FSJ_sapper_gefr"
+	,"SPE_FSJ_Lieutenant"
+	,"SPE_FSJ_Sniper"
+	,"SPE_FSJ_Sniper_FG42"
+	,"SPE_FSJ_SquadLead"
+	,"SPE_FSJ_AT_Soldier_SquadLead"];
+a3e_arr_recon_I_InfantryTypes = [
 	"SPE_GER_scout_SquadLead"
 	,"SPE_GER_scout_Assist_SquadLead"
 	,"SPE_GER_scout_ober_grenadier"
@@ -268,17 +370,9 @@ a3e_arr_recon_InfantryTypes = [
 	,"SPE_GER_scout_rifleman"
 	,"SPE_GER_scout_ober_rifleman"
 	,"SPE_GER_scout_lieutenant"
-	,"SPE_GER_scout_sniper"];
-a3e_arr_recon_I_InfantryTypes = [
-	"SPE_GER_lehr_SquadLead"
-	,"SPE_GER_lehr_Assist_SquadLead"
-	,"SPE_GER_lehr_LAT_Rifleman"
-	,"SPE_GER_lehr_grenadier"
-	,"SPE_GER_lehr_amgunner"
-	,"SPE_GER_lehr_mgunner2"
-	,"SPE_GER_lehr_mgunner"
-	,"SPE_GER_lehr_Rifleman"
-	,"SPE_GER_lehr_lieutenant"];
+	,"SPE_GER_scout_sniper"
+	,"SPE_GER_scout_SquadLead"
+	,"SPE_GER_scout_Halftrack_Driver"];
 
 a3e_units_civilian_InfantryTypes = [
 	"SPE_CIV_Citizen_1"
@@ -351,16 +445,19 @@ A3E_RoadblockTemplates = [
 
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
-	"SPE_ST_SdKfz250_1"
+	"SPE_ST_R200_MG34"
+	,"SPE_ST_SdKfz250_1"
 	,"SPE_ST_SdKfz250_1"
 	,"SPE_ST_OpelBlitz_Flak38"
 	,"SPE_ST_leFH18_AT"
 	,"SPE_ST_Pak40"
 	,"SPE_ST_Pak40"
-	,"SPE_ST_PzKpfwIII_M"];
+	,"SPE_ST_PzKpfwIII_M"
+	,"SPE_ST_StuG_III_G_Early"
+	,"SPE_ST_Jagdpanther_G1"];
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
-	"SPE_SdKfz250_1"
-	,"SPE_SdKfz250_1"
+	"SPE_GER_R200_MG34"
+	,"SPE_GER_R200_MG34"
 	,"SPE_SdKfz250_1"
 	,"SPE_OpelBlitz_Flak38"
 	,"SPE_OpelBlitz_Flak38"
@@ -368,23 +465,23 @@ a3e_arr_Escape_RoadBlock_MannedVehicleTypes_Ind = [
 	,"SPE_FlaK_30"
 	,"SPE_FlaK_38"
 	,"SPE_Pak40"
-	,"SPE_PzKpfwIII_J"];
+	,"SPE_PzKpfwIII_J"
+	,"SPE_StuG_III_G_Early"];
 
 // Random array. Vehicle classes (preferrably trucks) transporting enemy reinforcements.
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses = [
 	"SPE_ST_OpelBlitz_Open"
 	,"SPE_ST_OpelBlitz"];
 a3e_arr_Escape_ReinforcementTruck_vehicleClasses_Ind = [
-	"gm_dk_army_typ1200_cargo"
-	,"gm_dk_army_typ247_cargo"
-	,"gm_dk_army_typ253_cargo"
-	,"gm_dk_army_typ253_mp"
-	,"gm_dk_army_m113a1dk_command"];
+	"SPE_OpelBlitz_Open"
+	,"SPE_OpelBlitz"
+	,"SPE_GER_R200_Hood"];
 
 
 // Random array. Motorized search groups are sometimes sent to look for you. This array contains possible class definitions for the vehicles.
 a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
-	"SPE_OpelBlitz_Open"
+	"SPE_GER_R200_MG34"
+	,"SPE_OpelBlitz_Open"
 	,"SPE_OpelBlitz"];
 
 //////////////////////////////////////////////////////////////////
@@ -410,11 +507,14 @@ A3E_ComCenterTemplates = [
 // Random array. Light armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_lightArmorClasses = [
 	"SPE_ST_PzKpfwIII_J"
-	,"SPE_ST_PzKpfwIII_L"];
+	,"SPE_ST_PzKpfwIII_L"
+	,"SPE_ST_StuG_III_G_SKB"
+	,"SPE_ST_Jagdpanther_G1"];
 // Random array. Heavy armored vehicles guarding the communication centers.
 a3e_arr_ComCenDefence_heavyArmorClasses = [
 	"SPE_ST_PzKpfwIII_N"
 	,"SPE_ST_PzKpfwIV_G"
+	,"SPE_ST_PzKpfwV_G"
 	,"SPE_ST_PzKpfwVI_H1"];
 
 // A communication center contains two static weapons (in two corners of the communication center).
@@ -425,7 +525,10 @@ a3e_arr_ComCenStaticWeapons = [
 	,"SPE_ST_MG42_Bipod"];
 // A communication center have two parked and empty vehicles of the following possible types.
 a3e_arr_ComCenParkedVehicles = [
-	"SPE_ST_OpelBlitz_Open"
+	"SPE_ST_R200_Unarmed"
+	,"SPE_ST_R200_Hood"
+	,"SPE_ST_R200_MG34"
+	,"SPE_ST_OpelBlitz_Open"
 	,"SPE_ST_OpelBlitz_Open"
 	,"SPE_ST_OpelBlitz"
 	,"SPE_ST_OpelBlitz"
@@ -438,13 +541,15 @@ a3e_arr_ComCenParkedVehicles = [
 	,"SPE_ST_SdKfz250_1"
 	,"SPE_ST_Pak40"
 	,"SPE_ST_Pak40"
+	,"SPE_ST_StuG_III_G_Early"
 	,"SPE_ST_PzKpfwIII_J"
 	,"SPE_ST_PzKpfwIII_M"];
 
 // Random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 //Should be civilian, as there are no civ vehicles its a normal enemy truck
 a3e_arr_Escape_EnemyCivilianCarTypes = [
-	"SPE_ST_OpelBlitz"];
+	"SPE_ST_R200_Hood"
+	,"SPE_ST_OpelBlitz"];
 
 // Vehicles, weapons and ammo at ammo depots
 
@@ -460,7 +565,12 @@ a3e_arr_Escape_AmmoDepot_StaticWeaponClasses = [
 	,"SPE_leFH18_AT"];
 // An ammo depot have one parked and empty vehicle of the following possible types.
 a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
-	"SPE_ST_OpelBlitz_Open"
+	"SPE_ST_R200_Unarmed"
+	,"SPE_ST_R200_Hood"
+	,"SPE_ST_R200_Hood"
+	,"SPE_ST_R200_MG34"
+	,"SPE_ST_R200_MG34"
+	,"SPE_ST_OpelBlitz_Open"
 	,"SPE_ST_OpelBlitz_Open"
 	,"SPE_ST_OpelBlitz"
 	,"SPE_ST_OpelBlitz"
@@ -473,8 +583,8 @@ a3e_arr_Escape_AmmoDepot_ParkedVehicleClasses = [
 	,"SPE_ST_SdKfz250_1"
 	,"SPE_ST_Pak40"
 	,"SPE_ST_Pak40"
-	,"SPE_ST_PzKpfwIII_J"
-	,"SPE_ST_PzKpfwIII_M"];
+	,"SPE_ST_StuG_III_G_Early"
+	,"SPE_ST_PzKpfwIII_J"];
 
 //Random array. Types of helicopters to spawn
 a3e_arr_O_attack_heli = [
@@ -509,7 +619,7 @@ a3e_arr_AmmoDepotCrate_Items = ["SPE_AmmoCrate_Mortar_FLARE_GER"];
 a3e_arr_AmmoDepotCrate_Random = ["SPE_Weaponcrate_K98_GER"];
 a3e_arr_AmmoDepotCrate_RandomInf = ["SPE_Weaponcrate_MP40_GER"];
 a3e_arr_AmmoDepotCrate_Car = ["SPE_AmmoCrate_Mortar_FLARE_GER"];
-a3e_arr_AmmoDepotCrate_CrashSite = ["SPE_US_2x_Open_Ammocrate_Rifle_Ball"];
+a3e_arr_AmmoDepotCrate_CrashSite = ["SPE_A5_Dropbag_Container_Weapons"];
 a3e_arr_AmmoDepotCrate_Extra1 = ["SPE_Weaponcrate_K98_GER"];
 a3e_arr_AmmoDepotCrate_Extra2 = ["SPE_BasicWeaponsBox_GER"];
 
@@ -528,6 +638,7 @@ a3e_arr_AmmoDepotBasicWeapons pushback ["SPE_P08", 50, 4, 8, ["SPE_8Rnd_9x19_P08
 a3e_arr_AmmoDepotBasicWeapons pushback ["SPE_K98", 50, 4, 8, ["SPE_5Rnd_792x57"], 8];
 a3e_arr_AmmoDepotBasicWeapons pushback ["SPE_K98_Late_Bayonet", 100, 2, 4, ["SPE_5Rnd_792x57"], 12];
 a3e_arr_AmmoDepotBasicWeapons pushback ["SPE_MP40", 50, 2, 4, ["SPE_32Rnd_9x19"], 8];
+a3e_arr_AmmoDepotBasicWeapons pushback ["SPE_MP35", 40, 2, 4, ["SPE_32Rnd_MP35_9x19"], 8];
 // non-CSAT weapons
 a3e_arr_AmmoDepotBasicWeapons pushback ["SPE_Fusil_Mle_208_12", 30, 1, 3, ["SPE_2Rnd_12x65_Pellets","SPE_2Rnd_12x65_Slug"], 20];
 
@@ -536,6 +647,7 @@ a3e_arr_AmmoDepotSpecialWeapons = [];
 // CSAT weapons
 a3e_arr_AmmoDepotSpecialWeapons pushback ["SPE_G43", 50, 1, 2, ["SPE_10Rnd_792x57"], 8];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["SPE_STG44", 25, 1, 2, ["SPE_30Rnd_792x33"], 8];
+a3e_arr_AmmoDepotSpecialWeapons pushback ["SPE_FG42_E", 25, 1, 2, ["SPE_20Rnd_792x57_t"], 10];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["SPE_K98ZF39", 40, 2, 4, ["SPE_5Rnd_792x57_SMK"], 20];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["SPE_K98_GW", 50, 1, 2, ["SPE_5Rnd_792x57", "SPE_1Rnd_G_SPRGR_30", "SPE_1Rnd_G_PZGR_40", "SPE_1Rnd_G_FLGR"], 8];
 a3e_arr_AmmoDepotSpecialWeapons pushback ["SPE_K98_Late_GW", 50, 2, 4, ["SPE_5Rnd_792x57", "SPE_1Rnd_G_SPRGR_30", "SPE_1Rnd_G_PZGR_30", "SPE_1Rnd_G_FLGR"], 8];
@@ -550,6 +662,8 @@ a3e_arr_AmmoDepotLaunchers = [];
 a3e_arr_AmmoDepotLaunchers pushback ["SPE_PzFaust_30m", 50, 1, 2, ["SPE_1Rnd_PzFaust_30m"], 1];
 a3e_arr_AmmoDepotLaunchers pushback ["SPE_PzFaust_60m", 30, 1, 2, ["SPE_1Rnd_PzFaust_60m"], 1];
 a3e_arr_AmmoDepotLaunchers pushback ["SPE_Faustpatrone", 50, 1, 2, ["SPE_1Rnd_Faustpatrone"], 1];
+a3e_arr_AmmoDepotLaunchers pushback ["SPE_RPzB_43", 30, 1, 2, ["SPE_1Rnd_RPzBGr_4322"], 1];
+a3e_arr_AmmoDepotLaunchers pushback ["SPE_RPzB_54", 30, 1, 2, ["SPE_1Rnd_RPzBGr_4322"], 1];
 
 
 // Weapons and ammo in the ordnance box
@@ -621,6 +735,7 @@ a3e_arr_AmmoDepotItems pushback ["SPE_GER_ItemWatch", 50, 1, 10];
 //a3e_arr_AmmoDepotItems pushback ["acc_pointer_IR", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["SPE_ACC_K98_Bayo", 50, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["SPE_ACC_GW_SB_Empty", 50, 1, 3];
+a3e_arr_AmmoDepotItems pushback ["SPE_Optic_ZFG42", 30, 1, 3];
 
 
 // Weapons that may show up in civilian cars
@@ -638,7 +753,11 @@ a3e_arr_CivilianCarWeapons pushback ["SPE_Fusil_Mle_208_12", "SPE_2Rnd_12x65_Pel
 a3e_arr_CivilianCarWeapons pushback ["SPE_K98_Late", "SPE_5Rnd_792x57", 6];
 a3e_arr_CivilianCarWeapons pushback ["SPE_PzFaust_30m", "SPE_1Rnd_PzFaust_30m", 1];
 a3e_arr_CivilianCarWeapons pushback ["SPE_M1903A3_Springfield", "SPE_5Rnd_762x63_M1", 6];
+a3e_arr_CivilianCarWeapons pushback ["SPE_M1A1_Carbine", "SPE_15Rnd_762x33_t", 6];
+a3e_arr_CivilianCarWeapons pushback ["SPE_No3_Mk1_Enfield_M1917_Bayonet", "SPE_5Rnd_770x56", 6];
+a3e_arr_CivilianCarWeapons pushback ["SPE_MAS_36", "SPE_5Rnd_75x54", 6];
 a3e_arr_CivilianCarWeapons pushback ["SPE_MP40", "SPE_32Rnd_9x19", 6];
+a3e_arr_CivilianCarWeapons pushback ["SPE_MP35", "SPE_32rnd_MP35_9x19_t", 6];
 a3e_arr_CivilianCarWeapons pushback ["SPE_STG44", "SPE_30Rnd_792x33", 12];
 a3e_arr_CivilianCarWeapons pushback ["SPE_FM_24_M29", "SPE_25Rnd_75x54", 12];
 a3e_arr_CivilianCarWeapons pushback ["SPE_Faustpatrone", "SPE_1Rnd_Faustpatrone", 1];
@@ -707,8 +826,16 @@ A3E_IntelItems = [
 // Basic fallback is always Heli extraction
 // Available types: a3e_arr_extractiontypes = ["air","land","sea"];
 //////////////////////////////////////////////////////////////////
-a3e_arr_extractiontypes = [
+if (isClass(configFile >> "CfgPatches" >> "spex_tem_utah_beach")) 
+then {
+	a3e_arr_extractiontypes = [
+	"land"
+	,"sea"];
+		} 
+else {
+	a3e_arr_extractiontypes = [
 	"land"];
+	};
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
@@ -724,26 +851,41 @@ a3e_arr_extraction_chopper_escort = [
 // RunExtractionBoat.sqf
 // Boats that come to pick you up
 //////////////////////////////////////////////////////////////////
-a3e_arr_extraction_boat = [
-	"O_T_Boat_Armed_01_hmg_F"];
-a3e_arr_extraction_boat_escort = [
-	"O_T_Boat_Armed_01_hmg_F"];
+if (isClass(configFile >> "CfgPatches" >> "spex_tem_utah_beach")) 
+then {
+	a3e_arr_extraction_boat = [
+		"SPEX_LCVP"];
+	a3e_arr_extraction_boat_escort = [
+		"SPEX_LCVP"];
+		} 
+else {
+	a3e_arr_extraction_boat = [
+		"O_T_Boat_Armed_01_hmg_F"];
+	a3e_arr_extraction_boat_escort = [
+		"O_T_Boat_Armed_01_hmg_F"];
+	};
 
 //////////////////////////////////////////////////////////////////
 // RunExtractionLand.sqf
 // Cars/APCs that come to pick you up
 //////////////////////////////////////////////////////////////////
 a3e_arr_extraction_car = [
-	"SPE_US_M3_Halftrack",	//9
-	"SPE_US_M3_Halftrack_Unarmed"];	//11
+	"SPE_US_M3_Halftrack"	//9
+	,"SPE_US_M3_Halftrack_Unarmed"	//11
+	,"SPE_CCKW_353"	//11
+	,"SPE_CCKW_353_Open"	//11
+	,"SPE_M20_AUC"];	//8
 a3e_arr_extraction_car_escort = [
-	"SPE_M10",
-	"SPE_M18_Hellcat",
-	"SPE_M4A0_75_Early",
-	"SPE_M4A0_75",
-	"SPE_M4A1_75",
-	"SPE_M4A1_76",
-	"SPE_M4A1_T34_Calliope_Direct"];
+	"SPE_M10"
+	,"SPE_M18_Hellcat"
+	,"SPE_M4A0_75_Early"
+	,"SPE_M4A0_75"
+	,"SPE_M4A1_75"
+	,"SPE_M4A1_76"
+	,"SPE_M4A1_T34_Calliope_Direct"
+	,"SPE_M4A3_105"
+	,"SPE_M4A3_75"
+	,"SPE_M4A3_76"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -860,6 +1002,11 @@ a3e_arr_CASplane = [
 // Index 5: Number of magazines per weapon that exists.
 a3e_arr_CrashSiteWrecks = [
 	"SPE_P47_MRWreck"];
+if(isClass(configFile >> "CfgPatches" >> "spex_tem_utah_beach")) then {			//check if SPEX mod is loaded
+	a3e_arr_CrashSiteWrecks pushback "SPEX_HORSA_Wreck";
+	a3e_arr_CrashSiteWrecks pushback "SPEX_C47_Skytrain_wreck";
+	};
+
 a3e_arr_CrashSiteCrew = [
 	"SPE_US_Pilot"
 	,"SPE_US_Pilot_2"];
@@ -870,20 +1017,26 @@ a3e_arr_CrashSiteCrewCar = [
 // Weapons and ammo in crash site box
 a3e_arr_CrashSiteWeapons = [];
 a3e_arr_CrashSiteWeapons pushback ["SPE_M1A1_Bazooka", 50, 1, 2, ["SPE_1Rnd_60mm_M6"], 1];
+a3e_arr_CrashSiteWeapons pushback ["SPE_M9A1_Bazooka", 30, 1, 2, ["SPE_1Rnd_60mm_M6A3"], 1];
 a3e_arr_CrashSiteWeapons pushback ["SPE_Sten_Mk2", 40, 1, 2, ["SPE_32Rnd_9x19_Sten"], 8];
 a3e_arr_CrashSiteWeapons pushback ["SPE_Sten_Mk2_Suppressed", 20, 1, 1, ["SPE_32Rnd_9x19_Sten"], 8];
-a3e_arr_CrashSiteWeapons pushback ["SPE_M1_Garand_Bayonet", 15, 1, 2, ["SPE_8Rnd_762x63"], 1];
-a3e_arr_CrashSiteWeapons pushback ["SPE_M1903A3_Springfield", 100, 1, 2, ["SPE_5Rnd_762x63"], 8];
-a3e_arr_CrashSiteWeapons pushback ["SPE_M1903A3_Springfield_M1_GL", 50, 1, 2, ["SPE_1Rnd_G_Mk2","SPE_1Rnd_G_M9A1","SPE_1Rnd_G_M2_AN_M14","SPE_1Rnd_G_M2_ANM8","SPE_1Rnd_G_M17A1"], 8];
-a3e_arr_CrashSiteWeapons pushback ["SPE_M1_Garand_M7", 40, 2, 4, ["SPE_1Rnd_G_Mk2", "SPE_1Rnd_G_M9A1", "SPE_1Rnd_G_M2_AN_M14", "SPE_1Rnd_G_M19A1"], 6];
+a3e_arr_CrashSiteWeapons pushback ["SPE_Model_37_Riotgun", 20, 1, 1, ["SPE_5Rnd_12x70_Pellets","SPE_5Rnd_12x70_Slug","SPE_5Rnd_12x70_No4_Buck"], 8];
+a3e_arr_CrashSiteWeapons pushback ["SPE_Model_37_Trenchgun_M1917_Bayonet", 20, 1, 1, ["SPE_5Rnd_12x70_Pellets","SPE_5Rnd_12x70_Slug","SPE_5Rnd_12x70_No4_Buck"], 8];
+a3e_arr_CrashSiteWeapons pushback ["SPE_M1_Garand_Bayonet", 15, 1, 3, ["SPE_8Rnd_762x63"], 10];
+a3e_arr_CrashSiteWeapons pushback ["SPE_M1903A3_Springfield", 100, 1, 2, ["SPE_5Rnd_762x63"], 12];
+a3e_arr_CrashSiteWeapons pushback ["SPE_M1903A3_Springfield_M1_GL", 50, 1, 2, ["SPE_5Rnd_762x63","SPE_1Rnd_G_Mk2","SPE_1Rnd_G_M9A1","SPE_1Rnd_G_M2_AN_M14","SPE_1Rnd_G_M2_ANM8","SPE_1Rnd_G_M17A1"], 8];
+a3e_arr_CrashSiteWeapons pushback ["SPE_M1_Garand_M7", 40, 2, 4, ["SPE_8Rnd_762x63","SPE_1Rnd_G_Mk2", "SPE_1Rnd_G_M9A1", "SPE_1Rnd_G_M2_AN_M14", "SPE_1Rnd_G_M19A1"], 6];
 a3e_arr_CrashSiteWeapons pushback ["SPE_M1903A4_Springfield", 50, 2, 4, ["SPE_5Rnd_762x63_M1"], 12];
-a3e_arr_CrashSiteWeapons pushback ["SPE_M1_Carbine", 60, 2, 4, ["SPE_15Rnd_762x33"], 10];
+a3e_arr_CrashSiteWeapons pushback ["SPE_M1_Carbine", 30, 2, 4, ["SPE_15Rnd_762x33"], 10];
+a3e_arr_CrashSiteWeapons pushback ["SPE_M1A1_Carbine", 60, 2, 4, ["SPE_15Rnd_762x33_t"], 10];
 a3e_arr_CrashSiteWeapons pushback ["SPE_M3_GreaseGun", 75, 1, 2, ["SPE_30Rnd_M3_GreaseGun_45ACP"], 8];
 a3e_arr_CrashSiteWeapons pushback ["SPE_M1A1_Thompson", 50, 1, 2, ["SPE_30Rnd_Thompson_45ACP_t"], 8];
-a3e_arr_CrashSiteWeapons pushback ["SPE_M2_Flamethrower", 25, 1, 2, ["SPE_M2_Flamethrower_Mag"], 4];
+//a3e_arr_CrashSiteWeapons pushback ["SPE_M2_Flamethrower", 25, 1, 2, ["SPE_M2_Flamethrower_Mag"], 4]; //needs proper backpack
 a3e_arr_CrashSiteWeapons pushback ["SPE_M1919A4", 30, 1, 2, ["SPE_50Rnd_762x63"], 4];
 a3e_arr_CrashSiteWeapons pushback ["SPE_M1919A6", 20, 1, 2, ["SPE_50Rnd_762x63_M2_AP"], 4];
-a3e_arr_CrashSiteWeapons pushback ["SPE_M1918A2_BAR", 50, 1, 2, ["SPE_20Rnd_762x63"], 8];
+a3e_arr_CrashSiteWeapons pushback ["SPE_M1918A2_BAR", 40, 1, 2, ["SPE_20Rnd_762x63_M2_AP"], 8];
+a3e_arr_CrashSiteWeapons pushback ["SPE_M1918A0_BAR", 30, 1, 2, ["SPE_20Rnd_762x63"], 8];
+a3e_arr_CrashSiteWeapons pushback ["SPE_M1918A2_erla_BAR", 20, 1, 2, ["SPE_20Rnd_762x63_M1"], 8];
 a3e_arr_CrashSiteWeapons pushback [objNull, 50, 1, 1, ["SPE_US_Mk_1","SPE_US_Mk_2"], 10];
 a3e_arr_CrashSiteWeapons pushback [objNull, 50, 1, 1, ["SPE_US_AN_M14"], 10];
 a3e_arr_CrashSiteWeapons pushback [objNull, 50, 1, 1, ["SPE_US_M18_Green","SPE_US_M18_Red","SPE_US_M18"], 10];

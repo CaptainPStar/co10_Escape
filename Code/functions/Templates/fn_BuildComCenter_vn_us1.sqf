@@ -72,7 +72,6 @@ _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
 [_obj,"green","green","green"] call BIS_fnc_DataTerminalColor;
 
-
 if (count _staticWeaponClasses > 0) then {
     // Statics
 

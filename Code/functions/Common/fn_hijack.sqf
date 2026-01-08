@@ -1,7 +1,7 @@
 params["_target","_unit","_id"];
 private ["_isUnconscious","_generatorTrailer"];
 private [ "_count", "_text","_engineer"];
-_generatorTrailer = cursorTarget;
+_generatorTrailer = _unit getVariable ["A3E_CurrentTerminal", objNull]; // Changed from cursorTarget to player variable
 //BIS_fnc_DataTerminalAnimate
 if((_generatorTrailer getvariable ["A3E_Terminal_Hacked",false])) exitwith {systemchat "Terminal already used!";};
 

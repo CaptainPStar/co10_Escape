@@ -259,12 +259,12 @@ switch (_enemyFrequency) do {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_LT_01_cannon_F";
 		};
 		if(A3E_Param_UseDLCLaws==1) then {
-	    a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_transport_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_transport_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_transport_F";
-	    a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_vehicle_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_vehicle_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_vehicle_F";
+	    a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_transport_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_transport_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_transport_F";
+	    a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_vehicle_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_vehicle_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_vehicle_F";
 	    };
     };
     case 2: {//Some (4-6)
@@ -440,12 +440,12 @@ switch (_enemyFrequency) do {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_LT_01_cannon_F";
 		};
 		if(A3E_Param_UseDLCLaws==1) then {
-	    a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_transport_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_transport_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_transport_F";
-	    a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_vehicle_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_vehicle_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_vehicle_F";
+	    a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_transport_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_transport_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_transport_F";
+	    a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_vehicle_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_vehicle_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_vehicle_F";
 	    };
     };
     default {//A lot (7-8)
@@ -632,12 +632,12 @@ switch (_enemyFrequency) do {
 		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_LT_01_cannon_F";
 		};
 		if(A3E_Param_UseDLCLaws==1) then {
-	    a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_transport_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_transport_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_transport_F";
-	    a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_vehicle_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_vehicle_F";
-		a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "I_G_Van_02_vehicle_F";
+	    a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_transport_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_transport_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_transport_F";
+	    a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_vehicle_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_vehicle_F";
+		a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND pushback "I_G_Van_02_vehicle_F";
 	    };
     };
 };

@@ -1,0 +1,715 @@
+{
+	"ParsedFiles" : [],
+	"Mods" : [
+		{
+			"name" : "EFwdl",
+			"path" : "./Mods/EFwdl/",
+			"require" : ["EF_Marines","EF_Weapons"],
+			"replace" :
+				{
+					"MOD" : "Expeditionary Forces CSAT vs MJTF+AAF",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "O_Soldier_TL_F",
+					"PLAYERUNIT_2" : "O_soldier_UAV_F",
+					"PLAYERUNIT_3" : "O_Soldier_GL_F",
+					"PLAYERUNIT_4" : "O_engineer_F",
+					"PLAYERUNIT_5" : "O_Soldier_AR_F",
+					"PLAYERUNIT_6" : "O_Soldier_LAT_F",
+					"PLAYERUNIT_7" : "O_Soldier_F",
+					"PLAYERUNIT_8" : "O_Soldier_A_F",
+					"PLAYERUNIT_9" : "O_soldier_M_F",
+					"PLAYERUNIT_10" : "O_medic_F",
+					"PLAYER_INIT" : "this setCaptive true; if(this == p2) then {this setUnitTrait ['UavHacker',true];};"
+				}
+		},
+        {
+			"name" : "EFdes",
+			"path" : "./Mods/EFdes/",
+			"require" : ["EF_Marines","EF_Weapons"],
+			"replace" :
+				{
+					"MOD" : "Expeditionary Forces CSAT vs MJTF+FIA",
+					"PLAYERSIDE" : "EAST",
+					"PLAYERUNIT_1" : "O_Soldier_TL_F",
+					"PLAYERUNIT_2" : "O_soldier_UAV_F",
+					"PLAYERUNIT_3" : "O_Soldier_GL_F",
+					"PLAYERUNIT_4" : "O_engineer_F",
+					"PLAYERUNIT_5" : "O_Soldier_AR_F",
+					"PLAYERUNIT_6" : "O_Soldier_LAT_F",
+					"PLAYERUNIT_7" : "O_Soldier_F",
+					"PLAYERUNIT_8" : "O_Soldier_A_F",
+					"PLAYERUNIT_9" : "O_soldier_M_F",
+					"PLAYERUNIT_10" : "O_medic_F",
+					"PLAYER_INIT" : "this setCaptive true; if(this == p2) then {this setUnitTrait ['UavHacker',true];};"
+				}
+		}
+	],
+	"Islands": [],
+	"Missions" : [
+		{
+			"island" : "Altis",
+			"sqm": "Altis",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Stratis",
+			"sqm": "Stratis",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Tanoa",
+			"sqm": "Tanoa",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Livonia",
+			"sqm" : "Enoch",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "Weferlingen",
+			"sqm" : "Weferlingen",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "WeferlingenWinter",
+			"sqm" : "WeferlingenW",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "Gabreta",
+			"sqm" : "Gabreta",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Polanek",
+			"sqm" : "Polanek",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Sefrou-Ramal",
+			"sqm" : "Sefrou-Ramal",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Malden 2035",
+			"sqm": "Malden",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Bornholm",
+			"sqm": "Bornholm",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Chernarus",
+			"sqm" : "Chernarus",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Chernarus_Summer",
+			"sqm": "Chernarus_Summer",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "Chernarus_2020",
+			"sqm": "Chernarus_2020",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Chernarus_Winter",
+			"sqm": "Chernarus_Winter",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Podagorsk",
+			"sqm": "FDF_Isle1_a",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Panthera",
+			"sqm": "Panthera3",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Winter Panthera",
+			"sqm": "Winthera3",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Lingor",
+			"sqm": "Lingor3",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Dingor",
+			"sqm": "Dingor",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Abramia",
+			"sqm": "Abramia",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Sahrani",
+			"sqm": "Sara",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "United Sahrani",
+			"sqm": "Sara_dbe1",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Diyala",
+			"sqm": "DYA",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Celle",
+			"sqm": "mbg_celle2",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Porto",
+			"sqm": "Porto",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Southeast Angola",
+			"sqm": "seangola",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Thirsk",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"sqm" : "Thirsk",
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Thirsk Winter",
+			"sqm" : "ThirskW",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Isla Duala",
+			"sqm": "IslaDuala3",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Takistan",
+			"sqm": "Takistan",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Zargabad",
+			"sqm": "Zargabad",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Capraia",
+			"sqm": "IsolaDiCapraia",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Everon",
+			"sqm": "Eden",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Malden",
+			"sqm": "Abel",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Kolgujev",
+			"sqm": "Cain",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Nogova",
+			"sqm": "Noe",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Esseker",
+			"sqm": "Esseker",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Beketov",
+			"sqm": "Beketov",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Australia",
+			"sqm": "Australia",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Isles of Cumbrae",
+			"sqm": "rof_isles_of_cumbrae",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Schwemlitz",
+			"sqm": "Schwemlitz",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Rosche",
+			"sqm": "Rosche",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "Clafghan",
+			"sqm": "Clafghan",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"											   
+		},
+		{
+			"island" : "Al Rayak",
+			"sqm": "pja310",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Lythium",
+			"sqm": "Lythium",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Fallujah",
+			"sqm": "Fallujah",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Kastellorizo",
+			"sqm": "Kastellorizo",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Kerama",
+			"sqm": "Kerama",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Valtatie 5",
+			"sqm": "VT5",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Virolahti",
+			"sqm": "VT7",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Ruha",
+			"sqm": "Ruha",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "Vinjesvingen",
+			"sqm": "vinjesvingen",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "Cham",
+			"sqm": "Cham",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "ChamW",
+			"sqm": "ChamW",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "Summa",
+			"sqm": "Summa",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "SummaW",
+			"sqm": "SummaW",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Ihantala",
+			"sqm": "Ihantala",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "IhantalaW",
+			"sqm": "IhantalaW",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Hellanmaa",
+			"sqm": "Hellanmaa",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "HellanmaaW",
+			"sqm": "HellanmaaW",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "Mull of Kintyre",
+			"sqm": "rof_mok",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "Scottish Highlands",
+			"sqm": "ScottishHighlands",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "County Fermanagh",
+			"sqm": "CountyFermanagh",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "Fapovo",
+			"sqm": "Fapovo",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Prei Khmaoch Luong Legacy",
+			"sqm": "prei_khmaoch_luong",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+        {
+			"island" : "Prei Khmaoch Luong RHS",
+			"sqm": "rhspkl",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Yellowstone",
+			"sqm": "yellowstone",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Tembelan",
+			"sqm": "Tembelan",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Kujari",
+			"sqm": "Kujari",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Utes",
+			"sqm": "utes",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Bukovina",
+			"sqm": "Bootcamp_ACR",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Bystrica",
+			"sqm": "Woodland_ACR",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Vidda",
+			"sqm": "blud_vidda",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "MSKE",
+			"sqm": "mske",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Napf Island",
+			"sqm": "napf",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Napf Island Winter",
+			"sqm": "NapfWinter",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Reshmaan",
+			"sqm": "reshmaan",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Anizay",
+			"sqm": "tem_anizay",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Colombia",
+			"sqm": "UMB_Colombia",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Pulau",
+			"sqm": "Pulau",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Mutambara",
+			"sqm": "Mutambara",
+			"mod" : "EFdes",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Niakala",
+			"sqm": "Niakala",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Sumava",
+			"sqm": "Sumava",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Maksniemi",
+			"sqm": "Maksniemi",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Zagorsk Big Lakes",
+			"sqm": "zagor_zagorsk_biglakes",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Lybor",
+			"sqm": "Lybor",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Lybor Winter",
+			"sqm": "Lybor",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Fjord",
+			"sqm": "Fjord",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Yulakia",
+			"sqm": "Yulakia",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Laghisola",
+			"sqm": "Laghisola",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Mehland",
+			"sqm": "Mehland",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Stubbhult",
+			"sqm": "Stubbhult",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		},
+		{
+			"island" : "Namalsk",
+			"sqm": "NamalskR",
+			"mod" : "EFwdl",
+			"replace" : {},
+			"name" : "co10_Escape_EF_CSAT_vs_MJTF_and_AAF"
+		}
+	],
+	"Addons" : [
+		{
+			"name" : "EF",
+			"mods" : ["EFwdl","EFdes"]
+		}
+	]
+	
+}

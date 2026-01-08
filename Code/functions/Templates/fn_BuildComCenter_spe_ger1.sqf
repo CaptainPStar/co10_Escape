@@ -70,6 +70,7 @@ _obj forceFlagTexture A3E_VAR_Flag_Opfor;
 _obj = ["SPE_Radio_Ger",_center,[5.30518,1.10742,4.63],_rotation,270.512] call _fnc_createObject;
 _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
+
 //_obj = ["SPE_MG34_Bipod",_center,[-0.44873,-6.90332,4.30228],_rotation,180] call _fnc_createObject;
 //_obj = ["SPE_MG34_Bipod",_center,[10.5432,0.478027,0.8],_rotation,90] call _fnc_createObject;
 //_obj = ["SPE_MG34_Bipod",_center,[-0.0578613,5.54785,4.02],_rotation,0] call _fnc_createObject;
