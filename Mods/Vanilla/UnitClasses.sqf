@@ -1130,6 +1130,16 @@ a3e_arr_I_pilots = [
 	"I_helipilot_F"
 	,"I_helicrew_F"];
 
+// Random array. Helicopters for the capture objective.
+// These should be enemy (OPFOR or Independent) helicopters.
+// Index 0: Helicopter classname
+// Index 1: Number of seats
+a3e_arr_heli_capture = [
+    ["O_Heli_Light_02_unarmed_F", 8],  // Orca (OPFOR)
+    ["I_Heli_Transport_02_F", 16], // Mohawk (AAF/Independent)
+    ["O_Heli_Transport_04_covered_F", 16] // Taru (CSAT/OPFOR)
+];
+
 
 //////////////////////////////////////////////////////////////////
 // fn_createAmmoDepots.sqf
