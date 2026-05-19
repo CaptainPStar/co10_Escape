@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2930;
+		nextID=2946;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2029.085,58.119904,4836.606};
-		dir[]={-0.88861382,-0.38736218,0.24559318};
-		up[]={-0.3733649,0.92192769,0.10318978};
-		aside[]={0.26639098,0,0.96386516};
+		pos[]={9609.0859,170.93637,9267.9326};
+		dir[]={0.15372504,-0.38935325,-0.90831167};
+		up[]={0.064983815,0.92106289,-0.38396707};
+		aside[]={-0.98608524,-1.2716628e-06,-0.16688426};
 	};
 };
 binarizationWanted=0;
@@ -87,7 +87,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=412;
+		items=424;
 		class Item0
 		{
 			dataType="Trigger";
@@ -181,7 +181,7 @@ class Mission
 					};
 					id=251;
 					type="B_Soldier_GL_F";
-					atlOffset=5.7220459e-06;
+					atlOffset=-0.31911278;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -218,7 +218,7 @@ class Mission
 			{
 			};
 			id=19;
-			atlOffset=5.7220459e-06;
+			atlOffset=-0.31911278;
 		};
 		class Item6
 		{
@@ -277,19 +277,19 @@ class Mission
 		class Item11
 		{
 			dataType="Marker";
-			position[]={-1807.2765,412.12903,5871.4624};
+			position[]={-1807.2765,40.29604,5871.4624};
 			name="a3e_var_communicationCenter";
 			type="Empty";
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
 			id=2236;
-			atlOffset=371.85565;
+			atlOffset=0.022651672;
 		};
 		class Item12
 		{
 			dataType="Marker";
-			position[]={-1807.2755,412.10641,5871.4609};
+			position[]={-1807.2755,40.273426,5871.4609};
 			name="area";
 			markerType="RECTANGLE";
 			type="Empty";
@@ -297,7 +297,6 @@ class Mission
 			a=20;
 			b=15;
 			id=2237;
-			atlOffset=371.83298;
 		};
 		class Item13
 		{
@@ -406,7 +405,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={2136.26,2.196789,865.40698};
-			angle=1.8371683;
+			angle=1.8371681;
 			class Attributes
 			{
 				sizeA=20;
@@ -581,7 +580,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7187.2461,47.164135,827.1839};
-			angle=-2.8428719;
+			angle=-2.8428714;
 			class Attributes
 			{
 				sizeA=20;
@@ -626,7 +625,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7187.1616,50.425785,827.11359};
-				angles[]={0,3.4403131,-0};
+				angles[]={0,3.4403131,0};
 			};
 			areaSize[]={25,0,25};
 			flags=1;
@@ -668,7 +667,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={6413.9849,8.4899998,1981.374};
-			angle=4.7326865;
+			angle=4.732686;
 			class Attributes
 			{
 				sizeA=20;
@@ -678,6 +677,7 @@ class Mission
 			};
 			id=2534;
 			type="EmptyDetector";
+			atlOffset=0.55673981;
 		};
 		class Item33
 		{
@@ -690,7 +690,7 @@ class Mission
 			b=0.75;
 			angle=271.1629;
 			id=2535;
-			atlOffset=458.54764;
+			atlOffset=459.1044;
 		};
 		class Item34
 		{
@@ -704,7 +704,7 @@ class Mission
 			b=15;
 			angle=271.1629;
 			id=2536;
-			atlOffset=458.52496;
+			atlOffset=459.08173;
 		};
 		class Item35
 		{
@@ -719,7 +719,7 @@ class Mission
 			flags=1;
 			id=2537;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=3.2598553;
+			atlOffset=3.8173094;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -925,7 +925,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8332.6953,4.4353943,1309.822};
-			angle=1.5838119;
+			angle=1.5838118;
 			class Attributes
 			{
 				sizeA=20;
@@ -935,7 +935,7 @@ class Mission
 			};
 			id=2546;
 			type="EmptyDetector";
-			atlOffset=4.7683716e-07;
+			atlOffset=-0.20422029;
 		};
 		class Item45
 		{
@@ -946,9 +946,9 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=90.74556;
+			angle=90.745544;
 			id=2547;
-			atlOffset=466.68585;
+			atlOffset=466.48212;
 		};
 		class Item46
 		{
@@ -960,9 +960,9 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=90.74556;
+			angle=90.745544;
 			id=2548;
-			atlOffset=466.66321;
+			atlOffset=466.45938;
 		};
 		class Item47
 		{
@@ -976,7 +976,7 @@ class Mission
 			flags=1;
 			id=2549;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=11.396;
+			atlOffset=11.198174;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1012,7 +1012,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={10702.398,29.246824,1003.061};
-			angle=4.2519703;
+			angle=4.2519698;
 			class Attributes
 			{
 				sizeA=20;
@@ -1099,7 +1099,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9690.4736,162.30096,3244.418};
-			angle=5.7211018;
+			angle=5.7211013;
 			class Attributes
 			{
 				sizeA=20;
@@ -1195,6 +1195,7 @@ class Mission
 			};
 			id=2558;
 			type="EmptyDetector";
+			atlOffset=-4.6730042e-05;
 		};
 		class Item57
 		{
@@ -1206,7 +1207,7 @@ class Mission
 			a=0.94999999;
 			b=0.75;
 			id=2559;
-			atlOffset=467.00989;
+			atlOffset=467.00983;
 		};
 		class Item58
 		{
@@ -1219,7 +1220,7 @@ class Mission
 			a=20;
 			b=15;
 			id=2560;
-			atlOffset=466.98718;
+			atlOffset=466.98712;
 		};
 		class Item59
 		{
@@ -1233,7 +1234,7 @@ class Mission
 			flags=1;
 			id=2561;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=11.72327;
+			atlOffset=11.722872;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1278,7 +1279,7 @@ class Mission
 			};
 			id=2562;
 			type="EmptyDetector";
-			atlOffset=4.7683716e-07;
+			atlOffset=-0.24630594;
 		};
 		class Item61
 		{
@@ -1290,7 +1291,7 @@ class Mission
 			a=0.94999999;
 			b=0.75;
 			id=2563;
-			atlOffset=470.80817;
+			atlOffset=470.56161;
 		};
 		class Item62
 		{
@@ -1303,7 +1304,7 @@ class Mission
 			a=20;
 			b=15;
 			id=2564;
-			atlOffset=470.78543;
+			atlOffset=470.53891;
 		};
 		class Item63
 		{
@@ -1317,7 +1318,7 @@ class Mission
 			flags=1;
 			id=2565;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=15.524036;
+			atlOffset=15.273502;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1610,7 +1611,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8761.335,23.256374,3675.8308};
-			angle=6.1970587;
+			angle=6.1970577;
 			class Attributes
 			{
 				sizeA=20;
@@ -1780,7 +1781,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={10469.675,27.175871,5157.4639};
-			angle=3.5354259;
+			angle=3.5354254;
 			class Attributes
 			{
 				sizeA=20;
@@ -2119,7 +2120,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7490.6538,49.865303,5540.7432};
-			angle=2.4033878;
+			angle=2.4033873;
 			class Attributes
 			{
 				sizeA=20;
@@ -2206,7 +2207,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={6763.9717,9.1426277,3163.1196};
-			angle=1.5686697;
+			angle=1.5686696;
 			class Attributes
 			{
 				sizeA=20;
@@ -2226,7 +2227,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=89.877663;
+			angle=89.877647;
 			id=2607;
 			atlOffset=458.54764;
 		};
@@ -2240,7 +2241,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=89.877663;
+			angle=89.877647;
 			id=2608;
 			atlOffset=458.52496;
 		};
@@ -2302,6 +2303,7 @@ class Mission
 			};
 			id=2610;
 			type="EmptyDetector";
+			atlOffset=-1.3486867;
 		};
 		class Item109
 		{
@@ -2313,7 +2315,7 @@ class Mission
 			a=0.94999999;
 			b=0.75;
 			id=2611;
-			atlOffset=458.54764;
+			atlOffset=457.1991;
 		};
 		class Item110
 		{
@@ -2326,7 +2328,7 @@ class Mission
 			a=20;
 			b=15;
 			id=2612;
-			atlOffset=458.52496;
+			atlOffset=457.17636;
 		};
 		class Item111
 		{
@@ -2340,7 +2342,7 @@ class Mission
 			flags=1;
 			id=2613;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=3.2598553;
+			atlOffset=1.9120245;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2800,7 +2802,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={621.25098,44.398605,2713.0139};
-			angle=2.8112714;
+			angle=2.811271;
 			class Attributes
 			{
 				sizeA=20;
@@ -2821,7 +2823,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=161.07411;
+			angle=161.07408;
 			id=2635;
 			atlOffset=458.54764;
 		};
@@ -2835,7 +2837,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=161.07411;
+			angle=161.07408;
 			id=2636;
 			atlOffset=458.52496;
 		};
@@ -3057,7 +3059,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={4547.4521,4.7963133,4087.365};
-			angle=0.3077015;
+			angle=0.30770147;
 			class Attributes
 			{
 				sizeA=20;
@@ -3231,7 +3233,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={5707.2939,21.854845,3614.7991};
-			angle=0.07986626;
+			angle=0.079866245;
 			class Attributes
 			{
 				sizeA=20;
@@ -3338,7 +3340,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=127.32413;
+			angle=127.32412;
 			id=2659;
 			atlOffset=458.54764;
 		};
@@ -3352,7 +3354,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=127.32413;
+			angle=127.32412;
 			id=2660;
 			atlOffset=458.52496;
 		};
@@ -3404,8 +3406,8 @@ class Mission
 		class Item160
 		{
 			dataType="Trigger";
-			position[]={5163.167,5.2073083,4825.6558};
-			angle=3.8413296;
+			position[]={5222.3813,5.5172634,4805.0542};
+			angle=-2.3289669;
 			class Attributes
 			{
 				sizeA=20;
@@ -3415,48 +3417,49 @@ class Mission
 			};
 			id=2662;
 			type="EmptyDetector";
+			atlOffset=0.15205002;
 		};
 		class Item161
 		{
 			dataType="Marker";
-			position[]={5163.1616,463.75449,4825.6499};
+			position[]={5222.375,464.06476,4805.0488};
 			name="a3e_var_communicationCenter_36";
 			type="Empty";
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=220.09183;
+			angle=226.55986;
 			id=2663;
-			atlOffset=458.54764;
+			atlOffset=458.69952;
 		};
 		class Item162
 		{
 			dataType="Marker";
-			position[]={5163.1621,463.7319,4825.6519};
+			position[]={5222.376,464.04208,4805.0508};
 			name="area_36";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=220.09183;
+			angle=226.55986;
 			id=2664;
-			atlOffset=458.52496;
+			atlOffset=458.67685;
 		};
 		class Item163
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5163.061,8.4609737,4825.625};
-				angles[]={0,3.8413277,0};
+				position[]={5222.2725,8.7729435,4805.0356};
+				angles[]={0,3.9542167,-0};
 			};
 			areaSize[]={19.967529,0,15.024475};
 			areaIsRectangle=1;
 			flags=1;
 			id=2665;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=3.2598553;
+			atlOffset=3.4073148;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3666,7 +3669,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={4574.9961,4.1500001,5420.541};
-			angle=3.5533679;
+			angle=3.5533674;
 			class Attributes
 			{
 				sizeA=20;
@@ -3686,7 +3689,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=203.59308;
+			angle=203.59305;
 			id=2679;
 			atlOffset=464.15308;
 		};
@@ -3700,7 +3703,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=203.59308;
+			angle=203.59305;
 			id=2680;
 			atlOffset=464.1304;
 		};
@@ -3860,7 +3863,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=295.68335;
+			angle=295.68329;
 			id=2687;
 			atlOffset=458.54764;
 		};
@@ -3874,7 +3877,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=295.68335;
+			angle=295.68329;
 			id=2688;
 			atlOffset=458.52496;
 		};
@@ -3927,7 +3930,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={4247.3691,14.05,6364.4229};
-			angle=3.6895037;
+			angle=3.6895032;
 			class Attributes
 			{
 				sizeA=20;
@@ -4013,8 +4016,8 @@ class Mission
 		class Item188
 		{
 			dataType="Trigger";
-			position[]={2546.2429,19.946299,6167.396};
-			angle=0.16315335;
+			position[]={2619.7441,19.189388,6159.1592};
+			angle=0.16315332;
 			class Attributes
 			{
 				sizeA=20;
@@ -4028,27 +4031,27 @@ class Mission
 		class Item189
 		{
 			dataType="Marker";
-			position[]={2546.2441,483.07385,6167.4038};
+			position[]={2619.7454,482.31699,6159.167};
 			name="a3e_var_communicationCenter_43";
 			type="Empty";
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=9.3484125;
+			angle=9.3484116;
 			id=2695;
 			atlOffset=463.12781;
 		};
 		class Item190
 		{
 			dataType="Marker";
-			position[]={2546.2449,483.05136,6167.4019};
+			position[]={2619.7461,482.29449,6159.165};
 			name="area_43";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=9.3484125;
+			angle=9.3484116;
 			id=2696;
 			atlOffset=463.10529;
 		};
@@ -4057,15 +4060,14 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2546.3179,27.786648,6167.4761};
-				angles[]={0,0.16316062,0};
+				position[]={2619.8193,27.027304,6159.2393};
+				angles[]={0,0.16315337,0};
 			};
-			areaSize[]={19.967529,0,15.024475};
-			areaIsRectangle=1;
+			areaSize[]={25,0,25};
 			flags=1;
 			id=2697;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=7.84552;
+			atlOffset=7.8460007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -4101,7 +4103,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={1310.684,20.489698,5769.02};
-			angle=1.6142374;
+			angle=1.6142373;
 			class Attributes
 			{
 				sizeA=20;
@@ -4121,7 +4123,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=92.488663;
+			angle=92.488655;
 			id=2699;
 			atlOffset=458.54764;
 		};
@@ -4135,7 +4137,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=92.488663;
+			angle=92.488655;
 			id=2700;
 			atlOffset=458.52496;
 		};
@@ -4188,7 +4190,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={1807.911,20.437088,6144.3599};
-			angle=3.370213;
+			angle=3.3702126;
 			class Attributes
 			{
 				sizeA=20;
@@ -4209,7 +4211,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=193.09871;
+			angle=193.09868;
 			id=2703;
 			atlOffset=458.54764;
 		};
@@ -4223,7 +4225,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=193.09871;
+			angle=193.09868;
 			id=2704;
 			atlOffset=458.52496;
 		};
@@ -4446,7 +4448,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={426.86301,38.204395,7506.5278};
-			angle=0.62037718;
+			angle=0.62037712;
 			class Attributes
 			{
 				sizeA=20;
@@ -4533,7 +4535,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={245.61,42.327667,8220.6279};
-			angle=1.8733141;
+			angle=1.873314;
 			class Attributes
 			{
 				sizeA=20;
@@ -4553,7 +4555,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=107.33346;
+			angle=107.33344;
 			id=2719;
 			atlOffset=458.54761;
 		};
@@ -4567,7 +4569,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=107.33346;
+			angle=107.33344;
 			id=2720;
 			atlOffset=458.52496;
 		};
@@ -4640,7 +4642,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=205.19992;
+			angle=205.19989;
 			id=2723;
 			atlOffset=458.54764;
 		};
@@ -4654,7 +4656,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=205.19992;
+			angle=205.19989;
 			id=2724;
 			atlOffset=458.52496;
 		};
@@ -4707,7 +4709,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3098.834,59.737701,8726.0303};
-			angle=4.4685483;
+			angle=4.4685478;
 			class Attributes
 			{
 				sizeA=20;
@@ -4794,7 +4796,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3815.709,81.623726,9971.3027};
-			angle=1.960947;
+			angle=1.9609468;
 			class Attributes
 			{
 				sizeA=20;
@@ -4814,7 +4816,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=112.3543;
+			angle=112.35428;
 			id=2731;
 			atlOffset=458.54764;
 		};
@@ -4828,7 +4830,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=112.3543;
+			angle=112.35428;
 			id=2732;
 			atlOffset=458.52496;
 		};
@@ -4881,7 +4883,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={4503.9429,98.973335,9918.4199};
-			angle=5.9574885;
+			angle=5.9574876;
 			class Attributes
 			{
 				sizeA=20;
@@ -4968,7 +4970,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={5493.647,123.89196,10079.869};
-			angle=5.1134477;
+			angle=5.1134467;
 			class Attributes
 			{
 				sizeA=20;
@@ -5055,7 +5057,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={5567.1733,403.30014,9084.6543};
-			angle=0.80724347;
+			angle=0.80724335;
 			class Attributes
 			{
 				sizeA=20;
@@ -5160,7 +5162,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=186.62491;
+			angle=186.62488;
 			id=2747;
 			atlOffset=458.54767;
 		};
@@ -5174,7 +5176,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=186.62491;
+			angle=186.62488;
 			id=2748;
 			atlOffset=458.52493;
 		};
@@ -5651,7 +5653,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7619.4482,61.787666,7640.0908};
-			angle=5.7558856;
+			angle=5.7558846;
 			class Attributes
 			{
 				sizeA=20;
@@ -5672,7 +5674,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=329.78818;
+			angle=329.78812;
 			id=2771;
 			atlOffset=458.54764;
 		};
@@ -5686,7 +5688,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=329.78818;
+			angle=329.78812;
 			id=2772;
 			atlOffset=458.52499;
 		};
@@ -5759,7 +5761,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=144.26466;
+			angle=144.26463;
 			id=2775;
 			atlOffset=458.5477;
 		};
@@ -5773,7 +5775,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=144.26466;
+			angle=144.26463;
 			id=2776;
 			atlOffset=458.52496;
 		};
@@ -5826,7 +5828,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8550.9775,142.05803,9223.4932};
-			angle=0.70523512;
+			angle=0.705235;
 			class Attributes
 			{
 				sizeA=20;
@@ -5914,7 +5916,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9667.3779,74.998215,9099.2695};
-			angle=4.0949082;
+			angle=4.0949078;
 			class Attributes
 			{
 				sizeA=20;
@@ -6002,7 +6004,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9180.9434,104.83,10357.771};
-			angle=4.7505589;
+			angle=4.7505579;
 			class Attributes
 			{
 				sizeA=20;
@@ -6172,7 +6174,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8311.4131,136.23596,9974.832};
-			angle=2.8047438;
+			angle=2.8047433;
 			class Attributes
 			{
 				sizeA=20;
@@ -6193,7 +6195,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=160.69975;
+			angle=160.69972;
 			id=2799;
 			atlOffset=458.54767;
 		};
@@ -6207,7 +6209,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=160.69975;
+			angle=160.69972;
 			id=2800;
 			atlOffset=458.52499;
 		};
@@ -6260,7 +6262,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={6915.3618,18.937862,4303.3052};
-			angle=3.6598504;
+			angle=3.6598499;
 			class Attributes
 			{
 				sizeA=20;
@@ -6430,7 +6432,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8856.917,92.799324,5904.6392};
-			angle=0.089238673;
+			angle=0.089238659;
 			class Attributes
 			{
 				sizeA=20;
@@ -6517,7 +6519,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8841.418,127.14568,6691.0669};
-			angle=1.4332118;
+			angle=1.4332116;
 			class Attributes
 			{
 				sizeA=20;
@@ -6527,7 +6529,7 @@ class Mission
 			};
 			id=2814;
 			type="EmptyDetector";
-			atlOffset=7.6293945e-06;
+			atlOffset=1.5258789e-05;
 		};
 		class Item305
 		{
@@ -6605,7 +6607,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7977.8481,289.89847,6394.2739};
-			angle=0.17350316;
+			angle=0.17350313;
 			class Attributes
 			{
 				sizeA=20;
@@ -6625,7 +6627,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=9.9410152;
+			angle=9.9410133;
 			id=2819;
 			atlOffset=458.54764;
 		};
@@ -6639,7 +6641,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=9.9410152;
+			angle=9.9410133;
 			id=2820;
 			atlOffset=458.52496;
 		};
@@ -6692,7 +6694,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9681.0244,18.228098,4448.7778};
-			angle=4.5165277;
+			angle=4.5165267;
 			class Attributes
 			{
 				sizeA=20;
@@ -6712,7 +6714,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=258.77768;
+			angle=258.77762;
 			id=2823;
 			atlOffset=458.54764;
 		};
@@ -6726,7 +6728,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=258.77768;
+			angle=258.77762;
 			id=2824;
 			atlOffset=458.52496;
 		};
@@ -6779,7 +6781,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9135.7188,30.800907,5225.251};
-			angle=2.4517684;
+			angle=2.4517682;
 			class Attributes
 			{
 				sizeA=20;
@@ -6799,7 +6801,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=140.47598;
+			angle=140.47597;
 			id=2827;
 			atlOffset=458.54761;
 		};
@@ -6813,7 +6815,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=140.47598;
+			angle=140.47597;
 			id=2828;
 			atlOffset=458.52496;
 		};
@@ -6866,7 +6868,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3320.532,31.54578,7177.8208};
-			angle=4.7325468;
+			angle=4.7325459;
 			class Attributes
 			{
 				sizeA=20;
@@ -6887,7 +6889,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=271.15463;
+			angle=271.1546;
 			id=2831;
 			atlOffset=458.54764;
 		};
@@ -6901,7 +6903,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=271.15463;
+			angle=271.1546;
 			id=2832;
 			atlOffset=458.52496;
 		};
@@ -7211,7 +7213,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8689,2.1500001,732.78497};
-			angle=3.0860734;
+			angle=3.0860729;
 			class Attributes
 			{
 				sizeA=20;
@@ -7318,7 +7320,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=208.11934;
+			angle=208.11931;
 			id=2851;
 			atlOffset=458.54764;
 		};
@@ -7332,7 +7334,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=208.11934;
+			angle=208.11931;
 			id=2852;
 			atlOffset=458.52496;
 		};
@@ -7395,7 +7397,7 @@ class Mission
 			};
 			id=2858;
 			type="EmptyDetector";
-			atlOffset=1.4305115e-05;
+			atlOffset=0.0020513535;
 		};
 		class Item345
 		{
@@ -7408,7 +7410,7 @@ class Mission
 			b=0.75;
 			angle=89.718338;
 			id=2859;
-			atlOffset=457.2449;
+			atlOffset=457.24695;
 		};
 		class Item346
 		{
@@ -7422,7 +7424,7 @@ class Mission
 			b=15;
 			angle=89.718338;
 			id=2860;
-			atlOffset=457.22211;
+			atlOffset=457.22415;
 		};
 		class Item347
 		{
@@ -7436,7 +7438,7 @@ class Mission
 			flags=1;
 			id=2861;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=1.9579697;
+			atlOffset=1.9601212;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7472,7 +7474,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={5319.3242,8.4899998,2521.658};
-			angle=1.5742519;
+			angle=1.5742517;
 			class Attributes
 			{
 				sizeA=20;
@@ -7482,6 +7484,7 @@ class Mission
 			};
 			id=2862;
 			type="EmptyDetector";
+			atlOffset=-1.2430611;
 		};
 		class Item349
 		{
@@ -7494,7 +7497,7 @@ class Mission
 			b=0.75;
 			angle=90.19751;
 			id=2863;
-			atlOffset=458.54764;
+			atlOffset=457.30499;
 		};
 		class Item350
 		{
@@ -7508,7 +7511,7 @@ class Mission
 			b=15;
 			angle=90.19751;
 			id=2864;
-			atlOffset=458.52496;
+			atlOffset=457.28223;
 		};
 		class Item351
 		{
@@ -7523,7 +7526,7 @@ class Mission
 			flags=1;
 			id=2865;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=3.2598553;
+			atlOffset=2.0252571;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7559,7 +7562,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={5390.3232,3.6175952,4628.0498};
-			angle=2.1938088;
+			angle=2.1938083;
 			class Attributes
 			{
 				sizeA=20;
@@ -7732,7 +7735,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={4125.0444,5.2272363,5928.8633};
-			angle=1.9731593;
+			angle=1.9731591;
 			class Attributes
 			{
 				sizeA=20;
@@ -7742,6 +7745,7 @@ class Mission
 			};
 			id=2878;
 			type="EmptyDetector";
+			atlOffset=-0.060014725;
 		};
 		class Item361
 		{
@@ -7754,7 +7758,7 @@ class Mission
 			b=0.75;
 			angle=113.05396;
 			id=2879;
-			atlOffset=457.93677;
+			atlOffset=457.87683;
 		};
 		class Item362
 		{
@@ -7768,7 +7772,7 @@ class Mission
 			b=15;
 			angle=113.05396;
 			id=2880;
-			atlOffset=457.91409;
+			atlOffset=457.85416;
 		};
 		class Item363
 		{
@@ -7776,14 +7780,14 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4125.1045,7.8751602,5928.771};
-				angles[]={0,1.9731643,-0};
+				angles[]={0,1.9731643,0};
 			};
 			areaSize[]={19.967529,0,15.024475};
 			areaIsRectangle=1;
 			flags=1;
 			id=2881;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=2.6487317;
+			atlOffset=2.5907989;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7819,7 +7823,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3298.158,17.177006,6043.707};
-			angle=6.120677;
+			angle=6.120676;
 			class Attributes
 			{
 				sizeA=20;
@@ -8167,7 +8171,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8116.9707,4.8011436,3066.9756};
-			angle=0.01061279;
+			angle=0.010612789;
 			class Attributes
 			{
 				sizeA=20;
@@ -8187,7 +8191,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=0.60806805;
+			angle=0.60806799;
 			id=2899;
 			atlOffset=371.85565;
 		};
@@ -8201,7 +8205,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=0.60806805;
+			angle=0.60806799;
 			id=2900;
 			atlOffset=371.83298;
 		};
@@ -8252,7 +8256,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8228.1465,6.9979153,3652.9656};
-			angle=0.48724294;
+			angle=0.48724285;
 			class Attributes
 			{
 				sizeA=20;
@@ -8273,7 +8277,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=27.916964;
+			angle=27.91696;
 			id=2903;
 			atlOffset=371.85693;
 		};
@@ -8287,7 +8291,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=27.916964;
+			angle=27.91696;
 			id=2904;
 			atlOffset=371.8349;
 		};
@@ -8337,8 +8341,8 @@ class Mission
 		class Item388
 		{
 			dataType="Trigger";
-			position[]={4359.1118,4.8352513,4453.3784};
-			angle=-2.8351119;
+			position[]={4385.4502,5.2389846,4471.3882};
+			angle=1.5505202;
 			class Attributes
 			{
 				sizeA=20;
@@ -8348,31 +8352,32 @@ class Mission
 			};
 			id=2906;
 			type="EmptyDetector";
+			atlOffset=4.7683716e-07;
 		};
 		class Item389
 		{
 			dataType="Marker";
-			position[]={4359.1104,376.69089,4453.3711};
+			position[]={4385.4575,377.09421,4471.3887};
 			name="a3e_var_communicationCenter_93";
 			type="Empty";
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=197.56004;
+			angle=88.838226;
 			id=2907;
 			atlOffset=371.85565;
 		};
 		class Item390
 		{
 			dataType="Marker";
-			position[]={4359.1099,376.66821,4453.3726};
+			position[]={4385.4561,377.07162,4471.3882};
 			name="area_93";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=197.56004;
+			angle=88.838226;
 			id=2908;
 			atlOffset=371.83298;
 		};
@@ -8381,13 +8386,14 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4359.0264,4.8349915,4453.3101};
-				angles[]={6.2793875,3.4496863,0};
+				position[]={4385.5425,5.2339358,4471.3291};
+				angles[]={0.0038136009,1.5513318,6.2261052};
 			};
 			areaSize[]={25,0,25};
 			flags=1;
 			id=2909;
 			type="ModuleHideTerrainObjects_F";
+			atlOffset=4.7683716e-07;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8507,8 +8513,8 @@ class Mission
 		class Item396
 		{
 			dataType="Trigger";
-			position[]={5401.3501,4.1399999,5013.8901};
-			angle=4.9773483;
+			position[]={5383.0786,5.3187275,4943.772};
+			angle=4.9773474;
 			class Attributes
 			{
 				sizeA=20;
@@ -8518,46 +8524,48 @@ class Mission
 			};
 			id=2914;
 			type="EmptyDetector";
+			atlOffset=4.7683716e-07;
 		};
 		class Item397
 		{
 			dataType="Marker";
-			position[]={5401.3428,375.99567,5013.8916};
+			position[]={5383.0713,377.17285,4943.7734};
 			name="a3e_var_communicationCenter_95";
 			type="Empty";
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=285.18106;
+			angle=285.181;
 			id=2915;
-			atlOffset=371.85565;
+			atlOffset=371.85495;
 		};
 		class Item398
 		{
 			dataType="Marker";
-			position[]={5401.3442,375.97299,5013.8921};
+			position[]={5383.0728,377.15042,4943.7739};
 			name="area_95";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=285.18106;
+			angle=285.181;
 			id=2916;
-			atlOffset=371.83298;
+			atlOffset=371.83228;
 		};
 		class Item399
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5401.2783,4.1399999,5013.9727};
-				angles[]={-0,4.9804034,0};
+				position[]={5383.0068,5.3173156,4943.8545};
+				angles[]={6.1841769,4.9804034,0.13284957};
 			};
 			areaSize[]={25,0,25};
 			flags=1;
 			id=2917;
 			type="ModuleHideTerrainObjects_F";
+			atlOffset=4.7683716e-07;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8637,7 +8645,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5048.2896,4.1399999,5114.665};
-				angles[]={-0,5.1013432,0};
+				angles[]={0,5.1013432,0};
 			};
 			areaSize[]={25,0,25};
 			flags=1;
@@ -8721,7 +8729,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9221.5313,81.690826,9327.834};
+				position[]={9221.5312,81.690826,9327.834};
 				angles[]={6.256525,0.73108387,0.015238903};
 			};
 			areaSize[]={25,0,25};
@@ -8763,7 +8771,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={1961.9456,30.081356,4822.1665};
-			angle=0.79605967;
+			angle=0.79605961;
 			class Attributes
 			{
 				sizeA=20;
@@ -8783,7 +8791,7 @@ class Mission
 			colorName="ColorRed";
 			a=0.94999999;
 			b=0.75;
-			angle=45.610859;
+			angle=45.610855;
 			id=2927;
 			atlOffset=371.85565;
 		};
@@ -8797,7 +8805,7 @@ class Mission
 			colorName="ColorRed";
 			a=20;
 			b=15;
-			angle=45.610859;
+			angle=45.610855;
 			id=2928;
 			atlOffset=371.83298;
 		};
@@ -8812,6 +8820,258 @@ class Mission
 			areaSize[]={25,0,25};
 			flags=1;
 			id=2929;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item412
+		{
+			dataType="Trigger";
+			position[]={4907.8774,4.1399999,4665.9365};
+			angle=2.6729882;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2934;
+			type="EmptyDetector";
+		};
+		class Item413
+		{
+			dataType="Marker";
+			position[]={4907.8813,4.1626515,4665.9302};
+			name="a3e_var_communicationCenter_99";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=153.15094;
+			id=2935;
+			atlOffset=0.022651672;
+		};
+		class Item414
+		{
+			dataType="Marker";
+			position[]={4907.8799,4.1399999,4665.9312};
+			name="area_99";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=153.15094;
+			id=2936;
+		};
+		class Item415
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4907.8643,4.1399999,4665.8281};
+				angles[]={0,2.677876,0};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2937;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item416
+		{
+			dataType="Trigger";
+			position[]={4368.1177,4.1399999,4913.9106};
+			angle=-1.1695235;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2938;
+			type="EmptyDetector";
+		};
+		class Item417
+		{
+			dataType="Marker";
+			position[]={4368.1108,4.1626515,4913.9131};
+			name="a3e_var_communicationCenter_100";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=292.99121;
+			id=2939;
+			atlOffset=0.022651672;
+		};
+		class Item418
+		{
+			dataType="Marker";
+			position[]={4368.1123,4.1399999,4913.9136};
+			name="area_100";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=292.99121;
+			id=2940;
+		};
+		class Item419
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4368.0576,4.1399999,4914.0024};
+				angles[]={-0,5.1158819,0};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2941;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item420
+		{
+			dataType="Trigger";
+			position[]={5137.397,5.6723714,4967.2251};
+			angle=0.41748208;
+			class Attributes
+			{
+				sizeA=20;
+				sizeB=15;
+				sizeC=20;
+				isRectangle=1;
+			};
+			id=2942;
+			type="EmptyDetector";
+		};
+		class Item421
+		{
+			dataType="Marker";
+			position[]={5137.3994,5.694766,4967.2319};
+			name="a3e_var_communicationCenter_101";
+			type="Empty";
+			colorName="ColorRed";
+			a=0.94999999;
+			b=0.75;
+			angle=23.919962;
+			id=2943;
+			atlOffset=0.022651672;
+		};
+		class Item422
+		{
+			dataType="Marker";
+			position[]={5137.3999,5.6721554,4967.23};
+			name="area_101";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			a=20;
+			b=15;
+			angle=23.919962;
+			id=2944;
+		};
+		class Item423
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5137.4897,5.6679931,4967.2832};
+				angles[]={0.02666023,0.41976917,6.2527184};
+			};
+			areaSize[]={25,0,25};
+			flags=1;
+			id=2945;
 			type="ModuleHideTerrainObjects_F";
 			class CustomAttributes
 			{
