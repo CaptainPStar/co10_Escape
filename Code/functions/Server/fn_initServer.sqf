@@ -674,6 +674,13 @@ call A3E_fnc_InitTraps;
 	};
 };
 
+a3e_arr_Escape_MilitaryTraffic_CivilianCrewClasses = '
+	configName _x isKindOf "CAManBase"
+	&& {getNumber (_x >> "scope") == 2}
+	&& {getText (_x >> "vehicleClass") != "MenVR"}
+	&& {getNumber (_x >> "side") == 3}
+	&& {-1 == toLower (getArray (_x >> "hiddenSelectionsTextures") param [0, ""]) find "c_poloshirt_3_co.paa"}
+' configClasses (configFile >> "CfgVehicles") apply {configName _x};
 
 //["A3E_FNC_AmbientAISpawn"] call A3E_FNC_Chronos_Register;
 ["A3E_FNC_RoadBlocks"] call A3E_FNC_Chronos_Register;
